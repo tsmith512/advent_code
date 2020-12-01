@@ -22,3 +22,5 @@ do
     [ $(($A + $B)) -eq 2020 ] && echo "$A plus $B = $(($A + $B)). Multiplied: $(( $A * $B ))"
   done
 done
+
+# Solution: 646779 is the product of 399 and 1621
