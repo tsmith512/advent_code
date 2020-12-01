@@ -19,6 +19,6 @@ do
   for B in ${LIST[@]}
   do
     # Pair of nested loops, so this will return the same answer twice
-    [ $(($A + $B)) -eq 2020 ] && echo "$A plus $B = $(($A + $B))"
+    [ $(($A + $B)) -eq 2020 ] && echo "$A plus $B = $(($A + $B)). Multiplied: $(( $A * $B ))"
   done
 done
