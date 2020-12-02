@@ -43,12 +43,16 @@ function IsEnough {
 }
 
 $PasswordList = Get-Content .\password_list.txt
+$ValidPasswords = 0
 
 $PasswordList | ForEach-Object {
   $Values = ParseRow $_
   $Count = GetCount $Values.Passwd $Values.Char
 
   if (IsEnough $Count $Values.Min $Values.Max) {
-    "Test string $($Values.Passwd) contains '$($Values.Char)' an acceptable number of times"
+    $ValidPasswords++
   }
 }
+
+"There were $ValidPasswords that passed the test"
+# Part One answer: There were 655 that passed the test
