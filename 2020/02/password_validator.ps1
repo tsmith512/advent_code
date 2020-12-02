@@ -21,7 +21,5 @@ $row = "7-10 d: dpzwqflvdx"
 #     you don't capture it (hence Out-Null)
 $row -match '(?<Min>\d+)-(?<Max>\d+) (?<Char>[A-Za-z]): (?<Passwd>.+)' | Out-Null
 
-if ($Matches.Passwd.ToCharArray() -contains $Matches.Char) {
-  $how_many = $Matches.Passwd.ToCharArray() | Where-Object {$_ -eq $Matches.Char} | Measure-Object
-  "The test string contains the character $($how_many.Count) times"
-}
+$how_many = $($Matches.Passwd.ToCharArray() | Where-Object {$_ -eq $Matches.Char} | Measure-Object).Count
+"The test string contains the character $how_many times"
