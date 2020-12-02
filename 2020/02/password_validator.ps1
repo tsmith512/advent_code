@@ -12,7 +12,7 @@
 # times (inclusive) in STRING.
 
 # Pull a sample row from the file to work on the test
-$row = "7-10 w: dpzwqflvdx"
+$row = "7-10 d: dpzwqflvdx"
 
 # Translate my description above into a regex that saves named matches.
 #   - You can name matches!
@@ -22,5 +22,6 @@ $row = "7-10 w: dpzwqflvdx"
 $row -match '(?<Min>\d+)-(?<Max>\d+) (?<Char>[A-Za-z]): (?<Passwd>.+)' | Out-Null
 
 if ($Matches.Passwd.ToCharArray() -contains $Matches.Char) {
-  "$($Matches.Passwd) contains $($Matches.Char)"
+  $how_many = $Matches.Passwd.ToCharArray() | Where-Object {$_ -eq $Matches.Char} | Measure-Object
+  "The test string contains the character $($how_many.Count) times"
 }
