@@ -14,8 +14,13 @@
 # Pull a sample row from the file to work on the test
 $row = "7-10 w: dpzwqflvdx"
 
-# Translate my description above into a regex that saves named matches
-# -match will save this into $Matches automatically.
-$row -match '(?<Min>\d+)-(?<Max>\d+) (?<Char>[A-Za-z]): (?<Passwd>.+)'
+# Translate my description above into a regex that saves named matches.
+#   - You can name matches!
+#   - The -match will save this into $Matches variable automatically.
+#   - The -matches test will return T/F, which will output on the terminal if
+#     you don't capture it (hence Out-Null)
+$row -match '(?<Min>\d+)-(?<Max>\d+) (?<Char>[A-Za-z]): (?<Passwd>.+)' | Out-Null
 
-$Matches
+if ($Matches.Passwd.ToCharArray() -contains $Matches.Char) {
+  "$($Matches.Passwd) contains $($Matches.Char)"
+}
