@@ -11,9 +11,6 @@
 # Count lines from the input file where CHAR is present between LOW and HIGH
 # times (inclusive) in STRING.
 
-# Pull a sample row from the file to work on the test
-$example = "7-10 d: dddddddddpzwqflvdx"
-
 function ParseRow {
   param([string]$row)
   # Translate my description above into a regex that saves named matches.
@@ -45,9 +42,13 @@ function IsEnough {
   (($Count -ge $Min) -and ($Count -le $Max))
 }
 
-$Values = ParseRow $example
-$Count = GetCount $Values.Passwd $Values.Char
+$PasswordList = Get-Content .\password_list.txt
 
-if (IsEnough $Count $Values.Min $Values.Max) {
-  "The test string contains the character an acceptable number of times"
+$PasswordList | ForEach-Object {
+  $Values = ParseRow $_
+  $Count = GetCount $Values.Passwd $Values.Char
+
+  if (IsEnough $Count $Values.Min $Values.Max) {
+    "Test string $($Values.Passwd) contains '$($Values.Char)' an acceptable number of times"
+  }
 }
