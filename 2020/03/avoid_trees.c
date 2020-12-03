@@ -15,8 +15,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define HEIGHT 323
-#define WIDTH 33
+#define HEIGHT 11
+#define WIDTH 13
 /* @TODO: But how would I determine these automatically? */
 
 int main() {
@@ -43,21 +43,14 @@ int main() {
   // Slope is 1 down 3 across and terminates at the bottom but not an edge.
   // So increment on Y (first dimension), not X (second dimension)
   for (y = 0; y < HEIGHT; y++) {
-    printf("Area [%d][%d] = %c", y, x, field[y][x]);
-
     if (field[y][x] == '#') {
-      printf(" Tree!");
       count++;
     }
-
-    printf("\n");
 
     // The for loop moves us down, this moves us over, then wrap around
     x += 3;
     x = x % (WIDTH - 2);
   }
-
-  printf("\n");
 
   printf("You crashed into %d trees on the original slope.\n\n", count);
   // Part One Answer: You crashed into 159 trees.
@@ -78,9 +71,9 @@ int main() {
     {2, 1, 0}  /* Yes, down-two. */
   };
 
-  count = 0;
-
   for (int attempt = 0; attempt < 5; attempt++) {
+    count = 0;
+
     for (y = 0; y < HEIGHT; y+= slopes[attempt][0]) {
       if (field[y][x] == '#') {
         count++;
@@ -98,9 +91,9 @@ int main() {
   }
 
   // Now that we have each slope, multiply them together.
-  int tree_product = slopes[0][2];
+  long tree_product = slopes[0][2];
   for (int attempt = 1; attempt < 5; attempt++) {
-    tree_product *= slopes[attempt][2];
+    tree_product = tree_product * slopes[attempt][2];
   }
 
   printf("The product of those numbers is %d\n\n", tree_product);
