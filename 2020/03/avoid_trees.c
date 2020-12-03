@@ -16,17 +16,19 @@
 #include <string.h>
 
 #define HEIGHT 323
-#define WIDTH 32
+#define WIDTH 33
 /* @TODO: But how would I determine these automatically? */
 
 int main() {
   char field[HEIGHT][WIDTH];
+  char line[WIDTH + 1];
   int i = 0;
   FILE *geography = fopen("forest.txt", "r");
 
-  while(fgets(field[i], WIDTH, geography)) {
+  while(fgets(line, WIDTH, geography)) {
+    strcpy(field[i], line);
     /* Strip the ending newline -> replace it with a NULL */
-    field[i][strlen(field[i]) - 1] = '\0';
+    field[i][strlen(line) - 1] = '\0';
     i++;
   }
 
@@ -40,7 +42,7 @@ int main() {
 
   // Slope is 1 down 3 across and terminates at the bottom but not an edge.
   // So increment on Y (first dimension), not X (second dimension)
-  for (y = 0; y < 10; y++) {
+  for (y = 0; y < HEIGHT; y++) {
     printf("Area [%d][%d] = %c", y, x, field[y][x]);
 
     if (field[y][x] == '#') {
@@ -52,7 +54,7 @@ int main() {
 
     // The for loop moves us down, this moves us over, then wrap around
     x += 3;
-    x = x % 10;
+    x = x % WIDTH;
   }
 
   printf("\n");
