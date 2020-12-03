@@ -15,8 +15,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define HEIGHT 11
-#define WIDTH 13
+#define HEIGHT 323
+#define WIDTH 33
 /* @TODO: But how would I determine these automatically? */
 
 int main() {
