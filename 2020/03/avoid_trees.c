@@ -60,6 +60,7 @@ int main() {
   printf("\n");
 
   printf("You crashed into %d trees.", count);
+  // Part One Answer: You crashed into 159 trees.
 
   return 0;
 }
