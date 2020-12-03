@@ -54,7 +54,7 @@ int main() {
 
     // The for loop moves us down, this moves us over, then wrap around
     x += 3;
-    x = x % WIDTH;
+    x = x % (WIDTH - 2);
   }
 
   printf("\n");
