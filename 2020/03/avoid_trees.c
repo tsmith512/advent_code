@@ -15,16 +15,17 @@
 
 int main() {
   char field[10][10] = {
-    {"..##...##."},
+    {"..##...##."}, /* X goes across, through one line */
     {".##...##.."},
     {"..##...##."},
     {".##...##.."},
-    {".........."},
+    {"..#......."},
     {"..##...##."},
     {".##...##.."},
     {"..##...##."},
     {".##...##.."},
     {".........."}
+    /* Y goes down to the next string in the array */
   };
 
   // Starting coordinates
@@ -33,10 +34,12 @@ int main() {
   // Counter of trees I've hit
   int count = 0;
 
+  // Slope is 1 down 3 across and terminates at the bottom but not an edge.
+  // So increment on Y (first dimension), not X (second dimension)
   for (y = 0; y < 10; y++) {
-    printf("Area [%d][%d] = %c", x, y, field[x][y]);
+    printf("Area [%d][%d] = %c", y, x, field[y][x]);
 
-    if (field[x][y] == '#') {
+    if (field[y][x] == '#') {
       printf(" Tree!");
       count++;
     }
