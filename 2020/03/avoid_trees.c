@@ -12,6 +12,7 @@
 // slope -- right 3 / down 1. The map repeats horizontally but not vertically.
 
 #include <stdio.h>
+
 int main() {
   char field[5][5] = {
     {"..##."},
@@ -25,7 +26,13 @@ int main() {
 
   for (i = 0; i < 5; i++) {
     for (j = 0; j < 5; j++) {
-      printf("Area [%d][%d] = %c\n", i, j, field[i][j]);
+      printf("Area [%d][%d] = %c", i, j, field[i][j]);
+
+      if (field[i][j] == '#') {
+        printf(" Tree!");
+      }
+
+      printf("\n");
     }
   }
 
