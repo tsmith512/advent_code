@@ -13,7 +13,21 @@
 
 #include <stdio.h>
 int main() {
-  // printf() displays the string inside quotation
-  printf("Hello, World!\n");
+  char field[5][5] = {
+    {"..##."},
+    {".##.."},
+    {"..##."},
+    {".##.."},
+    {"....."}
+  };
+
+  int i, j;
+
+  for (i = 0; i < 5; i++) {
+    for (j = 0; j < 5; j++) {
+      printf("Area [%d][%d] = %c\n", i, j, field[i][j]);
+    }
+  }
+
   return 0;
 }
