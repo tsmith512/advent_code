@@ -73,6 +73,7 @@ int main() {
 
   for (int attempt = 0; attempt < 5; attempt++) {
     count = 0;
+    x = 0;
 
     for (y = 0; y < HEIGHT; y+= slopes[attempt][0]) {
       if (field[y][x] == '#') {
