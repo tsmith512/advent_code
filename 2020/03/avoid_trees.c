@@ -12,21 +12,25 @@
 // slope -- right 3 / down 1. The map repeats horizontally but not vertically.
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define HEIGHT 323
+#define WIDTH 32
+/* @TODO: But how would I determine these automatically? */
 
 int main() {
-  char field[10][10] = {
-    {"..##...##."}, /* X goes across, through one line */
-    {".##...##.."},
-    {"..##...##."},
-    {".##...##.."},
-    {"..#......."},
-    {"..##...##."},
-    {".##...##.."},
-    {"..##...##."},
-    {".##...##.."},
-    {".........."}
-    /* Y goes down to the next string in the array */
-  };
+  char field[HEIGHT][WIDTH];
+  int i = 0;
+  FILE *geography = fopen("forest.txt", "r");
+
+  while(fgets(field[i], WIDTH, geography)) {
+    /* Strip the ending newline -> replace it with a NULL */
+    field[i][strlen(field[i]) - 1] = '\0';
+    i++;
+  }
+
+  fclose(geography);
 
   // Starting coordinates
   int x = 0, y = 0;
