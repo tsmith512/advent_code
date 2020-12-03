@@ -15,27 +15,33 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define HEIGHT 323
+#define MAXHEIGHT 500
 #define MAXWIDTH 100
-/* @TODO: But how would I determine these automatically? */
+/* @TODO: These are maxes, can I allocate `field` only as big as it needs to be? */
 
 int main() {
-  char field[HEIGHT][MAXWIDTH];
+  char field[MAXHEIGHT][MAXWIDTH];
   char line[MAXWIDTH];
   int i = 0;
   int forest_width;
+  int forest_height;
   FILE *geography = fopen("forest.txt", "r");
 
   while(fgets(line, MAXWIDTH, geography)) {
     strcpy(field[i], line);
     if (i == 0) {
       forest_width = strnlen(line, MAXWIDTH);
-      printf("Forest Width: %d\n\n", forest_width);
+      printf("Forest Width: %d\n", forest_width);
     }
     /* Strip the ending newline -> replace it with a NULL */
     field[i][strlen(line) - 1] = '\0';
     i++;
   }
+
+  forest_height = i + 1;
+
+  printf("Forest Height: %d\n\n", forest_height);
+
 
   fclose(geography);
 
@@ -47,7 +53,7 @@ int main() {
 
   // Slope is 1 down 3 across and terminates at the bottom but not an edge.
   // So increment on Y (first dimension), not X (second dimension)
-  for (y = 0; y < HEIGHT; y++) {
+  for (y = 0; y < forest_height; y++) {
     if (field[y][x] == '#') {
       count++;
     }
@@ -80,7 +86,7 @@ int main() {
     count = 0;
     x = 0;
 
-    for (y = 0; y < HEIGHT; y+= slopes[attempt][0]) {
+    for (y = 0; y < forest_height; y+= slopes[attempt][0]) {
       if (field[y][x] == '#') {
         count++;
       }
