@@ -29,17 +29,22 @@ int main() {
 
   int i, j;
 
+  int count = 0;
+
   for (i = 0; i < 10; i++) {
     for (j = 0; j < 10; j += 3) {
       printf("Area [%d][%d] = %c", i, j, field[i][j]);
 
       if (field[i][j] == '#') {
         printf(" Tree!");
+        count++;
       }
 
       printf("\n");
     }
   }
+
+  printf("You crashed into %d trees.", count);
 
   return 0;
 }
