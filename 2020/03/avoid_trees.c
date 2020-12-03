@@ -27,22 +27,28 @@ int main() {
     {".........."}
   };
 
-  int i, j;
+  // Starting coordinates
+  int x = 0, y = 0;
 
+  // Counter of trees I've hit
   int count = 0;
 
-  for (i = 0; i < 10; i++) {
-    for (j = 0; j < 10; j += 3) {
-      printf("Area [%d][%d] = %c", i, j, field[i][j]);
+  for (y = 0; y < 10; y++) {
+    printf("Area [%d][%d] = %c", x, y, field[x][y]);
 
-      if (field[i][j] == '#') {
-        printf(" Tree!");
-        count++;
-      }
-
-      printf("\n");
+    if (field[x][y] == '#') {
+      printf(" Tree!");
+      count++;
     }
+
+    printf("\n");
+
+    // The for loop moves us down, this moves us over, then wrap around
+    x += 3;
+    x = x % 10;
   }
+
+  printf("\n");
 
   printf("You crashed into %d trees.", count);
 
