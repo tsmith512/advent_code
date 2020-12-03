@@ -16,17 +16,22 @@
 #include <string.h>
 
 #define HEIGHT 323
-#define WIDTH 33
+#define MAXWIDTH 100
 /* @TODO: But how would I determine these automatically? */
 
 int main() {
-  char field[HEIGHT][WIDTH];
-  char line[WIDTH];
+  char field[HEIGHT][MAXWIDTH];
+  char line[MAXWIDTH];
   int i = 0;
+  int forest_width;
   FILE *geography = fopen("forest.txt", "r");
 
-  while(fgets(line, WIDTH, geography)) {
+  while(fgets(line, MAXWIDTH, geography)) {
     strcpy(field[i], line);
+    if (i == 0) {
+      forest_width = strnlen(line, MAXWIDTH);
+      printf("Forest Width: %d\n\n", forest_width);
+    }
     /* Strip the ending newline -> replace it with a NULL */
     field[i][strlen(line) - 1] = '\0';
     i++;
@@ -49,7 +54,7 @@ int main() {
 
     // The for loop moves us down, this moves us over, then wrap around
     x += 3;
-    x = x % (WIDTH - 2);
+    x = x % (forest_width - 1);
   }
 
   printf("You crashed into %d trees on the original slope.\n\n", count);
@@ -82,7 +87,7 @@ int main() {
 
       // The for loop moves us down, this moves us over, then wrap around
       x += slopes[attempt][1];
-      x = x % (WIDTH - 2);
+      x = x % (forest_width - 1);
     }
 
     // Save the number of trees we hit on this attempt
