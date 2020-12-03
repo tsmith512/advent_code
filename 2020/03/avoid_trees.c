@@ -92,12 +92,12 @@ int main() {
   }
 
   // Now that we have each slope, multiply them together.
-  long tree_product = slopes[0][2];
+  uint64_t tree_product = slopes[0][2];
   for (int attempt = 1; attempt < 5; attempt++) {
-    tree_product = tree_product * slopes[attempt][2];
+    tree_product *= slopes[attempt][2];
   }
 
-  printf("The product of those numbers is %d\n\n", tree_product);
+  printf("The product of those numbers is %lu\n\n", tree_product);
 
   return 0;
 }
