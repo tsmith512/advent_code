@@ -98,6 +98,13 @@ int main() {
   }
 
   printf("The product of those numbers is %lu\n\n", tree_product);
+  // Part Two answer:
+  // You crashed into 86 trees on the 1,1 slope.
+  // You crashed into 159 trees on the 1,3 slope.
+  // You crashed into 97 trees on the 1,5 slope.
+  // You crashed into 88 trees on the 1,7 slope.
+  // You crashed into 55 trees on the 2,1 slope.
+  // The product of those numbers is 6419669520
 
   return 0;
 }
