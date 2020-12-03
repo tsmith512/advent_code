@@ -54,5 +54,40 @@ $PasswordList | ForEach-Object {
   }
 }
 
-"There were $ValidPasswords that passed the test"
-# Part One answer: There were 655 that passed the test
+"There were $ValidPasswords that passed the first test"
+# Part One answer: There were 655 that passed the first test
+
+#  ___          _     ___
+# | _ \__ _ _ _| |_  |_  )
+# |  _/ _` | '_|  _|  / /
+# |_| \__,_|_|  \__| /___|
+#
+# "Min" and "Max" aren't ranges, they're positions. The given character must
+# appear at either MIN-index or MAX-index, with a 1-based address space.
+
+function CheckIndexes {
+  param(
+    [string]$String,
+    [string]$Char,
+    [int]$PosA,
+    [int]$PosB
+  )
+
+  $Split = $String.ToCharArray()
+
+  # Look for the match at one index or the other, subtract one because the given
+  # position is one-based but PowerShell array indicies are zero-based.
+  (($Split[$PosA - 1] -eq $Char) -xor ($Split[$PosB - 1] -eq $Char))
+}
+
+$ValidPasswords = 0
+
+$PasswordList | ForEach-Object {
+  $Values = ParseRow $_
+  if (CheckIndexes $Values.Passwd $Values.Char $Values.Min $Values.Max) {
+    $ValidPasswords++
+  }
+}
+
+"There were $ValidPasswords that passed the second test"
+# Part Two answer: There were 673 that passed the second test
