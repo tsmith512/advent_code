@@ -15,13 +15,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define HEIGHT 323
-#define WIDTH 33
+#define HEIGHT 11
+#define WIDTH 13
 /* @TODO: But how would I determine these automatically? */
 
 int main() {
   char field[HEIGHT][WIDTH];
-  char line[WIDTH + 1];
+  char line[WIDTH];
   int i = 0;
   FILE *geography = fopen("forest.txt", "r");
 
