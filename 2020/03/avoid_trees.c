@@ -20,28 +20,30 @@
 /* @TODO: These are maxes, can I allocate `field` only as big as it needs to be? */
 
 int main() {
+  // Variables for the forest
   char field[MAXHEIGHT][MAXWIDTH];
+  int forest_width = 0, forest_height = 0;
+
+  // For processing the file
   char line[MAXWIDTH];
-  int i = 0;
-  int forest_width;
-  int forest_height;
   FILE *geography = fopen("forest.txt", "r");
 
   while(fgets(line, MAXWIDTH, geography)) {
-    strcpy(field[i], line);
-    if (i == 0) {
+    // Plant the forest, one row at a time, using the current height as index
+    strcpy(field[forest_height], line);
+
+    // On the first line, check how wide the forest patch is
+    if (forest_height == 0) {
       forest_width = strnlen(line, MAXWIDTH);
       printf("Forest Width: %d\n", forest_width);
     }
-    /* Strip the ending newline -> replace it with a NULL */
-    field[i][strlen(line) - 1] = '\0';
-    i++;
+
+    forest_height++;
   }
 
-  forest_height = i + 1;
-
+  // We need total height, not zero-based index of the last line.
+  forest_height += 1;
   printf("Forest Height: %d\n\n", forest_height);
-
 
   fclose(geography);
 
