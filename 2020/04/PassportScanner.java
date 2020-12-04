@@ -60,7 +60,7 @@ class PassportScanner {
 
   public static void main(String[] args) throws FileNotFoundException {
     // Set up the input file
-    File passportBatchFile = new File("./passport_batch.txt");
+    File passportBatchFile = new File("./sample_batch.txt");
     Scanner passportBatch = new Scanner(passportBatchFile);
     passportBatch.useDelimiter("\n{2,}");
 
