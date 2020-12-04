@@ -40,6 +40,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 class PassportScanner {
+  public static String[] fieldsRequired = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"};
+
   public static void main(String[] args) throws FileNotFoundException {
     // Set up the input file
     File passportBatchFile = new File("./sample_batch.txt");
@@ -56,9 +58,38 @@ class PassportScanner {
 
     // Close the scanner once we've captured everything
     passportBatch.close();
-
-    // Sample: print one them
     System.out.println("Batch contains " + passportObjects.size() + " passport objects.");
-    System.out.println("The first looks like:\n" + passportObjects.get(0));
+
+    // Validate each passport object (String)
+    int validPassports = 0;
+    for (int i = 0; i < passportObjects.size(); i++) {
+      if (checkPassport(passportObjects.get(i))) {
+        validPassports++;
+      }
+    }
+
+    // Report on the total
+    System.out.println("Batch contains " + validPassports + " valid passports.");
+  }
+
+  /**
+   * Take the passport string and figure out if it has all the required fields.
+   * @param passport
+   * @return boolean is passport valid?
+   */
+  public static Boolean checkPassport(String passport) {
+    // Fields are either space or newline separated
+    passport = passport.replaceAll("\\s", "\n");
+
+    // Assume true because that sure seems like a great idea :upside_down_face:
+    Boolean valid = true;
+
+    for (String field : PassportScanner.fieldsRequired) {
+      if (!passport.contains(field)) {
+        valid = false;
+      }
+    }
+
+    return valid;
   }
 }
