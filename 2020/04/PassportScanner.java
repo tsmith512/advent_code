@@ -56,9 +56,11 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 class PassportScanner {
   public static String[] fieldsRequired = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"};
+  public static String[] eyeColorOptions = {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"};
 
   public static void main(String[] args) throws FileNotFoundException {
     // Set up the input file
@@ -157,6 +159,10 @@ class PassportScanner {
           Matcher hairColorMatches = hairColorParser.matcher(kv[1].toUpperCase());
           valid = (hairColorMatches.matches());
           System.out.println("Hair color: " + kv[1].toUpperCase() + " -- " + valid);
+          break;
+        case "ecl":
+          valid = (java.util.Arrays.asList(eyeColorOptions).indexOf(kv[1]) > -1);
+          System.out.println("Eye color: " + kv[1].toUpperCase() + " -- " + valid);
           break;
       }
     }
