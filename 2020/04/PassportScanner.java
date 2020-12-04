@@ -79,6 +79,7 @@ class PassportScanner {
     // Validate each passport object (String)
     int validPassports = 0;
     for (int i = 0; i < passportObjects.size(); i++) {
+      System.out.println("Checking Passport #" + i);
       if (checkPassport(passportObjects.get(i))) {
         validPassports++;
       }
@@ -95,17 +96,42 @@ class PassportScanner {
    */
   public static Boolean checkPassport(String passport) {
     // Fields are either space or newline separated
-    passport = passport.replaceAll("\\s", "\n");
+    String[] fields = passport.split("\\s");
 
     // Assume true because that sure seems like a great idea :upside_down_face:
     Boolean valid = true;
 
+    // Keeping logic from Part 1, ensure all required fields are present.
     for (String field : PassportScanner.fieldsRequired) {
       if (!passport.contains(field)) {
-        valid = false;
+        System.out.println("Passport is missing required fields.");
+        return false;
       }
     }
 
+    for (String field : fields) {
+      String[] kv = field.split(":");
+
+      switch (kv[0]) {
+        case "byr":
+          System.out.println("Birth Year: " + kv[1] + " -- " + checkRange(1920, Integer.valueOf(kv[1]).intValue(), 2002).toString());
+          valid = checkRange(1920, Integer.valueOf(kv[1]).intValue(), 2002);
+          break;
+        case "iyr":
+          System.out.println("Issue Year: " + kv[1] + " -- " + checkRange(2010, Integer.valueOf(kv[1]).intValue(), 2020).toString());
+          valid = checkRange(2010, Integer.valueOf(kv[1]).intValue(), 2020);
+          break;
+        case "eyr":
+          System.out.println("Expiration Year: " + kv[1] + " -- " + checkRange(2020, Integer.valueOf(kv[1]).intValue(), 2030).toString());
+          valid = checkRange(2020, Integer.valueOf(kv[1]).intValue(), 2030);
+          break;
+      }
+    }
+    System.out.println("\n");
     return valid;
+  }
+
+  public static Boolean checkRange(int low, int check, int high) {
+    return ((low - 1) < check) && (check < (high + 1));
   }
 }
