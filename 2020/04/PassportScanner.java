@@ -65,7 +65,6 @@ class PassportScanner {
   public static String[] eyeColorOptions = {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"};
   public static Pattern heightParser = Pattern.compile("(\\d{2,3})(cm|in)");
   public static Pattern hairColorParser = Pattern.compile("#[0-9A-F]{6}");
-  public static Pattern passportNumberParser = Pattern.compile("\\d{9}");
 
   public static void main(String[] args) throws FileNotFoundException {
     // Set up the input file
@@ -183,8 +182,7 @@ class PassportScanner {
           break;
 
         case "pid":
-          Matcher passportNumberMatches = passportNumberParser.matcher(kv[1]);
-          valid = (passportNumberMatches.matches());
+          valid = (kv[1].matches("\\d{9}"));
           System.out.println("Passport Number: " + kv[1] + " -- " + valid);
           break;
 
