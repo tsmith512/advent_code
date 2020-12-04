@@ -25,13 +25,9 @@
  *
  * Count objects from the input file which meet these requirements.
  *
- * In English:
- * - Read the file into something that can be processed in its entirety
- * - Explode it by /\n{2,}/ to separate objects
- * - Foreach, explode by /\s/ to separate keys
- * - Foreach object, check for required keys.
- *   - Count objects that pass
- * - Return count
+ * Part One answer:
+ *   Batch contains 260 passport objects.
+ *   Batch contains 222 valid passports.
 */
 
 import java.io.File;
@@ -44,7 +40,7 @@ class PassportScanner {
 
   public static void main(String[] args) throws FileNotFoundException {
     // Set up the input file
-    File passportBatchFile = new File("./sample_batch.txt");
+    File passportBatchFile = new File("./passport_batch.txt");
     Scanner passportBatch = new Scanner(passportBatchFile);
     passportBatch.useDelimiter("\n{2,}");
 
