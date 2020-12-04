@@ -37,19 +37,28 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 class PassportScanner {
   public static void main(String[] args) throws FileNotFoundException {
+    // Set up the input file
     File passportBatchFile = new File("./sample_batch.txt");
-    Scanner passportObjects = new Scanner(passportBatchFile);
-    passportObjects.useDelimiter("\n{2,}");
+    Scanner passportBatch = new Scanner(passportBatchFile);
+    passportBatch.useDelimiter("\n{2,}");
 
-    int i = 0;
-    while(passportObjects.hasNext()) {
-      String line = passportObjects.next();
-      System.out.println(i);
-      System.out.println(line);
-      i++;
+    // Set up array of passport "objects"
+    ArrayList<String> passportObjects = new ArrayList<String>();
+
+    // Step through the batch file and pull out individual records
+    while(passportBatch.hasNext()) {
+      passportObjects.add(passportBatch.next());
     }
+
+    // Close the scanner once we've captured everything
+    passportBatch.close();
+
+    // Sample: print one them
+    System.out.println("Batch contains " + passportObjects.size() + " passport objects.");
+    System.out.println("The first looks like:\n" + passportObjects.get(0));
   }
 }
