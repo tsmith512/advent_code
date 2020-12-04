@@ -64,7 +64,6 @@ class PassportScanner {
   public static String[] fieldsRequired = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"};
   public static String[] eyeColorOptions = {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"};
   public static Pattern heightParser = Pattern.compile("(\\d{2,3})(cm|in)");
-  public static Pattern hairColorParser = Pattern.compile("#[0-9A-F]{6}");
 
   public static void main(String[] args) throws FileNotFoundException {
     // Set up the input file
@@ -86,6 +85,7 @@ class PassportScanner {
 
     // Validate each passport object (String)
     int validPassports = 0;
+
     for (int i = 0; i < passportObjects.size(); i++) {
       System.out.println("-- Checking Passport #" + i);
       if (checkPassport(passportObjects.get(i))) {
@@ -171,8 +171,7 @@ class PassportScanner {
           break;
 
         case "hcl":
-          Matcher hairColorMatches = hairColorParser.matcher(kv[1].toUpperCase());
-          valid = (hairColorMatches.matches());
+          valid = (kv[1].toUpperCase().matches("#[0-9A-F]{6}"));
           System.out.println("Hair color: " + kv[1].toUpperCase() + " -- " + valid);
           break;
 
