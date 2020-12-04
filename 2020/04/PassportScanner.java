@@ -129,17 +129,17 @@ class PassportScanner {
 
       switch (kv[0]) {
         case "byr":
-          valid = checkRange(1920, Integer.valueOf(kv[1]).intValue(), 2002);
+          valid = checkRange(1920, Integer.parseInt(kv[1]), 2002);
           System.out.println("Birth Year: " + kv[1] + " -- " + valid.toString());
           break;
 
         case "iyr":
-          valid = checkRange(2010, Integer.valueOf(kv[1]).intValue(), 2020);
+          valid = checkRange(2010, Integer.parseInt(kv[1]), 2020);
           System.out.println("Issue Year: " + kv[1] + " -- " + valid.toString());
           break;
 
         case "eyr":
-          valid = checkRange(2020, Integer.valueOf(kv[1]).intValue(), 2030);
+          valid = checkRange(2020, Integer.parseInt(kv[1]), 2030);
           System.out.println("Expiration Year: " + kv[1] + " -- " + valid.toString());
           break;
 
@@ -157,11 +157,11 @@ class PassportScanner {
           // For the provided unit, is the height acceptable?
           switch (heightMatches.group(2)) {
             case "in":
-              valid = checkRange(59, Integer.valueOf(heightMatches.group(1)).intValue(), 76);
+              valid = checkRange(59, Integer.parseInt(heightMatches.group(1)), 76);
               System.out.println("Height: " + heightMatches.group(1) + " inches -- " + valid.toString());
               break;
             case "cm":
-              valid = checkRange(150, Integer.valueOf(heightMatches.group(1)).intValue(), 193);
+              valid = checkRange(150, Integer.parseInt(heightMatches.group(1)), 193);
               System.out.println("Height: " + heightMatches.group(1) + " centimeters -- " + valid.toString());
               break;
             default:
