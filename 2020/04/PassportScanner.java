@@ -133,7 +133,7 @@ class PassportScanner {
 
           // Was height specified correctly?
           if (!heightMatches.matches()) {
-            System.out.println("Height: Invalid format or unit -- false");
+            System.out.println("Height: Invalid format or unit " + kv[1] + " -- false");
             valid = false;
             break;
           }
@@ -149,11 +149,17 @@ class PassportScanner {
               break;
             default:
               valid = false;
-              System.out.println("Height: Invalid unit -- false");
+              System.out.println("Height: Invalid unit " + kv[1] + " -- false");
               break;
           }
-        }
+        case "hcl":
+          Pattern hairColorParser = Pattern.compile("#[0-9A-F]{6}");
+          Matcher hairColorMatches = hairColorParser.matcher(kv[1].toUpperCase());
+          valid = (hairColorMatches.matches());
+          System.out.println("Hair color: " + kv[1].toUpperCase() + " -- " + valid);
+          break;
       }
+    }
     System.out.println("\n");
     return valid;
   }
