@@ -61,6 +61,9 @@ import java.util.Arrays;
 class PassportScanner {
   public static String[] fieldsRequired = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"};
   public static String[] eyeColorOptions = {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"};
+  public static Pattern heightParser = Pattern.compile("(\\d{2,3})(cm|in)");
+  public static Pattern hairColorParser = Pattern.compile("#[0-9A-F]{6}");
+  public static Pattern passportNumberParser = Pattern.compile("\\d{9}");
 
   public static void main(String[] args) throws FileNotFoundException {
     // Set up the input file
@@ -83,9 +86,12 @@ class PassportScanner {
     // Validate each passport object (String)
     int validPassports = 0;
     for (int i = 0; i < passportObjects.size(); i++) {
-      System.out.println("Checking Passport #" + i);
+      System.out.println("-- Checking Passport #" + i);
       if (checkPassport(passportObjects.get(i))) {
+        System.out.println("-- PASS\n");
         validPassports++;
+      } else {
+        System.out.println("-- FAIL\n");
       }
     }
 
@@ -130,7 +136,6 @@ class PassportScanner {
           System.out.println("Expiration Year: " + kv[1] + " -- " + valid.toString());
           break;
         case "hgt":
-          Pattern heightParser = Pattern.compile("(\\d{2,3})(cm|in)");
           Matcher heightMatches = heightParser.matcher(kv[1]);
 
           // Was height specified correctly?
@@ -155,7 +160,6 @@ class PassportScanner {
               break;
           }
         case "hcl":
-          Pattern hairColorParser = Pattern.compile("#[0-9A-F]{6}");
           Matcher hairColorMatches = hairColorParser.matcher(kv[1].toUpperCase());
           valid = (hairColorMatches.matches());
           System.out.println("Hair color: " + kv[1].toUpperCase() + " -- " + valid);
@@ -165,14 +169,23 @@ class PassportScanner {
           System.out.println("Eye color: " + kv[1].toUpperCase() + " -- " + valid);
           break;
         case "pid":
-          Pattern passportNumberParser = Pattern.compile("\\d{9}");
           Matcher passportNumberMatches = passportNumberParser.matcher(kv[1]);
           valid = (passportNumberMatches.matches());
           System.out.println("Passport Number: " + kv[1] + " -- " + valid);
           break;
+        case "cid":
+          //         _
+          // __ __ _| |_  ___ ___ ___
+          // \ V  V / ' \/ -_) -_) -_)
+          //  \_/\_/|_||_\___\___\___|
+          //
+          break;
+        default:
+          valid = false;
+          System.out.println("Unexpected Field Found: " + field + " -- " + valid);
+          break;
       }
     }
-    System.out.println("\n");
     return valid;
   }
 
