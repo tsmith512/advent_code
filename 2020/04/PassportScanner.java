@@ -107,6 +107,7 @@ class PassportScanner {
   public static Boolean checkPassport(String passport) {
     // Fields are either space or newline separated
     String[] fields = passport.split("\\s");
+    Arrays.sort(fields);
 
     // Assume true because that sure seems like a great idea :upside_down_face:
     Boolean valid = true;
@@ -159,6 +160,7 @@ class PassportScanner {
               System.out.println("Height: Invalid unit " + kv[1] + " -- false");
               break;
           }
+          break;
         case "hcl":
           Matcher hairColorMatches = hairColorParser.matcher(kv[1].toUpperCase());
           valid = (hairColorMatches.matches());
@@ -184,6 +186,14 @@ class PassportScanner {
           valid = false;
           System.out.println("Unexpected Field Found: " + field + " -- " + valid);
           break;
+      }
+
+      // @TODO: Test cases are currently all written as (valid = (test)), so we
+      // need to bail if we ever get a fail. Otherwise the validity of the
+      // passport will always be the validity of the last field. How could I
+      // check everything but keep a failure once it is registered?
+      if (!valid) {
+        break;
       }
     }
     return valid;
