@@ -34,25 +34,22 @@
  * - Return count
 */
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 class PassportScanner {
-  public static void main(String[] args) {
-    byte[] passportsRawContent = {};
+  public static void main(String[] args) throws FileNotFoundException {
+    File passportBatchFile = new File("./sample_batch.txt");
+    Scanner passportObjects = new Scanner(passportBatchFile);
+    passportObjects.useDelimiter("\n{2,}");
 
-    // Read the file into a byte array
-    try {
-      passportsRawContent = Files.readAllBytes(Paths.get("./sample_batch.txt"));
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-
-    try {
-      System.out.write(passportsRawContent);
-    } catch (IOException e) {
-      e.printStackTrace();
+    int i = 0;
+    while(passportObjects.hasNext()) {
+      String line = passportObjects.next();
+      System.out.println(i);
+      System.out.println(line);
+      i++;
     }
   }
 }
