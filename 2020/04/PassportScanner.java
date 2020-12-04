@@ -34,8 +34,25 @@
  * - Return count
 */
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 class PassportScanner {
   public static void main(String[] args) {
-    System.out.println("Hello, World!");
+    byte[] passportsRawContent = {};
+
+    // Read the file into a byte array
+    try {
+      passportsRawContent = Files.readAllBytes(Paths.get("./sample_batch.txt"));
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    try {
+      System.out.write(passportsRawContent);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }
