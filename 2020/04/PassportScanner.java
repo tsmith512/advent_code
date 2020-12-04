@@ -28,7 +28,27 @@
  * Part One answer:
  *   Batch contains 260 passport objects.
  *   Batch contains 222 valid passports.
-*/
+ *
+ *  ___          _     ___
+ * | _ \__ _ _ _| |_  |_  )
+ * |  _/ _` | '_|  _|  / /
+ * |_| \__,_|_|  \__| /___|
+ *
+ * Field-level validation within each object. ("range" is inclusive)
+ * - cid remains optional
+ * - byr: /\d{4}/ range 1920 - 2002
+ * - iyr: /\d{4}/ range 2010 - 2020
+ * - eyr: /\d{4}/ range 2020 - 2030
+ * - hgt: /\d{2,3}(cm|in)/
+ *        for "cm" suffix: range 150 - 193
+ *        for "in" suffix: range 59 - 76
+ * - hcl: /#[0-9a-f]{6}/
+ * - ecl: /(amb|blu|brn|gry|grn|hzl|oth)
+ * - pid: /\d{9}/
+ *
+ * Count objects from the input file which have required fields with valid values.
+ *
+ */
 
 import java.io.File;
 import java.io.FileNotFoundException;
