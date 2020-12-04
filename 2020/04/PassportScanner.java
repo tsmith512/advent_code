@@ -48,6 +48,8 @@
  *
  * Count objects from the input file which have required fields with valid values.
  *
+ * Part Two answer:
+ *   Batch contains 140 valid passports.
  */
 
 import java.io.File;
@@ -67,7 +69,7 @@ class PassportScanner {
 
   public static void main(String[] args) throws FileNotFoundException {
     // Set up the input file
-    File passportBatchFile = new File("./sample_batch.txt");
+    File passportBatchFile = new File("./passport_batch.txt");
     Scanner passportBatch = new Scanner(passportBatchFile);
     passportBatch.useDelimiter("\n{2,}");
 
