@@ -164,6 +164,12 @@ class PassportScanner {
           valid = (java.util.Arrays.asList(eyeColorOptions).indexOf(kv[1]) > -1);
           System.out.println("Eye color: " + kv[1].toUpperCase() + " -- " + valid);
           break;
+        case "pid":
+          Pattern passportNumberParser = Pattern.compile("\\d{9}");
+          Matcher passportNumberMatches = passportNumberParser.matcher(kv[1]);
+          valid = (passportNumberMatches.matches());
+          System.out.println("Passport Number: " + kv[1] + " -- " + valid);
+          break;
       }
     }
     System.out.println("\n");
