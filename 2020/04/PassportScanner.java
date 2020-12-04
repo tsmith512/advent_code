@@ -109,6 +109,8 @@ class PassportScanner {
   public static Boolean checkPassport(String passport) {
     // Fields are either space or newline separated
     String[] fields = passport.split("\\s");
+
+    // Sort the fields so that the output is easier to read
     Arrays.sort(fields);
 
     // Assume true because that sure seems like a great idea :upside_down_face:
@@ -130,15 +132,19 @@ class PassportScanner {
           valid = checkRange(1920, Integer.valueOf(kv[1]).intValue(), 2002);
           System.out.println("Birth Year: " + kv[1] + " -- " + valid.toString());
           break;
+
         case "iyr":
           valid = checkRange(2010, Integer.valueOf(kv[1]).intValue(), 2020);
           System.out.println("Issue Year: " + kv[1] + " -- " + valid.toString());
           break;
+
         case "eyr":
           valid = checkRange(2020, Integer.valueOf(kv[1]).intValue(), 2030);
           System.out.println("Expiration Year: " + kv[1] + " -- " + valid.toString());
           break;
+
         case "hgt":
+          // Height could be in inches or cm, match and capture components
           Matcher heightMatches = heightParser.matcher(kv[1]);
 
           // Was height specified correctly?
@@ -148,6 +154,7 @@ class PassportScanner {
             break;
           }
 
+          // For the provided unit, is the height acceptable?
           switch (heightMatches.group(2)) {
             case "in":
               valid = checkRange(59, Integer.valueOf(heightMatches.group(1)).intValue(), 76);
@@ -163,20 +170,24 @@ class PassportScanner {
               break;
           }
           break;
+
         case "hcl":
           Matcher hairColorMatches = hairColorParser.matcher(kv[1].toUpperCase());
           valid = (hairColorMatches.matches());
           System.out.println("Hair color: " + kv[1].toUpperCase() + " -- " + valid);
           break;
+
         case "ecl":
           valid = (java.util.Arrays.asList(eyeColorOptions).indexOf(kv[1]) > -1);
           System.out.println("Eye color: " + kv[1].toUpperCase() + " -- " + valid);
           break;
+
         case "pid":
           Matcher passportNumberMatches = passportNumberParser.matcher(kv[1]);
           valid = (passportNumberMatches.matches());
           System.out.println("Passport Number: " + kv[1] + " -- " + valid);
           break;
+
         case "cid":
           //         _
           // __ __ _| |_  ___ ___ ___
@@ -184,6 +195,7 @@ class PassportScanner {
           //  \_/\_/|_||_\___\___\___|
           //
           break;
+
         default:
           valid = false;
           System.out.println("Unexpected Field Found: " + field + " -- " + valid);
@@ -201,6 +213,13 @@ class PassportScanner {
     return valid;
   }
 
+  /**
+   * Determine if a number is within an acceptable range, inclusively
+   * @param low int lower limit
+   * @param check int number to check
+   * @param high int upper limit
+   * @return boolean is check number between the other two?
+   */
   public static Boolean checkRange(int low, int check, int high) {
     return ((low - 1) < check) && (check < (high + 1));
   }
