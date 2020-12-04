@@ -53,6 +53,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.ArrayList;
 
 class PassportScanner {
@@ -114,19 +116,44 @@ class PassportScanner {
 
       switch (kv[0]) {
         case "byr":
-          System.out.println("Birth Year: " + kv[1] + " -- " + checkRange(1920, Integer.valueOf(kv[1]).intValue(), 2002).toString());
           valid = checkRange(1920, Integer.valueOf(kv[1]).intValue(), 2002);
+          System.out.println("Birth Year: " + kv[1] + " -- " + valid.toString());
           break;
         case "iyr":
-          System.out.println("Issue Year: " + kv[1] + " -- " + checkRange(2010, Integer.valueOf(kv[1]).intValue(), 2020).toString());
           valid = checkRange(2010, Integer.valueOf(kv[1]).intValue(), 2020);
+          System.out.println("Issue Year: " + kv[1] + " -- " + valid.toString());
           break;
         case "eyr":
-          System.out.println("Expiration Year: " + kv[1] + " -- " + checkRange(2020, Integer.valueOf(kv[1]).intValue(), 2030).toString());
           valid = checkRange(2020, Integer.valueOf(kv[1]).intValue(), 2030);
+          System.out.println("Expiration Year: " + kv[1] + " -- " + valid.toString());
           break;
+        case "hgt":
+          Pattern heightParser = Pattern.compile("(\\d{2,3})(cm|in)");
+          Matcher heightMatches = heightParser.matcher(kv[1]);
+
+          // Was height specified correctly?
+          if (!heightMatches.matches()) {
+            System.out.println("Height: Invalid format or unit -- false");
+            valid = false;
+            break;
+          }
+
+          switch (heightMatches.group(2)) {
+            case "in":
+              valid = checkRange(59, Integer.valueOf(heightMatches.group(1)).intValue(), 76);
+              System.out.println("Height: " + heightMatches.group(1) + " inches -- " + valid.toString());
+              break;
+            case "cm":
+              valid = checkRange(150, Integer.valueOf(heightMatches.group(1)).intValue(), 193);
+              System.out.println("Height: " + heightMatches.group(1) + " centimeters -- " + valid.toString());
+              break;
+            default:
+              valid = false;
+              System.out.println("Height: Invalid unit -- false");
+              break;
+          }
+        }
       }
-    }
     System.out.println("\n");
     return valid;
   }
