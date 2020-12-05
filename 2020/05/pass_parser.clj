@@ -27,6 +27,15 @@
 
 (ns boardingpass.parser)
 
-(defn process-boarding-pass [raw] (str "Row: " (subs raw 0 7) " || Col: " (subs raw 7)))
+(defn split-components [raw]
+  (try
+    (if (= (count raw) 10)
+      (list (subs raw 0 7) (subs raw 7))
+      (throw (Exception. (str "Invalid Boarding Pass String: " raw))))
+    (catch
+      Exception e (println (.getMessage e))
+      (System/exit 1))))
 
-(println (process-boarding-pass "FBFBBFFRLR"))
+(defn process-pass [input] (split-components input))
+
+(println (process-pass "FBFBBFFRLR"))
