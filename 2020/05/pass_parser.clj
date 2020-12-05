@@ -25,6 +25,8 @@
 ; - Capture the highest either by finding it in the array or keeping track of
 ;   the highest we've seen as we go.
 
-(defn process-boarding-pass [raw] (str "TODO: " raw))
+(ns boardingpass.parser)
+
+(defn process-boarding-pass [raw] (str "Row: " (subs raw 0 7) " || Col: " (subs raw 7)))
 
 (println (process-boarding-pass "FBFBBFFRLR"))
