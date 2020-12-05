@@ -24,3 +24,7 @@
 ; - Calc the "seat ID"
 ; - Capture the highest either by finding it in the array or keeping track of
 ;   the highest we've seen as we go.
+
+(defn greet [name] (println "Hello," name "!"))
+
+(greet "World")
