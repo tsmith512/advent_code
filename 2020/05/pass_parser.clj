@@ -28,20 +28,21 @@
 (ns boardingpass.parser)
 
 (def airplane-rows [0 127])
-
 (def airplane-cols [0 7])
 
+; Split a boarding pass into its row and column designations
 (defn split-components [raw]
   (try
     (if (= (count raw) 10)
-      (list (subs raw 0 7) (subs raw 7))
+      [(subs raw 0 7) (subs raw 7)]
       (throw (Exception. (str "Invalid Boarding Pass String: " raw))))
     (catch
       Exception e (println (.getMessage e))
       (System/exit 1))))
 
+; Recursively determine the row (or column) index of a designation
+; (aka "decode that binary FBFBBFF into its decimal equivalent the Lisp way")
 (defn locate-index [min max input]
-  (println min max input)
   (if (= min max)
     min
     (let [mid (quot (+ max min) 2)]
@@ -50,9 +51,12 @@
         (recur (+ mid 1) max (subs input 1)) ; Backward (higher number) of current midpoint
         ))))
 
+; Swap column designation letters with the row letters of the same meaning so
+; I can reuse locate-index on them.
 (defn translate-cols [area]
   (str (clojure.string/replace (clojure.string/replace area "B" "R") "F" "L")))
 
+; For a given row/col designation, figure out which type it is and get the num
 (defn decode-area [area]
   (if (clojure.string/includes? area "B")
     ; It's a B/F situation, it's a row
@@ -60,10 +64,15 @@
     ; It's an L/R situation, it's a column
     (locate-index (get airplane-cols 0) (get airplane-cols 1) (translate-cols area))))
 
+; Given a list of area designation components, decode them
 (defn process-area-ids [pass-components]
   (for [area pass-components] (decode-area area)))
 
+; Split a boarding pass designation into its pieces, decode them, then multiply
+; to get the "Seat ID"
 (defn process-pass [input]
-  (process-area-ids (split-components input)))
+  (let [areas (process-area-ids (split-components input))]
+    [(nth areas 0) (nth areas 1) (reduce * areas)])
+  )
 
 (println (process-pass "FBFBBFFRLR"))
