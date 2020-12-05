@@ -27,6 +27,10 @@
 
 (ns boardingpass.parser)
 
+(def airplane-rows [0 127])
+
+(def airplane-cols [0 7])
+
 (defn split-components [raw]
   (try
     (if (= (count raw) 10)
@@ -36,8 +40,25 @@
       Exception e (println (.getMessage e))
       (System/exit 1))))
 
+(defn locate-index [min max input]
+  (println min max input)
+  (if (= min max)
+    min
+    (let [mid (quot (+ max min) 2)]
+      (if (clojure.string/starts-with? input "F")
+        (recur min mid (subs input 1)) ; Forward of current midpoint
+        (recur (+ mid 1) max (subs input 1)) ; Backward (higher number) of current midpoint
+        ))))
+
+(defn translate-cols [area]
+  (str (clojure.string/replace (clojure.string/replace area "B" "R") "F" "L")))
+
 (defn decode-area [area]
-  (clojure.string/replace (clojure.string/replace area #"[FL]" "0") #"[BR]" "1"))
+  (if (clojure.string/includes? area "B")
+    ; It's a B/F situation, it's a row
+    (locate-index (get airplane-rows 0) (get airplane-rows 1) area)
+    ; It's an L/R situation, it's a column
+    (locate-index (get airplane-cols 0) (get airplane-cols 1) (translate-cols area))))
 
 (defn process-area-ids [pass-components]
   (for [area pass-components] (decode-area area)))
