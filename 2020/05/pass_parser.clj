@@ -29,6 +29,7 @@
 
 (def airplane-rows [0 127])
 (def airplane-cols [0 7])
+(def batch-file "sample_passes.txt")
 
 ; Split a boarding pass into its row and column designations
 (defn split-components [raw]
@@ -48,8 +49,7 @@
     (let [mid (quot (+ max min) 2)]
       (if (clojure.string/starts-with? input "F")
         (recur min mid (subs input 1)) ; Forward of current midpoint
-        (recur (+ mid 1) max (subs input 1)) ; Backward (higher number) of current midpoint
-        ))))
+        (recur (+ mid 1) max (subs input 1)))))) ; Backward (higher number) of current midpoint
 
 ; Swap column designation letters with the row letters of the same meaning so
 ; I can reuse locate-index on them.
@@ -75,4 +75,30 @@
     [(nth areas 0) (nth areas 1) (reduce * areas)])
   )
 
-(println (process-pass "FBFBBFFRLR"))
+; Snag all the boarding passes from the identified file and decode them all
+(defn decode-all-passes []
+  (let [passes (clojure.string/split (slurp batch-file) #"\n")]
+    (for [pass passes] (process-pass pass))))
+
+(defn find-highest-seat-identifier
+  ; If we don't have a "highest" number to test against, we're starting at 0
+  ([passes] (find-highest-seat-identifier passes 0))
+  ; Get "current" vs test from the Seat ID [0] of the first pass in the stack
+  ([passes known-value] (let [this-value (nth (nth passes 0) 0)]
+    (println "Current: " this-value)
+    (println "Test: " known-value)
+    (println "Passes: " passes)
+    (println "Count Remaining: " (count passes))
+    (if (< (count passes) 2)
+      ; This is the last pass, either we have the biggest already or this is it
+      (max known-value this-value)
+      ; We have a list left, which is bigger, something we knew or this one?
+      (if (< known-value this-value)
+        ; New pass has a higher ID
+        (recur (pop passes) this-value)
+        ; The ID we already knew about was higher
+        (recur (pop passes) known-value)
+      )))))
+
+(println (decode-all-passes))
+(println (find-highest-seat-identifier (decode-all-passes)))
