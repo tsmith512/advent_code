@@ -25,6 +25,6 @@
 ; - Capture the highest either by finding it in the array or keeping track of
 ;   the highest we've seen as we go.
 
-(defn greet [name] (println "Hello," name "!"))
+(defn process-boarding-pass [raw] (str "TODO: " raw))
 
-(greet "World")
+(println (process-boarding-pass "FBFBBFFRLR"))
