@@ -36,6 +36,13 @@
       Exception e (println (.getMessage e))
       (System/exit 1))))
 
-(defn process-pass [input] (split-components input))
+(defn decode-area [area]
+  (clojure.string/replace (clojure.string/replace area #"[FL]" "0") #"[BR]" "1"))
+
+(defn process-area-ids [pass-components]
+  (for [area pass-components] (decode-area area)))
+
+(defn process-pass [input]
+  (process-area-ids (split-components input)))
 
 (println (process-pass "FBFBBFFRLR"))
