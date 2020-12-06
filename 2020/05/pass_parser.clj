@@ -16,17 +16,6 @@
 ;
 ; Determine the highest seat ID.
 
-; In English:
-; - Looking at sample data, `BFFFBBF` -> `1000110` -> 70... this is just binary.
-; - Read in the list of "boarding passes"
-; - Split each string into the first 7 and last 3 characters
-; - Convert to binary (F/L -> 0, B/R -> 1), then convert to decimal
-; - Calc the "seat ID"
-; - Capture the highest either by finding it in the array or keeping track of
-;   the highest we've seen as we go.
-
-(ns boardingpass.parser)
-
 (def airplane-rows [0 127])
 (def airplane-cols [0 7])
 (def batch-file "boarding_passes.txt")
