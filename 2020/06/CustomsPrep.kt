@@ -19,7 +19,7 @@ import java.io.File
 import java.util.Scanner
 
 class CustomsPrep(inputFile: String) {
-  var groupAnswers: MutableList<String> = ArrayList()
+  var groupAnswers = mutableListOf<String>()
 
   init {
     val customsDataScanner = Scanner(File(inputFile)).useDelimiter("\n\n")
