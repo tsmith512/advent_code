@@ -33,9 +33,7 @@ class CustomsPrep(inputFile: String) {
    * Given a group (one string from groupAnswers), return the number of
    * questions that got a "yes" (count of unique letters).
    */
-  private fun getGroupYesCount(group: String): Int {
-    return group.replace("\n", "").toCharArray().distinct().count()
-  }
+  private fun getGroupYesCount(group: String): Int = group.replace("\n", "").toCharArray().distinct().count()
 
   /**
    * Sum getGroupYesCount across the whole collection.
