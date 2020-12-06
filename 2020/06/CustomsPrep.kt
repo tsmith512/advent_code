@@ -15,6 +15,16 @@
  * Calculate the sum of the count of questions which got a yes WITHIN each group
  */
 
+import java.io.File
+import java.util.Scanner
+
+const val INPUT_FILE = "sample_survey.txt"
+
 fun main() {
-  println("Hello, World!")
+  val customsDataScanner = Scanner(File(INPUT_FILE)).useDelimiter("\n\n")
+
+  while (customsDataScanner.hasNext()) {
+    println("\n\nGroup Declaration:")
+    println(customsDataScanner.next())
+  }
 }
