@@ -108,3 +108,24 @@
 (println "Highest Seat ID: " (find-highest-seat-identifier (decode-all-passes)))
 ; Part One answer:
 ; Highest Seat ID:  976
+
+;  ___          _     ___
+; | _ \__ _ _ _| |_  |_  )
+; |  _/ _` | '_|  _|  / /
+; |_| \__,_|_|  \__| /___|
+;
+; This one is harder to decode into English... I think my goal is to determine
+; which Seat ID is missing from the list, which will be mine. There is a gap at
+; the front and back of the seat map, but the center should be booked solid with
+; only one missing.
+
+(defn -- [x] (- x 1))
+
+(defn walk-passes [passes]
+  (loop [i (-- (count passes))]
+    (let [this (nth passes i) next (nth passes (-- i)) difference (- (nth passes i) (nth passes (-- i)))]
+      (if (> difference 1)
+        (println "There is a gap between Seat IDs" this next ". Your seat must be" (quot (+ this next) 2) "."))
+      (when (> i 7) (recur (-- i))))))
+
+(walk-passes (sort (decode-all-passes)))
