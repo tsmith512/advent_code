@@ -77,18 +77,20 @@
 
 ; Snag all the boarding passes from the identified file and decode them all
 (defn decode-all-passes []
-  (let [passes (clojure.string/split (slurp batch-file) #"\n")]
-    (for [pass passes] (process-pass pass))))
+  (apply list
+    (let [passes (clojure.string/split (slurp batch-file) #"\n")]
+      (for [pass passes] (process-pass pass)))))
 
 (defn find-highest-seat-identifier
   ; If we don't have a "highest" number to test against, we're starting at 0
   ([passes] (find-highest-seat-identifier passes 0))
   ; Get "current" vs test from the Seat ID [0] of the first pass in the stack
-  ([passes known-value] (let [this-value (nth (nth passes 0) 0)]
+  ([passes known-value] (let [this-value (nth (first passes) 2)]
     (println "Current: " this-value)
     (println "Test: " known-value)
     (println "Passes: " passes)
     (println "Count Remaining: " (count passes))
+    (println "")
     (if (< (count passes) 2)
       ; This is the last pass, either we have the biggest already or this is it
       (max known-value this-value)
@@ -100,5 +102,4 @@
         (recur (pop passes) known-value)
       )))))
 
-(println (decode-all-passes))
-(println (find-highest-seat-identifier (decode-all-passes)))
+(println "Highest Seat ID: " (find-highest-seat-identifier (decode-all-passes)))
