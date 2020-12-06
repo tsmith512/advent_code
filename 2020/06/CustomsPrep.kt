@@ -35,18 +35,18 @@ class CustomsPrep(inputFile: String) {
    * Given a group (one string from groupAnswers), return the number of
    * questions that got a "yes" (count of unique letters).
    */
-  private fun getGroupYesCount(group: String): Int = group.replace("\n", "").toCharArray().distinct().count()
+  private fun getGroupAnyoneSaidYesCount(group: String): Int = group.replace("\n", "").toCharArray().distinct().count()
 
   /**
    * Sum getGroupYesCount across the whole collection.
    */
-  fun getEveryoneYesCount(): Int = groupAnswers.fold(0) {x, i -> x + getGroupYesCount(i)}
+  fun getAllGroupsAnyoneYesCount(): Int = groupAnswers.fold(0) {x, i -> x + getGroupAnyoneSaidYesCount(i)}
 }
 
 fun main() {
-  val customsForms = CustomsPrep("customs_survey.txt")
+  val customsForms = CustomsPrep("sample_survey.txt")
 
   // Since I have no clue how to label "sum of count-distinct-per-group Yeses"
-  println("Part one count: " + customsForms.getEveryoneYesCount())
+  println("Part one count: " + customsForms.getAllGroupsAnyoneYesCount())
   // Part one count: 6161
 }
