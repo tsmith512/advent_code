@@ -18,13 +18,19 @@
 import java.io.File
 import java.util.Scanner
 
-const val INPUT_FILE = "sample_survey.txt"
+class CustomsPrep(inputFile: String) {
+  var groupAnswers: MutableList<String> = ArrayList()
+
+  init {
+    val customsDataScanner = Scanner(File(inputFile)).useDelimiter("\n\n")
+
+    while (customsDataScanner.hasNext()) {
+      groupAnswers.add(customsDataScanner.next())
+    }
+  }
+}
 
 fun main() {
-  val customsDataScanner = Scanner(File(INPUT_FILE)).useDelimiter("\n\n")
-
-  while (customsDataScanner.hasNext()) {
-    println("\n\nGroup Declaration:")
-    println(customsDataScanner.next())
-  }
+  val customsForms = CustomsPrep("sample_survey.txt")
+  println(customsForms.groupAnswers)
 }
