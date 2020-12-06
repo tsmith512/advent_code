@@ -29,7 +29,7 @@
 
 (def airplane-rows [0 127])
 (def airplane-cols [0 7])
-(def batch-file "sample_passes.txt")
+(def batch-file "boarding_passes.txt")
 
 ; Split a boarding pass into its row and column designations
 (defn split-components [raw]
@@ -98,3 +98,5 @@
       )))))
 
 (println "Highest Seat ID: " (find-highest-seat-identifier (decode-all-passes)))
+; Part One answer:
+; Highest Seat ID:  976
