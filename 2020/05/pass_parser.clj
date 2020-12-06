@@ -72,7 +72,7 @@
 ; to get the "Seat ID"
 (defn process-pass [input]
   (let [areas (process-area-ids (split-components input))]
-    [(nth areas 0) (nth areas 1) (reduce * areas)])
+    [(nth areas 0) (nth areas 1) (+ (* (nth areas 0) 8) (nth areas 1))])
   )
 
 ; Snag all the boarding passes from the identified file and decode them all
