@@ -70,9 +70,11 @@
 
 ; Split a boarding pass designation into its pieces, decode them, then multiply
 ; to get the "Seat ID"
+;
+; PART TWO CHANGE: Return only a Seat ID, not a vector of row, col, and ID.
 (defn process-pass [input]
   (let [areas (process-area-ids (split-components input))]
-    [(nth areas 0) (nth areas 1) (+ (* (nth areas 0) 8) (nth areas 1))])
+    (+ (* (nth areas 0) 8) (nth areas 1)))
   )
 
 ; Snag all the boarding passes from the identified file and decode them all
@@ -81,16 +83,17 @@
     (let [passes (clojure.string/split (slurp batch-file) #"\n")]
       (for [pass passes] (process-pass pass)))))
 
+; Cycle through the List of boarding passes (Vectors) and inspect the Seat ID
+; (index 2) of each to get the highest. This is essentially a custom reducer.
+;
+; PART TWO CHANGE: process-pass now only returns the ID, not a vector of each
+; so this can be majorly simplifed, as @duplico pointed out. For now, just drop
+; the logic to look at IDs.
 (defn find-highest-seat-identifier
   ; If we don't have a "highest" number to test against, we're starting at 0
   ([passes] (find-highest-seat-identifier passes 0))
   ; Get "current" vs test from the Seat ID [0] of the first pass in the stack
-  ([passes known-value] (let [this-value (nth (first passes) 2)]
-    (println "Current: " this-value)
-    (println "Test: " known-value)
-    (println "Passes: " passes)
-    (println "Count Remaining: " (count passes))
-    (println "")
+  ([passes known-value] (let [this-value (first passes)]
     (if (< (count passes) 2)
       ; This is the last pass, either we have the biggest already or this is it
       (max known-value this-value)
