@@ -134,3 +134,5 @@
       (when (> i 7) (recur (-- i))))))
 
 (walk-passes (sort (decode-all-passes)))
+; Part Two answer:
+; There is a gap between Seat IDs 686 684 . Your seat must be 685 .
