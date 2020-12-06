@@ -119,13 +119,18 @@
 ; the front and back of the seat map, but the center should be booked solid with
 ; only one missing.
 
+; Opposite of (inc x)
 (defn -- [x] (- x 1))
 
+; Average. Though this function name makes for some self-documenting code
+(defn between [x y] (quot (+ x y) 2))
+
+; Walk from the end of the seating pool to the front looking for a gap.
 (defn walk-passes [passes]
   (loop [i (-- (count passes))]
-    (let [this (nth passes i) next (nth passes (-- i)) difference (- (nth passes i) (nth passes (-- i)))]
+    (let [this (nth passes i) next (nth passes (-- i)) difference (- this next)]
       (if (> difference 1)
-        (println "There is a gap between Seat IDs" this next ". Your seat must be" (quot (+ this next) 2) "."))
+        (println "There is a gap between Seat IDs" this next ". Your seat must be" (between this next) "."))
       (when (> i 7) (recur (-- i))))))
 
 (walk-passes (sort (decode-all-passes)))
