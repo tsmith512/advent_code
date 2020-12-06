@@ -15,3 +15,6 @@
  * Calculate the sum of the count of questions which got a yes WITHIN each group
  */
 
+fun main() {
+  println("Hello, World!")
+}
