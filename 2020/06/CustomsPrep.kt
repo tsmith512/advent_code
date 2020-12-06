@@ -27,6 +27,8 @@ class CustomsPrep(inputFile: String) {
     while (customsDataScanner.hasNext()) {
       groupAnswers.add(customsDataScanner.next())
     }
+
+    customsDataScanner.close()
   }
 
   /**
