@@ -38,15 +38,7 @@ class CustomsPrep(inputFile: String) {
   /**
    * Sum getGroupYesCount across the whole collection.
    */
-  fun getEveryoneYesCount(): Int {
-    var total: Int = 0
-
-    groupAnswers.forEach {
-      total += getGroupYesCount(it)
-    }
-
-    return total
-  }
+  fun getEveryoneYesCount(): Int = groupAnswers.fold(0) {x, i -> x + getGroupYesCount(i)}
 }
 
 fun main() {
