@@ -86,6 +86,11 @@
   ([passes] (find-highest-seat-identifier passes 0))
   ; Get "current" vs test from the Seat ID [0] of the first pass in the stack
   ([passes known-value] (let [this-value (nth (first passes) 2)]
+    (println "Current: " this-value)
+    (println "Test: " known-value)
+    (println "Passes: " passes)
+    (println "Count Remaining: " (count passes))
+    (println "")
     (if (< (count passes) 2)
       ; This is the last pass, either we have the biggest already or this is it
       (max known-value this-value)
