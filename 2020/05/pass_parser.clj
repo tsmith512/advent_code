@@ -52,9 +52,9 @@
         (recur (+ mid 1) max (subs input 1)))))) ; Backward (higher number) of current midpoint
 
 ; Swap column designation letters with the row letters of the same meaning so
-; I can reuse locate-index on them.
+; I can reuse locate-index on them. Left/Right --> Front/Back
 (defn translate-cols [area]
-  (str (clojure.string/replace (clojure.string/replace area "B" "R") "F" "L")))
+  (str (clojure.string/replace (clojure.string/replace area "R" "B") "L" "F")))
 
 ; For a given row/col designation, figure out which type it is and get the num
 (defn decode-area [area]
