@@ -28,9 +28,30 @@ class CustomsPrep(inputFile: String) {
       groupAnswers.add(customsDataScanner.next())
     }
   }
+
+  /**
+   * Given a group (one string from groupAnswers), return the number of
+   * questions that got a "yes" (count of unique letters).
+   */
+  private fun getGroupYesCount(group: String): Int {
+    return group.toCharArray().distinct().count()
+  }
+
+  /**
+   * Sum getGroupYesCount across the whole collection.
+   */
+  fun getEveryoneYesCount(): Int {
+    var total: Int = 0
+
+    groupAnswers.forEach {
+      total += getGroupYesCount(it)
+    }
+
+    return total
+  }
 }
 
 fun main() {
   val customsForms = CustomsPrep("sample_survey.txt")
-  println(customsForms.groupAnswers)
+  println(customsForms.getEveryoneYesCount())
 }
