@@ -21,6 +21,9 @@ import java.util.Scanner
 class CustomsPrep(inputFile: String) {
   var groupAnswers = mutableListOf<String>()
 
+  /**
+   * Process the input file and separate groups of passengers.
+   */
   init {
     val customsDataScanner = Scanner(File(inputFile)).useDelimiter("\n\n")
 
@@ -35,7 +38,7 @@ class CustomsPrep(inputFile: String) {
    * Given a group (one string from groupAnswers), return the number of
    * questions that got a "yes" (count of unique letters).
    */
-  private fun getGroupAnyoneSaidYesCount(group: String): Int = group.replace("\n", "").toCharArray().distinct().count()
+  private fun getGroupAnyoneSaidYesCount(group: String): Int = group.replace("\n", "").toSet().count()
 
   /**
    * Sum getGroupYesCount across the whole collection.
@@ -71,10 +74,11 @@ class CustomsPrep(inputFile: String) {
 fun main() {
   val customsForms = CustomsPrep("customs_survey.txt")
 
-  // Since I have no clue how to label "sum of count-distinct-per-group Yeses"
+  // Essentially "sum of count-distinct-per-group"
   println("Part one count: " + customsForms.getAllGroupsAnyoneYesCount())
   // Part one count: 6161
 
+  // "sum of count-intersection-within-group"
   println("Part two count: " + customsForms.getAllGroupsAllYesCount())
   // Part two count: 2971
 }
