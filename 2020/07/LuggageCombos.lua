@@ -22,7 +22,7 @@
 --   only no bag colors remaining that can be contained.
 -- - Count distinct colors from [x].
 
-INPUT = 'luggage_rules.txt'
+INPUT = 'sample_rules.txt'
 
 -- Collect all puzzle rules into a table like this:
 -- rules[child-color][parent-color] == allowable-quantity
@@ -96,7 +96,7 @@ function getparents (childcolor, depth, count)
   end
 
   for parentcolor, allowablequantity in pairs(rules[childcolor]) do
-    print("|" .. string.rep("    ", depth) .. "- " .. childcolor)
+    print("|" .. string.rep("    ", depth) .. "- " .. childcolor .. " < " .. parentcolor)
     count = getparents(parentcolor, depth + 1, count)
   end
 
