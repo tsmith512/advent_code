@@ -74,11 +74,12 @@ class CustomsPrep(inputFile: String) {
 }
 
 fun main() {
-  val customsForms = CustomsPrep("sample_survey.txt")
+  val customsForms = CustomsPrep("customs_survey.txt")
 
   // Since I have no clue how to label "sum of count-distinct-per-group Yeses"
   println("Part one count: " + customsForms.getAllGroupsAnyoneYesCount())
   // Part one count: 6161
 
   println("Part two count: " + customsForms.getAllGroupsAllYesCount())
+  // Part two count: 2971
 }
