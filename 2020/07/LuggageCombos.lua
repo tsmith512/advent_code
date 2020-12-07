@@ -22,4 +22,6 @@
 --   only no bag colors remaining that can be contained.
 -- - Count distinct colors from [x].
 
-print("Hello, World!")
+for rule in io.lines('sample_rules.txt') do
+  print(rule)
+end
