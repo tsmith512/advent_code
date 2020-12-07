@@ -22,6 +22,19 @@
 --   only no bag colors remaining that can be contained.
 -- - Count distinct colors from [x].
 
-for rule in io.lines('sample_rules.txt') do
+INPUT = 'sample_rules.txt'
+
+rules = {}
+
+function parserule(rule)
   print(rule)
+  parentcolor = string.match(rule, "(.+) bags contain")
+  childrule = string.match(rule, "(%d [^.,]+)[.,]?")
+  print(parentcolor)
+  print(childrule)
+end
+
+for rule in io.lines(INPUT) do
+  parserule(rule)
+  print("")
 end
