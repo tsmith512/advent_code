@@ -84,23 +84,25 @@ end
 
 
 -- Find the parents of a particular bag
-function getparents (childcolor, depth)
+function getparents (childcolor, depth, count)
   if not depth then depth = 1 end
+  if not count then count = 0 end
 
-  print(string.rep("  ", depth) .. "?: What can contain a " .. childcolor .. "?")
+  print(string.rep("  ", depth) .. "Q: What can contain a " .. childcolor .. "?")
 
   if (isempty(rules[childcolor])) then
     -- Given bag has no allowable parents, or: this is the outer-most nesting doll.
-    print(string.rep("  ", depth) .. "END: Nothing can contain a " .. childcolor .. " bag")
-    return nil
+    count = count + 1
+    print(string.rep("  ", depth) .. "Nothing can contain a " .. childcolor .. " bag. (Solution #" .. count .. ")")
+    return count
   end
 
   for parentcolor, allowablequantity in pairs(rules[childcolor]) do
-    print(string.rep("  ", depth) .. "FOUND: " .. childcolor .. " can be packed in a " .. parentcolor .. " bag")
-    getparents(parentcolor, depth + 1)
+    print(string.rep("  ", depth) .. "A: " .. childcolor .. " can be packed in a " .. parentcolor .. " bag")
+    count = getparents(parentcolor, depth + 1, count)
   end
 
-  return childcolor
+  return count
 end
 
 
@@ -139,5 +141,5 @@ dump(rules)
 print("")
 
 print("PART ONE: Looking for shiny gold bag")
-print(getparents("shiny gold"))
-print("")
+solutions = getparents("shiny gold")
+print("\n** There are " .. solutions .. " combinations to pack the shiny gold bag.")
