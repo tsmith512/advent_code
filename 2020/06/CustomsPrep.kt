@@ -62,12 +62,13 @@ class CustomsPrep(inputFile: String) {
     groupAnswers.forEach {
       var thisGroupTotalQuestions = it.replace("\n", "").toCharArray().toSet()
       var thesePeople = it.trim().split("\n")
-      var thisGroupAllYesAnswers = 0
+      var thisGroupAllYesAnswers: Int
 
       println("Group members: " + thesePeople)
       println("Group Questions: " + thisGroupTotalQuestions)
       thisGroupAllYesAnswers = thesePeople.fold(0) {count, person -> count + yesOnEverything(person, thisGroupTotalQuestions)}
-      println("Group contains " + thisGroupAllYesAnswers + " who said yes on everything.")
+      println("Group contains " + thesePeople.count() + " people, " + thisGroupAllYesAnswers + " of whom said yes on everything.")
+      println("")
 
       allYesAnswers += thisGroupAllYesAnswers
     }
