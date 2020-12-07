@@ -41,6 +41,39 @@ class CustomsPrep(inputFile: String) {
    * Sum getGroupYesCount across the whole collection.
    */
   fun getAllGroupsAnyoneYesCount(): Int = groupAnswers.fold(0) {x, i -> x + getGroupAnyoneSaidYesCount(i)}
+
+  /**
+   * In Part Two, we need to know if someone answered yes to every question that
+   * anyone in their group said yes to. (Read the Advent of Code page, I can't
+   * make good words for this prompt.) Given a person's answers and a set of all
+   * questions, return 1 if this person said yes on everything.
+   */
+   private fun yesOnEverything(person: String, questions: Set<Char>): Int {
+     return if (person.toCharArray().count() == questions.count()) 1 else 0
+   }
+
+   /**
+    * In Part Two, we need to inspect individual groups to see how many people
+    * within that group answered yes to every question presented.
+    */
+  fun getAllPeopleAllYesAnswers(): Int {
+    var allYesAnswers = 0
+
+    groupAnswers.forEach {
+      var thisGroupTotalQuestions = it.replace("\n", "").toCharArray().toSet()
+      var thesePeople = it.trim().split("\n")
+      var thisGroupAllYesAnswers = 0
+
+      println("Group members: " + thesePeople)
+      println("Group Questions: " + thisGroupTotalQuestions)
+      thisGroupAllYesAnswers = thesePeople.fold(0) {count, person -> count + yesOnEverything(person, thisGroupTotalQuestions)}
+      println("Group contains " + thisGroupAllYesAnswers + " who said yes on everything.")
+
+      allYesAnswers += thisGroupAllYesAnswers
+    }
+
+    return allYesAnswers
+  }
 }
 
 fun main() {
@@ -49,4 +82,6 @@ fun main() {
   // Since I have no clue how to label "sum of count-distinct-per-group Yeses"
   println("Part one count: " + customsForms.getAllGroupsAnyoneYesCount())
   // Part one count: 6161
+
+  println("Part two count: " + customsForms.getAllPeopleAllYesAnswers())
 }
