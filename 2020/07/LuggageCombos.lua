@@ -14,5 +14,12 @@
 -- different color bags could be used to contain at least one of the given bag.
 --
 -- How many bag colors can eventually contain at least one shiny gold bag?
+--
+-- In English:
+-- - We have a shiny bag
+-- - Figure out which color bags can hold shiny bags --> [x]
+-- - Figure out which color bags can hold [x] bags --> recursively until we have
+--   only no bag colors remaining that can be contained.
+-- - Count distinct colors from [x].
 
 print("Hello, World!")
