@@ -83,6 +83,23 @@ function parsechildren (inputstring, collection)
 end
 
 
+-- Find the parents of a particular bag
+function getparents (childcolor)
+  print("What can contain a " .. childcolor .. "?")
+
+  if (isempty(rules[childcolor])) then
+    -- Given bag has no allowable parents, or: this is the outer-most nesting doll.
+    return nil
+  end
+
+  for parentcolor, allowablequantity in pairs(rules[childcolor]) do
+    print(childcolor .. " can be packed in a " .. parentcolor .. " bag")
+  end
+
+  return childcolor
+end
+
+
 -- Simple utility to test of a var is empty or unset
 function isempty (input)
   return input == nil or input == ""
@@ -113,4 +130,10 @@ for rule in io.lines(INPUT) do
   parserule(rule)
 end
 
-print(dump(rules))
+print("OUTPUT OF RULES:")
+dump(rules)
+print("")
+
+print("PART ONE: Looking for shiny gold bag")
+print(getparents("shiny gold"))
+print("")
