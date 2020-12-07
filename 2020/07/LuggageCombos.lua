@@ -1,6 +1,6 @@
 #!/bin/env lua
 
--- ___               __ ____
+--  ___               __ _____
 -- |   \ __ _ _  _   /  \__  |
 -- | |) / _` | || | | () |/ /
 -- |___/\__,_|\_, |  \__//_/
@@ -67,7 +67,7 @@ function parsechildren (inputstring, collection)
   end
 
   -- What's the first child bag type?
-  local bag, remainder = string.match(inputstring, "(%d [^.,]+)bags[ .,]?(.+)")
+  local bag, remainder = string.match(inputstring, "(%d [^.,]+) bags[ .,]?(.+)")
 
   -- Add this bag type to the collection
   table.insert(collection, bag)
@@ -110,7 +110,6 @@ end
 
 for rule in io.lines(INPUT) do
   parserule(rule)
-  print("")
 end
 
 print(dump(rules))
