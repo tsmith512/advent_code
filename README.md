@@ -12,3 +12,4 @@ well is a bit dated. So I've decided to lean into my experience with traditional
 | [Day 3: Toboggan Trajectory](2020/03/avoid_trees.c)             | C          |
 | [Day 4: Passport Processing](2020/04/PassportScanner.java)      | Java       |
 | [Day 5: Binary Boarding](2020/05/pass_parser.clj)               | Clojure    |
+| [Day 6: Custom Customs](2020/06/CustomsPrep.kt)                 | Kotlin     |
