@@ -22,7 +22,7 @@
 --   only no bag colors remaining that can be contained.
 -- - Count distinct colors from [x].
 
-INPUT = 'sample_rules.txt'
+INPUT = 'luggage_rules.txt'
 
 -- Collect all puzzle rules into a table like this:
 -- rules[child-color][parent-color] == allowable-quantity
@@ -85,20 +85,18 @@ end
 
 -- Find the parents of a particular bag
 function getparents (childcolor, depth, count)
-  if not depth then depth = 1 end
+  if not depth then depth = 0 end
   if not count then count = 0 end
-
-  print(string.rep("  ", depth) .. "Q: What can contain a " .. childcolor .. "?")
 
   if (isempty(rules[childcolor])) then
     -- Given bag has no allowable parents, or: this is the outer-most nesting doll.
     count = count + 1
-    print(string.rep("  ", depth) .. "Nothing can contain a " .. childcolor .. " bag. (Solution #" .. count .. ")")
+    print("|" .. string.rep("    ", depth) .. childcolor .. " (Solution #" .. count .. ")")
     return count
   end
 
   for parentcolor, allowablequantity in pairs(rules[childcolor]) do
-    print(string.rep("  ", depth) .. "A: " .. childcolor .. " can be packed in a " .. parentcolor .. " bag")
+    print("|" .. string.rep("    ", depth) .. "- " .. childcolor)
     count = getparents(parentcolor, depth + 1, count)
   end
 
