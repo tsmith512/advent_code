@@ -36,7 +36,7 @@ rules = {}
 -- Then insert the set into {rules} above.
 function parserule (rule)
   local parentcolor, allowablechildren = string.match(rule, "(.+) bags contain (.+)")
-  local childrules = parsechildren(allowablechildren, {})
+  local childrules = parsechildren(allowablechildren)
 
   if (not isempty(childrules)) then
     -- This parent bag can hold +1 child types, split and save them
@@ -62,12 +62,13 @@ end
 -- (e.g. "5 faded blue bags, 6 dotted black bags[...]")
 -- split it into its members by recursion
 function parsechildren (inputstring, collection)
+  if not collection then collection = {} end
   if (inputstring == "no other bags.") then
     return nil
   end
 
   -- What's the first child bag type?
-  local bag, remainder = string.match(inputstring, "(%d [^.,]+) bags[ .,]?(.+)")
+  local bag, remainder = string.match(inputstring, "(%d [^.,]+) bags?[ .,]?(.+)")
 
   -- Add this bag type to the collection
   table.insert(collection, bag)
