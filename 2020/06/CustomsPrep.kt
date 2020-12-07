@@ -51,7 +51,7 @@ class CustomsPrep(inputFile: String) {
     var totalCount = 0
 
     groupAnswers.forEach {
-      // Determine which questions this group received
+      // Determine all which questions this group received
       var allQuestions = it.replace("\n", "").toCharArray().toSet()
 
       // Separate the member strings
@@ -60,11 +60,6 @@ class CustomsPrep(inputFile: String) {
       // Starting with a set of all questions, walk the group members and toss
       // any that aren't found in each member string.
       var yesFromAll = thesePeople.fold(allQuestions) {set, test -> set.intersect(test.toSet())}
-
-      println("Group questions: " + allQuestions)
-      println("Group members: " + thesePeople)
-      println("Letters in every string: " + yesFromAll)
-      println("")
 
       totalCount += yesFromAll.count()
     }
