@@ -43,37 +43,33 @@ class CustomsPrep(inputFile: String) {
   fun getAllGroupsAnyoneYesCount(): Int = groupAnswers.fold(0) {x, i -> x + getGroupAnyoneSaidYesCount(i)}
 
   /**
-   * In Part Two, we need to know if someone answered yes to every question that
-   * anyone in their group said yes to. (Read the Advent of Code page, I can't
-   * make good words for this prompt.) Given a person's answers and a set of all
-   * questions, return 1 if this person said yes on everything.
+   * In Part Two, we need to identify, within each group, how many questions got
+   * a Yes from every member. (Find the intersection of member strings rather
+   * than the union.)
    */
-   private fun yesOnEverything(person: String, questions: Set<Char>): Int {
-     return if (person.toCharArray().count() == questions.count()) 1 else 0
-   }
-
-   /**
-    * In Part Two, we need to inspect individual groups to see how many people
-    * within that group answered yes to every question presented.
-    */
-  fun getAllPeopleAllYesAnswers(): Int {
-    var allYesAnswers = 0
+  fun getAllGroupsAllYesCount(): Int {
+    var totalCount = 0
 
     groupAnswers.forEach {
-      var thisGroupTotalQuestions = it.replace("\n", "").toCharArray().toSet()
-      var thesePeople = it.trim().split("\n")
-      var thisGroupAllYesAnswers: Int
+      // Determine which questions this group received
+      var allQuestions = it.replace("\n", "").toCharArray().toSet()
 
+      // Separate the member strings
+      var thesePeople = it.trim().split("\n")
+
+      // Starting with a set of all questions, walk the group members and toss
+      // any that aren't found in each member string.
+      var yesFromAll = thesePeople.fold(allQuestions) {set, test -> set.intersect(test.toSet())}
+
+      println("Group questions: " + allQuestions)
       println("Group members: " + thesePeople)
-      println("Group Questions: " + thisGroupTotalQuestions)
-      thisGroupAllYesAnswers = thesePeople.fold(0) {count, person -> count + yesOnEverything(person, thisGroupTotalQuestions)}
-      println("Group contains " + thesePeople.count() + " people, " + thisGroupAllYesAnswers + " of whom said yes on everything.")
+      println("Letters in every string: " + yesFromAll)
       println("")
 
-      allYesAnswers += thisGroupAllYesAnswers
+      totalCount += yesFromAll.count()
     }
 
-    return allYesAnswers
+    return totalCount
   }
 }
 
@@ -84,5 +80,5 @@ fun main() {
   println("Part one count: " + customsForms.getAllGroupsAnyoneYesCount())
   // Part one count: 6161
 
-  println("Part two count: " + customsForms.getAllPeopleAllYesAnswers())
+  println("Part two count: " + customsForms.getAllGroupsAllYesCount())
 }
