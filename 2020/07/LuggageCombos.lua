@@ -84,16 +84,20 @@ end
 
 
 -- Find the parents of a particular bag
-function getparents (childcolor)
-  print("What can contain a " .. childcolor .. "?")
+function getparents (childcolor, depth)
+  if not depth then depth = 1 end
+
+  print(string.rep("  ", depth) .. "?: What can contain a " .. childcolor .. "?")
 
   if (isempty(rules[childcolor])) then
     -- Given bag has no allowable parents, or: this is the outer-most nesting doll.
+    print(string.rep("  ", depth) .. "END: Nothing can contain a " .. childcolor .. " bag")
     return nil
   end
 
   for parentcolor, allowablequantity in pairs(rules[childcolor]) do
-    print(childcolor .. " can be packed in a " .. parentcolor .. " bag")
+    print(string.rep("  ", depth) .. "FOUND: " .. childcolor .. " can be packed in a " .. parentcolor .. " bag")
+    getparents(parentcolor, depth + 1)
   end
 
   return childcolor
