@@ -22,7 +22,7 @@
 --   only no bag colors remaining that can be contained.
 -- - Count distinct colors from [x].
 
-INPUT = 'sample_rules_pt2.txt'
+INPUT = 'luggage_rules.txt'
 
 -- Collect all puzzle rules into a table like this:
 -- rules[child-color][parent-color] == allowable-quantity
@@ -143,6 +143,9 @@ function dump (tbl, indent)
   end
 end
 
+--
+-- MAIN:
+--
 for rule in io.lines(INPUT) do
   parserule(rule)
 end
@@ -151,7 +154,7 @@ print("OUTPUT OF RULES:")
 dump(rules)
 print("")
 
-print("PART ONE: Looking for shiny gold bag")
+print("PART ONE: Looking for possible parents of a shiny gold bag")
 totalleafcount, totalbranchcolors = getparents("shiny gold")
 print("\n** There are " .. totalleafcount .. " combinations to pack the shiny gold bag.")
 print("** They use " .. tablecount(totalbranchcolors) .. " unique bag colors.")
