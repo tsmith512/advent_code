@@ -18,11 +18,23 @@
 
 use warnings;
 use strict;
+use experimental 'smartmatch';
 
 my $filename = "game_sample.txt";
 
+# Container for the steps
+my @steps = ();
+
+# Game stats
+my $current_step = 0;
+my @visited_steps = ();
+my $accumulator = 0;
+
 open(my $filehandle, "<", $filename) or die $!;
 
-while(my $line = <$filehandle>){
-  print $line;
+while (my $line = <$filehandle>) {
+  chomp($line);
+  push(@steps, $line);
 }
+
+print @steps;
