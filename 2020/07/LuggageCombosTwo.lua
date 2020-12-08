@@ -21,32 +21,6 @@ INPUT = 'luggage_rules.txt'
 -- rules[parent-color][child-color] == allowable-quantity
 rules = {}
 
--- OVERRIDE PART ONE FILE
--- Populate {rules}
-function parserule (rule)
-  local parentcolor, allowablechildren = string.match(rule, "(.+) bags contain (.+)")
-  local childrules = parsechildren(allowablechildren)
-
-  if (not isempty(childrules)) then
-    -- This parent bag can hold +1 child types, split and save them
-    for index, child in ipairs(childrules) do
-
-      -- Split the quantity from the color of the child member
-      local qty, childcolor = string.match(child, "(%d+) (.+) ?")
-
-      -- If rules[parentcolor] is new, set up a table for it
-      if rules[parentcolor] == nil then
-        rules[parentcolor] = {}
-      end
-
-      rules[parentcolor][childcolor] = qty
-    end
-  else
-    -- @TODO: This parent can contain no other bags. I don't think this matters.
-  end
-end
-
-
 -- Find the children of a particular bag
 function getchildren (parentcolor, depth)
   if not depth then depth = 0 end

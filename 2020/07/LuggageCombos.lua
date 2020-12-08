@@ -34,7 +34,7 @@ rules = {}
 -- (e.g. "clear tan bags contain 5 bright purple bags, 1 pale black bag, 5 muted lime bags.")
 -- Split that up into the Parent Color and a table of allowable child members
 -- Then insert the set into {rules} above.
-function parserule (rule)
+function parserule (rule, puzzlepart)
   local parentcolor, allowablechildren = string.match(rule, "(.+) bags contain (.+)")
   local childrules = parsechildren(allowablechildren)
 
@@ -45,12 +45,21 @@ function parserule (rule)
       -- Split the quantity from the color of the child member
       local qty, childcolor = string.match(child, "(%d+) (.+) ?")
 
-      -- If rules[childcolor] is new, set up a table for it
-      if rules[childcolor] == nil then
-        rules[childcolor] = {}
+      -- Part 1 saves rules[childcolor][parentcolor]
+      -- Part 2 saves rules[parentcolor][childcolor]
+      if puzzlepart == "partone" then
+        -- If rules[childcolor] is new, set up a table for it
+        if rules[childcolor] == nil then
+          rules[childcolor] = {}
+        end
+        rules[childcolor][parentcolor] = qty
+      else
+        -- If rules[parentcolor] is new, set up a table for it
+        if rules[parentcolor] == nil then
+          rules[parentcolor] = {}
+        end
+        rules[parentcolor][childcolor] = qty
       end
-
-      rules[childcolor][parentcolor] = qty
     end
   else
     -- @TODO: This parent can contain no other bags. I don't think this matters.
@@ -148,7 +157,7 @@ end
 --
 if debug.getinfo(3) == nil then
   for rule in io.lines(INPUT) do
-    parserule(rule)
+    parserule(rule, "partone")
   end
 
   print("PART ONE: Looking for possible parents of a shiny gold bag")
