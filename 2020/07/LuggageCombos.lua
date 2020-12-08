@@ -61,8 +61,6 @@ function parserule (rule, puzzlepart)
         rules[parentcolor][childcolor] = qty
       end
     end
-  else
-    -- @TODO: This parent can contain no other bags. I don't think this matters.
   end
 end
 

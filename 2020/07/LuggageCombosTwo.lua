@@ -55,7 +55,7 @@ end
 -- MAIN:
 --
 for rule in io.lines(INPUT) do
-  parserule(rule)
+  parserule(rule, "parttwo")
 end
 
 print("PART TWO: Looking for all descendants of a shiny gold bag")
