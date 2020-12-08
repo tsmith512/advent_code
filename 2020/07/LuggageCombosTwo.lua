@@ -52,7 +52,7 @@ end
 -- Find the children of a particular bag
 function getchildren (parentcolor, quantity, depth)
   if not depth then depth = 0 end
-  if not quantity then quantity = 1 end -- because the top bag is included
+  if not quantity then quantity = 0 end
 
   if isempty(rules[parentcolor]) then
     -- Given bag type has no allowable parents. This is the inner-most nesting doll
@@ -65,9 +65,9 @@ function getchildren (parentcolor, quantity, depth)
 
   for childcolor, requiredquantity in pairs(rules[parentcolor]) do
     print("|" .. string.rep("    ", depth) .. "- " .. parentcolor .. " > " .. requiredquantity .. " x " .. childcolor)
-    print("|" .. string.rep("    ", depth) .. "  " .. quantity)
-    quantity = quantity + requiredquantity
+    print("|" .. string.rep("    ", depth) .. "  " .. requiredquantity)
     quantity = quantity + (requiredquantity * getchildren(childcolor, quantity, depth + 1))
+    quantity = quantity + requiredquantity
     print("|" .. string.rep("    ", depth) .. "  " .. quantity)
   end
   return quantity
