@@ -50,21 +50,27 @@ end
 
 
 -- Find the children of a particular bag
-function getchildren (parentcolor, depth)
+function getchildren (parentcolor, quantity, depth)
   if not depth then depth = 0 end
+  if not quantity then quantity = 1 end -- because the top bag is included
 
   if isempty(rules[parentcolor]) then
     -- Given bag type has no allowable parents. This is the inner-most nesting doll
     print("|" .. string.rep("    ", depth) .. parentcolor)
-    return
+    print("|" .. string.rep("    ", depth) .. quantity)
+
+    -- No bags inside this one
+    return 0
   end
 
   for childcolor, requiredquantity in pairs(rules[parentcolor]) do
     print("|" .. string.rep("    ", depth) .. "- " .. parentcolor .. " > " .. requiredquantity .. " x " .. childcolor)
-    getchildren(childcolor, depth + 1)
+    print("|" .. string.rep("    ", depth) .. "  " .. quantity)
+    quantity = quantity + requiredquantity
+    quantity = quantity + (requiredquantity * getchildren(childcolor, quantity, depth + 1))
+    print("|" .. string.rep("    ", depth) .. "  " .. quantity)
   end
-
-  return
+  return quantity
 end
 
 --
@@ -79,4 +85,4 @@ dump(rules)
 print("")
 
 print("PART TWO: Looking for all descendants of a shiny gold bag")
-getchildren("shiny gold")
+print(getchildren("shiny gold"))
