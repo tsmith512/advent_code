@@ -84,29 +84,42 @@ end
 
 
 -- Find the parents of a particular bag
-function getparents (childcolor, depth, count)
+function getparents (childcolor, depth, leafcount, branchcolors)
   if not depth then depth = 0 end
-  if not count then count = 0 end
+  if not branchcolors then branchcolors = {} end
+  if not leafcount then leafcount = 0 end
 
   if (isempty(rules[childcolor])) then
     -- Given bag has no allowable parents, or: this is the outer-most nesting doll.
-    count = count + 1
-    print("|" .. string.rep("    ", depth) .. childcolor .. " (Solution #" .. count .. ")")
-    return count
+    leafcount = leafcount + 1
+    print("|" .. string.rep("    ", depth) .. childcolor .. " (Leaf #" .. leafcount .. ")")
+    return leafcount
   end
 
   for parentcolor, allowablequantity in pairs(rules[childcolor]) do
     print("|" .. string.rep("    ", depth) .. "- " .. childcolor .. " < " .. parentcolor)
-    count = getparents(parentcolor, depth + 1, count)
+    if not branchcolors[parentcolor] then print("|" .. string.rep("    ", depth) .. string.rep(" ", string.len(childcolor)) .. "     (Color #" .. (tablecount(branchcolors) + 1) .. ")") end
+    branchcolors[parentcolor] = true
+    leafcount, branchcount = getparents(parentcolor, depth + 1, leafcount, branchcolors)
   end
-
-  return count
+  return leafcount, branchcolors
 end
 
 
 -- Simple utility to test of a var is empty or unset
 function isempty (input)
   return input == nil or input == ""
+end
+
+
+-- Simple utility to count the size of an array/table.
+-- @TODO: Surely this is a thing...
+function tablecount (table)
+  count = 0
+  for k, v in pairs(table) do
+    count = count + 1
+  end
+  return count
 end
 
 
@@ -139,5 +152,6 @@ dump(rules)
 print("")
 
 print("PART ONE: Looking for shiny gold bag")
-solutions = getparents("shiny gold")
-print("\n** There are " .. solutions .. " combinations to pack the shiny gold bag.")
+totalleafcount, totalbranchcolors = getparents("shiny gold")
+print("\n** There are " .. totalleafcount .. " combinations to pack the shiny gold bag.")
+print("** They use " .. tablecount(totalbranchcolors) .. " unique bag colors.")
