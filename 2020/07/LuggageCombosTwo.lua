@@ -15,7 +15,7 @@
 -- Grab all my functions from Part One
 dofile "LuggageCombos.lua"
 
-INPUT = 'sample_rules_pt2.txt'
+INPUT = 'luggage_rules.txt'
 
 -- Collect all puzzle rules into a table like this:
 -- rules[parent-color][child-color] == allowable-quantity
@@ -83,10 +83,6 @@ end
 for rule in io.lines(INPUT) do
   parserule(rule)
 end
-
-print("OUTPUT OF RULES:")
-dump(rules)
-print("")
 
 print("PART TWO: Looking for all descendants of a shiny gold bag")
 totalcount = getchildren("shiny gold")

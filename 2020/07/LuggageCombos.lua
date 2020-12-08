@@ -38,7 +38,7 @@ function parserule (rule)
   local parentcolor, allowablechildren = string.match(rule, "(.+) bags contain (.+)")
   local childrules = parsechildren(allowablechildren)
 
-  if (not isempty(childrules)) then
+  if not isempty(childrules) then
     -- This parent bag can hold +1 child types, split and save them
     for index, child in ipairs(childrules) do
 
@@ -74,7 +74,7 @@ function parsechildren (inputstring, collection)
   table.insert(collection, bag)
 
   -- If remainder !empty: the parent bag can hold more, get the next one.
-  if (not isempty(remainder)) then
+  if not isempty(remainder) then
     parsechildren(remainder, collection)
   end
 
@@ -89,7 +89,7 @@ function getparents (childcolor, depth, leafcount, branchcolors)
   if not branchcolors then branchcolors = {} end
   if not leafcount then leafcount = 0 end
 
-  if (isempty(rules[childcolor])) then
+  if isempty(rules[childcolor]) then
     -- Given bag has no allowable parents, or: this is the outer-most nesting doll.
     leafcount = leafcount + 1
     print("|" .. string.rep("    ", depth) .. childcolor .. " (Leaf #" .. leafcount .. ")")
@@ -150,10 +150,6 @@ if debug.getinfo(3) == nil then
   for rule in io.lines(INPUT) do
     parserule(rule)
   end
-
-  print("OUTPUT OF RULES:")
-  dump(rules)
-  print("")
 
   print("PART ONE: Looking for possible parents of a shiny gold bag")
   totalleafcount, totalbranchcolors = getparents("shiny gold")
