@@ -89,4 +89,8 @@ dump(rules)
 print("")
 
 print("PART TWO: Looking for all descendants of a shiny gold bag")
-print(getchildren("shiny gold"))
+totalcount = getchildren("shiny gold")
+print("\n** Within the shiny gold bag, there are " .. math.floor(totalcount) .. " bags.")
+
+-- Part Two answer:
+-- ** Within the shiny gold bag, there are 45018 bags.
