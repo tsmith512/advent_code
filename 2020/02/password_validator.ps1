@@ -11,6 +11,7 @@
 # Count lines from the input file where CHAR is present between LOW and HIGH
 # times (inclusive) in STRING.
 
+# Split the line as described above into an object with its named properties
 function ParseRow {
   param([string]$row)
   # Translate my description above into a regex that saves named matches.
@@ -22,6 +23,7 @@ function ParseRow {
   $Matches
 }
 
+# Given String and a Char, how many times is Char in String?
 function GetCount {
   param(
     [string]$Text,
@@ -32,6 +34,7 @@ function GetCount {
   $($Text.ToCharArray() | Where-Object {$_ -eq $Char} | Measure-Object).Count
 }
 
+# Is ($min <= $count <= $max)?
 function IsEnough {
   param(
     [int]$Count,

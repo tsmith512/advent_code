@@ -27,7 +27,7 @@ do
   done
 done
 
-# Solution: 646779 is the product of 399 and 1621
+# Solution: 399 plus 1621 = 2020. Multiplied: 646779
 
 
 #  ___          _     ___

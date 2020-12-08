@@ -37,15 +37,22 @@ class CustomsPrep(inputFile: String) {
   /**
    * Given a group (one string from groupAnswers), return the number of
    * questions that got a "yes" (count of unique letters).
+   * Fun trick: <Coll>.toSet() will strip duplicates; Sets have unique members.
    */
   private fun getGroupAnyoneSaidYesCount(group: String): Int = group.replace("\n", "").toSet().count()
 
   /**
    * Sum getGroupYesCount across the whole collection.
+   * <Coll>.fold() is a reducer that has a starting value.
    */
   fun getAllGroupsAnyoneYesCount(): Int = groupAnswers.fold(0) {x, i -> x + getGroupAnyoneSaidYesCount(i)}
 
   /**
+   *  ___          _     ___
+   * | _ \__ _ _ _| |_  |_  )
+   * |  _/ _` | '_|  _|  / /
+   * |_| \__,_|_|  \__| /___|
+   *
    * In Part Two, we need to identify, within each group, how many questions got
    * a Yes from every member. (Find the intersection of member strings rather
    * than the union.)
@@ -54,10 +61,10 @@ class CustomsPrep(inputFile: String) {
     var totalCount = 0
 
     groupAnswers.forEach {
-      // Determine all which questions this group received
+      // Determine all questions this group received
       var allQuestions = it.replace("\n", "").toCharArray().toSet()
 
-      // Separate the member strings
+      // Separate the group into individual member strings
       var thesePeople = it.trim().split("\n")
 
       // Starting with a set of all questions, walk the group members and toss

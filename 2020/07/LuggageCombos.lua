@@ -18,8 +18,8 @@
 -- In English:
 -- - We have a shiny bag
 -- - Figure out which color bags can hold shiny bags --> [x]
--- - Figure out which color bags can hold [x] bags --> recursively until we have
---   only no bag colors remaining that can be contained.
+-- - Figure out which color bags can hold [x] bags --> recursively until we get
+--   to the top of the tree
 -- - Count distinct colors from [x].
 
 INPUT = 'luggage_rules.txt'
