@@ -22,7 +22,7 @@
 --   only no bag colors remaining that can be contained.
 -- - Count distinct colors from [x].
 
-INPUT = 'luggage_rules.txt'
+INPUT = 'sample_rules_pt2.txt'
 
 -- Collect all puzzle rules into a table like this:
 -- rules[child-color][parent-color] == allowable-quantity
