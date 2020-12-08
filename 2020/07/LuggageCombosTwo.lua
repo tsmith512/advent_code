@@ -48,6 +48,25 @@ function parserule (rule)
   end
 end
 
+
+-- Find the children of a particular bag
+function getchildren (parentcolor, depth)
+  if not depth then depth = 0 end
+
+  if isempty(rules[parentcolor]) then
+    -- Given bag type has no allowable parents. This is the inner-most nesting doll
+    print("|" .. string.rep("    ", depth) .. parentcolor)
+    return
+  end
+
+  for childcolor, requiredquantity in pairs(rules[parentcolor]) do
+    print("|" .. string.rep("    ", depth) .. "- " .. parentcolor .. " > " .. requiredquantity .. " x " .. childcolor)
+    getchildren(childcolor, depth + 1)
+  end
+
+  return
+end
+
 --
 -- MAIN:
 --
@@ -60,3 +79,4 @@ dump(rules)
 print("")
 
 print("PART TWO: Looking for all descendants of a shiny gold bag")
+getchildren("shiny gold")
