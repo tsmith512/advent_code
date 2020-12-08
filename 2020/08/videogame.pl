@@ -17,5 +17,12 @@
 # the infinite loop begins.
 
 use warnings;
+use strict;
 
-print("Hello, World!\n");
+my $filename = "game_sample.txt";
+
+open(my $filehandle, "<", $filename) or die $!;
+
+while(my $line = <$filehandle>){
+  print $line;
+}
