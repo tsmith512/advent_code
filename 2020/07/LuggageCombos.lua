@@ -22,7 +22,7 @@
 --   only no bag colors remaining that can be contained.
 -- - Count distinct colors from [x].
 
-INPUT = 'sample_rules.txt'
+INPUT = 'luggage_rules.txt'
 
 -- Collect all puzzle rules into a table like this:
 -- rules[child-color][parent-color] == allowable-quantity
@@ -155,3 +155,7 @@ print("PART ONE: Looking for shiny gold bag")
 totalleafcount, totalbranchcolors = getparents("shiny gold")
 print("\n** There are " .. totalleafcount .. " combinations to pack the shiny gold bag.")
 print("** They use " .. tablecount(totalbranchcolors) .. " unique bag colors.")
+
+-- Part One answer:
+-- ** There are 316 combinations to pack the shiny gold bag.
+-- ** They use 259 unique bag colors.
