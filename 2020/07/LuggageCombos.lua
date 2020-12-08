@@ -93,7 +93,7 @@ function getparents (childcolor, depth, leafcount, branchcolors)
     -- Given bag has no allowable parents, or: this is the outer-most nesting doll.
     leafcount = leafcount + 1
     print("|" .. string.rep("    ", depth) .. childcolor .. " (Leaf #" .. leafcount .. ")")
-    return leafcount
+    return leafcount, branchcolors
   end
 
   for parentcolor, allowablequantity in pairs(rules[childcolor]) do
