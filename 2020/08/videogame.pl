@@ -15,3 +15,7 @@
 #   - jmp (signed int): advanced/rewind by int, resume execution
 # The instruction list is ultimately circular. Report accumulator value before
 # the infinite loop begins.
+
+use warnings;
+
+print("Hello, World!\n");
