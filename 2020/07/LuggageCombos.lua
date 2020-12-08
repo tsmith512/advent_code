@@ -146,18 +146,20 @@ end
 --
 -- MAIN:
 --
-for rule in io.lines(INPUT) do
-  parserule(rule)
+if debug.getinfo(3) == nil then
+  for rule in io.lines(INPUT) do
+    parserule(rule)
+  end
+
+  print("OUTPUT OF RULES:")
+  dump(rules)
+  print("")
+
+  print("PART ONE: Looking for possible parents of a shiny gold bag")
+  totalleafcount, totalbranchcolors = getparents("shiny gold")
+  print("\n** There are " .. totalleafcount .. " combinations to pack the shiny gold bag.")
+  print("** They use " .. tablecount(totalbranchcolors) .. " unique bag colors.")
 end
-
-print("OUTPUT OF RULES:")
-dump(rules)
-print("")
-
-print("PART ONE: Looking for possible parents of a shiny gold bag")
-totalleafcount, totalbranchcolors = getparents("shiny gold")
-print("\n** There are " .. totalleafcount .. " combinations to pack the shiny gold bag.")
-print("** They use " .. tablecount(totalbranchcolors) .. " unique bag colors.")
 
 -- Part One answer:
 -- ** There are 316 combinations to pack the shiny gold bag.
