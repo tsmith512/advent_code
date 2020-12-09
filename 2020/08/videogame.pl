@@ -25,7 +25,7 @@ use Switch;
 # Here's a thing you're not supposed to use in production code. You bet!
 use experimental 'smartmatch';
 
-my $filename = "game_sample.txt";
+my $filename = "game_steps.txt";
 
 # Container for the steps
 my @steps = ();
@@ -87,7 +87,7 @@ print "Boot Loop! Current Accumulator Value: " . $accumulator . "\n\n";
 my ($total_attempts, $adjusted_line_yet, $completed) = (0, 0, 0);
 my @adjusted_lines = ();
 
-until ($completed or $total_attempts > 10) {
+until ($completed) {
   # Start the game over
   print "Starting fix attempt: $total_attempts\n";
   $total_attempts++;
@@ -150,3 +150,5 @@ until ($completed or $total_attempts > 10) {
 
 print "Complete! Execution #$total_attempts ended at $current_step. Accumulator value: $accumulator\n" if $completed;
 print "\n\n";
+# Part Two solution:
+# Complete! Execution #90 ended at 654. Accumulator value: 1643
