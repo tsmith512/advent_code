@@ -25,7 +25,7 @@ use Switch;
 # Here's a thing you're not supposed to use in production code. Awesome!
 use experimental 'smartmatch';
 
-my $filename = "game_sample.txt";
+my $filename = "game_steps.txt";
 
 # Container for the steps
 my @steps = ();
@@ -79,3 +79,6 @@ until ($current_step ~~ @visited_steps) {
 
 print "Boot Loop!\n";
 print "Current Accumulator Value: " . $accumulator . "\n";
+
+# Boot Loop!
+# Current Accumulator Value: 1262
