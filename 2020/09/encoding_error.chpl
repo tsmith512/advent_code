@@ -19,14 +19,14 @@ prototype module decoder {
   var windowLength: int = 5;
   var sequence: [0..windowLength - 1] int;
 
-  // proc checkValidLine(position: int): bool {
-  //   var start: uint = position - windowLength;
+  proc checkValidLine(value: int, position: int): bool {
+    if (position > 15) {
+      return false;
+    }
 
-  //   if (start < windowLength) {
-  //     stderr.writeln("Cannot check validity of preamble entry at line ", position);
-  //     exit(1);
-  //   }
-  // }
+    writeln("Checking line ", position, " with a value of ", value);
+    return true;
+  }
 
   proc main() {
     // Open the file and get a reader
@@ -34,8 +34,7 @@ prototype module decoder {
     var inputReader = inputFile.reader();
 
     // Position trackers
-    var position: int = 0;
-    var line: int;
+    var position: int = 0; // Line number of the file, not the sequence array
 
     // Populate the buffer with the "preamble"
     while (position < windowLength) {
@@ -45,5 +44,11 @@ prototype module decoder {
 
     // What do we have so far?
     writeln("Preamble values: ", sequence);
+
+    var next: int;
+    while (inputReader.read(next)) {
+      checkValidLine(next, position);
+      position += 1;
+    }
   }
 }
