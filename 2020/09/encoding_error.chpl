@@ -12,4 +12,14 @@
 //  different numbers from the preceding 25 (5). Find the first number from the
 //  list that is not the sum of two different numbers in the set before it.
 
-writeln("Hello, world!");
+use IO;
+
+var preambleLen: int = 5;
+var inputFile: file = open("encoded_sample.txt", iomode.r);
+
+var inputReader: channel = inputFile.reader();
+var line: string;
+
+while (inputReader.read(line)) {
+  writeln("Read line: ", line);
+}
