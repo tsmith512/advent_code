@@ -19,6 +19,9 @@
 use warnings;
 use strict;
 
+# Switch.pm required for this. `sudo apt-get install libswitch-perl`
+use Switch;
+
 # Here's a thing you're not supposed to use in production code. Awesome!
 use experimental 'smartmatch';
 
@@ -53,12 +56,22 @@ until ($current_step ~~ @visited_steps) {
   # Record that we have visited $current_step so we know if we've started a loop
   push @visited_steps, $current_step;
 
-  if ($action eq "acc") {
-    $accumulator = ($direction eq "+") ? ($accumulator + $value) : ($accumulator - $value);
+  switch ($action) {
+    case "acc" {
+      print "Accumulator: " . $accumulator;
+      $accumulator = ($direction eq "+") ? ($accumulator + $value) : ($accumulator - $value);
+      print " --> " . $accumulator . "\n";
+      $current_step++;
+    }
+    case "nop" {
+      print "Advancing Step Counter\n";
+      $current_step++;
+    }
+    else {
+      $current_step++;
+    }
   }
 
-  # @TODO: Currently, advance. Next, fill out logic on where to go.
-  $current_step++;
   $current_step = $current_step % scalar @steps;
 }
 
