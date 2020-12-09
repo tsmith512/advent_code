@@ -18,6 +18,8 @@
 
 use warnings;
 use strict;
+
+# Here's a thing you're not supposed to use in production code. Awesome!
 use experimental 'smartmatch';
 
 my $filename = "game_sample.txt";
@@ -37,4 +39,24 @@ while (my $line = <$filehandle>) {
   push(@steps, $line);
 }
 
-print @steps;
+close($filehandle);
+
+my $step;
+my $action;
+my $direction;
+my $value;
+
+until ($current_step ~~ @visited_steps) {
+  ($action, $direction, $value) = ($steps[$current_step] =~ /(\w{3})\s+?([+-])(\d+)/);
+  print "Current instruction: $current_step : $action / $direction / $value \n";
+
+  # Record that we have visited $current_step so we know if we've started a loop
+  push(@visited_steps, $current_step);
+
+  # @TODO: Currently, advance. Next, fill out logic on where to go.
+  $current_step++;
+  $current_step = $current_step % scalar @steps;
+}
+
+print "Boot Loop!\n";
+print "Current Accumulator Value: " . $accumulator . "\n";
