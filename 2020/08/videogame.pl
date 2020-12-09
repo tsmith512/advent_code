@@ -75,7 +75,7 @@ print "Boot Loop! Current Accumulator Value: " . $accumulator . "\n\n";
 # |  _/ _` | '_|  _|  / /
 # |_| \__,_|_|  \__| /___|
 #
-# Apparently the instructions set should terminate at the last line once the
+# Apparently the instruction set should terminate at the last line once the
 # "corruption" is fixed. I need to swap one "nop" for a "jmp" (for vice versa)
 # so that the script terminates at the end of the set.
 
@@ -91,7 +91,7 @@ until ($completed) {
   ($current_step, $accumulator, $adjusted_line_yet) = (0, 0, 0);
   @visited_steps = ();
 
-  # The content of this loop controls the iterator:
+  # Same loop control as Part One
   until ($current_step ~~ @visited_steps) {
     # Split the instruction line
     ($action, $value) = ($steps[$current_step] =~ /(\w{3})\s+?\+?(-?\d+)/);
