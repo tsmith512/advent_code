@@ -22,18 +22,13 @@ use strict;
 # Switch.pm required for this. `sudo apt-get install libswitch-perl`
 use Switch;
 
-# Here's a thing you're not supposed to use in production code. Awesome!
+# Here's a thing you're not supposed to use in production code. You bet!
 use experimental 'smartmatch';
 
 my $filename = "game_sample.txt";
 
 # Container for the steps
 my @steps = ();
-
-# Game stats
-my $current_step = 0;
-my @visited_steps = ();
-my $accumulator = 0;
 
 open my $filehandle, "<", $filename or die $!;
 
@@ -44,16 +39,15 @@ while (my $line = <$filehandle>) {
 
 close($filehandle);
 
-my $step;
-my $action;
-my $direction;
-my $value;
+# Game stats
+my @visited_steps = ();
+my ($accumulator, $current_step) = (0, 0);
+my ($action, $direction, $value);
 
 until ($current_step ~~ @visited_steps) {
   # Split the instruction line into the action, positive/negative, and the offset/value
   ($action, $direction, $value) = ($steps[$current_step] =~ /(\w{3})\s+?([+-])(\d+)/);
 
-  # Record that we have visited $current_step so we know if we've started a loop
   push @visited_steps, $current_step;
 
   switch ($action) {
@@ -74,11 +68,10 @@ until ($current_step ~~ @visited_steps) {
 }
 
 print "** PART ONE:\n";
-print "Boot Loop!\n";
-print "Current Accumulator Value: " . $accumulator . "\n\n\n";
+print "Boot Loop! Current Accumulator Value: " . $accumulator . "\n\n";
 # Part One solution:
-# Boot Loop!
-# Current Accumulator Value: 1262
+# Boot Loop! Current Accumulator Value: 1262
+
 
 #  ___          _     ___
 # | _ \__ _ _ _| |_  |_  )
@@ -91,29 +84,23 @@ print "Current Accumulator Value: " . $accumulator . "\n\n\n";
 
 # Reset
 ($current_step, $accumulator) = (0, 0);
-my $total_attempts = 0;
+my ($total_attempts, $adjusted_line_yet, $completed) = (0, 0, 0);
 my @adjusted_lines = ();
-my $adjusted_line_yet = 0;
-my $completed = 0;
 
 until ($completed or $total_attempts > 10) {
   # Start the game over
   print "Starting fix attempt: $total_attempts\n";
   $total_attempts++;
-  $current_step = 0;
+  ($current_step, $accumulator, $adjusted_line_yet) = (0, 0, 0);
   @visited_steps = ();
-  $accumulator = 0;
-  $adjusted_line_yet = 0;
 
-  # To its credit, Perl recommends against a C-style for loop for readability
-  # issues, and this one is weird anyway because the loop contents are handling
-  # the increment of the tested value, not the loop itself.
+  # The content of this loop controls the iterator:
   for ($current_step = 0; $current_step < (scalar @steps); $current_step) {
     # Split the instruction line
     ($action, $direction, $value) = ($steps[$current_step] =~ /(\w{3})\s+?([+-])(\d+)/);
+
     print "Current instruction: $current_step : $action / $direction / $value \n";
 
-    # Have we looped?
     last if ($current_step ~~ @visited_steps);
     push @visited_steps, $current_step;
 
@@ -149,22 +136,17 @@ until ($completed or $total_attempts > 10) {
       }
     }
 
-    # Are we done? Check n+1 beacuse we will have already processed an increment
+    # Are we done?
     if ($current_step == (scalar @steps)) {
       print "Program complete.\n";
       $completed = 1;
       last;
     };
-
-    # If we've gone beyond the bounds of the instruction set, wrap around.
-    # $current_step = $current_step % scalar @steps;
   }
 
-  print "Steps visited: " . (join " ", @visited_steps) . "\n";
-  print "Steps adjusted: " . (join " ", @adjusted_lines) . "\n";
-  print "Abnormal termination. Execution #$total_attempts ended at $current_step. Accumulator value: $accumulator\n" if not $completed;
+  print "Boot Loop! Execution #$total_attempts ended at $current_step. Accumulator value: $accumulator\n" if not $completed;
   print "\n\n" if not $completed;
 }
 
-print "Program complete. Execution #$total_attempts ended at $current_step. Accumulator value: $accumulator\n" if $completed;
+print "Complete! Execution #$total_attempts ended at $current_step. Accumulator value: $accumulator\n" if $completed;
 print "\n\n";
