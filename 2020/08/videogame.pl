@@ -31,12 +31,7 @@ my $filename = "game_steps.txt";
 my @steps = ();
 
 open my $filehandle, "<", $filename or die $!;
-
-while (my $line = <$filehandle>) {
-  chomp $line;
-  push @steps, $line;
-}
-
+chomp(@steps = <$filehandle>);
 close($filehandle);
 
 # Game stat trackers
