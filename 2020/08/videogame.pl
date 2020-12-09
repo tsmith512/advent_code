@@ -32,11 +32,11 @@ my $current_step = 0;
 my @visited_steps = ();
 my $accumulator = 0;
 
-open(my $filehandle, "<", $filename) or die $!;
+open my $filehandle, "<", $filename or die $!;
 
 while (my $line = <$filehandle>) {
-  chomp($line);
-  push(@steps, $line);
+  chomp $line;
+  push @steps, $line;
 }
 
 close($filehandle);
@@ -51,7 +51,7 @@ until ($current_step ~~ @visited_steps) {
   print "Current instruction: $current_step : $action / $direction / $value \n";
 
   # Record that we have visited $current_step so we know if we've started a loop
-  push(@visited_steps, $current_step);
+  push @visited_steps, $current_step;
 
   # @TODO: Currently, advance. Next, fill out logic on where to go.
   $current_step++;
