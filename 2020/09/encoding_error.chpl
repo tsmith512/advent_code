@@ -19,13 +19,14 @@ prototype module decoder {
   var windowLength: int = 5;
   var sequence: [0..windowLength - 1] int;
 
-  proc checkValidLine(value: int, position: int): bool {
-    if (position > 15) {
-      return false;
+  proc checkValidLine(value: int): bool {
+    for x in sequence {
+      label inner for y in sequence {
+        if x == y then continue inner;
+        if value == x + y then return true;
+      }
     }
-
-    writeln("Checking line ", position, " with a value of ", value);
-    return true;
+    return false;
   }
 
   proc main() {
@@ -47,7 +48,7 @@ prototype module decoder {
 
     var next: int;
     while (inputReader.read(next)) {
-      checkValidLine(next, position);
+      checkValidLine(next);
       position += 1;
     }
   }
