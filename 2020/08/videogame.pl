@@ -63,15 +63,17 @@ until ($current_step ~~ @visited_steps) {
       print " --> " . $accumulator . "\n";
       $current_step++;
     }
-    case "nop" {
-      print "Advancing Step Counter\n";
-      $current_step++;
+    case "jmp" {
+      print "Accumulator: " . $accumulator;
+      $current_step = ($direction eq "+") ? ($current_step + $value) : ($current_step - $value);
+      print " --> " . $accumulator . "\n";
     }
     else {
       $current_step++;
     }
   }
 
+  # If we've gone beyond the bounds of the instruction set, wrap around.
   $current_step = $current_step % scalar @steps;
 }
 
