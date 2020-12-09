@@ -62,9 +62,6 @@ until ($current_step ~~ @visited_steps) {
       $current_step++;
     }
   }
-
-  # If we've gone beyond the bounds of the instruction set, wrap around.
-  $current_step = $current_step % scalar @steps;
 }
 
 print "** PART ONE:\n";
@@ -89,7 +86,7 @@ my @adjusted_lines = ();
 
 until ($completed) {
   # Start the game over
-  print "Starting fix attempt: $total_attempts\n";
+  print "Attempt #$total_attempts: ";
   $total_attempts++;
   ($current_step, $accumulator, $adjusted_line_yet) = (0, 0, 0);
   @visited_steps = ();
@@ -112,7 +109,7 @@ until ($completed) {
           $current_step += $value;
         }
         else {
-          print "* Running a jump as a nop. $current_step\n";
+          print " Running a jmp as a nop at $current_step\n";
           push @adjusted_lines, $current_step;
           $adjusted_line_yet = 1;
           $current_step++;
@@ -123,7 +120,7 @@ until ($completed) {
           $current_step++;
         }
         else {
-          print "* Running a nop as a jmp. $current_step\n";
+          print " Running a nop as a jmp at $current_step\n";
           push @adjusted_lines, $current_step;
           $adjusted_line_yet = 1;
           $current_step += $value;
@@ -141,11 +138,9 @@ until ($completed) {
     };
   }
 
-  print "Boot Loop! Execution #$total_attempts ended at $current_step. Accumulator value: $accumulator\n" if not $completed;
-  print "\n\n" if not $completed;
+  print "Boot Loop! Execution #$total_attempts looped on $current_step. Accumulator value: $accumulator\n\n" if not $completed;
 }
 
-print "Complete! Execution #$total_attempts ended at $current_step. Accumulator value: $accumulator\n" if $completed;
-print "\n\n";
+print "Complete! Execution #$total_attempts ended at $current_step. Accumulator value: $accumulator\n\n" if $completed;
 # Part Two solution:
 # Complete! Execution #90 ended at 654. Accumulator value: 1643
