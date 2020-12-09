@@ -53,6 +53,10 @@ until ($current_step ~~ @visited_steps) {
   # Record that we have visited $current_step so we know if we've started a loop
   push @visited_steps, $current_step;
 
+  if ($action eq "acc") {
+    $accumulator = ($direction eq "+") ? ($accumulator + $value) : ($accumulator - $value);
+  }
+
   # @TODO: Currently, advance. Next, fill out logic on where to go.
   $current_step++;
   $current_step = $current_step % scalar @steps;
