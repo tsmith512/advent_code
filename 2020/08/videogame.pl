@@ -50,23 +50,19 @@ my $direction;
 my $value;
 
 until ($current_step ~~ @visited_steps) {
+  # Split the instruction line into the action, positive/negative, and the offset/value
   ($action, $direction, $value) = ($steps[$current_step] =~ /(\w{3})\s+?([+-])(\d+)/);
-  print "Current instruction: $current_step : $action / $direction / $value \n";
 
   # Record that we have visited $current_step so we know if we've started a loop
   push @visited_steps, $current_step;
 
   switch ($action) {
     case "acc" {
-      print "Accumulator: " . $accumulator;
       $accumulator = ($direction eq "+") ? ($accumulator + $value) : ($accumulator - $value);
-      print " --> " . $accumulator . "\n";
       $current_step++;
     }
     case "jmp" {
-      print "Accumulator: " . $accumulator;
       $current_step = ($direction eq "+") ? ($current_step + $value) : ($current_step - $value);
-      print " --> " . $accumulator . "\n";
     }
     else {
       $current_step++;
