@@ -14,3 +14,4 @@ well is a bit dated. So I've decided to lean into my experience with traditional
 | [Day 5: Binary Boarding](2020/05/pass_parser.clj)               | Clojure    |
 | [Day 6: Custom Customs](2020/06/CustomsPrep.kt)                 | Kotlin     |
 | Day 7: Handy Haversacks: [Part 1](2020/07/LuggageCombos.lua), [Part 2](2020/07/LuggageCombosTwo.lua) | Lua |
+| [Day 8: Handheld Halting](2020/08/videogame.pl)                 | Perl       |
