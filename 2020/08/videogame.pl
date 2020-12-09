@@ -46,17 +46,17 @@ my ($action, $direction, $value);
 
 until ($current_step ~~ @visited_steps) {
   # Split the instruction line into the action, positive/negative, and the offset/value
-  ($action, $direction, $value) = ($steps[$current_step] =~ /(\w{3})\s+?([+-])(\d+)/);
+  ($action, $value) = ($steps[$current_step] =~ /(\w{3})\s+?\+?(-?\d+)/);
 
   push @visited_steps, $current_step;
 
   switch ($action) {
     case "acc" {
-      $accumulator = ($direction eq "+") ? ($accumulator + $value) : ($accumulator - $value);
+      $accumulator += $value;
       $current_step++;
     }
     case "jmp" {
-      $current_step = ($direction eq "+") ? ($current_step + $value) : ($current_step - $value);
+      $current_step += $value;
     }
     else {
       $current_step++;
@@ -97,7 +97,7 @@ until ($completed) {
   # The content of this loop controls the iterator:
   for ($current_step = 0; $current_step < (scalar @steps); $current_step) {
     # Split the instruction line
-    ($action, $direction, $value) = ($steps[$current_step] =~ /(\w{3})\s+?([+-])(\d+)/);
+    ($action, $value) = ($steps[$current_step] =~ /(\w{3})\s+?\+?(-?\d+)/);
 
     print "Current instruction: $current_step : $action / $direction / $value \n";
 
@@ -106,12 +106,12 @@ until ($completed) {
 
     switch ($action) {
       case "acc" {
-        $accumulator = ($direction eq "+") ? ($accumulator + $value) : ($accumulator - $value);
+        $accumulator += $value;
         $current_step++;
       }
       case "jmp" {
         if (($current_step ~~ @adjusted_lines) or $adjusted_line_yet) {
-          $current_step = ($direction eq "+") ? ($current_step + $value) : ($current_step - $value);
+          $current_step += $value;
         }
         else {
           print "* Running a jump as a nop. $current_step\n";
@@ -128,7 +128,7 @@ until ($completed) {
           print "* Running a nop as a jmp. $current_step\n";
           push @adjusted_lines, $current_step;
           $adjusted_line_yet = 1;
-          $current_step = ($direction eq "+") ? ($current_step + $value) : ($current_step - $value);
+          $current_step += $value;
         }
       }
       else {
