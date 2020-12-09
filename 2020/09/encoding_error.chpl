@@ -19,6 +19,8 @@ prototype module decoder {
   var windowLength: int = 5;
   var sequence: [0..windowLength - 1] int;
 
+  // Given a value (the next line in the file), search for a pair of numbers
+  // that are not the same which add to the given value.
   proc checkValidLine(value: int): bool {
     for x in sequence {
       label inner for y in sequence {
@@ -46,10 +48,20 @@ prototype module decoder {
     // What do we have so far?
     writeln("Preamble values: ", sequence);
 
+    // We'll read the "next line" into next to check it before adding it to the
+    // sequence buffer for subsequent line validation.
     var next: int;
+
     while (inputReader.read(next)) {
-      checkValidLine(next);
-      position += 1;
+      if (checkValidLine(next)) {
+        sequence[position % windowLength] = next;
+        position += 1;
+      }
+      else {
+        writeln("Line validation failed at ", position, ". ", next, " not found as a sum of any pair:");
+        writeln(sequence);
+        break;
+      }
     }
   }
 }
