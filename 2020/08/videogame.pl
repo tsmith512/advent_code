@@ -19,7 +19,7 @@
 use warnings;
 use strict;
 
-# Switch.pm required for this. `sudo apt-get install libswitch-perl`
+# Is this cheating? `sudo apt-get install libswitch-perl`
 use Switch;
 
 # Here's a thing you're not supposed to use in production code. You bet!
@@ -39,7 +39,7 @@ while (my $line = <$filehandle>) {
 
 close($filehandle);
 
-# Game stats
+# Game stat trackers
 my @visited_steps = ();
 my ($accumulator, $current_step) = (0, 0);
 my ($action, $direction, $value);
@@ -82,7 +82,7 @@ print "Boot Loop! Current Accumulator Value: " . $accumulator . "\n\n";
 # "corruption" is fixed. I need to swap one "nop" for a "jmp" (for vice versa)
 # so that the script terminates at the end of the set.
 
-# Reset
+# Reset counters and add monitors
 ($current_step, $accumulator) = (0, 0);
 my ($total_attempts, $adjusted_line_yet, $completed) = (0, 0, 0);
 my @adjusted_lines = ();
@@ -95,11 +95,9 @@ until ($completed) {
   @visited_steps = ();
 
   # The content of this loop controls the iterator:
-  for ($current_step = 0; $current_step < (scalar @steps); $current_step) {
+  until ($current_step ~~ @visited_steps) {
     # Split the instruction line
     ($action, $value) = ($steps[$current_step] =~ /(\w{3})\s+?\+?(-?\d+)/);
-
-    print "Current instruction: $current_step : $action / $direction / $value \n";
 
     last if ($current_step ~~ @visited_steps);
     push @visited_steps, $current_step;
@@ -138,7 +136,6 @@ until ($completed) {
 
     # Are we done?
     if ($current_step == (scalar @steps)) {
-      print "Program complete.\n";
       $completed = 1;
       last;
     };
