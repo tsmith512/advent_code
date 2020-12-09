@@ -15,8 +15,8 @@
 prototype module decoder {
   use IO;
 
-  var inputFilename: string = "encoded_sample.txt";
-  var windowLength: int = 5;
+  config var inputFilename: string = "encoded_sample.txt";
+  config var windowLength: int = 5;
   var sequence: [0..windowLength - 1] int;
 
   // Given a value (the next line in the file), search for a pair of numbers
@@ -45,9 +45,6 @@ prototype module decoder {
       position += 1;
     }
 
-    // What do we have so far?
-    writeln("Preamble values: ", sequence);
-
     // We'll read the "next line" into next to check it before adding it to the
     // sequence buffer for subsequent line validation.
     var next: int;
@@ -58,8 +55,9 @@ prototype module decoder {
         position += 1;
       }
       else {
-        writeln("Line validation failed at ", position, ". ", next, " not found as a sum of any pair:");
-        writeln(sequence);
+        writeln("Line validation failed at ", position, ". ", next, " not found as a sum of any pair in the buffer.");
+        // Part One solution:
+        // Line validation failed at 509. 31161678 not found as a sum of any pair in the buffer.
         break;
       }
     }
