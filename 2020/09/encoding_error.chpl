@@ -92,45 +92,42 @@ prototype module decoder {
     inputReader.read(next);
     deque.enqueue(next);
 
-    label outer while (sum != suspiciousNumber) {
-      // Run the queue:
-      sum = 0;
-      var highest: int = -1;
-      var lowest: int = -1;
-      label queueSum for val in deque.these(Ordering.FIFO) {
-        writeln(val);
-        if (val > highest) then highest = val;
-        if (val < lowest || lowest == -1) then lowest = val;
-        sum += val;
-        if (sum == suspiciousNumber) {
-          writeln("Found target.");
-          writeln("Highest: ", highest, " .. Lowest: ", lowest, " .. Sum: ", (highest + lowest));
-          // Part Two solution:
-          // Highest: 4241588 .. Lowest: 1212280 .. Sum: 5453868
-          break outer;
-        }
-      }
+    sum = 0;
+    var highest: int = -1;
+    var lowest: int = -1;
 
-      // We finished the queue.
+    while (sum != suspiciousNumber) {
+      // Sum the queue:
+      sum = + reduce deque;
+
       // If we went over target, pop the first entry off and start over.
       if (sum > suspiciousNumber) {
-        deque.popFront();
+        var (success, toss) = deque.dequeue();
+        writeln("Dumping ", toss);
+        if toss == lowest then lowest = -1;
+        if toss == highest then highest = -1;
+      }
+
+      // Winning!
+      else if (sum == suspiciousNumber) {
+        writeln("Found target.");
+        writeln("Highest: ", highest, " .. Lowest: ", lowest, " .. Sum: ", (highest + lowest));
+        // Part Two solution:
+        // Highest: 4241588 .. Lowest: 1212280 .. Sum: 5453868
+        break;
       }
 
       // If we're short, pull in the next number and start over.
       else if (sum < suspiciousNumber) {
         if (inputReader.read(next)) {
+          writeln("Adding ", next);
           deque.enqueue(next);
+          if (next > highest) then highest = next;
+          if (next < lowest || lowest == -1) then lowest = next;
         } else {
-          writeln("Uhh what happened we ran out of file");
-          break outer;
+          writeln("ERROR: Uhh what happened we ran out of file");
+          break;
         }
-      }
-
-      // Only way to hit this is if we got a match but didn't see it before.
-      else {
-        writeln("Sum ", sum, " is target", suspiciousNumber, ", how did we lose track?");
-        break outer;
       }
     }
   }
