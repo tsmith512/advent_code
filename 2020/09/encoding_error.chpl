@@ -135,6 +135,8 @@ prototype module decoder {
             if (val < lowest) then lowest = val;
           }
           writeln("Highest: ", highest, " .. Lowest: ", lowest, " .. Sum: ", (highest + lowest));
+          // Part Two solution:
+          // Highest: 4241588 .. Lowest: 1212280 .. Sum: 5453868
           break outer;
         }
 
