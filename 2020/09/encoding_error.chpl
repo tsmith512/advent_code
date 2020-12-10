@@ -75,75 +75,63 @@ prototype module decoder {
     // number. The set does not have a length limit.
     //
     // English:
-    // - Reset file position
-    // - Start at index 0
-    // - While we don't have a working set
-    //   - While sum < suspicious
-    //     - sum index 0..
-    //   - starting index++
+    // Init and add index 0 to the queue.
+    // While we have no answer:
+    // - Sum the queue. Reset/Track highest and lowest. If we hit the target, break.
+    //   - If we run out of lines in the queue and:
+    //     - The sum isn't high enough, read a line from file into the queue, position++, try again
+    //   - If we exceed the target:
+    //     - Pop the first element ouf of the queue, try again
+    // - Report highest + lowest.
     var suspiciousNumber: int = next;
-    var startingIndex: int = 0;
-    var startingValue: int = 0;
-    var found: bool = false;
     var sum: int = 0;
-    var endingValue: int = 0;
+    inputReader = inputFile.reader();
+    var deque = new DistDeque(int, cap=-1);
     next = 0;
 
-    label outer while (!found) {
-      // Start over from zero. CLosed/reopened the inputReader because I
-      // couldn't get past an error about seeing a locking channel...
-      var inputReader = inputFile.reader();
-      var deque = new DistDeque(int, cap=-1);
-      position = 0;
-      startingValue = 0;
+    inputReader.read(next);
+    deque.enqueue(next);
+
+    label outer while (sum != suspiciousNumber) {
+      // Run the queue:
       sum = 0;
-
-      // Even if I could get seek working, it seeks by bytes, not lines.
-      // "Waste" reads until we get to the start of the range.
-      if (startingIndex > 0) {
-        for i in 1..startingIndex {
-          inputReader.read(next);
-          sum = next;
-          position += 1;
-        }
-
-        deque.enqueue(next);
-      }
-
-      if (next > suspiciousNumber) {
-        writeln("Error: Starting at position [", startingIndex, "] -> ", next, " is greater than target ", suspiciousNumber);
-        break outer;
-      }
-
-      writeln("Starting at index [", position, "] ", next);
-      while (sum < suspiciousNumber) {
-        if (inputReader.read(next)) {
-          writeln("Adding ", sum, " + ", next);
-          sum += next;
-          position += 1;
-          deque.enqueue(next);
-        }
-
+      var highest: int = -1;
+      var lowest: int = -1;
+      label queueSum for val in deque.these(Ordering.FIFO) {
+        writeln(val);
+        if (val > highest) then highest = val;
+        if (val < lowest || lowest == -1) then lowest = val;
+        sum += val;
         if (sum == suspiciousNumber) {
-          writeln("Solution: Added lines ", startingIndex, "..", position, " => ", startingValue, " + ... + ", endingValue, " = ", sum);
-          found = true;
-          var highest: int;
-          var lowest: int = -1;
-          for val in deque.these(Ordering.FIFO) {
-            writeln(val);
-            if (val > highest) then highest = val;
-            if (val < lowest || lowest == -1) then lowest = val;
-          }
+          writeln("Found target.");
           writeln("Highest: ", highest, " .. Lowest: ", lowest, " .. Sum: ", (highest + lowest));
           // Part Two solution:
           // Highest: 4241588 .. Lowest: 1212280 .. Sum: 5453868
           break outer;
         }
-
       }
-      writeln("Failed: Added lines ", startingIndex, "..", position, " => ", sum);
-      startingIndex += 1;
-      inputReader.close();
+
+      // We finished the queue.
+      // If we went over target, pop the first entry off and start over.
+      if (sum > suspiciousNumber) {
+        deque.popFront();
+      }
+
+      // If we're short, pull in the next number and start over.
+      else if (sum < suspiciousNumber) {
+        if (inputReader.read(next)) {
+          deque.enqueue(next);
+        } else {
+          writeln("Uhh what happened we ran out of file");
+          break outer;
+        }
+      }
+
+      // Only way to hit this is if we got a match but didn't see it before.
+      else {
+        writeln("Sum ", sum, " is target", suspiciousNumber, ", how did we lose track?");
+        break outer;
+      }
     }
   }
 }
