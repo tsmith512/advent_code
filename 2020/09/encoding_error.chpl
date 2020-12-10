@@ -71,46 +71,36 @@ prototype module decoder {
     // |_| \__,_|_|  \__| /___|
     //
     // We need to take the suspicious number determined from above and seek the
-    // list, looking for a contiguous set of numbers that sum to the suspicipos
+    // list, looking for a contiguous set of numbers that sum to the suspicious
     // number. The set does not have a length limit.
-    //
-    // English:
-    // Init and add index 0 to the queue.
-    // While we have no answer:
-    // - Sum the queue. Reset/Track highest and lowest. If we hit the target, break.
-    //   - If we run out of lines in the queue and:
-    //     - The sum isn't high enough, read a line from file into the queue, position++, try again
-    //   - If we exceed the target:
-    //     - Pop the first element ouf of the queue, try again
-    // - Report highest + lowest.
+
     var suspiciousNumber: int = next;
-    var sum: int = 0;
+
     inputReader = inputFile.reader();
-    var deque = new DistDeque(int, cap=-1);
-    next = 0;
-
     inputReader.read(next);
-    deque.enqueue(next);
 
-    sum = 0;
-    var highest: int = -1;
-    var lowest: int = -1;
+    var buffer = new DistDeque(int, cap=-1);
+    buffer.enqueue(next);
+
+    // Running trackers. Currently [next] is our only value so it is all of them
+    var highest: int = next;
+    var lowest: int = next;
+    var sum: int = next;
 
     while (sum != suspiciousNumber) {
       // Sum the queue:
-      sum = + reduce deque;
+      sum = + reduce buffer;
 
       // If we went over target, pop the first entry off and start over.
       if (sum > suspiciousNumber) {
-        var (success, toss) = deque.dequeue();
-        writeln("Dumping ", toss);
+        var (success, toss) = buffer.dequeue();
         if toss == lowest then lowest = -1;
         if toss == highest then highest = -1;
       }
 
       // Winning!
       else if (sum == suspiciousNumber) {
-        writeln("Found target.");
+        writeln("Found target: ", suspiciousNumber);
         writeln("Highest: ", highest, " .. Lowest: ", lowest, " .. Sum: ", (highest + lowest));
         // Part Two solution:
         // Highest: 4241588 .. Lowest: 1212280 .. Sum: 5453868
@@ -120,8 +110,7 @@ prototype module decoder {
       // If we're short, pull in the next number and start over.
       else if (sum < suspiciousNumber) {
         if (inputReader.read(next)) {
-          writeln("Adding ", next);
-          deque.enqueue(next);
+          buffer.enqueue(next);
           if (next > highest) then highest = next;
           if (next < lowest || lowest == -1) then lowest = next;
         } else {
