@@ -61,5 +61,25 @@ prototype module decoder {
         break;
       }
     }
+
+    //  ___          _     ___
+    // | _ \__ _ _ _| |_  |_  )
+    // |  _/ _` | '_|  _|  / /
+    // |_| \__,_|_|  \__| /___|
+    //
+    // We need to take the suspicious number determined from above and seek the
+    // list, looking for a contiguous set of numbers that sum to the suspicipos
+    // number. The set does not have a length limit.
+    //
+    // English:
+    // - Reset file position
+    // - Start at index 0
+    // - While we don't have a working set
+    //   - While sum < suspicious
+    //     - sum index 0..
+    //   - starting index++
+    var suspiciousNumber: int = next;
+    inputReader.seek(0);
+    position = 0;
   }
 }
