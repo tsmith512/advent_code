@@ -14,6 +14,7 @@
 
 prototype module decoder {
   use IO;
+  use DistributedDeque;
 
   config var inputFilename: string = "encoded_sample.txt";
   config var windowLength: int = 5;
@@ -92,6 +93,7 @@ prototype module decoder {
       // Start over from zero. CLosed/reopened the inputReader because I
       // couldn't get past an error about seeing a locking channel...
       var inputReader = inputFile.reader();
+      var deque = new DistDeque(int, cap=-1);
       position = 0;
       startingValue = 0;
       sum = 0;
@@ -103,8 +105,9 @@ prototype module decoder {
           inputReader.read(next);
           sum = next;
           position += 1;
-          startingValue = next;
         }
+
+        deque.enqueue(next);
       }
 
       if (next > suspiciousNumber) {
@@ -118,12 +121,15 @@ prototype module decoder {
           writeln("Adding ", sum, " + ", next);
           sum += next;
           position += 1;
-          endingValue = next;
+          deque.enqueue(next);
         }
 
         if (sum == suspiciousNumber) {
           writeln("Solution: Added lines ", startingIndex, "..", position, " => ", startingValue, " + ... + ", endingValue, " = ", sum);
           found = true;
+          for val in deque.these(Ordering.FIFO) {
+            writeln(val);
+          }
           break outer;
         }
 
