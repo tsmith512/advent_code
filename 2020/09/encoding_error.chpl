@@ -128,11 +128,11 @@ prototype module decoder {
           writeln("Solution: Added lines ", startingIndex, "..", position, " => ", startingValue, " + ... + ", endingValue, " = ", sum);
           found = true;
           var highest: int;
-          var lowest: int = 100000000000000000;
+          var lowest: int = -1;
           for val in deque.these(Ordering.FIFO) {
             writeln(val);
             if (val > highest) then highest = val;
-            if (val < lowest) then lowest = val;
+            if (val < lowest || lowest == -1) then lowest = val;
           }
           writeln("Highest: ", highest, " .. Lowest: ", lowest, " .. Sum: ", (highest + lowest));
           // Part Two solution:
