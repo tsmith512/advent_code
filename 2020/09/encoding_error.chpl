@@ -127,9 +127,14 @@ prototype module decoder {
         if (sum == suspiciousNumber) {
           writeln("Solution: Added lines ", startingIndex, "..", position, " => ", startingValue, " + ... + ", endingValue, " = ", sum);
           found = true;
+          var highest: int;
+          var lowest: int = 100000000000000000;
           for val in deque.these(Ordering.FIFO) {
             writeln(val);
+            if (val > highest) then highest = val;
+            if (val < lowest) then lowest = val;
           }
+          writeln("Highest: ", highest, " .. Lowest: ", lowest, " .. Sum: ", (highest + lowest));
           break outer;
         }
 
