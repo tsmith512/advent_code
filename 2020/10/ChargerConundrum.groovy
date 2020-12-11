@@ -17,6 +17,20 @@ class ChargerConundrum {
   static final String inputFile = "chargers_sample_small.txt"
   static def chargersList = []
 
+  static Map collectIntervalDistributions(Collection x) {
+    def map = [:]
+
+    x.eachWithIndex { value, index ->
+      def difference = false
+      if (index) difference = value - x.get(index-1)
+      if (difference) {
+        if (map.get(difference)) map.put(difference, (map.get(difference) + 1))
+        else map.put(difference, 1)
+      }
+    }
+    map
+  }
+
   static void debugPrint(Collection x) {
     x.eachWithIndex{ value, index -> println "$index: $value" }
   }
@@ -28,12 +42,8 @@ class ChargerConundrum {
       chargersList.add(inputReader.next() as int)
     }
 
-    println "Before sorting:"
-    debugPrint(chargersList)
-
     chargersList.sort()
 
-    println "\n\nAfter sorting:"
-    debugPrint(chargersList)
+    println collectIntervalDistributions(chargersList)
   }
 }
