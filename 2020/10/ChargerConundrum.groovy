@@ -92,6 +92,20 @@ class ChargerConundrum {
     // - Evan did that, his gaming computer crashed after 6 hours.
     // (I suppose I could call up one of a few friends at internationally recognized supercomputing centers...)
     //
+    // Another option...
+    // - Start at 0
+    // - Just figure out how many [next] items would be valid................
+    //   .......but how do I know what I skipped
+    //
+    // Backwards?
+    //
+    // [Insert whiteboarding with George]
+    // - Set adapter list as the keys for a Map (reverse the order?)
+    //   - Add min and max values to that list, to keep it together
+    // - Map.eachWithIndex (plus bs about splitting "value" into k/v) _downward_
+    //   - Increment the value of "adapters I can reach from here" by current
+    //     adapter's "how many ways can we get here" number
+    // - By the end of the Map, we should have a counter on the [min] value (0)g
     def min = 0
     def max = chargersList.get(chargersList.size() - 1) + 3
   }

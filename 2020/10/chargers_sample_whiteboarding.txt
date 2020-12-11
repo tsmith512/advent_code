@@ -1,0 +1,31 @@
+0
+
+1
+4
+5
+6
+7
+10
+11
+12
+15
+16
+19
+
+22
+
+
+22  -3->  19  -3->  16  -1->  15  -3->  12
+                                            -1-> 11
+                                                     -1-> 10
+                                            -2-> 10           -3->  7
+                                                                       -1->  6
+                                                                       -2->  5
+                                                                       -3->  4
+                                                                                -3->  1  -1->  0
+
+                                            How many ways to get to 12? Just 1.
+                                            How many ways to get to 10? 2.
+
+... there's a common point at any interval of 3 between adjacent numbers ...
+
