@@ -14,7 +14,26 @@
 // distribution of increments between them.
 
 class ChargerConundrum {
+  static final String inputFile = "chargers_sample_small.txt"
+  static def chargersList = []
+
+  static void debugPrint(Collection x) {
+    x.eachWithIndex{ value, index -> println "$index: $value" }
+  }
+
   static void main(String... args) {
-    println "Hello, World!"
+    def inputReader = new Scanner(new File(inputFile));
+
+    while (inputReader.hasNext()) {
+      chargersList.add(inputReader.next() as int)
+    }
+
+    println "Before sorting:"
+    debugPrint(chargersList)
+
+    chargersList.sort()
+
+    println "\n\nAfter sorting:"
+    debugPrint(chargersList)
   }
 }
