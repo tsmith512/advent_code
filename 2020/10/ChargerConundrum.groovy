@@ -41,6 +41,26 @@ class ChargerConundrum {
     map
   }
 
+  // This is "the Part Two" function, read about it in main()
+  static void findCombinations(Map x) {
+    // Solving Part Two by asking the question
+    // "how many ways are there to get there from here?"
+    x.eachWithIndex{ entry, index ->
+      // This charger's joltage
+      def chargerJoltage = entry.key
+      // How many ways were there to get to this charger?
+      def howManyWays = entry.value
+
+      // This charger can "reach" chargers 1, 2, and 3 "jolts" lower
+      def myNextThreeOptions = [chargerJoltage - 1, chargerJoltage - 2, chargerJoltage - 3]
+
+      // So we know we can get from here to each of those.
+      myNextThreeOptions.each {
+        if (x.get(it) != null) x.put(it, x.get(it) + howManyWays)
+      }
+    }
+  }
+
   static void debugPrint(Collection x) {
     x.eachWithIndex{ value, index -> println "$index: $value" }
   }
@@ -112,15 +132,22 @@ class ChargerConundrum {
     // - By the end of the Map, we should have a counter on the [min] value (0)g
     def min = 0
     def max = chargersList.get(chargersList.size() - 1) + 3
-    def tree = [:];
+    def chargersTree = [:];
 
     // Make a Map of the widgets' values as keys -> 0. Include max/min.
-    tree.put(max, 0)
+    // Starting at "the laptop" with 1 way to get there.
+    chargersTree.put(max, 1)
     chargersList.reverseEach {
-      tree.put(it, 0)
+      chargersTree.put(it, 0)
     }
-    tree.put(min, 0)
+    chargersTree.put(min, 0)
 
-    debugPrint(tree);
+    println("Before counting:")
+    debugPrint(chargersTree)
+
+    findCombinations(chargersTree)
+
+    println("After counting")
+    debugPrint(chargersTree)
   }
 }
