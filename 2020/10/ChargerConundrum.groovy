@@ -46,11 +46,7 @@ class ChargerConundrum {
   }
 
   static void main(String... args) {
-    def inputReader = new Scanner(new File(inputFile));
-
-    while (inputReader.hasNext()) {
-      chargersList.add(inputReader.next() as int)
-    }
+    chargersList = new File(inputFile).collect {it as int}
 
     println "Total Chargers in input list: " + chargersList.size()
     chargersList.sort()
