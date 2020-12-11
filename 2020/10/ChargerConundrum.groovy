@@ -22,12 +22,22 @@ class ChargerConundrum {
 
     x.eachWithIndex { value, index ->
       def difference = false
-      if (index) difference = value - x.get(index-1)
-      if (difference) {
+
+      // Look back to the previous "charger" in the list.
+      if (index) {
+        difference = value - x.get(index - 1)
         if (map.get(difference)) map.put(difference, (map.get(difference) + 1))
         else map.put(difference, 1)
       }
+      // The input to the first widget (i = 0) is 0, so its difference is itself
+      else {
+        map.put(value, 1)
+      }
     }
+
+    // For narrative reasons, there's an extra increment-3 element
+    map.put(3, (map.get(3) + 1))
+
     map
   }
 
@@ -42,8 +52,13 @@ class ChargerConundrum {
       chargersList.add(inputReader.next() as int)
     }
 
+    println "Total Chargers in input list: " + chargersList.size()
     chargersList.sort()
 
-    println collectIntervalDistributions(chargersList)
+    def intervals = collectIntervalDistributions(chargersList)
+
+    println "Count of 1-Jolt Increases: " + intervals.get(1)
+    println "Count of 3-Jolt Increases: " + intervals.get(3)
+    println "Product: " + (intervals.get(1) * intervals.get(3))
   }
 }
