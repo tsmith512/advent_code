@@ -14,7 +14,7 @@
 // distribution of increments between them.
 
 class ChargerConundrum {
-  static final String inputFile = "chargers_input.txt"
+  static final String inputFile = "chargers_sample_small.txt"
   static def chargersList = []
 
   static Map collectIntervalDistributions(Collection x) {
@@ -62,5 +62,27 @@ class ChargerConundrum {
     //   Count of 1-Jolt Increases: 66
     //   Count of 3-Jolt Increases: 29
     //   Product: 1914
+
+
+    //  ___          _     ___
+    // | _ \__ _ _ _| |_  |_  )
+    // |  _/ _` | '_|  _|  / /
+    // |_| \__,_|_|  \__| /___|
+    //
+    // omg wat?!
+    // Uhhhhhhhh. Okay to English about this...
+    //
+    // Challenge: How many combinations would work?
+    // - Same rules as Part One.
+    // - Index -1 = 0. Index n+1 = Max+3.
+    // - Chargers still have to go in order.
+    // - Chargers still must be an increment of 1, 2, or 3
+    // - Narrative contained a warning that there could be trillions+ combos.
+    //
+    // Actual question:
+    // What is the total number of distinct ways you can arrange the adapters to
+    // connect the charging outlet to your device?
+    def min = 0
+    def max = chargersList.get(chargersList.size() - 1) + 3
   }
 }
