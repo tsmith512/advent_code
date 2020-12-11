@@ -96,7 +96,7 @@ class ChargerConundrum {
     //
     // Challenge: How many combinations would work?
     // - Same rules as Part One.
-    // - Index -1 = 0. Index n+1 = Max+3.
+    // - First step (the "airplane power outlet") = 0. Index n+1 = Max+3 ("the laptop").
     // - Chargers still have to go in order.
     // - Chargers still must be an increment of 1, 2, or 3
     // - Puzzle input contains ~100 lines. Narrative contained a warning that
@@ -111,7 +111,7 @@ class ChargerConundrum {
     // - For each increment, decide what each next step could be, based on what
     //   can be skipped.
     //   - Recursively run each option. Add an incrementor to tally each completion.
-    // - Evan did that, his gaming computer crashed after 6 hours.
+    // - Evan did that; his gaming computer crashed after 6 hours.
     // (I suppose I could call up one of a few friends at internationally recognized supercomputing centers...)
     //
     // Another option...

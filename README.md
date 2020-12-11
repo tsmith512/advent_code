@@ -16,3 +16,4 @@ well is a bit dated. So I've decided to lean into my experience with traditional
 | Day 7: Handy Haversacks: [Part 1](2020/07/LuggageCombos.lua), [Part 2](2020/07/LuggageCombosTwo.lua) | Lua |
 | [Day 8: Handheld Halting](2020/08/videogame.pl)                 | Perl       |
 | [Day 9: Encoding Error](2020/09/encoding_error.chpl)            | Chapel     |
+| [Day 10: Adapter Array](2020/10/ChargerConundrum.groovy)        | Groovy     |
