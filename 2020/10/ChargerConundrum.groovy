@@ -48,15 +48,13 @@ class ChargerConundrum {
     x.eachWithIndex{ entry, index ->
       // This charger's joltage
       def chargerJoltage = entry.key
+
       // How many ways were there to get to this charger?
       def howManyWays = entry.value
 
-      // This charger can "reach" chargers 1, 2, and 3 "jolts" lower
-      def myNextThreeOptions = [chargerJoltage - 1, chargerJoltage - 2, chargerJoltage - 3]
-
-      // So we know we can get from here to each of those.
-      myNextThreeOptions.each {
-        if (x.get(it) != null) x.put(it, x.get(it) + howManyWays)
+      // We can "reach" anything 1-3 jolts lower, so add our count to those:
+      for (nextOption in (chargerJoltage-1)..(chargerJoltage-3)) {
+        if (x.get(nextOption) >= 0) x.put(nextOption, x.get(nextOption) + howManyWays)
       }
     }
   }
