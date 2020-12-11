@@ -14,7 +14,7 @@
 // distribution of increments between them.
 
 class ChargerConundrum {
-  static final String inputFile = "chargers_sample_large.txt"
+  static final String inputFile = "chargers_input.txt"
   static def chargersList = []
 
   static Map collectIntervalDistributions(Collection x) {
@@ -136,18 +136,16 @@ class ChargerConundrum {
 
     // Make a Map of the widgets' values as keys -> 0. Include max/min.
     // Starting at "the laptop" with 1 way to get there.
-    chargersTree.put(max, 1)
+    chargersTree.put(max, 1 as long)
     chargersList.reverseEach {
-      chargersTree.put(it, 0)
+      chargersTree.put(it, 0 as long)
     }
-    chargersTree.put(min, 0)
-
-    println("Before counting:")
-    debugPrint(chargersTree)
+    chargersTree.put(min, 0 as long)
 
     findCombinations(chargersTree)
 
-    println("After counting")
-    debugPrint(chargersTree)
+    println("There are " + chargersTree.get(0) + " ways to arrange the adapters from $max to $min.")
+    // Part Two solution:
+    //   There are 9256148959232 ways to arrange the adapters from 153 to 0.
   }
 }
