@@ -12,3 +12,9 @@
 // A widget can take an input 1, 2, or 3 lower than it is. Using every number
 // in the input, order them such that they fall in this pattern and collect the
 // distribution of increments between them.
+
+class ChargerConundrum {
+  static void main(String... args) {
+    println "Hello, World!"
+  }
+}
