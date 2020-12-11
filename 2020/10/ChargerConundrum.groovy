@@ -14,7 +14,7 @@
 // distribution of increments between them.
 
 class ChargerConundrum {
-  static final String inputFile = "chargers_sample_small.txt"
+  static final String inputFile = "chargers_sample_large.txt"
   static def chargersList = []
 
   static Map collectIntervalDistributions(Collection x) {
