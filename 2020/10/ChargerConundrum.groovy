@@ -45,6 +45,10 @@ class ChargerConundrum {
     x.eachWithIndex{ value, index -> println "$index: $value" }
   }
 
+  static void debugPrint(Map x) {
+    x.eachWithIndex{ entry, index -> println "$index: $entry.key -> $entry.value" }
+  }
+
   static void main(String... args) {
     chargersList = new File(inputFile).collect {it as int}
 
@@ -108,5 +112,15 @@ class ChargerConundrum {
     // - By the end of the Map, we should have a counter on the [min] value (0)g
     def min = 0
     def max = chargersList.get(chargersList.size() - 1) + 3
+    def tree = [:];
+
+    // Make a Map of the widgets' values as keys -> 0. Include max/min.
+    tree.put(max, 0)
+    chargersList.reverseEach {
+      tree.put(it, 0)
+    }
+    tree.put(min, 0)
+
+    debugPrint(tree);
   }
 }
