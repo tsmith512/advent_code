@@ -136,11 +136,11 @@ class ChargerConundrum {
 
     // Make a Map of the widgets' values as keys -> 0. Include max/min.
     // Starting at "the laptop" with 1 way to get there.
-    chargersTree.put(max, 1 as long)
+    chargersTree.put(max, 1l)
     chargersList.reverseEach {
-      chargersTree.put(it, 0 as long)
+      chargersTree.put(it, 0l)
     }
-    chargersTree.put(min, 0 as long)
+    chargersTree.put(min, 0l)
 
     findCombinations(chargersTree)
 
