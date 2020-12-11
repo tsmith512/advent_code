@@ -14,7 +14,7 @@
 // distribution of increments between them.
 
 class ChargerConundrum {
-  static final String inputFile = "chargers_sample_small.txt"
+  static final String inputFile = "chargers_input.txt"
   static def chargersList = []
 
   static Map collectIntervalDistributions(Collection x) {
@@ -60,5 +60,11 @@ class ChargerConundrum {
     println "Count of 1-Jolt Increases: " + intervals.get(1)
     println "Count of 3-Jolt Increases: " + intervals.get(3)
     println "Product: " + (intervals.get(1) * intervals.get(3))
+
+    // Part One solution:
+    //   Total Chargers in input list: 94
+    //   Count of 1-Jolt Increases: 66
+    //   Count of 3-Jolt Increases: 29
+    //   Product: 1914
   }
 }
