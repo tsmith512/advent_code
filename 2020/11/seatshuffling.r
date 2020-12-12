@@ -33,4 +33,6 @@
 # After repeated application of these rules, the seating distribution
 # stabilizes. Report how many seats are occupied at that point.
 
-print("Hello World!")
+seats = matrix(data = NA, nrow = 10, ncol = 10, byrow = TRUE)
+
+print(seats)
