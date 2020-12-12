@@ -35,7 +35,7 @@
 
 
 # Read the the original seating chart into a matrix
-lines <- scan("seating_sample.txt", what = "")
+lines <- scan("seating_chart.txt", what = "")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 seats <- matrix(data = unlist(strsplit(lines, "")), nrow = rows, ncol = cols, byrow = TRUE)
@@ -90,13 +90,9 @@ iterateSeats <- function(before, part = 1) {
       }
       else if (status == "#") {
         # Occupied Seat
-        # The rule is +4 adjacent seats, but our count will also include the
-        # current seat, so we need to check for 5+ (6+ in part 2)
-
-        # @TODO: huh? using 5 for part 2 fixed it...?
-        limit <- if(part == 1) 5 else 6
-        # @TODO: OH! Beacuse the "current seat" gets overwritten in the part 2
-        # logic I wrote, but not here... let's unify that
+        # - getNeighbors() doesn't fix "my" seat, so we must check for 5+ not 4+
+        # - getAdjacentBySight() DOES fix "my" seat, but the rule is 5+
+        # SO we check for 5 either way, regardless of the rule change.
         if (countType(neighbors, "#") >= 5) {
           after[row,col] = "L"
         }
@@ -130,8 +126,6 @@ runTest(seats, 1)
 #   floor empty taken
 #    1425  4914  2211
 
-cat("\n\n\n\n\n")
-
 #  ___          _     ___
 # | _ \__ _ _ _| |_  |_  )
 # |  _/ _` | '_|  _|  / /
@@ -157,33 +151,27 @@ cat("\n\n\n\n\n")
 # After it stabilizes, the sample input produces 26 occupied seats.
 
 getAdjacentBySight <- function(row, col, matrix) {
-  # English:
-  # - Rather than just cropping out a 3x3 around [row,col]...
-  # - ...start at given seat address and then trace out in each direction
-  # - For each direction:
-  #   - Go "straight" looking for a "L" or "#", skipping any "."
-  #     - If we hit a matrix boundary only having seen ".", keep "."
-  #   - Put encountered letters back in a [3,3] matrix around an X so we can use
-  #     the rest of what we had before.
+  # Like getNeighbors() we'll return a [3,3], but it will have sightline values
   seen <- matrix(data = "", nrow = 3, ncol = 3, byrow = TRUE)
   maxRow <- length(matrix[,1])
   maxCol <- length(matrix[1,])
 
-  # Go around the clock, take [ORIGIN:DESTINATION] and get the first non-floor
-  # value from it (or floor, if that's all there is)
+  # Go around the clock from "my seat", to get the first non-floor tile, if any
   for (r in 1:3) {
+    # Looking up, L/R only, or down?
     destR <- c(1, row, maxRow)[r]
 
     for (c in 1:3) {
+      # Looking left, U/D only, or right?
       destC <- c(1, col, maxCol)[c]
 
-      # This is the seat we're looking _from_
+      # This is my seat
       if (r == 2 && c == 2) {
         seen[r, c] <- "X"
         next
       }
 
-      # If we're trying to look before the seating area starts
+      # Trying to look before the seating area
       if (col == 1 && c == 1) {
         seen[r, c] <- "EC"
         next
@@ -194,7 +182,7 @@ getAdjacentBySight <- function(row, col, matrix) {
         next
       }
 
-      # If we're trying to look past the far edge
+      # Trying to look past the seating area
       if (col == maxCol && c == 3) {
         seen[r, c] <- "EC"
         next
@@ -205,7 +193,7 @@ getAdjacentBySight <- function(row, col, matrix) {
         next
       }
 
-      # Get the sightline to be evaluated, extracting a diag() if needed
+      # Get the sightline to be evaluated, extracting it with diag() if needed
       if (row == destR || col == destC) line <- matrix[row:destR, col:destC]
       else line <- diag(matrix[row:destR, col:destC])
 
@@ -229,3 +217,7 @@ getFirstSeatSeen <- function(line) {
 }
 
 runTest(seats, 2)
+# Part Two solution:
+#   Iteration 85
+#   floor empty taken
+#   1425  5130  1995
