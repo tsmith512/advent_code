@@ -46,6 +46,17 @@ countType <- function(matrix, type) {
   return(length(which(matrix == type)))
 }
 
+getNeighbors <- function(x, y, matrix) {
+  maxW <- length(matrix[1,])
+  maxH <- length(matrix[,1])
+  # Thankfully the 0,0 bounds are automatically "cropped," but figure max-bounds
+  x2 <- if(x >= maxW) maxW else x + 1
+  y2 <- if(y >= maxH) maxH else x + 1
+  return(matrix[(x-1):x2, (y-1):y2])
+}
+
 sprintf("Floor area: %d", countType(seats, "."))
 sprintf("Empty Seats: %d", countType(seats, "L"))
 sprintf("Taken Seats: %d", countType(seats, "#"))
+
+print(getNeighbors(2, 2, seats))
