@@ -95,6 +95,8 @@ iterateSeats <- function(before, part = 1) {
 
         # @TODO: huh? using 5 for part 2 fixed it...?
         limit <- if(part == 1) 5 else 6
+        # @TODO: OH! Beacuse the "current seat" gets overwritten in the part 2
+        # logic I wrote, but not here... let's unify that
         if (countType(neighbors, "#") >= 5) {
           after[row,col] = "L"
         }
@@ -122,7 +124,7 @@ runTest <- function(seats, puzzlePart) {
   }
 }
 
-# runTest(seats, 1)
+runTest(seats, 1)
 # Part One solution:
 #   Iteration 134
 #   floor empty taken
@@ -157,7 +159,7 @@ cat("\n\n\n\n\n")
 getAdjacentBySight <- function(row, col, matrix) {
   # English:
   # - Rather than just cropping out a 3x3 around [row,col]...
-  # - ...start at given seat addrress and then trace out in each direction
+  # - ...start at given seat address and then trace out in each direction
   # - For each direction:
   #   - Go "straight" looking for a "L" or "#", skipping any "."
   #     - If we hit a matrix boundary only having seen ".", keep "."
@@ -203,29 +205,19 @@ getAdjacentBySight <- function(row, col, matrix) {
         next
       }
 
-      if (row == destR || col == destC) {
-        line <- matrix[row:destR, col:destC]
-      }
-      else {
-        line <- diag(matrix[row:destR, col:destC])
-      }
+      # Get the sightline to be evaluated, extracting a diag() if needed
+      if (row == destR || col == destC) line <- matrix[row:destR, col:destC]
+      else line <- diag(matrix[row:destR, col:destC])
 
       # Save the first seat we see in the given direction
       seen[r, c] <- getFirstSeatSeen(line)
     }
   }
-  print(c("Sightlines from", row, col))
-  print(seen)
   seen
 }
 
 getFirstSeatSeen <- function(line) {
-  status <- "Z"
-
-  # If we're on an edge, there may not be a line here, just return what we have
-  # @TODO: That might mess up the counting... should we return NULL? We didn't
-  # "see" anything
-  if (length(line) == 1) return ("E")
+  status <- ""
 
   # From my seat, look for the first non-floor that isn't me
   for (value in line[-1]) {
@@ -236,21 +228,4 @@ getFirstSeatSeen <- function(line) {
   status
 }
 
-
-# Determine seat stats for the initial seatmap
-beforeStats <- seatReport(seats)
-afterStats <- seatReport(list())
-i <- 0
-
-while (! all(beforeStats == afterStats) ) {
-  i <- i + 1
-
-  beforeStats <- afterStats
-  seats <- iterateSeats(seats, 2)
-  afterStats <- seatReport(seats)
-
-  cat(sprintf("\n\nIteration %d\n", i))
-  print(seats)
-  print(afterStats)
-}
-# runTest(seats, 2)
+runTest(seats, 2)
