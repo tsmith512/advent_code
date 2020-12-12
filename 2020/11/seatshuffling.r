@@ -34,18 +34,21 @@
 # stabilizes. Report how many seats are occupied at that point.
 
 
-
+# Read the the original seating chart into a matrix
 lines <- scan("seating_sample.txt", what = "")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
-
 seats <- matrix(data = unlist(strsplit(lines, "")), nrow = rows, ncol = cols, byrow = TRUE)
 print(seats)
 
+# UTILITY FUNCTIONS
+
+# Figure out how many seats of a given type are in this area
 countType <- function(matrix, type) {
   return(length(which(matrix == type)))
 }
 
+# Crop out a matrix of the neighbors for a given seat designation
 getNeighbors <- function(row, col, matrix) {
   maxRow <- length(matrix[,1])
   maxCol <- length(matrix[1,])
