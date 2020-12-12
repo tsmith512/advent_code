@@ -35,9 +35,9 @@
 
 
 
-lines = scan("seating_sample.txt", what = "")
-rows = length(lines)
-cols = length(unlist(strsplit(lines[1], "")))
+lines <- scan("seating_sample.txt", what = "")
+rows <- length(lines)
+cols <- length(unlist(strsplit(lines[1], "")))
 
-seats = matrix(data = unlist(strsplit(lines, "")), nrow = rows, ncol = cols, byrow = TRUE)
+seats <- matrix(data = unlist(strsplit(lines, "")), nrow = rows, ncol = cols, byrow = TRUE)
 print(seats)
