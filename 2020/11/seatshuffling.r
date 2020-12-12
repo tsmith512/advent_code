@@ -56,11 +56,7 @@ getNeighbors <- function(row, col, matrix) {
   row2 <- if(row >= maxRow) maxRow else row + 1
   col2 <- if(col >= maxCol) maxCol else col + 1
 
-  # Duplicate the matrix so we can clear out the queried seat
-  new <- matrix[(row-1):row2, (col-1):col2]
-  new[2,2] = "X"
-
-  new
+  matrix[(row-1):row2, (col-1):col2]
 }
 
 seatReport <- function(matrix) {
@@ -93,7 +89,9 @@ iterateSeats <- function(before) {
       }
       else if (status == "#") {
         # Occupied Seat
-        if (countType(neighbors, "#") >= 4) {
+        if (countType(neighbors, "#") >= 5) {
+          # The rule is +4 adjacent seats, but our count will also include the
+          # current seat, so we need to check for 5+
           after[row,col] = "L"
         }
       }

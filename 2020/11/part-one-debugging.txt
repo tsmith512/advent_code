@@ -1,0 +1,90 @@
+MINE        SAMPLE
+----------  ----------
+L.LL.LL.LL  L.LL.LL.LL
+LLLLLLL.LL  LLLLLLL.LL
+L.L.L..L..  L.L.L..L..
+LLLL.LL.LL  LLLL.LL.LL
+L.LL.LL.LL  L.LL.LL.LL
+L.LLLLL.LL  L.LLLLL.LL
+..L.L.....  ..L.L.....
+LLLLLLLLLL  LLLLLLLLLL
+L.LLLLLL.L  L.LLLLLL.L
+L.LLLLL.LL  L.LLLLL.LL
+
+
+#.##.##.##  #.##.##.##
+#######.##  #######.##
+#.#.#..#..  #.#.#..#..
+####.##.##  ####.##.##
+#.##.##.##  #.##.##.##
+#.#####.##  #.#####.##
+..#.#.....  ..#.#.....
+##########  ##########
+#.######.#  #.######.#
+#.#####.##  #.#####.##
+Iteration1
+
+
+#.LL.L#.##  #.LL.L#.##
+#LLLLLL.L#  #LLLLLL.L#
+L.L.L..L..  L.L.L..L..
+#LLL.LL.L#  #LLL.LL.L#
+L.LL.LL.LL  #.LL.LL.LL  <-- We emptied a seat with only 3 filled seats around it
+#.LLLL#.##  #.LLLL#.##
+..L.L.....  ..L.L.....
+#LLLLLLLL#  #LLLLLLLL#
+L.LLLLLL.L  #.LLLLLL.L  <-- Same deal...
+#.#LLLL.##  #.#LLLL.##
+Iteration2
+
+
+#.##.L#.##  #.##.L#.##
+#L###LL.L#  #L###LL.L#
+L.#.#..#..  L.#.#..#..
+#L##.##.L#  #L##.##.L#
+L.##.LL.LL  #.##.LL.LL
+#.###L#.##  #.###L#.##
+..#.#.....  ..#.#.....
+#L######L#  #L######L#
+L.LL###L.L  #.LL###L.L
+#.#L###.##  #.#L###.##
+Iteration3
+
+
+#.#L.L#.##  #.#L.L#.##
+#LLL#LL.L#  #LLL#LL.L#
+L.L.L..#..  L.L.L..#..
+#LLL.##.L#  #LLL.##.L#
+L.LL.LL.LL  #.LL.LL.LL
+#.LL#L#.##  #.LL#L#.##
+..L.L.....  ..L.L.....
+#L#LLLL#L#  #L#LLLL#L#
+L.LLLLLL.L  #.LLLLLL.L
+#.#L#L#.##  #.#L#L#.##
+Iteration4
+
+
+#.#L.L#.##  #.#L.L#.##
+#LLL#LL.L#  #LLL#LL.L#
+L.#.L..#..  L.#.L..#..
+#L##.##.L#  #L##.##.L#
+L.#L.LL.LL  #.#L.LL.LL
+#.#L#L#.##  #.#L#L#.##
+..L.L.....  ..L.L.....
+#L#L##L#L#  #L#L##L#L#
+L.LLLLLL.L  #.LLLLLL.L
+#.#L#L#.##  #.#L#L#.##
+Iteration5
+
+
+#.#L.L#.##
+#LLL#LL.L#
+L.#.L..#..
+#L##.##.L#
+L.#L.LL.LL
+#.#L#L#.##
+..L.L.....
+#L#L##L#L#
+L.LLLLLL.L
+#.#L#L#.##
+Iteration6
