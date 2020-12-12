@@ -35,7 +35,7 @@
 
 
 # Read the the original seating chart into a matrix
-lines <- scan("seating_sample.txt", what = "")
+lines <- scan("seating_chart.txt", what = "")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 seats <- matrix(data = unlist(strsplit(lines, "")), nrow = rows, ncol = cols, byrow = TRUE)
@@ -59,6 +59,7 @@ getNeighbors <- function(row, col, matrix) {
   matrix[(row-1):row2, (col-1):col2]
 }
 
+# Return counts of seat statuses
 seatReport <- function(matrix) {
   setNames(
     c(countType(matrix, "."), countType(matrix, "L"), countType(matrix, "#")),
@@ -66,6 +67,7 @@ seatReport <- function(matrix) {
   )
 }
 
+# Apply the rules to a copy of the seatmap and return the new state
 iterateSeats <- function(before) {
   # I couldn't figure out how to do this "simultaneously" so I'm reading from
   # Before and writing to / returning After.
@@ -77,12 +79,11 @@ iterateSeats <- function(before) {
       status <- before[row,col]
       neighbors <- getNeighbors(row, col, before)
 
-      # Don't mess up the floor.
       if (status == ".") {
-        # No action.
+        # Floor tile. No action.
       }
       else if (status == "L") {
-        # An empty Seat
+        # An empty Seat.
         if (countType(neighbors, "#") == 0) {
           after[row,col] = "#"
         }
@@ -102,20 +103,20 @@ iterateSeats <- function(before) {
 
 # Determine seat stats for the initial seatmap
 beforeStats <- seatReport(seats)
-print(beforeStats)
-print(seats)
 afterStats <- seatReport(list())
-print(afterStats)
-
 i <- 0
+
 while (! all(beforeStats == afterStats) ) {
   i <- i + 1
 
   beforeStats <- afterStats
   seats <- iterateSeats(seats)
-  print(seats)
   afterStats <- seatReport(seats)
 
-  print(c("Iteration", i))
+  cat(sprintf("\n\nIteration %d\n", i))
   print(afterStats)
 }
+# Part One solution:
+#   Iteration 134
+#   floor empty taken
+#    1425  4914  2211
