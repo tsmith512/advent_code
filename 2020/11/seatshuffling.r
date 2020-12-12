@@ -56,6 +56,7 @@ getNeighbors <- function(row, col, matrix) {
   # Thankfully the 0,0 bounds are automatically "cropped," but figure max-bounds
   row2 <- if(row >= maxRow) maxRow else row + 1
   col2 <- if(col >= maxCol) maxCol else col + 1
+  # @TODO: Need to replace [row,col] with a blank space to avoid bad counts?
   return(matrix[(row-1):row2, (col-1):col2])
 }
 
@@ -66,3 +67,10 @@ sprintf("Taken Seats: %d", countType(seats, "#"))
 # These two work together:
 print(              getNeighbors(2, 9, seats)          )
 print(  countType(  getNeighbors(2, 9, seats)  , "L")  )
+
+testEdit <- function(seat) {
+  if (seat ==".") return(".")
+  "X"
+}
+
+print(apply(seats, c(1,2), testEdit))
