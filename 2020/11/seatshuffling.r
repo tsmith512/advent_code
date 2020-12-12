@@ -151,7 +151,7 @@ getAdjacentBySight <- function(row, col, matrix) {
   # - Rather than just cropping out a 3x3 around [row,col]...
   # - ...start at given seat addrress and then trace out in each direction
   # - For each direction:
-  #   - Go "stright" looking for a "L" or "#", skipping any "."
+  #   - Go "straight" looking for a "L" or "#", skipping any "."
   #     - If we hit a matrix boundary only having seen ".", keep "."
   #   - Put encountered letters back in a [3,3] matrix around an X so we can use
   #     the rest of what we had before.
@@ -175,17 +175,33 @@ getAdjacentBySight <- function(row, col, matrix) {
   ## The diagonals
   cat("Center to NW\n")
   print(diag(matrix[row:1, col:maxCol]))
+  print(getFirstSeatSeen(diag(matrix[row:1, col:maxCol])))
 
   cat("Center to SW\n")
   print(diag(matrix[row:maxRow, col:maxCol]))
+  print(getFirstSeatSeen(diag(matrix[row:maxRow, col:maxCol])))
 
   cat("Center to SE\n")
   print(diag(matrix[row:maxRow, col:1]))
+  print(getFirstSeatSeen(diag(matrix[row:maxRow, col:1])))
 
   cat("Center to NE\n")
   print(diag(matrix[row:1, col:1]))
+  print(getFirstSeatSeen(diag(matrix[row:1, col:1])))
   seen
 }
+
+getFirstSeatSeen <- function(line) {
+  status <- NULL
+  # For legibility reasons above, the first element in the line will be the
+  # current seat, we should skip that.
+  for (value in line[-1]) {
+    status <- value
+    if(value != ".") break
+  }
+  status
+}
+
 
 testMatrixA <- matrix(data =
 c("NE", "#", "#", "12", "#", "#", "NW",
