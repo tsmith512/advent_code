@@ -173,7 +173,7 @@ getAdjacentBySight <- function(row, col, matrix) {
 
       # This is the seat we're looking _from_
       if (r == 2 && c == 2) {
-        seen[r,c] <- "X"
+        seen[r, c] <- matrix[row, col]
         next
       }
 
@@ -183,7 +183,7 @@ getAdjacentBySight <- function(row, col, matrix) {
       else line <- diag(matrix[row:destR, col:destC])
 
       # Save the first seat we see in the given direction
-      seen[r,c] <- getFirstSeatSeen(line)
+      seen[r, c] <- getFirstSeatSeen(line)
     }
   }
   seen
@@ -211,3 +211,24 @@ c(".", "#", "#", ".", "#", "#", ".",
   ".", "#", "#", ".", "#", "#", "."), nrow = 7, ncol = 7, byrow = TRUE)
 
 print(getAdjacentBySight(4, 4, testMatrixA))
+
+testMatrixB <- matrix(data = c(
+".", ".", ".", ".", ".", ".", ".", "#", ".",
+".", ".", ".", "#", ".", ".", ".", ".", ".",
+".", "#", ".", ".", ".", ".", ".", ".", ".",
+".", ".", ".", ".", ".", ".", ".", ".", ".",
+".", ".", "#", "L", ".", ".", ".", ".", "#",
+".", ".", ".", ".", "#", ".", ".", ".", ".",
+".", ".", ".", ".", ".", ".", ".", ".", ".",
+"#", ".", ".", ".", ".", ".", ".", ".", ".",
+".", ".", ".", "#", ".", ".", ".", ".", "."
+), nrow = 9, ncol = 9, byrow = TRUE)
+print(getAdjacentBySight(5, 4, testMatrixB))
+
+testMatrixC <- matrix(data = c(
+".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".",
+".", "A", ".", "L", ".", "#", ".", "#", ".", "#", ".", "#", ".",
+".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."
+), nrow = 3, ncol = 13, byrow = TRUE)
+
+print(getAdjacentBySight(2, 2, testMatrixC))
