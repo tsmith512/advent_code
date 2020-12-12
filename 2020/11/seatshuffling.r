@@ -41,3 +41,11 @@ cols <- length(unlist(strsplit(lines[1], "")))
 
 seats <- matrix(data = unlist(strsplit(lines, "")), nrow = rows, ncol = cols, byrow = TRUE)
 print(seats)
+
+countType <- function(matrix, type) {
+  return(length(which(matrix == type)))
+}
+
+sprintf("Floor area: %d", countType(seats, "."))
+sprintf("Empty Seats: %d", countType(seats, "L"))
+sprintf("Taken Seats: %d", countType(seats, "#"))
