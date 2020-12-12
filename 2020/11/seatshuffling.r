@@ -33,6 +33,11 @@
 # After repeated application of these rules, the seating distribution
 # stabilizes. Report how many seats are occupied at that point.
 
-seats = matrix(data = NA, nrow = 10, ncol = 10, byrow = TRUE)
 
+
+lines = scan("seating_sample.txt", what = "")
+rows = length(lines)
+cols = length(unlist(strsplit(lines[1], "")))
+
+seats = matrix(data = unlist(strsplit(lines, "")), nrow = rows, ncol = cols, byrow = TRUE)
 print(seats)
