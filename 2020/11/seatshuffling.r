@@ -159,6 +159,7 @@ getAdjacentBySight <- function(row, col, matrix) {
   maxRow <- length(matrix[,1])
   maxCol <- length(matrix[1,])
 
+  ## The straight lines
   cat("3 o'clock\n")
   print(matrix[row, col:maxCol])
 
@@ -170,17 +171,30 @@ getAdjacentBySight <- function(row, col, matrix) {
 
   cat("12 o'clock\n")
   print(matrix[row:1, col])
+
+  ## The diagonals
+  cat("Center to NW\n")
+  print(diag(matrix[row:1, col:maxCol]))
+
+  cat("Center to SW\n")
+  print(diag(matrix[row:maxRow, col:maxCol]))
+
+  cat("Center to SE\n")
+  print(diag(matrix[row:maxRow, col:1]))
+
+  cat("Center to NE\n")
+  print(diag(matrix[row:1, col:1]))
   seen
 }
 
 testMatrixA <- matrix(data =
-c(".", "#", "#", "12", "#", "#", ".",
+c("NE", "#", "#", "12", "#", "#", "NW",
   "#", ".", "#", ".", "#", ".", "#",
   "#", "#", ".", ".", ".", "#", "#",
   "9", ".", ".", "X", ".", ".", "3",
   "#", "#", ".", ".", ".", "#", "#",
   "#", ".", "#", ".", "#", ".", "#",
-  ".", "#", "#", "6", "#", "#", "."), nrow = 7, ncol = 7, byrow = TRUE)
+  "SE", "#", "#", "6", "#", "#", "SW"), nrow = 7, ncol = 7, byrow = TRUE)
 
 print(testMatrixA)
 print(getAdjacentBySight(4, 4, testMatrixA))
