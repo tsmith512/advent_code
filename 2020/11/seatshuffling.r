@@ -92,8 +92,10 @@ iterateSeats <- function(before, part = 1) {
         # Occupied Seat
         # The rule is +4 adjacent seats, but our count will also include the
         # current seat, so we need to check for 5+ (6+ in part 2)
+
+        # @TODO: huh? using 5 for part 2 fixed it...?
         limit <- if(part == 1) 5 else 6
-        if (countType(neighbors, "#") >= limit) {
+        if (countType(neighbors, "#") >= 5) {
           after[row,col] = "L"
         }
       }
@@ -165,25 +167,28 @@ getAdjacentBySight <- function(row, col, matrix) {
   maxRow <- length(matrix[,1])
   maxCol <- length(matrix[1,])
 
-  # Weird stuff happens trying to pull ranges at edges, get ready to catch
-  edgeR <- if (row == 1 || row == maxRow) TRUE else FALSE
-  edgeC <- if (col == 1 || col == maxCol) TRUE else FALSE
-
   # Go around the clock, take [ORIGIN:DESTINATION] and get the first non-floor
   # value from it (or floor, if that's all there is)
   for (r in 1:3) {
-    print(c("Row options", 1, row, maxRow))
     destR <- c(1, row, maxRow)[r]
-    print(c("Selected", destR))
 
     for (c in 1:3) {
-      print(c("Column options", 1, col, maxCol))
       destC <- c(1, col, maxCol)[c]
-      print(c("Selected", destC))
 
       # This is the seat we're looking _from_
       if (r == 2 && c == 2) {
         seen[r, c] <- "X"
+        next
+      }
+
+      # If we're trying to look before the seating area starts
+      if (col == 1 && c == 1) {
+        seen[r, c] <- "EC"
+        next
+      }
+
+      if (row == 1 && r == 1) {
+        seen[r, c] <- "ER"
         next
       }
 
@@ -198,19 +203,12 @@ getAdjacentBySight <- function(row, col, matrix) {
         next
       }
 
-      # If we're looking across both axes, we need a diag()
-      print(c("Mode", r, c))
-
       if (row == destR || col == destC) {
         line <- matrix[row:destR, col:destC]
-        print(c("Line from", "row", row, ">", destR, ", col", col, ">", destC, "The line is:", line))
       }
       else {
         line <- diag(matrix[row:destR, col:destC])
-        print(c("Diagonal from", "row", row, ">", destR, ", col", col, ">", destC, "The line is:", line))
       }
-
-      print(c("We saw a ", getFirstSeatSeen(line)))
 
       # Save the first seat we see in the given direction
       seen[r, c] <- getFirstSeatSeen(line)
@@ -244,7 +242,7 @@ beforeStats <- seatReport(seats)
 afterStats <- seatReport(list())
 i <- 0
 
-while (i < 1) {
+while (! all(beforeStats == afterStats) ) {
   i <- i + 1
 
   beforeStats <- afterStats
