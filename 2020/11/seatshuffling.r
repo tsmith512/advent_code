@@ -159,35 +159,33 @@ getAdjacentBySight <- function(row, col, matrix) {
   maxRow <- length(matrix[,1])
   maxCol <- length(matrix[1,])
 
-  ## The straight lines
-  cat("3 o'clock\n")
-  print(matrix[row, col:maxCol])
+  # Go around the clock, take [ORIGIN:DESTINATION] and get the first non-floor
+  # value from it (or floor, if that's all there is)
+  for (r in 1:3) {
+    if (r == 1) {destR <- 1}          # We're looking "up"
+    else if (r == 2) {destR <- row}   # We're looking L/R
+    else {destR <- maxRow}            # We're looking "down"
 
-  cat("6 o'clock\n")
-  print(matrix[row:maxRow, col])
+    for (c in 1:3) {
+      if (c == 1) {destC <- 1}        # Looking "left"
+      else if (c == 2) {destC <- col} # Looking U/D
+      else {destC <- maxCol}          # Looking "right"
 
-  cat("9 o'clock\n")
-  print(matrix[row, col:1])
+      # This is the seat we're looking _from_
+      if (r == 2 && c == 2) {
+        seen[r,c] <- "X"
+        next
+      }
 
-  cat("12 o'clock\n")
-  print(matrix[row:1, col])
+      # Determine which "axis" we're looking across, or if we need a diagonal
+      if (row == destR) line <- matrix[row, col:destC]
+      else if (col == destC) line <- matrix[row:destR, col]
+      else line <- diag(matrix[row:destR, col:destC])
 
-  ## The diagonals
-  cat("Center to NW\n")
-  print(diag(matrix[row:1, col:maxCol]))
-  print(getFirstSeatSeen(diag(matrix[row:1, col:maxCol])))
-
-  cat("Center to SW\n")
-  print(diag(matrix[row:maxRow, col:maxCol]))
-  print(getFirstSeatSeen(diag(matrix[row:maxRow, col:maxCol])))
-
-  cat("Center to SE\n")
-  print(diag(matrix[row:maxRow, col:1]))
-  print(getFirstSeatSeen(diag(matrix[row:maxRow, col:1])))
-
-  cat("Center to NE\n")
-  print(diag(matrix[row:1, col:1]))
-  print(getFirstSeatSeen(diag(matrix[row:1, col:1])))
+      # Save the first seat we see in the given direction
+      seen[r,c] <- getFirstSeatSeen(line)
+    }
+  }
   seen
 }
 
@@ -204,13 +202,12 @@ getFirstSeatSeen <- function(line) {
 
 
 testMatrixA <- matrix(data =
-c("NE", "#", "#", "12", "#", "#", "NW",
+c(".", "#", "#", ".", "#", "#", ".",
   "#", ".", "#", ".", "#", ".", "#",
   "#", "#", ".", ".", ".", "#", "#",
-  "9", ".", ".", "X", ".", ".", "3",
+  ".", ".", ".", "X", ".", ".", ".",
   "#", "#", ".", ".", ".", "#", "#",
   "#", ".", "#", ".", "#", ".", "#",
-  "SE", "#", "#", "6", "#", "#", "SW"), nrow = 7, ncol = 7, byrow = TRUE)
+  ".", "#", "#", ".", "#", "#", "."), nrow = 7, ncol = 7, byrow = TRUE)
 
-print(testMatrixA)
 print(getAdjacentBySight(4, 4, testMatrixA))
