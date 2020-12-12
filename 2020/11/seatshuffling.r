@@ -39,7 +39,6 @@ lines <- scan("seating_sample.txt", what = "")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 seats <- matrix(data = unlist(strsplit(lines, "")), nrow = rows, ncol = cols, byrow = TRUE)
-print(seats)
 
 # UTILITY FUNCTIONS
 
@@ -70,21 +69,6 @@ seatReport <- function(matrix) {
     c(countType(matrix, "."), countType(matrix, "L"), countType(matrix, "#"))
   )
 }
-
-# These two work together:
-print(              getNeighbors(2, 9, seats)          )
-print(  countType(  getNeighbors(2, 9, seats)  , "L")  )
-
-## THIS DID NOT WORK:
-# testEdit <- function(seat) {
-#   # Floor doesn't change.
-#   if (seat ==".") return(".")
-#   "X"
-# }
-# print(apply(seats, c(1,2), testEdit))
-# Mostly because I couldn't figure out how to get the coordinates into the
-# callback. Apply() seems to operate on an item's value without a way to relate
-# it back to where it is in the matrix?
 
 iterateSeats <- function(before) {
   # I couldn't figure out how to do this "simultaneously" so I'm reading from
@@ -118,7 +102,18 @@ iterateSeats <- function(before) {
   after
 }
 
-print(seats)
-print(seatReport(seats))
-print(iterateSeats(seats))
-print(seatReport(iterateSeats(seats)))
+# Determine seat stats for the initial seatmap
+beforeStats <- seatReport(seats)
+afterStats <- seatReport(list())
+
+i <- 0
+while (! all(beforeStats == afterStats) ) {
+  i <- i + 1
+
+  beforeStats <- afterStats
+  seats <- iterateSeats(seats)
+  afterStats <- seatReport(seats)
+
+  print(c("Iteration", i))
+  print(afterStats)
+}
