@@ -44,7 +44,7 @@ seats <- matrix(data = unlist(strsplit(lines, "")), nrow = rows, ncol = cols, by
 
 # Figure out how many seats of a given type are in this area
 countType <- function(matrix, type) {
-  return(length(which(matrix == type)))
+  length(which(matrix == type))
 }
 
 # Crop out a matrix of the neighbors for a given seat designation
@@ -60,13 +60,13 @@ getNeighbors <- function(row, col, matrix) {
   new <- matrix[(row-1):row2, (col-1):col2]
   new[2,2] = "X"
 
-  return(new)
+  new
 }
 
 seatReport <- function(matrix) {
-  rbind(
-    c("floor", "empty", "taken"),
-    c(countType(matrix, "."), countType(matrix, "L"), countType(matrix, "#"))
+  setNames(
+    c(countType(matrix, "."), countType(matrix, "L"), countType(matrix, "#")),
+    c("floor", "empty", "taken")
   )
 }
 
@@ -104,7 +104,10 @@ iterateSeats <- function(before) {
 
 # Determine seat stats for the initial seatmap
 beforeStats <- seatReport(seats)
+print(beforeStats)
+print(seats)
 afterStats <- seatReport(list())
+print(afterStats)
 
 i <- 0
 while (! all(beforeStats == afterStats) ) {
@@ -112,6 +115,7 @@ while (! all(beforeStats == afterStats) ) {
 
   beforeStats <- afterStats
   seats <- iterateSeats(seats)
+  print(seats)
   afterStats <- seatReport(seats)
 
   print(c("Iteration", i))
