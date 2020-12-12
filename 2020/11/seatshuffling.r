@@ -64,9 +64,12 @@ getNeighbors <- function(row, col, matrix) {
   return(new)
 }
 
-sprintf("Floor area: %d", countType(seats, "."))
-sprintf("Empty Seats: %d", countType(seats, "L"))
-sprintf("Taken Seats: %d", countType(seats, "#"))
+seatReport <- function(matrix) {
+  rbind(
+    c("floor", "empty", "taken"),
+    c(countType(matrix, "."), countType(matrix, "L"), countType(matrix, "#"))
+  )
+}
 
 # These two work together:
 print(              getNeighbors(2, 9, seats)          )
@@ -116,5 +119,6 @@ iterateSeats <- function(before) {
 }
 
 print(seats)
-
+print(seatReport(seats))
 print(iterateSeats(seats))
+print(seatReport(iterateSeats(seats)))
