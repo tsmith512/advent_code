@@ -68,7 +68,7 @@ seatReport <- function(matrix) {
 }
 
 # Apply the rules to a copy of the seatmap and return the new state
-iterateSeats <- function(before) {
+iterateSeats <- function(before, part = 1) {
   # I couldn't figure out how to do this "simultaneously" so I'm reading from
   # Before and writing to / returning After.
   after <- before
@@ -77,7 +77,7 @@ iterateSeats <- function(before) {
   for (row in 1:maxRow) {
     for (col in 1:maxCol) {
       status <- before[row,col]
-      neighbors <- getNeighbors(row, col, before)
+      neighbors <- if (part == 1) getNeighbors(row, col, before) else getAdjacentBySight(row, col, before)
 
       if (status == ".") {
         # Floor tile. No action.
@@ -186,44 +186,34 @@ getAdjacentBySight <- function(row, col, matrix) {
 
 getFirstSeatSeen <- function(line) {
   status <- NULL
-  # For legibility reasons above, the first element in the line will be the
-  # current seat, we should skip that.
+
+  # If we're on an edge, there may not be a line here, just return what we have
+  # @TODO: That might mess up the counting... should we return NULL? We didn't
+  # "see" anything
+  if (length(line) == 1) return (line[1])
+
+  # From my seat, look for the first non-floor that isn't me
   for (value in line[-1]) {
     status <- value
     if(value != ".") break
   }
+
   status
 }
 
 
-testMatrixA <- matrix(data =
-c(".", "#", "#", ".", "#", "#", ".",
-  "#", ".", "#", ".", "#", ".", "#",
-  "#", "#", ".", ".", ".", "#", "#",
-  ".", ".", ".", "X", ".", ".", ".",
-  "#", "#", ".", ".", ".", "#", "#",
-  "#", ".", "#", ".", "#", ".", "#",
-  ".", "#", "#", ".", "#", "#", "."), nrow = 7, ncol = 7, byrow = TRUE)
+# Determine seat stats for the initial seatmap
+beforeStats <- seatReport(seats)
+afterStats <- seatReport(list())
+i <- 0
 
-print(getAdjacentBySight(4, 4, testMatrixA))
+while (! all(beforeStats == afterStats) ) {
+  i <- i + 1
 
-testMatrixB <- matrix(data = c(
-".", ".", ".", ".", ".", ".", ".", "#", ".",
-".", ".", ".", "#", ".", ".", ".", ".", ".",
-".", "#", ".", ".", ".", ".", ".", ".", ".",
-".", ".", ".", ".", ".", ".", ".", ".", ".",
-".", ".", "#", "L", ".", ".", ".", ".", "#",
-".", ".", ".", ".", "#", ".", ".", ".", ".",
-".", ".", ".", ".", ".", ".", ".", ".", ".",
-"#", ".", ".", ".", ".", ".", ".", ".", ".",
-".", ".", ".", "#", ".", ".", ".", ".", "."
-), nrow = 9, ncol = 9, byrow = TRUE)
-print(getAdjacentBySight(5, 4, testMatrixB))
+  beforeStats <- afterStats
+  seats <- iterateSeats(seats, 2)
+  afterStats <- seatReport(seats)
 
-testMatrixC <- matrix(data = c(
-".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".",
-".", "A", ".", "L", ".", "#", ".", "#", ".", "#", ".", "#", ".",
-".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."
-), nrow = 3, ncol = 13, byrow = TRUE)
-
-print(getAdjacentBySight(2, 2, testMatrixC))
+  cat(sprintf("\n\nIteration %d\n", i))
+  print(afterStats)
+}
