@@ -17,3 +17,4 @@ well is a bit dated. So I've decided to lean into my experience with traditional
 | [Day 8: Handheld Halting](2020/08/videogame.pl)                 | Perl       |
 | [Day 9: Encoding Error](2020/09/encoding_error.chpl)            | Chapel     |
 | [Day 10: Adapter Array](2020/10/ChargerConundrum.groovy)        | Groovy     |
+| [Day 11: Seating System](2020/11/seatshuffling.r)               | R          |
