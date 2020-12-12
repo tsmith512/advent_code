@@ -162,14 +162,10 @@ getAdjacentBySight <- function(row, col, matrix) {
   # Go around the clock, take [ORIGIN:DESTINATION] and get the first non-floor
   # value from it (or floor, if that's all there is)
   for (r in 1:3) {
-    if (r == 1) {destR <- 1}          # We're looking "up"
-    else if (r == 2) {destR <- row}   # We're looking L/R
-    else {destR <- maxRow}            # We're looking "down"
+    destR <- c(1, row, maxRow)[r]
 
     for (c in 1:3) {
-      if (c == 1) {destC <- 1}        # Looking "left"
-      else if (c == 2) {destC <- col} # Looking U/D
-      else {destC <- maxCol}          # Looking "right"
+      destC <- c(1, col, maxCol)[c]
 
       # This is the seat we're looking _from_
       if (r == 2 && c == 2) {
@@ -177,9 +173,8 @@ getAdjacentBySight <- function(row, col, matrix) {
         next
       }
 
-      # Determine which "axis" we're looking across, or if we need a diagonal
-      if (row == destR) line <- matrix[row, col:destC]
-      else if (col == destC) line <- matrix[row:destR, col]
+      # If we're looking across both axes, we need a diag()
+      if (row == destR || col == destC) line <- matrix[row:destR, col:destC]
       else line <- diag(matrix[row:destR, col:destC])
 
       # Save the first seat we see in the given direction
