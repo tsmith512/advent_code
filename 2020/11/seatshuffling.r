@@ -77,7 +77,7 @@ iterateSeats <- function(before, part = 1) {
   for (row in 1:maxRow) {
     for (col in 1:maxCol) {
       status <- before[row,col]
-      neighbors <- if (part == 1) getNeighbors(row, col, before) else getAdjacentBySight(row, col, before)
+      neighbors <- if(part == 1) getNeighbors(row, col, before) else getAdjacentBySight(row, col, before)
 
       if (status == ".") {
         # Floor tile. No action.
@@ -90,9 +90,10 @@ iterateSeats <- function(before, part = 1) {
       }
       else if (status == "#") {
         # Occupied Seat
-        if (countType(neighbors, "#") >= 5) {
-          # The rule is +4 adjacent seats, but our count will also include the
-          # current seat, so we need to check for 5+
+        # The rule is +4 adjacent seats, but our count will also include the
+        # current seat, so we need to check for 5+ (6+ in part 2)
+        limit <- if(part == 1) 5 else 6
+        if (countType(neighbors, "#") >= limit) {
           after[row,col] = "L"
         }
       }
@@ -101,26 +102,31 @@ iterateSeats <- function(before, part = 1) {
   after
 }
 
-# Determine seat stats for the initial seatmap
-beforeStats <- seatReport(seats)
-afterStats <- seatReport(list())
-i <- 0
+runTest <- function(seats, puzzlePart) {
+  # Determine seat stats for the initial seatmap
+  beforeStats <- seatReport(seats)
+  afterStats <- seatReport(list())
+  i <- 0
 
-while (! all(beforeStats == afterStats) ) {
-  i <- i + 1
+  while (! all(beforeStats == afterStats) ) {
+    i <- i + 1
 
-  beforeStats <- afterStats
-  seats <- iterateSeats(seats)
-  afterStats <- seatReport(seats)
+    beforeStats <- afterStats
+    seats <- iterateSeats(seats, puzzlePart)
+    afterStats <- seatReport(seats)
 
-  cat(sprintf("\n\nIteration %d\n", i))
-  print(afterStats)
+    cat(sprintf("\n\nIteration %d\n", i))
+    print(afterStats)
+  }
 }
+
+# runTest(seats, 1)
 # Part One solution:
 #   Iteration 134
 #   floor empty taken
 #    1425  4914  2211
 
+cat("\n\n\n\n\n")
 
 #  ___          _     ___
 # | _ \__ _ _ _| |_  |_  )
@@ -159,38 +165,69 @@ getAdjacentBySight <- function(row, col, matrix) {
   maxRow <- length(matrix[,1])
   maxCol <- length(matrix[1,])
 
+  # Weird stuff happens trying to pull ranges at edges, get ready to catch
+  edgeR <- if (row == 1 || row == maxRow) TRUE else FALSE
+  edgeC <- if (col == 1 || col == maxCol) TRUE else FALSE
+
   # Go around the clock, take [ORIGIN:DESTINATION] and get the first non-floor
   # value from it (or floor, if that's all there is)
   for (r in 1:3) {
+    print(c("Row options", 1, row, maxRow))
     destR <- c(1, row, maxRow)[r]
+    print(c("Selected", destR))
 
     for (c in 1:3) {
+      print(c("Column options", 1, col, maxCol))
       destC <- c(1, col, maxCol)[c]
+      print(c("Selected", destC))
 
       # This is the seat we're looking _from_
       if (r == 2 && c == 2) {
-        seen[r, c] <- matrix[row, col]
+        seen[r, c] <- "X"
+        next
+      }
+
+      # If we're trying to look past the far edge
+      if (col == maxCol && c == 3) {
+        seen[r, c] <- "EC"
+        next
+      }
+
+      if (row == maxRow && r == 3) {
+        seen[r, c] <- "ER"
         next
       }
 
       # If we're looking across both axes, we need a diag()
-      if (row == destR || col == destC) line <- matrix[row:destR, col:destC]
-      else line <- diag(matrix[row:destR, col:destC])
+      print(c("Mode", r, c))
+
+      if (row == destR || col == destC) {
+        line <- matrix[row:destR, col:destC]
+        print(c("Line from", "row", row, ">", destR, ", col", col, ">", destC, "The line is:", line))
+      }
+      else {
+        line <- diag(matrix[row:destR, col:destC])
+        print(c("Diagonal from", "row", row, ">", destR, ", col", col, ">", destC, "The line is:", line))
+      }
+
+      print(c("We saw a ", getFirstSeatSeen(line)))
 
       # Save the first seat we see in the given direction
       seen[r, c] <- getFirstSeatSeen(line)
     }
   }
+  print(c("Sightlines from", row, col))
+  print(seen)
   seen
 }
 
 getFirstSeatSeen <- function(line) {
-  status <- NULL
+  status <- "Z"
 
   # If we're on an edge, there may not be a line here, just return what we have
   # @TODO: That might mess up the counting... should we return NULL? We didn't
   # "see" anything
-  if (length(line) == 1) return (line[1])
+  if (length(line) == 1) return ("E")
 
   # From my seat, look for the first non-floor that isn't me
   for (value in line[-1]) {
@@ -207,7 +244,7 @@ beforeStats <- seatReport(seats)
 afterStats <- seatReport(list())
 i <- 0
 
-while (! all(beforeStats == afterStats) ) {
+while (i < 1) {
   i <- i + 1
 
   beforeStats <- afterStats
@@ -215,5 +252,7 @@ while (! all(beforeStats == afterStats) ) {
   afterStats <- seatReport(seats)
 
   cat(sprintf("\n\nIteration %d\n", i))
+  print(seats)
   print(afterStats)
 }
+# runTest(seats, 2)
