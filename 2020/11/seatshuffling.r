@@ -35,7 +35,7 @@
 
 
 # Read the the original seating chart into a matrix
-lines <- scan("seating_chart.txt", what = "")
+lines <- scan("seating_sample.txt", what = "")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 seats <- matrix(data = unlist(strsplit(lines, "")), nrow = rows, ncol = cols, byrow = TRUE)
@@ -120,3 +120,53 @@ while (! all(beforeStats == afterStats) ) {
 #   Iteration 134
 #   floor empty taken
 #    1425  4914  2211
+
+
+#  ___          _     ___
+# | _ \__ _ _ _| |_  |_  )
+# |  _/ _` | '_|  _|  / /
+# |_| \__,_|_|  \__| /___|
+#
+# Rules adjustment:
+# - When considering adjacent seats, look for the _first_seat_ in that direction
+#   regardless of distance. Examples:
+#
+#   L sees 8 occipued.     L sees 0 occupied.     A sees 1 empty.
+#   .......#.              .##.##.                .............
+#   ...#.....              #.#.#.#                .A.L.#.#.#.#.
+#   .#.......              ##...##                .............
+#   .........              ...L...
+#   ..#L....#              ##...##
+#   ....#....              #.#.#.#
+#   .........              .##.##.
+#   #........
+#   ...#.....
+#
+# - It is 5 or more visible occupied seats for an occupied seat to empty (vs 4).
+#
+# After it stabilizes, the sample input produces 26 occupied seats.
+
+getAdjacentBySight <- function(row, col, matrix) {
+  # English:
+  # - Rather than just cropping out a 3x3 around [row,col]...
+  # - ...start at given seat addrress and then trace out in each direction
+  # - For each direction:
+  #   - Go "stright" looking for a "L" or "#", skipping any "."
+  #   - Put encountered letters back in a [3,3] matrix around an X so we can use
+  #     the rest of what we had before.
+  seen <- matrix(data = "", nrow = 3, ncol = 3, byrow = TRUE)
+
+  seen
+}
+
+testMatrixA <- matrix(data =
+c(".", "#", "#", ".", "#", "#", ".",
+  "#", ".", "#", ".", "#", ".", "#",
+  "#", "#", ".", ".", ".", "#", "#",
+  ".", ".", ".", "L", ".", ".", ".",
+  "#", "#", ".", ".", ".", "#", "#",
+  "#", ".", "#", ".", "#", ".", "#",
+  ".", "#", "#", ".", "#", "#", "."), nrow = 7, ncol = 7, byrow = TRUE)
+
+print(testMatrixA)
+print(getAdjacentBySight(4, 4, testMatrixA))
