@@ -152,21 +152,35 @@ getAdjacentBySight <- function(row, col, matrix) {
   # - ...start at given seat addrress and then trace out in each direction
   # - For each direction:
   #   - Go "stright" looking for a "L" or "#", skipping any "."
+  #     - If we hit a matrix boundary only having seen ".", keep "."
   #   - Put encountered letters back in a [3,3] matrix around an X so we can use
   #     the rest of what we had before.
   seen <- matrix(data = "", nrow = 3, ncol = 3, byrow = TRUE)
+  maxRow <- length(matrix[,1])
+  maxCol <- length(matrix[1,])
 
+  cat("3 o'clock\n")
+  print(matrix[row, col:maxCol])
+
+  cat("6 o'clock\n")
+  print(matrix[row:maxRow, col])
+
+  cat("9 o'clock\n")
+  print(matrix[row, col:1])
+
+  cat("12 o'clock\n")
+  print(matrix[row:1, col])
   seen
 }
 
 testMatrixA <- matrix(data =
-c(".", "#", "#", ".", "#", "#", ".",
+c(".", "#", "#", "12", "#", "#", ".",
   "#", ".", "#", ".", "#", ".", "#",
   "#", "#", ".", ".", ".", "#", "#",
-  ".", ".", ".", "L", ".", ".", ".",
+  "9", ".", ".", "X", ".", ".", "3",
   "#", "#", ".", ".", ".", "#", "#",
   "#", ".", "#", ".", "#", ".", "#",
-  ".", "#", "#", ".", "#", "#", "."), nrow = 7, ncol = 7, byrow = TRUE)
+  ".", "#", "#", "6", "#", "#", "."), nrow = 7, ncol = 7, byrow = TRUE)
 
 print(testMatrixA)
 print(getAdjacentBySight(4, 4, testMatrixA))
