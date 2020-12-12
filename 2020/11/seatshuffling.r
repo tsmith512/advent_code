@@ -56,8 +56,12 @@ getNeighbors <- function(row, col, matrix) {
   # Thankfully the 0,0 bounds are automatically "cropped," but figure max-bounds
   row2 <- if(row >= maxRow) maxRow else row + 1
   col2 <- if(col >= maxCol) maxCol else col + 1
-  # @TODO: Need to replace [row,col] with a blank space to avoid bad counts?
-  return(matrix[(row-1):row2, (col-1):col2])
+
+  # Duplicate the matrix so we can clear out the queried seat
+  new <- matrix[(row-1):row2, (col-1):col2]
+  new[2,2] = "X"
+
+  return(new)
 }
 
 sprintf("Floor area: %d", countType(seats, "."))
@@ -68,9 +72,49 @@ sprintf("Taken Seats: %d", countType(seats, "#"))
 print(              getNeighbors(2, 9, seats)          )
 print(  countType(  getNeighbors(2, 9, seats)  , "L")  )
 
-testEdit <- function(seat) {
-  if (seat ==".") return(".")
-  "X"
+## THIS DID NOT WORK:
+# testEdit <- function(seat) {
+#   # Floor doesn't change.
+#   if (seat ==".") return(".")
+#   "X"
+# }
+# print(apply(seats, c(1,2), testEdit))
+# Mostly because I couldn't figure out how to get the coordinates into the
+# callback. Apply() seems to operate on an item's value without a way to relate
+# it back to where it is in the matrix?
+
+iterateSeats <- function(before) {
+  # I couldn't figure out how to do this "simultaneously" so I'm reading from
+  # Before and writing to / returning After.
+  after <- before
+  maxRow <- length(before[,1])
+  maxCol <- length(before[1,])
+  for (row in 1:maxRow) {
+    for (col in 1:maxCol) {
+      status <- before[row,col]
+      neighbors <- getNeighbors(row, col, before)
+
+      # Don't mess up the floor.
+      if (status == ".") {
+        # No action.
+      }
+      else if (status == "L") {
+        # An empty Seat
+        if (countType(neighbors, "#") == 0) {
+          after[row,col] = "#"
+        }
+      }
+      else if (status == "#") {
+        # Occupied Seat
+        if (countType(neighbors, "#") >= 4) {
+          after[row,col] = "L"
+        }
+      }
+    }
+  }
+  after
 }
 
-print(apply(seats, c(1,2), testEdit))
+print(seats)
+
+print(iterateSeats(seats))
