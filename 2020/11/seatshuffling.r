@@ -32,3 +32,5 @@
 #
 # After repeated application of these rules, the seating distribution
 # stabilizes. Report how many seats are occupied at that point.
+
+print("Hello World!")
