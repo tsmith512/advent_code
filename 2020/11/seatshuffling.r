@@ -69,8 +69,10 @@ seatReport <- function(matrix) {
 
 # Apply the rules to a copy of the seatmap and return the new state
 iterateSeats <- function(before, part = 1) {
-  # I couldn't figure out how to do this "simultaneously" so I'm reading from
-  # Before and writing to / returning After.
+  # @TODO: So whlie this works, I really wish I had figured out a more R-centric
+  # way to do it. George did matrix translation to shift the matrix around and
+  # compare overlapping values to set each cell's value to "number of neighbors"
+  # which was awesome, for part one at least.
   after <- before
   maxRow <- length(before[,1])
   maxCol <- length(before[1,])
