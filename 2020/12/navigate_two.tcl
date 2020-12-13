@@ -39,20 +39,20 @@ foreach step $route {
   set value [string range $step 1 end]
 
   if {$mode == "F"} {
-    incr ship(x) [expr {$waypoint(x) * $value}]
-    incr ship(y) [expr {$waypoint(y) * $value}]
+    incr ship(x) [expr $waypoint(x) * $value]
+    incr ship(y) [expr $waypoint(y) * $value]
   }
 
   switch $mode {
-    N {incr waypoint(y) [expr {0 - $value}]}
+    N {incr waypoint(y) [expr 0 - $value]}
     S {incr waypoint(y) $value}
-    W {incr waypoint(x) [expr {0 - $value}]}
+    W {incr waypoint(x) [expr 0 - $value]}
     E {incr waypoint(x) $value}
     L {
       set rotations [expr $value / 90]
       for {set i 0} {$i < [expr $value / 90]} {incr i} {
         set newX $waypoint(y)
-        set newY [expr {-1 * $waypoint(x)}]
+        set newY [expr -$waypoint(x)]
         set waypoint(x) $newX
         set waypoint(y) $newY
       }
@@ -60,7 +60,7 @@ foreach step $route {
     R {
       set rotations [expr $value / 90]
       for {set i 0} {$i < [expr $value / 90]} {incr i} {
-        set newX [expr {-1 * $waypoint(y)}]
+        set newX [expr -$waypoint(y)]
         set newY $waypoint(x)
         set waypoint(x) $newX
         set waypoint(y) $newY

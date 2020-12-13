@@ -45,16 +45,13 @@ foreach step $route {
   }
 
   switch $mode {
-    N {incr position(y) [expr {0 - $value}]}
+    N {incr position(y) [expr 0 - $value]}
     S {incr position(y) $value}
-    W {incr position(x) [expr {0 - $value}]}
+    W {incr position(x) [expr 0 - $value]}
     E {incr position(x) $value}
-    L {set direction [expr {[expr {$direction - $value}] % 360}]}
-    R {set direction [expr {[expr {$direction + $value}] % 360}]}
+    L {set direction [expr ($direction - $value) % 360]}
+    R {set direction [expr ($direction + $value) % 360]}
   }
-
-  # puts "$position(x), $position(y)"
-
 }
 
 puts "New Position: $position(x), $position(y)"
