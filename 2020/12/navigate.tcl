@@ -22,7 +22,7 @@
 # of the absolute values of its E/W position and its N/S position. The sample
 # evaluates to 17+8=25.
 
-set file [open "navigation_sample.txt"]
+set file [open "navigation_instructions.txt"]
 set route [read $file]
 close $file
 
@@ -45,15 +45,11 @@ foreach step $route {
   }
 
   if {$mode == "R"} {
-    puts "Old direction: $direction"
     set direction [expr {[expr {$direction + $value}] % 360}]
-    puts "New direction: $direction"
   }
 
   if {$mode == "L"} {
-    puts "Old direction: $direction"
     set direction [expr {[expr {$direction - $value}] % 360}]
-    puts "New direction: $direction"
   }
 
   switch $mode {
@@ -62,9 +58,13 @@ foreach step $route {
     W {incr position(x) [expr {0 - $value}]}
     E {incr position(x) $value}
   }
-puts "$position(x), $position(y)"
+
+  # puts "$position(x), $position(y)"
 
 }
 
 puts "New Position: $position(x), $position(y)"
 puts "Manhattan distance: [expr {abs($position(x)) + abs($position(y))}]"
+# Part One solution:
+#   New Position: 24, 415
+#   Manhattan distance: 439
