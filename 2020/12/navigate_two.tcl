@@ -27,7 +27,6 @@ set route [read $file]
 close $file
 
 # Ship starting position, still facing east
-set ship(heading) 90
 set ship(x) 0
 set ship(y) 0
 
@@ -68,11 +67,6 @@ foreach step $route {
       }
     }
   }
-
-  # puts $step
-  # puts "Ship $ship(x), $ship(y) heading $ship(heading)"
-  # puts "Waypoint $waypoint(x), $waypoint(y)"
-  # puts "\n"
 }
 
 puts "Final Waypoint: $waypoint(x), $waypoint(y)"
