@@ -15,14 +15,14 @@
 # - Action [NESW] -> move WAYPOINT the given direction by given value.
 # - Action [LR] -> rotate WAYPOINT around the ship counterclock/clockwise
 # - Action F -> move SHIP forward to WAYPOINT a number of times equal to the
-#   given value. (I am still not 100% sure what this means...)
+#   given VALUE. (I am still not 100% sure what this means...)
 #
 
 # After these steps on the sample, the ship's Manhattan Distance from its
 # starting position is 214 + 72 = 286. Report the Manhattan Distance between
 # the new location and the ship's starting position.
 
-set file [open "navigation_instructions.txt"]
+set file [open "navigation_sample.txt"]
 set route [read $file]
 close $file
 
@@ -39,7 +39,15 @@ foreach step $route {
   set mode [string index $step 0]
   set value [string range $step 1 end]
 
-  # @TODO: Figure out F?
+  if {$mode == "F"} {
+    set diffX [expr {$waypoint(x) - $ship(x)}]
+    set diffY [expr {$waypoint(y) - $ship(y)}]
+    # puts "Ship $ship(x), $ship(y) heading $ship(heading)"
+    # puts "Waypoint $waypoint(x), $waypoint(y)"
+    # puts "Difference $diffX, $diffY"
+    set ship(x) [expr {$ship(x) + $diffX} * $value]
+    set ship(y) [expr {$ship(y) + $diffY} * $value]
+  }
 
   switch $mode {
     N {incr waypoint(y) [expr {0 - $value}]}
