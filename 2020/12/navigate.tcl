@@ -21,3 +21,6 @@
 # Report the ship's "Manhattan Distance" (?) from its starting position: the sum
 # of the absolute values of its E/W position and its N/S position. The sample
 # evaluates to 17+8=25.
+
+set text "Hello World!"
+puts $text
