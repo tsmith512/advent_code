@@ -18,3 +18,6 @@
  *
  * Report the ID of the next bus multiplied by the wait time until it leaves.
  */
+object BusDepot extends App {
+  println("Hello, World")
+}
