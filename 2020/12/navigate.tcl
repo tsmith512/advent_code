@@ -66,4 +66,5 @@ puts "$position(x), $position(y)"
 
 }
 
-puts "$position(x), $position(y)"
+puts "New Position: $position(x), $position(y)"
+puts "Manhattan distance: [expr {abs($position(x)) + abs($position(y))}]"
