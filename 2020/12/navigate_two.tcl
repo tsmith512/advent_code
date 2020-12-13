@@ -22,7 +22,7 @@
 # starting position is 214 + 72 = 286. Report the Manhattan Distance between
 # the new location and the ship's starting position.
 
-set file [open "navigation_sample.txt"]
+set file [open "navigation_instructions.txt"]
 set route [read $file]
 close $file
 
@@ -52,7 +52,7 @@ foreach step $route {
     L {
       set rotations [expr $value / 90]
       for {set i 0} {$i < [expr $value / 90]} {incr i} {
-        set newX $waypoint(y)]
+        set newX $waypoint(y)
         set newY [expr {-1 * $waypoint(x)}]
         set waypoint(x) $newX
         set waypoint(y) $newY
