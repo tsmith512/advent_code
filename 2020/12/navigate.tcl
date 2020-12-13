@@ -32,7 +32,7 @@ set position(y) 0
 
 foreach step $route {
   set mode [string index $step 0]
-  set value [string range $step 1 [string length $step]]
+  set value [string range $step 1 end]
 
   if {$mode == "F"} {
     switch $direction {
@@ -44,19 +44,13 @@ foreach step $route {
     }
   }
 
-  if {$mode == "R"} {
-    set direction [expr {[expr {$direction + $value}] % 360}]
-  }
-
-  if {$mode == "L"} {
-    set direction [expr {[expr {$direction - $value}] % 360}]
-  }
-
   switch $mode {
     N {incr position(y) [expr {0 - $value}]}
     S {incr position(y) $value}
     W {incr position(x) [expr {0 - $value}]}
     E {incr position(x) $value}
+    L {set direction [expr {[expr {$direction - $value}] % 360}]}
+    R {set direction [expr {[expr {$direction + $value}] % 360}]}
   }
 
   # puts "$position(x), $position(y)"
