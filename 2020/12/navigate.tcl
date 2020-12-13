@@ -22,5 +22,48 @@
 # of the absolute values of its E/W position and its N/S position. The sample
 # evaluates to 17+8=25.
 
-set text "Hello World!"
-puts $text
+set file [open "navigation_sample.txt"]
+set route [read $file]
+close $file
+
+set direction 90
+set position(x) 0
+set position(y) 0
+
+foreach step $route {
+  set mode [string index $step 0]
+  set value [string range $step 1 [string length $step]]
+
+  if {$mode == "F"} {
+    switch $direction {
+        0 {set mode N}
+       90 {set mode E}
+      180 {set mode S}
+      270 {set mode W}
+      360 {set mode N}
+    }
+  }
+
+  if {$mode == "R"} {
+    puts "Old direction: $direction"
+    set direction [expr {[expr {$direction + $value}] % 360}]
+    puts "New direction: $direction"
+  }
+
+  if {$mode == "L"} {
+    puts "Old direction: $direction"
+    set direction [expr {[expr {$direction - $value}] % 360}]
+    puts "New direction: $direction"
+  }
+
+  switch $mode {
+    N {incr position(y) [expr {0 - $value}]}
+    S {incr position(y) $value}
+    W {incr position(x) [expr {0 - $value}]}
+    E {incr position(x) $value}
+  }
+puts "$position(x), $position(y)"
+
+}
+
+puts "$position(x), $position(y)"
