@@ -18,3 +18,4 @@ well is a bit dated. So I've decided to lean into my experience with traditional
 | [Day 9: Encoding Error](2020/09/encoding_error.chpl)            | Chapel     |
 | [Day 10: Adapter Array](2020/10/ChargerConundrum.groovy)        | Groovy     |
 | [Day 11: Seating System](2020/11/seatshuffling.r)               | R          |
+| Day 12: Rain Risk [Part 1](2020/12/navigate.tcl), [Part 2](2020/12/navigate_two.tcl) | TCL |
