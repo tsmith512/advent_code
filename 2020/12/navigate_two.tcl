@@ -48,6 +48,7 @@ foreach step $route {
     S {incr waypoint(y) $value}
     W {incr waypoint(x) [expr 0 - $value]}
     E {incr waypoint(x) $value}
+    # @TODO: Can these _almost_ identical blocks be consolidated?
     L {
       set rotations [expr $value / 90]
       for {set i 0} {$i < [expr $value / 90]} {incr i} {
