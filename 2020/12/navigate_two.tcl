@@ -31,7 +31,7 @@ set ship(heading) 90
 set ship(x) 0
 set ship(y) 0
 
-# Waypoint start relative to the ship start
+# Waypoints are relative to the ship's position
 set waypoint(x) 10
 set waypoint(y) -1
 
@@ -40,13 +40,8 @@ foreach step $route {
   set value [string range $step 1 end]
 
   if {$mode == "F"} {
-    set diffX [expr {$waypoint(x) - $ship(x)}]
-    set diffY [expr {$waypoint(y) - $ship(y)}]
-    # puts "Ship $ship(x), $ship(y) heading $ship(heading)"
-    # puts "Waypoint $waypoint(x), $waypoint(y)"
-    # puts "Difference $diffX, $diffY"
-    set ship(x) [expr {$ship(x) + $diffX} * $value]
-    set ship(y) [expr {$ship(y) + $diffY} * $value]
+    incr ship(x) [expr {$waypoint(x) * $value}]
+    incr ship(y) [expr {$waypoint(y) * $value}]
   }
 
   switch $mode {
