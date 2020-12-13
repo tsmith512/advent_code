@@ -72,3 +72,7 @@ foreach step $route {
 puts "Final Waypoint: $waypoint(x), $waypoint(y)"
 puts "Final Ship Position: $ship(x), $ship(y)"
 puts "Manhattan distance: [expr abs($ship(x)) + abs($ship(y))]"
+# Part Two solution:
+#   Final Waypoint: -85, 31
+#   Final Ship Position: -1078, 11307
+#   Manhattan distance: 12385
