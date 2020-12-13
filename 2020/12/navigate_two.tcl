@@ -49,11 +49,30 @@ foreach step $route {
     S {incr waypoint(y) $value}
     W {incr waypoint(x) [expr {0 - $value}]}
     E {incr waypoint(x) $value}
-    # @TODO: Figure out this rotation
+    L {
+      set rotations [expr $value / 90]
+      for {set i 0} {$i < [expr $value / 90]} {incr i} {
+        set newX $waypoint(y)]
+        set newY [expr {-1 * $waypoint(x)}]
+        set waypoint(x) $newX
+        set waypoint(y) $newY
+      }
+    }
+    R {
+      set rotations [expr $value / 90]
+      for {set i 0} {$i < [expr $value / 90]} {incr i} {
+        set newX [expr {-1 * $waypoint(y)}]
+        set newY $waypoint(x)
+        set waypoint(x) $newX
+        set waypoint(y) $newY
+      }
+    }
   }
 
-  puts "Ship $ship(x), $ship(y) heading $ship(heading)"
-  puts "Waypoint $waypoint(x), $waypoint(y)"
+  # puts $step
+  # puts "Ship $ship(x), $ship(y) heading $ship(heading)"
+  # puts "Waypoint $waypoint(x), $waypoint(y)"
+  # puts "\n"
 }
 
 puts "Final Waypoint: $waypoint(x), $waypoint(y)"
