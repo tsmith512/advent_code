@@ -18,8 +18,20 @@
  *
  * Report the ID of the next bus multiplied by the wait time until it leaves.
  */
+import scala.io.Source.fromFile
+
 object BusDepot extends {
+  def inputFile = "bus_sample.txt"
+
+  def getInfo() = {
+    val timestamp :: schedule = fromFile(inputFile).getLines.toList
+    (timestamp, schedule.mkString.split(",").filter(_ != "x").toList)
+  }
+
   def main(args: Array[String]) = {
-    println("Hello, World")
+    getInfo()
+    val (availableTime, busses) = getInfo
+    println(availableTime)
+    println(busses)
   }
 }
