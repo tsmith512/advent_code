@@ -46,5 +46,29 @@ object BusDepot extends {
     // Part One solution:
     //   You'll catch bus 17 at 1000348, after waiting for 8 whatevers.
     //   Multiplied: 136
+
+
+    //  ___          _     ___
+    // | _ \__ _ _ _| |_  |_  )
+    // |  _/ _` | '_|  _|  / /
+    // |_| \__,_|_|  \__| /___|
+    //
+    // Oh. Good. This is fine.
+    //
+    // Given the schedule (WITH the x's you ignored in getInfo(), you fool...)
+    // determine the FIRST timestamp of the FIRST departure such that:
+    // Timestamp = Bus X departure time
+    // Timestamp + Y = Bus *index Y departure time (*not ID)
+    //
+    // From sample: 7,13,x,x,59,x,31,19
+    //
+    // So if Bus 7 leaves at Time 0, then Bus 13 should leave at T+1. Then Bus
+    // 59 at T+4 (skipping the x's)
+    //
+    // - Other simultaneous bus departures aren't important
+    // - Start time from Part One isn't important
+    //
+    // NARRATIVE WARNING: Surely the will be beyond 100000000000000!
+    // (And yes, @duplico already tried it the cheap way; it would take years.)
   }
 }
