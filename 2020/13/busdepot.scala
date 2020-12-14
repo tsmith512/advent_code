@@ -71,7 +71,23 @@ object BusDepot {
     //
     // NARRATIVE WARNING: Surely the will be beyond 100000000000000!
     // (And yes, @duplico already tried it the cheap way; it would take years.)
+    //
+    // I can take no credit for determining this. That goes to a combination of
+    // r/adventofcode and @duplico. We need to do this:
+    // https://rosettacode.org/wiki/Chinese_remainder_theorem
+    getIndexedSchedule() foreach println
   }
 
-  def main(args: Array[String]) = partOne()
+  def getIndexedSchedule(): Array[(Int, Int)] = {
+    // Pull an Array[String] of bus IDs and x's from the schedule file
+    val rawSchedule = fromFile(inputFile).getLines.drop(1).mkString.split(",")
+
+    // Index them as tuples and drop the placeholders
+    val schedule = rawSchedule.zipWithIndex.map(_.swap).filter {case (i, b) => b != "x"}
+
+    // Now that we've filtered the "x" items, cast bus IDs as Int and return.
+    schedule map {case (i, b) => (i, b.toInt)}
+  }
+
+  def main(args: Array[String]) = partTwo()
 }
