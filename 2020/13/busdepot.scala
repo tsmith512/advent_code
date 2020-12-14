@@ -33,7 +33,7 @@ object BusDepot extends {
     if (gap == 0) min else interval + min - gap
   }
 
-  def main(args: Array[String]) = {
+  def partOne() = {
     val (availableTime, busses) = getInfo
 
     val nextUp = busses.map(id => getNextDeparture(id, availableTime))
@@ -46,8 +46,9 @@ object BusDepot extends {
     // Part One solution:
     //   You'll catch bus 17 at 1000348, after waiting for 8 whatevers.
     //   Multiplied: 136
+  }
 
-
+  def partTwo() = {
     //  ___          _     ___
     // | _ \__ _ _ _| |_  |_  )
     // |  _/ _` | '_|  _|  / /
@@ -71,4 +72,6 @@ object BusDepot extends {
     // NARRATIVE WARNING: Surely the will be beyond 100000000000000!
     // (And yes, @duplico already tried it the cheap way; it would take years.)
   }
+
+  def main(args: Array[String]) = partOne()
 }
