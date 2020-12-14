@@ -30,18 +30,16 @@ object BusDepot extends {
 
   def getNextDeparture(interval: Int, min: Int): Int = {
     val gap = (interval + min) % interval
-
-    if (gap == 0) min
-    else interval + min - gap
+    if (gap == 0) min else interval + min - gap
   }
 
   def main(args: Array[String]) = {
-    getInfo()
     val (availableTime, busses) = getInfo
-    // @TODO: How would we make a map of ID --> nextDeparture?
     val nextUp = busses.map(id => getNextDeparture(id, availableTime))
-
     val myBusTime = nextUp.reduce((a, b) => a min b)
-    println("You'll catch a bus at " + myBusTime + ", after waiting for " + (myBusTime - availableTime) + " whatevers.")
+    val myBus = busses(nextUp.indexOf(myBusTime))
+    val myDelay = myBusTime - availableTime
+    println("You'll catch bus " + myBus + " at " + myBusTime + ", after waiting for " + myDelay + " whatevers.")
+    println("Multiplied: " + (myBus * myDelay))
   }
 }
