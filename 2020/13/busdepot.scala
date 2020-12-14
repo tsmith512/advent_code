@@ -21,7 +21,7 @@
 import scala.io.Source.fromFile
 
 object BusDepot extends {
-  def inputFile = "bus_sample.txt"
+  def inputFile = "bus_schedule.txt"
 
   def getInfo() = {
     val timestamp :: schedule = fromFile(inputFile).getLines.toList
@@ -35,11 +35,16 @@ object BusDepot extends {
 
   def main(args: Array[String]) = {
     val (availableTime, busses) = getInfo
+
     val nextUp = busses.map(id => getNextDeparture(id, availableTime))
     val myBusTime = nextUp.reduce((a, b) => a min b)
     val myBus = busses(nextUp.indexOf(myBusTime))
     val myDelay = myBusTime - availableTime
+
     println("You'll catch bus " + myBus + " at " + myBusTime + ", after waiting for " + myDelay + " whatevers.")
     println("Multiplied: " + (myBus * myDelay))
+    // Part One solution:
+    //   You'll catch bus 17 at 1000348, after waiting for 8 whatevers.
+    //   Multiplied: 136
   }
 }
