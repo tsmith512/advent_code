@@ -73,23 +73,32 @@ object BusDepot {
     // (And yes, @duplico already tried it the cheap way; it would take years.)
     //
     // I can take no credit for determining this. That goes to a combination of
-    // r/adventofcode and @duplico. We need to do this:
+    // r/adventofcode , @duplico , and beating the crap out of my keyboard
+    // hoping that magic spells will fall out. Thanks to sources:
     // https://rosettacode.org/wiki/Chinese_remainder_theorem
+    // https://www.reddit.com/r/adventofcode/comments/kcts3z/2020_day_13_part_2_example_solutions_incorrect/gfsm3iu/
+    // https://www.reddit.com/r/adventofcode/comments/kczahw/2020_day_13_part_2_python_extremely_fast/
+
     val schedule = getIndexedSchedule()
+    var timestamp = 0L
+    var increment = 1L
 
-    val numbers = schedule.map { case (i, b) => b.toLong }.toList
-    val remainders = schedule.map { case (i, b) => i.toLong }.toList
+    schedule.foreach { case (remainder, bus) =>
+      // Mark the starting point of the loop so I know if my computer exploded
+      println(s"Finding a timestamp for Bus $bus (idx/rem $remainder), starting at $timestamp")
 
-    // Print the pairs as (remainder, bus id)
-    schedule foreach println
+      // @TODO: I can kinda make a picture in my head to explain why we're
+      // looking at (bus - remainder) here, but I would like to work with this
+      // until I can clearly explain why it works.
+      while (timestamp % bus != (bus - remainder) % bus) timestamp += increment
 
-    // Debug print the lists separated, just to be sure
-    println(numbers)
-    println(remainders)
+      // The current combo doesn't work, we know the next one possible will be
+      // at least another multiple of the Bus ID, so save us the trouble.
+      increment *= bus
+      println(s"At $timestamp, Bus $bus can depart at ${timestamp + remainder}  (t + $remainder)")
+    }
 
-    // Ughhhh okay, I borrowed the math code from someone else, but it returns a
-    // higher number than is provided for all the sample inputs.
-    // val x = ChineseRemainderTheorem.chineseRemainder(numbers, remainders)
+    println(s"\nFirst timestamp for the given pattern is $timestamp")
   }
 
   def getIndexedSchedule(): Array[(Int, Int)] = {
