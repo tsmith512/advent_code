@@ -75,7 +75,21 @@ object BusDepot {
     // I can take no credit for determining this. That goes to a combination of
     // r/adventofcode and @duplico. We need to do this:
     // https://rosettacode.org/wiki/Chinese_remainder_theorem
-    getIndexedSchedule() foreach println
+    val schedule = getIndexedSchedule()
+
+    val numbers = schedule.map { case (i, b) => b.toLong }.toList
+    val remainders = schedule.map { case (i, b) => i.toLong }.toList
+
+    // Print the pairs as (remainder, bus id)
+    schedule foreach println
+
+    // Debug print the lists separated, just to be sure
+    println(numbers)
+    println(remainders)
+
+    // Ughhhh okay, I borrowed the math code from someone else, but it returns a
+    // higher number than is provided for all the sample inputs.
+    // val x = ChineseRemainderTheorem.chineseRemainder(numbers, remainders)
   }
 
   def getIndexedSchedule(): Array[(Int, Int)] = {
