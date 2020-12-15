@@ -78,25 +78,45 @@ object BusDepot {
     // https://www.reddit.com/r/adventofcode/comments/kcts3z/2020_day_13_part_2_example_solutions_incorrect/gfsm3iu/
     // https://www.reddit.com/r/adventofcode/comments/kczahw/2020_day_13_part_2_python_extremely_fast/
 
+    // Get array of (index/remainder, bus ID/start interval) pairs
     val schedule = getIndexedSchedule()
+
+    // Mark the starting point of the loop so I know if my computer exploded
     var timestamp = 0L
     var increment = 1L
 
-    schedule.foreach { case (remainder, bus) =>
-      // Mark the starting point of the loop so I know if my computer exploded
+    // For each bus, we need to figure out the first time it could leave, as a
+    // multiple of a workable start time we already know for other busses we've
+    // already looked at.
+    schedule.foreach { case (index, bus) =>
 
-      // @TODO: I can kinda make a picture in my head to explain why we're
-      // looking at $gap here, but I need to sit with it longer. My brain broke.
-      var gap = ((bus - remainder) % bus)
+      // So if we just go looking for the "remainders" given for a bus seq like
+      // 7,13, we'll get a start @ 14, not 77. The reason is that if we look for
+      // time % bus = index  --> we end up looking backward. We'll accept a time
+      // like 14, proposing Bus 13 can leave at 13 but that's t-1, not t+1 !
+
+      // If we use 14 as a start time, bus 13, leaving at t+1 would try to leave
+      // at 15, which isn't a multiple of 13. Thus, we need to pick a time
+      // that gives us the remainder as a "count-up" to the bus time.
+      // T 77 % B 13 = 12. We need to look for a "gap" that is 12, or
+      // (Bus - Index), instead.
+      var gap = ((bus - index) % bus)
+
+      // And because the production input is evil, some index times are longer
+      // than their bus interval. We're "catching the next one," so to speak.
+      // The math above would make us look for a negative number, which will
+      // never happen. So if the gap determined above is negative, we need to
+      // add the bus interval to it, to wait for "the next one."
       if (gap < 0) gap += bus
 
-      println(s"Finding a timestamp for Bus $bus (idx/rem $remainder -> $gap), starting at $timestamp")
+      // Now look for start times such that % bus interval yield the gap we need
+      println(s"Trying times for Bus $bus (idx $index -> gap $gap), starting with $timestamp")
       while (timestamp % bus != gap) timestamp += increment
 
-      // The current combo doesn't work, we know the next one possible will be
-      // at least another multiple of the Bus ID, so save us the trouble.
+      // To figure the next bus, we know it'll be a multiple of this bus interal
+      // so bump the increment up so we don't have to try so many combinations.
       increment *= bus
-      println(s"At $timestamp, Bus $bus can depart at ${timestamp + remainder}  (t + $remainder)")
+      println(s"At $timestamp, Bus $bus can depart at ${timestamp + index}  (t + $index)")
     }
 
     println(s"\nFirst timestamp for the given pattern is $timestamp")
