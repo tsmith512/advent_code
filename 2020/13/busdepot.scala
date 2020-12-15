@@ -21,7 +21,7 @@
 import scala.io.Source.fromFile
 
 object BusDepot {
-  def inputFile = "bus_sample.txt"
+  def inputFile = "bus_schedule.txt"
 
   def getInfo(): (Int, List[Int]) = {
     val timestamp :: schedule = fromFile(inputFile).getLines.toList
@@ -70,7 +70,6 @@ object BusDepot {
     // - Start time from Part One isn't important
     //
     // NARRATIVE WARNING: Surely the will be beyond 100000000000000!
-    // (And yes, @duplico already tried it the cheap way; it would take years.)
     //
     // I can take no credit for determining this. That goes to a combination of
     // r/adventofcode , @duplico , and beating the crap out of my keyboard
@@ -85,12 +84,14 @@ object BusDepot {
 
     schedule.foreach { case (remainder, bus) =>
       // Mark the starting point of the loop so I know if my computer exploded
-      println(s"Finding a timestamp for Bus $bus (idx/rem $remainder), starting at $timestamp")
 
       // @TODO: I can kinda make a picture in my head to explain why we're
-      // looking at (bus - remainder) here, but I would like to work with this
-      // until I can clearly explain why it works.
-      while (timestamp % bus != (bus - remainder) % bus) timestamp += increment
+      // looking at $gap here, but I need to sit with it longer. My brain broke.
+      var gap = ((bus - remainder) % bus)
+      if (gap < 0) gap += bus
+
+      println(s"Finding a timestamp for Bus $bus (idx/rem $remainder -> $gap), starting at $timestamp")
+      while (timestamp % bus != gap) timestamp += increment
 
       // The current combo doesn't work, we know the next one possible will be
       // at least another multiple of the Bus ID, so save us the trouble.
@@ -99,6 +100,8 @@ object BusDepot {
     }
 
     println(s"\nFirst timestamp for the given pattern is $timestamp")
+    // Part Two solution:
+    //   First timestamp for the given pattern is 305068317272992
   }
 
   def getIndexedSchedule(): Array[(Int, Int)] = {
