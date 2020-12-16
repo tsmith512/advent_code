@@ -50,16 +50,30 @@ func main() {
 
 	// Scan the file
 	scanner := bufio.NewScanner(file)
+
+	// Declare our bitmasks at this level so they can be used until replaced
+	var on uint64
+	var off uint64
+
+	// Make a map we can store assignments in
+	boatMemory := make(map[uint64]uint64)
+
 	for scanner.Scan() {
 		line := scanner.Text()
-		fmt.Println(line)
 		if strings.HasPrefix(line, "mask") {
-			on, off := decodeMask(line[7:len(line)])
+			on, off = decodeMask(line[7:len(line)])
 			fmt.Printf("New Mask Decoded: %b / %b\n", on, off)
 		} else {
 			at, val := (decodeAssignment(line))
 			fmt.Printf("New Assignment: %d  <- %d\n", at, val)
+			new := applyMasksTo(val, on, off)
+			fmt.Printf("Masked Value: %d\n", new)
+			boatMemory[at] = new
 		}
+	}
+
+	for address, contents := range boatMemory {
+		fmt.Printf("memory[%d] = %d\n", address, contents)
 	}
 }
 
