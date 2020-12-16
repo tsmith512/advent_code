@@ -60,20 +60,16 @@ func main() {
 
 	for scanner.Scan() {
 		line := scanner.Text()
+
 		if strings.HasPrefix(line, "mask") {
+			// This line contains a replacement bitmask pair
 			on, off = decodeMask(line[7:len(line)])
-			fmt.Printf("New Mask Decoded: %b / %b\n", on, off)
 		} else {
-			at, val := (decodeAssignment(line))
-			fmt.Printf("New Assignment: %d  <- %d\n", at, val)
+			// This line is an assignment; apply mask and save
+			at, val := decodeAssignment(line)
 			new := applyMasksTo(val, on, off)
-			fmt.Printf("Masked Value: %d\n", new)
 			boatMemory[at] = new
 		}
-	}
-
-	for address, contents := range boatMemory {
-		fmt.Printf("memory[%d] = %d\n", address, contents)
 	}
 
 	var total uint64 = 0
@@ -86,12 +82,8 @@ func main() {
 }
 
 func decodeMask(mask string) (on uint64, off uint64) {
-	fmt.Printf("Mask:    %s\n", mask)
 	maskOn  := strings.ReplaceAll(mask, "X", "0")
 	maskOff := strings.ReplaceAll(mask, "X", "1")
-
-	fmt.Printf("maskOn:  %s\n", maskOn)
-	fmt.Printf("maskOff: %s\n", maskOff)
 
 	on,  _ = strconv.ParseUint(maskOn,  2, 64)
 	off, _ = strconv.ParseUint(maskOff, 2, 64)
@@ -110,7 +102,6 @@ func decodeAssignment(line string) (at uint64, val uint64) {
 }
 
 func applyMasksTo(in uint64, on uint64, off uint64) (out uint64) {
-	fmt.Printf("Input:   %d\n", in)
 	out = (on | in) & off
 	return
 }
