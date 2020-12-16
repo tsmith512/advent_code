@@ -40,7 +40,7 @@ import (
 	"strings"
 )
 
-var filename string = "docking_sample.txt"
+var filename string = "docking_seq.txt"
 
 func main() {
 	// Open the file
@@ -81,9 +81,6 @@ func main() {
 	fmt.Printf("Sum of stored numbers: %d\n", total)
 	// Part One solution:
 	//   Sum of stored numbers: 9615006043476
-
-	// Kick off Part Two:
-	partTwo(file)
 }
 
 func decodeMask(mask string) (on uint64, off uint64) {
@@ -108,47 +105,5 @@ func decodeAssignment(line string) (at uint64, val uint64) {
 
 func applyMasksTo(in uint64, on uint64, off uint64) (out uint64) {
 	out = (on | in) & off
-	return
-}
-
-
-//  ___          _     ___
-// | _ \__ _ _ _| |_  |_  )
-// |  _/ _` | '_|  _|  / /
-// |_| \__,_|_|  \__| /___|
-//
-// Lol.
-//
-// Okay so the bitmask applies to the _address_ now, not the value. Apply the
-// mask to the memory location just prior to writing time. Mask rules changed:
-//
-// Mask bit 0 -> the corresponding address bit unchanged.
-// Mask bit 1 -> the corresponding address bit = 1.
-// Mask bit X -> :sigh:
-//
-// Permute all positions marked "X" for all possible values. So the new number
-// will be written to many locations:
-//
-// input:   000000000000000000000000000000101010  (decimal 42)
-// mask:    000000000000000000000000000000X1001X
-// result:  000000000000000000000000000000X1101X  <-- Do each combo for X:
-//          000000000000000000000000000000011010  (decimal 26)
-//          000000000000000000000000000000011011  (decimal 27)
-//          000000000000000000000000000000111010  (decimal 58)
-//          000000000000000000000000000000111011  (decimal 59)
-
-func partTwo(file *os.File) (boatMemory map[uint64]uint64) {
-	// Reset the pointer and set up a new scanner
-	_, _ = file.Seek(0, 0)
-	scanner := bufio.NewScanner(file)
-
-	// Initialize the new memory map
-	boatMemory = make(map[uint64]uint64)
-
-	for scanner.Scan() {
-		line := scanner.Text()
-		println(line)
-	}
-
 	return
 }
