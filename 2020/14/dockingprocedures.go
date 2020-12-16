@@ -75,6 +75,14 @@ func main() {
 	for address, contents := range boatMemory {
 		fmt.Printf("memory[%d] = %d\n", address, contents)
 	}
+
+	var total uint64 = 0
+
+	for _, contents := range boatMemory {
+		total += contents
+	}
+
+	fmt.Printf("Sum of stored numbers: %d\n", total)
 }
 
 func decodeMask(mask string) (on uint64, off uint64) {
