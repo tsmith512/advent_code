@@ -40,8 +40,27 @@ import (
 	"strings"
 )
 
+var filename string = "docking_sample.txt"
+
 func main() {
-	getInstructionSet("docking_sample.txt")
+	// Open the file
+	file, err := os.Open(filename);
+	if err != nil { panic(err) }
+	defer file.Close()
+
+	// Scan the file
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line := scanner.Text()
+		fmt.Println(line)
+		if strings.HasPrefix(line, "mask") {
+			on, off := decodeMask(line[7:len(line)])
+			fmt.Printf("New Mask Decoded: %b / %b\n", on, off)
+		} else {
+			at, val := (decodeAssignment(line))
+			fmt.Printf("New Assignment: %d  <- %d\n", at, val)
+		}
+	}
 }
 
 func decodeMask(mask string) (on uint64, off uint64) {
@@ -72,25 +91,4 @@ func applyMasksTo(in uint64, on uint64, off uint64) (out uint64) {
 	fmt.Printf("Input:   %d\n", in)
 	out = (on | in) & off
 	return
-}
-
-func getInstructionSet(filename string) {
-	// Open the file
-	file, err := os.Open(filename);
-	if err != nil { panic(err) }
-	defer file.Close()
-
-	// Scan the file
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		line := scanner.Text()
-		fmt.Println(line)
-		if strings.HasPrefix(line, "mask") {
-			on, off := decodeMask(line[7:len(line)])
-			fmt.Printf("New Mask Decoded: %b / %b\n", on, off)
-		} else {
-			at, val := (decodeAssignment(line))
-			fmt.Printf("New Assignment: %d  <- %d\n", at, val)
-		}
-	}
 }
