@@ -20,8 +20,8 @@
 //
 // value:  00001011 -- get from decimal, read each from file
 // mask:   X1XXXX0X -- use the most recently defined, and split it:
-// 				 01000000 --   1s ONLY for an OR (to turn stuff on)
-// 				 11111101 --   0s ONLY for an AND (to turn stuff off)
+// 				 01000000 --   1s ONLY for an OR (to turn stuff ON)
+// 				 11111101 --   0s ONLY for an AND (to turn stuff OFF)
 // result: 01001001 -- save the number back to its "address space"
 //
 // And that "address space" is just its place in the storage mechanism.
@@ -33,8 +33,23 @@ package main
 
 import (
 	"fmt"
+	"strings"
+	"strconv"
 )
 
 func main() {
-	fmt.Println("Hello, World!")
+	fmt.Println(decodeMask("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X"))
+}
+
+func decodeMask(mask string) (on uint64, off uint64) {
+	fmt.Printf("Mask:    %s\n", mask)
+	maskOn  := strings.ReplaceAll(mask, "X", "0")
+	maskOff := strings.ReplaceAll(mask, "X", "1")
+
+	fmt.Printf("maskOn:  %s\n", maskOn)
+	fmt.Printf("maskOff: %s\n", maskOff)
+
+	on, _ = strconv.ParseUint(maskOn, 2, 64)
+	off, _ = strconv.ParseUint(maskOff, 2, 64)
+	return
 }
