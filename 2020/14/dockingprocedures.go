@@ -20,8 +20,8 @@
 //
 // value:  00001011 -- get from decimal, read each from file
 // mask:   X1XXXX0X -- use the most recently defined, and split it:
-// 				 01000000 --   1s ONLY for an OR (to turn stuff ON)
-// 				 11111101 --   0s ONLY for an AND (to turn stuff OFF)
+//         01000000 --   1s ONLY for an OR (to turn stuff ON)
+//         11111101 --   0s ONLY for an AND (to turn stuff OFF)
 // result: 01001001 -- save the number back to its "address space"
 //
 // And that "address space" is just its place in the storage mechanism.
