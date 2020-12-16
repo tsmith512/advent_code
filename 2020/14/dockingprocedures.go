@@ -8,3 +8,13 @@
 //
 // Challenge:
 // (To go to bed on time and come back tomorrow...)
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	fmt.Println("Hello, World!")
+}
