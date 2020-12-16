@@ -40,7 +40,7 @@ import (
 	"strings"
 )
 
-var filename string = "docking_sample.txt"
+var filename string = "docking_seq.txt"
 
 func main() {
 	// Open the file
@@ -79,6 +79,8 @@ func main() {
 	}
 
 	fmt.Printf("Sum of stored numbers: %d\n", total)
+	// Part One solution:
+	//   Sum of stored numbers: 9615006043476
 }
 
 func decodeMask(mask string) (on uint64, off uint64) {
