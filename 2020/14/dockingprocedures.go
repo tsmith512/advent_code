@@ -38,7 +38,11 @@ import (
 )
 
 func main() {
-	fmt.Println(decodeMask("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X"))
+	var input uint64 = 11
+	on, off := decodeMask("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X")
+	fmt.Println(on, off)
+	output := applyMasksTo(input, on, off)
+	fmt.Printf("Input:   %d\n", output)
 }
 
 func decodeMask(mask string) (on uint64, off uint64) {
@@ -51,5 +55,11 @@ func decodeMask(mask string) (on uint64, off uint64) {
 
 	on, _ = strconv.ParseUint(maskOn, 2, 64)
 	off, _ = strconv.ParseUint(maskOff, 2, 64)
+	return
+}
+
+func applyMasksTo(in uint64, on uint64, off uint64) (out uint64) {
+	fmt.Printf("Input:   %d\n", in)
+	out = (on | in) & off
 	return
 }
