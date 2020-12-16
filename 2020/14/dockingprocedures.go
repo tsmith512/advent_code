@@ -32,17 +32,16 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
-	"strings"
+	"os"
+	"regexp"
 	"strconv"
+	"strings"
 )
 
 func main() {
-	var input uint64 = 11
-	on, off := decodeMask("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X")
-	fmt.Println(on, off)
-	output := applyMasksTo(input, on, off)
-	fmt.Printf("Input:   %d\n", output)
+	getInstructionSet("docking_sample.txt")
 }
 
 func decodeMask(mask string) (on uint64, off uint64) {
@@ -53,8 +52,19 @@ func decodeMask(mask string) (on uint64, off uint64) {
 	fmt.Printf("maskOn:  %s\n", maskOn)
 	fmt.Printf("maskOff: %s\n", maskOff)
 
-	on, _ = strconv.ParseUint(maskOn, 2, 64)
+	on,  _ = strconv.ParseUint(maskOn,  2, 64)
 	off, _ = strconv.ParseUint(maskOff, 2, 64)
+
+	return
+}
+
+func decodeAssignment(line string) (at uint64, val uint64) {
+	parserExp := regexp.MustCompile(`\[(\d+)\] = (\d+)`)
+	values := parserExp.FindStringSubmatch(line)
+
+	at,  _ = strconv.ParseUint(values[1], 10, 64)
+	val, _ = strconv.ParseUint(values[2], 10, 64)
+
 	return
 }
 
@@ -62,4 +72,25 @@ func applyMasksTo(in uint64, on uint64, off uint64) (out uint64) {
 	fmt.Printf("Input:   %d\n", in)
 	out = (on | in) & off
 	return
+}
+
+func getInstructionSet(filename string) {
+	// Open the file
+	file, err := os.Open(filename);
+	if err != nil { panic(err) }
+	defer file.Close()
+
+	// Scan the file
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line := scanner.Text()
+		fmt.Println(line)
+		if strings.HasPrefix(line, "mask") {
+			on, off := decodeMask(line[7:len(line)])
+			fmt.Printf("New Mask Decoded: %b / %b\n", on, off)
+		} else {
+			at, val := (decodeAssignment(line))
+			fmt.Printf("New Assignment: %d  <- %d\n", at, val)
+		}
+	}
 }
