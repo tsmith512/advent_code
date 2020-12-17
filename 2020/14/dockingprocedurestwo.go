@@ -84,8 +84,8 @@ func main() {
 				// memory address. Then --> string --> rune list
 				maskVariant := []rune(fmt.Sprintf("%036b", at | on))
 
-				// Run over the mask string to get addresses of X's to replace into the
-				// maskVariant we just determined.
+				// Run over the original mask string to get indexes of X's to replace
+				// into the maskVariant we just determined.
 				ix := 0
 				for x, c := range mask {
 					if (c == 'X') {
