@@ -39,7 +39,7 @@ import (
 	"strings"
 )
 
-var filename string = "docking_sample2.txt"
+var filename string = "docking_seq.txt"
 
 func main() {
 	// Open the file
@@ -64,11 +64,9 @@ func main() {
 			// Record a new mask string and get the ON mask (the 1s).
 			mask = line[7:len(line)]
 			on = getMemoryOnMask(mask)
-			fmt.Printf("New mask: %s / %b\n", mask, on)
 		} else {
 			// This line is an assignment; get the new value and "starting" address
 			at, val := decodeAssignment(line)
-			fmt.Printf("Assign %d @ %d --> [", val, at)
 
 			// How many X's are left in the mask?
 			howManyXs := strings.Count(mask, "X")
@@ -94,15 +92,12 @@ func main() {
 						maskVariant[x] = replacements[ix]
 						ix++
 					}
-					// maskVariant :=
 				}
 
 				// And flatten the bitmasked-runereplaced back into a decimal
 				at, _ := strconv.ParseUint(string(maskVariant), 2, 64)
-				fmt.Printf(" %d", at)
 				boatMemory[at] = val
 			}
-			fmt.Printf(" ]\n")
 		}
 	}
 
@@ -115,6 +110,8 @@ func main() {
 	}
 
 	fmt.Printf("Sum of stored numbers: %d\n", total)
+	// Part Two solution:
+	//   Sum of stored numbers: 4275496544925
 }
 
 // The 1's turn stuff on, so let's make the AND map.
@@ -133,11 +130,5 @@ func decodeAssignment(line string) (at uint64, val uint64) {
 	at,  _ = strconv.ParseUint(values[1], 10, 64)
 	val, _ = strconv.ParseUint(values[2], 10, 64)
 
-	return
-}
-
-// Probably not needed in Part Two?
-func applyMasksTo(in uint64, on uint64, off uint64) (out uint64) {
-	out = (on | in) & off
 	return
 }
