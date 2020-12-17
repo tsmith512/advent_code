@@ -19,13 +19,13 @@
 // Permute all positions marked "X" for all possible values. So the new number
 // will be written to many locations:
 //
-// input:   000000000000000000000000000000101010  (decimal 42)
-// mask:    000000000000000000000000000000X1001X
-// result:  000000000000000000000000000000X1101X  <-- Do each combo for X:
-//          000000000000000000000000000000011010  (decimal 26)
-//          000000000000000000000000000000011011  (decimal 27)
-//          000000000000000000000000000000111010  (decimal 58)
-//          000000000000000000000000000000111011  (decimal 59)
+// input:   000000000000000000000000000000 1 0101 0  (decimal 42)
+// mask:    000000000000000000000000000000 X 1001 X
+// result:  000000000000000000000000000000 X 1101 X  <-- Do each combo for X:
+//          000000000000000000000000000000 0 1101 0  (decimal 26)
+//          000000000000000000000000000000 0 1101 1  (decimal 27)
+//          000000000000000000000000000000 1 1101 0  (decimal 58)
+//          000000000000000000000000000000 1 1101 1  (decimal 59)
 
 package main
 
@@ -50,26 +50,33 @@ func main() {
 	scanner := bufio.NewScanner(file)
 
 	// Declare our bitmasks at this level so they can be used until replaced
+	var mask string
 	var on uint64
-	var off uint64
 
 	// Make a map we can store assignments in
 	boatMemory := make(map[uint64]uint64)
 
 	for scanner.Scan() {
 		line := scanner.Text()
-		println(line)
 
 		if strings.HasPrefix(line, "mask") {
-			// This line contains a replacement bitmask pair
-			on, off = decodeMemoryMask(line[7:len(line)])
+			// Record a new mask string and get the ON mask (the 1s).
+			mask = line[7:len(line)]
+			on = getMemoryOnMask(mask)
+			fmt.Printf("New mask definition: %s / %b\n", mask, on)
 		} else {
-			// This line is an assignment; apply mask and save
+			// This line is an assignment; get the new value and "starting" address
 			at, val := decodeAssignment(line)
-			new := applyMasksTo(val, on, off)
-			boatMemory[at] = new
+			fmt.Printf("Assign %d @ %s -> %d\n", val, mask, at)
+
+			// @TODO: All the shit with "at"
+			// new := applyMasksTo(val, on, off) // Need all the places we might store
+			// boatMemory[at] = new              // Need to store in all those places.
 		}
 	}
+
+
+	// Sum the total stored in the map.
 	var total uint64 = 0
 
 	for _, contents := range boatMemory {
@@ -79,19 +86,15 @@ func main() {
 	fmt.Printf("Sum of stored numbers: %d\n", total)
 }
 
-func decodeMemoryMask(mask string) (on uint64, off uint64) {
+// The 1's turn stuff on, so let's make the AND map.
+func getMemoryOnMask(mask string) (on uint64) {
 	maskOn  := strings.ReplaceAll(mask, "X", "0") // AND map. All the 1s are on.
 	on,    _ = strconv.ParseUint(maskOn,  2, 64)
-
-	// @TODO: 0's are unchanged. X's need to run all possible combos.
-
-	on,  _ = strconv.ParseUint(maskOn,  2, 64)
-	// off, _ = strconv.ParseUint(maskOff, 2, 64)
 
 	return
 }
 
-
+// Unchanged from Part One.
 func decodeAssignment(line string) (at uint64, val uint64) {
 	parserExp := regexp.MustCompile(`\[(\d+)\] = (\d+)`)
 	values := parserExp.FindStringSubmatch(line)
@@ -102,6 +105,7 @@ func decodeAssignment(line string) (at uint64, val uint64) {
 	return
 }
 
+// Probably not needed in Part Two?
 func applyMasksTo(in uint64, on uint64, off uint64) (out uint64) {
 	out = (on | in) & off
 	return
