@@ -32,6 +32,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"regexp"
 	"strconv"
@@ -67,8 +68,37 @@ func main() {
 		} else {
 			// This line is an assignment; get the new value and "starting" address
 			at, val := decodeAssignment(line)
-			fmt.Printf("Assign %d @ %s -> %d\n", val, mask, at)
+			fmt.Printf("Assign %d @ %d\n%s\n", val, at, mask)
 
+			fmt.Printf("%036b <- (%d Before)\n", at , at)
+			fmt.Printf("%036b <- (%d On)\n", at | on, at | on)
+
+			// How many X's are left in the mask?
+			howManyXs := strings.Count(mask, "X")
+
+			// And were we to make a binary number to account for that many digits,
+			// what would its value be? (Yes, this already seems like a bad way...)
+			maxVal := int(math.Exp2(float64(howManyXs)))
+
+			// For all binary numbers 0000... --> 1111...
+			for i := 0; i < maxVal; i++ {
+				// What set of 1s & 0s to use for this permutation? Split to runes
+				replacements := []rune(fmt.Sprintf("%0*b", howManyXs, i))
+
+				// How run through the mask and when we hit an X, replace it with the
+				// corresponding digit from our replacement binary
+				ix := 0
+				maskVariant := []rune(mask)
+				for x, c := range mask {
+					if (c == 'X') {
+						maskVariant[x] = replacements[ix]
+						ix++
+					}
+					// maskVariant :=
+				}
+				memoryAddress, _ := strconv.ParseUint(string(maskVariant), 2, 64)
+				fmt.Printf("%s -> %d\n", string(maskVariant), memoryAddress)
+			}
 			// @TODO: All the shit with "at"
 			// new := applyMasksTo(val, on, off) // Need all the places we might store
 			// boatMemory[at] = new              // Need to store in all those places.
