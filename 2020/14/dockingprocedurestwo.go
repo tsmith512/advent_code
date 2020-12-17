@@ -64,14 +64,11 @@ func main() {
 			// Record a new mask string and get the ON mask (the 1s).
 			mask = line[7:len(line)]
 			on = getMemoryOnMask(mask)
-			fmt.Printf("New mask definition: %s / %b\n", mask, on)
+			fmt.Printf("New mask: %s / %b\n", mask, on)
 		} else {
 			// This line is an assignment; get the new value and "starting" address
 			at, val := decodeAssignment(line)
-			fmt.Printf("Assign %d @ %d\n%s\n", val, at, mask)
-
-			fmt.Printf("%036b <- (%d Before)\n", at , at)
-			fmt.Printf("%036b <- (%d On)\n", at | on, at | on)
+			fmt.Printf("Assign %d @ %d --> [", val, at)
 
 			// How many X's are left in the mask?
 			howManyXs := strings.Count(mask, "X")
@@ -102,9 +99,10 @@ func main() {
 
 				// And flatten the bitmasked-runereplaced back into a decimal
 				at, _ := strconv.ParseUint(string(maskVariant), 2, 64)
-				fmt.Printf("%s -> %d\n", string(maskVariant), at)
+				fmt.Printf(" %d", at)
 				boatMemory[at] = val
 			}
+			fmt.Printf(" ]\n")
 		}
 	}
 
