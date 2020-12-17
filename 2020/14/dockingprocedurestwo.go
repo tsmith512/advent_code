@@ -85,10 +85,13 @@ func main() {
 				// What set of 1s & 0s to use for this permutation? Split to runes
 				replacements := []rune(fmt.Sprintf("%0*b", howManyXs, i))
 
-				// How run through the mask and when we hit an X, replace it with the
-				// corresponding digit from our replacement binary
+				// Get this mask variant by applying the "on mask" (for 1s) to the given
+				// memory address. Then --> string --> rune list
+				maskVariant := []rune(fmt.Sprintf("%036b", at | on))
+
+				// Run over the mask string to get addresses of X's to replace into the
+				// maskVariant we just determined.
 				ix := 0
-				maskVariant := []rune(mask)
 				for x, c := range mask {
 					if (c == 'X') {
 						maskVariant[x] = replacements[ix]
@@ -96,12 +99,12 @@ func main() {
 					}
 					// maskVariant :=
 				}
-				memoryAddress, _ := strconv.ParseUint(string(maskVariant), 2, 64)
-				fmt.Printf("%s -> %d\n", string(maskVariant), memoryAddress)
+
+				// And flatten the bitmasked-runereplaced back into a decimal
+				at, _ := strconv.ParseUint(string(maskVariant), 2, 64)
+				fmt.Printf("%s -> %d\n", string(maskVariant), at)
+				boatMemory[at] = val
 			}
-			// @TODO: All the shit with "at"
-			// new := applyMasksTo(val, on, off) // Need all the places we might store
-			// boatMemory[at] = new              // Need to store in all those places.
 		}
 	}
 
