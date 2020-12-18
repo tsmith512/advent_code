@@ -22,21 +22,13 @@ class MemoryGame
   def do_turn(last)
     @@turn  += 1
 
-    if @@said[last] != nil
-      # Gap between turns. @TODO I did not need two cases for this in the Part
-      # One, but without this I didn't get the right answers. What am I missing
-      # to consolidate this logic?
-      if @@said[last].length > 1
-        out = @@turn - 1 - @@said[last][1]
-      else
-        # If it has only been said once, then last time was the first time it
-        # was spoken. The output is 0.
-        puts "\n\nTurn: #{@@turn}"
-        puts "Turn when #{last} was most recently spoken (said.last) #{@@said[last]}"
-        out = 0
-        puts "#{out} = #{@@turn} - 1 - #{@@said[last][0]}"
-      end
+    if @@said[last] != nil && @@said[last].length > 1
+      # We'd said that number before, so substract when that happened from the
+      # last turn number.
+      out = @@turn - 1 - @@said[last][1]
     else
+      # This is either the first time a number was said or last time was the
+      # first time a number was said.
       out = 0
     end
 
@@ -45,7 +37,8 @@ class MemoryGame
     else
       @@said[out] = [@@turn]
     end
-    # puts "Ended turn #{@@turn}: #{last} -> #{out}\n" if @@turn % 1000 == 0
+
+    puts "Ended turn #{@@turn}: #{last} -> #{out}\n" if @@turn % 1000 == 0
 
     out
   end
@@ -73,7 +66,7 @@ end
 
 
 game = MemoryGame.new
-game.start(File.read("memory_start.txt"), 2020)
+game.start(File.read("memory_start.txt"), 30_000_000)
 # Part Two solution:
 #   Ended turn 30000000: 10091 -> 37312
 #   Ended turn 30000000: 37312
