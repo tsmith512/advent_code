@@ -22,33 +22,43 @@ On a turn, the speaker considers the most recently spoken number, and:
 =end
 
 class MemoryGame
+  # Keep a running list of the number's we've said, in order
   @@said = []
 
-  def turn()
-    lookback = @@said.reverse
-    last = lookback.shift
-    puts "Starting a turn with #{last}"
+  def do_turn()
+    last_turn = @@said.length
+    my_turn = @@said.length + 1
+    last = @@said.last
 
-    if lookback.include?(last)
-      how_long = lookback.index(last)
-      puts "We'd said #{last} before #{how_long} turns ago / #{lookback}"
-      out = how_long
+    puts "\n\nStarting turn #{my_turn} with #{last}"
+    puts "Numbers spoken: #{@@said}"
+
+    lookback = @@said.reverse.each_with_index.filter_map { |x, i|  i + 1 if x == last }
+    puts "Turns when #{last} was said: #{lookback} (total times #{lookback.length})"
+
+    if lookback.length > 1
+      puts "We'd said #{last} before"
+      out = lookback[1] - lookback[0]
+      puts "#{out} = #{lookback[1]} - #{lookback[0]}"
     else
       puts "New Number #{last} --> 0"
       out = 0
     end
 
     @@said.push(out)
-    puts @@said
+    puts "#{@@said}"
     out
   end
 
   def start(input)
     seq = input.split(',')
     seq.each { |i| @@said.push(i.to_i) }
-    turn
-    turn
-    turn
+    @@turn = seq.length
+    do_turn
+    do_turn
+    do_turn
+    do_turn
+    do_turn
   end
 end
 
