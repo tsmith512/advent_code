@@ -32,7 +32,6 @@ class MemoryGame
         out = @@turn - 1 - @@said[last][0]
       end
     else
-      # New number
       out = 0
     end
 
@@ -47,7 +46,7 @@ class MemoryGame
   end
 
   def start(input, count)
-    seq = input.split(',')
+    seq = input.strip.split(',')
     seq.each.with_index(1) { |val, index| @@said[val.to_i] = [index] }
 
     puts "Input Seq: #{seq}"
@@ -69,6 +68,7 @@ end
 
 
 game = MemoryGame.new
-game.start(File.read("memory_start.txt").strip, 2020)
-# Part One solution:
-#   Ended turn 2020: 128 -> 662
+game.start(File.read("memory_start.txt"), 30_000_000)
+# Part Two solution:
+#   Ended turn 30000000: 10091 -> 37312
+#   Ended turn 30000000: 37312
