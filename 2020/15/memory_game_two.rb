@@ -16,39 +16,53 @@ Challenge:
 
 class MemoryGame
   # Keep a running map of the number's we've said, and when
-  @@said = []
+  @@said = {}
   @@turn = 0
 
   def do_turn(last)
-    last = @@said.last
     @@turn  += 1
+    puts "Turn: #{@@turn}"
+    puts "Turn when #{last} was most recently spoken (said.last) #{@@said[last]}"
 
-    if @@said.includes?(last)
+    if @@said[last] != nil
       # Gap between turns. We know $last was spoken at X turn and Y turn (the
       # last turn), so getting the difference between those is just Y - X
-      out = @@turn - @@said[last]
+      out = @@turn - 1 - @@said[last]
+      puts "#{out} = (#{@@turn} - 1) - #{@@said[last]}"
 
     else
       # New number
       out = 0
     end
 
-    puts "Ended turn #{@@turn}: #{last} -> #{out}"
+    puts "#{@@said}"
+    puts "Ended turn #{@@turn}: #{last} -> #{out}\n\n"
     @@said[out] = @@turn
+
+    out
   end
 
   def start(input, count)
     seq = input.split(',')
-    seq.each { |i| @@said.push(i.to_i) }
+    seq.each.with_index(1) { |val, index| @@said[val.to_i] = index }
+
+    puts "Input Seq: #{seq}"
+    puts "Init map: #{@@said}"
+
+    out = seq.last.to_i
+    @@turn = seq.length
+
+    puts "Start #{@@turn} with #{out}.\n\n"
+
 
     while @@turn < count
-      do_turn
+      out = do_turn(out)
     end
   end
 end
 
 
 game = MemoryGame.new
-game.start(File.read("memory_start.txt").strip, 2020)
+game.start(File.read("memory_sample.txt").strip, 6)
 # Part One solution:
 #   Ended turn 2020: 128 -> 662
