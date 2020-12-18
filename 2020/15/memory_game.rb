@@ -54,6 +54,6 @@ end
 
 
 game = MemoryGame.new
-game.start(File.read("memory_start.txt").strip, 2020)
+game.start(File.read("memory_start.txt").strip, 30000000)
 # Part One solution:
 #   Ended turn 2020: 128 -> 662
