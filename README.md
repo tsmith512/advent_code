@@ -21,3 +21,4 @@ well is a bit dated. So I've decided to lean into my experience with traditional
 | Day 12: Rain Risk: [Part 1](2020/12/navigate.tcl), [Part 2](2020/12/navigate_two.tcl) | TCL |
 | [Day 13: Shuttle Search](2020/13/busdepot.scala)                | Scala      |
 | Day 14: Docking Data: [Part 1](2020/14/dockingprocedures.go), [Part 2](2020/14/dockingprocedurestwo.go) | Go |
+| Day 15: Rambunctious Recitation: [Part 1](2020/15/memory_game.rb), [Part 2](2020/15/memory_game_two.rb) | Ruby |
