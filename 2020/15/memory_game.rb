@@ -26,28 +26,18 @@ class MemoryGame
   @@said = []
 
   def do_turn()
-    last_turn = @@said.length
-    my_turn = @@said.length + 1
     last = @@said.last
 
-    puts "\n\nStarting turn #{my_turn} with #{last}"
-    puts "Numbers spoken: #{@@said}"
-
     lookback = @@said.reverse.each_with_index.filter_map { |x, i|  i + 1 if x == last }
-    puts "Turns when #{last} was said: #{lookback} (total times #{lookback.length})"
 
     if lookback.length > 1
-      puts "We'd said #{last} before"
       out = lookback[1] - lookback[0]
-      puts "#{out} = #{lookback[1]} - #{lookback[0]}"
     else
-      puts "New Number #{last} --> 0"
       out = 0
     end
 
+    puts "Ended turn #{@@said.length + 1}: #{last} -> #{out}"
     @@said.push(out)
-    puts "#{@@said}"
-    out
   end
 
   def start(input)
