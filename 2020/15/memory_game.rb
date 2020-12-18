@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 
 =begin
-
-___              _ ___
+ ___              _ ___
 |   \ __ _ _  _  / | __|
 | |) / _` | || | | |__ \
 |___/\__,_|\_, | |_|___/
@@ -28,11 +27,14 @@ class MemoryGame
   def do_turn()
     last = @@said.last
 
+    # Make a list of turn numbers when we said the last number
     lookback = @@said.reverse.each_with_index.filter_map { |x, i|  i + 1 if x == last }
 
     if lookback.length > 1
+      # Gap between turns
       out = lookback[1] - lookback[0]
     else
+      # New number
       out = 0
     end
 
@@ -52,4 +54,6 @@ end
 
 
 game = MemoryGame.new
-game.start(File.read("memory_sample.txt").strip, 10)
+game.start(File.read("memory_start.txt").strip, 2020)
+# Part One solution:
+#   Ended turn 2020: 128 -> 662
