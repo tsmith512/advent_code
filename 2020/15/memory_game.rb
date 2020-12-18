@@ -40,18 +40,16 @@ class MemoryGame
     @@said.push(out)
   end
 
-  def start(input)
+  def start(input, count)
     seq = input.split(',')
     seq.each { |i| @@said.push(i.to_i) }
-    @@turn = seq.length
-    do_turn
-    do_turn
-    do_turn
-    do_turn
-    do_turn
+
+    while @@said.length < count
+      do_turn
+    end
   end
 end
 
 
 game = MemoryGame.new
-game.start(File.read("memory_sample.txt").strip)
+game.start(File.read("memory_sample.txt").strip, 10)
