@@ -21,18 +21,15 @@ class MemoryGame
 
   def do_turn(last)
     @@turn  += 1
-    puts "Turn: #{@@turn}"
-    puts "Turn when #{last} was most recently spoken (said.last) #{@@said[last]}"
 
     if @@said[last] != nil
-      # Gap between turns. We know $last was spoken at X turn and Y turn (the
-      # last turn), so getting the difference between those is just Y - X
+      # Gap between turns. @TODO I did not need two cases for this in the Part
+      # One, but without this I didn't get the right answers. What am I missing
+      # to consolidate this logic?
       if @@said[last].length > 1
         out = @@turn - 1 - @@said[last][1]
-        puts "#{out} = (#{@@turn} - 1) - #{@@said[last][1]}"
       else
         out = @@turn - 1 - @@said[last][0]
-        puts "#{out} = (#{@@turn} - 1) - #{@@said[last][0]}"
       end
     else
       # New number
@@ -44,8 +41,7 @@ class MemoryGame
     else
       @@said[out] = [@@turn]
     end
-    puts "#{@@said}"
-    puts "Ended turn #{@@turn}: #{last} -> #{out}\n\n"
+    puts "Ended turn #{@@turn}: #{last} -> #{out}\n" if @@turn % 1000 == 0
 
     out
   end
@@ -66,6 +62,8 @@ class MemoryGame
     while @@turn < count
       out = do_turn(out)
     end
+
+    puts "Ended turn #{@@turn}: #{out}\n\n"
   end
 end
 
