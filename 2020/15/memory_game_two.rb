@@ -27,24 +27,32 @@ class MemoryGame
     if @@said[last] != nil
       # Gap between turns. We know $last was spoken at X turn and Y turn (the
       # last turn), so getting the difference between those is just Y - X
-      out = @@turn - 1 - @@said[last]
-      puts "#{out} = (#{@@turn} - 1) - #{@@said[last]}"
-
+      if @@said[last].length > 1
+        out = @@turn - 1 - @@said[last][1]
+        puts "#{out} = (#{@@turn} - 1) - #{@@said[last][1]}"
+      else
+        out = @@turn - 1 - @@said[last][0]
+        puts "#{out} = (#{@@turn} - 1) - #{@@said[last][0]}"
+      end
     else
       # New number
       out = 0
     end
 
+    if @@said[out] != nil
+      @@said[out].unshift(@@turn)
+    else
+      @@said[out] = [@@turn]
+    end
     puts "#{@@said}"
     puts "Ended turn #{@@turn}: #{last} -> #{out}\n\n"
-    @@said[out] = @@turn
 
     out
   end
 
   def start(input, count)
     seq = input.split(',')
-    seq.each.with_index(1) { |val, index| @@said[val.to_i] = index }
+    seq.each.with_index(1) { |val, index| @@said[val.to_i] = [index] }
 
     puts "Input Seq: #{seq}"
     puts "Init map: #{@@said}"
@@ -63,6 +71,6 @@ end
 
 
 game = MemoryGame.new
-game.start(File.read("memory_sample.txt").strip, 6)
+game.start(File.read("memory_sample.txt").strip, 10)
 # Part One solution:
 #   Ended turn 2020: 128 -> 662
