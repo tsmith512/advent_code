@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /**
  *   ___              _  __
  *  |   \ __ _ _  _  / |/ /
@@ -23,3 +25,9 @@
  * to any field validation rules). Capture the values which are not valid and
  * report the sum.
  */
+
+ const helloWorld = () => {
+   console.log("Hello, World");
+ }
+
+(helloWorld)();
