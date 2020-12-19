@@ -26,8 +26,23 @@
  * report the sum.
  */
 
- const helloWorld = () => {
-   console.log("Hello, World");
- }
+const fs = require('fs');
 
-(helloWorld)();
+const inputFile = 'ticket_sample.txt';
+
+const main = () => {
+  console.log(parseFile())
+}
+
+const parseFile = () => {
+  const rawInput = fs.readFileSync(inputFile, 'utf8');
+  const sections = rawInput.trim().split("\n\n");
+  const ticketData = {
+    rules: sections[0].split("\n"),
+    mine: sections[1].split("\n").splice(1),
+    nearby: sections[2].split("\n").splice(1),
+  };
+  console.log(ticketData)
+}
+
+(main)();
