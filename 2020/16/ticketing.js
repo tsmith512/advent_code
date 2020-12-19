@@ -31,18 +31,44 @@ const fs = require('fs');
 const inputFile = 'ticket_sample.txt';
 
 const main = () => {
-  console.log(parseFile())
+  console.log(splitInfo(readSections()))
 }
 
-const parseFile = () => {
+const readSections = () => {
   const rawInput = fs.readFileSync(inputFile, 'utf8');
   const sections = rawInput.trim().split("\n\n");
   const ticketData = {
     rules: sections[0].split("\n"),
-    mine: sections[1].split("\n").splice(1),
+    mine: sections[1].split("\n")[1],
     nearby: sections[2].split("\n").splice(1),
   };
-  console.log(ticketData)
+  return ticketData
+}
+
+const splitInfo = (sections) => {
+  let { rules, mine, nearby } = sections;
+
+  // Validation Rules:
+  rules.forEach((line, index) => {
+    // Split the rule into its key and value pars
+    const parts = line.split(':');
+
+    // Trim the name
+    const name = parts[0].trim();
+
+    // Split the string into separate ranges, then into [low, high] pairs
+    const ranges = parts[1].trim().split(' or ').map(x => x.split('-'));
+
+    rules[index] = [name, ranges];
+  });
+
+  console.table(mine);
+  mine = mine.split(',');
+  console.table(mine);
+
+  console.table(nearby);
+  nearby = nearby.map(x => x.split(','));
+  console.table(nearby);
 }
 
 (main)();
