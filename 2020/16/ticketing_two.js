@@ -29,10 +29,14 @@ const main = (input) => {
   const validTickets = nearby.filter((t, i) => invalidTicketsIDs.indexOf(i) === -1);
 
   // Figure out which columns (yes columnS...) satisfy which rule's range limits
-  const mapColumnsToIndex = determineColumnMappingOptions(validTickets, rules);
+  const columnMappingOptions = determineColumnMappingOptions(validTickets, rules);
+  console.table(columnMappingOptions);
 
-  console.log(mapColumnsToIndex);
+  // Can we determine which columns go where?
+  const columnMap = finalizeColumnMappings(columnMappingOptions);
+  console.table(columnMap);
 }
+
 
 const simpleTicketInvalidation = (ticketPool, rules) => {
   let invalid = [];
@@ -78,6 +82,34 @@ const meetsRule = (number, ranges) => {
       return true;
     }
   }
+}
+
+const finalizeColumnMappings = (options) => {
+  let map = options;
+  let knownColumns = [];
+
+  while (knownColumns.length < Object.keys(options).length) {
+    for (const rule in map) {
+      const columnOptions = map[rule];
+
+      // Special treatment once there's only one column that will fit this rule
+      if (columnOptions.length === 1) {
+
+        // Have we found a new column mapping?
+        if (knownColumns.indexOf(columnOptions[0]) === -1) {
+          knownColumns.push(columnOptions[0]);
+        }
+
+        continue;
+      }
+
+      // Remove every column we've already identified from the remaining options
+      // for this rule, then try again.
+      map[rule] = columnOptions.filter(x => knownColumns.indexOf(x) === -1);
+    }
+  }
+
+  return map;
 }
 
 (main)(inputFile);
