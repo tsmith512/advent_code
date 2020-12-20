@@ -30,8 +30,8 @@ const fs = require('fs');
 
 const inputFile = 'ticket_notes.txt';
 
-const main = () => {
-  const sections = readSections();
+const main = (input) => {
+  const sections = readSections(input);
   const { rules, mine, nearby } = splitInfo(sections);
 
   // Part One rather pointedly explained that the "invalid tickets" would be
@@ -44,8 +44,8 @@ const main = () => {
   //   The sum of invalid ticket numbers is: 27802
 }
 
-const readSections = () => {
-  const rawInput = fs.readFileSync(inputFile, 'utf8');
+const readSections = (input) => {
+  const rawInput = fs.readFileSync(input, 'utf8');
   const sections = rawInput.trim().split("\n\n");
   const ticketData = {
     rules: sections[0].split("\n"),
@@ -106,4 +106,10 @@ const inRange = (number, rules) => {
   return false;
 }
 
-(main)();
+if (!module.parent) main(inputFile);
+
+module.exports = {
+  readSections,
+  splitInfo,
+  simpleTicketValidation
+};
