@@ -25,7 +25,7 @@ const main = (input) => {
   const invalidTickets = simpleTicketInvalidation(nearby, rules);
   const validTickets = nearby.filter((t, i) => invalidTickets.indexOf(i) === -1);
 
-  const mapColumnsToIndex = determineColumnMapping(nearby, rules);
+  const mapColumnsToIndex = determineColumnMapping(validTickets, rules);
 
   // console.log(mapColumnsToIndex);
 }
@@ -49,6 +49,26 @@ const determineColumnMapping = (ticketPool, rules) => {
   const ticketColumns = firstTicket.map((value, index) => ticketPool.map(row => row[index]));
 
   console.table(ticketColumns);
+
+  for (const name in rules) {
+    const ranges = rules[name];
+
+    ticketColumns.map((column, index) => {
+      // Filter current column into values that fit the rule we're looking at
+      const filtered = column.filter(number => meetsRule(number, ranges))
+
+      console.log("These values from column " + index + " work for " + name)
+      console.log(filtered)
+    });
+  }
+}
+
+const meetsRule = (number, ranges) => {
+  for (const pair of ranges) {
+    if (pair[0] <= number && number <= pair[1]) {
+      return true;
+    }
+  }
 }
 
 (main)(inputFile);
