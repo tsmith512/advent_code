@@ -32,17 +32,17 @@ const inputFile = 'ticket_notes.txt';
 
 const main = (input) => {
   const sections = readSections(input);
-  const { rules, mine, nearby } = splitInfo(sections);
+  const { rules, nearby } = splitInfo(sections);
 
   // Part One rather pointedly explained that the "invalid tickets" would be
   // obviously out of range rather than requiring field-level validation. I can
   // only assume that horror comes in Part Two...
-  let sum = simpleTicketValidation(nearby, rules);
+  const sum = simpleTicketValidation(nearby, rules);
 
-  console.log("The sum of invalid ticket numbers is: " + sum);
+  console.log(`The sum of invalid ticket numbers is: ${sum}`);
   // Part One solution:
   //   The sum of invalid ticket numbers is: 27802
-}
+};
 
 const readSections = (input) => {
   const rawInput = fs.readFileSync(input, 'utf8');
@@ -53,15 +53,15 @@ const readSections = (input) => {
     nearby: sections[2].split("\n").splice(1),
   };
   return ticketData;
-}
+};
 
 const splitInfo = (sections) => {
   let { rules, mine, nearby } = sections;
 
   // Validation Rules. Make a new object to contain named rules rather than
   // nested arrays that get weird to traverse.
-  rulesProcessed = {};
-  rules.forEach((line, index) => {
+  const rulesProcessed = {};
+  rules.forEach((line) => {
     // Split the rule into its key and value pars
     const parts = line.split(':');
 
@@ -69,31 +69,31 @@ const splitInfo = (sections) => {
     const name = parts[0].trim();
 
     // Split the string into separate ranges, then into [low, high] pairs
-    const ranges = parts[1].trim().split(' or ').map(x => x.split('-').map(y => parseInt(y)));
+    const ranges = parts[1].trim().split(' or ').map((x) => x.split('-').map((y) => parseInt(y, 10)));
 
     rulesProcessed[name] = ranges;
   });
 
   // Split up the ticket field values into ints in nested arrays.
-  mine = [mine.split(',').map(y => parseInt(y))];
-  nearby = nearby.map(x => x.split(',').map(y => parseInt(y)));
+  mine = [mine.split(',').map((y) => parseInt(y, 10))];
+  nearby = nearby.map((x) => x.split(',').map((y) => parseInt(y, 10)));
 
   return { rules: rulesProcessed, mine, nearby };
-}
+};
 
 const simpleTicketValidation = (ticketPool, rules) => {
   let sum = 0;
 
   ticketPool.forEach((ticket) => {
     ticket.forEach((value) => {
-      if (! inRange(value, rules)) {
+      if (!inRange(value, rules)) {
         sum += value;
       }
-    })
+    });
   });
 
   return sum;
-}
+};
 
 const inRange = (number, rules) => {
   for (const rule in rules) {
@@ -104,12 +104,12 @@ const inRange = (number, rules) => {
     }
   }
   return false;
-}
+};
 
 if (!module.parent) main(inputFile);
 
 module.exports = {
   readSections,
   splitInfo,
-  inRange
+  inRange,
 };

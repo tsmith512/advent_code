@@ -67,7 +67,6 @@ const determineColumnMappingOptions = (ticketPool, rules) => {
 
   // For each rule, validate all column members to see which columns could map
   // to any given rule.
-  // eslint-disable-next-line guard-for-in, no-restricted-syntax
   for (const name in rules) {
     const ranges = rules[name];
     possibleColumns[name] = [];
@@ -88,7 +87,6 @@ const determineColumnMappingOptions = (ticketPool, rules) => {
 };
 
 const meetsRule = (number, ranges) => {
-  // eslint-disable-next-line no-restricted-syntax
   for (const pair of ranges) {
     if (pair[0] <= number && number <= pair[1]) {
       return true;
@@ -103,7 +101,6 @@ const finalizeColumnMappings = (options) => {
   // Whittle down the map of {field: [possible columns]} until there's only one
   // option for each field.
   while (knownColumns.length < Object.keys(options).length) {
-    // eslint-disable-next-line guard-for-in, no-restricted-syntax
     for (const field in mapping) {
       const columnOptions = mapping[field];
 
