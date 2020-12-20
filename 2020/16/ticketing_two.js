@@ -39,7 +39,9 @@ const main = (input) => {
     return {...ticket, [columnsOrdered[index]]: value};
   });
 
-  partTwoReport(myTicket);
+  const requestedFields = Object.keys(myTicket).filter(x => x.indexOf('departure') === 0);
+  const product = requestedFields.reduce((acc, field) => acc *= myTicket[field], 1);
+  console.log("The product of departure keys is: " + product);
   // Part Two solution:
   //   The product of departure keys is: 279139880759
 }
@@ -130,19 +132,6 @@ const finalizeColumnMappings = (options) => {
   }
 
   return indices;
-}
-
-const partTwoReport = (ticket) => {
-  // We are to report the product of values whose keys start with "departure"
-  const keys = Object.keys(ticket).filter(x => x.indexOf('departure') === 0);
-
-  let product = 1;
-
-  for (const field of keys) {
-    product *= ticket[field];
-  }
-
-  console.log("The product of departure keys is: " + product);
 }
 
 (main)(inputFile);
