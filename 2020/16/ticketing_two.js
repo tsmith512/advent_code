@@ -30,17 +30,14 @@ const main = (input) => {
 
   // Figure out which columns (yes columnS...) satisfy which rule's range limits
   const columnMappingOptions = determineColumnMappingOptions(validTickets, rules);
-  console.table(columnMappingOptions);
 
   // Can we determine which columns go where?
   const columnsOrdered = finalizeColumnMappings(columnMappingOptions);
-  console.table(columnsOrdered);
 
   // Resolve "my ticket" against the column mapping we determined
   const myTicket = mine[0].reduce((ticket, value, index) => {
     return {...ticket, [columnsOrdered[index]]: value};
   });
-  console.table(myTicket);
 
   partTwoReport(myTicket);
   // Part Two solution:
@@ -49,25 +46,28 @@ const main = (input) => {
 
 
 const simpleTicketInvalidation = (ticketPool, rules) => {
-  let invalid = [];
+  let invalidIDs = [];
 
-  ticketPool.forEach((ticket, index) => {
+  ticketPool.forEach((ticket, ticketID) => {
     ticket.forEach((value) => {
       if (! inRange(value, rules)) {
-        invalid.push(index);
+        invalidIDs.push(ticketID);
       }
     })
   });
 
-  return invalid;
+  return invalidIDs;
 }
 
 const determineColumnMappingOptions = (ticketPool, rules) => {
+  // Rotate [[ticket],[ticket],...] --> [[field 0 vals], [field 1 vals],...]
   const firstTicket = ticketPool[0];
   const ticketColumns = firstTicket.map((value, index) => ticketPool.map(row => row[index]));
 
   let possibleColumns = {};
 
+  // For each rule, validate all column members to see which columns could map
+  // to any given rule.
   for (const name in rules) {
     const ranges = rules[name];
     possibleColumns[name] = [];
@@ -95,14 +95,16 @@ const meetsRule = (number, ranges) => {
 }
 
 const finalizeColumnMappings = (options) => {
-  let map = options;
+  let mapping = options;
   let knownColumns = [];
 
+  // Whittle down the map of {field: [possible columns]} until there's only one
+  // option for each field.
   while (knownColumns.length < Object.keys(options).length) {
-    for (const rule in map) {
-      const columnOptions = map[rule];
+    for (const field in mapping) {
+      const columnOptions = mapping[field];
 
-      // Special treatment once there's only one column that will fit this rule
+      // Special treatment once there's only one column that will fit this field
       if (columnOptions.length === 1) {
 
         // Have we found a new column mapping?
@@ -114,17 +116,17 @@ const finalizeColumnMappings = (options) => {
       }
 
       // Remove every column we've already identified from the remaining options
-      // for this rule, then try again.
-      map[rule] = columnOptions.filter(x => knownColumns.indexOf(x) === -1);
+      // for this field, then try again.
+      mapping[field] = columnOptions.filter(x => knownColumns.indexOf(x) === -1);
     }
   }
 
-  // Now we have an object = {fieldName: index} but we need to be able to apply
-  // it, flip the key/values into an array of [firstField, secondField, ...]
+  // Now we have an mapping = {fieldName: index} but we need to be able to apply
+  // it. Flip the key/values into an array of [firstField, secondField, ...]
   let indices = [];
 
-  for (name in map) {
-    indices[map[name]] = name;
+  for (name in mapping) {
+    indices[mapping[name]] = name;
   }
 
   return indices;
