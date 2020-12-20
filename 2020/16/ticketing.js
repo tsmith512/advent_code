@@ -31,7 +31,15 @@ const fs = require('fs');
 const inputFile = 'ticket_sample.txt';
 
 const main = () => {
-  console.log(splitInfo(readSections()))
+  const sections = readSections();
+  const { rules, mine, nearby } = splitInfo(sections);
+
+  // Part One rather pointedly explained that the "invalid tickets" would be
+  // obviously out of range rather than requiring field-level validation. I can
+  // only assume that horror comes in Part Two...
+  let sum = simpleTicketValidation(nearby, rules);
+
+  console.log("The sum of invalid ticket numbers is: " + sum);
 }
 
 const readSections = () => {
@@ -42,13 +50,15 @@ const readSections = () => {
     mine: sections[1].split("\n")[1],
     nearby: sections[2].split("\n").splice(1),
   };
-  return ticketData
+  return ticketData;
 }
 
 const splitInfo = (sections) => {
   let { rules, mine, nearby } = sections;
 
-  // Validation Rules:
+  // Validation Rules. Make a new object to contain named rules rather than
+  // nested arrays that get weird to traverse.
+  rulesProcessed = {};
   rules.forEach((line, index) => {
     // Split the rule into its key and value pars
     const parts = line.split(':');
@@ -57,18 +67,41 @@ const splitInfo = (sections) => {
     const name = parts[0].trim();
 
     // Split the string into separate ranges, then into [low, high] pairs
-    const ranges = parts[1].trim().split(' or ').map(x => x.split('-'));
+    const ranges = parts[1].trim().split(' or ').map(x => x.split('-').map(y => parseInt(y)));
 
-    rules[index] = [name, ranges];
+    rulesProcessed[name] = ranges;
   });
 
-  console.table(mine);
-  mine = mine.split(',');
-  console.table(mine);
+  // Split up the ticket field values into ints in nested arrays.
+  mine = [mine.split(',').map(y => parseInt(y))];
+  nearby = nearby.map(x => x.split(',').map(y => parseInt(y)));
 
-  console.table(nearby);
-  nearby = nearby.map(x => x.split(','));
-  console.table(nearby);
+  return { rules: rulesProcessed, mine, nearby };
+}
+
+const simpleTicketValidation = (ticketPool, rules) => {
+  let sum = 0;
+
+  ticketPool.forEach((ticket) => {
+    ticket.forEach((value) => {
+      if (! inRange(value, rules)) {
+        sum += value;
+      }
+    })
+  });
+
+  return sum;
+}
+
+const inRange = (number, rules) => {
+  for (const rule in rules) {
+    for (const pair of rules[rule]) {
+      if (pair[0] <= number && number <= pair[1]) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 (main)();
