@@ -22,3 +22,4 @@ well is a bit dated. So I've decided to lean into my experience with traditional
 | [Day 13: Shuttle Search](2020/13/busdepot.scala)                | Scala      |
 | Day 14: Docking Data: [Part 1](2020/14/dockingprocedures.go), [Part 2](2020/14/dockingprocedurestwo.go) | Go |
 | Day 15: Rambunctious Recitation: [Part 1](2020/15/memory_game.rb), [Part 2](2020/15/memory_game_two.rb) | Ruby |
+| Day 16: Ticket Translation: [Part 1](2020/16/ticketing.js), [Part 2](2020/16/ticketing_two.js) | JavaScript |
