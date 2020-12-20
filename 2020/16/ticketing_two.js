@@ -23,9 +23,11 @@ const main = (input) => {
   const sections = readSections(input);
   const { rules, mine, nearby } = splitInfo(sections);
   const invalidTickets = simpleTicketInvalidation(nearby, rules);
-  const validTickets = nearby.filter((t, i) => invalidTickets.indexOf(i) === -1)
+  const validTickets = nearby.filter((t, i) => invalidTickets.indexOf(i) === -1);
 
-  console.log(validTickets)
+  const mapColumnsToIndex = determineColumnMapping(nearby, rules);
+
+  // console.log(mapColumnsToIndex);
 }
 
 const simpleTicketInvalidation = (ticketPool, rules) => {
@@ -40,6 +42,13 @@ const simpleTicketInvalidation = (ticketPool, rules) => {
   });
 
   return invalid;
+}
+
+const determineColumnMapping = (ticketPool, rules) => {
+  const firstTicket = ticketPool[0];
+  const ticketColumns = firstTicket.map((value, index) => ticketPool.map(row => row[index]));
+
+  console.table(ticketColumns);
 }
 
 (main)(inputFile);
