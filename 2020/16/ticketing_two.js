@@ -15,17 +15,31 @@
  *   whose name starts with "departure."
  */
 
-// import { readSections, splitInfo, simpleTicketValidation } from './ticketing.js';
-const { readSections, splitInfo, simpleTicketValidation } = require('./ticketing.js');
+const { readSections, splitInfo, inRange } = require('./ticketing.js');
 
 const inputFile = 'ticket_sample.txt';
 
 const main = (input) => {
   const sections = readSections(input);
   const { rules, mine, nearby } = splitInfo(sections);
+  const invalidTickets = simpleTicketInvalidation(nearby, rules);
+  const validTickets = nearby.filter((t, i) => invalidTickets.indexOf(i) === -1)
 
-  let sum = simpleTicketValidation(nearby, rules)
-  console.log("The sum of invalid ticket numbers is: " + sum);
+  console.log(validTickets)
+}
+
+const simpleTicketInvalidation = (ticketPool, rules) => {
+  let invalid = [];
+
+  ticketPool.forEach((ticket, index) => {
+    ticket.forEach((value) => {
+      if (! inRange(value, rules)) {
+        invalid.push(index);
+      }
+    })
+  });
+
+  return invalid;
 }
 
 (main)(inputFile);

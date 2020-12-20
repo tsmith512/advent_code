@@ -111,5 +111,5 @@ if (!module.parent) main(inputFile);
 module.exports = {
   readSections,
   splitInfo,
-  simpleTicketValidation
+  inRange
 };
