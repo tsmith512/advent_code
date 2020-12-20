@@ -109,7 +109,15 @@ const finalizeColumnMappings = (options) => {
     }
   }
 
-  return map;
+  // Now we have an object = {fieldName: index} but we need to be able to apply
+  // it, flip the key/values into an array of [firstField, secondField, ...]
+  let indecies = [];
+
+  for (name in map) {
+    indecies[map[name]] = name;
+  }
+
+  return indecies;
 }
 
 (main)(inputFile);
