@@ -43,6 +43,8 @@ const main = (input) => {
   console.table(myTicket);
 
   partTwoReport(myTicket);
+  // Part Two solution:
+  //   The product of departure keys is: 279139880759
 }
 
 
