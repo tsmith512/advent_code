@@ -33,8 +33,14 @@ const main = (input) => {
   console.table(columnMappingOptions);
 
   // Can we determine which columns go where?
-  const columnMap = finalizeColumnMappings(columnMappingOptions);
-  console.table(columnMap);
+  const columnsOrdered = finalizeColumnMappings(columnMappingOptions);
+  console.table(columnsOrdered);
+
+  // Resolve "my ticket" against the column mapping we determined
+  const myTicket = mine[0].reduce((ticket, value, index) => {
+    return {...ticket, [columnsOrdered[index]]: value};
+  });
+  console.table(myTicket);
 }
 
 
