@@ -17,17 +17,21 @@
 
 const { readSections, splitInfo, inRange } = require('./ticketing.js');
 
-const inputFile = 'ticket_sample.txt';
+const inputFile = 'ticket_notes.txt';
 
 const main = (input) => {
+  // Parse the input file into a structure we can deal with.
   const sections = readSections(input);
   const { rules, mine, nearby } = splitInfo(sections);
-  const invalidTickets = simpleTicketInvalidation(nearby, rules);
-  const validTickets = nearby.filter((t, i) => invalidTickets.indexOf(i) === -1);
 
-  const mapColumnsToIndex = determineColumnMapping(validTickets, rules);
+  // Per instructions, we can toss any tickets we determined invalid in Part One
+  const invalidTicketsIDs = simpleTicketInvalidation(nearby, rules);
+  const validTickets = nearby.filter((t, i) => invalidTicketsIDs.indexOf(i) === -1);
 
-  // console.log(mapColumnsToIndex);
+  // Figure out which columns (yes columnS...) satisfy which rule's range limits
+  const mapColumnsToIndex = determineColumnMappingOptions(validTickets, rules);
+
+  console.log(mapColumnsToIndex);
 }
 
 const simpleTicketInvalidation = (ticketPool, rules) => {
@@ -44,23 +48,28 @@ const simpleTicketInvalidation = (ticketPool, rules) => {
   return invalid;
 }
 
-const determineColumnMapping = (ticketPool, rules) => {
+const determineColumnMappingOptions = (ticketPool, rules) => {
   const firstTicket = ticketPool[0];
   const ticketColumns = firstTicket.map((value, index) => ticketPool.map(row => row[index]));
 
-  console.table(ticketColumns);
+  let possibleColumns = {};
 
   for (const name in rules) {
     const ranges = rules[name];
+    possibleColumns[name] = [];
 
     ticketColumns.map((column, index) => {
       // Filter current column into values that fit the rule we're looking at
-      const filtered = column.filter(number => meetsRule(number, ranges))
+      const filtered = column.filter(number => meetsRule(number, ranges));
 
-      console.log("These values from column " + index + " work for " + name)
-      console.log(filtered)
+      if (filtered.length === column.length) {
+        // Every value in this column satisfied the rule we were looking at.
+        possibleColumns[name].push(index);
+      }
     });
   }
+
+  return possibleColumns;
 }
 
 const meetsRule = (number, ranges) => {
