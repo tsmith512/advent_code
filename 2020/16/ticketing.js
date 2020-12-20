@@ -28,7 +28,7 @@
 
 const fs = require('fs');
 
-const inputFile = 'ticket_sample.txt';
+const inputFile = 'ticket_notes.txt';
 
 const main = () => {
   const sections = readSections();
@@ -40,6 +40,8 @@ const main = () => {
   let sum = simpleTicketValidation(nearby, rules);
 
   console.log("The sum of invalid ticket numbers is: " + sum);
+  // Part One solution:
+  //   The sum of invalid ticket numbers is: 27802
 }
 
 const readSections = () => {
