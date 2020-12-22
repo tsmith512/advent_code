@@ -32,6 +32,8 @@ Resolve each line in the input and report the sum.
 */
 
 mathHomework("homework_sample.txt");
+// Part One solution:
+//   Total sum 4491283311856
 
 function mathHomework($input) {
   $handle = fopen($input, "r");
