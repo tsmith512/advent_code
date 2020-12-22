@@ -27,3 +27,10 @@ well is a bit dated. So I've decided to lean into my experience with traditional
 | [Day 18: Operation Order](2020/18/homework.php)                 | PHP        |
 
 \* _I'll come back to this one. I got scared._
+
+![Lines by filetype](stats.png)
+
+_Take this with a grain of salt:_ I comment heavily, and some problems are
+easier than others. Also I started most of these days with a Hello World so I
+may be missing some idiomatic methods or efficiencies. But I still thought it
+was fun.
