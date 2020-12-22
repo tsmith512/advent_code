@@ -35,44 +35,61 @@ mathHomework("homework_sample.txt");
 
 function mathHomework($input) {
   $handle = fopen($input, "r");
+  $total = 0;
 
   if ($handle) {
     while (($line = fgets($handle)) !== false) {
-      doProblem(trim($line));
-      print "\n\n";
+      $problem = trim($line);
+      print "New problem: $problem\n";
+
+      $value = doProblem($problem);
+      $total += $value;
+
+      print "Problem solution $value\n";
+      print "Total sum $total\n\n";
     }
   }
 }
 
+/**
+ * Accept a problem statement and solve it, if parentheses are encountered, get
+ * them resolved by doParens.
+ */
 function doProblem($problem) {
-  print "Input: $problem\n";
-
   while (strpos($problem, "(") !== false) {
-    if (($open = strpos($problem, "(")) !== false) {
-      $close = strpos($problem, ")", $open + 1);
-      $openNext = strpos($problem, "(", $open + 1);
-      if ($openNext === false || $close < $openNext) {
-        # Good, we don't have a nested parenthetical. Get this one, without the
-        # encapsulating parentheses.
-        $subProblem = substr($problem, $open + 1, ($close - $open - 1));
-        $subSolution = doProblem($subProblem);
-
-        $problem = substr($problem, 0, $open) . $subSolution . substr($problem, $close + 1);
-        print "$subProblem = $subSolution\n";
-        print "$problem\n";
-      }
-    }
+    doParens($problem);
   }
 
+  print "Input: $problem\n";
   $pieces = explode(" ", $problem);
   $first = intval(array_shift($pieces));
   $value = array_reduce($pieces, "doStep", $first);
 
-  print "Problem value: $value\n";
-
   return $value;
 }
 
+/**
+ * Given a problem string, find the first close-paren, then find the last
+ * open-parent preceding it, and resolve that set by with doProblem and
+ * splicing it back into the problem string.
+ */
+function doParens(&$problem) {
+  if (($close = strpos($problem, ")")) !== false) {
+    $length = strlen($problem);
+    $open = strrpos($problem, "(", - $length + $close - 1);
+
+    $subProblem = substr($problem, $open + 1, ($close - $open - 1));
+    $subSolution = doProblem($subProblem);
+
+    $problem = substr($problem, 0, $open) . $subSolution . substr($problem, $close + 1);
+  }
+}
+
+/**
+ * As a reducer for doProblem, we receive the aggregated value so far and one
+ * array item. It will either be a number (to do math with) or an operator (to
+ * do math by on the next number.)
+ */
 function doStep($current, $piece) {
   static $mode = NULL;
 
