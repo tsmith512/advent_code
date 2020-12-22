@@ -1,8 +1,7 @@
-lines <- unlist(strsplit(system("git ls-files -- ':!:*.txt' ':!:*.png' | xargs wc -l", intern = TRUE), "\n"))
+lines <- unlist(strsplit(system("git ls-files -- ':!:*.txt' ':!:*.png' ':!:index.r' | xargs wc -l", intern = TRUE), "\n"))
 filetypes <- list()
 
 for (line in 1:length(lines)) {
-
   matches <- sub('\\s+(\\d+).+?\\.(.+)', "\\1 \\2 \\3", lines[line], perl = TRUE)
   pieces <- unlist(strsplit(trimws(matches), " "))
 
