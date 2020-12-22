@@ -47,7 +47,7 @@ function mathHomework($input) {
 function doProblem($problem) {
   print "Input: $problem\n";
 
-  // while (strpos($problem, "(") !== false) {
+  while (strpos($problem, "(") !== false) {
     if (($open = strpos($problem, "(")) !== false) {
       $close = strpos($problem, ")", $open + 1);
       $openNext = strpos($problem, "(", $open + 1);
@@ -62,7 +62,7 @@ function doProblem($problem) {
         print "$problem\n";
       }
     }
-  // }
+  }
 
   $pieces = explode(" ", $problem);
   $first = intval(array_shift($pieces));
