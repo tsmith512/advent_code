@@ -23,3 +23,7 @@ well is a bit dated. So I've decided to lean into my experience with traditional
 | Day 14: Docking Data: [Part 1](2020/14/dockingprocedures.go), [Part 2](2020/14/dockingprocedurestwo.go) | Go |
 | Day 15: Rambunctious Recitation: [Part 1](2020/15/memory_game.rb), [Part 2](2020/15/memory_game_two.rb) | Ruby |
 | Day 16: Ticket Translation: [Part 1](2020/16/ticketing.js), [Part 2](2020/16/ticketing_two.js) | JavaScript |
+| ~Day 17: Conway Cubes*~                                         |            |
+| [Day 18: Operation Order](2020/18/homework.php)                 | PHP        |
+
+\* _I'll come back to this one. I got scared._
