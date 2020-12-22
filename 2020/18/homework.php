@@ -41,9 +41,12 @@ Update to the math rules, parens are still resolved first, but then it's
 addition before multiplication.
 */
 
-mathHomework("homework_sample.txt", 2);
+mathHomework("homework_assignment.txt", 2);
 // Part One solution:
 //   Total sum 4491283311856
+//
+// Part Two solution:
+//   Total sum 68852578641904
 
 function mathHomework($input, $puzzle) {
   $handle = fopen($input, "r");
@@ -57,8 +60,8 @@ function mathHomework($input, $puzzle) {
       $value = doProblem($problem, $puzzle);
       $total += $value;
 
-      print "Problem solution $value\n\n\n";
-      // print "Total sum $total\n\n";
+      print "Problem solution $value\n";
+      print "Total sum $total\n\n";
     }
   }
 }
@@ -78,7 +81,6 @@ function doProblem($problem, $puzzle) {
     }
   }
 
-  print "Input: $problem\n";
   $pieces = explode(" ", $problem);
   $first = intval(array_shift($pieces));
   $value = array_reduce($pieces, "doStep", $first);
@@ -130,7 +132,9 @@ function doStep($current, $piece) {
 }
 
 /**
- * Given a problem, resolve the first addition problem we find.
+ * Given a problem, resolve the first addition problem we find. This uses regex
+ * matching (to handle numbers with multiple digits) and string splicing like
+ * doParens does. @TODO: Ditch the regex??
  */
 function doAddition(&$problem) {
   $matches = array();
@@ -140,7 +144,5 @@ function doAddition(&$problem) {
   $patchLength = strlen($matches[0]);
   $subSolution = intval($matches[1]) + intval($matches[2]);
 
-  print "  Addition $matches[0] --> $subSolution\n";
   $problem = substr($problem, 0, $patchStart) . $subSolution . substr($problem, $patchStart + $patchLength);
-  print "    -> $problem\n";
 }
