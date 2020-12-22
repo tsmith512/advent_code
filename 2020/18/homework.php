@@ -39,6 +39,7 @@ function mathHomework($input) {
   if ($handle) {
     while (($line = fgets($handle)) !== false) {
       doProblem(trim($line));
+      print "\n\n";
     }
   }
 }
@@ -46,10 +47,22 @@ function mathHomework($input) {
 function doProblem($problem) {
   print "Input: $problem\n";
 
-  if (strpos($problem, "(") !== false) {
-    # Skip math with parentheses
-    return 0;
-  }
+  // while (strpos($problem, "(") !== false) {
+    if (($open = strpos($problem, "(")) !== false) {
+      $close = strpos($problem, ")", $open + 1);
+      $openNext = strpos($problem, "(", $open + 1);
+      if ($openNext === false || $close < $openNext) {
+        # Good, we don't have a nested parenthetical. Get this one, without the
+        # encapsulating parentheses.
+        $subProblem = substr($problem, $open + 1, ($close - $open - 1));
+        $subSolution = doProblem($subProblem);
+
+        $problem = substr($problem, 0, $open) . $subSolution . substr($problem, $close + 1);
+        print "$subProblem = $subSolution\n";
+        print "$problem\n";
+      }
+    }
+  // }
 
   $pieces = explode(" ", $problem);
   $first = intval(array_shift($pieces));
