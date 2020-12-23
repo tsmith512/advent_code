@@ -88,7 +88,7 @@ def decode(rules, id):
     # rule. Start by just passing them straight up.
     # print("Output for {}: {}\n\n".format(id, parts))
     rule[half] = parts
-  return rule
+  return rule[0] if len(rule) == 1 else rule
 
 def rulebook(rules):
   for k, v in rules.items():
