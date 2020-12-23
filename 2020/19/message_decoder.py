@@ -36,6 +36,8 @@ aaaabbb
 Report the number of given message that satisfy Rule 0.
 """
 
+import itertools
+
 INPUT_FILE = "message_sample.txt"
 
 def main():
@@ -44,9 +46,7 @@ def main():
   rulebook(rules)
   print(messages)
 
-  decode(rules, 0)
-
-  rulebook(rules)
+  print(decode(rules, 0))
 
 # Slurp the input file and split it in half, then put the rules in an dict of
 # ID - RuleString and put the given messages in an array.
@@ -68,21 +68,27 @@ def setup(filename):
 
 # Given the dict of rules and an ID to investivate, do that?
 def decode(rules, id):
-  print("Given ID: {}".format(id))
-  rule = rules[id]
+  # Split the rule text into options at the pipe:
+  rule = rules[id].split("|")
+  for half, option in enumerate(rule):
 
-  # @TODO: Deal with pipes.
+    # Split the option into its parts by space:
+    parts = option.strip().split(" ")
+    for index, part in enumerate(parts):
 
-  # parts = [*map(lambda s: int(s) if s.isnumeric() else s, rule.split(" "))]
-  parts = rule.split(" ")
-  print(parts)
-  for index, part in enumerate(parts):
-    if part.isnumeric():
-      parts[index] = decode(rules, int(part))
+      # If the part is a number, we need to decode it
+      if part.isnumeric():
+        # This will return an array
+        parts[index] = decode(rules, int(part))
+      else:
+        parts[index] = part
 
-  rules[id] = " ".join(parts)
-  return " ".join(parts)
-
+    # At this point, `parts` is either an array of character options or a
+    # single character. `rule` is a 1- or 2- length of options to resolve this
+    # rule. Start by just passing them straight up.
+    # print("Output for {}: {}\n\n".format(id, parts))
+    rule[half] = parts
+  return rule
 
 def rulebook(rules):
   for k, v in rules.items():
