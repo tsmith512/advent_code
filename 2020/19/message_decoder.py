@@ -68,28 +68,39 @@ def setup(filename):
 
 # Given the dict of rules and an ID to investivate, do that?
 def decode(rules, id):
-  # Split the rule text into options at the pipe:
+  # Split the rule text into options at the pipe: "2 3 | 3 2" -> ['2 3', '3 2']
   rule = rules[id].split("|")
   for half, option in enumerate(rule):
 
-    # Split the option into its parts by space:
+    # Split the option into its parts by space: '2 3' -> [2, 3]
     parts = option.strip().split(" ")
     for index, part in enumerate(parts):
 
       # If the part is a number, we need to decode it
       if part.isnumeric():
-        # This will return an array
         innards = decode(rules, int(part))
-        print(innards)
-        parts[index] = innards
-      else:
-        parts[index] = part
+        print("Decoded {}: {}".format(part, innards))
+        parts[index] = resolvePair(innards)
 
-    # At this point, `parts` is either an array of character options or a
-    # single character. `rule` is a 1- or 2- length of options to resolve this
-    # rule. Start by just passing them straight up.
     rule[half] = parts[0] if len(parts) == 1 else parts
+  # By now `rule` contains 1 or 2 (the pipe) options to satisfy the rule.
   return rule[0] if len(rule) == 1 else rule
+
+# Somewhere in here is a good idea but I think I walked too far away from it
+# because it stopped making sense. The idea was to squish together strings we
+# know would come in order. And if we get two lists, we know we need to get the
+# cartesian product of them to get the combinations. That does work, but I'm
+# having trouble figuring out where in the logic of decode() to call this.
+def resolvePair(pair):
+  print("Resolving: {}".format(pair))
+  if len(pair) == 2 and type(pair[0]) == str and type(pair[1]) == str:
+    return pair[0] + pair[1]
+  elif len(pair) == 2 and type(pair[0]) == list and type(pair[1]) == list:
+    combos = [combo[0] + combo[1] for combo in list(itertools.product(pair[0], pair[1]))]
+    print(combos)
+    return combos
+  else:
+    return pair
 
 def rulebook(rules):
   for k, v in rules.items():
