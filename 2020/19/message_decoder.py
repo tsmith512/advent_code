@@ -72,19 +72,21 @@ def decode(rules, id):
   if "|" in rule:
     # Need to figure out what to do here.
     print("There's a pipe")
+    return rule
   else:
     # Split what we know by spaces
     pieces = rule.split(" ")
     for piece in pieces:
       # If this piece is a number, we need to look it up
-      if piece.isnumeric:
-        value = rules[int(piece)]
+      if piece.isnumeric():
+        print("Numeric piece {}".format(piece))
+        value = decode(rules, int(piece))
       # If this piece is a non-numeric string, it's part of a message
       else:
         value = piece
 
       # Having figured out what this piece is, cram it back onto our string
-      composite = "{} {}".format(composite, value)
+      composite = "{}{}".format(composite, value)
       print("{} -> {}".format(piece, value))
 
     # Now print and return the full string we've resolved
