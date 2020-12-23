@@ -36,4 +36,31 @@ aaaabbb
 Report the number of given message that satisfy Rule 0.
 """
 
-print("Hello, World!")
+INPUT_FILE = "message_sample.txt"
+
+def main():
+  rules, messages = setup(INPUT_FILE)
+
+  print(rules)
+  print(messages)
+
+# Slurp the input file and split it in half, then put the rules in an dict of
+# ID - RuleString and put the given messages in an array.
+def setup(filename):
+  file = open(filename, mode="r")
+  contents = file.read().strip().split("\n\n")
+  file.close()
+
+  rules = {}
+  for i in contents[0].strip().split("\n"):
+    kv = i.split(": ")
+    id = int(kv[0])
+    rule = kv[1].replace("\"", "")
+    rules[id] = rule
+
+  messages = contents[1].split("\n")
+
+  return rules, messages
+
+if __name__ == "__main__":
+  main()
