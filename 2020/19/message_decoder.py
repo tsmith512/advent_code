@@ -44,6 +44,8 @@ def main():
   rulebook(rules)
   print(messages)
 
+  decode(rules, 0)
+
 # Slurp the input file and split it in half, then put the rules in an dict of
 # ID - RuleString and put the given messages in an array.
 def setup(filename):
@@ -61,6 +63,33 @@ def setup(filename):
   messages = contents[1].split("\n")
 
   return rules, messages
+
+# Okay let's try this a different way:
+def decode(rules, id):
+  rule = rules[id]
+  composite = ""
+
+  if "|" in rule:
+    # Need to figure out what to do here.
+    print("There's a pipe")
+  else:
+    # Split what we know by spaces
+    pieces = rule.split(" ")
+    for piece in pieces:
+      # If this piece is a number, we need to look it up
+      if piece.isnumeric:
+        value = rules[int(piece)]
+      # If this piece is a non-numeric string, it's part of a message
+      else:
+        value = piece
+
+      # Having figured out what this piece is, cram it back onto our string
+      composite = "{} {}".format(composite, value)
+      print("{} -> {}".format(piece, value))
+
+    # Now print and return the full string we've resolved
+    print(composite)
+    return composite
 
 # Pretty printer for the rules dict
 def rulebook(rules):
