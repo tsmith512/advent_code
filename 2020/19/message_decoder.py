@@ -79,15 +79,16 @@ def decode(rules, id):
       # If the part is a number, we need to decode it
       if part.isnumeric():
         # This will return an array
-        parts[index] = decode(rules, int(part))
+        innards = decode(rules, int(part))
+        print(innards)
+        parts[index] = innards
       else:
         parts[index] = part
 
     # At this point, `parts` is either an array of character options or a
     # single character. `rule` is a 1- or 2- length of options to resolve this
     # rule. Start by just passing them straight up.
-    # print("Output for {}: {}\n\n".format(id, parts))
-    rule[half] = parts
+    rule[half] = parts[0] if len(parts) == 1 else parts
   return rule[0] if len(rule) == 1 else rule
 
 def rulebook(rules):
