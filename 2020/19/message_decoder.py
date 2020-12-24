@@ -44,7 +44,7 @@ primaryRule = 0
 
 def main():
   rules, messages = setup(INPUT_FILE)
-  bigAssRegex = translate(rules[primaryRule], True)
+  bigAssRegex = translate(rules[primaryRule], 0, 0)
   matcher = re.compile(bigAssRegex)
 
   count = 0
@@ -77,9 +77,13 @@ def setup(filename):
 
   return rules, messages
 
-def translate(item, top = False):
+def translate(item, id, depth):
   # Base case
   if item == "a" or item == "b":
+    return item
+
+  if str(id) in item:
+    print("ID was found in its own rule")
     return item
 
   # Split the string into piped segments, then by space. Look up each and build
@@ -87,7 +91,7 @@ def translate(item, top = False):
   translated = []
   for index, segment in enumerate(str(item).split("|")):
     pieces = [*map(lambda s: s.strip(), segment.split())]
-    decoded = [*map(lambda x: translate(rules[int(x)]), pieces)]
+    decoded = [*map(lambda x: translate(rules[int(x)], int(x), depth + 1), pieces)]
     translated.append("".join(decoded))
 
   # If we had multiple segment options, they need to be an OR group:
@@ -97,7 +101,7 @@ def translate(item, top = False):
   else:
     output = translated[0]
 
-  if top:
+  if depth == 0:
     print("RULE IN:  {}\nOUT: {}\n".format(item, "^{}$".format(output)))
     return "^{}$".format(output)
   else:
