@@ -37,6 +37,7 @@ Report the number of given message that satisfy Rule 0.
 """
 
 INPUT_FILE = "message_sample.txt"
+rules = {}
 
 def main():
   rules, messages = setup(INPUT_FILE)
@@ -44,7 +45,7 @@ def main():
   rulebook(rules)
   print(messages)
 
-  print("You still haven't figured this out, have you?")
+  translate(rules[0])
 
 # Slurp the input file and split it in half, then put the rules in an dict of
 # ID - RuleString and put the given messages in an array.
@@ -53,7 +54,6 @@ def setup(filename):
   contents = file.read().strip().split("\n\n")
   file.close()
 
-  rules = {}
   for i in contents[0].strip().split("\n"):
     kv = i.split(": ")
     id = int(kv[0])
@@ -64,6 +64,17 @@ def setup(filename):
 
   return rules, messages
 
+def translate(item):
+  # I've tried breaking this down into a complicated data model of arrays and
+  # stuff. Let's try the dumb way. Cast whatever we got as a string and look at
+  # each character individually.
+  if item == "a" or item == "b":
+    return item
+
+  pieces = [*map(lambda s: s.strip(), str(item).split())]
+  decoded = [*map(lambda x: translate(rules[int(x)]), pieces)]
+  print("".join(decoded))
+  return "".join(decoded)
 
 # Pretty printer for the rules dict
 def rulebook(rules):
