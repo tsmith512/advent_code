@@ -71,10 +71,16 @@ def translate(item):
   if item == "a" or item == "b":
     return item
 
-  pieces = [*map(lambda s: s.strip(), str(item).split())]
-  decoded = [*map(lambda x: translate(rules[int(x)]), pieces)]
-  print("".join(decoded))
-  return "".join(decoded)
+  translated = []
+  for index, segment in enumerate(str(item).split("|")):
+    pieces = [*map(lambda s: s.strip(), segment.split())]
+    decoded = [*map(lambda x: translate(rules[int(x)]), pieces)]
+    print("".join(decoded))
+    translated.append("".join(decoded))
+
+  output = "({})".format("|".join(translated))
+  print("IN:  {}\n OUT: {}\n\n".format(item, output))
+  return output
 
 # Pretty printer for the rules dict
 def rulebook(rules):
