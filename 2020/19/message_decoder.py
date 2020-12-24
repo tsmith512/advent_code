@@ -41,11 +41,7 @@ rules = {}
 
 def main():
   rules, messages = setup(INPUT_FILE)
-
-  rulebook(rules)
-  print(messages)
-
-  translate(rules[0])
+  translate(rules[0], True)
 
 # Slurp the input file and split it in half, then put the rules in an dict of
 # ID - RuleString and put the given messages in an array.
@@ -64,23 +60,31 @@ def setup(filename):
 
   return rules, messages
 
-def translate(item):
-  # I've tried breaking this down into a complicated data model of arrays and
-  # stuff. Let's try the dumb way. Cast whatever we got as a string and look at
-  # each character individually.
+def translate(item, top = False):
+  # Base case
   if item == "a" or item == "b":
     return item
 
+  # Split the string into piped segments, then by space. Look up each and build
+  # a regex pattern to match the opts, because of course that's a thing I'd do
   translated = []
   for index, segment in enumerate(str(item).split("|")):
     pieces = [*map(lambda s: s.strip(), segment.split())]
     decoded = [*map(lambda x: translate(rules[int(x)]), pieces)]
-    print("".join(decoded))
     translated.append("".join(decoded))
 
-  output = "({})".format("|".join(translated))
-  print("IN:  {}\n OUT: {}\n\n".format(item, output))
-  return output
+  # If we had multiple segment options, they need to be an OR group:
+  if len(translated) > 1:
+    output = "({})".format("|".join(translated))
+  # If this didn't have multiple options, we don't need to group it:
+  else:
+    output = translated[0]
+
+  if top:
+    print("RULE IN:  {}\nOUT: {}\n\n".format(item, "/^{}$/gm".format(output)))
+    return "/^{}$/gm".format(output)
+  else:
+    return output
 
 # Pretty printer for the rules dict
 def rulebook(rules):
