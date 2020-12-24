@@ -36,12 +36,22 @@ aaaabbb
 Report the number of given message that satisfy Rule 0.
 """
 
+import re
+
 INPUT_FILE = "message_sample.txt"
 rules = {}
+primaryRule = 0
 
 def main():
   rules, messages = setup(INPUT_FILE)
-  translate(rules[0], True)
+  bigAssRegex = translate(rules[primaryRule], True)
+  matcher = re.compile(bigAssRegex)
+
+  count = 0
+  for message in messages:
+    count += 1 if matcher.match(message) else 0
+
+  print("{} messages from the set of {} matched rule {}".format(count, len(messages), primaryRule))
 
 # Slurp the input file and split it in half, then put the rules in an dict of
 # ID - RuleString and put the given messages in an array.
@@ -81,8 +91,8 @@ def translate(item, top = False):
     output = translated[0]
 
   if top:
-    print("RULE IN:  {}\nOUT: {}\n\n".format(item, "/^{}$/gm".format(output)))
-    return "/^{}$/gm".format(output)
+    print("RULE IN:  {}\nOUT: {}\n".format(item, "^{}$".format(output)))
+    return "^{}$".format(output)
   else:
     return output
 
