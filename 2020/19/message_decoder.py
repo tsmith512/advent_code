@@ -82,16 +82,12 @@ def translate(item, id, depth):
   if item == "a" or item == "b":
     return item
 
-  if str(id) in item:
-    print("ID was found in its own rule")
-    return item
-
   # Split the string into piped segments, then by space. Look up each and build
   # a regex pattern to match the opts, because of course that's a thing I'd do
   translated = []
   for index, segment in enumerate(str(item).split("|")):
     pieces = [*map(lambda s: s.strip(), segment.split())]
-    decoded = [*map(lambda x: translate(rules[int(x)], int(x), depth + 1), pieces)]
+    decoded = [*map(lambda x: "+" if int(x) == id else translate(rules[int(x)], int(x), depth + 1), pieces)]
     translated.append("".join(decoded))
 
   # If we had multiple segment options, they need to be an OR group:
