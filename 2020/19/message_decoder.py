@@ -38,7 +38,7 @@ Report the number of given message that satisfy Rule 0.
 
 import re
 
-INPUT_FILE = "message_dump.txt"
+INPUT_FILE = "message_sample2.txt"
 rules = {}
 primaryRule = 0
 
