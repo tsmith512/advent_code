@@ -1,5 +1,15 @@
 # Advent of Code
 
+## 2021
+
+Giving this another go because I had so much fun last year, even if I didn't
+make it to the end. Not committing to the "language of the day" approach, but
+we'll see.
+
+- [Day 1: Sonar Sweep](2021/01/depthFinder.js) (JS)
+
+## 2020
+
 Showing my progress through [Advent of Code](https://adventofcode.com/2020). As
 a product manager, my primary work is not writing code. And some of what I know
 well is a bit dated. So I've decided to lean into my experience with traditional
