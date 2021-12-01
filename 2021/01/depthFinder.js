@@ -28,14 +28,7 @@ const depths = [
 
 console.log(`There are ${depths.length} readings total.`)
 
-const count = depths.reduce((count, reading, index, all) => {
-
-  // Is this one higher than the last one?
-  if (reading > all[index - 1]) {
-    return count + 1;
-  }
-
-  return count;
-}, 0);
+const count = depths.reduce(
+  (count, reading, index) => count + ((reading > depths[index - 1]) ? 1 : 0), 0);
 
 console.log(`Of those, ${count} readings increased over the previous value.`);
