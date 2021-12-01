@@ -13,18 +13,13 @@
  * Given a list of numbers, count those which are higher than their predecessor.
  */
 
-const depths = [
-  199,
-  200,
-  208,
-  210,
-  200,
-  207,
-  240,
-  269,
-  260,
-  263,
-];
+const fs = require('fs');
+
+const depths = fs.readFileSync('part1_input.txt')
+  .toString()
+  .trim()
+  .split("\n")
+  .map(string => parseInt(string));
 
 console.log(`There are ${depths.length} readings total.`)
 
