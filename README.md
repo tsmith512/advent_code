@@ -7,6 +7,7 @@ make it to the end. Not committing to the "language of the day" approach, but
 we'll see.
 
 - [Day 1: Sonar Sweep](2021/01/depthFinder.js) (JS)
+- [Day 2: Dive!](2021/02/dive.lua) (Lua)
 
 ## 2020
 
@@ -35,7 +36,7 @@ well is a bit dated. So I've decided to lean into my experience with traditional
 | Day 16: Ticket Translation: [Part 1](2020/16/ticketing.js), [Part 2](2020/16/ticketing_two.js) | JavaScript |
 | ~Day 17: Conway Cubes*~                                         |            |
 | [Day 18: Operation Order](2020/18/homework.php)                 | PHP        |
-
+| [Day 19, Part 1: Monster Messages](2020/19/message_decoder.py)  | Python     |
 \* _I'll come back to this one. I got scared._
 
 ![Lines by filetype](stats.png)
