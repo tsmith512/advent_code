@@ -16,7 +16,7 @@
 -- 'forward' -> horizontal++ (there's no backing up in Part 1)
 -- (no left/right in Part 1)
 
-INPUT = 'sample.txt'
+INPUT = 'part1_input.txt'
 
 DEPTH = 0
 HORIZ = 0
@@ -75,3 +75,7 @@ end
 print("\nPart Two:")
 print(string.format("Position: Depth = %d, Horizontal = %d", aDEPTH, aHORIZ))
 print(string.format("Product of position components: %d", aDEPTH * aHORIZ))
+
+-- Part Two:
+-- Position: Depth = 987457, Horizontal = 2162
+-- Product of position components: 2134882034
