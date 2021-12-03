@@ -13,7 +13,7 @@
 # - "Epsilon rate" = the leas common digit for each index of input numbers.
 
 # Read the the input into a matrix
-lines <- scan("sample.txt", what = "")
+lines <- scan("input.txt", what = "")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 readings <- matrix(
@@ -38,7 +38,6 @@ unbin <- function(x, a) {
   (x * 2) + a
 }
 
-
 # Sum the columns, then subtract half the number of rows from each.
 # Values greater than 0 meant a 1 was more common.
 cols <- (colSums(readings) - rep(rows/2,cols))
@@ -49,3 +48,10 @@ sprintf("Gamma: %d", gamma)
 
 epsilon <- Reduce(unbin, sapply(cols, downs))
 sprintf("Epsilon: %d", epsilon)
+
+sprintf("Power Consumption: %d", gamma * epsilon)
+
+# Part One:
+# [1] "Gamma: 2576"
+# [1] "Epsilon: 1519"
+# [1] "Power Consumption: 3912944"
