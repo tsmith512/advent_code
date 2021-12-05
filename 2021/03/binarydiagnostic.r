@@ -13,7 +13,7 @@
 # - "Epsilon rate" = the leas common digit for each index of input numbers.
 
 # Read the the input into a matrix
-lines <- scan("sample.txt", what = "")
+lines <- scan("input.txt", what = "")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 readings <- matrix(
@@ -110,3 +110,10 @@ sprintf("Oxygen Sensor: %d", oxygen)
 binCo2 <- reduceSensorMatrix(readings, 0, 0)
 co2 <- Reduce(unbin, binCo2)
 sprintf("CO2 Sensor: %d", co2)
+
+sprintf("Life Support Rating: %d", oxygen * co2)
+
+# Part Two:
+# [1] "Oxygen Sensor: 3597"
+# [1] "CO2 Sensor: 1389"
+# [1] "Life Support Rating: 4996233"
