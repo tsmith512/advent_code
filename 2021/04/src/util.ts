@@ -38,22 +38,50 @@ export const isValidBoard = (board: bingoBoardType): boolean => {
 export const numberCalled = (n: number, calls: bingoCallsType): boolean => (calls.indexOf(n) > -1);
 
 /**
- * Visualize a bingo board
+ * Visualize and score a bingo board
+ *
+ * WIP: "Scored" at this point is a boolean for a winning _row._
  *
  * @param board (number[][] as bingoBoardType) A bingo board
  * @param calls (number[] as bingoCallsType) What's been called?
  */
-export const highlightBoard = (board: bingoBoardType, calls: bingoCallsType): void => {
-  board.forEach(row => {
+export const scoreBoard = (board: bingoBoardType, calls: bingoCallsType): boolean => {
+  const scoredRows = board.map(row => {
 
+    // Visualize the row, because that's nifty
     row.forEach((n, i) => {
       const pad = (n < 10) ? ' ' : '';
       const color = numberCalled(n, calls) ? 'red' : 'gray';
       process.stdout.write(pad + chalk[color](n) + ' ');
     });
-
     process.stdout.write("\n");
+
+    // Score the row (boolean for now)
+    return row.every(n => numberCalled(n, calls));
   });
 
   process.stdout.write("\n");
+
+  // If any row on this board wins, raise that.
+  return scoredRows.some(bool => bool);
 };
+
+/**
+ * Because why would shouting "Bingo!!" not be a throwable?
+ */
+export class Bingo extends Error {
+  boardIndex: number;
+  round: number;
+
+  constructor(message: string, boardIndex: number, round: number) {
+    super(message);
+    Object.setPrototypeOf(this, Bingo.prototype);
+
+    this.boardIndex = boardIndex;
+    this.round = round;
+  }
+
+  announce() {
+    console.log(`Bingo! Board ${chalk.green(this.boardIndex)} won on round ${this.round}`);
+  }
+}

@@ -22,7 +22,8 @@ import {
   bingoBoardCollection,
   numbersFromString,
   isValidBoard,
-  highlightBoard,
+  scoreBoard,
+  Bingo,
 } from './util';
 
 
@@ -59,12 +60,24 @@ const past: bingoCallsType = []
 // Play Bingo
 try {
   bingoCalls.forEach((call, round, all) => {
+    // Add the new call to the list of called numbers.
+    // @TODO: This means board scoring starts over on every round...
     past.push(call);
 
     console.clear();
     console.log(`Round ${round}`);
-    bingoBoards.forEach((board, index) => highlightBoard(board, past));
+
+    // Score (and visualize) each board.
+    const scoredBoards = bingoBoards
+      .map((board, index) => scoreBoard(board, past));
+
+    // If we had any winners this round, throw a Bingo.
+    if (scoredBoards.some(bool => bool)) {
+      throw new Bingo('Bingo', (scoredBoards.indexOf(true) + 1), round);
+    }
   });
 } catch (e) {
-
+  if (e instanceof Bingo) {
+    e.announce();
+  }
 }
