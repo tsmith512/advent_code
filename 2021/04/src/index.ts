@@ -14,6 +14,7 @@
 
 import * as fs from 'fs';
 import { join } from 'path';
+import { PassThrough } from 'stream';
 
 import {
   bingoCallsType,
@@ -21,6 +22,7 @@ import {
   bingoBoardCollection,
   numbersFromString,
   isValidBoard,
+  highlightBoard,
 } from './util';
 
 
@@ -50,3 +52,19 @@ const validBoardCount = bingoBoards
   .length;
 
 console.log(`Imported ${bingoBoards.length} boards, ${validBoardCount} are good.`);
+
+
+const past: bingoCallsType = []
+
+// Play Bingo
+try {
+  bingoCalls.forEach((call, round, all) => {
+    past.push(call);
+
+    console.clear();
+    console.log(`Round ${round}`);
+    bingoBoards.forEach((board, index) => highlightBoard(board, past));
+  });
+} catch (e) {
+
+}
