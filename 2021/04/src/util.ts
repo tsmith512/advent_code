@@ -62,7 +62,21 @@ export const scoreBoard = (board: bingoBoardType, calls: bingoCallsType): boolea
   visualizeBoard(board, calls);
 
   // If any row or column on this board wins, raise that.
-  return scoredRows.some(bool => bool) || scoredCols.some(bool => bool);
+  if (scoredRows.some(bool => bool) || scoredCols.some(bool => bool)) {
+    // This board won. Let's score it.
+    // Find all the numbers on the board that haven't been called.
+    const uncalledNumbers = board.flat().filter(n => !numberCalled(n, calls));
+
+    // Sum them.
+    const sumUncalled = uncalledNumbers.reduce((acc, cur) => acc + cur);
+
+    // What was the last bingo number called?
+    const finalCall = calls[calls.length - 1];
+
+    console.log(`This winning board's score was ${sumUncalled} * ${finalCall} = ${sumUncalled * finalCall}`);
+    return true;
+  }
+  return false;
 };
 
 /**
