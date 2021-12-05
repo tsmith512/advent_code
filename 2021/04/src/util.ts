@@ -58,9 +58,6 @@ export const scoreBoard = (board: bingoBoardType, calls: bingoCallsType): boolea
       .every(n => numberCalled(n, calls));
   });
 
-  // Do the visualization of what's been called so far.
-  visualizeBoard(board, calls);
-
   // If any row or column on this board wins, raise that.
   if (scoredRows.some(bool => bool) || scoredCols.some(bool => bool)) {
     // This board won. Let's score it.
@@ -73,7 +70,7 @@ export const scoreBoard = (board: bingoBoardType, calls: bingoCallsType): boolea
     // What was the last bingo number called?
     const finalCall = calls[calls.length - 1];
 
-    console.log(`This winning board's score was ${sumUncalled} * ${finalCall} = ${sumUncalled * finalCall}`);
+    console.log(`This winning board's score was ${sumUncalled} * ${finalCall} = ${chalk.red(sumUncalled * finalCall)}`);
     return true;
   }
   return false;
@@ -115,6 +112,6 @@ export class Bingo extends Error {
   }
 
   announce() {
-    console.log(`Bingo! Board ${chalk.green(this.boardIndex)} won on round ${this.round}`);
+    console.log(`Bingo! Board ${chalk.red(this.boardIndex)} won on round ${chalk.red(this.round)}`);
   }
 }

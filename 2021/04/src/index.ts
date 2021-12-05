@@ -29,7 +29,7 @@ import {
 
 // Read from file and split into sections (delineated by double-newlines).
 const inputSections: any = fs
-  .readFileSync(join(process.cwd(), 'lib/sample.txt'), 'utf8')
+  .readFileSync(join(process.cwd(), 'lib/input.txt'), 'utf8')
   .split("\n\n");
 
 
@@ -64,9 +64,6 @@ try {
     // @TODO: This means board scoring starts over on every round...
     past.push(call);
 
-    console.clear();
-    console.log(`Round ${round}`);
-
     // Score (and visualize) each board.
     const scoredBoards = bingoBoards
       .map((board, index) => scoreBoard(board, past));
@@ -81,3 +78,7 @@ try {
     e.announce();
   }
 }
+
+// Part One:
+// This winning board's score was 639 * 54 = 34506
+// Bingo! Board 15 won on round 25
