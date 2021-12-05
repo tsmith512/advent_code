@@ -8,6 +8,7 @@ we'll see.
 
 - [Day 1: Sonar Sweep](2021/01/depthFinder.js) (JS)
 - [Day 2: Dive!](2021/02/dive.lua) (Lua)
+- [Day 3: Binary Diagnostic](2021/03/binarydiagnostic.r) (R)
 
 ## 2020
 
