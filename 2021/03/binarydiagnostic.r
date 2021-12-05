@@ -67,41 +67,37 @@ sprintf("Power Consumption: %d", gamma * epsilon)
 # find the Oxygen (CO2) sensor values.
 
 # Given a matrix, a column index, whether to keep the most or least common value,
-# and what to do in the event of a tie, return the most/least  common value in
-# that column.
-# for Oxygen Sensor, tie = 1
-# for CO2 Sensor, tie = 0
-commonColumn <- function(matrix, i, minmax, tie) {
+# and what to do in the event of a tie, return a new matrix with only the
+# requested value in that column.
+scrubMatrixByColumn <- function(matrix, i, minmax, tie) {
+  # Average the column. Avg > 0.5 means 1 was more freq
   a <- sum(matrix[,i]) / dim(matrix)[1]
-  if (a == 0.5) { tie }
-  else if (minmax == 1) {
-    if      (a > 0.5) { 1   }
-    else if (a < 0.5) { 0   }
-  }
-  else if (minmax == 0) {
-    if      (a > 0.5) { 0   }
-    else if (a < 0.5) { 1   }
-  }
-}
 
-# Given a matrix, a column index, whether to keep the most or least common value,
-# and what to do in the event of a tie, return a matrix with only the rows
-# containing the most/least common value at that index.
-dropRows <- function(matrix, i, minmax, tie) {
-  keep <- commonColumn(matrix, i, minmax, tie)
-  matrix[ matrix[, i] == keep, ]
+  # Tie? Keep the tie-breaker.
+  if (a == 0.5) { k <- tie }
+
+  # When "keep most common"
+  else if (minmax == 1 && a > 0.5) { k <- 1 }
+  else if (minmax == 1 && a < 0.5) { k <- 0 }
+
+  # When "keep least common"
+  else if (minmax == 0 && a > 0.5) { k <- 0 }
+  else if (minmax == 0 && a < 0.5) { k <- 1 }
+
+  # Return a new matrix with only rows where i = k.
+  matrix[ matrix[, i] == k, ]
 }
 
 # Given a matrix, whether to keep most or least common values, and what to do in
 # the event of a tie, reduce the matrix to only that value which had the
-# most/least common value for each column index.
+# requested value for each column index.
 reduceSensorMatrix <- function(matrix, minmax, tie) {
   for (col in 1:dim(matrix)[1]) {
     # If there's only one row left, we have our answer.
     if (!is.matrix(matrix)) break
 
     # Drop rows that don't contain the most common value for this column.
-    matrix <- dropRows(matrix, col, minmax, tie)
+    matrix <- scrubMatrixByColumn(matrix, col, minmax, tie)
   }
 
   matrix
