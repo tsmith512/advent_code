@@ -46,25 +46,44 @@ export const numberCalled = (n: number, calls: bingoCallsType): boolean => (call
  * @param calls (number[] as bingoCallsType) What's been called?
  */
 export const scoreBoard = (board: bingoBoardType, calls: bingoCallsType): boolean => {
+  // Score the rows, which is easy:
   const scoredRows = board.map(row => {
+    return row.every(n => numberCalled(n, calls));
+  });
 
-    // Visualize the row, because that's nifty
+  // Score the columns, which is less so:
+  const scoredCols = Array(board[0].length).fill(0).map((e, i) => {
+    return board
+      .map(row => row[i])
+      .every(n => numberCalled(n, calls));
+  });
+
+  // Do the visualization of what's been called so far.
+  visualizeBoard(board, calls);
+
+  // If any row or column on this board wins, raise that.
+  return scoredRows.some(bool => bool) || scoredCols.some(bool => bool);
+};
+
+/**
+ * Print out the board with some formatting and highlighting to show what's been
+ * called and what might be a winning sequence.
+ *
+ * @param board (number[][] as bingeBoardType) The board to inspect
+ */
+export const visualizeBoard = (board: bingoBoardType, calls: bingoCallsType): void => {
+  board.forEach((row) => {
     row.forEach((n, i) => {
       const pad = (n < 10) ? ' ' : '';
       const color = numberCalled(n, calls) ? 'red' : 'gray';
       process.stdout.write(pad + chalk[color](n) + ' ');
     });
     process.stdout.write("\n");
-
-    // Score the row (boolean for now)
-    return row.every(n => numberCalled(n, calls));
   });
 
   process.stdout.write("\n");
-
-  // If any row on this board wins, raise that.
-  return scoredRows.some(bool => bool);
 };
+
 
 /**
  * Because why would shouting "Bingo!!" not be a throwable?
