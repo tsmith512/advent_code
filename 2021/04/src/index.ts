@@ -31,11 +31,7 @@ const inputSections: any = fs
 
 
 // The call sequence is a CSV in the first section.
-const bingoCalls: bingoCallsType = inputSections
-  .shift()
-  .split(',')
-  .map((e: any) => parseInt(e));
-
+const bingoCalls: bingoCallsType = numbersFromString(inputSections.shift());
 console.log(`Imported ${bingoCalls.length} bingo calls.`);
 
 

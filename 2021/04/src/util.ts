@@ -11,7 +11,7 @@ export type bingoBoardCollection = bingoBoardType[];
  */
 export const numbersFromString = (input: string): number[] => input
   .trim()
-  .split(/\s+/)
+  .split(/[\s,]+/g)
   .map(e => parseInt(e))
   .filter(e => isFinite(e));
 
