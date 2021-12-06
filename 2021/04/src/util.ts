@@ -38,14 +38,13 @@ export const isValidBoard = (board: bingoBoardType): boolean => {
 export const numberCalled = (n: number, calls: bingoCallsType): boolean => (calls.indexOf(n) > -1);
 
 /**
- * Visualize and score a bingo board
- *
- * WIP: "Scored" at this point is a boolean for a winning _row._
+ * Score a bingo board.
  *
  * @param board (number[][] as bingoBoardType) A bingo board
  * @param calls (number[] as bingoCallsType) What's been called?
+ * @returns (boolean | number) the card's score if it won, false if it hasn't
  */
-export const scoreBoard = (board: bingoBoardType, calls: bingoCallsType): boolean => {
+export const scoreBoard = (board: bingoBoardType, calls: bingoCallsType): boolean | number => {
   // Score the rows, which is easy:
   const scoredRows = board.map(row => {
     return row.every(n => numberCalled(n, calls));
@@ -70,8 +69,7 @@ export const scoreBoard = (board: bingoBoardType, calls: bingoCallsType): boolea
     // What was the last bingo number called?
     const finalCall = calls[calls.length - 1];
 
-    console.log(`This winning board's score was ${sumUncalled} * ${finalCall} = ${chalk.red(sumUncalled * finalCall)}`);
-    return true;
+    return sumUncalled * finalCall;
   }
   return false;
 };
@@ -91,8 +89,6 @@ export const visualizeBoard = (board: bingoBoardType, calls: bingoCallsType): vo
     });
     process.stdout.write("\n");
   });
-
-  process.stdout.write("\n");
 };
 
 
@@ -102,16 +98,26 @@ export const visualizeBoard = (board: bingoBoardType, calls: bingoCallsType): vo
 export class Bingo extends Error {
   boardIndex: number;
   round: number;
+  call: number;
+  score: number | boolean;
 
-  constructor(message: string, boardIndex: number, round: number) {
+  constructor(
+    message: string,
+    boardIndex: number,
+    round: number,
+    call: number,
+    score: number | boolean
+  ) {
     super(message);
     Object.setPrototypeOf(this, Bingo.prototype);
 
     this.boardIndex = boardIndex;
     this.round = round;
+    this.call = call;
+    this.score = score;
   }
 
   announce() {
-    console.log(`Bingo! Board ${chalk.red(this.boardIndex)} won on round ${chalk.red(this.round)}`);
+    console.log(`Bingo! Board ${chalk.red(this.boardIndex)} won on round ${chalk.red(this.round)} when ${chalk.red(this.call)} was called. It scored ${this.score}.`);
   }
 }
