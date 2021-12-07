@@ -22,8 +22,8 @@
 
 const fs = require('fs');
 
-const days = 80;
-const input = fs.readFileSync('sample.txt')
+const days = 256;
+const input = fs.readFileSync('input.txt')
   .toString()
   .trim();
 
@@ -47,11 +47,15 @@ const day = () => {
   Array(birthdays).fill(8).map(f => fishies.push(f));
 };
 
-for (let i = days; i > 0, i--;) {
-  day();
+// Part One code crashes in Part Two...
+if (days <= 80) {
+  for (let i = days; i > 0, i--;) {
+    day();
+  }
+
+  console.log(`After ${days}, there would be ${fishies.length} fish.`);
 }
 
-console.log(`After ${days}, there would be ${fishies.length} fish.`);
 
 // Part One:
 // After 80, there would be 390923 fish.
@@ -70,46 +74,30 @@ console.log(`After ${days}, there would be ${fishies.length} fish.`);
 // What if I maintained a count of fish by age instead?
 const newSchool = Array(9).fill(0);
 
-fs.readFileSync('sample.txt')
+fs.readFileSync('input.txt')
   .toString()
   .trim()
   .split(',')
   .map(f => parseInt(f))
   .forEach((f, i) => { newSchool[f] += 1 });
 
-console.log(newSchool);
-
-// I could not get this working, so calc the number of fish in the sample demo
-const correctAnswers = fs.readFileSync('debug.txt')
-  .toString()
-  .trim()
-  .split("\n")
-  .map(x => x.split(',').length)
-
 /**
  * Take any 0 Day fish off the newSchool. That number would be both the number
  * of new fish (8 Day fish) and parents (6 Day fish).
  */
 const cycle = () => {
-  // The index is "how many days until this count of fish makes more fish."
   const newFish = newSchool.shift();
   newSchool.push(newFish);
-
   newSchool[6] += newFish;
-
-  console.log(newSchool.join('  '));
-  console.log(`Total fish: ${countFishies()}`);
-  console.log("\n");
 };
 
 const countFishies = () => newSchool.reduce((acc, age) => acc + age);
 
 for (let i = 1; i <= days; i++) {
-  console.log(`Day ${i}`);
-  console.log(`Sample answer count: ${correctAnswers[i]}`);
   cycle();
 }
 
+console.log(`After ${days} days, there would be ${countFishies()} fish.`);
 
-console.log(newSchool);
-console.log(`Total fish: ${countFishies()}`);
+// Part Two:
+// After 256 days, there would be 1749945484935 fish.
