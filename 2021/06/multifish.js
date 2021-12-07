@@ -20,8 +20,12 @@
  * - 0 is a valid day. Fish make fish after Day 0, not after Day 1.
  */
 
+const fs = require('fs');
+
 const days = 80;
-const input = '3,4,3,1,2';
+const input = fs.readFileSync('input.txt')
+  .toString()
+  .trim();
 
 const fishies = input.split(',').map(f => parseInt(f));
 
@@ -48,3 +52,6 @@ for (let i = days; i > 0, i--;) {
 }
 
 console.log(`After ${days}, there would be ${fishies.length} fish.`);
+
+// Part One:
+// After 80, there would be 390923 fish.
