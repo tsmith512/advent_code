@@ -6,9 +6,11 @@ Giving this another go because I had so much fun last year, even if I didn't
 make it to the end. Not committing to the "language of the day" approach, but
 we'll see.
 
-- [Day 1: Sonar Sweep](2021/01/depthFinder.js) (JS)
+- [Day 1: Sonar Sweep](2021/01/depthFinder.js) (JavaScript)
 - [Day 2: Dive!](2021/02/dive.lua) (Lua)
 - [Day 3: Binary Diagnostic](2021/03/binarydiagnostic.r) (R)
+- [Day 4: Giant Squid Bingo](2021/04/src/index.ts) (TypeScript)
+- [Day 5: Hydrothermal Venture](2021/05/thermalvents.r) (R)
 
 ## 2020
 

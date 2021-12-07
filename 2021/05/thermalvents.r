@@ -4,7 +4,7 @@
 # |___/\__,_|\_, |  \__/|___/
 #            |__/
 #
-# "Hydrothermal Ventore"
+# "Hydrothermal Venture"
 #
 # Challenge:
 # Given a list of vectors (like, two coord pairs) figure out which represent
