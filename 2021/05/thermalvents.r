@@ -11,7 +11,7 @@
 # straight lines through a field and calc the number of points with a value > 2.
 
 # Make a field. The sample is 10x10, the production data are 1000x1000
-size <- 10
+size <- 1000
 field <- matrix(data = 0, nrow = size, ncol = size)
 
 # Check two coord pairs and see if they're a horiz or vert line?
@@ -23,7 +23,7 @@ straightLine <- function(a, b) {
   }
 }
 
-for (line in scan("sample.txt", what = "raw", sep = "\n")) {
+for (line in scan("input.txt", what = "raw", sep = "\n")) {
   # Split the line up into numbers and pair them into coordinates.
   x <- unlist(strsplit(line, "(,| -> )", perl = TRUE))
 
@@ -36,8 +36,24 @@ for (line in scan("sample.txt", what = "raw", sep = "\n")) {
     this <- matrix(data = 0, nrow = size, ncol = size)
     this[a[1]:b[1],a[2]:b[2]] <- 1
     field <- field + this
+  } else {
+    #  ___          _     ___
+    # | _ \__ _ _ _| |_  |_  )
+    # |  _/ _` | '_|  _|  / /
+    # |_| \__,_|_|  \__| /___|
+    #
+    # Also diagonal lines, lol.
+    this <- matrix(data = 0, nrow = size, ncol = size)
+    diag(this[a[1]:b[1],a[2]:b[2]]) <- 1
+    field <- field + this
   }
 }
 
 hotspots <- sum(field > 1, na.rm = TRUE)
 sprintf("There are %d hotspots in the field.", hotspots)
+
+# Part One:
+# [1] "There are 5145 hotspots in the field."
+
+# Part Two:
+# [1] "There are 16518 hotspots in the field."
