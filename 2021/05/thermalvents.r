@@ -33,9 +33,12 @@ for (line in scan("input.txt", what = "raw", sep = "\n")) {
 
   # For Part 1, we're told to only look at straight lines.
   if (straightLine(a, b) == TRUE) {
-    this <- matrix(data = 0, nrow = size, ncol = size)
-    this[a[1]:b[1],a[2]:b[2]] <- 1
-    field <- field + this
+    # Make a fresh matrix of zeroes, and put a 1 where this line passes
+    updates <- matrix(data = 0, nrow = size, ncol = size)
+    updates[a[1]:b[1],a[2]:b[2]] <- 1
+
+    # Add the updates to the field that exists.
+    field <- field + updates
   } else {
     #  ___          _     ___
     # | _ \__ _ _ _| |_  |_  )
@@ -43,9 +46,13 @@ for (line in scan("input.txt", what = "raw", sep = "\n")) {
     # |_| \__,_|_|  \__| /___|
     #
     # Also diagonal lines, lol.
-    this <- matrix(data = 0, nrow = size, ncol = size)
-    diag(this[a[1]:b[1],a[2]:b[2]]) <- 1
-    field <- field + this
+    updates <- matrix(data = 0, nrow = size, ncol = size)
+
+    # Assign 1 to the diagonal described by the line
+    diag(updates[a[1]:b[1],a[2]:b[2]]) <- 1
+
+    # Like above, add to field and move on.
+    field <- field + updates
   }
 }
 
