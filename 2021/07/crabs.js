@@ -14,7 +14,9 @@
  * results in 1 fuel unit consumed. Report the amount of fuel used.
  */
 
-const input = '16,1,2,0,4,2,7,1,2,14';
+const fs = require('fs');
+
+const input = fs.readFileSync('input.txt').toString().trim();
 
 const crabs = input
   .split(',')
@@ -43,3 +45,7 @@ const calcRelocationFuel = (pos, arr) => {
 
 console.log(`Median of crab positions: ${median(crabs)}`);
 console.log(`Total relocation fuel: ${calcRelocationFuel(median(crabs), crabs)}`);
+
+// Part One:
+// Median of crab positions: 328
+// Total relocation fuel: 339321
