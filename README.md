@@ -11,6 +11,8 @@ we'll see.
 - [Day 3: Binary Diagnostic](2021/03/binarydiagnostic.r) (R)
 - [Day 4: Giant Squid Bingo](2021/04/src/index.ts) (TypeScript)
 - [Day 5: Hydrothermal Venture](2021/05/thermalvents.r) (R)
+- [Day 6: Lanternfish](2021/06/multifish.js) (JavaScript)
+- [Day 7: The Treachery of Whales](2021/07/crabs.js) (JavaScript)
 
 ## 2020
 
