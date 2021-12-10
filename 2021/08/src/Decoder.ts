@@ -96,6 +96,11 @@ export class Decoder {
     }, {});
   }
 
+  lookup(needle: any, haystack: any): string | false {
+    const key = Object.keys(haystack).find(key => haystack[key] === needle);
+    return (key) ? key : false;
+  }
+
   resolve() {
     const allInputSignals = this.signals.map(s => s.split('')).flat();
 
@@ -127,5 +132,22 @@ export class Decoder {
       const unique: string = Object.entries(counts).filter(e => e[1] === 1)[0][0];
       this.updateSegmentMap('a', unique);
     }
+
+    // Some segments are used a unique number of times across digits 0-9
+    const allInputSignalsCounted =
+      this.getCounts(allInputSignals);
+    const allOutputSegmentsCounted =
+      this.getCounts(SevenSeg.digitSegments.map(s => s.split('')).flat());
+
+    // Segment B is only used 6 times.
+    const candidateB = this.lookup(6, allInputSignalsCounted);
+    if (candidateB) {
+      this.updateSegmentMap('b', candidateB);
+    }
+
+    console.log('Count of input signals');
+    console.log(allInputSignalsCounted);
+    console.log('Count of output segment usage');
+    console.log(allOutputSegmentsCounted);
   }
 }
