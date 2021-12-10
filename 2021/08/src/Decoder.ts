@@ -236,7 +236,7 @@ export class Decoder {
     this.translatedOutputs = this.outputs.map(inputSignal => {
       return inputSignal.split('').map(before => {
         return this.lookup(before, this.segmentMap);
-      }).join('');
+      }).sort().join('');
     });
 
     return this.translatedOutputs;

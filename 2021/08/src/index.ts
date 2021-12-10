@@ -53,9 +53,6 @@ console.log(`Of displays, there are ${countUniqueDigits} unique-length digits.\n
  */
 
 
-new SevenSeg(1234);
-
-
 // Get a row from the sample and make a map of { signal: known-value | false }
 // based on the uniques we can determine.
 const test = new Decoder(signals.getRow(0));
@@ -64,5 +61,4 @@ const test = new Decoder(signals.getRow(0));
 test.resolve();
 test.translateOutput();
 
-console.log(test.segmentMap);
-console.log(test.translatedOutputs);
+console.log(new SevenSeg(test.translatedOutputs).getNumber());

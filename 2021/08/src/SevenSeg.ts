@@ -5,7 +5,15 @@ export interface signalToDigitMap {
 }
 
 export class SevenSeg {
-  value?: number;
+  /**
+   * What incoming signals is this display receiving?
+   */
+  signals?: string[];
+
+  /**
+   * What number is represented on this display?
+   */
+  number?: number;
 
   /**
    * A map of what numbers use how many segments on a seven-segment display.
@@ -49,10 +57,40 @@ export class SevenSeg {
     return this.segmentsPerDigit.filter(n => n === input.length).length === 1;
   }
 
-  constructor(value?: number) {
-    if (value || value === 0) {
-      this.visualize(value);
+  /**
+   * Set up a new Seven Segment Display. If we have incoming signals, parse them
+   * into a number, show the number with my visualizer because that's fancy, and
+   * be ready to report on that nubmer as part of the final answer for Part Two.
+   *
+   * @param input (string[]) Array of input signals representing a number
+   */
+  constructor(input?: string[]) {
+    if (input) {
+      this.signals = input;
+
+      // For each input signal, determine the digit it represents
+      const digits = this.signals.map(signal => {
+        return SevenSeg.digitSegments.indexOf(signal);
+      });
+
+      // And turn that array of digits into a numeric value
+      this.number = digits.reduce((number, digit) => {
+        return (number * 10) + digit;
+      }, 0);
+
+      this.visualize(this.number);
     }
+
+    return this;
+  }
+
+  /**
+   * What number is on this display?
+   *
+   * @returns (number | false) The number if we know it, or false.
+   */
+  getNumber(): number | false {
+    return (this.number) ? this.number : false;
   }
 
   private pixel(a: string, b: string[], r?: number): string {
