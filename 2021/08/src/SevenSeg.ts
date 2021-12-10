@@ -61,24 +61,31 @@ export class SevenSeg {
   visualize(number: number): void {
     const digits = number.toString().split('').map(d => parseInt(d));
 
-    const lights = digits.map(d => {
-      console.log(this.illuminate(SevenSeg.digitSegments[d]).join("\n"));
-    });
+    const lights = digits.map(d => this.illuminate(SevenSeg.digitSegments[d]));
 
+    const matrix = Array(8).fill('');
+
+    for (const digit in lights) {
+      for (const i in matrix) {
+        matrix[i] += lights[digit][i];
+      }
+    }
+
+    console.log(matrix.join('\n') + '\n');
   }
 
   illuminate(input: string): string[] {
     const segments = input.split('');
 
     const lights = [
-      ` ${this.pixel('a', segments, 4)} `,
+      ` ${this.pixel('a', segments, 4)}  `,
       `${this.pixel('b', segments)}    ${this.pixel('c', segments)} `,
       `${this.pixel('b', segments)}    ${this.pixel('c', segments)} `,
-      ` ${this.pixel('d', segments, 4)} `,
+      ` ${this.pixel('d', segments, 4)}  `,
       `${this.pixel('e', segments)}    ${this.pixel('f', segments)} `,
       `${this.pixel('e', segments)}    ${this.pixel('f', segments)} `,
-      ` ${this.pixel('g', segments, 4)} `,
-      `      `,
+      ` ${this.pixel('g', segments, 4)}  `,
+      `       `,
     ];
 
     return lights;

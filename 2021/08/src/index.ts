@@ -34,9 +34,9 @@ let countUniqueDigits = 0;
 output.flat()
   .forEach(display => countUniqueDigits += SevenSeg.isUnique(display) ? 1 : 0);
 
-console.log(`Of displays, there are ${countUniqueDigits} unique-length digits.`);
+console.log(`Of displays, there are ${countUniqueDigits} unique-length digits.\n\n`);
 
 // Part One:
 // Of displays, there are 383 unique-length digits.
 
-new SevenSeg(10);
+new SevenSeg(1234);
