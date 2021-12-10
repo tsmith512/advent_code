@@ -1,24 +1,33 @@
 import { signalPair } from "./SignalInput";
-import { SevenSeg } from "./SevenSeg";
+import { SevenSeg, signalToDigitMap } from "./SevenSeg";
 
-export interface finalSegmentMapping {
+/**
+ * Our map of output segment to input signal.
+ */
+export interface segmentToSignalMap {
   [key: string]: string | false,
 }
 
-export interface segmentGuesses {
+/**
+ * A way to tally [key] (letter representing an input signal or output segment)
+ */
+export interface memberCounts {
   [key: string]: number,
-}
-
-export interface mappingGuesses {
-  [key: string]: string[],
 }
 
 export class Decoder {
   signals!: string[];
   outputs!: string[];
-  signalMap: any;
-  segmentMap: finalSegmentMapping;
-  // segmentGuesses: mappingGuesses;
+
+  /**
+   * For our signals, what digits do they represent?
+   */
+  signalMap: signalToDigitMap;
+
+  /**
+   * For A-G, which signals map to which segments?
+   */
+  segmentMap: segmentToSignalMap;
 
   /**
    * Start a Decoder from a row in the input
@@ -28,6 +37,8 @@ export class Decoder {
   constructor(pair: signalPair) {
     Object.assign(this, pair);
 
+    // Make an object with each input signal we got. And if we can figure out
+    // what digit it represents based on its length, include that as its value.
     this.signalMap = pair.signals.reduce((map, signal) => {
       if (SevenSeg.isUnique(signal)) {
         return {
@@ -42,6 +53,7 @@ export class Decoder {
       }
     }, {});
 
+    // Start our decode map!
     this.segmentMap = {
       a: false,
       b: false,
@@ -74,13 +86,16 @@ export class Decoder {
   }
 
   /**
-   * Which segments are used to display a number?
+   * Which input signals for this Deocer are used to display a number?
+   *
    * @param n (number)
    * @returns (string) which segments illuminate to show this number
    */
   findDigit(n: number): string | false  {
-    const search = Object.entries(this.signalMap).filter(m => m[1] === n);
+    const search = Object.entries(this.signalMap)
+      .filter(signal => signal[1] === n);
 
+    // We found one signal result for that digit, return its key (the signal).
     if (search.length === 1) {
       return search[0][0];
     }
@@ -92,9 +107,9 @@ export class Decoder {
    * Count members of an input array to determine how often they appear.
    *
    * @param x (string[]) Array of things to count
-   * @returns (segmentGuesses) Array keys mapped to how often they occurred
+   * @returns (memberCounts) Array keys mapped to how often they occurred
    */
-  getCounts(x: string[]): segmentGuesses {
+  getCounts(x: string[]): memberCounts {
     return x.reduce((counts: any, y) => {
       counts[y] = counts[y] || 0;
       counts[y]++;
@@ -102,33 +117,39 @@ export class Decoder {
     }, {});
   }
 
-  lookup(needle: any, haystack: any): string | false {
+  /**
+   * Find a value in an object and return the key that points to it.
+   *
+   * @param needle (string | number) The value to look for
+   * @param haystack (any object) The object to look in
+   * @returns (string | false) The key for the value, or false if not found
+   */
+  lookup(needle: string | number, haystack: any): string | false {
     const key = Object.keys(haystack).find(key => haystack[key] === needle);
     return (key) ? key : false;
   }
 
+  /**
+   * Through some leaps in logic, populate the segmentMap's list of output
+   * segments with the input signal that point to them.
+   */
   resolve() {
+    // Gimme an array with all the input signals we get, separated
     const allInputSignals = this.signals.map(s => s.split('')).flat();
 
+    // We start knowing the output digit for these signals:
     const one = this.findDigit(1);
+    const four = this.findDigit(4);
     const seven = this.findDigit(7);
-
-    // If we have 1 and 7, we know what A is.
-    if (one && seven) {
-      const combo = [one.split(''), seven.split('')].flat();
-      const counts = this.getCounts(combo);
-      const unique: string = Object.entries(counts).filter(e => e[1] === 1)[0][0];
-      this.updateSegmentMap('a', unique);
-    }
 
     // Some segments are used a unique number of times across digits 0-9.
     // Those counts are 4, 6, and 9 --> segments E, B, and F.
 
-    // Count how many times we see each letter in Input Signals...
+    // Count how many times we see each letter across all Input Signals...
     const allInputSignalsCounted =
       this.getCounts(allInputSignals);
 
-    // ...and how many times we see each letter in Output Segments
+    // ...and how many times we see each letter across all Output Segments
     const allOutputSegmentsCounted =
       this.getCounts(SevenSeg.digitSegments.map(s => s.split('')).flat());
 
@@ -144,8 +165,19 @@ export class Decoder {
       }
     }
 
-    // If we have 1 and F, we can deduce C by frequency, too.
-    if (one) {
+    // If we have 1 and 7, we can find A because the top-bar will be used once.
+    if (one && seven) {
+      const combo = [one.split(''), seven.split('')].flat();
+      const counts = this.getCounts(combo);
+      const unique = this.lookup(1, counts);
+
+      if (unique) {
+        this.updateSegmentMap('a', unique);
+      }
+    }
+
+    // If we have 1 and F, we can deduce C by how frequently it is used overall.
+    if (one && this.segmentMap.f) {
       const onesSignals = one.split('');
       const onesSignalsCounted =
         this.getCounts(allInputSignals.filter(n => onesSignals.includes(n)));
@@ -159,17 +191,16 @@ export class Decoder {
     // By now, all we have left is D and G, the lower two horizontal segments.
     // The number 4 is made with 4 semgnemts, which is a unique count. And we
     // know what B, C, and F are, so whatever remains is D.
-    const signalsForFour =
-      this.signals.filter(signal => signal.length === 4)[0].split('');
+    if (four) {
+      four.split('').forEach(signal => {
+        // If we do not know which segment this signal maps to, it is D.
+        if (!this.lookup(signal, this.segmentMap)) {
+          this.updateSegmentMap('d', signal);
+        }
+      });
+    }
 
-    signalsForFour.forEach(signal => {
-      // If we do not know which segment this signal maps to, it is D.
-      if (!this.lookup(signal, this.segmentMap)) {
-        this.updateSegmentMap('d', signal);
-      }
-    });
-
-    // Whatever segment is not accounted for in our map is the signal for G.
+    // Whatever segment is not accounted for yet is the signal for G.
     const knownSignals = Object.values(this.segmentMap).filter(signal => signal);
     const allSegments = Object.keys(this.segmentMap);
 
@@ -178,11 +209,8 @@ export class Decoder {
         // This segment isn't accounted for, so we know it is the signal for G.
         this.updateSegmentMap('g', segment);
       }
-    })
+    });
 
-    console.log('Count of input signals');
-    console.log(allInputSignalsCounted);
-    console.log('Count of output segment usage');
-    console.log(allOutputSegmentsCounted);
+    // :party-popper: tada.
   }
 }

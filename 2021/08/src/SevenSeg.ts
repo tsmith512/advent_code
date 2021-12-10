@@ -1,5 +1,9 @@
 import chalk from 'chalk';
 
+export interface signalToDigitMap {
+  [key: string]: number | false,
+}
+
 export class SevenSeg {
   value?: number;
 
