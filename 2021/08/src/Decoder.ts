@@ -75,6 +75,8 @@ export class Decoder {
       f: false,
       g: false,
     };
+
+    return this;
   }
 
   showSignals() {
@@ -145,7 +147,7 @@ export class Decoder {
    * Through some leaps in logic, populate the segmentMap's list of output
    * segments with the input signal that point to them.
    */
-  resolve() {
+  resolve(): this {
     // Gimme an array with all the input signals we get, separated
     const allInputSignals = this.signals.map(s => s.split('')).flat();
 
@@ -224,6 +226,7 @@ export class Decoder {
     });
 
     // :party-popper: tada.
+    return this;
   }
 
   /**

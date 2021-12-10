@@ -6,6 +6,8 @@ export interface signalPair {
   outputs: string[],
 }
 
+export type signalsList = signalPair[];
+
 export class SignalInput {
   raw: string[][];
 
@@ -27,5 +29,11 @@ export class SignalInput {
       signals: this.raw[n][0].split(' '),
       outputs: this.raw[n][1].split(' '),
     };
+  }
+
+  getAll(): signalsList {
+    return this.raw.map((_, index) => {
+      return this.getRow(index);
+    })
   }
 }

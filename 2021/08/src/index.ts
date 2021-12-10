@@ -24,10 +24,10 @@ import { SevenSeg } from './SevenSeg';
 import { Decoder } from './Decoder';
 
 // Read input
-const signals = new SignalInput('sample-short.txt');
+const input = new SignalInput('sample.txt');
 
 // Get just the output signals
-const output = signals.getOutputDigits();
+const output = input.getOutputDigits();
 
 // Tally up how many unique digits there are
 let countUniqueDigits = 0;
@@ -52,13 +52,12 @@ console.log(`Of displays, there are ${countUniqueDigits} unique-length digits.\n
  * Note: Each row's input signals have ten unique so there's one for every digit
  */
 
+const fixedNumbers = input.getAll().map(row => {
+  const fixedSignals = new Decoder(row).resolve().translateOutput();
+  return new SevenSeg(fixedSignals).getNumber() || 0;
+});
 
-// Get a row from the sample and make a map of { signal: known-value | false }
-// based on the uniques we can determine.
-const test = new Decoder(signals.getRow(0));
+const sum = fixedNumbers
+  .reduce((sum, number) => sum += number, 0);
 
-// Figure out what signals map to which segments.
-test.resolve();
-test.translateOutput();
-
-console.log(new SevenSeg(test.translatedOutputs).getNumber());
+console.log(`After translating the signals, the sum of displayed numbers is ${sum}`);
