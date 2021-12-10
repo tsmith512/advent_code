@@ -21,9 +21,10 @@ import chalk from 'chalk';
 
 import { SignalInput } from './SignalInput';
 import { SevenSeg } from './SevenSeg';
+import { Decoder } from './Decoder';
 
 // Read input
-const signals = new SignalInput('input.txt');
+const signals = new SignalInput('sample-short.txt');
 
 // Get just the output signals
 const output = signals.getOutputDigits();
@@ -39,4 +40,27 @@ console.log(`Of displays, there are ${countUniqueDigits} unique-length digits.\n
 // Part One:
 // Of displays, there are 383 unique-length digits.
 
+/**
+ *  ___          _     ___
+ * | _ \__ _ _ _| |_  |_  )
+ * |  _/ _` | '_|  _|  / /
+ * |_| \__,_|_|  \__| /___|
+ *
+ * Build the mapping for each row's signals to which segments each letter really
+ * is. And from there, determine the numbers in the display and report the sum.
+ *
+ * Note: Each row's input signals have ten unique so there's one for every digit
+ */
+
+
 new SevenSeg(1234);
+
+
+// Get a row from the sample and make a map of { signal: known-value | false }
+// based on the uniques we can determine.
+const test = new Decoder(signals.getRow(0));
+
+test.resolve();
+
+test.showSignals();
+test.showSegments();
