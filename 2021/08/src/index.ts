@@ -23,7 +23,7 @@ import { SignalInput } from './SignalInput';
 import { SevenSeg } from './SevenSeg';
 
 // Read input
-const signals = new SignalInput('sample.txt');
+const signals = new SignalInput('input.txt');
 
 // Get just the output signals
 const output = signals.getOutputDigits();
@@ -35,3 +35,6 @@ output.flat()
   .forEach(display => countUniqueDigits += SevenSeg.isUnique(display) ? 1 : 0);
 
 console.log(`Of displays, there are ${countUniqueDigits} unique-length digits.`);
+
+// Part One:
+// Of displays, there are 383 unique-length digits.
