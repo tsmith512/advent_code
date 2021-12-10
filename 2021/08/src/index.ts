@@ -38,3 +38,5 @@ console.log(`Of displays, there are ${countUniqueDigits} unique-length digits.`)
 
 // Part One:
 // Of displays, there are 383 unique-length digits.
+
+new SevenSeg(10);
