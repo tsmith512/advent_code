@@ -62,5 +62,5 @@ const test = new Decoder(signals.getRow(0));
 
 test.resolve();
 
-// test.showSignals();
+test.showSignals();
 test.showSegments();
