@@ -16,16 +16,28 @@ export interface memberCounts {
 }
 
 export class Decoder {
-  signals!: string[];
-  outputs!: string[];
+  /**
+   * The ten sample signals that describe the scrambled signal-to-segments
+   */
+  private signals!: string[];
+
+  /**
+   * The scrambled outputs that represent answer digits from this Decoder
+   */
+  private outputs!: string[];
+
+  /**
+   * THE ANSWER: The fixed outputs that represent signals for SevenSeg digits
+   */
+  translatedOutputs?: string[];
 
   /**
    * For our signals, what digits do they represent?
    */
-  signalMap: signalToDigitMap;
+  private signalMap: signalToDigitMap;
 
   /**
-   * For A-G, which signals map to which segments?
+   * THE ANSWER KEY: For A-G, which signals map to which segments?
    */
   segmentMap: segmentToSignalMap;
 
@@ -212,5 +224,21 @@ export class Decoder {
     });
 
     // :party-popper: tada.
+  }
+
+  /**
+   * With a resolved segmentMap, translate the output signals into real output
+   * segments that can be passed back over to something in SevenSeg.
+   *
+   * @returns (string[]) array of translated signals
+   */
+  translateOutput(): string[] {
+    this.translatedOutputs = this.outputs.map(inputSignal => {
+      return inputSignal.split('').map(before => {
+        return this.lookup(before, this.segmentMap);
+      }).join('');
+    });
+
+    return this.translatedOutputs;
   }
 }

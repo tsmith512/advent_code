@@ -60,7 +60,9 @@ new SevenSeg(1234);
 // based on the uniques we can determine.
 const test = new Decoder(signals.getRow(0));
 
+// Figure out what signals map to which segments.
 test.resolve();
+test.translateOutput();
 
-test.showSignals();
-test.showSegments();
+console.log(test.segmentMap);
+console.log(test.translatedOutputs);
