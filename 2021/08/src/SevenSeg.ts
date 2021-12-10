@@ -4,16 +4,17 @@ export class SevenSeg {
   /**
    * A map of what numbers use how many segments on a seven-segment display.
    */
-  static segmentsPerDigit = {
-    one: 2, // unique
-    two: 5,
-    three: 5,
-    four: 4, // unique
-    five: 5,
-    six: 6,
-    seven: 3, // unique
-    eight: 7, // unique
-  }
+  static segmentsPerDigit = [
+    6, // zero
+    2, // one - unique
+    5, // two
+    5, // three
+    4, // four - unique
+    5, // five
+    6, // six
+    3, // seven - unique
+    7, // eight - unique
+  ]
 
   /**
    * Do we know this digit because the number of segments it uses is unique?
@@ -22,10 +23,6 @@ export class SevenSeg {
    * @returns (boolean) True if input represets a unique-length digit
    */
   static isUnique(input: string): boolean {
-    const uniqueLengths = Object.entries(this.segmentsPerDigit)
-      .filter(d => ['one', 'four', 'seven', 'eight'].indexOf(d[0]) > -1)
-      .map(d => d[1]);
-
-    return uniqueLengths.indexOf(input.length) > -1;
+    return this.segmentsPerDigit.filter(n => n === input.length).length === 1;
   }
 }
