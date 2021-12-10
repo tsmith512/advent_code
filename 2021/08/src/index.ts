@@ -17,14 +17,12 @@
  * determine. Count the number of those digits in the output values (after |).
  */
 
-import chalk from 'chalk';
-
 import { SignalInput } from './SignalInput';
 import { SevenSeg } from './SevenSeg';
 import { Decoder } from './Decoder';
 
 // Read input
-const input = new SignalInput('sample.txt');
+const input = new SignalInput('input.txt');
 
 // Get just the output signals
 const output = input.getOutputDigits();
@@ -61,3 +59,6 @@ const sum = fixedNumbers
   .reduce((sum, number) => sum += number, 0);
 
 console.log(`After translating the signals, the sum of displayed numbers is ${sum}`);
+
+// Part Two:
+// After translating the signals, the sum of displayed numbers is 998900

@@ -93,13 +93,12 @@ export class SevenSeg {
     return (this.number) ? this.number : false;
   }
 
-  private pixel(a: string, b: string[], r?: number): string {
-    r = r || 1;
-    return b.includes(a)
-      ? chalk.yellow('#'.repeat(r))
-      : chalk.gray('.'.repeat(r));
-  }
-
+  /**
+   * Given a number, build out the ASCII art to show all digits of it on a
+   * pretty console-sign.
+   *
+   * @param number (number) What to display on the sign
+   */
   visualize(number: number): void {
     const digits = number.toString().split('').map(d => parseInt(d));
 
@@ -116,7 +115,28 @@ export class SevenSeg {
     console.log(matrix.join('\n') + '\n');
   }
 
-  illuminate(input: string): string[] {
+  /**
+   * Draw a pixel (or row of them) if the given value matches the pixel number
+   *
+   * @param a (string) Which segment is this pixel part of?
+   * @param b (string[]) Which segments are we supposed to illuminate?
+   * @param r (number?) If specified, repeat the pixel across a row
+   * @returns (string) ASCII and control sequence to show colorful pixels
+   */
+  private pixel(a: string, b: string[], r?: number): string {
+    r = r || 1;
+    return b.includes(a)
+      ? chalk.yellow('#'.repeat(r))
+      : chalk.gray('.'.repeat(r));
+  }
+
+  /**
+   * Given a signal, illuminate the requested segments.
+   *
+   * @param input (string) signals to illuminate
+   * @returns (string[]) an arraw of rows of ASCII/control seq art
+   */
+  private illuminate(input: string): string[] {
     const segments = input.split('');
 
     const lights = [
