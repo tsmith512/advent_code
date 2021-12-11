@@ -17,7 +17,7 @@
 
 const fs = require('fs');
 
-const input = fs.readFileSync('sample.txt').toString().trim();
+const input = fs.readFileSync('input.txt').toString().trim();
 
 // Define the field as it was presented
 const field = input
@@ -98,8 +98,6 @@ for (row of height) {
     }
   }
 }
-
-showField(field);
 
 // Risk level is a point's value plus one. Part one wants a sum of these.
 const riskLevels = lowPoints.map(n => n + 1).reduce((total, n) => total + n, 0);
@@ -183,8 +181,6 @@ for (row of height) {
   }
 }
 
-showField(basinField);
-
 // Caution: doozie ahead.
 const answer = basinField
   .flat()                               // Flatten the field into a 1-d array
@@ -199,3 +195,6 @@ const answer = basinField
   .reduce((product, current) => product * current, 1); // Multiply
 
 console.log(`The product of the three largest basins is ${answer}`);
+
+// Part Two:
+// The product of the three largest basins is 1075536
