@@ -17,7 +17,7 @@
 
 const fs = require('fs');
 
-const input = fs.readFileSync('sample.txt').toString().trim();
+const input = fs.readFileSync('input.txt').toString().trim();
 
 // Define the field as it was presented
 const field = input
@@ -97,3 +97,6 @@ for (row of height) {
 // Risk level is a point's value plus one. Part one wants a sum of these.
 const riskLevels = lowPoints.map(n => n + 1).reduce((total, n) => total + n, 0);
 console.log(`Sum of risk levels is: ${riskLevels}`);
+
+// Part One:
+// Sum of risk levels is: 491
