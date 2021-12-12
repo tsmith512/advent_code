@@ -29,7 +29,7 @@ import { NavLine } from './NavLine';
 
 // Read and prep lines
 const lines: string[] = fs
-  .readFileSync(join(process.cwd(), 'lib/sample.txt'), 'utf8')
+  .readFileSync(join(process.cwd(), 'lib/input.txt'), 'utf8')
   .toString()
   .trim()
   .split("\n");
@@ -45,3 +45,6 @@ const score = invalidLines.reduce((score, line) => {
 }, 0)
 
 console.log(`The score of invalid nav lines is ${score}.`);
+
+// Part One:
+// The score of invalid nav lines is 436497.
