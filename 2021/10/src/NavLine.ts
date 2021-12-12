@@ -2,8 +2,8 @@
 // and it did make for some nice IDE suggestions and warnings about typos.
 type chunkOpener = '<' | '['       | '{'     | '(';
 type chunkCloser = '>' | ']'       | '}'     | ')';
-type chunker = chunkOpener | chunkCloser;
 type chunkType = 'tag' | 'bracket' | 'brace' | 'paren';
+type chunker = chunkOpener | chunkCloser;
 type lineCheck = 'valid' | 'corrupt' | 'incomplete';
 
 export class NavLine {
@@ -11,6 +11,11 @@ export class NavLine {
    * The input as we got it.
    */
   raw: string;
+
+  /**
+   * The characters we would need to add to complete an incomplete line.
+   */
+  completion: string;
 
   /**
    * Is this line valid, corrupt, or incomplete?
@@ -25,13 +30,14 @@ export class NavLine {
   constructor(line: string) {
     this.raw = line;
     this.corruptChunk = false;
+    this.completion = '';
 
     this.process();
   }
 
   /**
-   * Iterate over characters in the input string to find out how this line is
-   * borked, if it is. @TODO: Does not yet confirm incomplete/complete.
+   * Iterate over characters in the input string to determine if is corrupted
+   * or can be completed. Populates this.valid and this.completion.
    */
   process() {
     // Let's keep a tally of what is open
@@ -58,6 +64,19 @@ export class NavLine {
           }
         }
       });
+
+      // PART TWO JAZZ: If an error wasn't thrown, we need to complete the seq.
+      if (openChunks.length === 0) {
+        // If nothing is open, then the line is valid.
+        this.valid = 'valid';
+        return;
+      }
+
+      this.valid = 'incomplete';
+
+      openChunks.reverse().forEach((type, i) => {
+        this.completion += this.close(type);
+      });
     } catch (e) {
       // This is just to break the forEach. Does not need to be reported.
     }
@@ -65,7 +84,8 @@ export class NavLine {
 
   /**
    * Return true if this character opens a new chunk. False if it closes.
-   * @param x
+   *
+   * @param x (chunker) any open or closing chuck delimiter
    */
   opens(x: chunker): boolean {
     if ('<[{('.includes(x)) {
@@ -75,42 +95,62 @@ export class NavLine {
   }
 
   /**
-   * Return the name of the chunk type given a character that opens or closes it
+   * Provide the closing character for the given type.
+   *
+   * @param type (chunkType) type to close
+   * @returns (chunkClose) the appropraite closing character
    */
-  type(x: chunker): chunkType {
-    switch (x) {
-      case '<':
-      case '>':
-        return 'tag';
-      case '[':
-      case ']':
-        return 'bracket';
-      case '{':
-      case '}':
-        return 'brace';
-      case '(':
-      case ')':
-        return 'paren';
-    }
+  close(type: chunkType): chunkCloser {
+    return {
+      paren: ')',
+      bracket: ']',
+      brace: '}',
+      tag: '>',
+    }[type] as chunkCloser;
   }
 
   /**
-   * If this line is corrupted, return its score based on the corruptChunk type.
+   * Return the name of the chunk type given a character that opens or closes it
+   */
+  type(x: chunker): chunkType {
+    return {
+      '<': 'tag',
+      '>': 'tag',
+      '[': 'bracket',
+      ']': 'bracket',
+      '{': 'brace',
+      '}': 'brace',
+      '(': 'paren',
+      ')': 'paren',
+    }[x] as chunkType;
+  }
+
+  /**
+   * Score this line based either on its invalid character or completion string.
    *
    * @returns (number) the score
    */
   score(): number {
-    switch (this.corruptChunk) {
-      case 'paren':
-        return 3;
-      case 'bracket':
-        return 57;
-      case 'brace':
-        return 1197;
-      case 'tag':
-        return 25137;
-      default:
-        return 0;
+    // Score an invalid character?
+    if (this.corruptChunk) {
+      return {
+        paren: 3,
+        bracket: 57,
+        brace: 1197,
+        tag: 25137,
+      }[this.corruptChunk];
     }
+
+    // PART TWO:
+    // Tally the score of the completion string
+    return this.completion.split('').reduce((score, current) => {
+      const closer = current as chunkCloser;
+      return (score * 5) + {
+        ')': 1,
+        ']': 2,
+        '}': 3,
+        '>': 4,
+      }[closer];
+    }, 0);
   }
 }
