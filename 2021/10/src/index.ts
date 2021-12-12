@@ -29,7 +29,7 @@ import { NavLine } from './NavLine';
 
 // Read and prep lines
 const lines: string[] = fs
-  .readFileSync(join(process.cwd(), 'lib/sample.txt'), 'utf8')
+  .readFileSync(join(process.cwd(), 'lib/input.txt'), 'utf8')
   .toString()
   .trim()
   .split("\n");
@@ -78,3 +78,6 @@ const medianIndex = Math.floor(incompleteScores.length / 2)
 const medianScore = incompleteScores.sort((a, b) => a - b)[medianIndex];
 
 console.log(`The median score of incomplete nav lines is ${medianScore}.`);
+
+// Part Two:
+// The median score of incomplete nav lines is 2377613374.
