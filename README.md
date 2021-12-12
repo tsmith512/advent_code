@@ -13,6 +13,9 @@ we'll see.
 - [Day 5: Hydrothermal Venture](2021/05/thermalvents.r) (R)
 - [Day 6: Lanternfish](2021/06/multifish.js) (JavaScript)
 - [Day 7: The Treachery of Whales](2021/07/crabs.js) (JavaScript)
+- [Day 8: Seven Segment Search](2021/08/src/index.ts) (TypeScript)
+- [Day 9: Smoke Basin](2021/09/smoke.js) (JavaScript)
+- [Day 10: Syntax Scoring](2021/10/src/index.ts) (TypeScript)
 
 ## 2020
 
