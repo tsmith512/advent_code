@@ -32,18 +32,16 @@ const lines: string[] = fs
   .readFileSync(join(process.cwd(), 'lib/input.txt'), 'utf8')
   .toString()
   .trim()
-  .split("\n");
+  .split('\n');
 
 // Run through the NavLine processor to grab the invalid ones
-const navLines = lines
-  .map(line => new NavLine(line));
+const navLines = lines.map((line) => new NavLine(line));
 
-const invalidLines = navLines
-  .filter(navLine => navLine.corruptChunk);
+const invalidLines = navLines.filter((navLine) => navLine.corruptChunk);
 
 // Score the bad ones
 const invalidScore = invalidLines.reduce((score, line) => {
-  return score += line.score();
+  return (score += line.score());
 }, 0);
 
 console.log(`The score of invalid nav lines is ${invalidScore}.`);
@@ -69,12 +67,11 @@ console.log(`The score of invalid nav lines is ${invalidScore}.`);
  * Report the median score from the whole stack.
  */
 
-const incompleteLines = navLines
-  .filter(navLine => navLine.valid === 'incomplete');
+const incompleteLines = navLines.filter((navLine) => navLine.valid === 'incomplete');
 
-const incompleteScores = incompleteLines.map(line => line.score());
+const incompleteScores = incompleteLines.map((line) => line.score());
 
-const medianIndex = Math.floor(incompleteScores.length / 2)
+const medianIndex = Math.floor(incompleteScores.length / 2);
 const medianScore = incompleteScores.sort((a, b) => a - b)[medianIndex];
 
 console.log(`The median score of incomplete nav lines is ${medianScore}.`);

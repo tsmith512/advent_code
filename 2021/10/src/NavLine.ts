@@ -1,7 +1,7 @@
 // This is wholly unnecessary, but I've never played with literal string types
 // and it did make for some nice IDE suggestions and warnings about typos.
-type chunkOpener = '<' | '['       | '{'     | '(';
-type chunkCloser = '>' | ']'       | '}'     | ')';
+type chunkOpener = '<' | '[' | '{' | '(';
+type chunkCloser = '>' | ']' | '}' | ')';
 type chunkType = 'tag' | 'bracket' | 'brace' | 'paren';
 type chunker = chunkOpener | chunkCloser;
 type lineCheck = 'valid' | 'corrupt' | 'incomplete';
@@ -145,12 +145,15 @@ export class NavLine {
     // Tally the score of the completion string
     return this.completion.split('').reduce((score, current) => {
       const closer = current as chunkCloser;
-      return (score * 5) + {
-        ')': 1,
-        ']': 2,
-        '}': 3,
-        '>': 4,
-      }[closer];
+      return (
+        score * 5 +
+        {
+          ')': 1,
+          ']': 2,
+          '}': 3,
+          '>': 4,
+        }[closer]
+      );
     }, 0);
   }
 }
