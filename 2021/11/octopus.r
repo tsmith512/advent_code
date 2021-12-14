@@ -8,7 +8,7 @@
 # Given a field of octopuses (octopi?)
 
 # Read the the input into a matrix
-lines <- scan("short.txt", what = "")
+lines <- scan("sample.txt", what = "")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 octos <- matrix(
@@ -20,9 +20,6 @@ octos <- matrix(
 
 
 flash <- function(matrix) {
-  # Increment each by one
-  matrix <- apply(matrix, c(1,2), function(value) value + 1)
-
   # Who's fixin' to flash?
   flashes <- apply(matrix, c(1,2), function(value) if (value > 9) { 1 } else { 0 })
 
@@ -38,14 +35,32 @@ flash <- function(matrix) {
   nw <- cbind(rep(0, rows), rbind(flashes[-1,], rep(0, cols))[,-cols])
   sw <- cbind(rep(0, rows), rbind(rep(0, cols), flashes[-rows,])[,-cols])
 
+
   # Apply these increases
   matrix <- matrix + n + s + e + w + ne + se + nw + sw
 
-  apply(matrix, c(1,2), function(value) if (value > 9) { 0 } else { value })
+  # Anything that flashed is now a zero.
+  matrix[flashes == 1] <- 0
+
+
+  # If anything that didn't flash is now high enough, it flashes.
+  # @TODO: Something about this logic is wrong because when adjacent followup
+  # flashes happen, my numbers don't matching the sample. Also this ran more
+  # often than I thought it did...
+  if (sum(matrix[flashes != 1] > 9)) {
+    print(matrix)
+    matrix <- flash(matrix)
+  }
+
+  matrix
 }
 
-for (i in 1:3) {
+for (i in 1:2) {
+  # Increment each by one.
+  octos <- apply(octos, c(1,2), function(value) value + 1)
+
   octos <- flash(octos)
-  print(i)
+  print('')
+  print(sprintf('After round %d', i))
   print(octos)
 }
