@@ -8,7 +8,7 @@
 # Given a field of octopuses (octopi?)
 
 # Read the the input into a matrix
-lines <- scan("sample.txt", what = "")
+lines <- scan("input.txt", what = "")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 octos <- matrix(
@@ -69,3 +69,6 @@ for (i in 1:100) {
 }
 
 print(sprintf('Total flashes: %d', totalFlashes))
+
+# Part One:
+# [1] "Total flashes: 1655"
