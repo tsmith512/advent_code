@@ -22,6 +22,7 @@ octos <- matrix(
 flash <- function(matrix) {
   # Who's fixin' to flash?
   flashes <- apply(matrix, c(1,2), function(value) if (value > 9) { 1 } else { 0 })
+  totalFlashes <<- totalFlashes + sum(flashes)
 
   # Thank you @duplico for this handy thing you did for 2020 Day 11.
   # We know each adjacent point to a flash increases, and that these overlap.
@@ -43,19 +44,21 @@ flash <- function(matrix) {
   matrix[flashes == 1] <- 0
 
 
-  # If anything that didn't flash is now high enough, it flashes.
-  # @TODO: Something about this logic is wrong because when adjacent followup
-  # flashes happen, my numbers don't matching the sample. Also this ran more
-  # often than I thought it did...
-  if (sum(matrix[flashes != 1] > 9)) {
-    print(matrix)
+  # And if anything is high enough to flash, flash it.
+  if (sum(matrix > 9)) {
+    # print(matrix)
     matrix <- flash(matrix)
   }
+
+  # Anything that flashed is now a zero.
+  matrix[flashes == 1] <- 0
 
   matrix
 }
 
-for (i in 1:2) {
+totalFlashes <- 0
+
+for (i in 1:100) {
   # Increment each by one.
   octos <- apply(octos, c(1,2), function(value) value + 1)
 
@@ -64,3 +67,5 @@ for (i in 1:2) {
   print(sprintf('After round %d', i))
   print(octos)
 }
+
+print(sprintf('Total flashes: %d', totalFlashes))
