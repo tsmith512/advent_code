@@ -16,7 +16,7 @@
  */
 
 const fs = require('fs');
-const input = fs.readFileSync('short.txt').toString().trim().split('\n');
+const input = fs.readFileSync('sample2.txt').toString().trim().split('\n');
 
 // Map out which caves lead to which caves.
 const paths = {};
