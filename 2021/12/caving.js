@@ -16,7 +16,7 @@
  */
 
 const fs = require('fs');
-const input = fs.readFileSync('sample2.txt').toString().trim().split('\n');
+const input = fs.readFileSync('input.txt').toString().trim().split('\n');
 
 // Map out which caves lead to which caves.
 const paths = {};
@@ -55,7 +55,6 @@ const traverse = (start = 'start', route = ['start']) => {
         return true;
       } else {
         // Lower Case caves can only be visited one.
-        console.log(route);
         return !route.includes(x);
       }
     });
@@ -82,6 +81,7 @@ const traverse = (start = 'start', route = ['start']) => {
 
 traverse();
 
-console.log(paths);
-console.log(routes);
-console.log(routes.length);
+console.log(`There are ${routes.length} route through the caves.`);
+
+// Part One:
+// There are 4775 route through the caves.
