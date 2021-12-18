@@ -16,7 +16,7 @@
  */
 
 const fs = require('fs');
-const input = fs.readFileSync('short.txt').toString().trim().split('\n');
+const input = fs.readFileSync('input.txt').toString().trim().split('\n');
 
 // Map out which caves lead to which caves.
 const paths = {};
@@ -114,5 +114,7 @@ console.log(`There are ${routes.length} routes through the caves.`);
 
 routes.length = 0;
 traverse('start', ['start'], true);
-console.log(routes.map(r => r.join('-')));
 console.log(`And ${routes.length} routes if you double-back once.`);
+
+// Part Two:
+// And 152480 routes if you double-back once.
