@@ -63,9 +63,22 @@ const traverse = (start = 'start', route = ['start'], partTwo = false) => {
          * You can visit any one lower-case cave a second time. Each route may
          * contain no more than one lower-case cave twice.
          */
-        return route.filter(y => y === x).length < 2;
-        // @TODO: ^^ Solves the wrong problem. This checks to see if _this_ cave
-        // has been seen more than once. Need to see if _any_ have.
+        // How many of each have we seen?
+        const counts = {};
+        route
+          .filter(cave => cave === cave.toLowerCase())
+          .forEach(y => counts[y] = (counts[y] || 0) + 1);
+
+        // Count "this" option, too.
+        counts[x] += 1;
+
+        // What counts are gretaer than 1?
+        const duplicates = Object.values(counts).filter(v => v > 1);
+
+        // We can have up to 1 cave in our list of "seen more than once" and it
+        // cannot be seen more than twice. Because we added "this option" to the
+        // counts, if this will be the duplicate, we've accounted for it.
+        return duplicates.length < 2 && duplicates.every(v => v <= 2);
       } else {
         // FOR PART ONE: Lower Case caves can only be visited one.
         return !route.includes(x);
