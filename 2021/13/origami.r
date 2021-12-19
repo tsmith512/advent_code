@@ -58,15 +58,16 @@ paper <- matrix(
   nrow = dimensions["y"]
 )
 
-# Plot each of the coordinates. @TODO: Why does R want to do [y,x] here?
+# Plot each of the coordinates.
 invisible(apply(coords, 1, function(pair) {
-  # Use 1 as a "dot" so we can do the flip easily with matrix addition.
+  # Rawr: matrix[row,col] --> y,x
   paper[pair["y"], pair["x"]] <<- 1
 }))
 
 # Process each of the flips
 #                    [ Pt 1 = 1st Fold ]
-invisible(apply(flips[1, , drop = FALSE], 1, function(flip) {
+#                    [1, , drop = FALSE]
+invisible(apply(flips                   , 1, function(flip) {
   axis <- flip["axis"]
   at <- as.numeric(flip["at"])
 
@@ -78,6 +79,13 @@ invisible(apply(flips[1, , drop = FALSE], 1, function(flip) {
     bottom <- paper[-(1:at),]
     mirrored <- bottom[c(nrow(bottom):1),]
 
+    # If the fold wasn't in the middle, we need to pad out the mirrored matrix
+    if (nrow(top) != nrow(mirrored)) {
+      gap <- nrow(top) - nrow(mirrored)
+      patch <- matrix(data = 0, nrow = gap, ncol = ncol(top))
+      mirrored <- rbind(patch, mirrored)
+    }
+
     paper <<- (top + mirrored)
   } else {
     # We need to do a vertical cut and reflect
@@ -86,6 +94,14 @@ invisible(apply(flips[1, , drop = FALSE], 1, function(flip) {
     # Fetch the right half and then flip it horizontally
     right <- paper[,-(1:at)]
     mirrored <- right[,c(ncol(right):1)]
+
+    # If the fold wasn't in the middle, we need to pad out the mirrored matrix
+    if (ncol(left) != ncol(mirrored)) {
+      mirrored <- cbind(rep(0, nrow(left)), mirrored)
+      gap <- ncol(left) - ncol(mirrored)
+      patch <- matrix(data = 0, nrow = nrow(left), ncol = gap)
+      mirrored <- cbind(patch, mirrored)
+    }
 
     paper <<- (left + mirrored)
   }
