@@ -17,7 +17,7 @@
 # - Gonna have to get good at string manipulation to read the instructions in
 
 # All the lines from the file (coordinates and flip instructions)
-lines <- scan("sample.txt", what = "", sep = "\n")
+lines <- scan("input.txt", what = "", sep = "\n")
 
 # Containers for what we need to process
 coords <- matrix(nrow = 0, ncol = 2)
@@ -94,5 +94,7 @@ invisible(apply(flips[1, , drop = FALSE], 1, function(flip) {
   paper[paper > 0] <<- 1
 }))
 
-print(paper)
 print(sprintf("After folding, there are %d dots visible", sum(paper)))
+
+# Part One: (first fold only)
+# "After folding, there are 788 dots visible"
