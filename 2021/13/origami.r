@@ -40,13 +40,55 @@ for (line in lines) {
       , "=")
     )
 
-    flips <- rbind(flips, list(instruction[1], as.numeric(instruction[2])))
+    # @TODO: flips should be a data.frame because it has mixed types. As-is, the
+    # "at" address column will be a string, not a number. Cast on use. One-index
+    flips <- rbind(flips, c(instruction[1], as.numeric(instruction[2]) + 1))
   }
 }
 
-# R is one-indexed, not zero-indexed. So we need to add 1 to all coords and then
-# remember I did that when I get super confused later...
+# Make these one-based instead of zero-based.
 coords <- coords + 1
 
-print(coords)
-print(flips)
+# Construct the field
+dimensions <- apply(coords, 2, max)
+
+paper <- matrix(
+  data = 0,
+  ncol = dimensions["x"],
+  nrow = dimensions["y"]
+)
+
+# Plot each of the coordinates. @TODO: Why does R want to do [y,x] here?
+invisible(apply(coords, 1, function(pair) {
+  paper[pair["y"], pair["x"]] <<- 1
+}))
+
+# Process each of the flips
+invisible(apply(flips, 1, function(flip) {
+  axis <- flip["axis"]
+  at <- as.numeric(flip["at"])
+
+  if (axis == "y") {
+    # We need to do a horizontal cut and reflect
+    top <- paper[1:at - 1,]
+
+    # Fetch the bottom half and then flip it vertically
+    bottom <- paper[-(1:at),]
+    mirrored <- bottom[c(nrow(bottom):1),]
+
+    # @TODO: Need to normalize this back to 1's and 0's. Overlaps are 2's.
+    paper <<- (top + mirrored)
+  } else {
+    # We need to do a vertical cut and reflect
+    left <- paper[,1:at - 1]
+
+    # Fetch the right half and then flip it horizontally
+    right <- paper[,-(1:at)]
+    mirrored <- right[,c(ncol(right):1)]
+
+    # @TODO: Normalize...
+    paper <<- (left + mirrored)
+  }
+}))
+
+print(paper)
