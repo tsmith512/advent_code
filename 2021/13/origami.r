@@ -49,7 +49,7 @@ for (line in lines) {
 # Make these one-based instead of zero-based.
 coords <- coords + 1
 
-# Construct the field
+# Construct the field by figuring out how far out the points go.
 dimensions <- apply(coords, 2, max)
 
 paper <- matrix(
@@ -114,3 +114,38 @@ print(sprintf("After folding, there are %d dots visible", sum(paper)))
 
 # Part One: (first fold only)
 # "After folding, there are 788 dots visible"
+
+#  ___          _     ___
+# | _ \__ _ _ _| |_  |_  )
+# |  _/ _` | '_|  _|  / /
+# |_| \__,_|_|  \__| /___|
+#
+# Do all of the folds, and then "find the eight capital letters" so I guess that
+# means a visual check of the printed matrix. Let's make that an image.
+
+# R's image() function will introduce a 90-degree rotation because it addresses
+# bottom-up by column (I think?) so get ahead of that by rotating the matrix.
+# See http://www.opiniomics.org/creating-an-image-of-a-matrix-in-r-using-image/
+# and https://stackoverflow.com/questions/31882079/r-image-plots-matrix-rotated
+rotate <- function(x) t(apply(x, 2, rev))
+
+png(
+  "readout.png",
+  width = (ncol(paper) * 20) + 20,
+  height = (nrow(paper) * 20) + 20,
+  bg = "black"
+)
+
+par(
+  mar = rep(1, 4)
+)
+
+image(
+  rotate(paper),
+  useRaster = TRUE,
+  axes = FALSE,
+  col=c(rgb(0,0,0), rgb(0,0.75,1))
+)
+
+# Part Two:
+# readout.png displays the letters "KJBKEUBG"
