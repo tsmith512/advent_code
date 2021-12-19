@@ -60,11 +60,13 @@ paper <- matrix(
 
 # Plot each of the coordinates. @TODO: Why does R want to do [y,x] here?
 invisible(apply(coords, 1, function(pair) {
+  # Use 1 as a "dot" so we can do the flip easily with matrix addition.
   paper[pair["y"], pair["x"]] <<- 1
 }))
 
 # Process each of the flips
-invisible(apply(flips, 1, function(flip) {
+#                    [ Pt 1 = 1st Fold ]
+invisible(apply(flips[1, , drop = FALSE], 1, function(flip) {
   axis <- flip["axis"]
   at <- as.numeric(flip["at"])
 
@@ -76,7 +78,6 @@ invisible(apply(flips, 1, function(flip) {
     bottom <- paper[-(1:at),]
     mirrored <- bottom[c(nrow(bottom):1),]
 
-    # @TODO: Need to normalize this back to 1's and 0's. Overlaps are 2's.
     paper <<- (top + mirrored)
   } else {
     # We need to do a vertical cut and reflect
@@ -86,9 +87,12 @@ invisible(apply(flips, 1, function(flip) {
     right <- paper[,-(1:at)]
     mirrored <- right[,c(ncol(right):1)]
 
-    # @TODO: Normalize...
     paper <<- (left + mirrored)
   }
+
+  # Normalize all the "dots" back to 1 in case any of them overlapped.
+  paper[paper > 0] <<- 1
 }))
 
 print(paper)
+print(sprintf("After folding, there are %d dots visible", sum(paper)))
