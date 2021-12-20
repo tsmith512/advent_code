@@ -16,6 +16,9 @@ we'll see.
 - [Day 8: Seven Segment Search](2021/08/src/index.ts) (TypeScript)
 - [Day 9: Smoke Basin](2021/09/smoke.js) (JavaScript)
 - [Day 10: Syntax Scoring](2021/10/src/index.ts) (TypeScript)
+- [Day 11: Dumbo Octopus](2021/11/octopus.r) (R)
+- [Day 12: Passage Pathing](2021/12/caving.js) (JavaScript)
+- [Day 13: Transparent Origami](2021/13/origami.r) (R)
 
 ## 2020
 
