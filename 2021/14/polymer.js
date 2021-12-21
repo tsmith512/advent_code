@@ -12,7 +12,7 @@
 
 const fs = require('fs');
 
-const [start, rules] = fs.readFileSync('input.txt').toString().trim().split('\n\n');
+const [start, rules] = fs.readFileSync('sample.txt').toString().trim().split('\n\n');
 
 // Let's make a map of
 // { StartLetter: { EndLetter: 'InsertHereLetter' , ... }, ... }
@@ -84,3 +84,23 @@ console.log(`After ${steps} steps, the total length is ${chain.length}.
 //   N was used 613 times.
 //   O was used 4857 times.
 //   Difference: 4244
+
+/**
+ *  ___          _     ___
+ * | _ \__ _ _ _| |_  |_  )
+ * |  _/ _` | '_|  _|  / /
+ * |_| \__,_|_|  \__| /___|
+ *
+ * Do it again, steps = 40.
+ */
+
+for (let i = 0; i < 30; i++) {
+  chain = extend(chain);
+}
+
+const twoCounts = count(chain);
+
+console.log(`After ${steps} steps, the total length is ${chain.length}.
+  ${twoCounts[0][0]} was used ${twoCounts[0][1]} times.
+  ${twoCounts.at(-1)[0]} was used ${twoCounts.at(-1)[1]} times.
+  Difference: ${twoCounts.at(-1)[1] - twoCounts[0][1]}`);
