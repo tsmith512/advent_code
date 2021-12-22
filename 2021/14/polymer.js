@@ -114,33 +114,52 @@ const makeManifest = (input) => {
  * Ex: for the rule "NN -> C" we subtract NN and add NC and CN.
  */
 const extendManifest = () => {
-  // Make a copy for the iteration so we know where we were before we started
-  // this round of extending the chain.
-  const temp = Object.assign({}, pairs);
+  // Make an object to record what we're going to do so that we can make that
+  // happen after we've iterated over all the pairs.
+  const adjustments = {};
 
-  // For every pair in the list:
-  for (pair in temp) {
-    // What is the count at _now_? (... that may be the wrong approach)
+  // For every pair in the real list:
+  for (pair in pairs) {
+    // What is the count at the start of this round?
     const count = pairs[pair];
 
     // Split the sandwich and get the meat from the ruleset object above.
     const [a, b] = pair.split('');
     const A = a + ruleset[a][b];
     const B =     ruleset[a][b] + b;
-    console.log(`${pair}-- (was ${temp[pair]}). ${A}++ (was ${temp[A]}) and ${B}++ (was ${temp[B]})`);
+    console.log(`${pair}-- (was ${pairs[pair]}). ${A}++ (was ${pairs[A]}) and ${B}++ (was ${pairs[B]})`);
 
-    // Count for the new pairs will be old-count++ (or start it at 1)
-    pairs[A] = (count) ? count + 1 : 1;
-    pairs[B] = (count) ? count + 1 : 1;
+    // We need to add the count of old-pairs to new-pairs
+    adjustments[A] = (adjustments[A]) ? adjustments[A] + count : count;
+    adjustments[B] = (adjustments[B]) ? adjustments[B] + count : count;
 
     // Old pairs will be reduced by the same count.
-    pairs[pair] -= count;
+    adjustments[pair] = (adjustments[pair]) ? adjustments[pair] - count : 0 - count;
+  }
 
-    // And expunged from the object if they're zeroed out.
+  console.log('Adjustments: ', adjustments);
+
+  // For every pair we know we need to adjust...
+  for (pair in adjustments) {
+    // ...by how much?
+    const count = adjustments[pair];
+
+    if (count == 0) {
+      // We added as much as we subtracted, skip
+      continue;
+    }
+
+    if (pairs.hasOwnProperty(pair)) {
+      pairs[pair] += count;
+    } else {
+      pairs[pair] = count;
+    }
+    console.log(`${pair} + ${count} --> now ${pairs[pair]}`);
+
+    // And delete from the object if it is zeroed out.
     if (pairs[pair] < 1) {
       delete pairs[pair];
     }
-    console.log(`${pair}-- (now ${pairs[pair]}). ${A}++ (now ${pairs[A]}) and ${B}++ (now ${pairs[B]})`);
   }
   console.log(Object.entries(pairs).sort());
 };
@@ -148,5 +167,6 @@ const extendManifest = () => {
 console.log(start);
 makeManifest(start);
 console.log(Object.entries(pairs).sort());
+extendManifest();
 extendManifest();
 extendManifest();
