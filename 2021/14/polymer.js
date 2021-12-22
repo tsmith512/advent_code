@@ -97,23 +97,15 @@ console.log(`After ${steps} steps, the total length is ${chain.length}.
 // Okay fine, we track counts of pairs instead of the whole chain.
 const pairs = {};
 
-/**
- * Break down the start string into component pairs.
- *
- * @param input (string) the starting place
- */
-const makeManifest = (input) => {
-  for (let i = 0; i < input.length - 1; i++) {
-    const pair = input[i] + input[i + 1];
-    pairs[pair] = pairs[pair] + 1 || 1;
-  }
-};
+// Put the start string into our object of pairs.
+for (let i = 0; i < start.length - 1; i++) {
+  const pair = start[i] + start[i + 1];
+  pairs[pair] = pairs[pair] + 1 || 1;
+}
 
-/**
- * Act on the global pairs object to split each key into the two result pairs:
- * Ex: for the rule "NN -> C" we subtract NN and add NC and CN.
- */
-const extendManifest = () => {
+// And count the effect of extending it `steps` times
+const part2Steps = 40;
+for (let i = 0; i < part2Steps; i++) {
   // Make an object to record what we're going to do so that we can make that
   // happen after we've iterated over all the pairs.
   const adjustments = {};
@@ -147,15 +139,6 @@ const extendManifest = () => {
       delete pairs[pair];
     }
   }
-};
-
-// Turn the original start string into our object of pairs.
-makeManifest(start);
-
-// And count the effect of extending it `steps` times
-const part2Steps = 40;
-for (let i = 0; i < part2Steps; i++) {
-  extendManifest();
 }
 
 // Count up all the letters. (So BC:5 --> B: 5, C: 5, ...)
