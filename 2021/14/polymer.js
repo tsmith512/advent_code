@@ -94,13 +94,59 @@ console.log(`After ${steps} steps, the total length is ${chain.length}.
  * Do it again, steps = 40.
  */
 
-for (let i = 0; i < 30; i++) {
-  chain = extend(chain);
-}
+// Okay fine, we track counts of pairs instead of the whole chain.
+const pairs = {};
 
-const twoCounts = count(chain);
+/**
+ * Break down the start string into component pairs.
+ *
+ * @param input (string) the starting place
+ */
+const makeManifest = (input) => {
+  for (let i = 0; i < input.length - 1; i++) {
+    const pair = input[i] + input[i + 1];
+    pairs[pair] = pairs[pair] + 1 || 1;
+  }
+};
 
-console.log(`After ${steps} steps, the total length is ${chain.length}.
-  ${twoCounts[0][0]} was used ${twoCounts[0][1]} times.
-  ${twoCounts.at(-1)[0]} was used ${twoCounts.at(-1)[1]} times.
-  Difference: ${twoCounts.at(-1)[1] - twoCounts[0][1]}`);
+/**
+ * Act on the global pairs object to split each key into the two result pairs:
+ * Ex: for the rule "NN -> C" we subtract NN and add NC and CN.
+ */
+const extendManifest = () => {
+  // Make a copy for the iteration so we know where we were before we started
+  // this round of extending the chain.
+  const temp = Object.assign({}, pairs);
+
+  // For every pair in the list:
+  for (pair in temp) {
+    // What is the count at _now_? (... that may be the wrong approach)
+    const count = pairs[pair];
+
+    // Split the sandwich and get the meat from the ruleset object above.
+    const [a, b] = pair.split('');
+    const A = a + ruleset[a][b];
+    const B =     ruleset[a][b] + b;
+    console.log(`${pair}-- (was ${temp[pair]}). ${A}++ (was ${temp[A]}) and ${B}++ (was ${temp[B]})`);
+
+    // Count for the new pairs will be old-count++ (or start it at 1)
+    pairs[A] = (count) ? count + 1 : 1;
+    pairs[B] = (count) ? count + 1 : 1;
+
+    // Old pairs will be reduced by the same count.
+    pairs[pair] -= count;
+
+    // And expunged from the object if they're zeroed out.
+    if (pairs[pair] < 1) {
+      delete pairs[pair];
+    }
+    console.log(`${pair}-- (now ${pairs[pair]}). ${A}++ (now ${pairs[A]}) and ${B}++ (now ${pairs[B]})`);
+  }
+  console.log(Object.entries(pairs).sort());
+};
+
+console.log(start);
+makeManifest(start);
+console.log(Object.entries(pairs).sort());
+extendManifest();
+extendManifest();
