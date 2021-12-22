@@ -12,7 +12,7 @@
 
 const fs = require('fs');
 
-const [start, rules] = fs.readFileSync('sample.txt').toString().trim().split('\n\n');
+const [start, rules] = fs.readFileSync('input.txt').toString().trim().split('\n\n');
 
 // Let's make a map of
 // { StartLetter: { EndLetter: 'InsertHereLetter' , ... }, ... }
@@ -118,16 +118,13 @@ const extendManifest = () => {
   // happen after we've iterated over all the pairs.
   const adjustments = {};
 
-  // For every pair in the real list:
   for (pair in pairs) {
-    // What is the count at the start of this round?
     const count = pairs[pair];
 
     // Split the sandwich and get the meat from the ruleset object above.
     const [a, b] = pair.split('');
     const A = a + ruleset[a][b];
     const B =     ruleset[a][b] + b;
-    // console.log(`${pair}-- (was ${pairs[pair]}). ${A}++ (was ${pairs[A]}) and ${B}++ (was ${pairs[B]})`);
 
     // We need to add the count of old-pairs to new-pairs
     adjustments[A] = (adjustments[A]) ? adjustments[A] + count : count;
@@ -137,54 +134,32 @@ const extendManifest = () => {
     adjustments[pair] = (adjustments[pair]) ? adjustments[pair] - count : 0 - count;
   }
 
-  // console.log('Adjustments: ', adjustments);
-
-  // For every pair we know we need to adjust...
   for (pair in adjustments) {
-    // ...by how much?
     const count = adjustments[pair];
-
-    if (count == 0) {
-      // We added as much as we subtracted, skip
-      continue;
-    }
 
     if (pairs.hasOwnProperty(pair)) {
       pairs[pair] += count;
     } else {
       pairs[pair] = count;
     }
-    // console.log(`${pair} + ${count} --> now ${pairs[pair]}`);
 
-    // And delete from the object if it is zeroed out.
     if (pairs[pair] < 1) {
       delete pairs[pair];
     }
   }
-  // console.log(Object.entries(pairs).sort());
 };
 
 // Turn the original start string into our object of pairs.
 makeManifest(start);
 
 // And count the effect of extending it `steps` times
-for (let i = 0; i < 10; i++) {
+const part2Steps = 40;
+for (let i = 0; i < part2Steps; i++) {
   extendManifest();
 }
 
-// console.log(pairs);
-
-
-// We know each letter will be accounted for twice, except for the first and
-// last pairs.
-const totals = {};
-
-// I don't know where I was going with this. Something about how the first or
-// last letters (pairs?) aren't double-counted but everything else is.
-const first = start.split('').at(0); // .slice(0,2).join(''); // @TODO: Do we just want the letter?
-const last = start.split('').at(-1); // .slice(-2).join('');
-
 // Count up all the letters. (So BC:5 --> B: 5, C: 5, ...)
+const totals = {};
 for (pair in pairs) {
   const count = pairs[pair];
 
@@ -197,19 +172,26 @@ for (pair in pairs) {
   });
 }
 
-totals[first] += 1;
-totals[last] += 1;
+// The first and last letters of the original string won't be part of the count,
+// so add one for each.
+totals[start[0]] += 1;
+totals[start.split('').at(-1)] += 1;
 
-// And this means every letter is double-counted.
+// Now every letter is double-counted, split it.
 for (el in totals) {
   totals[el] /= 2;
 }
 
-// And this _should be_ our totals per letter.
-console.log(totals);
-
+// Drop into an array and sort.
 const summary = Object.entries(totals).sort((a, b) => a[1] - b[1]);
 
-console.log(`After ${steps} steps, ${counts[0][0]} was used ${counts[0][1]} times.
-  ${counts.at(-1)[0]} was used ${counts.at(-1)[1]} times.
-  Difference: ${counts.at(-1)[1] - counts[0][1]}`);
+console.log(`After ${part2Steps} steps,
+  ${summary[0][0]} was used ${summary[0][1]} times.
+  ${summary.at(-1)[0]} was used ${summary.at(-1)[1]} times.
+  Difference: ${summary.at(-1)[1] - summary[0][1]}`);
+
+// Part Two:
+// After 40 steps,
+//   H was used 712042793487 times.
+//   O was used 5519099747353 times.
+//   Difference: 4807056953866
