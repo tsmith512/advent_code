@@ -25,9 +25,9 @@ import (
 
 const filename string = "input.txt"
 
-const ROCK = 1
-const PAPER = 2
-const SCISSORS = 3
+const ROCK = 0
+const PAPER = 1
+const SCISSORS = 2
 
 var moveCodes = map[string]int {
 	"A": ROCK,
@@ -48,7 +48,7 @@ func main() {
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
-	var total uint64 = 0
+	total := 0
 
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -56,7 +56,7 @@ func main() {
 		me   := moveCodes[string(line[2])]
 
 		points, explaination := score(them, me)
-		total += uint64(points)
+		total += points
 		fmt.Printf("%-8s vs %8s -> %-7s %d points.\n", label(them), label(me), explaination, points)
 	}
 
@@ -90,7 +90,7 @@ func main() {
 
 		// And this is the same from Part 1
 		points, explaination := score(them, me)
-		total += uint64(points)
+		total += points
 
 		// But include the intention anyway.
 		fmt.Printf("%-20s %-8s vs %8s -> %-7s %d points.\n", intention, label(them), label(me), explaination, points)
@@ -101,8 +101,8 @@ func main() {
 }
 
 func score (them int, me int) (points int, explain string) {
-	// Score "my" part
-	points = me
+	// Score "my" part: the value of each move is its one-based index e.g.: rock = 1
+	points = me + 1
 
 	// Who won?
 	if them == me {
@@ -112,21 +112,21 @@ func score (them int, me int) (points int, explain string) {
 		explain = "I won."
 		points += 6
 	} else {
-		// Loss; points unchanged
 		explain = "I lost."
+		// points unchanged
 	}
 
 	return
 }
 
 func label (move int) string {
-	return moveNames[move - 1]
+	return moveNames[move]
 }
 
 func how (them int, goal string) (me int, explain string) {
 	// Modulo in Go doesn't work on negative ints, so bump this up so we end up
 	// with 3, 4, or 5, which (x % 3) => 0, 1, or 2.
-	them += 2
+	them += 3
 
 	switch goal {
 	case "X":
@@ -139,9 +139,6 @@ func how (them int, goal string) (me int, explain string) {
 		explain = "Play to win."
 		me = (them + 1) % 3
 	}
-
-	// The existing scoring function expects `me` to be a 1-based code
-	me += 1
 
 	return
 }
