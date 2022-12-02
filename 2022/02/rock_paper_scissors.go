@@ -23,7 +23,7 @@ import (
 	"os"
 )
 
-const filename string = "sample.txt"
+const filename string = "input.txt"
 
 const ROCK = 1
 const PAPER = 2
@@ -96,6 +96,7 @@ func main() {
 		fmt.Printf("%-20s %-8s vs %8s -> %-7s %d points.\n", intention, label(them), label(me), explaination, points)
 	}
 
+	// Part two: Total score, part 2: 12725
 	fmt.Printf("Total score, part 2: %d\n", total)
 }
 
