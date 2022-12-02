@@ -23,7 +23,7 @@ import (
 	"os"
 )
 
-const filename string = "sample.txt"
+const filename string = "full_set.txt"
 
 const ROCK = 1
 const PAPER = 2
@@ -48,7 +48,7 @@ func main() {
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
-	total := 0
+	var total uint64 = 0
 
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -56,7 +56,7 @@ func main() {
 		me   := moveCodes[string(line[2])]
 
 		points, explaination := score(them, me)
-		total += points
+		total += uint64(points)
 		fmt.Printf("%-8s vs %8s -> %-7s %d points.\n", label(them), label(me), explaination, points)
 	}
 
@@ -71,7 +71,7 @@ func score (them int, me int) (points int, explain string) {
 	if them == me {
 		explain = "Draw."
 		points += 3
-	} else if ((them + 1) % 3) == me {
+	} else if ((them + 1) % 3) == (me % 3) {
 		explain = "I won."
 		points += 6
 	} else {
