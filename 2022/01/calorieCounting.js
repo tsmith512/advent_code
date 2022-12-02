@@ -23,7 +23,7 @@ const sum = (arr) => arr.reduce((total, next) => total + next, 0);
 const max = (arr) => arr.reduce((max, next) => (next > max ? next : max), 0);
 
 // Read the groupings into an array of snack packs (int[][])
-const elves = fs.readFileSync('sample.txt')
+const elves = fs.readFileSync('input.txt')
   .toString()
   .trim()
   .split("\n\n")
@@ -34,4 +34,5 @@ const calories = elves.map(e => sum(e));
 
 const maxCals = max(calories);
 
+// The highest elf snack-pack calorie count is 74198
 console.log(`The highest elf snack-pack calorie count is ${maxCals}`);
