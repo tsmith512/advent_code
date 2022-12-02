@@ -1,5 +1,11 @@
 # Advent of Code
 
+## 2022
+
+Oh here we go again
+
+- [Day 1: Calorie Counting](2022/01/calorieCounting.js) (JavaScript)
+
 ## 2021
 
 Giving this another go because I had so much fun last year, even if I didn't
@@ -19,6 +25,7 @@ we'll see.
 - [Day 11: Dumbo Octopus](2021/11/octopus.r) (R)
 - [Day 12: Passage Pathing](2021/12/caving.js) (JavaScript)
 - [Day 13: Transparent Origami](2021/13/origami.r) (R)
+- [Day 14: Extended Polymerization](2021/14/polymer.js) (JavaScript)
 
 ## 2020
 
