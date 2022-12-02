@@ -36,3 +36,22 @@ const maxCals = max(calories);
 
 // The highest elf snack-pack calorie count is 74198
 console.log(`The highest elf snack-pack calorie count is ${maxCals}`);
+
+/**
+ *  ___          _     ___
+ * | _ \__ _ _ _| |_  |_  )
+ * |  _/ _` | '_|  _|  / /
+ * |_| \__,_|_|  \__| /___|
+ *
+ * Same deal, but sum the max 3 groups
+ */
+
+// Sort an array of integers numerically, descending (int[])
+const sort = (arr) => arr.sort((a, b) => b - a);
+
+const topThree = sort(calories).slice(0,3);
+
+const total = sum(topThree);
+
+// The cumulative calorie count of the top three elves is 209914
+console.log(`The cumulative calorie count of the top three elves is ${total}`);
