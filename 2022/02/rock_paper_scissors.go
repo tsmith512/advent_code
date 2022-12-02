@@ -23,7 +23,7 @@ import (
 	"os"
 )
 
-const filename string = "full_set.txt"
+const filename string = "input.txt"
 
 const ROCK = 1
 const PAPER = 2
@@ -60,6 +60,7 @@ func main() {
 		fmt.Printf("%-8s vs %8s -> %-7s %d points.\n", label(them), label(me), explaination, points)
 	}
 
+	// Part One: Total score: 11603
 	fmt.Printf("Total score: %d\n", total)
 }
 
