@@ -17,8 +17,8 @@ import (
   "fmt"
   "os"
   "regexp"
+  "sort"
   "strconv"
-  // "strings"
 )
 
 const filename string = "input.txt"
@@ -48,16 +48,29 @@ func main() {
   }
 
   var overlappedPairs int = 0
+  var partiallyOverlapped int = 0 // Part 2
 
   for _, pair := range pairs {
     displayElves(pair)
     if isOverlapped(pair) {
       overlappedPairs += 1
+    } else if isPartiallyOverlapped(pair) { // Part 2
+      partiallyOverlapped += 1
     }
   }
 
   // Part One: There are 542 pairs where one set fully contains the other.
   fmt.Printf("\nThere are %d pairs where one set fully contains the other.\n", overlappedPairs)
+
+  //  ___          _     ___
+  // | _ \__ _ _ _| |_  |_  )
+  // |  _/ _` | '_|  _|  / /
+  // |_| \__,_|_|  \__| /___|
+	//
+	// What about a partial overlap? (Edited loop above)
+  total := partiallyOverlapped + overlappedPairs
+  // Part two: And 358 pairs overlap partially. In total: 900.
+  fmt.Printf("And %d pairs overlap partially. In total: %d.\n", partiallyOverlapped, total)
 }
 
 func newRange(low int, high int) sectionRange {
@@ -76,6 +89,8 @@ func displayElves(pair *elfCleaners) {
 
   if isOverlapped(pair) {
     fmt.Printf(" (Overlapped)")
+  } else if isPartiallyOverlapped(pair) { // Part two
+    fmt.Printf(" (Partial)")
   }
 
   fmt.Printf("\n")
@@ -117,6 +132,42 @@ func isOverlapped(pair *elfCleaners) bool {
     return true
   } else if pair.b.low <= pair.a.low && pair.a.high <= pair.b.high {
     // Does B fully contain A
+    return true
+  } else {
+    return false
+  }
+}
+
+// This is only ever called if an elsif after isOverlapped returns false, so we
+// know this will only include sets that _don't_ overlap completely.
+func isPartiallyOverlapped(pair *elfCleaners) bool {
+  // Cases that should return true here:
+  //
+  //   aaaaa
+  //     Bbbbb
+  //
+  //     aaaaa
+  //   bbbbB
+  //
+  //   aaaaaA
+  //     bbbbbb
+  //
+  //     Aaaaa
+  //   bbbbb
+  //
+  // So really, can short-hand this by checking if any of the following sets
+  // are in sorted numerical order [ALow,BLow,AHigh], [BLow,ALow,BHigh], ...
+  if sort.IntsAreSorted([]int{pair.a.low, pair.b.low, pair.a.high}) {
+    // Does B start within A
+    return true
+  } else if sort.IntsAreSorted([]int{pair.b.low, pair.a.low, pair.b.high}) {
+    // Does A start within B
+    return true
+  } else if sort.IntsAreSorted([]int{pair.a.low, pair.b.high, pair.a.high}) {
+    // Does B end within A
+    return true
+  } else if sort.IntsAreSorted([]int{pair.b.low, pair.a.high, pair.b.high}) {
+    // Does A end within B
     return true
   } else {
     return false
