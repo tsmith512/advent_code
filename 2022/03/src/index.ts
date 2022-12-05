@@ -84,3 +84,41 @@ const sum = itemPriorities.reduce((total, next) => total + next, 0);
 
 // Part One: The sum of the item types in both compartments of each sack is 7908.
 console.log(`The sum of the item types in both compartments of each sack is ${sum}.`);
+
+/**
+ *  ___          _     ___
+ * | _ \__ _ _ _| |_  |_  )
+ * |  _/ _` | '_|  _|  / /
+ * |_| \__,_|_|  \__| /___|
+ *
+ * ...what... okay so all the rucksacks are grouped into sets of three, and only
+ * one item is present in each group of three. Find that.
+ */
+
+const findGroup = (set: string[]): string => {
+  const [first, second, third] = set.map(x => x.split(''));
+
+  // Find unique items in array 1 that are also present in arrays 2 and 3
+  const group = first.filter(
+    (item, index) =>
+      first.indexOf(item) === index &&
+      second.indexOf(item) > -1 &&
+      third.indexOf(item) > -1
+    );
+
+  // @TODO: Same deal, do we check if there are multiple results here?
+  return group[0];
+}
+
+// Walk the rucksacks in groups of three:
+const groups: string[] = [];
+for (let i = 0; i < rucksacks.length; i += 3) {
+  groups.push(findGroup(rucksacks.slice(i, i + 3)));
+}
+
+// Sum the corresponding numbers and report.
+const groupSum = groups.reduce((total, next) => total + getNumber(next), 0);
+
+
+// Part two: The sum of the group type numbers is 2838.
+console.log(`The sum of the group type numbers is ${groupSum}.`);
