@@ -21,7 +21,7 @@ import (
   // "strings"
 )
 
-const filename string = "sample.txt"
+const filename string = "input.txt"
 
 type sectionRange struct {
   low int
@@ -56,6 +56,7 @@ func main() {
     }
   }
 
+  // Part One: There are 542 pairs where one set fully contains the other.
   fmt.Printf("\nThere are %d pairs where one set fully contains the other.\n", overlappedPairs)
 }
 
