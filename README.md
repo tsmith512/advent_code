@@ -6,6 +6,7 @@ Oh here we go again
 
 - [Day 1: Calorie Counting](2022/01/calorieCounting.js) (JavaScript)
 - [Day 2: Rock Paper Scissors](2022/02/rock_paper_scissors.go) (Go)
+- [Day 3: Rucksack Reorganization](2022/03/src/index.ts) (TypeScript)
 
 ## 2021
 

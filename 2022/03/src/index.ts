@@ -19,7 +19,7 @@ import * as fs from 'fs';
 import { join } from 'path';
 import chalk from 'chalk';
 
-const FILENAME = 'sample.txt';
+const FILENAME = 'input.txt';
 
 const rucksacks: string[] =
   fs.readFileSync(join(process.cwd(), `lib/${FILENAME}`), 'utf8')
@@ -82,4 +82,5 @@ const itemPriorities = overpackedItems.map(item => getNumber(item));
 // Sum those and report.
 const sum = itemPriorities.reduce((total, next) => total + next, 0);
 
+// Part One: The sum of the item types in both compartments of each sack is 7908.
 console.log(`The sum of the item types in both compartments of each sack is ${sum}.`);

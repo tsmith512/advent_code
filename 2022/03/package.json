@@ -1,5 +1,5 @@
 {
-  "name": "giant-squid-bingo",
+  "name": "rucksack-reorg",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,6 +13,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "go": "ts-node src/index.ts",
     "build": "tsc -p ."
   }
 }
