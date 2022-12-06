@@ -22,7 +22,7 @@ import * as fs from 'fs';
 import { join } from 'path';
 import chalk from 'chalk';
 
-const FILENAME = 'sample.txt';
+const FILENAME = 'input.txt';
 
 type cargoStack = string[];
 
@@ -38,6 +38,8 @@ interface movement {
 
 type instructions = movement[];
 
+let maxDisplayHeight = 0;
+
 /**
  * Pretty print with colors.
  *
@@ -45,7 +47,7 @@ type instructions = movement[];
  */
 const visualizeCargo = (cargo: cargoArea): void => {
   const cols = Object.keys(cargo).length;
-  const max = Object.keys(cargo).reduce((max, key) => Math.max(max, cargo[key].length) , 0);
+  maxDisplayHeight = Object.keys(cargo).reduce((max, key) => Math.max(max, cargo[key].length) , maxDisplayHeight);
 
   const output = [];
 
@@ -55,7 +57,7 @@ const visualizeCargo = (cargo: cargoArea): void => {
   output.push(chalk.gray('-'.repeat(output[1].length + 1)));
 
   // Contents
-  for (let i = 0; i < max; i++) {
+  for (let i = 0; i < maxDisplayHeight; i++) {
     const row = [];
     for (const stack in cargo) {
       // Assume empty
@@ -143,7 +145,7 @@ stacksRaw.forEach((row) => {
 //   to: Destination stack
 // }, {}, ...]
 const steps: instructions = stepsRaw.trim().split("\n").flatMap((row) => {
-  const numbers = row.match(/\d/g)?.map(s => parseInt(s));
+  const numbers = row.match(/\d+/g)?.map(s => parseInt(s));
   if (numbers) {
     return {
       count: numbers[0],
@@ -159,8 +161,10 @@ const steps: instructions = stepsRaw.trim().split("\n").flatMap((row) => {
 
 // Run the instructions on the cargo area global
 for(const step in steps) {
-  doStep(steps[step], cargo);
+  console.clear();
+  console.log(`${step}: ${steps[step].from} -> ${steps[step].to} x ${steps[step].count} `);
   visualizeCargo(cargo);
+  doStep(steps[step], cargo);
 }
 
 console.log(`The top crates are ${chalk.yellowBright(report(cargo))}\n`);
