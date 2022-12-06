@@ -21,6 +21,9 @@ import (
 
 const filename string = "input.txt"
 
+// FOR PART ONE, USE 4. FOR PART TWO, USE 14.
+const frame = 14
+
 func main() {
 	file, err := os.Open(filename)
 	if err != nil { panic(err) }
@@ -32,8 +35,8 @@ func main() {
 	// Make a 1-charcter buffer so the reader only advances that much
 	buffer := make([]byte, 1)
 
-	// But our window is the most recent 4
-	window := make([]byte, 4)
+	// But our window is the most recent 4 (or, pt 2, 14)
+	window := make([]byte, frame)
 
 	for {
 		n, err := file.Read(buffer)
@@ -50,14 +53,19 @@ func main() {
 
 		if checkMark(window) {
 			// Part One: Packet Start at 1760: msnw
-			fmt.Printf("Packet Start at %d: %s\n", address, window)
+			name := "Packet Start"
+			// Part Two: Message Start at 2974: zjhgdqsfnwbmlc
+			if frame == 14 {
+				name = "Message Start"
+			}
+			fmt.Printf("%s at %d: %s\n", name, address, window)
 			break
 		}
 	}
 }
 
 func checkMark(window []byte) bool {
-	duplicates := make(map[byte]bool, 4)
+	duplicates := make(map[byte]bool, len(window))
 
 	for _, char := range window {
 		_, exists := duplicates[char]
