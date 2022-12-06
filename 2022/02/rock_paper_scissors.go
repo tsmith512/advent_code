@@ -2,7 +2,7 @@
 // |   \ __ _ _  _   /  \_  )
 // | |) / _` | || | | () / /
 // |___/\__,_|\_, |  \__/___|
-// 					 |__/
+//            |__/
 // "Rock Paper Scissors"
 //
 // You're given instructions for a rock paper scissors tournament
@@ -63,10 +63,10 @@ func main() {
 	// Part One: Total score: 11603
 	fmt.Printf("Total score: %d\n", total)
 
-  //  ___          _     ___
-  // | _ \__ _ _ _| |_  |_  )
-  // |  _/ _` | '_|  _|  / /
-  // |_| \__,_|_|  \__| /___|
+	//  ___          _     ___
+	// | _ \__ _ _ _| |_  |_  )
+	// |  _/ _` | '_|  _|  / /
+	// |_| \__,_|_|  \__| /___|
 	//
 	// Actually Column 2 describes not _what_ you should play, but how you should
 	// make the round end.
