@@ -19,7 +19,7 @@ import (
 	"os"
 )
 
-const filename string = "sample.txt"
+const filename string = "input.txt"
 
 func main() {
 	file, err := os.Open(filename)
@@ -49,6 +49,7 @@ func main() {
 		window = append(window[1:], buffer[0])
 
 		if checkMark(window) {
+			// Part One: Packet Start at 1760: msnw
 			fmt.Printf("Packet Start at %d: %s\n", address, window)
 			break
 		}
