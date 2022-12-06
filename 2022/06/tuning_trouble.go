@@ -2,7 +2,7 @@
 // |   \ __ _ _  _   /  \ / /
 // | |) / _` | || | | () / _ \
 // |___/\__,_|\_, |  \__/\___/
-// 					 |__/
+//            |__/
 //
 // "Tuning Trouble"
 //
@@ -21,6 +21,16 @@ import (
 
 const filename string = "input.txt"
 
+
+//  ___          _     ___
+// | _ \__ _ _ _| |_  |_  )
+// |  _/ _` | '_|  _|  / /
+// |_| \__,_|_|  \__| /___|
+//
+// For part two, report instead on the "Start of Message" marker, which is a
+// similar window of unique characters, but it's a run of 14 unique characters.
+// Lucky me, my Part 1 solution works for Part 2 by abstracting this to a var.
+//
 // FOR PART ONE, USE 4. FOR PART TWO, USE 14.
 const frame = 14
 
@@ -29,7 +39,8 @@ func main() {
 	if err != nil { panic(err) }
 	defer file.Close()
 
-	// Where we are. @TODO: can we get this from the file pointer?
+	// Where we are, which could technically be retrieved from file.Seak(0,0) but
+	// is easier just store and bring along for the ride.
 	address := 0
 
 	// Make a 1-charcter buffer so the reader only advances that much
@@ -64,9 +75,13 @@ func main() {
 	}
 }
 
+// Determine if the given slice of bytes contains any empty or duplicate values
 func checkMark(window []byte) bool {
+	// Make a map with a max-size of the frame length to record what we've seen
 	duplicates := make(map[byte]bool, len(window))
 
+	// Run through the window and check off what we've seen. If we hit a duplicate
+	// or empty value, bail out.
 	for _, char := range window {
 		_, exists := duplicates[char]
 
