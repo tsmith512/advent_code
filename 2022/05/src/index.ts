@@ -23,6 +23,7 @@ import { join } from 'path';
 import chalk from 'chalk';
 
 const FILENAME = 'input.txt';
+const MODE: number = 9001; // For part one, use 9000. For part two, use 9001.
 
 type cargoStack = string[];
 
@@ -88,11 +89,21 @@ const visualizeCargo = (cargo: cargoArea): void => {
  * @param move (movement) what to do
  * @param cargo (cargoArea) the working cargo space
  */
- const doStep = (move: movement, cargo: cargoArea): void => {
-  for (let i = 0; i < move.count; i++) {
-    const pickup = cargo[move.from.toString()].pop();
+const doStep = (move: movement, cargo: cargoArea, mode: number = 9000): void => {
+  // Part One
+  if (mode === 9000) {
+    for (let i = 0; i < move.count; i++) {
+      const pickup = cargo[move.from.toString()].pop();
+      if (pickup) {
+        cargo[move.to.toString()].push(pickup);
+      }
+    }
+  }
+  // Part Two
+  else if (mode === 9001) {
+    const pickup = cargo[move.from.toString()].splice(-move.count);
     if (pickup) {
-      cargo[move.to.toString()].push(pickup);
+      cargo[move.to.toString()].push(...pickup);
     }
   }
 }
@@ -170,11 +181,16 @@ const steps: instructions = stepsRaw.trim().split("\n").flatMap((row) => {
 // Run the instructions on the cargo area global
 for(const step in steps) {
   console.clear();
-  console.log(`${step}: ${steps[step].from} -> ${steps[step].to} x ${steps[step].count} `);
+  console.log(`#${step}: Move ${steps[step].count} from ${steps[step].from} -> ${steps[step].to}`);
   visualizeCargo(cargo);
-  doStep(steps[step], cargo);
+  doStep(steps[step], cargo, MODE);
   await delay(100);
 }
 
-// Part One: The top crates are TDCHVHJTG
-console.log(`The top crates are ${chalk.yellowBright(report(cargo))}\n`);
+if (MODE === 9000) {
+  // Part One: The top crates are TDCHVHJTG
+  console.log(`The top crates are ${chalk.yellowBright(report(cargo))}\n`);
+} else if (MODE === 9001) {
+  // Part Two: With the NEW AND IMPROVED CrateMover 9001, the top crates are NGCMPJLHV
+  console.log(`With the NEW AND IMPROVED CrateMover 9001, the top crates are ${chalk.yellowBright(report(cargo))}\n`);
+}
