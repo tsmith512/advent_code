@@ -97,6 +97,14 @@ const visualizeCargo = (cargo: cargoArea): void => {
   }
 }
 
+/**
+ * Wait on the main thread, for visualization purposes
+ *
+ * @param ms (number) miliseconds delay
+ * @returns
+ */
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
 const report = (cargo: cargoArea): string => {
   return Object.keys(cargo)
     .reduce((report, stack) => report + cargo[stack][cargo[stack].length - 1], "");
@@ -165,6 +173,8 @@ for(const step in steps) {
   console.log(`${step}: ${steps[step].from} -> ${steps[step].to} x ${steps[step].count} `);
   visualizeCargo(cargo);
   doStep(steps[step], cargo);
+  await delay(100);
 }
 
+// Part One: The top crates are TDCHVHJTG
 console.log(`The top crates are ${chalk.yellowBright(report(cargo))}\n`);

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "dependencies": {
     "@types/node": "^16.11.11",
     "chalk": "^4.1.2",
@@ -13,7 +14,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
-    "go": "ts-node src/index.ts",
+    "go": "ts-node-esm src/index.ts",
     "build": "tsc -p ."
   }
 }
