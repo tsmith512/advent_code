@@ -74,8 +74,10 @@ func (d *dirNode) file(name string) *fileNode {
 	return nil
 }
 
-func (d *dirNode) examine(args ...int) {
+func (d *dirNode) examine(args ...int) int {
 	var indent int
+	var size int
+
 	if (len(args) > 0) {
 		indent = args[0]
 	} else {
@@ -85,12 +87,16 @@ func (d *dirNode) examine(args ...int) {
 	fmt.Printf("%s- %s/\n", strings.Repeat(" ", indent), d.name)
 
 	for _, sub := range(d.subdirs) {
-		sub.examine(indent + 2)
+		size += sub.examine(indent + 2)
 	}
 
 	for _, file := range(d.files) {
+		size += file.size
 		fmt.Printf("%s- %s (%d)\n", strings.Repeat(" ", indent + 2), file.name, file.size)
 	}
+
+	fmt.Printf("%s  (%s Total size: %d)\n", strings.Repeat(" ", indent + 2), d.name, size)
+	return size
 }
 
 func main() {
