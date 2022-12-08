@@ -74,6 +74,8 @@ func (d *dirNode) file(name string) *fileNode {
 	return nil
 }
 
+// Traverse the directory tree and pretty-print an indented tree with
+// cumulative directory sizes.
 func (d *dirNode) examine(args ...int) int {
 	var indent int
 	var size int
@@ -98,6 +100,36 @@ func (d *dirNode) examine(args ...int) int {
 	fmt.Printf("%s  (%s Total size: %d)\n", strings.Repeat(" ", indent + 2), d.name, size)
 	return size
 }
+
+// Similar to examine() but does the weird Part 1 request of "keep a tally of
+// the small directories". In the Part 1 example, both "a" and "e" were counted
+// even though "e" is a subdirectory of "a," so this can be simple-ish.
+func (d *dirNode) specialSizeCalc(args ...int) (size int, total int) {
+
+	if (len(args) > 0) {
+		size = args[0]
+	} else {
+		size = 0
+	}
+
+	// Get the total size for everything in this level:
+	for _, sub := range(d.subdirs) {
+		x, y := sub.specialSizeCalc()
+		size += x
+		total += y
+	}
+
+	for _, file := range(d.files) {
+		size += file.size
+	}
+
+	if (size <= 100000) {
+		total += size
+	}
+
+	return size, total
+}
+
 
 func main() {
 	file, err := os.Open(filename)
@@ -173,4 +205,8 @@ func main() {
 
 	// With the full tree assembled, pretty-print it
 	root.examine()
+
+	// Part One:
+	_, sizeLimited := root.specialSizeCalc()
+	fmt.Printf("Sum of all directories less than 100,000: %d\n", sizeLimited)
 }
