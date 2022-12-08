@@ -22,7 +22,7 @@ import (
 	"strings"
 )
 
-const filename string = "sample.txt"
+const filename string = "input.txt"
 
 type dirNode struct {
 	parent *dirNode
@@ -206,7 +206,7 @@ func main() {
 	// With the full tree assembled, pretty-print it
 	root.examine()
 
-	// Part One:
+	// Part One: Sum of all directories less than 100,000: 1086293
 	_, sizeLimited := root.specialSizeCalc()
 	fmt.Printf("Sum of all directories less than 100,000: %d\n", sizeLimited)
 }
