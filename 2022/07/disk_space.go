@@ -38,24 +38,27 @@ type fileNode struct {
 	size int
 }
 
+// Define a tree root (newDir without a parent)
 func newRoot(name string) *dirNode {
 	dir := dirNode{name: name}
 	return &dir
 }
 
+// Add a subdirectory to d and mark parent/child bidirectionally
 func (d *dirNode) newDir(name string) *dirNode {
 	dir := dirNode{parent: d, name: name}
 	d.subdirs = append(d.subdirs, &dir)
 	return &dir
 }
 
+// Add a file to a directory and mark parent/child bidirectionally
 func (d *dirNode) newFile(name string, size int) *fileNode {
 	file := fileNode{name: name, size: size, parent: d}
 	d.files = append(d.files, &file)
 	return &file
 }
 
-// Retrieve a subdirectory pointer by name, within the context of a parent
+// Retrieve a child subdirectory pointer by name, within the context of a parent
 func (d *dirNode) dir(name string) *dirNode {
 	for _, dir := range d.subdirs {
 		if dir.name == name {
@@ -66,7 +69,7 @@ func (d *dirNode) dir(name string) *dirNode {
 	return nil
 }
 
-// Retrieve a file pointer by name, within the context of a parent
+// Retrieve a child file pointer by name, within the context of a parent
 func (d *dirNode) file(name string) *fileNode {
 	for _, file := range d.files {
 		if file.name == name {
@@ -77,9 +80,8 @@ func (d *dirNode) file(name string) *fileNode {
 	return nil
 }
 
-// Traverse the directory tree and pretty-print an indented tree with
-// cumulative directory sizes.
-// Part 2: And while we're at it, calculate and cache its size here too.
+// Traverse a directory and pretty-print an indented tree of child dirs/files
+// including cumulative directory sizes.
 func (d *dirNode) examine(args ...int) int {
 	var indent int
 	var size int
@@ -134,7 +136,6 @@ func (d *dirNode) sumSmallDirectorySizes(args ...int) (size int, total int) {
 	return size, total
 }
 
-
 func main() {
 	file, err := os.Open(filename)
 	if err != nil { panic(err) }
@@ -142,17 +143,16 @@ func main() {
 
 	scanner := bufio.NewScanner(file)
 
-	// We need to keep track of where we are...
-	var workingPath []*dirNode
-	var cd *dirNode
-
+	// Start a tree
 	root := newRoot("C:")
-	cd = root
+
+	// `cd` will mark where we are, start it at the root
+	cd := root
 
 	for scanner.Scan() {
 		line := scanner.Text()
 
-		// Process a new command mode. We need to catch and process a `cd`, and just
+		// Process a new command: We need to catch and process a `cd`, and just
 		// ignore an `ls` so it doesn't get interpreted as a directory member.
 		if string(line[0]) == "$" {
 			switch string(line[2:4]) {
@@ -161,27 +161,25 @@ func main() {
 
 				if dir == "/" {
 					// Root directory
-					workingPath = []*dirNode{root}
+					cd = root
 				} else if dir == ".." {
 					// Back up one
-					workingPath = workingPath[:len(workingPath) - 1]
+					cd = cd.parent
 				} else {
 					// Go into a directory that...
 
 					if cd.dir(dir) != nil {
 						// ... already exists
-						workingPath = append(workingPath, cd.dir(dir))
+						cd = cd.dir(dir)
 					} else {
 						// ... doesn't exist
-						workingPath = append(workingPath, cd.newDir(dir))
+						cd = cd.newDir(dir)
 					}
 				}
 
-				// Now that workingPath is updated, set the cd pointer too
-				cd = workingPath[len(workingPath) - 1]
-
 			case "ls":
-				// Ignore this case for now.
+				// Ignore this case. It's the other command in the text, but doesn't
+				// require any action because `cd` is set and `ls` output is assumed.
 			}
 		} else {
 			// This is `ls` output denoting a new...
@@ -207,7 +205,8 @@ func main() {
 		}
   }
 
-	// With the full tree assembled, pretty-print it
+	// With the full tree assembled, pretty-print it because _darnit_ I'm proud of
+	// this mess.
 	sizeUsed := root.examine()
 
 	// Part One: Sum of all directories less than 100,000: 1086293
@@ -263,8 +262,8 @@ type dirSizeNote struct {
 	size int
 }
 
-// Yet another frankenfunction that looks like dirNode.examine() but does the
-// same thing, building an sorted slice of all subdirs and their aggregate sizes.
+// Yet another frankenfunction that travels like dirNode.examine() but builds
+// a slice of all subdirs and their aggregate sizes.
 func (d *dirNode) getAllDirectorySizes(args ...int) (size int, total []dirSizeNote) {
 
 	if (len(args) > 0) {
