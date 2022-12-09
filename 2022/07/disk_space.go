@@ -17,8 +17,9 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-  "regexp"
-  "strconv"
+	"regexp"
+	"sort"
+	"strconv"
 	"strings"
 )
 
@@ -54,6 +55,7 @@ func (d *dirNode) newFile(name string, size int) *fileNode {
 	return &file
 }
 
+// Retrieve a subdirectory pointer by name, within the context of a parent
 func (d *dirNode) dir(name string) *dirNode {
 	for _, dir := range d.subdirs {
 		if dir.name == name {
@@ -64,6 +66,7 @@ func (d *dirNode) dir(name string) *dirNode {
 	return nil
 }
 
+// Retrieve a file pointer by name, within the context of a parent
 func (d *dirNode) file(name string) *fileNode {
 	for _, file := range d.files {
 		if file.name == name {
@@ -76,6 +79,7 @@ func (d *dirNode) file(name string) *fileNode {
 
 // Traverse the directory tree and pretty-print an indented tree with
 // cumulative directory sizes.
+// Part 2: And while we're at it, calculate and cache its size here too.
 func (d *dirNode) examine(args ...int) int {
 	var indent int
 	var size int
@@ -104,7 +108,7 @@ func (d *dirNode) examine(args ...int) int {
 // Similar to examine() but does the weird Part 1 request of "keep a tally of
 // the small directories". In the Part 1 example, both "a" and "e" were counted
 // even though "e" is a subdirectory of "a," so this can be simple-ish.
-func (d *dirNode) specialSizeCalc(args ...int) (size int, total int) {
+func (d *dirNode) sumSmallDirectorySizes(args ...int) (size int, total int) {
 
 	if (len(args) > 0) {
 		size = args[0]
@@ -114,7 +118,7 @@ func (d *dirNode) specialSizeCalc(args ...int) (size int, total int) {
 
 	// Get the total size for everything in this level:
 	for _, sub := range(d.subdirs) {
-		x, y := sub.specialSizeCalc()
+		x, y := sub.sumSmallDirectorySizes()
 		size += x
 		total += y
 	}
@@ -204,9 +208,81 @@ func main() {
   }
 
 	// With the full tree assembled, pretty-print it
-	root.examine()
+	sizeUsed := root.examine()
 
 	// Part One: Sum of all directories less than 100,000: 1086293
-	_, sizeLimited := root.specialSizeCalc()
+	_, sizeLimited := root.sumSmallDirectorySizes()
+	fmt.Printf("\n\n-- Part One:\n")
 	fmt.Printf("Sum of all directories less than 100,000: %d\n", sizeLimited)
+
+	//  ___          _     ___
+	// | _ \__ _ _ _| |_  |_  )
+	// |  _/ _` | '_|  _|  / /
+	// |_| \__,_|_|  \__| /___|
+	//
+	// Given a max drive capacity of 70,000,000, and a need to have 30,000,000
+	// free space, find the smallest directory that could be deleted to free up
+	// the needed space.
+	sizeCap := 70000000
+	sizeNeeded := 30000000
+	sizeFree := sizeCap - sizeUsed
+	sizeNeedToFree := sizeNeeded - sizeFree
+	sizeUsedPercent := (float32(sizeUsed) / float32(sizeCap) * 100)
+	fmt.Printf("\n\n-- Part Two:\n")
+	fmt.Printf("Currently used: %10d of %10d (%.2f%%)\n", sizeUsed, sizeCap, sizeUsedPercent)
+	fmt.Printf("Space needed:   %10d\n", sizeNeeded)
+	fmt.Printf("Free space:     %10d\n", sizeFree)
+	fmt.Printf("Need to free:   %10d\n", sizeNeedToFree)
+
+	_, sizesAll := root.getAllDirectorySizes()
+
+	sort.Slice(sizesAll, func(i, j int) bool {
+		return sizesAll[i].size < sizesAll[j].size
+	})
+
+	for _, report := range sizesAll {
+		if report.size >= sizeNeedToFree {
+			fmt.Printf("Delete %-8s(%10d) to free enough space", report.dir.name, report.size)
+			fmt.Printf("\n")
+			break
+		}
+	}
+
+	// -- Part Two:
+	// Currently used:   40358913 of   70000000 (57.66%)
+	// Space needed:     30000000
+	// Free space:       29641087
+	// Need to free:       358913
+	// Delete ptgn    (    366028) to free enough space
+}
+
+// Need to be able to note sizes of directories, but it felt weird to add that
+// to the directory struct itself...
+type dirSizeNote struct {
+	dir *dirNode
+	size int
+}
+
+// Yet another frankenfunction that looks like dirNode.examine() but does the
+// same thing, building an sorted slice of all subdirs and their aggregate sizes.
+func (d *dirNode) getAllDirectorySizes(args ...int) (size int, total []dirSizeNote) {
+
+	if (len(args) > 0) {
+		size = args[0]
+	} else {
+		size = 0
+	}
+
+	// Collect the sizes for all contained subdirectories
+	for _, sub := range(d.subdirs) {
+		x, y := sub.getAllDirectorySizes()
+		size += x
+		total = append(total, y...)
+	}
+
+	for _, file := range(d.files) {
+		size += file.size
+	}
+
+	return size, append(total, dirSizeNote{ dir: d, size: size})
 }
