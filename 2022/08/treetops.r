@@ -11,7 +11,7 @@
 # tree between it and _another edge_ are shorter than it is. Consider rows/cols,
 # but not diagonals.
 
-lines <- scan("sample.txt", what = "")
+lines <- scan("input.txt", what = "")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 trees <- matrix(
@@ -105,3 +105,7 @@ max_score <- max(scenic)
 where <- which(scenic == max_score, arr.ind = TRUE)
 cat(max_score, "is the highest scenic score for any tree on the map.\n")
 cat(sprintf("It is at row %d column %d.\n", where[1], where[2]))
+
+# Part Two:
+# 519064 is the highest scenic score for any tree on the map.
+# It is at row 47 column 8.
