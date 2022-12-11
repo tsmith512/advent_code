@@ -11,7 +11,7 @@
 # tree between it and _another edge_ are shorter than it is. Consider rows/cols,
 # but not diagonals.
 
-lines <- scan("sample.txt", what = "")
+lines <- scan("input.txt", what = "")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 trees <- matrix(
@@ -57,3 +57,4 @@ is_visible <- function(r, c) {
 visible <- outer(seq(1, rows), seq(1, cols), Vectorize(is_visible))
 
 cat(sum(visible), "trees are visible from the edge of the forest.\n")
+# Part One: 1546 trees are visible from the edge of the forest.
