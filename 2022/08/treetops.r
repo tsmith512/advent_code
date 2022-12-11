@@ -11,7 +11,7 @@
 # tree between it and _another edge_ are shorter than it is. Consider rows/cols,
 # but not diagonals.
 
-lines <- scan("input.txt", what = "")
+lines <- scan("sample.txt", what = "")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 trees <- matrix(
@@ -25,7 +25,7 @@ is_visible <- function(r, c) {
   # What is the height of the tree at this address?
   t <- trees[r,c]
 
-  # In each direction, what are the trees between `t` and the edge of the matrix
+  # From each direction, what are the trees to `t` from the edge of the matrix
   # vX = "is this tree visible from X edge" (`t` is larger than everything between)
   e <- trees[r,][1:c-1]
   ve <- all(t > e)
@@ -41,7 +41,6 @@ is_visible <- function(r, c) {
 
   # Is this tree visible from any edge?
   any(ve, vw, vn, vs)
-
 }
 
 # Wanted to do this:
@@ -58,3 +57,51 @@ visible <- outer(seq(1, rows), seq(1, cols), Vectorize(is_visible))
 
 cat(sum(visible), "trees are visible from the edge of the forest.\n")
 # Part One: 1546 trees are visible from the edge of the forest.
+
+#  ___          _     ___
+# | _ \__ _ _ _| |_  |_  )
+# |  _/ _` | '_|  _|  / /
+# |_| \__,_|_|  \__| /___|
+#
+# Figure out which tree has the highest "scenic score," that is, a product of
+# how many trees (N/W/S/E only) it can see, as defined "count every tree between
+# X and an edge or the first taller tree."
+
+scenic_score <- function(r, c) {
+  # What is the height of the tree at this address?
+  t <- trees[r,c]
+
+  # X = In each direction, what are the trees from `t` to the edge of the matrix
+
+  # bX = "how far away is the first tree blocking the view" or NA if the view
+  # to the edge is unobstructed. I.e.:  bX is the number of trees visible in
+  # that direction OR NA, in which case we should count every tree in X.
+
+  # v[X] = "how many trees are visible in that direction" (which just resolves
+  # the "bX || count 'em all" uncertainty) in a single vector to multiply later.
+
+  e <- rev(trees[r,][1:c-1])
+  be <- which(e >= t)[1]
+  v <- as.vector(if (is.na(be)) length(e) else be)
+
+  w <- tail(trees[r,], -c)
+  bw <- which(w >= t)[1]
+  v <- c(v, if (is.na(bw)) length(w) else bw)
+
+  n <- rev(trees[,c][1:r-1])
+  bn <- which(n >= t)[1]
+  v <- c(v, if (is.na(bn)) length(n) else bn)
+
+  s <- tail(trees[,c], -r)
+  bs <- which(s >= t)[1]
+  v <- c(v, if (is.na(bs)) length(s) else bs)
+
+  # Is this tree visible from any edge?
+  prod(v)
+}
+
+scenic <- outer(seq(1, rows), seq(1, cols), Vectorize(scenic_score))
+max_score <- max(scenic)
+where <- which(scenic == max_score, arr.ind = TRUE)
+cat(max_score, "is the highest scenic score for any tree on the map.\n")
+cat(sprintf("It is at row %d column %d.\n", where[1], where[2]))
