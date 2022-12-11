@@ -58,6 +58,34 @@ visible <- outer(seq(1, rows), seq(1, cols), Vectorize(is_visible))
 cat(sum(visible), "trees are visible from the edge of the forest.\n")
 # Part One: 1546 trees are visible from the edge of the forest.
 
+
+png("forest.png", width = 2000, height = 2000, bg = "white")
+par(oma=c(0, 1, 1, 0))
+par(mar=c(1, 1, 1, 1))
+colors <- colorRampPalette(rev(c("springgreen4", "white")))
+heatmap(
+  trees,
+  Rowv = NA, Colv = NA,
+  col = colors(10),
+  main = "Forest (Tree Heights)",
+  scale = "none"
+)
+legend(x="right", legend=c("short", seq(1:8), "tall"), fill=colors(10))
+x <- dev.off()
+
+png("visible.png", width = 2000, height = 2000, bg = "white")
+par(oma=c(0, 1, 1, 0))
+colors <- colorRampPalette(rev(c("springgreen4", "white")))
+heatmap(
+  visible * 1,
+  Rowv = NA, Colv = NA,
+  col = colors(2),
+  main = "Visible Trees (from Forest Edge)",
+  scale = "none"
+)
+x <- dev.off()
+
+
 #  ___          _     ___
 # | _ \__ _ _ _| |_  |_  )
 # |  _/ _` | '_|  _|  / /
@@ -109,3 +137,15 @@ cat(sprintf("It is at row %d column %d.\n", where[1], where[2]))
 # Part Two:
 # 519064 is the highest scenic score for any tree on the map.
 # It is at row 47 column 8.
+
+png("scenic.png", width = 2000, height = 2000, bg = "white")
+colors <- colorRampPalette(c("springgreen4", "white"))
+par(oma=c(0, 1, 1, 0))
+heatmap(
+  scenic,
+  Rowv = NA, Colv = NA,
+  col = colors(100),
+  main = "Scenic Scores",
+  scale = "none"
+)
+x <- dev.off()
