@@ -28,28 +28,28 @@ steps <- read.table(
 field <- matrix(data = 0, nrow = 5, ncol = 5)
 
 show_progress <- TRUE
-rope_length <- 10
+rope_length <- 2
 
 # Following the example, start on the bottom left.
 # PART TWO: Instead of head and tail both int[2], use int[X[2]] as a rope
 # rope[1,] will be the head
-# rope[rope_length + 1,] will be the tail
+# rope[rope_length,] will be the tail
 rope <- matrix(
-  nrow = rope_length + 1,
+  nrow = rope_length,
   ncol = 2,
   byrow = TRUE,
   data = c(nrow(field),1)
 )
 
 # Mark the first history
-field[rope[rope_length + 1,1], rope[rope_length + 1,2]] <- 1
+field[rope[rope_length,1], rope[rope_length,2]] <- 1
 
 rope
 
 # Print a sentence with the head/tail positions
 show_position <- function(r) {
   h <- r[1,]
-  t <- r[rope_length + 1,]
+  t <- r[rope_length,]
   print(sprintf("Head (%d,%d), Tail (%d, %d)", h[1], h[2], t[1], t[2]))
 }
 
@@ -61,7 +61,7 @@ show_position <- function(r) {
 visualize <- function(f, r) {
   x <- f
   h <- r[1,]
-  t <- r[rope_length + 1,]
+  t <- r[rope_length,]
 
   # @TODO: Make this not a loop
   # for (i in c(1, 10)) {
@@ -84,7 +84,7 @@ for (s in 1:nrow(steps)) {
 
   for (i in 1:steps[s, "n"]) {
     head <- rope[1,]
-    tail <- rope[rope_length + 1,]
+    tail <- rope[rope_length,]
 
     if (dir == "R") {
       head[2] <- head[2] + 1
@@ -119,7 +119,7 @@ for (s in 1:nrow(steps)) {
 
     # Update values (@WIP: This is just the head and tail, not pieces between)
     rope[1,] <- head
-    rope[rope_length + 1,] <- tail
+    rope[rope_length,] <- tail
 
 
     # Head can be 1 unit away from Tail in any direction, but not two. If there
@@ -132,7 +132,7 @@ for (s in 1:nrow(steps)) {
         cat("Need to move", one_step, "\n")
       }
       tail <- tail + one_step
-      rope[rope_length + 1,] <- tail
+      rope[rope_length,] <- tail
 
       # Mark the history
       field[tail[1], tail[2]] <- 1
@@ -146,3 +146,7 @@ for (s in 1:nrow(steps)) {
 
 # Part One: The rope tail touched 5907 positions.
 cat("The rope tail touched", sum(field), "positions.\n")
+
+if (show_progress) {
+  print(rope)
+}
