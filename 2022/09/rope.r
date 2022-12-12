@@ -29,20 +29,12 @@ head <- c(nrow(field),1)
 tail <- c(nrow(field),1)
 field[tail[1], tail[2]] <- 1
 
-for (s in 1:nrow(steps)) {
-  dir <- steps[s, "dir"]
+show_position <- function (h, t) {
+  print(sprintf("Head (%d,%d), Tail (%d, %d)", h[1], h[2], t[1], t[2]))
+}
 
-  for (i in 1:steps[s, "n"]) {
-    if (dir == "R") {
-      head[2] <- head[2] + 1
-    } else if (dir == "L") {
-      head[2] <- head[2] - 1
-    } else if (dir == "U") {
-      head[1] <- head[1] - 1
-    } else if (dir == "D") {
-      head[1] <- head[1] + 1
-    }
-  }
+distance <- function (h, t) {
+  abs(h - t)
 }
 
 # Print out the map where the field will be a table with:
@@ -55,7 +47,44 @@ visualize <- function(f, h, t) {
   f[h[1], h[2]] <- 100 + f[h[1], h[2]]
   f[t[1], t[2]] <- 10 + f[t[1], t[2]]
   print(f)
-  print(sprintf("Head (%d,%d), Tail (%d, %d)", h[1], h[2], t[1], t[2]))
+  show_position(h, t)
 }
 
-visualize(field, head, tail)
+for (s in 1:nrow(steps)) {
+  dir <- steps[s, "dir"]
+
+  cat("\n\n== STEP", s, ":", dir, steps[s, "n"], "\n\n")
+
+  for (i in 1:steps[s, "n"]) {
+    if (dir == "R") {
+      head[2] <- head[2] + 1
+    } else if (dir == "L") {
+      head[2] <- head[2] - 1
+    } else if (dir == "U") {
+      head[1] <- head[1] - 1
+    } else if (dir == "D") {
+      head[1] <- head[1] + 1
+    }
+
+    # Do we need to add a column?
+    if (head[2] >= ncol(field)) {
+      field <- cbind(field, rep(0, nrow(field)))
+    }
+
+    # Do we need to add a row?
+    if (head[1] >= nrow(field)) {
+      field <- rbind(field, rep(0, ncol(field)))
+    }
+
+    # Head can be 1 unit away from Tail in any direction, but not two. If there
+    # is a gap, it moves in any direction (including diagonally) but only one
+    # space to catch up.
+    if (any(distance(head, tail) > 1)) {
+      one_step <- unlist(lapply((head - tail), sign))
+      print(one_step)
+      tail <- tail + one_step
+    }
+
+    visualize(field, head, tail)
+  }
+}
