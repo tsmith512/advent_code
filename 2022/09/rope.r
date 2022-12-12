@@ -21,20 +21,16 @@ steps <- read.table(
 
 field <- matrix(data = 0, nrow = 5, ncol = 5)
 
-steps
+show_progress <- FALSE
 
-field
-
+# Following the example, start on the bottom left.
 head <- c(nrow(field),1)
 tail <- c(nrow(field),1)
 field[tail[1], tail[2]] <- 1
 
+# Print a sentence with the head/tail positions
 show_position <- function (h, t) {
   print(sprintf("Head (%d,%d), Tail (%d, %d)", h[1], h[2], t[1], t[2]))
-}
-
-distance <- function (h, t) {
-  abs(h - t)
 }
 
 # Print out the map where the field will be a table with:
@@ -50,10 +46,13 @@ visualize <- function(f, h, t) {
   show_position(h, t)
 }
 
+# Run through the steps in order:
 for (s in 1:nrow(steps)) {
   dir <- steps[s, "dir"]
 
-  cat("\n\n== STEP", s, ":", dir, steps[s, "n"], "\n\n")
+  if (show_progress) {
+    cat("\n\n== STEP", s, ":", dir, steps[s, "n"], "\n\n")
+  }
 
   for (i in 1:steps[s, "n"]) {
     if (dir == "R") {
@@ -79,12 +78,22 @@ for (s in 1:nrow(steps)) {
     # Head can be 1 unit away from Tail in any direction, but not two. If there
     # is a gap, it moves in any direction (including diagonally) but only one
     # space to catch up.
-    if (any(distance(head, tail) > 1)) {
+    if (any(abs(head - tail) > 1)) {
       one_step <- unlist(lapply((head - tail), sign))
-      print(one_step)
+
+      if (show_progress) {
+        cat("Need to move", one_step)
+      }
       tail <- tail + one_step
+
+      # Mark the history
+      field[tail[1], tail[2]] <- 1
     }
 
-    visualize(field, head, tail)
+    if (show_progress) {
+      visualize(field, head, tail)
+    }
   }
 }
+
+cat("The rope tail touched", sum(field), "positions.\n")
