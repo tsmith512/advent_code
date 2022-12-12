@@ -9,11 +9,8 @@
 # Given a list of steps for how the head of a rope should move, figure out where
 # the tail goes and keep track of all the positions it stopped in along the way.
 
-lines <- scan("sample.txt", what = "")
-rows <- length(lines)
-cols <- 2
 steps <- read.table(
-  "sample.txt",
+  "input.txt",
   sep = " ",
   col.names = c("dir", "n"),
   stringsAsFactors = FALSE
@@ -68,11 +65,21 @@ for (s in 1:nrow(steps)) {
     # Do we need to add a column?
     if (head[2] >= ncol(field)) {
       field <- cbind(field, rep(0, nrow(field)))
+    } else if (head[2] < 1) {
+      # yes, but on the _left_ so we have to adjust the current markers
+      field <- cbind(rep(0, nrow(field)), field)
+      head[2] <- head[2] + 1
+      tail[2] <- tail[2] + 1
     }
 
     # Do we need to add a row?
     if (head[1] >= nrow(field)) {
       field <- rbind(field, rep(0, ncol(field)))
+      # yes, but on the _top_ so we have to adjust the current markers
+      field <- rbind(rep(0, ncol(field)), field)
+      head[1] <- head[1] + 1
+      tail[1] <- tail[1] + 1
+
     }
 
     # Head can be 1 unit away from Tail in any direction, but not two. If there
@@ -96,4 +103,5 @@ for (s in 1:nrow(steps)) {
   }
 }
 
+# Part One: The rope tail touched 5907 positions.
 cat("The rope tail touched", sum(field), "positions.\n")
