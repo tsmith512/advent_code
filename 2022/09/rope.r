@@ -44,58 +44,57 @@ rope <- matrix(
 # Mark the first history
 field[rope[rope_length,1], rope[rope_length,2]] <- 1
 
-# Print a sentence with the head/tail positions
+# Generate (return, not print) a sentence with the head/tail positions
 show_position <- function(r) {
   h <- r[1,]
   t <- r[rope_length,]
-  print(r)
-  print(sprintf("Head (%d,%d), Tail (%d, %d)", h[1], h[2], t[1], t[2]))
+  sprintf("Head (%d,%d), Tail (%d, %d)", h[1], h[2], t[1], t[2])
 }
 
+# Rotate a matrix for visualziation with image()
 rotate <- function(x) t(apply(x, 2, rev))
 
-# Print out the map where the field will be a table with:
-#   0 - no history for this position
-#   1 - tail has been here
-#  10 - tail is here currently
-# 100 - head is here currently
-visualize <- function(f, r) {
+# This got too big to output as a matrix in a console. Output an image of the
+# field with squares for:
+# white - unused space
+# gray - tail has been here
+# black - rope segment
+# red - rope head
+visualize <- function(f, r, title = "") {
   x <- f
 
-  x[r[1, 1], r[1, 2]] <- 1
   for (i in 2:rope_length) {
     x[r[i, 1], r[i, 2]] <- 2
   }
+  x[r[1, 1], r[1, 2]] <- 3
 
-  # print(x)
-  colors <- colorRampPalette(rev(c("black", "white")))
   image(
     rotate(x),
     useRaster = TRUE,
     axes = FALSE,
-    col = c("white", "red", "black")
+    col = c("white", "gray", "black", "red"),
   )
-  # show_position(r)
+
+  mtext(text = title, side = 3)
+  mtext(text = show_position(r), side = 1)
 }
 
 # Run through the steps in order:
-for (s in 1:2) {
+for (s in 1:nrow(steps)) {
   dir <- steps[s, "dir"]
 
-  png(
-    "test%02d.png",
-    width = (ncol(field) * 20) + 20,
-    height = (nrow(field) * 20) + 20,
-    bg = "white",
-  )
-  par(
-    mar = rep(1, 4)
-  )
   if (show_progress) {
     cat("\n\n== STEP", s, ":", dir, steps[s, "n"], "\n\n")
   }
 
   for (i in 1:steps[s, "n"]) {
+    png(
+      paste("field", sprintf("%02d", s), sprintf("%02d", i), "field.png", sep = "-"),
+      width = (ncol(field) * 20) + 100,
+      height = (nrow(field) * 20) + 100,
+      bg = "white",
+    )
+    par(oma = rep(0.25, 4))
 
     if (dir == "R") {
       rope[1,2] <- rope[1,2] + 1
@@ -129,7 +128,7 @@ for (s in 1:2) {
     # is a gap, it moves in any direction (including diagonally) but only one
     # space to catch up.
     if (show_progress) {
-      visualize(field, rope)
+      visualize(field, rope, paste("Rule", s, ":", steps[s,"dir"], steps[s,"n"], "#", i, "Head", sep = " "))
     }
 
     for (r in 2:rope_length) {
@@ -145,18 +144,15 @@ for (s in 1:2) {
           field[this[1], this[2]] <- 1
         }
       }
+
+      if (show_progress) {
+        visualize(field, rope, paste("Rule", s, ":", steps[s,"dir"], steps[s,"n"], "#", i, "R", r, sep = " "))
+      }
     }
 
-    if (show_progress) {
-      visualize(field, rope)
-    }
+    dev.off()
   }
-  dev.off()
 }
 
 # Part One: The rope tail touched 5907 positions.
 cat("The rope tail touched", sum(field), "positions.\n")
-
-if (show_progress) {
-  print(rope)
-}
