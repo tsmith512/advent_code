@@ -91,8 +91,8 @@ for (s in 1:nrow(steps)) {
     if (show_progress) {
       png(
         paste("field", sprintf("%04d", s), sprintf("%02d", i), "field.png", sep = "-"),
-        width = (ncol(field) * 20) + 100,
-        height = (nrow(field) * 20) + 100,
+        width = 800,
+        height = 600,
         bg = "white",
       )
       par(mar=c(5,2,4,2))
@@ -162,3 +162,6 @@ for (s in 1:nrow(steps)) {
 cat("The rope tail touched", sum(field), "positions.\n")
 
 # Part Two: The rope tail touched 2303 positions.
+
+# https://www.youtube.com/watch?v=6Ip4rfxii3U
+system("./animate.sh", wait = TRUE, timeout = 0)
