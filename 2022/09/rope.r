@@ -74,7 +74,7 @@ visualize <- function(f, r, title = "") {
     axes = FALSE,
     col = c("white", "gray", "black", "red"),
   )
-
+  box(col = "gray")
   mtext(text = title, side = 3)
   mtext(text = show_position(r), side = 1)
 }
@@ -95,7 +95,7 @@ for (s in 1:nrow(steps)) {
         height = (nrow(field) * 20) + 100,
         bg = "white",
       )
-      par(oma = rep(0.25, 4))
+      par(mar=c(5,2,4,2))
     }
 
     if (dir == "R") {
