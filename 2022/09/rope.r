@@ -121,7 +121,7 @@ for (s in 1:nrow(steps)) {
     } else if (rope[1,1] < 1) {
       # yes, but on the _top_ so we have to adjust the current markers
       field <- rbind(rep(0, ncol(field)), field)
-      rope[1,] <- rope[1,] + 1
+      rope[,1] <- rope[,1] + 1
     }
 
     # Head can be 1 unit away from Tail in any direction, but not two. If there
