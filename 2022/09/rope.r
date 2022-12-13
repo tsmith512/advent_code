@@ -27,7 +27,7 @@ steps <- read.table(
 
 field <- matrix(data = 0, nrow = 5, ncol = 5)
 
-show_progress <- FALSE
+show_progress <- TRUE
 rope_length <- 10 # 2 for Part 1. 10 for Part 2.
 
 # Following the example, start on the bottom left.
@@ -90,7 +90,7 @@ for (s in 1:nrow(steps)) {
   for (i in 1:steps[s, "n"]) {
     if (show_progress) {
       png(
-        paste("field", sprintf("%02d", s), sprintf("%02d", i), "field.png", sep = "-"),
+        paste("field", sprintf("%04d", s), sprintf("%02d", i), "field.png", sep = "-"),
         width = (ncol(field) * 20) + 100,
         height = (nrow(field) * 20) + 100,
         bg = "white",
