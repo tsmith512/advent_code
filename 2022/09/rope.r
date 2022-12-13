@@ -62,8 +62,9 @@ rotate <- function(x) t(apply(x, 2, rev))
 visualize <- function(f, r) {
   x <- f
 
-  for (i in 1:rope_length) {
-    x[r[i, 1], r[i, 2]] <- (i * 10) + x[r[i, 1], r[i, 2]]
+  x[r[1, 1], r[1, 2]] <- 1
+  for (i in 2:rope_length) {
+    x[r[i, 1], r[i, 2]] <- 2
   }
 
   # print(x)
@@ -72,30 +73,30 @@ visualize <- function(f, r) {
     rotate(x),
     useRaster = TRUE,
     axes = FALSE,
-    col = c("white", "red", colors(10))
+    col = c("white", "red", "black")
   )
   # show_position(r)
 }
 
 # Run through the steps in order:
-for (s in 1:nrow(steps)) {
+for (s in 1:2) {
   dir <- steps[s, "dir"]
-
-  if (show_progress) {
-    cat("\n\n== STEP", s, ":", dir, steps[s, "n"], "\n\n")
-  }
 
   png(
     "test%02d.png",
-    width = (ncol(field) * 10) + 20,
-    height = (nrow(field) * 10) + 20,
+    width = (ncol(field) * 20) + 20,
+    height = (nrow(field) * 20) + 20,
     bg = "white",
   )
   par(
     mar = rep(1, 4)
   )
+  if (show_progress) {
+    cat("\n\n== STEP", s, ":", dir, steps[s, "n"], "\n\n")
+  }
 
   for (i in 1:steps[s, "n"]) {
+
     if (dir == "R") {
       rope[1,2] <- rope[1,2] + 1
     } else if (dir == "L") {
@@ -127,17 +128,21 @@ for (s in 1:nrow(steps)) {
     # Head can be 1 unit away from Tail in any direction, but not two. If there
     # is a gap, it moves in any direction (including diagonally) but only one
     # space to catch up.
-
+    if (show_progress) {
+      visualize(field, rope)
+    }
 
     for (r in 2:rope_length) {
-      if (any(abs(rope[r - 1,] - rope[r,]) > 1)) {
-        one_step <- unlist(lapply((rope[r - 1,] - rope[r,]), sign))
-        rope[r,1] <- rope[r,1] + one_step[1]
-        rope[r,2] <- rope[r,2] + one_step[2]
+      prev <- rope[r - 1,]
+      this <- rope[r,]
+      if (any(abs(prev - this) > 1)) {
+        one_step <- unlist(lapply((prev - this), sign))
+        this <- this + one_step
+        rope[r,] <- this
 
         # Mark the history if this is the tail
         if (r == rope_length) {
-          field[rope[r,1], rope[r,2]] <- 1
+          field[this[1], this[2]] <- 1
         }
       }
     }
