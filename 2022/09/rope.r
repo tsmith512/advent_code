@@ -19,7 +19,7 @@
 # original rules. So I'm gonna try to abstract rope length in the original code.
 
 steps <- read.table(
-  "sample2.txt",
+  "input.txt",
   sep = " ",
   col.names = c("dir", "n"),
   stringsAsFactors = FALSE
@@ -27,8 +27,8 @@ steps <- read.table(
 
 field <- matrix(data = 0, nrow = 5, ncol = 5)
 
-show_progress <- TRUE
-rope_length <- 10
+show_progress <- FALSE
+rope_length <- 10 # 2 for Part 1. 10 for Part 2.
 
 # Following the example, start on the bottom left.
 # PART TWO: Instead of head and tail both int[2], use int[X[2]] as a rope
@@ -160,3 +160,5 @@ for (s in 1:nrow(steps)) {
 
 # Part One: The rope tail touched 5907 positions.
 cat("The rope tail touched", sum(field), "positions.\n")
+
+# Part Two: The rope tail touched 2303 positions.
