@@ -88,13 +88,15 @@ for (s in 1:nrow(steps)) {
   }
 
   for (i in 1:steps[s, "n"]) {
-    png(
-      paste("field", sprintf("%02d", s), sprintf("%02d", i), "field.png", sep = "-"),
-      width = (ncol(field) * 20) + 100,
-      height = (nrow(field) * 20) + 100,
-      bg = "white",
-    )
-    par(oma = rep(0.25, 4))
+    if (show_progress) {
+      png(
+        paste("field", sprintf("%02d", s), sprintf("%02d", i), "field.png", sep = "-"),
+        width = (ncol(field) * 20) + 100,
+        height = (nrow(field) * 20) + 100,
+        bg = "white",
+      )
+      par(oma = rep(0.25, 4))
+    }
 
     if (dir == "R") {
       rope[1,2] <- rope[1,2] + 1
@@ -150,7 +152,9 @@ for (s in 1:nrow(steps)) {
       }
     }
 
-    dev.off()
+    if (show_progress) {
+      dev.off()
+    }
   }
 }
 
