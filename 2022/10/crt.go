@@ -33,26 +33,50 @@ func main() {
 
 	scanner := bufio.NewScanner(file)
 
-	var x int = 1 // Current "addx" value
-	var i int = 0 // Current step
+	register := 1 // Current "addx" value
+	// addxDelay := 2
+	i := 1 // Current step
+
+	window := []int{0}// List of what we're gonna have to add
 
 	for scanner.Scan() {
 		line := scanner.Text()
 
-		fmt.Printf("Step %d: ", i)
+		fmt.Printf("Cycle %d: ", i)
+		fmt.Printf("register is %d", register)
 
 		if string(line[0:4]) == "noop" {
-			fmt.Printf("noop\n")
+			fmt.Printf(" - noop - ")
+			window = append(window, 0)
 		} else if string(line[0:4]) == "addx" {
 			n, err := strconv.Atoi(string(line[5:]))
 			if err != nil {
 				fmt.Printf("Error parsing number from line %s\n", line)
 				break
 			}
-			x += n // YES THIS IS WRONG; need to delay this two cycles
-			fmt.Printf("Current %d new %d\n", x, n)
+			window = append(window, n, 0)
+			fmt.Printf(" - addx %d - ", n)
 		}
 
+		// Apply the addx value in the window, drop it, and push the new one
+		fmt.Printf("now adding %d", window[0])
+		register += window[0]
+		window = window[1:]
+
+		fmt.Printf(" - new value %d", register)
+		fmt.Printf(" - window holds %#v\n", window)
 		i += 1
+	}
+
+	for j := range window {
+		fmt.Printf("Cycle %d: ", i)
+		fmt.Printf("register is %d", register)
+		fmt.Printf(" - runout - ")
+		fmt.Printf("now adding %d", window[j])
+		register += window[j]
+		i += 1
+		fmt.Printf(" - new value %d", register)
+		fmt.Printf(" - window holds %#v\n", window[j + 1:])
+
 	}
 }
