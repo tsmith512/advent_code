@@ -23,7 +23,7 @@ import (
 	"strconv"
 )
 
-const filename string = "sample.txt"
+const filename string = "sample2.txt"
 const cycle int = 5
 
 func main() {
@@ -34,7 +34,6 @@ func main() {
 	scanner := bufio.NewScanner(file)
 
 	register := 1 // Current "addx" value
-	// addxDelay := 2
 	i := 1 // Current step
 
 	window := []int{0}// List of what we're gonna have to add
@@ -44,39 +43,31 @@ func main() {
 
 		fmt.Printf("Cycle %d: ", i)
 		fmt.Printf("register is %d", register)
+		// ^^ instruction/example says "during cycle" is this value
 
 		if string(line[0:4]) == "noop" {
-			fmt.Printf(" - noop - ")
 			window = append(window, 0)
 		} else if string(line[0:4]) == "addx" {
 			n, err := strconv.Atoi(string(line[5:]))
 			if err != nil {
-				fmt.Printf("Error parsing number from line %s\n", line)
-				break
+				panic("Error parsing number")
 			}
 			window = append(window, n, 0)
-			fmt.Printf(" - addx %d - ", n)
 		}
 
 		// Apply the addx value in the window, drop it, and push the new one
-		fmt.Printf("now adding %d", window[0])
 		register += window[0]
 		window = window[1:]
-
-		fmt.Printf(" - new value %d", register)
-		fmt.Printf(" - window holds %#v\n", window)
 		i += 1
+
+		fmt.Printf(" - next value %d\n", register)
 	}
 
 	for j := range window {
-		fmt.Printf("Cycle %d: ", i)
+		fmt.Printf("Cycle %d (runout): ", i)
 		fmt.Printf("register is %d", register)
-		fmt.Printf(" - runout - ")
-		fmt.Printf("now adding %d", window[j])
 		register += window[j]
 		i += 1
-		fmt.Printf(" - new value %d", register)
-		fmt.Printf(" - window holds %#v\n", window[j + 1:])
-
+		fmt.Printf(" - next value %d\n", register)
 	}
 }
