@@ -38,15 +38,16 @@ func main() {
 
 	window := []int{0} // List of what we're gonna have to add
 	checking := []int{20, 60, 100, 140, 180, 220} // Cycles to report on
+	saved := []int{}
 
 	for scanner.Scan() {
 		line := scanner.Text()
 
-		print := contains(checking, i)
-
-		if print {
+		if contains(checking, i) {
 			fmt.Printf("Cycle %d: register is %d and signal strength is %d.\n", i, register, i * register)
 			// ^^ instruction/example says "during cycle" is this; before addx
+
+			saved = append(saved, i * register)
 		}
 
 		if string(line[0:4]) == "noop" {
@@ -70,16 +71,18 @@ func main() {
 	// window, I'm gonna just index it with j rather than shift it (although that
 	// did work correctly, it seems weird to mutate a slice while iterating it.)
 	for j := range window {
-		print := contains(checking, i)
-
-		if print {
+		if contains(checking, i) {
 			fmt.Printf("Cycle %d: register is %d and signal strength is %d.\n", i, register, i * register)
 			// ^^ instruction/example says "during cycle" is this; before addx
+
+			saved = append(saved, i * register)
 		}
 
 		register += window[j]
 		i += 1
 	}
+
+	fmt.Printf("The sum of these signal strengths is %d.\n", sum(saved))
 }
 
 // So https://stackoverflow.com/a/71181131 says this is in an experimental lib
@@ -92,4 +95,13 @@ func contains(h []int, n int) bool {
 	}
 
 	return false
+}
+
+// See above note... there's also not a good reducer? Although this isn't hard
+func sum(h []int) (s int) {
+	for _, v := range h {
+		s += v
+	}
+
+	return
 }
