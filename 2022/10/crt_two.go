@@ -53,7 +53,7 @@ func main() {
 		}
 
 		// Then "DURING" the cycle (before anything is added), CRT draws the pixel.
-		screen[i - 1] = sprite(i, register)
+		screen[i - 1] = sprite((i - 1) % 40, register)
 		fmt.Printf("Cycle %3d, register starts at %2d (%s)", i, register, pixel(i, register))
 
 		// Cycle ends by applying the next addx (or noop skip) instruction
@@ -70,7 +70,7 @@ func main() {
 		if i >= 240 {
 			break
 		}
-		screen[i - 1] = sprite(i, register)
+		screen[i - 1] = sprite((i - 1) % 40, register)
 		fmt.Printf("Cycle %3d, register starts at %2d (%s)", i, register, pixel(i, register))
 		register += window[j]
 		fmt.Printf(" adding %3d", window[j])
