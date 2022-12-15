@@ -22,8 +22,7 @@ import (
 	"strconv"
 )
 
-const filename string = "sample2.txt"
-const cycle int = 5
+const filename string = "input.txt"
 
 func main() {
 	file, err := os.Open(filename)
@@ -33,10 +32,10 @@ func main() {
 	scanner := bufio.NewScanner(file)
 
 	register := 1 // Current "addx" value
-	i := 1 // Current cycle (pixel in the screen)
+	i := 1 // Current cycle
 
 	window := []int{0} // List of what we're gonna have to add
-	screen := make([]bool, 240) // Cycle 1 draws Pixel 0
+	screen := make([]bool, 240) // Cycle 1 draws Pixel 0!
 
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -53,15 +52,12 @@ func main() {
 		}
 
 		// Then "DURING" the cycle (before anything is added), CRT draws the pixel.
-		screen[i - 1] = sprite((i - 1) % 40, register)
-		fmt.Printf("Cycle %3d, register starts at %2d (%s)", i, register, pixel(i, register))
+		screen[i - 1] = sprite((i - 1) % 40, register) // Cycle 1 draws Pixel 0!
 
 		// Cycle ends by applying the next addx (or noop skip) instruction
-		fmt.Printf(" adding %3d", window[0])
 		register += window[0]
 		window = window[1:]
 		i += 1
-		fmt.Printf(" -> ends at %3d\n", register)
 	}
 
 	// Do the runout.
@@ -71,15 +67,20 @@ func main() {
 			break
 		}
 		screen[i - 1] = sprite((i - 1) % 40, register)
-		fmt.Printf("Cycle %3d, register starts at %2d (%s)", i, register, pixel(i, register))
 		register += window[j]
-		fmt.Printf(" adding %3d", window[j])
 		i += 1
-		fmt.Printf(" -> ends at %3d\n", register)
 	}
 
+	// Part Two:
+	// ####  ##  #### #  # ####  ##  #    ###
+	// #    #  #    # #  #    # #  # #    #  #
+	// ###  #      #  #  #   #  #  # #    #  #
+	// #    #     #   #  #  #   #### #    ###
+	// #    #  # #    #  # #    #  # #    # #
+	// ####  ##  ####  ##  #### #  # #### #  #
 	television(screen)
 }
+
 
 func sprite(n int, r int) bool {
 	if r - 1 <= n && n <= r + 1 {
@@ -103,7 +104,7 @@ func television(s []bool) {
 		if v {
 			fmt.Printf("#")
 			} else {
-			fmt.Printf(".")
+			fmt.Printf(" ")
 		}
 
 		if (i + 1) % width == 0 {
