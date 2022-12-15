@@ -10,6 +10,10 @@ Oh here we go again
 - [Day 4: Camp Cleanup](2022/04/camp_cleanup.go) (Go)
 - [Day 5: Supply Stacks](2022/05/src/index.ts) (TypeScript)
 - [Day 6: Tuning Trouble](2022/06/tuning_trouble.go) (Go)
+- [Day 7: No Space Left On Device](2022/07/disk_space.go) (Go)
+- [Day 8: Treetop Tree House](2022/08/treetops.r) (R)
+- [Day 9: Rope Bridge](2022/09/rope.r) (R)
+- Day 10: Cathode-Ray Tube _[Part 1](2022/10/crt.go), [Part 2](2022/10/crt_two.go)_ (Go)
 
 ## 2021
 
