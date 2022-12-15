@@ -23,7 +23,7 @@ import (
 	"strconv"
 )
 
-const filename string = "sample2.txt"
+const filename string = "input.txt"
 const cycle int = 5
 
 func main() {
@@ -83,6 +83,15 @@ func main() {
 	}
 
 	fmt.Printf("The sum of these signal strengths is %d.\n", sum(saved))
+
+	// Part One:
+	// Cycle 20: register is 21 and signal strength is 420.
+	// Cycle 60: register is 24 and signal strength is 1440.
+	// Cycle 100: register is 17 and signal strength is 1700.
+	// Cycle 140: register is 29 and signal strength is 4060.
+	// Cycle 180: register is 21 and signal strength is 3780.
+	// Cycle 220: register is 21 and signal strength is 4620.
+	// The sum of these signal strengths is 16020.
 }
 
 // So https://stackoverflow.com/a/71181131 says this is in an experimental lib
