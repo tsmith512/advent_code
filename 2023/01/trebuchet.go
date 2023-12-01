@@ -18,7 +18,6 @@ import (
 	"os"
 	"regexp"
 	"strconv"
-	"strings"
 )
 
 // There are also sample.txt and sample2.txt
@@ -27,9 +26,7 @@ const FILENAME string = "input.txt"
 // Print each line and its transformations?
 const DEBUG bool = true
 
-// In Part 2, account for digits as words
-const PARTTWO bool = true
-
+// For part two
 var DIGITWORDS = map[string]string{
 	"one":   "1",
 	"two":   "2",
@@ -41,6 +38,9 @@ var DIGITWORDS = map[string]string{
 	"eight": "8",
 	"nine":  "9",
 }
+
+var digitFinder = regexp.MustCompile(`\d`)
+var numberFinder = regexp.MustCompile(`(\d|one|two|three|four|five|six|seven|eight|nine)`)
 
 func main() {
 	file, err := os.Open(FILENAME)
@@ -54,28 +54,11 @@ func main() {
 	// Aggregate total
 	total := 0
 
-	digitFinder := regexp.MustCompile(`\d`)
-
 	for scanner.Scan() {
 		line := scanner.Text()
 
 		if DEBUG {
 			fmt.Printf("\nLINE: %s\n", line)
-		}
-
-		//  ___          _     ___
-		// | _ \__ _ _ _| |_  |_  )
-		// |  _/ _` | '_|  _|  / /
-		// |_| \__,_|_|  \__| /___|
-		//
-		// Oh wait, some of the "digits" are actually spelled out with letters.
-		// Filter for numbers and converted words, then continue like Part 1.
-		if PARTTWO {
-			line = digitsFromString(line)
-
-			if DEBUG {
-				fmt.Printf("  rewrite: %s\n", line)
-			}
 		}
 
 		digitsAsStrings := digitFinder.FindAllString(line, -1)
@@ -100,38 +83,64 @@ func main() {
 	}
 
 	// Part One: Sum of calibration values: 55538
-	// Part Two: Sum of calibration values: 54875
 	fmt.Printf("Sum of calibration values: %d\n", total)
+
+	//  ___          _     ___
+	// | _ \__ _ _ _| |_  |_  )
+	// |  _/ _` | '_|  _|  / /
+	// |_| \__,_|_|  \__| /___|
+	//
+	// Oh wait, some of the "digits" are actually spelled out with letters.
+	// Rewind and filter for numbers and converted words.
+	file.Seek(0, 0)
+	scanner = bufio.NewScanner(file)
+	total = 0
+
+	for scanner.Scan() {
+		line := scanner.Text()
+
+		if DEBUG {
+			fmt.Printf("\nLINE: %s\n", line)
+		}
+
+		digits := digitsFromString(line)
+		value := (digits[0] * 10) + digits[len(digits)-1]
+
+		if DEBUG {
+			fmt.Printf("  This line: %d\n", value)
+		}
+
+		total += value
+	}
+
+	// Part Two: Sum of calibration values accounting for words: 54875
+	fmt.Printf("Sum of calibration values accounting for words: %d\n", total)
 }
 
-// Find all digits or words in a string, repeating until there are none left.
-// Return a string that joins them all to the existing Part 1 code.
-// @TODO: That's dumb, just sum them and return it.
-func digitsFromString(input string) string {
+// Find all digits or words in a string, repeating until there are none left,
+// account for overlaps. Return as an array of integers.
+func digitsFromString(input string) []int {
 	index := 0
-	digit := ""
-	output := []string{}
+	digit := -1
+	output := []int{}
 
 	for index < len(input) {
 		digit, index = getNextDigit(input, index)
-		if digit != "" {
+		if digit > -1 {
 			output = append(output, digit)
 		}
-
 	}
 
 	if DEBUG {
 		fmt.Printf("  > %v\n", output)
 	}
 
-	return strings.Join(output, "")
+	return output
 }
 
 // Given a string and starting index, find the left-most number (presented as a
 // numerical digit or an English word) and return it and the next index to check.
-func getNextDigit(input string, start int) (string, int) {
-	numberFinder := regexp.MustCompile(`(\d|one|two|three|four|five|six|seven|eight|nine)`)
-
+func getNextDigit(input string, start int) (int, int) {
 	if DEBUG {
 		fmt.Printf("  Inspect %s from %d", input, start)
 	}
@@ -144,7 +153,7 @@ func getNextDigit(input string, start int) (string, int) {
 		if DEBUG {
 			fmt.Printf(". (Done)\n")
 		}
-		return "", len(input)
+		return -1, len(input)
 	}
 
 	// Get the digit either as the number or the word
@@ -156,8 +165,15 @@ func getNextDigit(input string, start int) (string, int) {
 	}
 
 	if DEBUG {
-		fmt.Printf(" --> found %s at %d\n", digit, index[0]+start)
+		fmt.Printf(" --> found %s at %d\n", digit, start+index[0])
 	}
 
-	return digit, index[0] + start + 1
+	output, err := strconv.Atoi(digit)
+
+	if err != nil {
+		panic(err)
+	}
+
+	// Return the digit as an int and where it was to minimize subsequent searches
+	return output, start + index[0] + 1
 }
