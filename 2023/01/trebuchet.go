@@ -22,7 +22,7 @@ import (
 )
 
 // There are also sample.txt and sample2.txt
-const FILENAME string = "sample3.txt"
+const FILENAME string = "input.txt"
 
 // Print each line and its transformations?
 const DEBUG bool = true
@@ -100,6 +100,7 @@ func main() {
 	}
 
 	// Part One: Sum of calibration values: 55538
+	// Part Two: Sum of calibration values: 54875
 	fmt.Printf("Sum of calibration values: %d\n", total)
 }
 
