@@ -1,5 +1,9 @@
 # Advent of Code
 
+## 2023
+
+- [Day 1: Trebuchet?!](2023/01/trebuchet.go) (Go)
+
 ## 2022
 
 Oh here we go again
