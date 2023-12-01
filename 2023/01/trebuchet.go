@@ -18,10 +18,12 @@ import (
 	"os"
 	"regexp"
 	"strconv"
+	"strings"
 )
 
-const FILENAME string = "input.txt"
+const FILENAME string = "sample2.txt"
 const DEBUG bool = true
+const PARTTWO bool = true
 
 func main() {
 	file, err := os.Open(FILENAME)
@@ -42,6 +44,17 @@ func main() {
 
 		if DEBUG {
 			fmt.Printf("Line: %s\n", line)
+		}
+
+		//  ___          _     ___
+		// | _ \__ _ _ _| |_  |_  )
+		// |  _/ _` | '_|  _|  / /
+		// |_| \__,_|_|  \__| /___|
+		//
+		// Oh wait, some of the "digits" are actually spelled out with letters.
+		if PARTTWO {
+			line = digitsFromLetters(line)
+			fmt.Printf("Rewritten line: %s\n", line)
 		}
 
 		digitsAsStrings := digitFinder.FindAllString(line, -1)
@@ -66,4 +79,18 @@ func main() {
 
 	// Part One: Sum of calibration values: 55538
 	fmt.Printf("Sum of calibration values: %d\n", total)
+}
+
+// There is probably a much cooler looking way to do this, but...
+func digitsFromLetters(input string) (output string) {
+	output = strings.Replace(input, "one", "1", -1)
+	output = strings.Replace(output, "two", "2", -1)
+	output = strings.Replace(output, "three", "3", -1)
+	output = strings.Replace(output, "four", "4", -1)
+	output = strings.Replace(output, "five", "5", -1)
+	output = strings.Replace(output, "six", "6", -1)
+	output = strings.Replace(output, "seven", "7", -1)
+	output = strings.Replace(output, "eight", "8", -1)
+	output = strings.Replace(output, "nine", "9", -1)
+	return
 }
