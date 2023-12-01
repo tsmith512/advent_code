@@ -18,10 +18,11 @@ import (
 	"os"
 	"regexp"
 	"strconv"
+	"strings"
 )
 
 // There are also sample.txt and sample2.txt
-const FILENAME string = "input.txt"
+const FILENAME string = "sample3.txt"
 
 // Print each line and its transformations?
 const DEBUG bool = true
@@ -67,11 +68,14 @@ func main() {
 		// |  _/ _` | '_|  _|  / /
 		// |_| \__,_|_|  \__| /___|
 		//
-		// Oh wait, some of the "digits" are actually spelled out with letters. Swap
-		// out the words with their numbers, then continue like Part 1.
+		// Oh wait, some of the "digits" are actually spelled out with letters.
+		// Filter for numbers and converted words, then continue like Part 1.
 		if PARTTWO {
-			line = digitsFromLetters(line)
-			fmt.Printf("  rewrite: %s\n", line)
+			line = digitsFromString(line)
+
+			if DEBUG {
+				fmt.Printf("  rewrite: %s\n", line)
+			}
 		}
 
 		digitsAsStrings := digitFinder.FindAllString(line, -1)
@@ -99,40 +103,60 @@ func main() {
 	fmt.Printf("Sum of calibration values: %d\n", total)
 }
 
-// Find and fix digit-words in a string, repeating until there are none left.
-func digitsFromLetters(input string) (output string) {
-	words := true
-	output = input
+// Find all digits or words in a string, repeating until there are none left.
+// Return a string that joins them all to the existing Part 1 code.
+// @TODO: That's dumb, just sum them and return it.
+func digitsFromString(input string) string {
+	index := 0
+	digit := ""
+	output := []string{}
 
-	for words {
-		output, words = fixDigitFromLetters(output)
+	for index < len(input) {
+		digit, index = getNextDigit(input, index)
+		if digit != "" {
+			output = append(output, digit)
+		}
+
 	}
-
-	return
-}
-
-// Find the left-most word in an input string that is a digit and swap it out
-// with the digit iself (as a string). Return the resulting string and a boolean:
-// true if a substitution was made, false if none was needed (string unchanged)
-func fixDigitFromLetters(input string) (string, bool) {
-	numberFinder := regexp.MustCompile(`(one|two|three|four|five|six|seven|eight|nine)`)
-
-	firstIndex := numberFinder.FindStringIndex(input)
-
-	// Didn't find a matching word
-	if len(firstIndex) == 0 {
-		return input, false
-	}
-
-	// Break string into "before the first word, the word, and the rest"
-	prefix := input[:firstIndex[0]]
-	word := input[firstIndex[0]:firstIndex[1]]
-	suffix := input[firstIndex[1]:]
 
 	if DEBUG {
-		fmt.Printf("  %s\n", prefix+" "+DIGITWORDS[word]+" "+suffix)
+		fmt.Printf("  > %v\n", output)
 	}
 
-	// Swap out the word for the digit is spells and return the whole string
-	return prefix + DIGITWORDS[word] + suffix, true
+	return strings.Join(output, "")
+}
+
+// Given a string and starting index, find the left-most number (presented as a
+// numerical digit or an English word) and return it and the next index to check.
+func getNextDigit(input string, start int) (string, int) {
+	numberFinder := regexp.MustCompile(`(\d|one|two|three|four|five|six|seven|eight|nine)`)
+
+	if DEBUG {
+		fmt.Printf("  Inspect %s from %d", input, start)
+	}
+
+	fragment := input[start:]
+	index := numberFinder.FindStringIndex(fragment)
+
+	// We didn't find a match
+	if index == nil {
+		if DEBUG {
+			fmt.Printf(". (Done)\n")
+		}
+		return "", len(input)
+	}
+
+	// Get the digit either as the number or the word
+	digit := fragment[index[0]:index[1]]
+
+	// Assume a one-character string is the number, otherwise lookup the word
+	if len(digit) != 1 {
+		digit = DIGITWORDS[digit]
+	}
+
+	if DEBUG {
+		fmt.Printf(" --> found %s at %d\n", digit, index[0]+start)
+	}
+
+	return digit, index[0] + start + 1
 }
