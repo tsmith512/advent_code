@@ -20,7 +20,7 @@ import (
 	"strconv"
 )
 
-const FILENAME string = "sample.txt"
+const FILENAME string = "input.txt"
 const DEBUG bool = true
 
 func main() {
@@ -35,7 +35,7 @@ func main() {
 	// Aggregate total. (Just watch this need to be a bigger type for the real input...)
 	total := 0
 
-	digitFinder := regexp.MustCompile(`\d+`)
+	digitFinder := regexp.MustCompile(`\d`)
 
 	for scanner.Scan() {
 		line := scanner.Text()
