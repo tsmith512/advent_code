@@ -64,5 +64,6 @@ func main() {
 		total += value
 	}
 
+	// Part One: Sum of calibration values: 55538
 	fmt.Printf("Sum of calibration values: %d\n", total)
 }
