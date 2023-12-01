@@ -20,8 +20,13 @@ import (
 	"strconv"
 )
 
-const FILENAME string = "sample2.txt"
+// There are also sample.txt and sample2.txt
+const FILENAME string = "input.txt"
+
+// Print each line and its transformations?
 const DEBUG bool = true
+
+// In Part 2, account for digits as words
 const PARTTWO bool = true
 
 var DIGITWORDS = map[string]string{
@@ -45,7 +50,7 @@ func main() {
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
 
-	// Aggregate total. (Just watch this need to be a bigger type for the real input...)
+	// Aggregate total
 	total := 0
 
 	digitFinder := regexp.MustCompile(`\d`)
@@ -54,7 +59,7 @@ func main() {
 		line := scanner.Text()
 
 		if DEBUG {
-			fmt.Printf("Line: %s\n", line)
+			fmt.Printf("\nLINE: %s\n", line)
 		}
 
 		//  ___          _     ___
@@ -66,7 +71,7 @@ func main() {
 		// out the words with their numbers, then continue like Part 1.
 		if PARTTWO {
 			line = digitsFromLetters(line)
-			fmt.Printf("Rewritten line: %s\n", line)
+			fmt.Printf("  rewrite: %s\n", line)
 		}
 
 		digitsAsStrings := digitFinder.FindAllString(line, -1)
@@ -82,8 +87,9 @@ func main() {
 		value := ((first * 10) + last)
 
 		if DEBUG {
-			fmt.Println(digitsAsStrings)
-			fmt.Printf("First: %d, Last: %d, Value: %d\n", first, last, value)
+			fmt.Println("  digits: ", digitsAsStrings)
+			fmt.Printf("  value:   [%d ... %d] --> %d\n", first, last, value)
+			fmt.Printf("  %d + %d = %d\n\n", total, value, total+value)
 		}
 
 		total += value
@@ -122,6 +128,10 @@ func fixDigitFromLetters(input string) (string, bool) {
 	prefix := input[:firstIndex[0]]
 	word := input[firstIndex[0]:firstIndex[1]]
 	suffix := input[firstIndex[1]:]
+
+	if DEBUG {
+		fmt.Printf("  %s\n", prefix+" "+DIGITWORDS[word]+" "+suffix)
+	}
 
 	// Swap out the word for the digit is spells and return the whole string
 	return prefix + DIGITWORDS[word] + suffix, true
