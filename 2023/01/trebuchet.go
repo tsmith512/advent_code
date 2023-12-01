@@ -18,12 +18,23 @@ import (
 	"os"
 	"regexp"
 	"strconv"
-	"strings"
 )
 
 const FILENAME string = "sample2.txt"
 const DEBUG bool = true
 const PARTTWO bool = true
+
+var DIGITWORDS = map[string]string{
+	"one":   "1",
+	"two":   "2",
+	"three": "3",
+	"four":  "4",
+	"five":  "5",
+	"six":   "6",
+	"seven": "7",
+	"eight": "8",
+	"nine":  "9",
+}
 
 func main() {
 	file, err := os.Open(FILENAME)
@@ -51,7 +62,8 @@ func main() {
 		// |  _/ _` | '_|  _|  / /
 		// |_| \__,_|_|  \__| /___|
 		//
-		// Oh wait, some of the "digits" are actually spelled out with letters.
+		// Oh wait, some of the "digits" are actually spelled out with letters. Swap
+		// out the words with their numbers, then continue like Part 1.
 		if PARTTWO {
 			line = digitsFromLetters(line)
 			fmt.Printf("Rewritten line: %s\n", line)
@@ -81,16 +93,36 @@ func main() {
 	fmt.Printf("Sum of calibration values: %d\n", total)
 }
 
-// There is probably a much cooler looking way to do this, but...
+// Find and fix digit-words in a string, repeating until there are none left.
 func digitsFromLetters(input string) (output string) {
-	output = strings.Replace(input, "one", "1", -1)
-	output = strings.Replace(output, "two", "2", -1)
-	output = strings.Replace(output, "three", "3", -1)
-	output = strings.Replace(output, "four", "4", -1)
-	output = strings.Replace(output, "five", "5", -1)
-	output = strings.Replace(output, "six", "6", -1)
-	output = strings.Replace(output, "seven", "7", -1)
-	output = strings.Replace(output, "eight", "8", -1)
-	output = strings.Replace(output, "nine", "9", -1)
+	words := true
+	output = input
+
+	for words {
+		output, words = fixDigitFromLetters(output)
+	}
+
 	return
+}
+
+// Find the left-most word in an input string that is a digit and swap it out
+// with the digit iself (as a string). Return the resulting string and a boolean:
+// true if a substitution was made, false if none was needed (string unchanged)
+func fixDigitFromLetters(input string) (string, bool) {
+	numberFinder := regexp.MustCompile(`(one|two|three|four|five|six|seven|eight|nine)`)
+
+	firstIndex := numberFinder.FindStringIndex(input)
+
+	// Didn't find a matching word
+	if len(firstIndex) == 0 {
+		return input, false
+	}
+
+	// Break string into "before the first word, the word, and the rest"
+	prefix := input[:firstIndex[0]]
+	word := input[firstIndex[0]:firstIndex[1]]
+	suffix := input[firstIndex[1]:]
+
+	// Swap out the word for the digit is spells and return the whole string
+	return prefix + DIGITWORDS[word] + suffix, true
 }
