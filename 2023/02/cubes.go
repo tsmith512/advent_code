@@ -11,6 +11,15 @@
 // In other words, with only 12 red cubes, 13 green cubes, and 14 blue cubes is
 // it possible to show `Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green`?
 // For possible combinations, sum the game IDs.
+//
+//  ___          _     ___
+// | _ \__ _ _ _| |_  |_  )
+// |  _/ _` | '_|  _|  / /
+// |_| \__,_|_|  \__| /___|
+//
+// And for part two, for each game, figure out the minimum required count of
+// each color cube. Multiply these together for the game's "power," and sum
+// the power total across all games (possible or not in Part 1).
 
 package main
 
@@ -23,7 +32,7 @@ import (
 	"strings"
 )
 
-const FILENAME = "input.txt"
+const FILENAME = "sample.txt"
 const DEBUG = true
 
 var BAG = map[string]int{
@@ -44,8 +53,12 @@ func main() {
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
 
+	// PART ONE:
 	idsOfPossibleGames := []int{}
 	sumIdsOfPossibleGames := 0
+
+	// PART TWO:
+	sumOfCubeCountProducts := 0
 
 	// For each "game" (line in the input file)
 	for scanner.Scan() {
@@ -53,8 +66,15 @@ func main() {
 
 		game := strings.Split(line, ":")
 
-		// Assume a game is possible until we find a problem.
+		// PART ONE: Assume a game is possible until we find a problem.
 		possible := true
+
+		// PART TWO: Start with an empty "bag"
+		gameBag := map[string]int{
+			"red":   0,
+			"green": 0,
+			"blue":  0,
+		}
 
 		// Get the game ID
 		id, err := strconv.Atoi(reNumber.FindStringSubmatch(game[0])[0])
@@ -81,26 +101,39 @@ func main() {
 
 				debugPrint("   - Shown %d of %s\n", count, name)
 
-				// @TODO: If I could break out of the loop when a game fails, that could
-				// save some cycles but named breaks were giving me trouble.
+				// PART ONE:
 				if BAG[name] < count {
 					debugPrint("     NOPE, you don't have this. Moving on.\n")
 					possible = false
 				}
+
+				// PART TWO:
+				if gameBag[name] < count {
+					gameBag[name] = count
+				}
 			}
 		}
 
-		// If the game didn't get marked as impossible, add/sum its ID
+		// PART ONE: If the game didn't get marked as impossible, add/sum its ID
 		if possible {
 			debugPrint(" YES, Game %d is a possible combination.\n", id)
 			idsOfPossibleGames = append(idsOfPossibleGames, id)
 			sumIdsOfPossibleGames += id
 		}
+
+		// PART TWO: What was the minimum of each we'd need for these combos
+		debugPrint(" Minimum required cubes for this game: %v\n", gameBag)
+		bagProduct := gameBag["red"] * gameBag["green"] * gameBag["blue"]
+		debugPrint(" Product of these counts: %d\n", bagProduct)
+		sumOfCubeCountProducts += bagProduct
 	}
 
 	// Part One:
 	// Games [1 3 5 14 20 21 22 24 29 31 33 34 35 37 39 42 45 46 47 53 54 58 59 62 63 64 67 71 74 75 77 81 84 91 95 97 100] were possible. Sum of IDs: 1853
 	fmt.Printf("Games %v were possible. Sum of IDs: %d\n", idsOfPossibleGames, sumIdsOfPossibleGames)
+
+	// Part Two:
+	fmt.Printf("Sum of each game's minimum cube counts multiplied: %d\n", sumOfCubeCountProducts)
 }
 
 // Simple wrapper for debug printing
