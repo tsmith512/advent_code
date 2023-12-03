@@ -32,7 +32,7 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
+const FILENAME = "input.txt"
 const DEBUG = true
 
 var BAG = map[string]int{
@@ -133,6 +133,7 @@ func main() {
 	fmt.Printf("Games %v were possible. Sum of IDs: %d\n", idsOfPossibleGames, sumIdsOfPossibleGames)
 
 	// Part Two:
+	// Sum of each game's minimum cube counts multiplied: 72706
 	fmt.Printf("Sum of each game's minimum cube counts multiplied: %d\n", sumOfCubeCountProducts)
 }
 
