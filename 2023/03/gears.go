@@ -21,8 +21,8 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
-const DEBUG = true
+const FILENAME = "input.txt"
+const DEBUG = false
 
 var reNumber = regexp.MustCompile(`\d+`)
 var reSymbols = regexp.MustCompile(`[^0-9\.]`)
@@ -53,7 +53,7 @@ func main() {
 	var allParts [][]int
 	for row, data := range schematic {
 		partLocations := reNumber.FindAllStringSubmatchIndex(data, -1)
-		debugPrint("%d: %v\n", row, partLocations)
+		debugPrint("Input row %d:", row)
 
 		for _, cols := range partLocations {
 			partNumber, err := strconv.Atoi(data[cols[0]:cols[1]])
@@ -62,9 +62,10 @@ func main() {
 			}
 
 			allParts = append(allParts, []int{partNumber, row, cols[0], cols[1]})
+			debugPrint(" %d at %d:%d,", partNumber, cols[0], cols[1])
 		}
 
-		debugPrint("%v\n", allParts)
+		debugPrint("\n")
 	}
 
 	var realPartNumbers []int
@@ -99,7 +100,7 @@ func main() {
 		// Something about inclusive-exclusive slicing makes doing this with a range
 		// problematic. I'd like to figure out a better way to do this.
 		var field []string
-		debugPrint("\n\nArea %v is [rows %d-%d cols %d-%d]:\n", partLoc, top, bottom, left, right)
+		debugPrint("\n\nArea %v is [rows %d-%d cols %d-%d]:\n", partNumber, top, bottom, left, right)
 		// Get the first two rows of the search area
 		for _, text := range schematic[top:bottom] {
 			field = append(field, text[left:right])
@@ -110,16 +111,21 @@ func main() {
 			field = append(field, schematic[bottom][left:right])
 		}
 
-		debugPrint("%v\n", strings.Join(field, "\n"))
+		debugPrint("  %v\n", strings.Join(field, "\n  "))
 
 		// Does this field have a symbol in it that isn't a period or a digit?
 		if reSymbols.MatchString(strings.Join(field, "")) {
-			debugPrint("Part %d matches\n", partNumber)
+			debugPrint("  REAL\n")
 			realPartNumbers = append(realPartNumbers, partNumber)
 			sumRealPartNumbers += partNumber
 		}
 	}
 
-	debugPrint("Real part numbers: %v\n", realPartNumbers)
-	debugPrint("Sum of these numbers: %d\n", sumRealPartNumbers)
+	debugPrint("\n")
+
+	// Part One:
+	// Count of part numbers: 1084
+	// Sum of these numbers: 539713
+	fmt.Printf("Count of part numbers: %v\n", len(realPartNumbers))
+	fmt.Printf("Sum of these numbers: %d\n", sumRealPartNumbers)
 }
