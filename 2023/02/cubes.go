@@ -101,13 +101,13 @@ func main() {
 
 				debugPrint("   - Shown %d of %s\n", count, name)
 
-				// PART ONE:
+				// PART ONE: do we have enough cubes in the starter bag for this?
 				if BAG[name] < count {
 					debugPrint("     NOPE, you don't have this. Moving on.\n")
 					possible = false
 				}
 
-				// PART TWO:
+				// PART TWO: make sure we have at least this many cubes in this game's bag
 				if gameBag[name] < count {
 					gameBag[name] = count
 				}
