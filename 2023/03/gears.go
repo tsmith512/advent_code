@@ -21,7 +21,7 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
+const FILENAME = "input.txt"
 const DEBUG = true
 
 var reNumber = regexp.MustCompile(`\d+`)
@@ -143,10 +143,10 @@ func main() {
 	// two part numbers. The "gear ratio" is the product of those two adjacent
 	// numbers; report the sum of all the ratios.
 
-	// Find the row and col for each asterisk in the schematic:
 	var allGears [][]int
 	sumGearRatios := 0
 
+	// Find the row and col for each asterisk in the schematic:
 	for row, data := range schematic {
 		gearLocations := reAsterisk.FindAllStringSubmatchIndex(data, -1)
 
@@ -181,5 +181,7 @@ func main() {
 		}
 	}
 
+	// Part Two:
+	// Sum of all gear ratios: 84159075
 	fmt.Printf("\nSum of all gear ratios: %d\n", sumGearRatios)
 }
