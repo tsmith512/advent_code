@@ -3,7 +3,8 @@
 ## 2023
 
 - [Day 1: Trebuchet?!](2023/01/trebuchet.go) (Go)
-- [Day 2: Cube Conundrum](2023/01/cubes.go) (Go)
+- [Day 2: Cube Conundrum](2023/02/cubes.go) (Go)
+- [Day 3: Gear Ratios](2023/03/gears.go) (Go)
 
 ## 2022
 

@@ -22,7 +22,7 @@ import (
 )
 
 const FILENAME = "input.txt"
-const DEBUG = true
+const DEBUG = false
 
 var reNumber = regexp.MustCompile(`\d+`)
 var reSymbols = regexp.MustCompile(`[^0-9\.]`)
@@ -84,7 +84,7 @@ func main() {
 		left := partLoc[2] - 1
 		right := partLoc[3] + 1
 
-		// And if any start/end marker
+		// And if any start/end marker is out of bounds, crop the search area
 		if top < 0 {
 			top = 0
 		}
@@ -110,7 +110,7 @@ func main() {
 			field = append(field, text[left:right])
 		}
 
-		// Get the last row of the search area of `bottom` isn't out of range
+		// Get the last row of the search area if `bottom` isn't out of range
 		if bottom < len(schematic) {
 			field = append(field, schematic[bottom][left:right])
 		}
