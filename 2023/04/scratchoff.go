@@ -22,8 +22,8 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
-const DEBUG = true
+const FILENAME = "input.txt"
+const DEBUG = false
 
 // Simple wrapper for debug printing
 func debugPrint(template string, data ...interface{}) {
@@ -86,6 +86,8 @@ func numbersFromString(input string) (output []int) {
 		output = append(output, n)
 	}
 
+	// Part One:
+	// Total Score: 21213
 	debugPrint("%v", output)
 	return
 }
