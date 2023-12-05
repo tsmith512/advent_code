@@ -39,11 +39,12 @@ func PartTwo() {
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
 
-	// How many cards have we scratched?
+	// How many cards have we scratched? (Part Two answer)
 	totalCards := 0
 
-	// Keep a tally of how many bonus copies we have of upcoming cards.
-	bonusCards := []int{0}
+	// Keep a tally of how many bonus copies we have of upcoming cards as an array
+	// like [extra copies of this card, extra copies of the next card, next after that...]
+	bonusCards := []int{}
 
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -64,14 +65,14 @@ func PartTwo() {
 			thisCount += bonusCards[0]
 		}
 
-		DebugPrint("You have %d copies of this card. ", thisCount)
+		DebugPrint("You have %d copies of this card, ", thisCount)
 
 		// For each copy of this card we have, score it
 		for copy := 0; copy < thisCount; copy++ {
 			bonuses := countWinners(mine, winners)
 
 			if copy == 0 {
-				DebugPrint("It grants %d bonuses.\n", bonuses)
+				DebugPrint("each granting %d bonuses.\n", bonuses)
 			}
 
 			// Divvy out the new bonuses into the array we grab from in the next round.
@@ -85,16 +86,18 @@ func PartTwo() {
 			}
 
 			totalCards++
-
 		}
-		DebugPrint("Upcoming bonuses: %v\n\n", bonusCards)
 
 		// Shift the current card count out of the slice.
 		// Game instructions state that the input is designed such that there will
 		// NOT be any bonus cards beyond the initial stack.
 		if len(bonusCards) > 0 {
 			bonusCards = bonusCards[1:]
+		} else {
+			bonusCards = []int{}
 		}
+
+		DebugPrint("Upcoming bonuses: %v\n\n", bonusCards)
 	}
 
 	fmt.Printf("Total Cards: %d\n", totalCards)
