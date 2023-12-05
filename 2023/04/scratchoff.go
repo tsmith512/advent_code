@@ -22,7 +22,7 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
+const FILENAME = "input.txt"
 const DEBUG = true
 
 var CardParser = regexp.MustCompile(` (?P<card>\d+):  ?(?P<winners>(\d+\s*)+)\|  ?(?P<mine>(\d+\s*)+)`)

@@ -42,9 +42,9 @@ func PartTwo() {
 	// How many cards have we scratched? (Part Two answer)
 	totalCards := 0
 
-	// Keep a tally of how many bonus copies we have of cards as an array
-	// like [extra copies of card 1, extra copies of card 2, ...]
-	bonusCards := []int{0}
+	// Keep a tally of how many total copies we have of cards as an array
+	// like [copies of card 1, copies of card 2, ...]
+	howManyCards := []int{0}
 
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -57,14 +57,16 @@ func PartTwo() {
 
 		DebugPrint("Card %d has %v (winning numbers %v)\n", card, mine, winners)
 
-		// We know we have at least one copy of this card...
-		thisCount := 1
-
-		// ... but do we have any bonus copies?
-		if len(bonusCards) >= card {
-			thisCount += bonusCards[card-1]
+		// We know we have at least one copy of this card plus any we "won"
+		if len(howManyCards) >= card {
+			// We have bonus copies
+			howManyCards[card-1]++
+		} else {
+			// We didn't start with bonuses, it's just the one
+			howManyCards = append(howManyCards, 1)
 		}
 
+		thisCount := howManyCards[card-1]
 		DebugPrint("You have %d copies of this card, ", thisCount)
 
 		// For each copy of this card we have, score it
@@ -78,10 +80,10 @@ func PartTwo() {
 			// Divvy out the new bonuses into the array we grab from in the next round.
 			// Start with index `card` because `card` is one-based
 			for i := card; i < card+bonuses; i++ {
-				if len(bonusCards) > i {
-					bonusCards[i]++
+				if len(howManyCards) > i {
+					howManyCards[i]++
 				} else {
-					bonusCards = append(bonusCards, 1)
+					howManyCards = append(howManyCards, 1)
 				}
 			}
 
@@ -93,9 +95,11 @@ func PartTwo() {
 		// Game instructions state that the input is designed such that there will
 		// NOT be any bonus cards beyond the initial stack.
 
-		DebugPrint("Upcoming bonuses: %v\n\n", bonusCards)
+		DebugPrint("Upcoming copies: %v\n\n", howManyCards)
 	}
 
+	// Part Two:
+	// Total Cards: 8549735
 	fmt.Printf("Total Cards: %d\n", totalCards)
 }
 
