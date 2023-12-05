@@ -22,11 +22,13 @@ import (
 	"strings"
 )
 
-const FILENAME = "input.txt"
-const DEBUG = false
+const FILENAME = "sample.txt"
+const DEBUG = true
+
+var CardParser = regexp.MustCompile(` (?P<card>\d+):  ?(?P<winners>(\d+\s*)+)\|  ?(?P<mine>(\d+\s*)+)`)
 
 // Simple wrapper for debug printing
-func debugPrint(template string, data ...interface{}) {
+func DebugPrint(template string, data ...interface{}) {
 	if DEBUG {
 		fmt.Printf(template, data...)
 	}
@@ -48,26 +50,29 @@ func main() {
 		line := scanner.Text()
 
 		// Parse the line into its pieces
-		re := regexp.MustCompile(` (?P<card>\d+):  ?(?P<winners>(\d+\s*)+)\|  ?(?P<mine>(\d+\s*)+)`)
-		matches := re.FindAllStringSubmatch(line, -1)
+		matches := CardParser.FindAllStringSubmatch(line, -1)
 
 		// And convert the strings into int and []int
-		card := numbersFromString(matches[0][re.SubexpIndex("card")])[0]
-		winners := numbersFromString(matches[0][re.SubexpIndex("winners")])
-		mine := numbersFromString(matches[0][re.SubexpIndex("mine")])
+		card := NumbersFromString(matches[0][CardParser.SubexpIndex("card")])[0]
+		winners := NumbersFromString(matches[0][CardParser.SubexpIndex("winners")])
+		mine := NumbersFromString(matches[0][CardParser.SubexpIndex("mine")])
 		score := scratchTheCard(mine, winners)
 
 		totalScore += score
 
-		debugPrint("Card %d has %v (winning numbers %v)\n", card, mine, winners)
-		debugPrint("Score: %d\n\n", score)
+		DebugPrint("Card %d has %v (winning numbers %v)\n", card, mine, winners)
+		DebugPrint("Score: %d\n\n", score)
 	}
 
+	// Part One:
+	// Total Score: 21213
 	fmt.Printf("Total Score: %d\n", totalScore)
+
+	PartTwo()
 }
 
 // Given a string with spaces and numbers, return a slice of the integers
-func numbersFromString(input string) (output []int) {
+func NumbersFromString(input string) (output []int) {
 	pieces := strings.Split(input, " ")
 
 	for _, s := range pieces {
@@ -86,14 +91,11 @@ func numbersFromString(input string) (output []int) {
 		output = append(output, n)
 	}
 
-	// Part One:
-	// Total Score: 21213
-	debugPrint("%v", output)
 	return
 }
 
 // Utility function to find an int in a slide of ints
-func sliceContains(haystack []int, needle int) bool {
+func SliceContains(haystack []int, needle int) bool {
 	for _, h := range haystack {
 		if h == needle {
 			return true
@@ -107,7 +109,7 @@ func scratchTheCard(mine []int, winning []int) (score int) {
 	score = 0
 
 	for _, n := range mine {
-		if sliceContains(winning, n) {
+		if SliceContains(winning, n) {
 			if score == 0 {
 				score = 1
 			} else {
