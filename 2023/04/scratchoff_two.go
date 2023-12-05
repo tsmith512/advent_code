@@ -42,9 +42,9 @@ func PartTwo() {
 	// How many cards have we scratched? (Part Two answer)
 	totalCards := 0
 
-	// Keep a tally of how many bonus copies we have of upcoming cards as an array
-	// like [extra copies of this card, extra copies of the next card, next after that...]
-	bonusCards := []int{}
+	// Keep a tally of how many bonus copies we have of cards as an array
+	// like [extra copies of card 1, extra copies of card 2, ...]
+	bonusCards := []int{0}
 
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -61,8 +61,8 @@ func PartTwo() {
 		thisCount := 1
 
 		// ... but do we have any bonus copies?
-		if len(bonusCards) > 0 {
-			thisCount += bonusCards[0]
+		if len(bonusCards) >= card {
+			thisCount += bonusCards[card-1]
 		}
 
 		DebugPrint("You have %d copies of this card, ", thisCount)
@@ -76,8 +76,8 @@ func PartTwo() {
 			}
 
 			// Divvy out the new bonuses into the array we grab from in the next round.
-			// Start with index 1 because index 0 is the card we're working on now.
-			for i := 1; i <= bonuses; i++ {
+			// Start with index `card` because `card` is one-based
+			for i := card; i < card+bonuses; i++ {
 				if len(bonusCards) > i {
 					bonusCards[i]++
 				} else {
@@ -88,14 +88,10 @@ func PartTwo() {
 			totalCards++
 		}
 
-		// Shift the current card count out of the slice.
+		// DO NOT Shift the current card count out of the slice.
+		// (There was weirdness when the buffer would empty)
 		// Game instructions state that the input is designed such that there will
 		// NOT be any bonus cards beyond the initial stack.
-		if len(bonusCards) > 0 {
-			bonusCards = bonusCards[1:]
-		} else {
-			bonusCards = []int{}
-		}
 
 		DebugPrint("Upcoming bonuses: %v\n\n", bonusCards)
 	}
