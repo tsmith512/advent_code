@@ -23,7 +23,7 @@ import (
 )
 
 const FILENAME = "input.txt"
-const DEBUG = true
+const DEBUG = false
 
 var CardParser = regexp.MustCompile(` (?P<card>\d+):  ?(?P<winners>(\d+\s*)+)\|  ?(?P<mine>(\d+\s*)+)`)
 
@@ -50,12 +50,12 @@ func main() {
 		line := scanner.Text()
 
 		// Parse the line into its pieces
-		matches := CardParser.FindAllStringSubmatch(line, -1)
+		matches := CardParser.FindStringSubmatch(line)
 
 		// And convert the strings into int and []int
-		card := NumbersFromString(matches[0][CardParser.SubexpIndex("card")])[0]
-		winners := NumbersFromString(matches[0][CardParser.SubexpIndex("winners")])
-		mine := NumbersFromString(matches[0][CardParser.SubexpIndex("mine")])
+		card := NumbersFromString(matches[CardParser.SubexpIndex("card")])[0]
+		winners := NumbersFromString(matches[CardParser.SubexpIndex("winners")])
+		mine := NumbersFromString(matches[CardParser.SubexpIndex("mine")])
 		score := scratchTheCard(mine, winners)
 
 		totalScore += score

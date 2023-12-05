@@ -39,10 +39,7 @@ func PartTwo() {
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
 
-	// How many cards have we scratched? (Part Two answer)
-	totalCards := 0
-
-	// Keep a tally of how many total copies we have of cards as an array
+	// Keep a tally of how many total copies we have of every card as an array
 	// like [copies of card 1, copies of card 2, ...]
 	howManyCards := []int{0}
 
@@ -50,10 +47,10 @@ func PartTwo() {
 		line := scanner.Text()
 
 		// Parse the line into its pieces just like Part One
-		matches := CardParser.FindAllStringSubmatch(line, -1)
-		card := NumbersFromString(matches[0][CardParser.SubexpIndex("card")])[0]
-		winners := NumbersFromString(matches[0][CardParser.SubexpIndex("winners")])
-		mine := NumbersFromString(matches[0][CardParser.SubexpIndex("mine")])
+		matches := CardParser.FindStringSubmatch(line)
+		card := NumbersFromString(matches[CardParser.SubexpIndex("card")])[0]
+		winners := NumbersFromString(matches[CardParser.SubexpIndex("winners")])
+		mine := NumbersFromString(matches[CardParser.SubexpIndex("mine")])
 
 		DebugPrint("Card %d has %v (winning numbers %v)\n", card, mine, winners)
 
@@ -77,8 +74,8 @@ func PartTwo() {
 				DebugPrint("each granting %d bonuses.\n", bonuses)
 			}
 
-			// Divvy out the new bonuses into the array we grab from in the next round.
-			// Start with index `card` because `card` is one-based
+			// Divvy out the new bonuses into the array of upcoming copies.
+			// (Start with index `card` because `card` is one-based)
 			for i := card; i < card+bonuses; i++ {
 				if len(howManyCards) > i {
 					howManyCards[i]++
@@ -86,16 +83,15 @@ func PartTwo() {
 					howManyCards = append(howManyCards, 1)
 				}
 			}
-
-			totalCards++
 		}
 
-		// DO NOT Shift the current card count out of the slice.
-		// (There was weirdness when the buffer would empty)
-		// Game instructions state that the input is designed such that there will
-		// NOT be any bonus cards beyond the initial stack.
-
 		DebugPrint("Upcoming copies: %v\n\n", howManyCards)
+	}
+
+	// Now we just count up how many copies of each card we ended up with.
+	totalCards := 0
+	for _, i := range howManyCards {
+		totalCards += i
 	}
 
 	// Part Two:
