@@ -21,6 +21,9 @@ import (
 const FILENAME = "sample.txt"
 const DEBUG = true
 
+const INPUTTYPE = "seed"
+const OUTPUTTYPE = "humidity"
+
 // Simple wrapper for debug printing
 func DebugPrint(template string, data ...interface{}) {
 	if DEBUG {
@@ -51,8 +54,8 @@ func main() {
 	}
 
 	for _, seed := range seeds {
-		soil := AlmanacGet(almanac, "seed", "soil", seed)
-		DebugPrint("For seed %d we need soil %d.\n", seed, soil)
+		soil := AlmanacGet(almanac, INPUTTYPE, OUTPUTTYPE, seed)
+		DebugPrint("For %s %d we need %s %d.\n\n", INPUTTYPE, seed, OUTPUTTYPE, soil)
 	}
 }
 
@@ -62,34 +65,79 @@ func AlmanacProcessor(input string) (title string, rules [][]int) {
 	content := strings.Split(input, ":\n")
 
 	title = strings.Replace(content[0], " map", "", -1)
-	DebugPrint("%v\n", title)
+	// DebugPrint("%v\n", title)
 
 	rows := strings.Split(content[1], "\n")
 
 	for _, row := range rows {
 		rules = append(rules, NumbersFromString(row))
 	}
-	DebugPrint("%v\n", rules)
+	// DebugPrint("%v\n", rules)
 
 	return
 }
 
-func AlmanacGet(almanac map[string][][]int, inputType string, outputType string, value int) (mappedValue int) {
-	// Unless we find a match, the input is unchanged
-	mappedValue = value
-
+func AlmanacGet(almanac map[string][][]int, inputType string, outputType string, value int) int {
 	section, ok := almanac[inputType+"-to-"+outputType]
 	if ok {
 		for _, rule := range section {
 			// If the value is between input-start and input-start+range...
-			if rule[0] <= value && value <= rule[0]+rule[2] {
+			// WATCH OUT: THE OUTPUT-START IS INDEX 0 IN THAT STUPID MAP.
+			if rule[1] <= value && value <= rule[1]+rule[2] {
 				// determine the difference between input and output, add to the value
-				mappedValue = value + (rule[0] - rule[1])
+				diff := rule[0] - rule[1]
+				DebugPrint("(diff %d) ", diff)
+				value = value + diff
+				break
 			}
 		}
 	} else {
-		DebugPrint("We did not have a mapping for %s to %s", inputType, outputType)
+		DebugPrint("We did not have a mapping for %s to %s directly.\n", inputType, outputType)
+
+		chain := AlmanacPaths(almanac)
+
+		iStart := SliceIndex(chain, inputType)
+		iStop := SliceIndex(chain, outputType)
+
+		// @TODO: This will bonk if the output type is the end of the chain
+		path := chain[iStart : iStop+1]
+
+		DebugPrint("So we can do that via %v\n", path)
+
+		for i := 0; i < len(path)-1; i++ {
+			DebugPrint("%s %d --> ", path[i], value)
+			value = AlmanacGet(almanac, path[i], path[i+1], value)
+			DebugPrint("%s %d\n", path[i+1], value)
+		}
 	}
+
+	return value
+}
+
+// Given an almanac, figure out what the conversion paths are and return the
+// chain of what conversions we can do
+func AlmanacPaths(almanac map[string][][]int) (chain []string) {
+	var mappings [][]string
+
+	for section := range almanac {
+		mappings = append(mappings, strings.Split(section, "-to-"))
+	}
+
+	// DebugPrint("Mappings we know: %v\n", mappings)
+
+	// We know we start with seeds.
+	chain = append(chain, "seed")
+	for len(chain) < len(mappings) {
+		last := chain[len(chain)-1]
+
+		for _, mapping := range mappings {
+			if mapping[0] == last {
+				chain = append(chain, mapping[1])
+			}
+		}
+	}
+
+	DebugPrint("Conversion chain we support: %v\n", chain)
 
 	return
 }
@@ -115,4 +163,14 @@ func NumbersFromString(input string) (output []int) {
 	}
 
 	return
+}
+
+// Utility function to find left-most string in a slice of strings
+func SliceIndex(haystack []string, needle string) int {
+	for i, h := range haystack {
+		if h == needle {
+			return i
+		}
+	}
+	return -1
 }
