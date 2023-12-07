@@ -47,6 +47,9 @@ func main() {
 	// Break the rest of the almanac sections into mapped slices we can use:
 	almanac := make(map[string][][]int)
 
+	// We were tasked with finding the lowest location number
+	lowestLocation := -1
+
 	for _, section := range almanacRaw[1:] {
 		title, rules := AlmanacProcessor(section)
 
@@ -54,9 +57,15 @@ func main() {
 	}
 
 	for _, seed := range seeds {
-		soil := AlmanacGet(almanac, INPUTTYPE, OUTPUTTYPE, seed)
-		DebugPrint("For %s %d we need %s %d.\n\n", INPUTTYPE, seed, OUTPUTTYPE, soil)
+		output := AlmanacGet(almanac, INPUTTYPE, OUTPUTTYPE, seed)
+		DebugPrint("For %s %d we need %s %d.\n\n", INPUTTYPE, seed, OUTPUTTYPE, output)
+
+		if lowestLocation == -1 || output < lowestLocation {
+			lowestLocation = output
+		}
 	}
+
+	DebugPrint("Lowest location seen: %d\n", lowestLocation)
 }
 
 // Take one of the almanac sections and return its title and the integers as-is
