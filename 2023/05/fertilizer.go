@@ -19,8 +19,8 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
-const DEBUG = true
+const FILENAME = "input.txt"
+const DEBUG = false
 const DO_PART_TWO = true
 
 const INPUTTYPE = "seed"
@@ -169,6 +169,14 @@ func main() {
 	// real    59m45.991s
 	// user    62m59.411s
 	// sys     1m54.714s
+	//
+	// STILL THE WRONG ANSWER but by getting "figure-out-translation-path" out of
+	// the loop and doing it ahead of time, I reduced the time it took to get the
+	// wrong answer by about 80%.
+	// Lowest location seen when considering seeds as ranges: 99751241
+	// real    10m9.755s
+	// user    10m10.148s
+	// sys     0m0.664s
 	fmt.Printf("Lowest location seen when considering seeds as ranges: %d\n\n", lowestLocation)
 }
 
