@@ -18,7 +18,7 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
+const FILENAME = "input.txt"
 const DEBUG = true
 
 const INPUTTYPE = "seed"
@@ -65,6 +65,8 @@ func main() {
 		}
 	}
 
+	// Part One:
+	// Lowest location seen: 51580674
 	DebugPrint("Lowest location seen: %d\n", lowestLocation)
 }
 
