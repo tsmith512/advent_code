@@ -20,6 +20,7 @@ import (
 
 const FILENAME = "sample.txt"
 const DEBUG = true
+const DO_PART_TWO = false
 
 const INPUTTYPE = "seed"
 const OUTPUTTYPE = "location"
@@ -39,7 +40,7 @@ func main() {
 
 	almanacRaw := strings.Split(string(data), "\n\n")
 
-	// What seeds do we have?
+	// What seed numbers do we have?
 	seeds := NumbersFromString(strings.Split(almanacRaw[0], ":")[1])
 
 	DebugPrint("We have seeds: %v\n", seeds)
@@ -50,15 +51,16 @@ func main() {
 	// We were tasked with finding the lowest location number
 	lowestLocation := -1
 
+	// Break down each 'section' of the almanac into rules we can use
 	for _, section := range almanacRaw[1:] {
 		title, rules := AlmanacProcessor(section)
 
 		almanac[title] = rules
 	}
 
+	// For each seed input, figure out the requested output, track the lowest
 	for _, seed := range seeds {
 		output := AlmanacGet(almanac, INPUTTYPE, OUTPUTTYPE, seed)
-		DebugPrint("For %s %d we need %s %d.\n\n", INPUTTYPE, seed, OUTPUTTYPE, output)
 
 		if lowestLocation == -1 || output < lowestLocation {
 			lowestLocation = output
@@ -67,7 +69,11 @@ func main() {
 
 	// Part One:
 	// Lowest location seen: 51580674
-	DebugPrint("Lowest location seen: %d\n", lowestLocation)
+	fmt.Printf("Lowest location seen: %d\n\n", lowestLocation)
+
+	if !DO_PART_TWO {
+		return
+	}
 
 	//  ___          _     ___
 	// | _ \__ _ _ _| |_  |_  )
@@ -79,14 +85,14 @@ func main() {
 	// NOT brute force this, but I'm gonna.
 	lowestLocation = -1
 
+	// For each pair of input numbers...
 	for i := 0; i < len(seeds); i += 2 {
-		DebugPrint("i=%d\n", i)
-		DebugPrint("seedsi %d, seedsi1 %d", seeds[i], seeds[i+1])
+		DebugPrint("Set %d (start at %d and plant %d)\n", i, seeds[i], seeds[i+1])
 		for j := 0; j <= seeds[i+1]; j++ {
-			DebugPrint("j=%d\n", j)
 			seed := seeds[i] + j
+
+			// Like part 1, get the requeted output for seeds[i]+j, tracking the lowest
 			output := AlmanacGet(almanac, INPUTTYPE, OUTPUTTYPE, seed)
-			DebugPrint("For %s %d we need %s %d.\n\n", INPUTTYPE, seed, OUTPUTTYPE, output)
 
 			if lowestLocation == -1 || output < lowestLocation {
 				lowestLocation = output
@@ -94,16 +100,20 @@ func main() {
 		}
 	}
 
-	DebugPrint("Lowest location seen when considering seeds as ranges: %d\n", lowestLocation)
+	// WRONG ANSWER: This answer is too high, but it's what I keep getting...
+	// Lowest location seen when considering seeds as ranges: 99751241
+	// real    59m45.991s
+	// user    62m59.411s
+	// sys     1m54.714s
+	fmt.Printf("Lowest location seen when considering seeds as ranges: %d\n\n", lowestLocation)
 }
 
 // Take one of the almanac sections and return its title and the integers as-is
-// [input-start output-start range-length]. Don't interpolate and expand.
+// [output-start input-start range-length]. Don't interpolate and expand.
 func AlmanacProcessor(input string) (title string, rules [][]int) {
 	content := strings.Split(input, ":\n")
 
 	title = strings.Replace(content[0], " map", "", -1)
-	// DebugPrint("%v\n", title)
 
 	rows := strings.Split(content[1], "\n")
 
@@ -115,7 +125,6 @@ func AlmanacProcessor(input string) (title string, rules [][]int) {
 			rules = append(rules, values)
 		}
 	}
-	// DebugPrint("%v\n", rules)
 
 	return
 }
@@ -129,14 +138,14 @@ func AlmanacGet(almanac map[string][][]int, inputType string, outputType string,
 			if rule[1] <= value && value <= rule[1]+rule[2] {
 				// determine the difference between input and output, add to the value
 				diff := rule[0] - rule[1]
-				DebugPrint("(diff %d) ", diff)
+				DebugPrint("(%d)", diff)
 				value = value + diff
 				break
 			}
 		}
 	} else {
-		// DebugPrint("We did not have a mapping for %s to %s directly.\n", inputType, outputType)
-
+		// There was no mapping to the requested input-output directly, need to
+		// determine what we can do. Start by making a possible conversion chain
 		chain := AlmanacPaths(almanac)
 
 		iStart := SliceIndex(chain, inputType)
@@ -151,13 +160,14 @@ func AlmanacGet(almanac map[string][][]int, inputType string, outputType string,
 			path = chain[iStart:]
 		}
 
-		// DebugPrint("So we can do that via %v\n", path)
-
+		// Mark our input and start:
 		DebugPrint("%s %d ", path[0], value)
 
+		// For each step in the chain, do a conversion we know until we have the
+		// requested output type
 		for i := 0; i < len(path)-1; i++ {
 			value = AlmanacGet(almanac, path[i], path[i+1], value)
-			DebugPrint("--> %s %d ", path[i+1], value)
+			DebugPrint("> %s %d ", path[i+1], value)
 		}
 		DebugPrint("\n")
 	}
@@ -173,8 +183,6 @@ func AlmanacPaths(almanac map[string][][]int) (chain []string) {
 	for section := range almanac {
 		mappings = append(mappings, strings.Split(section, "-to-"))
 	}
-
-	// DebugPrint("Mappings we know: %v\n", mappings)
 
 	// We know we start with seeds.
 	chain = append(chain, "seed")
