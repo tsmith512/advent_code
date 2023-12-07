@@ -12,6 +12,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"strconv"
@@ -20,7 +21,7 @@ import (
 
 const FILENAME = "sample.txt"
 const DEBUG = true
-const DO_PART_TWO = false
+const DO_PART_TWO = true
 
 const INPUTTYPE = "seed"
 const OUTPUTTYPE = "location"
@@ -38,18 +39,21 @@ func main() {
 		panic(err)
 	}
 
+	DebugPrint("SETUP:\n")
+
 	almanacRaw := strings.Split(string(data), "\n\n")
-
-	// What seed numbers do we have?
-	seeds := NumbersFromString(strings.Split(almanacRaw[0], ":")[1])
-
-	DebugPrint("We have seeds: %v\n", seeds)
-
-	// Break the rest of the almanac sections into mapped slices we can use:
-	almanac := make(map[string][][]int)
 
 	// We were tasked with finding the lowest location number
 	lowestLocation := -1
+
+	// What seed numbers do we have?
+	seeds := NumbersFromString(strings.Split(almanacRaw[0], ":")[1])
+	DebugPrint("We have seeds: %v\n", seeds)
+
+	// ## ALMANAC PROCESSING ## //
+
+	// Break the rest of the almanac sections into mapped slices we can use:
+	almanac := make(map[string][][]int)
 
 	// Break down each 'section' of the almanac into rules we can use
 	for _, section := range almanacRaw[1:] {
@@ -58,12 +62,51 @@ func main() {
 		almanac[title] = rules
 	}
 
+	// Obviously, input-to-output isn't going to be doable directly, find the
+	// order of types we can map directly into a chain:
+	chain := AlmanacPaths(almanac)
+	DebugPrint("Possible translations: %v\n", chain)
+
+	// What translaitons are we gonna have ot make?
+	iStart := SliceIndex(chain, INPUTTYPE)
+	iStop := SliceIndex(chain, OUTPUTTYPE)
+
+	// I feel like this is dumb. There should be a way to make a slice by
+	// addressing the last element in it...
+	var path []string
+	if iStop < len(chain) {
+		path = chain[iStart : iStop+1]
+	} else {
+		path = chain[iStart:]
+	}
+
+	DebugPrint("Translation chain for requested types: %v\n", path)
+
+	DebugPrint("\n\nPART ONE:\n")
+
 	// For each seed input, figure out the requested output, track the lowest
 	for _, seed := range seeds {
-		output := AlmanacGet(almanac, INPUTTYPE, OUTPUTTYPE, seed)
+		value := seed
 
-		if lowestLocation == -1 || output < lowestLocation {
-			lowestLocation = output
+		// Mark our input and start:
+		DebugPrint("%s %d ", path[0], value)
+
+		// For each step in the chain, do a conversion we know until we have the
+		// requested output type
+		for i := 0; i < len(path)-1; i++ {
+			value, err = AlmanacGet(almanac, path[i], path[i+1], value)
+
+			// We asked for a translation we can't map directly
+			if err != nil {
+				panic(err)
+			}
+
+			DebugPrint("> %s %d ", path[i+1], value)
+		}
+		DebugPrint("\n")
+
+		if lowestLocation == -1 || value < lowestLocation {
+			lowestLocation = value
 		}
 	}
 
@@ -83,19 +126,40 @@ func main() {
 	// Oh good. The seeds input array isn't an array of seeds, it was a series of
 	// touples describing start and length of seed RANGES. I assume I should
 	// NOT brute force this, but I'm gonna.
+	DebugPrint("\n\nPART TWO:\n")
+
+	// Reset
 	lowestLocation = -1
 
 	// For each pair of input numbers...
 	for i := 0; i < len(seeds); i += 2 {
-		DebugPrint("Set %d (start at %d and plant %d)\n", i, seeds[i], seeds[i+1])
-		for j := 0; j <= seeds[i+1]; j++ {
-			seed := seeds[i] + j
+		startSeed := seeds[i]
+		plantHowMany := seeds[i+1]
+		DebugPrint("Set %d (start at %d and plant %d)\n", i, startSeed, plantHowMany)
 
-			// Like part 1, get the requeted output for seeds[i]+j, tracking the lowest
-			output := AlmanacGet(almanac, INPUTTYPE, OUTPUTTYPE, seed)
+		// For each seed in the range
+		for s := 0; s <= plantHowMany; s++ {
+			value := startSeed + s
 
-			if lowestLocation == -1 || output < lowestLocation {
-				lowestLocation = output
+			// Mark our input and start:
+			DebugPrint("%s %d ", path[0], value)
+
+			// For each step in the chain, do a conversion we know until we have the
+			// requested output type
+			for step := 0; step < len(path)-1; step++ {
+				value, err = AlmanacGet(almanac, path[step], path[step+1], value)
+
+				// We asked for a translation we can't map directly
+				if err != nil {
+					panic(err)
+				}
+
+				DebugPrint("> %s %d ", path[step+1], value)
+			}
+			DebugPrint("\n")
+
+			if lowestLocation == -1 || value < lowestLocation {
+				lowestLocation = value
 			}
 		}
 	}
@@ -129,7 +193,7 @@ func AlmanacProcessor(input string) (title string, rules [][]int) {
 	return
 }
 
-func AlmanacGet(almanac map[string][][]int, inputType string, outputType string, value int) int {
+func AlmanacGet(almanac map[string][][]int, inputType string, outputType string, value int) (int, error) {
 	section, ok := almanac[inputType+"-to-"+outputType]
 	if ok {
 		for _, rule := range section {
@@ -144,35 +208,10 @@ func AlmanacGet(almanac map[string][][]int, inputType string, outputType string,
 			}
 		}
 	} else {
-		// There was no mapping to the requested input-output directly, need to
-		// determine what we can do. Start by making a possible conversion chain
-		chain := AlmanacPaths(almanac)
-
-		iStart := SliceIndex(chain, inputType)
-		iStop := SliceIndex(chain, outputType)
-
-		// I feel like this is dumb. There should be a way to make a slice by
-		// addressing the last element in it...
-		var path []string
-		if iStop < len(chain) {
-			path = chain[iStart : iStop+1]
-		} else {
-			path = chain[iStart:]
-		}
-
-		// Mark our input and start:
-		DebugPrint("%s %d ", path[0], value)
-
-		// For each step in the chain, do a conversion we know until we have the
-		// requested output type
-		for i := 0; i < len(path)-1; i++ {
-			value = AlmanacGet(almanac, path[i], path[i+1], value)
-			DebugPrint("> %s %d ", path[i+1], value)
-		}
-		DebugPrint("\n")
+		return -1, errors.New("No mapping from " + inputType + "-to-" + outputType)
 	}
 
-	return value
+	return value, nil
 }
 
 // Given an almanac, figure out what the conversion paths are and return the
