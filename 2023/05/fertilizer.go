@@ -6,8 +6,9 @@
 //
 // "If You Give A Seed A Fertilizer"
 //
-// ... hell if I know ... more flavor text and a complicated problem statement
-// has me a little lost so I'm gonna see if I can start the string processing
+// Given a set of starting numbers (seeds) and a series of translation mappings
+// (e.g. seed-to-soil, soil-to-fertilizer, ..., -to-location) determine the
+// lowest value for "location" (final translation map type) given the inputs.
 
 package main
 
@@ -19,7 +20,7 @@ import (
 	"strings"
 )
 
-const FILENAME = "input.txt"
+const FILENAME = "sample.txt"
 const DEBUG = false
 const DO_PART_TWO = true
 
@@ -54,8 +55,6 @@ func main() {
 
 	// Break the rest of the almanac sections into mapped slices we can use:
 	almanac := make(map[string][][]int)
-
-	// Break down each 'section' of the almanac into rules we can use
 	for _, section := range almanacRaw[1:] {
 		title, rules := AlmanacProcessor(section)
 
@@ -67,12 +66,12 @@ func main() {
 	chain := AlmanacPaths(almanac)
 	DebugPrint("Possible translations: %v\n", chain)
 
-	// What translaitons are we gonna have ot make?
+	// What translaitons are we gonna have to make?
 	iStart := SliceIndex(chain, INPUTTYPE)
 	iStop := SliceIndex(chain, OUTPUTTYPE)
 
 	// I feel like this is dumb. There should be a way to make a slice by
-	// addressing the last element in it...
+	// inclusively addressing the last element in it...
 	var path []string
 	if iStop < len(chain) {
 		path = chain[iStart : iStop+1]
@@ -141,7 +140,7 @@ func main() {
 		for s := 0; s <= plantHowMany; s++ {
 			value := startSeed + s
 
-			// Mark our input and start:
+			// Mark our input and start type:
 			DebugPrint("%s %d ", path[0], value)
 
 			// For each step in the chain, do a conversion we know until we have the
