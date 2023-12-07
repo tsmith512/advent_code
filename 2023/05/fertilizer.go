@@ -22,7 +22,7 @@ const FILENAME = "sample.txt"
 const DEBUG = true
 
 const INPUTTYPE = "seed"
-const OUTPUTTYPE = "humidity"
+const OUTPUTTYPE = "location"
 
 // Simple wrapper for debug printing
 func DebugPrint(template string, data ...interface{}) {
@@ -70,7 +70,12 @@ func AlmanacProcessor(input string) (title string, rules [][]int) {
 	rows := strings.Split(content[1], "\n")
 
 	for _, row := range rows {
-		rules = append(rules, NumbersFromString(row))
+		values := NumbersFromString(row)
+
+		// Last line in the file is blank
+		if len(values) > 0 {
+			rules = append(rules, values)
+		}
 	}
 	// DebugPrint("%v\n", rules)
 
@@ -99,8 +104,14 @@ func AlmanacGet(almanac map[string][][]int, inputType string, outputType string,
 		iStart := SliceIndex(chain, inputType)
 		iStop := SliceIndex(chain, outputType)
 
-		// @TODO: This will bonk if the output type is the end of the chain
-		path := chain[iStart : iStop+1]
+		// I feel like this is dumb. There should be a way to make a slice by
+		// addressing the last element in it...
+		var path []string
+		if iStop < len(chain) {
+			path = chain[iStart : iStop+1]
+		} else {
+			path = chain[iStart:]
+		}
 
 		DebugPrint("So we can do that via %v\n", path)
 
@@ -127,7 +138,7 @@ func AlmanacPaths(almanac map[string][][]int) (chain []string) {
 
 	// We know we start with seeds.
 	chain = append(chain, "seed")
-	for len(chain) < len(mappings) {
+	for len(chain) <= len(mappings) {
 		last := chain[len(chain)-1]
 
 		for _, mapping := range mappings {
