@@ -18,7 +18,7 @@ import (
 	"strings"
 )
 
-const FILENAME = "input.txt"
+const FILENAME = "sample.txt"
 const DEBUG = true
 
 const INPUTTYPE = "seed"
@@ -68,6 +68,33 @@ func main() {
 	// Part One:
 	// Lowest location seen: 51580674
 	DebugPrint("Lowest location seen: %d\n", lowestLocation)
+
+	//  ___          _     ___
+	// | _ \__ _ _ _| |_  |_  )
+	// |  _/ _` | '_|  _|  / /
+	// |_| \__,_|_|  \__| /___|
+	//
+	// Oh good. The seeds input array isn't an array of seeds, it was a series of
+	// touples describing start and length of seed RANGES. I assume I should
+	// NOT brute force this, but I'm gonna.
+	lowestLocation = -1
+
+	for i := 0; i < len(seeds); i += 2 {
+		DebugPrint("i=%d\n", i)
+		DebugPrint("seedsi %d, seedsi1 %d", seeds[i], seeds[i+1])
+		for j := 0; j <= seeds[i+1]; j++ {
+			DebugPrint("j=%d\n", j)
+			seed := seeds[i] + j
+			output := AlmanacGet(almanac, INPUTTYPE, OUTPUTTYPE, seed)
+			DebugPrint("For %s %d we need %s %d.\n\n", INPUTTYPE, seed, OUTPUTTYPE, output)
+
+			if lowestLocation == -1 || output < lowestLocation {
+				lowestLocation = output
+			}
+		}
+	}
+
+	DebugPrint("Lowest location seen when considering seeds as ranges: %d\n", lowestLocation)
 }
 
 // Take one of the almanac sections and return its title and the integers as-is
@@ -108,7 +135,7 @@ func AlmanacGet(almanac map[string][][]int, inputType string, outputType string,
 			}
 		}
 	} else {
-		DebugPrint("We did not have a mapping for %s to %s directly.\n", inputType, outputType)
+		// DebugPrint("We did not have a mapping for %s to %s directly.\n", inputType, outputType)
 
 		chain := AlmanacPaths(almanac)
 
@@ -124,13 +151,15 @@ func AlmanacGet(almanac map[string][][]int, inputType string, outputType string,
 			path = chain[iStart:]
 		}
 
-		DebugPrint("So we can do that via %v\n", path)
+		// DebugPrint("So we can do that via %v\n", path)
+
+		DebugPrint("%s %d ", path[0], value)
 
 		for i := 0; i < len(path)-1; i++ {
-			DebugPrint("%s %d --> ", path[i], value)
 			value = AlmanacGet(almanac, path[i], path[i+1], value)
-			DebugPrint("%s %d\n", path[i+1], value)
+			DebugPrint("--> %s %d ", path[i+1], value)
 		}
+		DebugPrint("\n")
 	}
 
 	return value
@@ -159,7 +188,7 @@ func AlmanacPaths(almanac map[string][][]int) (chain []string) {
 		}
 	}
 
-	DebugPrint("Conversion chain we support: %v\n", chain)
+	// DebugPrint("Conversion chain we support: %v\n", chain)
 
 	return
 }
