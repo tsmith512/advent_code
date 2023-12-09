@@ -20,8 +20,8 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
-const DEBUG = false
+const FILENAME = "input.txt"
+const DEBUG = true
 const DO_PART_TWO = true
 
 const INPUTTYPE = "seed"
