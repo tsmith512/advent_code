@@ -47,6 +47,9 @@ func main() {
 	// We were tasked with finding the lowest location number
 	lowestLocation := int64(-1)
 
+	// DEBUG: Let's remember the seed ^ it came with
+	var lowestLocationSeed int64
+
 	// What seed numbers do we have?
 	seeds := NumbersFromString(strings.Split(almanacRaw[0], ":")[1])
 	DebugPrint("We have seeds: %v\n", seeds)
@@ -106,12 +109,13 @@ func main() {
 
 		if lowestLocation == -1 || value < lowestLocation {
 			lowestLocation = value
+			lowestLocationSeed = seed
 		}
 	}
 
 	// Part One:
 	// Lowest location seen: 51580674
-	fmt.Printf("Lowest location seen: %d\n\n", lowestLocation)
+	fmt.Printf("Lowest location seen was %d, from seed %d.\n\n", lowestLocation, lowestLocationSeed)
 
 	if !DO_PART_TWO {
 		return
@@ -129,6 +133,7 @@ func main() {
 
 	// Reset
 	lowestLocation = -1
+	lowestLocationSeed = -1
 
 	// For each pair of input numbers...
 	for i := 0; i < len(seeds); i += 2 {
@@ -159,6 +164,7 @@ func main() {
 
 			if lowestLocation == -1 || value < lowestLocation {
 				lowestLocation = value
+				lowestLocationSeed = startSeed + s
 			}
 		}
 	}
@@ -176,7 +182,7 @@ func main() {
 	// real    10m9.755s
 	// user    10m10.148s
 	// sys     0m0.664s
-	fmt.Printf("Lowest location seen when considering seeds as ranges: %d\n\n", lowestLocation)
+	fmt.Printf("When considering seeds as ranges, lowest location was %d from seed %d.\n\n", lowestLocation, lowestLocationSeed)
 }
 
 // Take one of the almanac sections and return its title and the integers as-is
