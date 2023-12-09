@@ -142,7 +142,8 @@ func main() {
 		DebugPrint("Set %d (start at %d and plant %d)\n", i, startSeed, plantHowMany)
 
 		// For each seed in the range
-		for s := int64(0); s <= plantHowMany; s++ {
+		// plantHowMany counts the number of seeds to be planted, so at s=0 is seed 1.
+		for s := int64(0); s < plantHowMany; s++ {
 			value := startSeed + s
 
 			// Mark our input and start type:
@@ -182,6 +183,10 @@ func main() {
 	// real    10m9.755s
 	// user    10m10.148s
 	// sys     0m0.664s
+	//
+	// Fixed the off-by-one error that caused planting n+1 seeds in each range,
+	// but got the same wrong answer again.
+	// When considering seeds as ranges, lowest location was 99751241 from seed 1055427337.
 	fmt.Printf("When considering seeds as ranges, lowest location was %d from seed %d.\n\n", lowestLocation, lowestLocationSeed)
 }
 
