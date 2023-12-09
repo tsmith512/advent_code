@@ -45,7 +45,7 @@ func main() {
 	almanacRaw := strings.Split(string(data), "\n\n")
 
 	// We were tasked with finding the lowest location number
-	lowestLocation := -1
+	lowestLocation := int64(-1)
 
 	// What seed numbers do we have?
 	seeds := NumbersFromString(strings.Split(almanacRaw[0], ":")[1])
@@ -54,7 +54,7 @@ func main() {
 	// ## ALMANAC PROCESSING ## //
 
 	// Break the rest of the almanac sections into mapped slices we can use:
-	almanac := make(map[string][][]int)
+	almanac := make(map[string][][]int64)
 	for _, section := range almanacRaw[1:] {
 		title, rules := AlmanacProcessor(section)
 
@@ -137,7 +137,7 @@ func main() {
 		DebugPrint("Set %d (start at %d and plant %d)\n", i, startSeed, plantHowMany)
 
 		// For each seed in the range
-		for s := 0; s <= plantHowMany; s++ {
+		for s := int64(0); s <= plantHowMany; s++ {
 			value := startSeed + s
 
 			// Mark our input and start type:
@@ -181,7 +181,7 @@ func main() {
 
 // Take one of the almanac sections and return its title and the integers as-is
 // [output-start input-start range-length]. Don't interpolate and expand.
-func AlmanacProcessor(input string) (title string, rules [][]int) {
+func AlmanacProcessor(input string) (title string, rules [][]int64) {
 	content := strings.Split(input, ":\n")
 
 	title = strings.Replace(content[0], " map", "", -1)
@@ -200,7 +200,7 @@ func AlmanacProcessor(input string) (title string, rules [][]int) {
 	return
 }
 
-func AlmanacGet(almanac map[string][][]int, inputType string, outputType string, value int) (int, error) {
+func AlmanacGet(almanac map[string][][]int64, inputType string, outputType string, value int64) (int64, error) {
 	section, ok := almanac[inputType+"-to-"+outputType]
 	if ok {
 		for _, rule := range section {
@@ -223,7 +223,7 @@ func AlmanacGet(almanac map[string][][]int, inputType string, outputType string,
 
 // Given an almanac, figure out what the conversion paths are and return the
 // chain of what conversions we can do
-func AlmanacPaths(almanac map[string][][]int) (chain []string) {
+func AlmanacPaths(almanac map[string][][]int64) (chain []string) {
 	var mappings [][]string
 
 	for section := range almanac {
@@ -248,7 +248,7 @@ func AlmanacPaths(almanac map[string][][]int) (chain []string) {
 }
 
 // Given a string with spaces and numbers, return a slice of the integers
-func NumbersFromString(input string) (output []int) {
+func NumbersFromString(input string) (output []int64) {
 	pieces := strings.Split(input, " ")
 
 	for _, s := range pieces {
@@ -264,7 +264,7 @@ func NumbersFromString(input string) (output []int) {
 			panic(err)
 		}
 
-		output = append(output, n)
+		output = append(output, int64(n))
 	}
 
 	return

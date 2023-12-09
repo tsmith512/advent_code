@@ -94,7 +94,7 @@ func NumbersFromString(input string) (output []int) {
 	return
 }
 
-// Utility function to find an int in a slide of ints
+// Utility function to find an int in a slice of ints
 func SliceContains(haystack []int, needle int) bool {
 	for _, h := range haystack {
 		if h == needle {
