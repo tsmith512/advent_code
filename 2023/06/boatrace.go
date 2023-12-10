@@ -32,7 +32,7 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
+const FILENAME = "input.txt"
 const DEBUG = true
 
 var InputParser = regexp.MustCompile(`((\d+\s*)+)`)
@@ -68,7 +68,28 @@ func main() {
 		product *= options[j]
 	}
 
-	fmt.Printf("Across %d races, a combined product of %d possible options.\n", len(times), product)
+	// Part One:
+	// Across 4 races, a combined product of 170000 possible options.
+	fmt.Printf("Across %d races, a combined product of %d possible options.\n\n", len(times), product)
+
+	//  ___          _     ___
+	// | _ \__ _ _ _| |_  |_  )
+	// |  _/ _` | '_|  _|  / /
+	// |_| \__,_|_|  \__| /___|
+	//
+	// Oh, of course, it was a "kerning" problem... it's just one really long race.
+	bigTime := fixKeming(times)
+	bigDistance := fixKeming(distances)
+
+	min, max := RaceSolver(bigTime, bigDistance)
+
+	option := max - min + 1 // (+1 because the range is inclusive)
+
+	// Part Two:
+	// Race to 213116810861248 mm in less than 35696887 ms.
+	// Max charge: 28117334. Min charge: 7579553.
+	// For the big race, we have 20537782 options
+	DebugPrint("For the big race, we have %d options.\n\n", option)
 }
 
 // Given time and distance, return the min and max charge times
@@ -97,6 +118,22 @@ func RaceSolver(time int, distance int) (minCharge int, maxCharge int) {
 	}
 
 	DebugPrint("Max charge: %d. Min charge: %d.\n", maxCharge, minCharge)
+
+	return
+}
+
+func fixKeming(input []int) (output int) {
+	var rewrite string
+
+	for i := 0; i < len(input); i++ {
+		rewrite += fmt.Sprint(input[i])
+	}
+
+	output, err := strconv.Atoi(rewrite)
+
+	if err != nil {
+		panic(err)
+	}
 
 	return
 }
