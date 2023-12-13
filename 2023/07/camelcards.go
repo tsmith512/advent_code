@@ -27,7 +27,7 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
+const FILENAME = "input.txt"
 const DEBUG = true
 
 const HAND_SIZE = 5
@@ -137,6 +137,8 @@ func main() {
 		totalWinnings += winnings
 	}
 
+	// Part One:
+	// Total winnings: 248569531
 	fmt.Printf("Total winnings: %d\n", totalWinnings)
 }
 
