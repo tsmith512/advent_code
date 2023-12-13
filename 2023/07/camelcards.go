@@ -30,6 +30,8 @@ import (
 const FILENAME = "sample.txt"
 const DEBUG = true
 
+const HAND_SIZE = 5
+
 var CardValues = map[string]int{
 	"2": 2,
 	"3": 3,
@@ -104,13 +106,38 @@ func main() {
 
 	DebugPrint("\n\n")
 
+	// Sort the hands array so we can determine the winnings:
 	sort.SliceStable(hands, func(i int, j int) bool {
-		return HandRank[hands[i].category] < HandRank[hands[j].category]
+		// If they are different category hands, we know their rank
+		if HandRank[hands[i].category] != HandRank[hands[j].category] {
+			return HandRank[hands[i].category] < HandRank[hands[j].category]
+		}
+
+		// Would this be easier of a hand.cards was a []rune instead?
+		iCards := strings.Split(hands[i].cards, "")
+		jCards := strings.Split(hands[j].cards, "")
+
+		// The cards are pre-sorted and the instructions say to evaluate them in
+		// order, so return the sorter boolean on the first pair of cards that differ
+		for k, _ := range iCards {
+			if iCards[k] != jCards[k] {
+				return CardValues[iCards[k]] < CardValues[jCards[k]]
+			}
+		}
+
+		// If we made it here, the hands were identical...
+		return false
 	})
 
-	for _, h := range hands {
-		DebugPrint("%#v\n", h)
+	var totalWinnings int
+	for i, h := range hands {
+		winnings := (i + 1) * h.bid
+		DebugPrint("#%d: %v --> %d\n", i+1, h, winnings)
+
+		totalWinnings += winnings
 	}
+
+	fmt.Printf("Total winnings: %d\n", totalWinnings)
 }
 
 // Given a card string, determine what type/category a hand falls into.
