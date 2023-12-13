@@ -27,8 +27,9 @@ import (
 	"strings"
 )
 
-const FILENAME = "input.txt"
+const FILENAME = "sample.txt"
 const DEBUG = true
+const PART_TWO = true // Part 2 makes some scoring changes
 
 const HAND_SIZE = 5
 
@@ -67,6 +68,12 @@ type hand struct {
 var InputParser = regexp.MustCompile(`([A-Z0-9]+) (\d+)`)
 
 func main() {
+	if PART_TWO {
+		// In part two, this is a Joker, not a Jack, with a value of 1 on its own,
+		// but it's wild.
+		CardValues["J"] = 1
+	}
+
 	file, err := os.Open(FILENAME)
 	if err != nil {
 		panic(err)
@@ -157,9 +164,21 @@ func Categorize(cards string) string {
 	}
 	sort.SliceStable(keys, func(i int, j int) bool {
 		return cardCounts[keys[i]] > cardCounts[keys[j]]
+		// @TODO: For part two, do we need to also sort this slice by card value?
 	})
 
-	// DebugPrint("Hand contains: %v\n", cardCounts)
+	if PART_TWO {
+		j := SliceIndex(keys, "J")
+
+		if j == 0 {
+			DebugPrint("This hand had the most jokers")
+		}
+		if j > 0 {
+			// Make jokers count for the card we had the most of
+			cardCounts[keys[0]] += cardCounts[keys[j]]
+			keys = append(keys[:j], keys[j+1:]...)
+		}
+	}
 
 	if cardCounts[keys[0]] == 5 {
 		return "5X"
@@ -183,4 +202,14 @@ func DebugPrint(template string, data ...interface{}) {
 	if DEBUG {
 		fmt.Printf(template, data...)
 	}
+}
+
+// Utility function to find left-most string in a slice of strings
+func SliceIndex(haystack []string, needle string) int {
+	for i, h := range haystack {
+		if h == needle {
+			return i
+		}
+	}
+	return -1
 }
