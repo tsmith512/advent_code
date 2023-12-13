@@ -27,7 +27,7 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
+const FILENAME = "input.txt"
 const DEBUG = true
 const PART_TWO = true // Part 2 makes some scoring changes
 
@@ -146,6 +146,9 @@ func main() {
 
 	// Part One:
 	// Total winnings: 248569531
+	//
+	// Part Two:
+	// Total winnings: 250382098
 	fmt.Printf("Total winnings: %d\n", totalWinnings)
 }
 
@@ -163,15 +166,33 @@ func Categorize(cards string) string {
 		keys = append(keys, key)
 	}
 	sort.SliceStable(keys, func(i int, j int) bool {
+		if !PART_TWO {
+			return cardCounts[keys[i]] > cardCounts[keys[j]]
+		}
+
+		// In part two, we'll also want to order the keys by their card value
+		// in the case of a tie. (e.g. if we have 2x K and 2x Q, we'd want to apply
+		// any wild cards we get to the Ks.)
+		if cardCounts[keys[i]] == cardCounts[keys[j]] {
+			return CardValues[keys[i]] > CardValues[keys[j]]
+		}
+
 		return cardCounts[keys[i]] > cardCounts[keys[j]]
-		// @TODO: For part two, do we need to also sort this slice by card value?
 	})
 
 	if PART_TWO {
 		j := SliceIndex(keys, "J")
 
 		if j == 0 {
-			DebugPrint("This hand had the most jokers")
+			// Okay we have more Jokers than anything else
+			DebugPrint("%s: %#v\n", cards, cardCounts)
+
+			// If all we have is jokers, then leave it as-is. Otherwise, shift all the
+			// jokers to whatever we have the next-most of.
+			if len(keys) > 1 {
+				cardCounts[keys[1]] += cardCounts[keys[j]]
+				keys = keys[1:]
+			}
 		}
 		if j > 0 {
 			// Make jokers count for the card we had the most of
