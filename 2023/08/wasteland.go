@@ -20,8 +20,8 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample2.txt"
-const DEBUG = true
+const FILENAME = "input.txt"
+const DEBUG = false
 
 var InputParser = regexp.MustCompile(`(?P<start>[A-Z]+) = \((?P<left>[A-Z]+), (?P<right>[A-Z]+)`)
 
@@ -38,8 +38,8 @@ func main() {
 
 	parts := strings.Split(string(data), "\n\n")
 
-	var position string
-	var destination string
+	position := "AAA"
+	destination := "ZZZ"
 
 	stepsTaken := 0
 	steps := strings.Split(parts[0], "")
@@ -62,14 +62,6 @@ func main() {
 		tree[string(name)] = fork{
 			L: string(left),
 			R: string(right),
-		}
-
-		if i == 0 {
-			position = name
-		}
-
-		if i == len(lines)-1 {
-			destination = name
 		}
 	}
 
@@ -97,6 +89,8 @@ func main() {
 		}
 	}
 
+	// Part One:
+	// In 18023 steps, we arrived at destination: ZZZ
 	fmt.Printf("In %d steps, ", stepsTaken)
 
 	if position == destination {
