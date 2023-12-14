@@ -20,7 +20,7 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
+const FILENAME = "sample2.txt"
 const DEBUG = true
 
 var InputParser = regexp.MustCompile(`(?P<start>[A-Z]+) = \((?P<left>[A-Z]+), (?P<right>[A-Z]+)`)
@@ -75,7 +75,10 @@ func main() {
 
 	DebugPrint("\n\nStarting at: %s\n", position)
 
-	for i, step := range steps {
+	// This is a "i=0/i++%length-of-steps until position = destionation" for loop "
+	i := 0
+	for position != destination {
+		step := steps[i]
 		DebugPrint("%d - %s: from %s", i, step, position)
 
 		// `step` will be L or R, but Go sems not to like tree[position][step]...
@@ -87,17 +90,22 @@ func main() {
 		stepsTaken++
 
 		DebugPrint(" to %s\n", position)
+
+		i++
+		if i >= len(steps) {
+			i = 0
+		}
 	}
 
-	DebugPrint("In %d steps, ", stepsTaken)
+	fmt.Printf("In %d steps, ", stepsTaken)
 
 	if position == destination {
-		DebugPrint("we arrived at ")
+		fmt.Printf("we arrived at ")
 	} else {
-		DebugPrint("we didn't make it to ")
+		fmt.Printf("we didn't make it to ")
 	}
 
-	DebugPrint("destination: %s\n", destination)
+	fmt.Printf("destination: %s\n", destination)
 }
 
 // Simple wrapper for debug printing
