@@ -22,7 +22,7 @@ import (
 )
 
 const FILENAME = "input.txt"
-const DEBUG = true
+const DEBUG = false
 
 var InputParser = regexp.MustCompile(`(\d+)\s+(\d+)`)
 
@@ -79,9 +79,37 @@ func main() {
 
 	DebugPrint("Differences: %v\n", diffs)
 
-	fmt.Printf("Sum of differences between pairs: %d\n", sumDiff)
 	// Part One:
 	// Sum of differences between pairs: 2430334
+	fmt.Printf("Sum of differences between pairs: %d\n", sumDiff)
+
+	//  ___          _     ___
+	// | _ \__ _ _ _| |_  |_  )
+	// |  _/ _` | '_|  _|  / /
+	// |_| \__,_|_|  \__| /___|
+	//
+	// For each ListA[], sum the products of ListA[i] * how many times ListA[i]\
+	// appears in ListB.
+
+	var freqs []int
+	sumFreq := 0
+	for _, v := range listA {
+		freq := 0
+		for _, vB := range listB {
+			if v == vB {
+				freq++
+			}
+		}
+
+		DebugPrint("%d is in list B %d times --> add %d\n", v, freq, v*freq)
+		freqs = append(freqs, v*freq)
+		sumFreq += v * freq
+	}
+
+	DebugPrint("Similarities: %v\n", freqs)
+	fmt.Printf("Sum of similarities: %d\n", sumFreq)
+	// Part Two:
+	// Sum of similarities: 28786472
 }
 
 // Simple wrapper for debug printing
