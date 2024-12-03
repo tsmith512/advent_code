@@ -1,0 +1,9032 @@
+
+LINE: shrzvdcghblt21
+  rewrite: shrzvdcghblt21
+  digits:  [2 1]
+  value:   [2 ... 1] --> 21
+  0 + 21 = 21
+
+
+LINE: sixdddkcqjdnzzrgfourxjtwosevenhg9
+   6 dddkcqjdnzzrgfourxjtwosevenhg9
+  6dddkcqjdnzzrg 4 xjtwosevenhg9
+  6dddkcqjdnzzrg4xj 2 sevenhg9
+  6dddkcqjdnzzrg4xj2 7 hg9
+  rewrite: 6dddkcqjdnzzrg4xj27hg9
+  digits:  [6 4 2 7 9]
+  value:   [6 ... 9] --> 69
+  21 + 69 = 90
+
+
+LINE: threevt1onegxgvc9flk
+   3 vt1onegxgvc9flk
+  3vt1 1 gxgvc9flk
+  rewrite: 3vt11gxgvc9flk
+  digits:  [3 1 1 9]
+  value:   [3 ... 9] --> 39
+  90 + 39 = 129
+
+
+LINE: 7dmqzksnlcpbsqkzqlfour1four
+  7dmqzksnlcpbsqkzql 4 1four
+  7dmqzksnlcpbsqkzql41 4 
+  rewrite: 7dmqzksnlcpbsqkzql414
+  digits:  [7 4 1 4]
+  value:   [7 ... 4] --> 74
+  129 + 74 = 203
+
+
+LINE: 4seven9gdlnhqxfseven94five
+  4 7 9gdlnhqxfseven94five
+  479gdlnhqxf 7 94five
+  479gdlnhqxf794 5 
+  rewrite: 479gdlnhqxf7945
+  digits:  [4 7 9 7 9 4 5]
+  value:   [4 ... 5] --> 45
+  203 + 45 = 248
+
+
+LINE: nldeightwoshgnsjnzmbkbxcxltsqtstrgdmvqvxbfour6six
+  nld 8 woshgnsjnzmbkbxcxltsqtstrgdmvqvxbfour6six
+  nld8woshgnsjnzmbkbxcxltsqtstrgdmvqvxb 4 6six
+  nld8woshgnsjnzmbkbxcxltsqtstrgdmvqvxb46 6 
+  rewrite: nld8woshgnsjnzmbkbxcxltsqtstrgdmvqvxb466
+  digits:  [8 4 6 6]
+  value:   [8 ... 6] --> 86
+  248 + 86 = 334
+
+
+LINE: 87mmlvfr4
+  rewrite: 87mmlvfr4
+  digits:  [8 7 4]
+  value:   [8 ... 4] --> 84
+  334 + 84 = 418
+
+
+LINE: six1vvrlxx8two
+   6 1vvrlxx8two
+  61vvrlxx8 2 
+  rewrite: 61vvrlxx82
+  digits:  [6 1 8 2]
+  value:   [6 ... 2] --> 62
+  418 + 62 = 480
+
+
+LINE: znmfvdlhvjtwo9three4tzjqcfcgnsevenccvnsjczlpm
+  znmfvdlhvj 2 9three4tzjqcfcgnsevenccvnsjczlpm
+  znmfvdlhvj29 3 4tzjqcfcgnsevenccvnsjczlpm
+  znmfvdlhvj2934tzjqcfcgn 7 ccvnsjczlpm
+  rewrite: znmfvdlhvj2934tzjqcfcgn7ccvnsjczlpm
+  digits:  [2 9 3 4 7]
+  value:   [2 ... 7] --> 27
+  480 + 27 = 507
+
+
+LINE: 5sixninesixnh
+  5 6 ninesixnh
+  56 9 sixnh
+  569 6 nh
+  rewrite: 5696nh
+  digits:  [5 6 9 6]
+  value:   [5 ... 6] --> 56
+  507 + 56 = 563
+
+
+LINE: three1tbtwo
+   3 1tbtwo
+  31tb 2 
+  rewrite: 31tb2
+  digits:  [3 1 2]
+  value:   [3 ... 2] --> 32
+  563 + 32 = 595
+
+
+LINE: five9seventwobqsjqzxkptkhsix1
+   5 9seventwobqsjqzxkptkhsix1
+  59 7 twobqsjqzxkptkhsix1
+  597 2 bqsjqzxkptkhsix1
+  5972bqsjqzxkptkh 6 1
+  rewrite: 5972bqsjqzxkptkh61
+  digits:  [5 9 7 2 6 1]
+  value:   [5 ... 1] --> 51
+  595 + 51 = 646
+
+
+LINE: 74fivemn
+  74 5 mn
+  rewrite: 745mn
+  digits:  [7 4 5]
+  value:   [7 ... 5] --> 75
+  646 + 75 = 721
+
+
+LINE: sevenfivetsglnine8three
+   7 fivetsglnine8three
+  7 5 tsglnine8three
+  75tsgl 9 8three
+  75tsgl98 3 
+  rewrite: 75tsgl983
+  digits:  [7 5 9 8 3]
+  value:   [7 ... 3] --> 73
+  721 + 73 = 794
+
+
+LINE: spnvnfkbv4eightlmdkxmsfour574eight
+  spnvnfkbv4 8 lmdkxmsfour574eight
+  spnvnfkbv48lmdkxms 4 574eight
+  spnvnfkbv48lmdkxms4574 8 
+  rewrite: spnvnfkbv48lmdkxms45748
+  digits:  [4 8 4 5 7 4 8]
+  value:   [4 ... 8] --> 48
+  794 + 48 = 842
+
+
+LINE: one4four2fivedcpqjmgc8
+   1 4four2fivedcpqjmgc8
+  14 4 2fivedcpqjmgc8
+  1442 5 dcpqjmgc8
+  rewrite: 14425dcpqjmgc8
+  digits:  [1 4 4 2 5 8]
+  value:   [1 ... 8] --> 18
+  842 + 18 = 860
+
+
+LINE: two6sevensix33
+   2 6sevensix33
+  26 7 six33
+  267 6 33
+  rewrite: 267633
+  digits:  [2 6 7 6 3 3]
+  value:   [2 ... 3] --> 23
+  860 + 23 = 883
+
+
+LINE: krc34five
+  krc34 5 
+  rewrite: krc345
+  digits:  [3 4 5]
+  value:   [3 ... 5] --> 35
+  883 + 35 = 918
+
+
+LINE: doneight64qgc251four7
+  d 1 ight64qgc251four7
+  d1ight64qgc251 4 7
+  rewrite: d1ight64qgc25147
+  digits:  [1 6 4 2 5 1 4 7]
+  value:   [1 ... 7] --> 17
+  918 + 17 = 935
+
+
+LINE: vpjthc6
+  rewrite: vpjthc6
+  digits:  [6]
+  value:   [6 ... 6] --> 66
+  935 + 66 = 1001
+
+
+LINE: threethxbtffhbfourfive3
+   3 thxbtffhbfourfive3
+  3thxbtffhb 4 five3
+  3thxbtffhb4 5 3
+  rewrite: 3thxbtffhb453
+  digits:  [3 4 5 3]
+  value:   [3 ... 3] --> 33
+  1001 + 33 = 1034
+
+
+LINE: onetwo5
+   1 two5
+  1 2 5
+  rewrite: 125
+  digits:  [1 2 5]
+  value:   [1 ... 5] --> 15
+  1034 + 15 = 1049
+
+
+LINE: 1sevenngjqsfrptq8stgzxgjfp
+  1 7 ngjqsfrptq8stgzxgjfp
+  rewrite: 17ngjqsfrptq8stgzxgjfp
+  digits:  [1 7 8]
+  value:   [1 ... 8] --> 18
+  1049 + 18 = 1067
+
+
+LINE: 1576sevenninefhfqd4
+  1576 7 ninefhfqd4
+  15767 9 fhfqd4
+  rewrite: 157679fhfqd4
+  digits:  [1 5 7 6 7 9 4]
+  value:   [1 ... 4] --> 14
+  1067 + 14 = 1081
+
+
+LINE: nine4nine9ninefive
+   9 4nine9ninefive
+  94 9 9ninefive
+  9499 9 five
+  94999 5 
+  rewrite: 949995
+  digits:  [9 4 9 9 9 5]
+  value:   [9 ... 5] --> 95
+  1081 + 95 = 1176
+
+
+LINE: zp8sfveight9twotgbvscb
+  zp8sfv 8 9twotgbvscb
+  zp8sfv89 2 tgbvscb
+  rewrite: zp8sfv892tgbvscb
+  digits:  [8 8 9 2]
+  value:   [8 ... 2] --> 82
+  1176 + 82 = 1258
+
+
+LINE: eight27nrzmfsix7nine7two
+   8 27nrzmfsix7nine7two
+  827nrzmf 6 7nine7two
+  827nrzmf67 9 7two
+  827nrzmf6797 2 
+  rewrite: 827nrzmf67972
+  digits:  [8 2 7 6 7 9 7 2]
+  value:   [8 ... 2] --> 82
+  1258 + 82 = 1340
+
+
+LINE: gsfivefivepmq9nineftndvlcph
+  gs 5 fivepmq9nineftndvlcph
+  gs5 5 pmq9nineftndvlcph
+  gs55pmq9 9 ftndvlcph
+  rewrite: gs55pmq99ftndvlcph
+  digits:  [5 5 9 9]
+  value:   [5 ... 9] --> 59
+  1340 + 59 = 1399
+
+
+LINE: znggdvvkjthreethree79eight4
+  znggdvvkj 3 three79eight4
+  znggdvvkj3 3 79eight4
+  znggdvvkj3379 8 4
+  rewrite: znggdvvkj337984
+  digits:  [3 3 7 9 8 4]
+  value:   [3 ... 4] --> 34
+  1399 + 34 = 1433
+
+
+LINE: 7twofivethree7ninevtspmbfxnr
+  7 2 fivethree7ninevtspmbfxnr
+  72 5 three7ninevtspmbfxnr
+  725 3 7ninevtspmbfxnr
+  72537 9 vtspmbfxnr
+  rewrite: 725379vtspmbfxnr
+  digits:  [7 2 5 3 7 9]
+  value:   [7 ... 9] --> 79
+  1433 + 79 = 1512
+
+
+LINE: four9twoxthdxdc7two1
+   4 9twoxthdxdc7two1
+  49 2 xthdxdc7two1
+  492xthdxdc7 2 1
+  rewrite: 492xthdxdc721
+  digits:  [4 9 2 7 2 1]
+  value:   [4 ... 1] --> 41
+  1512 + 41 = 1553
+
+
+LINE: 8ddcmt87xhkqjbgtmkpjlkhd7sevenfour
+  8ddcmt87xhkqjbgtmkpjlkhd7 7 four
+  8ddcmt87xhkqjbgtmkpjlkhd77 4 
+  rewrite: 8ddcmt87xhkqjbgtmkpjlkhd774
+  digits:  [8 8 7 7 7 4]
+  value:   [8 ... 4] --> 84
+  1553 + 84 = 1637
+
+
+LINE: 4four6
+  4 4 6
+  rewrite: 446
+  digits:  [4 4 6]
+  value:   [4 ... 6] --> 46
+  1637 + 46 = 1683
+
+
+LINE: seven5tmzksnsv9six
+   7 5tmzksnsv9six
+  75tmzksnsv9 6 
+  rewrite: 75tmzksnsv96
+  digits:  [7 5 9 6]
+  value:   [7 ... 6] --> 76
+  1683 + 76 = 1759
+
+
+LINE: 6fivesixlxfrqbkfive
+  6 5 sixlxfrqbkfive
+  65 6 lxfrqbkfive
+  656lxfrqbk 5 
+  rewrite: 656lxfrqbk5
+  digits:  [6 5 6 5]
+  value:   [6 ... 5] --> 65
+  1759 + 65 = 1824
+
+
+LINE: seven9one8jxqkhbfppt
+   7 9one8jxqkhbfppt
+  79 1 8jxqkhbfppt
+  rewrite: 7918jxqkhbfppt
+  digits:  [7 9 1 8]
+  value:   [7 ... 8] --> 78
+  1824 + 78 = 1902
+
+
+LINE: hxsbgn6four7
+  hxsbgn6 4 7
+  rewrite: hxsbgn647
+  digits:  [6 4 7]
+  value:   [6 ... 7] --> 67
+  1902 + 67 = 1969
+
+
+LINE: 7pglchqndpnknhvcnkthreefour2
+  7pglchqndpnknhvcnk 3 four2
+  7pglchqndpnknhvcnk3 4 2
+  rewrite: 7pglchqndpnknhvcnk342
+  digits:  [7 3 4 2]
+  value:   [7 ... 2] --> 72
+  1969 + 72 = 2041
+
+
+LINE: bkkfjq6dklbppfvgsshgrbmtwo97
+  bkkfjq6dklbppfvgsshgrbm 2 97
+  rewrite: bkkfjq6dklbppfvgsshgrbm297
+  digits:  [6 2 9 7]
+  value:   [6 ... 7] --> 67
+  2041 + 67 = 2108
+
+
+LINE: 66eightsix3nine652
+  66 8 six3nine652
+  668 6 3nine652
+  66863 9 652
+  rewrite: 668639652
+  digits:  [6 6 8 6 3 9 6 5 2]
+  value:   [6 ... 2] --> 62
+  2108 + 62 = 2170
+
+
+LINE: six6zjjfffhrflrvkjgdrstcqpqt1eight
+   6 6zjjfffhrflrvkjgdrstcqpqt1eight
+  66zjjfffhrflrvkjgdrstcqpqt1 8 
+  rewrite: 66zjjfffhrflrvkjgdrstcqpqt18
+  digits:  [6 6 1 8]
+  value:   [6 ... 8] --> 68
+  2170 + 68 = 2238
+
+
+LINE: four252bqdxzzfttkq85tqnl
+   4 252bqdxzzfttkq85tqnl
+  rewrite: 4252bqdxzzfttkq85tqnl
+  digits:  [4 2 5 2 8 5]
+  value:   [4 ... 5] --> 45
+  2238 + 45 = 2283
+
+
+LINE: pbgjmdfxjvzdxjjdtwo5sixtwofivesxdcxtn
+  pbgjmdfxjvzdxjjd 2 5sixtwofivesxdcxtn
+  pbgjmdfxjvzdxjjd25 6 twofivesxdcxtn
+  pbgjmdfxjvzdxjjd256 2 fivesxdcxtn
+  pbgjmdfxjvzdxjjd2562 5 sxdcxtn
+  rewrite: pbgjmdfxjvzdxjjd25625sxdcxtn
+  digits:  [2 5 6 2 5]
+  value:   [2 ... 5] --> 25
+  2283 + 25 = 2308
+
+
+LINE: jonesix2five4snxcbgmx
+  j 1 six2five4snxcbgmx
+  j1 6 2five4snxcbgmx
+  j162 5 4snxcbgmx
+  rewrite: j16254snxcbgmx
+  digits:  [1 6 2 5 4]
+  value:   [1 ... 4] --> 14
+  2308 + 14 = 2322
+
+
+LINE: 62rceightsix
+  62rc 8 six
+  62rc8 6 
+  rewrite: 62rc86
+  digits:  [6 2 8 6]
+  value:   [6 ... 6] --> 66
+  2322 + 66 = 2388
+
+
+LINE: fivenine5
+   5 nine5
+  5 9 5
+  rewrite: 595
+  digits:  [5 9 5]
+  value:   [5 ... 5] --> 55
+  2388 + 55 = 2443
+
+
+LINE: nzcxfqhvninefive3nz
+  nzcxfqhv 9 five3nz
+  nzcxfqhv9 5 3nz
+  rewrite: nzcxfqhv953nz
+  digits:  [9 5 3]
+  value:   [9 ... 3] --> 93
+  2443 + 93 = 2536
+
+
+LINE: 4474rcl
+  rewrite: 4474rcl
+  digits:  [4 4 7 4]
+  value:   [4 ... 4] --> 44
+  2536 + 44 = 2580
+
+
+LINE: 1bjlvthree1tjthreethree
+  1bjlv 3 1tjthreethree
+  1bjlv31tj 3 three
+  1bjlv31tj3 3 
+  rewrite: 1bjlv31tj33
+  digits:  [1 3 1 3 3]
+  value:   [1 ... 3] --> 13
+  2580 + 13 = 2593
+
+
+LINE: bgx2six8vlbdmgsrkone9bdgzsfljlk
+  bgx2 6 8vlbdmgsrkone9bdgzsfljlk
+  bgx268vlbdmgsrk 1 9bdgzsfljlk
+  rewrite: bgx268vlbdmgsrk19bdgzsfljlk
+  digits:  [2 6 8 1 9]
+  value:   [2 ... 9] --> 29
+  2593 + 29 = 2622
+
+
+LINE: seven52
+   7 52
+  rewrite: 752
+  digits:  [7 5 2]
+  value:   [7 ... 2] --> 72
+  2622 + 72 = 2694
+
+
+LINE: fivesixtwo1two
+   5 sixtwo1two
+  5 6 two1two
+  56 2 1two
+  5621 2 
+  rewrite: 56212
+  digits:  [5 6 2 1 2]
+  value:   [5 ... 2] --> 52
+  2694 + 52 = 2746
+
+
+LINE: njznm98
+  rewrite: njznm98
+  digits:  [9 8]
+  value:   [9 ... 8] --> 98
+  2746 + 98 = 2844
+
+
+LINE: 3xhrsfshnine7five
+  3xhrsfsh 9 7five
+  3xhrsfsh97 5 
+  rewrite: 3xhrsfsh975
+  digits:  [3 9 7 5]
+  value:   [3 ... 5] --> 35
+  2844 + 35 = 2879
+
+
+LINE: four9eightzcmsevennzfrxtsixone
+   4 9eightzcmsevennzfrxtsixone
+  49 8 zcmsevennzfrxtsixone
+  498zcm 7 nzfrxtsixone
+  498zcm7nzfrxt 6 one
+  498zcm7nzfrxt6 1 
+  rewrite: 498zcm7nzfrxt61
+  digits:  [4 9 8 7 6 1]
+  value:   [4 ... 1] --> 41
+  2879 + 41 = 2920
+
+
+LINE: jjsxs4mgqnstgpreight1
+  jjsxs4mgqnstgpr 8 1
+  rewrite: jjsxs4mgqnstgpr81
+  digits:  [4 8 1]
+  value:   [4 ... 1] --> 41
+  2920 + 41 = 2961
+
+
+LINE: bhv9kr8three
+  bhv9kr8 3 
+  rewrite: bhv9kr83
+  digits:  [9 8 3]
+  value:   [9 ... 3] --> 93
+  2961 + 93 = 3054
+
+
+LINE: sklnine1six4
+  skl 9 1six4
+  skl91 6 4
+  rewrite: skl9164
+  digits:  [9 1 6 4]
+  value:   [9 ... 4] --> 94
+  3054 + 94 = 3148
+
+
+LINE: five52734eighttghkkszrdllrr
+   5 52734eighttghkkszrdllrr
+  552734 8 tghkkszrdllrr
+  rewrite: 5527348tghkkszrdllrr
+  digits:  [5 5 2 7 3 4 8]
+  value:   [5 ... 8] --> 58
+  3148 + 58 = 3206
+
+
+LINE: 93one
+  93 1 
+  rewrite: 931
+  digits:  [9 3 1]
+  value:   [9 ... 1] --> 91
+  3206 + 91 = 3297
+
+
+LINE: qrlmcmfgsx55onetwo
+  qrlmcmfgsx55 1 two
+  qrlmcmfgsx551 2 
+  rewrite: qrlmcmfgsx5512
+  digits:  [5 5 1 2]
+  value:   [5 ... 2] --> 52
+  3297 + 52 = 3349
+
+
+LINE: 86dnnrmms6gxskhcghct97glkrlzrdrscfcld
+  rewrite: 86dnnrmms6gxskhcghct97glkrlzrdrscfcld
+  digits:  [8 6 6 9 7]
+  value:   [8 ... 7] --> 87
+  3349 + 87 = 3436
+
+
+LINE: xxb283cftvdg
+  rewrite: xxb283cftvdg
+  digits:  [2 8 3]
+  value:   [2 ... 3] --> 23
+  3436 + 23 = 3459
+
+
+LINE: hxtwoneqpmbfgkhnr6three86eight7five
+  hx 2 neqpmbfgkhnr6three86eight7five
+  hx2neqpmbfgkhnr6 3 86eight7five
+  hx2neqpmbfgkhnr6386 8 7five
+  hx2neqpmbfgkhnr638687 5 
+  rewrite: hx2neqpmbfgkhnr6386875
+  digits:  [2 6 3 8 6 8 7 5]
+  value:   [2 ... 5] --> 25
+  3459 + 25 = 3484
+
+
+LINE: zjfczdbpgxtkffkl5
+  rewrite: zjfczdbpgxtkffkl5
+  digits:  [5]
+  value:   [5 ... 5] --> 55
+  3484 + 55 = 3539
+
+
+LINE: fivexnqvfiveoneszqkzdfclxkrj8
+   5 xnqvfiveoneszqkzdfclxkrj8
+  5xnqv 5 oneszqkzdfclxkrj8
+  5xnqv5 1 szqkzdfclxkrj8
+  rewrite: 5xnqv51szqkzdfclxkrj8
+  digits:  [5 5 1 8]
+  value:   [5 ... 8] --> 58
+  3539 + 58 = 3597
+
+
+LINE: 8onerj7mhl
+  8 1 rj7mhl
+  rewrite: 81rj7mhl
+  digits:  [8 1 7]
+  value:   [8 ... 7] --> 87
+  3597 + 87 = 3684
+
+
+LINE: 6fivefive8eightsevenqc8
+  6 5 five8eightsevenqc8
+  65 5 8eightsevenqc8
+  6558 8 sevenqc8
+  65588 7 qc8
+  rewrite: 655887qc8
+  digits:  [6 5 5 8 8 7 8]
+  value:   [6 ... 8] --> 68
+  3684 + 68 = 3752
+
+
+LINE: eight89nineonelmfst193
+   8 89nineonelmfst193
+  889 9 onelmfst193
+  8899 1 lmfst193
+  rewrite: 88991lmfst193
+  digits:  [8 8 9 9 1 1 9 3]
+  value:   [8 ... 3] --> 83
+  3752 + 83 = 3835
+
+
+LINE: ninetwothree5six5gd8
+   9 twothree5six5gd8
+  9 2 three5six5gd8
+  92 3 5six5gd8
+  9235 6 5gd8
+  rewrite: 923565gd8
+  digits:  [9 2 3 5 6 5 8]
+  value:   [9 ... 8] --> 98
+  3835 + 98 = 3933
+
+
+LINE: eight6dvvd
+   8 6dvvd
+  rewrite: 86dvvd
+  digits:  [8 6]
+  value:   [8 ... 6] --> 86
+  3933 + 86 = 4019
+
+
+LINE: sevenztbdzndhv5threefour
+   7 ztbdzndhv5threefour
+  7ztbdzndhv5 3 four
+  7ztbdzndhv53 4 
+  rewrite: 7ztbdzndhv534
+  digits:  [7 5 3 4]
+  value:   [7 ... 4] --> 74
+  4019 + 74 = 4093
+
+
+LINE: two8onebppzkln6
+   2 8onebppzkln6
+  28 1 bppzkln6
+  rewrite: 281bppzkln6
+  digits:  [2 8 1 6]
+  value:   [2 ... 6] --> 26
+  4093 + 26 = 4119
+
+
+LINE: twothree54six
+   2 three54six
+  2 3 54six
+  2354 6 
+  rewrite: 23546
+  digits:  [2 3 5 4 6]
+  value:   [2 ... 6] --> 26
+  4119 + 26 = 4145
+
+
+LINE: seven8ninetwonndtgkj1
+   7 8ninetwonndtgkj1
+  78 9 twonndtgkj1
+  789 2 nndtgkj1
+  rewrite: 7892nndtgkj1
+  digits:  [7 8 9 2 1]
+  value:   [7 ... 1] --> 71
+  4145 + 71 = 4216
+
+
+LINE: cpjckcfnqrrgdzfbrtbdfive8vkl
+  cpjckcfnqrrgdzfbrtbd 5 8vkl
+  rewrite: cpjckcfnqrrgdzfbrtbd58vkl
+  digits:  [5 8]
+  value:   [5 ... 8] --> 58
+  4216 + 58 = 4274
+
+
+LINE: 6six5jzxqqtrpflpdqbkgktsvpjgrhggsmvltwomq
+  6 6 5jzxqqtrpflpdqbkgktsvpjgrhggsmvltwomq
+  665jzxqqtrpflpdqbkgktsvpjgrhggsmvl 2 mq
+  rewrite: 665jzxqqtrpflpdqbkgktsvpjgrhggsmvl2mq
+  digits:  [6 6 5 2]
+  value:   [6 ... 2] --> 62
+  4274 + 62 = 4336
+
+
+LINE: sixhbft5lnqfseventhreefour
+   6 hbft5lnqfseventhreefour
+  6hbft5lnqf 7 threefour
+  6hbft5lnqf7 3 four
+  6hbft5lnqf73 4 
+  rewrite: 6hbft5lnqf734
+  digits:  [6 5 7 3 4]
+  value:   [6 ... 4] --> 64
+  4336 + 64 = 4400
+
+
+LINE: 23pqkgleightxvscbnxnp55rb
+  23pqkgl 8 xvscbnxnp55rb
+  rewrite: 23pqkgl8xvscbnxnp55rb
+  digits:  [2 3 8 5 5]
+  value:   [2 ... 5] --> 25
+  4400 + 25 = 4425
+
+
+LINE: 6fivesfhqmzm7qkdvjss8
+  6 5 sfhqmzm7qkdvjss8
+  rewrite: 65sfhqmzm7qkdvjss8
+  digits:  [6 5 7 8]
+  value:   [6 ... 8] --> 68
+  4425 + 68 = 4493
+
+
+LINE: twofivefiveeightdcl4
+   2 fivefiveeightdcl4
+  2 5 fiveeightdcl4
+  25 5 eightdcl4
+  255 8 dcl4
+  rewrite: 2558dcl4
+  digits:  [2 5 5 8 4]
+  value:   [2 ... 4] --> 24
+  4493 + 24 = 4517
+
+
+LINE: 9fourfourdqfqhpbbkgtchk2nrvmrghnkdc
+  9 4 fourdqfqhpbbkgtchk2nrvmrghnkdc
+  94 4 dqfqhpbbkgtchk2nrvmrghnkdc
+  rewrite: 944dqfqhpbbkgtchk2nrvmrghnkdc
+  digits:  [9 4 4 2]
+  value:   [9 ... 2] --> 92
+  4517 + 92 = 4609
+
+
+LINE: sixlzbpttdhlssixdhmvrrgxj6
+   6 lzbpttdhlssixdhmvrrgxj6
+  6lzbpttdhls 6 dhmvrrgxj6
+  rewrite: 6lzbpttdhls6dhmvrrgxj6
+  digits:  [6 6 6]
+  value:   [6 ... 6] --> 66
+  4609 + 66 = 4675
+
+
+LINE: glphjgxqvbjcqjpdsixlsgd3
+  glphjgxqvbjcqjpd 6 lsgd3
+  rewrite: glphjgxqvbjcqjpd6lsgd3
+  digits:  [6 3]
+  value:   [6 ... 3] --> 63
+  4675 + 63 = 4738
+
+
+LINE: qcghmvgbmj9fourfivepztxbjpnzpbxzckgnhd4
+  qcghmvgbmj9 4 fivepztxbjpnzpbxzckgnhd4
+  qcghmvgbmj94 5 pztxbjpnzpbxzckgnhd4
+  rewrite: qcghmvgbmj945pztxbjpnzpbxzckgnhd4
+  digits:  [9 4 5 4]
+  value:   [9 ... 4] --> 94
+  4738 + 94 = 4832
+
+
+LINE: kjvoneighteightfivepsbkgdgpndxx7six8
+  kjv 1 ighteightfivepsbkgdgpndxx7six8
+  kjv1ight 8 fivepsbkgdgpndxx7six8
+  kjv1ight8 5 psbkgdgpndxx7six8
+  kjv1ight85psbkgdgpndxx7 6 8
+  rewrite: kjv1ight85psbkgdgpndxx768
+  digits:  [1 8 5 7 6 8]
+  value:   [1 ... 8] --> 18
+  4832 + 18 = 4850
+
+
+LINE: five95oneeighttpdk64xxndq
+   5 95oneeighttpdk64xxndq
+  595 1 eighttpdk64xxndq
+  5951 8 tpdk64xxndq
+  rewrite: 59518tpdk64xxndq
+  digits:  [5 9 5 1 8 6 4]
+  value:   [5 ... 4] --> 54
+  4850 + 54 = 4904
+
+
+LINE: 1vqxhglhnhrpbnlvq
+  rewrite: 1vqxhglhnhrpbnlvq
+  digits:  [1]
+  value:   [1 ... 1] --> 11
+  4904 + 11 = 4915
+
+
+LINE: sixtwo34sevensevenrnflkfxmlthree
+   6 two34sevensevenrnflkfxmlthree
+  6 2 34sevensevenrnflkfxmlthree
+  6234 7 sevenrnflkfxmlthree
+  62347 7 rnflkfxmlthree
+  623477rnflkfxml 3 
+  rewrite: 623477rnflkfxml3
+  digits:  [6 2 3 4 7 7 3]
+  value:   [6 ... 3] --> 63
+  4915 + 63 = 4978
+
+
+LINE: pbscshhhpeighteight668fourphkdcrjrf
+  pbscshhhp 8 eight668fourphkdcrjrf
+  pbscshhhp8 8 668fourphkdcrjrf
+  pbscshhhp88668 4 phkdcrjrf
+  rewrite: pbscshhhp886684phkdcrjrf
+  digits:  [8 8 6 6 8 4]
+  value:   [8 ... 4] --> 84
+  4978 + 84 = 5062
+
+
+LINE: threex1jpdsmc
+   3 x1jpdsmc
+  rewrite: 3x1jpdsmc
+  digits:  [3 1]
+  value:   [3 ... 1] --> 31
+  5062 + 31 = 5093
+
+
+LINE: 4pnhtjzlfdcgffour3
+  4pnhtjzlfdcgf 4 3
+  rewrite: 4pnhtjzlfdcgf43
+  digits:  [4 4 3]
+  value:   [4 ... 3] --> 43
+  5093 + 43 = 5136
+
+
+LINE: 338
+  rewrite: 338
+  digits:  [3 3 8]
+  value:   [3 ... 8] --> 38
+  5136 + 38 = 5174
+
+
+LINE: 62six7nn
+  62 6 7nn
+  rewrite: 6267nn
+  digits:  [6 2 6 7]
+  value:   [6 ... 7] --> 67
+  5174 + 67 = 5241
+
+
+LINE: 1fgq3onethree
+  1fgq3 1 three
+  1fgq31 3 
+  rewrite: 1fgq313
+  digits:  [1 3 1 3]
+  value:   [1 ... 3] --> 13
+  5241 + 13 = 5254
+
+
+LINE: 7eightzvxmvxbq965nine1hr
+  7 8 zvxmvxbq965nine1hr
+  78zvxmvxbq965 9 1hr
+  rewrite: 78zvxmvxbq96591hr
+  digits:  [7 8 9 6 5 9 1]
+  value:   [7 ... 1] --> 71
+  5254 + 71 = 5325
+
+
+LINE: gsdqtgkhlhdff7fourtwo4threesixthree
+  gsdqtgkhlhdff7 4 two4threesixthree
+  gsdqtgkhlhdff74 2 4threesixthree
+  gsdqtgkhlhdff7424 3 sixthree
+  gsdqtgkhlhdff74243 6 three
+  gsdqtgkhlhdff742436 3 
+  rewrite: gsdqtgkhlhdff7424363
+  digits:  [7 4 2 4 3 6 3]
+  value:   [7 ... 3] --> 73
+  5325 + 73 = 5398
+
+
+LINE: 918hjpgbz6kbdxeight9one
+  918hjpgbz6kbdx 8 9one
+  918hjpgbz6kbdx89 1 
+  rewrite: 918hjpgbz6kbdx891
+  digits:  [9 1 8 6 8 9 1]
+  value:   [9 ... 1] --> 91
+  5398 + 91 = 5489
+
+
+LINE: 7dxhsk9ninejjbninefour
+  7dxhsk9 9 jjbninefour
+  7dxhsk99jjb 9 four
+  7dxhsk99jjb9 4 
+  rewrite: 7dxhsk99jjb94
+  digits:  [7 9 9 9 4]
+  value:   [7 ... 4] --> 74
+  5489 + 74 = 5563
+
+
+LINE: one2mblcjnine
+   1 2mblcjnine
+  12mblcj 9 
+  rewrite: 12mblcj9
+  digits:  [1 2 9]
+  value:   [1 ... 9] --> 19
+  5563 + 19 = 5582
+
+
+LINE: 9twoc
+  9 2 c
+  rewrite: 92c
+  digits:  [9 2]
+  value:   [9 ... 2] --> 92
+  5582 + 92 = 5674
+
+
+LINE: fxrkzvpkb3tdvlxxchbfsixbmmmctknxh1
+  fxrkzvpkb3tdvlxxchbf 6 bmmmctknxh1
+  rewrite: fxrkzvpkb3tdvlxxchbf6bmmmctknxh1
+  digits:  [3 6 1]
+  value:   [3 ... 1] --> 31
+  5674 + 31 = 5705
+
+
+LINE: pbzdkmkxczkgh5xsixtwo6kfgqsgx
+  pbzdkmkxczkgh5x 6 two6kfgqsgx
+  pbzdkmkxczkgh5x6 2 6kfgqsgx
+  rewrite: pbzdkmkxczkgh5x626kfgqsgx
+  digits:  [5 6 2 6]
+  value:   [5 ... 6] --> 56
+  5705 + 56 = 5761
+
+
+LINE: 6eighttwodsfppgxrzx9threeseven
+  6 8 twodsfppgxrzx9threeseven
+  68 2 dsfppgxrzx9threeseven
+  682dsfppgxrzx9 3 seven
+  682dsfppgxrzx93 7 
+  rewrite: 682dsfppgxrzx937
+  digits:  [6 8 2 9 3 7]
+  value:   [6 ... 7] --> 67
+  5761 + 67 = 5828
+
+
+LINE: zzkbhltv7ngthreetwofivegdzrmllnxp
+  zzkbhltv7ng 3 twofivegdzrmllnxp
+  zzkbhltv7ng3 2 fivegdzrmllnxp
+  zzkbhltv7ng32 5 gdzrmllnxp
+  rewrite: zzkbhltv7ng325gdzrmllnxp
+  digits:  [7 3 2 5]
+  value:   [7 ... 5] --> 75
+  5828 + 75 = 5903
+
+
+LINE: sgfour67three2seven3
+  sg 4 67three2seven3
+  sg467 3 2seven3
+  sg46732 7 3
+  rewrite: sg4673273
+  digits:  [4 6 7 3 2 7 3]
+  value:   [4 ... 3] --> 43
+  5903 + 43 = 5946
+
+
+LINE: sqglnvlrn4sixmdnineeightthree
+  sqglnvlrn4 6 mdnineeightthree
+  sqglnvlrn46md 9 eightthree
+  sqglnvlrn46md9 8 three
+  sqglnvlrn46md98 3 
+  rewrite: sqglnvlrn46md983
+  digits:  [4 6 9 8 3]
+  value:   [4 ... 3] --> 43
+  5946 + 43 = 5989
+
+
+LINE: 1kbkmkdnc35eightxbbknllscr
+  1kbkmkdnc35 8 xbbknllscr
+  rewrite: 1kbkmkdnc358xbbknllscr
+  digits:  [1 3 5 8]
+  value:   [1 ... 8] --> 18
+  5989 + 18 = 6007
+
+
+LINE: 2bzrg
+  rewrite: 2bzrg
+  digits:  [2]
+  value:   [2 ... 2] --> 22
+  6007 + 22 = 6029
+
+
+LINE: 3onenine
+  3 1 nine
+  31 9 
+  rewrite: 319
+  digits:  [3 1 9]
+  value:   [3 ... 9] --> 39
+  6029 + 39 = 6068
+
+
+LINE: threevkzrmdbnbsxrmzjtdhbeight12rncbzmq
+   3 vkzrmdbnbsxrmzjtdhbeight12rncbzmq
+  3vkzrmdbnbsxrmzjtdhb 8 12rncbzmq
+  rewrite: 3vkzrmdbnbsxrmzjtdhb812rncbzmq
+  digits:  [3 8 1 2]
+  value:   [3 ... 2] --> 32
+  6068 + 32 = 6100
+
+
+LINE: sxcrgkvbrtwo17six527five
+  sxcrgkvbr 2 17six527five
+  sxcrgkvbr217 6 527five
+  sxcrgkvbr2176527 5 
+  rewrite: sxcrgkvbr21765275
+  digits:  [2 1 7 6 5 2 7 5]
+  value:   [2 ... 5] --> 25
+  6100 + 25 = 6125
+
+
+LINE: 9rbsbcjp239jvlfpn5jrr
+  rewrite: 9rbsbcjp239jvlfpn5jrr
+  digits:  [9 2 3 9 5]
+  value:   [9 ... 5] --> 95
+  6125 + 95 = 6220
+
+
+LINE: nine8vjcbjcxxprdcf4
+   9 8vjcbjcxxprdcf4
+  rewrite: 98vjcbjcxxprdcf4
+  digits:  [9 8 4]
+  value:   [9 ... 4] --> 94
+  6220 + 94 = 6314
+
+
+LINE: nineeightsevenchjczgdvjvtqlkjsqvrzxxvlqlp65
+   9 eightsevenchjczgdvjvtqlkjsqvrzxxvlqlp65
+  9 8 sevenchjczgdvjvtqlkjsqvrzxxvlqlp65
+  98 7 chjczgdvjvtqlkjsqvrzxxvlqlp65
+  rewrite: 987chjczgdvjvtqlkjsqvrzxxvlqlp65
+  digits:  [9 8 7 6 5]
+  value:   [9 ... 5] --> 95
+  6314 + 95 = 6409
+
+
+LINE: hdgqninefive9sevensix3gzb
+  hdgq 9 five9sevensix3gzb
+  hdgq9 5 9sevensix3gzb
+  hdgq959 7 six3gzb
+  hdgq9597 6 3gzb
+  rewrite: hdgq959763gzb
+  digits:  [9 5 9 7 6 3]
+  value:   [9 ... 3] --> 93
+  6409 + 93 = 6502
+
+
+LINE: 6fjv5
+  rewrite: 6fjv5
+  digits:  [6 5]
+  value:   [6 ... 5] --> 65
+  6502 + 65 = 6567
+
+
+LINE: pmgdvcdp1fivetxkmjzone
+  pmgdvcdp1 5 txkmjzone
+  pmgdvcdp15txkmjz 1 
+  rewrite: pmgdvcdp15txkmjz1
+  digits:  [1 5 1]
+  value:   [1 ... 1] --> 11
+  6567 + 11 = 6578
+
+
+LINE: eightsevenklxgcj8sixccqlnxzmbeight
+   8 sevenklxgcj8sixccqlnxzmbeight
+  8 7 klxgcj8sixccqlnxzmbeight
+  87klxgcj8 6 ccqlnxzmbeight
+  87klxgcj86ccqlnxzmb 8 
+  rewrite: 87klxgcj86ccqlnxzmb8
+  digits:  [8 7 8 6 8]
+  value:   [8 ... 8] --> 88
+  6578 + 88 = 6666
+
+
+LINE: bkcdmscssixsixtwozbdzcpgpbsvf38
+  bkcdmscs 6 sixtwozbdzcpgpbsvf38
+  bkcdmscs6 6 twozbdzcpgpbsvf38
+  bkcdmscs66 2 zbdzcpgpbsvf38
+  rewrite: bkcdmscs662zbdzcpgpbsvf38
+  digits:  [6 6 2 3 8]
+  value:   [6 ... 8] --> 68
+  6666 + 68 = 6734
+
+
+LINE: ninefourrcmrfvszsqhpxcs89onecnzjvhrphs
+   9 fourrcmrfvszsqhpxcs89onecnzjvhrphs
+  9 4 rcmrfvszsqhpxcs89onecnzjvhrphs
+  94rcmrfvszsqhpxcs89 1 cnzjvhrphs
+  rewrite: 94rcmrfvszsqhpxcs891cnzjvhrphs
+  digits:  [9 4 8 9 1]
+  value:   [9 ... 1] --> 91
+  6734 + 91 = 6825
+
+
+LINE: 54plhhmnmkvonethree2ktzncds
+  54plhhmnmkv 1 three2ktzncds
+  54plhhmnmkv1 3 2ktzncds
+  rewrite: 54plhhmnmkv132ktzncds
+  digits:  [5 4 1 3 2]
+  value:   [5 ... 2] --> 52
+  6825 + 52 = 6877
+
+
+LINE: pkglbgdplgvlstpgpnsmlsixcpmfxfbfbtpsdxninenine4
+  pkglbgdplgvlstpgpnsml 6 cpmfxfbfbtpsdxninenine4
+  pkglbgdplgvlstpgpnsml6cpmfxfbfbtpsdx 9 nine4
+  pkglbgdplgvlstpgpnsml6cpmfxfbfbtpsdx9 9 4
+  rewrite: pkglbgdplgvlstpgpnsml6cpmfxfbfbtpsdx994
+  digits:  [6 9 9 4]
+  value:   [6 ... 4] --> 64
+  6877 + 64 = 6941
+
+
+LINE: one6qhcqnkqc9hfrsqpxmcm7eight3
+   1 6qhcqnkqc9hfrsqpxmcm7eight3
+  16qhcqnkqc9hfrsqpxmcm7 8 3
+  rewrite: 16qhcqnkqc9hfrsqpxmcm783
+  digits:  [1 6 9 7 8 3]
+  value:   [1 ... 3] --> 13
+  6941 + 13 = 6954
+
+
+LINE: threepdtshdskxgeightjtdpfbtlnph91
+   3 pdtshdskxgeightjtdpfbtlnph91
+  3pdtshdskxg 8 jtdpfbtlnph91
+  rewrite: 3pdtshdskxg8jtdpfbtlnph91
+  digits:  [3 8 9 1]
+  value:   [3 ... 1] --> 31
+  6954 + 31 = 6985
+
+
+LINE: fmpjgjqpgbpx8two8jzqchdglhtfiveeightpzktj
+  fmpjgjqpgbpx8 2 8jzqchdglhtfiveeightpzktj
+  fmpjgjqpgbpx828jzqchdglht 5 eightpzktj
+  fmpjgjqpgbpx828jzqchdglht5 8 pzktj
+  rewrite: fmpjgjqpgbpx828jzqchdglht58pzktj
+  digits:  [8 2 8 5 8]
+  value:   [8 ... 8] --> 88
+  6985 + 88 = 7073
+
+
+LINE: njqhghlvm2
+  rewrite: njqhghlvm2
+  digits:  [2]
+  value:   [2 ... 2] --> 22
+  7073 + 22 = 7095
+
+
+LINE: dj3
+  rewrite: dj3
+  digits:  [3]
+  value:   [3 ... 3] --> 33
+  7095 + 33 = 7128
+
+
+LINE: 3j
+  rewrite: 3j
+  digits:  [3]
+  value:   [3 ... 3] --> 33
+  7128 + 33 = 7161
+
+
+LINE: eight9cgbcppzjbl1tgjhm
+   8 9cgbcppzjbl1tgjhm
+  rewrite: 89cgbcppzjbl1tgjhm
+  digits:  [8 9 1]
+  value:   [8 ... 1] --> 81
+  7161 + 81 = 7242
+
+
+LINE: fvkhcvflpknqnh9ninetwoneqn
+  fvkhcvflpknqnh9 9 twoneqn
+  fvkhcvflpknqnh99 2 neqn
+  rewrite: fvkhcvflpknqnh992neqn
+  digits:  [9 9 2]
+  value:   [9 ... 2] --> 92
+  7242 + 92 = 7334
+
+
+LINE: threemfour3eighteight
+   3 mfour3eighteight
+  3m 4 3eighteight
+  3m43 8 eight
+  3m438 8 
+  rewrite: 3m4388
+  digits:  [3 4 3 8 8]
+  value:   [3 ... 8] --> 38
+  7334 + 38 = 7372
+
+
+LINE: qjmtvcbvzzgxmmpdvrfv8
+  rewrite: qjmtvcbvzzgxmmpdvrfv8
+  digits:  [8]
+  value:   [8 ... 8] --> 88
+  7372 + 88 = 7460
+
+
+LINE: tlzqpfsix1fbhgdvhblvgk
+  tlzqpf 6 1fbhgdvhblvgk
+  rewrite: tlzqpf61fbhgdvhblvgk
+  digits:  [6 1]
+  value:   [6 ... 1] --> 61
+  7460 + 61 = 7521
+
+
+LINE: eight451qvnhv4
+   8 451qvnhv4
+  rewrite: 8451qvnhv4
+  digits:  [8 4 5 1 4]
+  value:   [8 ... 4] --> 84
+  7521 + 84 = 7605
+
+
+LINE: 7mxcvmpkdvdsjqdd
+  rewrite: 7mxcvmpkdvdsjqdd
+  digits:  [7]
+  value:   [7 ... 7] --> 77
+  7605 + 77 = 7682
+
+
+LINE: 6ninetwodmbjfour52
+  6 9 twodmbjfour52
+  69 2 dmbjfour52
+  692dmbj 4 52
+  rewrite: 692dmbj452
+  digits:  [6 9 2 4 5 2]
+  value:   [6 ... 2] --> 62
+  7682 + 62 = 7744
+
+
+LINE: jdq2sheight
+  jdq2sh 8 
+  rewrite: jdq2sh8
+  digits:  [2 8]
+  value:   [2 ... 8] --> 28
+  7744 + 28 = 7772
+
+
+LINE: seven2foursixvhlmsjld
+   7 2foursixvhlmsjld
+  72 4 sixvhlmsjld
+  724 6 vhlmsjld
+  rewrite: 7246vhlmsjld
+  digits:  [7 2 4 6]
+  value:   [7 ... 6] --> 76
+  7772 + 76 = 7848
+
+
+LINE: ndoneight361
+  nd 1 ight361
+  rewrite: nd1ight361
+  digits:  [1 3 6 1]
+  value:   [1 ... 1] --> 11
+  7848 + 11 = 7859
+
+
+LINE: poneightfourfourdhlnmlnpvnsixone77
+  p 1 ightfourfourdhlnmlnpvnsixone77
+  p1ight 4 fourdhlnmlnpvnsixone77
+  p1ight4 4 dhlnmlnpvnsixone77
+  p1ight44dhlnmlnpvn 6 one77
+  p1ight44dhlnmlnpvn6 1 77
+  rewrite: p1ight44dhlnmlnpvn6177
+  digits:  [1 4 4 6 1 7 7]
+  value:   [1 ... 7] --> 17
+  7859 + 17 = 7876
+
+
+LINE: 6gnxprrthree9
+  6gnxprr 3 9
+  rewrite: 6gnxprr39
+  digits:  [6 3 9]
+  value:   [6 ... 9] --> 69
+  7876 + 69 = 7945
+
+
+LINE: ktbhqxmvcbczfspfddnjjcz7
+  rewrite: ktbhqxmvcbczfspfddnjjcz7
+  digits:  [7]
+  value:   [7 ... 7] --> 77
+  7945 + 77 = 8022
+
+
+LINE: 4nineqsk5two5ksljzqmnrrhftqvmvhfqvxtg
+  4 9 qsk5two5ksljzqmnrrhftqvmvhfqvxtg
+  49qsk5 2 5ksljzqmnrrhftqvmvhfqvxtg
+  rewrite: 49qsk525ksljzqmnrrhftqvmvhfqvxtg
+  digits:  [4 9 5 2 5]
+  value:   [4 ... 5] --> 45
+  8022 + 45 = 8067
+
+
+LINE: cgllkmq1fivevlcxkmj4twohpclqj
+  cgllkmq1 5 vlcxkmj4twohpclqj
+  cgllkmq15vlcxkmj4 2 hpclqj
+  rewrite: cgllkmq15vlcxkmj42hpclqj
+  digits:  [1 5 4 2]
+  value:   [1 ... 2] --> 12
+  8067 + 12 = 8079
+
+
+LINE: fivebdkfgmlzckstbmone58fourc1
+   5 bdkfgmlzckstbmone58fourc1
+  5bdkfgmlzckstbm 1 58fourc1
+  5bdkfgmlzckstbm158 4 c1
+  rewrite: 5bdkfgmlzckstbm1584c1
+  digits:  [5 1 5 8 4 1]
+  value:   [5 ... 1] --> 51
+  8079 + 51 = 8130
+
+
+LINE: 6sixninebkmlgpspthreesevenhfrhtfqnl85
+  6 6 ninebkmlgpspthreesevenhfrhtfqnl85
+  66 9 bkmlgpspthreesevenhfrhtfqnl85
+  669bkmlgpsp 3 sevenhfrhtfqnl85
+  669bkmlgpsp3 7 hfrhtfqnl85
+  rewrite: 669bkmlgpsp37hfrhtfqnl85
+  digits:  [6 6 9 3 7 8 5]
+  value:   [6 ... 5] --> 65
+  8130 + 65 = 8195
+
+
+LINE: 27fivezqskxvqqp7
+  27 5 zqskxvqqp7
+  rewrite: 275zqskxvqqp7
+  digits:  [2 7 5 7]
+  value:   [2 ... 7] --> 27
+  8195 + 27 = 8222
+
+
+LINE: 7vklrcvmq2nldrglnlkmdjgzone
+  7vklrcvmq2nldrglnlkmdjgz 1 
+  rewrite: 7vklrcvmq2nldrglnlkmdjgz1
+  digits:  [7 2 1]
+  value:   [7 ... 1] --> 71
+  8222 + 71 = 8293
+
+
+LINE: 4fivemzjhhvmm
+  4 5 mzjhhvmm
+  rewrite: 45mzjhhvmm
+  digits:  [4 5]
+  value:   [4 ... 5] --> 45
+  8293 + 45 = 8338
+
+
+LINE: 76fournineeightthreesix
+  76 4 nineeightthreesix
+  764 9 eightthreesix
+  7649 8 threesix
+  76498 3 six
+  764983 6 
+  rewrite: 7649836
+  digits:  [7 6 4 9 8 3 6]
+  value:   [7 ... 6] --> 76
+  8338 + 76 = 8414
+
+
+LINE: threen45nctdxmgd
+   3 n45nctdxmgd
+  rewrite: 3n45nctdxmgd
+  digits:  [3 4 5]
+  value:   [3 ... 5] --> 35
+  8414 + 35 = 8449
+
+
+LINE: eightfivetwotjbsvvrfourseven4djjfftk9
+   8 fivetwotjbsvvrfourseven4djjfftk9
+  8 5 twotjbsvvrfourseven4djjfftk9
+  85 2 tjbsvvrfourseven4djjfftk9
+  852tjbsvvr 4 seven4djjfftk9
+  852tjbsvvr4 7 4djjfftk9
+  rewrite: 852tjbsvvr474djjfftk9
+  digits:  [8 5 2 4 7 4 9]
+  value:   [8 ... 9] --> 89
+  8449 + 89 = 8538
+
+
+LINE: lrxjcgdxhtprfpvn9eightsix
+  lrxjcgdxhtprfpvn9 8 six
+  lrxjcgdxhtprfpvn98 6 
+  rewrite: lrxjcgdxhtprfpvn986
+  digits:  [9 8 6]
+  value:   [9 ... 6] --> 96
+  8538 + 96 = 8634
+
+
+LINE: foursix7lbjqxb1lzsztxcrhx
+   4 six7lbjqxb1lzsztxcrhx
+  4 6 7lbjqxb1lzsztxcrhx
+  rewrite: 467lbjqxb1lzsztxcrhx
+  digits:  [4 6 7 1]
+  value:   [4 ... 1] --> 41
+  8634 + 41 = 8675
+
+
+LINE: dlxftspksone9mfive
+  dlxftspks 1 9mfive
+  dlxftspks19m 5 
+  rewrite: dlxftspks19m5
+  digits:  [1 9 5]
+  value:   [1 ... 5] --> 15
+  8675 + 15 = 8690
+
+
+LINE: ninefiveeightone2
+   9 fiveeightone2
+  9 5 eightone2
+  95 8 one2
+  958 1 2
+  rewrite: 95812
+  digits:  [9 5 8 1 2]
+  value:   [9 ... 2] --> 92
+  8690 + 92 = 8782
+
+
+LINE: nzbvf3ninexsixsix
+  nzbvf3 9 xsixsix
+  nzbvf39x 6 six
+  nzbvf39x6 6 
+  rewrite: nzbvf39x66
+  digits:  [3 9 6 6]
+  value:   [3 ... 6] --> 36
+  8782 + 36 = 8818
+
+
+LINE: 1eightjsqbvpcfsevenvdkhbxzfournine5pttjffj
+  1 8 jsqbvpcfsevenvdkhbxzfournine5pttjffj
+  18jsqbvpcf 7 vdkhbxzfournine5pttjffj
+  18jsqbvpcf7vdkhbxz 4 nine5pttjffj
+  18jsqbvpcf7vdkhbxz4 9 5pttjffj
+  rewrite: 18jsqbvpcf7vdkhbxz495pttjffj
+  digits:  [1 8 7 4 9 5]
+  value:   [1 ... 5] --> 15
+  8818 + 15 = 8833
+
+
+LINE: 6kxdmlhtslf2rzmbrdrvvqmtceightwojj
+  6kxdmlhtslf2rzmbrdrvvqmtc 8 wojj
+  rewrite: 6kxdmlhtslf2rzmbrdrvvqmtc8wojj
+  digits:  [6 2 8]
+  value:   [6 ... 8] --> 68
+  8833 + 68 = 8901
+
+
+LINE: 3fjxhq
+  rewrite: 3fjxhq
+  digits:  [3]
+  value:   [3 ... 3] --> 33
+  8901 + 33 = 8934
+
+
+LINE: j9
+  rewrite: j9
+  digits:  [9]
+  value:   [9 ... 9] --> 99
+  8934 + 99 = 9033
+
+
+LINE: lj7onesevennine7threeeightvmgvtzcg
+  lj7 1 sevennine7threeeightvmgvtzcg
+  lj71 7 nine7threeeightvmgvtzcg
+  lj717 9 7threeeightvmgvtzcg
+  lj71797 3 eightvmgvtzcg
+  lj717973 8 vmgvtzcg
+  rewrite: lj7179738vmgvtzcg
+  digits:  [7 1 7 9 7 3 8]
+  value:   [7 ... 8] --> 78
+  9033 + 78 = 9111
+
+
+LINE: pmmrbq4
+  rewrite: pmmrbq4
+  digits:  [4]
+  value:   [4 ... 4] --> 44
+  9111 + 44 = 9155
+
+
+LINE: seven3fourq81l
+   7 3fourq81l
+  73 4 q81l
+  rewrite: 734q81l
+  digits:  [7 3 4 8 1]
+  value:   [7 ... 1] --> 71
+  9155 + 71 = 9226
+
+
+LINE: 2four4gqdpczpg
+  2 4 4gqdpczpg
+  rewrite: 244gqdpczpg
+  digits:  [2 4 4]
+  value:   [2 ... 4] --> 24
+  9226 + 24 = 9250
+
+
+LINE: 6sevengzdxmfpflfivefivevgnhspxchsfive
+  6 7 gzdxmfpflfivefivevgnhspxchsfive
+  67gzdxmfpfl 5 fivevgnhspxchsfive
+  67gzdxmfpfl5 5 vgnhspxchsfive
+  67gzdxmfpfl55vgnhspxchs 5 
+  rewrite: 67gzdxmfpfl55vgnhspxchs5
+  digits:  [6 7 5 5 5]
+  value:   [6 ... 5] --> 65
+  9250 + 65 = 9315
+
+
+LINE: 3c7gpgbnlfhlrthpmtsvpctjhzf5seven
+  3c7gpgbnlfhlrthpmtsvpctjhzf5 7 
+  rewrite: 3c7gpgbnlfhlrthpmtsvpctjhzf57
+  digits:  [3 7 5 7]
+  value:   [3 ... 7] --> 37
+  9315 + 37 = 9352
+
+
+LINE: kgtczfjdeight8hpcmkz
+  kgtczfjd 8 8hpcmkz
+  rewrite: kgtczfjd88hpcmkz
+  digits:  [8 8]
+  value:   [8 ... 8] --> 88
+  9352 + 88 = 9440
+
+
+LINE: one5xkhnfvjh92ninevxkzvkg6
+   1 5xkhnfvjh92ninevxkzvkg6
+  15xkhnfvjh92 9 vxkzvkg6
+  rewrite: 15xkhnfvjh929vxkzvkg6
+  digits:  [1 5 9 2 9 6]
+  value:   [1 ... 6] --> 16
+  9440 + 16 = 9456
+
+
+LINE: nzp2
+  rewrite: nzp2
+  digits:  [2]
+  value:   [2 ... 2] --> 22
+  9456 + 22 = 9478
+
+
+LINE: eight226three5sevenhhxhqxns
+   8 226three5sevenhhxhqxns
+  8226 3 5sevenhhxhqxns
+  822635 7 hhxhqxns
+  rewrite: 8226357hhxhqxns
+  digits:  [8 2 2 6 3 5 7]
+  value:   [8 ... 7] --> 87
+  9478 + 87 = 9565
+
+
+LINE: 9hgfj85zxvppflblvjlq
+  rewrite: 9hgfj85zxvppflblvjlq
+  digits:  [9 8 5]
+  value:   [9 ... 5] --> 95
+  9565 + 95 = 9660
+
+
+LINE: sixfour8hzlrbqjtjcgrxseight
+   6 four8hzlrbqjtjcgrxseight
+  6 4 8hzlrbqjtjcgrxseight
+  648hzlrbqjtjcgrxs 8 
+  rewrite: 648hzlrbqjtjcgrxs8
+  digits:  [6 4 8 8]
+  value:   [6 ... 8] --> 68
+  9660 + 68 = 9728
+
+
+LINE: 6tlxtwo4258kbdtx
+  6tlx 2 4258kbdtx
+  rewrite: 6tlx24258kbdtx
+  digits:  [6 2 4 2 5 8]
+  value:   [6 ... 8] --> 68
+  9728 + 68 = 9796
+
+
+LINE: ninemhvrlcqvdthree5
+   9 mhvrlcqvdthree5
+  9mhvrlcqvd 3 5
+  rewrite: 9mhvrlcqvd35
+  digits:  [9 3 5]
+  value:   [9 ... 5] --> 95
+  9796 + 95 = 9891
+
+
+LINE: 8xfmjzp
+  rewrite: 8xfmjzp
+  digits:  [8]
+  value:   [8 ... 8] --> 88
+  9891 + 88 = 9979
+
+
+LINE: nineldrbpxqmhffrjrcx11
+   9 ldrbpxqmhffrjrcx11
+  rewrite: 9ldrbpxqmhffrjrcx11
+  digits:  [9 1 1]
+  value:   [9 ... 1] --> 91
+  9979 + 91 = 10070
+
+
+LINE: mqvjnkjr6dx8
+  rewrite: mqvjnkjr6dx8
+  digits:  [6 8]
+  value:   [6 ... 8] --> 68
+  10070 + 68 = 10138
+
+
+LINE: 575cfbnine14
+  575cfb 9 14
+  rewrite: 575cfb914
+  digits:  [5 7 5 9 1 4]
+  value:   [5 ... 4] --> 54
+  10138 + 54 = 10192
+
+
+LINE: threeqnxnfjmttwo7
+   3 qnxnfjmttwo7
+  3qnxnfjmt 2 7
+  rewrite: 3qnxnfjmt27
+  digits:  [3 2 7]
+  value:   [3 ... 7] --> 37
+  10192 + 37 = 10229
+
+
+LINE: pvmxfgvhrlqn4fivefivesevensix1znt
+  pvmxfgvhrlqn4 5 fivesevensix1znt
+  pvmxfgvhrlqn45 5 sevensix1znt
+  pvmxfgvhrlqn455 7 six1znt
+  pvmxfgvhrlqn4557 6 1znt
+  rewrite: pvmxfgvhrlqn455761znt
+  digits:  [4 5 5 7 6 1]
+  value:   [4 ... 1] --> 41
+  10229 + 41 = 10270
+
+
+LINE: sevenphcrjjhnfive63three
+   7 phcrjjhnfive63three
+  7phcrjjhn 5 63three
+  7phcrjjhn563 3 
+  rewrite: 7phcrjjhn5633
+  digits:  [7 5 6 3 3]
+  value:   [7 ... 3] --> 73
+  10270 + 73 = 10343
+
+
+LINE: sixxdjplseven8seven8qlxfvgktf
+   6 xdjplseven8seven8qlxfvgktf
+  6xdjpl 7 8seven8qlxfvgktf
+  6xdjpl78 7 8qlxfvgktf
+  rewrite: 6xdjpl7878qlxfvgktf
+  digits:  [6 7 8 7 8]
+  value:   [6 ... 8] --> 68
+  10343 + 68 = 10411
+
+
+LINE: hdgnr6sevenddzptcvprbhvnine
+  hdgnr6 7 ddzptcvprbhvnine
+  hdgnr67ddzptcvprbhv 9 
+  rewrite: hdgnr67ddzptcvprbhv9
+  digits:  [6 7 9]
+  value:   [6 ... 9] --> 69
+  10411 + 69 = 10480
+
+
+LINE: onebrhnsqbnzvmckmtmprjkbfvn6
+   1 brhnsqbnzvmckmtmprjkbfvn6
+  rewrite: 1brhnsqbnzvmckmtmprjkbfvn6
+  digits:  [1 6]
+  value:   [1 ... 6] --> 16
+  10480 + 16 = 10496
+
+
+LINE: hxqdjrmr94five9qnkl5
+  hxqdjrmr94 5 9qnkl5
+  rewrite: hxqdjrmr9459qnkl5
+  digits:  [9 4 5 9 5]
+  value:   [9 ... 5] --> 95
+  10496 + 95 = 10591
+
+
+LINE: g3fourfive6
+  g3 4 five6
+  g34 5 6
+  rewrite: g3456
+  digits:  [3 4 5 6]
+  value:   [3 ... 6] --> 36
+  10591 + 36 = 10627
+
+
+LINE: 22eight6vsmtrxsix78
+  22 8 6vsmtrxsix78
+  2286vsmtrx 6 78
+  rewrite: 2286vsmtrx678
+  digits:  [2 2 8 6 6 7 8]
+  value:   [2 ... 8] --> 28
+  10627 + 28 = 10655
+
+
+LINE: jrlrfsnine9
+  jrlrfs 9 9
+  rewrite: jrlrfs99
+  digits:  [9 9]
+  value:   [9 ... 9] --> 99
+  10655 + 99 = 10754
+
+
+LINE: tqpkqdtknvfj2xgzrjpsvgphlbtthree
+  tqpkqdtknvfj2xgzrjpsvgphlbt 3 
+  rewrite: tqpkqdtknvfj2xgzrjpsvgphlbt3
+  digits:  [2 3]
+  value:   [2 ... 3] --> 23
+  10754 + 23 = 10777
+
+
+LINE: qvczktnrfvmgpznspqtsevensevenslmjdqfdld5rrcfour
+  qvczktnrfvmgpznspqt 7 sevenslmjdqfdld5rrcfour
+  qvczktnrfvmgpznspqt7 7 slmjdqfdld5rrcfour
+  qvczktnrfvmgpznspqt77slmjdqfdld5rrc 4 
+  rewrite: qvczktnrfvmgpznspqt77slmjdqfdld5rrc4
+  digits:  [7 7 5 4]
+  value:   [7 ... 4] --> 74
+  10777 + 74 = 10851
+
+
+LINE: rmgeight36sxvxzgnine7bs
+  rmg 8 36sxvxzgnine7bs
+  rmg836sxvxzg 9 7bs
+  rewrite: rmg836sxvxzg97bs
+  digits:  [8 3 6 9 7]
+  value:   [8 ... 7] --> 87
+  10851 + 87 = 10938
+
+
+LINE: sevenlt2fnqjtkvrj
+   7 lt2fnqjtkvrj
+  rewrite: 7lt2fnqjtkvrj
+  digits:  [7 2]
+  value:   [7 ... 2] --> 72
+  10938 + 72 = 11010
+
+
+LINE: seven9lhfzhmhdonelxvxfqdlxlscjbqgvnlbm7
+   7 9lhfzhmhdonelxvxfqdlxlscjbqgvnlbm7
+  79lhfzhmhd 1 lxvxfqdlxlscjbqgvnlbm7
+  rewrite: 79lhfzhmhd1lxvxfqdlxlscjbqgvnlbm7
+  digits:  [7 9 1 7]
+  value:   [7 ... 7] --> 77
+  11010 + 77 = 11087
+
+
+LINE: 3183six4seven4two
+  3183 6 4seven4two
+  318364 7 4two
+  31836474 2 
+  rewrite: 318364742
+  digits:  [3 1 8 3 6 4 7 4 2]
+  value:   [3 ... 2] --> 32
+  11087 + 32 = 11119
+
+
+LINE: bpl12mcdpzrzbph9fourninercpqzrn
+  bpl12mcdpzrzbph9 4 ninercpqzrn
+  bpl12mcdpzrzbph94 9 rcpqzrn
+  rewrite: bpl12mcdpzrzbph949rcpqzrn
+  digits:  [1 2 9 4 9]
+  value:   [1 ... 9] --> 19
+  11119 + 19 = 11138
+
+
+LINE: eightzltzdmcd4615nmone
+   8 zltzdmcd4615nmone
+  8zltzdmcd4615nm 1 
+  rewrite: 8zltzdmcd4615nm1
+  digits:  [8 4 6 1 5 1]
+  value:   [8 ... 1] --> 81
+  11138 + 81 = 11219
+
+
+LINE: 5bgzh8hrrtjhnine62
+  5bgzh8hrrtjh 9 62
+  rewrite: 5bgzh8hrrtjh962
+  digits:  [5 8 9 6 2]
+  value:   [5 ... 2] --> 52
+  11219 + 52 = 11271
+
+
+LINE: ndnzpnptz6twokdvg563fiveqkszkccqc
+  ndnzpnptz6 2 kdvg563fiveqkszkccqc
+  ndnzpnptz62kdvg563 5 qkszkccqc
+  rewrite: ndnzpnptz62kdvg5635qkszkccqc
+  digits:  [6 2 5 6 3 5]
+  value:   [6 ... 5] --> 65
+  11271 + 65 = 11336
+
+
+LINE: 6npdfqtwo
+  6npdfq 2 
+  rewrite: 6npdfq2
+  digits:  [6 2]
+  value:   [6 ... 2] --> 62
+  11336 + 62 = 11398
+
+
+LINE: onetwomcxkncm3mjsrknhktgdfbqjmone
+   1 twomcxkncm3mjsrknhktgdfbqjmone
+  1 2 mcxkncm3mjsrknhktgdfbqjmone
+  12mcxkncm3mjsrknhktgdfbqjm 1 
+  rewrite: 12mcxkncm3mjsrknhktgdfbqjm1
+  digits:  [1 2 3 1]
+  value:   [1 ... 1] --> 11
+  11398 + 11 = 11409
+
+
+LINE: sixtpmdfmrjone6six
+   6 tpmdfmrjone6six
+  6tpmdfmrj 1 6six
+  6tpmdfmrj16 6 
+  rewrite: 6tpmdfmrj166
+  digits:  [6 1 6 6]
+  value:   [6 ... 6] --> 66
+  11409 + 66 = 11475
+
+
+LINE: 7fourthreekqvbhfourfivenine
+  7 4 threekqvbhfourfivenine
+  74 3 kqvbhfourfivenine
+  743kqvbh 4 fivenine
+  743kqvbh4 5 nine
+  743kqvbh45 9 
+  rewrite: 743kqvbh459
+  digits:  [7 4 3 4 5 9]
+  value:   [7 ... 9] --> 79
+  11475 + 79 = 11554
+
+
+LINE: 98337
+  rewrite: 98337
+  digits:  [9 8 3 3 7]
+  value:   [9 ... 7] --> 97
+  11554 + 97 = 11651
+
+
+LINE: pvkrzdzbdj9
+  rewrite: pvkrzdzbdj9
+  digits:  [9]
+  value:   [9 ... 9] --> 99
+  11651 + 99 = 11750
+
+
+LINE: 8krztxtqkqksixr264
+  8krztxtqkqk 6 r264
+  rewrite: 8krztxtqkqk6r264
+  digits:  [8 6 2 6 4]
+  value:   [8 ... 4] --> 84
+  11750 + 84 = 11834
+
+
+LINE: 5sppmxxkdonezfvbdcsix
+  5sppmxxkd 1 zfvbdcsix
+  5sppmxxkd1zfvbdc 6 
+  rewrite: 5sppmxxkd1zfvbdc6
+  digits:  [5 1 6]
+  value:   [5 ... 6] --> 56
+  11834 + 56 = 11890
+
+
+LINE: dhvmctjcjfivec7pjmtnlqs
+  dhvmctjcj 5 c7pjmtnlqs
+  rewrite: dhvmctjcj5c7pjmtnlqs
+  digits:  [5 7]
+  value:   [5 ... 7] --> 57
+  11890 + 57 = 11947
+
+
+LINE: dgzl9sixggxstwoneprr
+  dgzl9 6 ggxstwoneprr
+  dgzl96ggxs 2 neprr
+  rewrite: dgzl96ggxs2neprr
+  digits:  [9 6 2]
+  value:   [9 ... 2] --> 92
+  11947 + 92 = 12039
+
+
+LINE: gnbmxn1cjnq3three6rpsrqmtwo
+  gnbmxn1cjnq3 3 6rpsrqmtwo
+  gnbmxn1cjnq336rpsrqm 2 
+  rewrite: gnbmxn1cjnq336rpsrqm2
+  digits:  [1 3 3 6 2]
+  value:   [1 ... 2] --> 12
+  12039 + 12 = 12051
+
+
+LINE: 176seven17six
+  176 7 17six
+  176717 6 
+  rewrite: 1767176
+  digits:  [1 7 6 7 1 7 6]
+  value:   [1 ... 6] --> 16
+  12051 + 16 = 12067
+
+
+LINE: sbvfive3six
+  sbv 5 3six
+  sbv53 6 
+  rewrite: sbv536
+  digits:  [5 3 6]
+  value:   [5 ... 6] --> 56
+  12067 + 56 = 12123
+
+
+LINE: 8seventhree64pcffive
+  8 7 three64pcffive
+  87 3 64pcffive
+  87364pcf 5 
+  rewrite: 87364pcf5
+  digits:  [8 7 3 6 4 5]
+  value:   [8 ... 5] --> 85
+  12123 + 85 = 12208
+
+
+LINE: fourgvhbrsfjzsevenfivenineninesixznq2
+   4 gvhbrsfjzsevenfivenineninesixznq2
+  4gvhbrsfjz 7 fivenineninesixznq2
+  4gvhbrsfjz7 5 nineninesixznq2
+  4gvhbrsfjz75 9 ninesixznq2
+  4gvhbrsfjz759 9 sixznq2
+  4gvhbrsfjz7599 6 znq2
+  rewrite: 4gvhbrsfjz75996znq2
+  digits:  [4 7 5 9 9 6 2]
+  value:   [4 ... 2] --> 42
+  12208 + 42 = 12250
+
+
+LINE: nine426six8zk
+   9 426six8zk
+  9426 6 8zk
+  rewrite: 942668zk
+  digits:  [9 4 2 6 6 8]
+  value:   [9 ... 8] --> 98
+  12250 + 98 = 12348
+
+
+LINE: 4sevenfpnmsqlhllrxrhjonesmgfhzmhvstwo3
+  4 7 fpnmsqlhllrxrhjonesmgfhzmhvstwo3
+  47fpnmsqlhllrxrhj 1 smgfhzmhvstwo3
+  47fpnmsqlhllrxrhj1smgfhzmhvs 2 3
+  rewrite: 47fpnmsqlhllrxrhj1smgfhzmhvs23
+  digits:  [4 7 1 2 3]
+  value:   [4 ... 3] --> 43
+  12348 + 43 = 12391
+
+
+LINE: fivesixtwosevenlfbpczfv3six8
+   5 sixtwosevenlfbpczfv3six8
+  5 6 twosevenlfbpczfv3six8
+  56 2 sevenlfbpczfv3six8
+  562 7 lfbpczfv3six8
+  5627lfbpczfv3 6 8
+  rewrite: 5627lfbpczfv368
+  digits:  [5 6 2 7 3 6 8]
+  value:   [5 ... 8] --> 58
+  12391 + 58 = 12449
+
+
+LINE: 8fourltcpdnhg178fourglz
+  8 4 ltcpdnhg178fourglz
+  84ltcpdnhg178 4 glz
+  rewrite: 84ltcpdnhg1784glz
+  digits:  [8 4 1 7 8 4]
+  value:   [8 ... 4] --> 84
+  12449 + 84 = 12533
+
+
+LINE: rdfqcdrxdc6twotwo8fourthreeftrlzseven
+  rdfqcdrxdc6 2 two8fourthreeftrlzseven
+  rdfqcdrxdc62 2 8fourthreeftrlzseven
+  rdfqcdrxdc6228 4 threeftrlzseven
+  rdfqcdrxdc62284 3 ftrlzseven
+  rdfqcdrxdc622843ftrlz 7 
+  rewrite: rdfqcdrxdc622843ftrlz7
+  digits:  [6 2 2 8 4 3 7]
+  value:   [6 ... 7] --> 67
+  12533 + 67 = 12600
+
+
+LINE: 97threefive7
+  97 3 five7
+  973 5 7
+  rewrite: 97357
+  digits:  [9 7 3 5 7]
+  value:   [9 ... 7] --> 97
+  12600 + 97 = 12697
+
+
+LINE: sevenoneoneszdxd77two
+   7 oneoneszdxd77two
+  7 1 oneszdxd77two
+  71 1 szdxd77two
+  711szdxd77 2 
+  rewrite: 711szdxd772
+  digits:  [7 1 1 7 7 2]
+  value:   [7 ... 2] --> 72
+  12697 + 72 = 12769
+
+
+LINE: g91q392four
+  g91q392 4 
+  rewrite: g91q3924
+  digits:  [9 1 3 9 2 4]
+  value:   [9 ... 4] --> 94
+  12769 + 94 = 12863
+
+
+LINE: 2twodb
+  2 2 db
+  rewrite: 22db
+  digits:  [2 2]
+  value:   [2 ... 2] --> 22
+  12863 + 22 = 12885
+
+
+LINE: jbtfkfourggc5zkc3nineninekv
+  jbtfk 4 ggc5zkc3nineninekv
+  jbtfk4ggc5zkc3 9 ninekv
+  jbtfk4ggc5zkc39 9 kv
+  rewrite: jbtfk4ggc5zkc399kv
+  digits:  [4 5 3 9 9]
+  value:   [4 ... 9] --> 49
+  12885 + 49 = 12934
+
+
+LINE: 379eight
+  379 8 
+  rewrite: 3798
+  digits:  [3 7 9 8]
+  value:   [3 ... 8] --> 38
+  12934 + 38 = 12972
+
+
+LINE: hhxcbflcv6fiveszpch46
+  hhxcbflcv6 5 szpch46
+  rewrite: hhxcbflcv65szpch46
+  digits:  [6 5 4 6]
+  value:   [6 ... 6] --> 66
+  12972 + 66 = 13038
+
+
+LINE: threexfsfv3dpfourfiveone
+   3 xfsfv3dpfourfiveone
+  3xfsfv3dp 4 fiveone
+  3xfsfv3dp4 5 one
+  3xfsfv3dp45 1 
+  rewrite: 3xfsfv3dp451
+  digits:  [3 3 4 5 1]
+  value:   [3 ... 1] --> 31
+  13038 + 31 = 13069
+
+
+LINE: fivevd145one629
+   5 vd145one629
+  5vd145 1 629
+  rewrite: 5vd1451629
+  digits:  [5 1 4 5 1 6 2 9]
+  value:   [5 ... 9] --> 59
+  13069 + 59 = 13128
+
+
+LINE: 31vdzxxkxsmznrqjzpqj5onescbck
+  31vdzxxkxsmznrqjzpqj5 1 scbck
+  rewrite: 31vdzxxkxsmznrqjzpqj51scbck
+  digits:  [3 1 5 1]
+  value:   [3 ... 1] --> 31
+  13128 + 31 = 13159
+
+
+LINE: 9onejbnvrbmtgm
+  9 1 jbnvrbmtgm
+  rewrite: 91jbnvrbmtgm
+  digits:  [9 1]
+  value:   [9 ... 1] --> 91
+  13159 + 91 = 13250
+
+
+LINE: thrjvpckm4vglthree
+  thrjvpckm4vgl 3 
+  rewrite: thrjvpckm4vgl3
+  digits:  [4 3]
+  value:   [4 ... 3] --> 43
+  13250 + 43 = 13293
+
+
+LINE: zvhmxzsixfjddvjq1four8lktthree
+  zvhmxz 6 fjddvjq1four8lktthree
+  zvhmxz6fjddvjq1 4 8lktthree
+  zvhmxz6fjddvjq148lkt 3 
+  rewrite: zvhmxz6fjddvjq148lkt3
+  digits:  [6 1 4 8 3]
+  value:   [6 ... 3] --> 63
+  13293 + 63 = 13356
+
+
+LINE: 74seven84rslpcjtpfourcvvqlstmqn
+  74 7 84rslpcjtpfourcvvqlstmqn
+  74784rslpcjtp 4 cvvqlstmqn
+  rewrite: 74784rslpcjtp4cvvqlstmqn
+  digits:  [7 4 7 8 4 4]
+  value:   [7 ... 4] --> 74
+  13356 + 74 = 13430
+
+
+LINE: dfxdqr3eighthfhcldhgmjcpbxbzp
+  dfxdqr3 8 hfhcldhgmjcpbxbzp
+  rewrite: dfxdqr38hfhcldhgmjcpbxbzp
+  digits:  [3 8]
+  value:   [3 ... 8] --> 38
+  13430 + 38 = 13468
+
+
+LINE: sevenbgs1seven9bjntphktdktzhrzpfcfs
+   7 bgs1seven9bjntphktdktzhrzpfcfs
+  7bgs1 7 9bjntphktdktzhrzpfcfs
+  rewrite: 7bgs179bjntphktdktzhrzpfcfs
+  digits:  [7 1 7 9]
+  value:   [7 ... 9] --> 79
+  13468 + 79 = 13547
+
+
+LINE: 7kqkdzncd4sevensevenfourv8two
+  7kqkdzncd4 7 sevenfourv8two
+  7kqkdzncd47 7 fourv8two
+  7kqkdzncd477 4 v8two
+  7kqkdzncd4774v8 2 
+  rewrite: 7kqkdzncd4774v82
+  digits:  [7 4 7 7 4 8 2]
+  value:   [7 ... 2] --> 72
+  13547 + 72 = 13619
+
+
+LINE: mjeightwolsk2sgnhgxstfourhbhthreeonenine3
+  mj 8 wolsk2sgnhgxstfourhbhthreeonenine3
+  mj8wolsk2sgnhgxst 4 hbhthreeonenine3
+  mj8wolsk2sgnhgxst4hbh 3 onenine3
+  mj8wolsk2sgnhgxst4hbh3 1 nine3
+  mj8wolsk2sgnhgxst4hbh31 9 3
+  rewrite: mj8wolsk2sgnhgxst4hbh3193
+  digits:  [8 2 4 3 1 9 3]
+  value:   [8 ... 3] --> 83
+  13619 + 83 = 13702
+
+
+LINE: 4nts
+  rewrite: 4nts
+  digits:  [4]
+  value:   [4 ... 4] --> 44
+  13702 + 44 = 13746
+
+
+LINE: nslvxzffoureightfour5eightczsptpg8
+  nslvxzf 4 eightfour5eightczsptpg8
+  nslvxzf4 8 four5eightczsptpg8
+  nslvxzf48 4 5eightczsptpg8
+  nslvxzf4845 8 czsptpg8
+  rewrite: nslvxzf48458czsptpg8
+  digits:  [4 8 4 5 8 8]
+  value:   [4 ... 8] --> 48
+  13746 + 48 = 13794
+
+
+LINE: bcckncblzdsixxrdprtsmbjdzxzlnzfbgmkfd2
+  bcckncblzd 6 xrdprtsmbjdzxzlnzfbgmkfd2
+  rewrite: bcckncblzd6xrdprtsmbjdzxzlnzfbgmkfd2
+  digits:  [6 2]
+  value:   [6 ... 2] --> 62
+  13794 + 62 = 13856
+
+
+LINE: 8fourninesix4fourseven
+  8 4 ninesix4fourseven
+  84 9 six4fourseven
+  849 6 4fourseven
+  84964 4 seven
+  849644 7 
+  rewrite: 8496447
+  digits:  [8 4 9 6 4 4 7]
+  value:   [8 ... 7] --> 87
+  13856 + 87 = 13943
+
+
+LINE: twospxvtbcjfour3seven
+   2 spxvtbcjfour3seven
+  2spxvtbcj 4 3seven
+  2spxvtbcj43 7 
+  rewrite: 2spxvtbcj437
+  digits:  [2 4 3 7]
+  value:   [2 ... 7] --> 27
+  13943 + 27 = 13970
+
+
+LINE: four2cqkxkbplbpb
+   4 2cqkxkbplbpb
+  rewrite: 42cqkxkbplbpb
+  digits:  [4 2]
+  value:   [4 ... 2] --> 42
+  13970 + 42 = 14012
+
+
+LINE: 54fourtwo2xd
+  54 4 two2xd
+  544 2 2xd
+  rewrite: 54422xd
+  digits:  [5 4 4 2 2]
+  value:   [5 ... 2] --> 52
+  14012 + 52 = 14064
+
+
+LINE: tljfive7bsxmonesixl
+  tlj 5 7bsxmonesixl
+  tlj57bsxm 1 sixl
+  tlj57bsxm1 6 l
+  rewrite: tlj57bsxm16l
+  digits:  [5 7 1 6]
+  value:   [5 ... 6] --> 56
+  14064 + 56 = 14120
+
+
+LINE: 8mxd8czpdrgxbtwoeightrqpghngcvt
+  8mxd8czpdrgxb 2 eightrqpghngcvt
+  8mxd8czpdrgxb2 8 rqpghngcvt
+  rewrite: 8mxd8czpdrgxb28rqpghngcvt
+  digits:  [8 8 2 8]
+  value:   [8 ... 8] --> 88
+  14120 + 88 = 14208
+
+
+LINE: 3sxrzljnzlr9threetknfcc5seven4
+  3sxrzljnzlr9 3 tknfcc5seven4
+  3sxrzljnzlr93tknfcc5 7 4
+  rewrite: 3sxrzljnzlr93tknfcc574
+  digits:  [3 9 3 5 7 4]
+  value:   [3 ... 4] --> 34
+  14208 + 34 = 14242
+
+
+LINE: eighteightfourtwo8fournine7
+   8 eightfourtwo8fournine7
+  8 8 fourtwo8fournine7
+  88 4 two8fournine7
+  884 2 8fournine7
+  88428 4 nine7
+  884284 9 7
+  rewrite: 88428497
+  digits:  [8 8 4 2 8 4 9 7]
+  value:   [8 ... 7] --> 87
+  14242 + 87 = 14329
+
+
+LINE: jjzxf153mdzhh
+  rewrite: jjzxf153mdzhh
+  digits:  [1 5 3]
+  value:   [1 ... 3] --> 13
+  14329 + 13 = 14342
+
+
+LINE: 3three95one8vsmzkrlvhq
+  3 3 95one8vsmzkrlvhq
+  3395 1 8vsmzkrlvhq
+  rewrite: 339518vsmzkrlvhq
+  digits:  [3 3 9 5 1 8]
+  value:   [3 ... 8] --> 38
+  14342 + 38 = 14380
+
+
+LINE: ninefour4pzqzntwo2nine
+   9 four4pzqzntwo2nine
+  9 4 4pzqzntwo2nine
+  944pzqzn 2 2nine
+  944pzqzn22 9 
+  rewrite: 944pzqzn229
+  digits:  [9 4 4 2 2 9]
+  value:   [9 ... 9] --> 99
+  14380 + 99 = 14479
+
+
+LINE: onefournine8gvp
+   1 fournine8gvp
+  1 4 nine8gvp
+  14 9 8gvp
+  rewrite: 1498gvp
+  digits:  [1 4 9 8]
+  value:   [1 ... 8] --> 18
+  14479 + 18 = 14497
+
+
+LINE: 45vmbrpblzjxthhonesix8
+  45vmbrpblzjxthh 1 six8
+  45vmbrpblzjxthh1 6 8
+  rewrite: 45vmbrpblzjxthh168
+  digits:  [4 5 1 6 8]
+  value:   [4 ... 8] --> 48
+  14497 + 48 = 14545
+
+
+LINE: lmmrxm5
+  rewrite: lmmrxm5
+  digits:  [5]
+  value:   [5 ... 5] --> 55
+  14545 + 55 = 14600
+
+
+LINE: 13mhm6zxmkhbcsixhz8
+  13mhm6zxmkhbc 6 hz8
+  rewrite: 13mhm6zxmkhbc6hz8
+  digits:  [1 3 6 6 8]
+  value:   [1 ... 8] --> 18
+  14600 + 18 = 14618
+
+
+LINE: mhsjcprhdh7ninemgrxnqzt7pdtxxvsix
+  mhsjcprhdh7 9 mgrxnqzt7pdtxxvsix
+  mhsjcprhdh79mgrxnqzt7pdtxxv 6 
+  rewrite: mhsjcprhdh79mgrxnqzt7pdtxxv6
+  digits:  [7 9 7 6]
+  value:   [7 ... 6] --> 76
+  14618 + 76 = 14694
+
+
+LINE: twothreesixqcjtzcxmd3ninezqrvnzlxt
+   2 threesixqcjtzcxmd3ninezqrvnzlxt
+  2 3 sixqcjtzcxmd3ninezqrvnzlxt
+  23 6 qcjtzcxmd3ninezqrvnzlxt
+  236qcjtzcxmd3 9 zqrvnzlxt
+  rewrite: 236qcjtzcxmd39zqrvnzlxt
+  digits:  [2 3 6 3 9]
+  value:   [2 ... 9] --> 29
+  14694 + 29 = 14723
+
+
+LINE: hreightwo51tb27fivesevenseven
+  hr 8 wo51tb27fivesevenseven
+  hr8wo51tb27 5 sevenseven
+  hr8wo51tb275 7 seven
+  hr8wo51tb2757 7 
+  rewrite: hr8wo51tb27577
+  digits:  [8 5 1 2 7 5 7 7]
+  value:   [8 ... 7] --> 87
+  14723 + 87 = 14810
+
+
+LINE: fivebktq86nine5kd
+   5 bktq86nine5kd
+  5bktq86 9 5kd
+  rewrite: 5bktq8695kd
+  digits:  [5 8 6 9 5]
+  value:   [5 ... 5] --> 55
+  14810 + 55 = 14865
+
+
+LINE: one6nglzxzkzrmfl12nine6
+   1 6nglzxzkzrmfl12nine6
+  16nglzxzkzrmfl12 9 6
+  rewrite: 16nglzxzkzrmfl1296
+  digits:  [1 6 1 2 9 6]
+  value:   [1 ... 6] --> 16
+  14865 + 16 = 14881
+
+
+LINE: 2th9mms4six3
+  2th9mms4 6 3
+  rewrite: 2th9mms463
+  digits:  [2 9 4 6 3]
+  value:   [2 ... 3] --> 23
+  14881 + 23 = 14904
+
+
+LINE: msix5bqbtwosix
+  m 6 5bqbtwosix
+  m65bqb 2 six
+  m65bqb2 6 
+  rewrite: m65bqb26
+  digits:  [6 5 2 6]
+  value:   [6 ... 6] --> 66
+  14904 + 66 = 14970
+
+
+LINE: four1hfrmxsix3five
+   4 1hfrmxsix3five
+  41hfrmx 6 3five
+  41hfrmx63 5 
+  rewrite: 41hfrmx635
+  digits:  [4 1 6 3 5]
+  value:   [4 ... 5] --> 45
+  14970 + 45 = 15015
+
+
+LINE: nrtjrkkfour6fivefour7fivertjnxbbzg
+  nrtjrkk 4 6fivefour7fivertjnxbbzg
+  nrtjrkk46 5 four7fivertjnxbbzg
+  nrtjrkk465 4 7fivertjnxbbzg
+  nrtjrkk46547 5 rtjnxbbzg
+  rewrite: nrtjrkk465475rtjnxbbzg
+  digits:  [4 6 5 4 7 5]
+  value:   [4 ... 5] --> 45
+  15015 + 45 = 15060
+
+
+LINE: jmjqmxrtjr23phttwo
+  jmjqmxrtjr23pht 2 
+  rewrite: jmjqmxrtjr23pht2
+  digits:  [2 3 2]
+  value:   [2 ... 2] --> 22
+  15060 + 22 = 15082
+
+
+LINE: 79
+  rewrite: 79
+  digits:  [7 9]
+  value:   [7 ... 9] --> 79
+  15082 + 79 = 15161
+
+
+LINE: 6twones
+  6 2 nes
+  rewrite: 62nes
+  digits:  [6 2]
+  value:   [6 ... 2] --> 62
+  15161 + 62 = 15223
+
+
+LINE: sn6fivesixfourhhjhrfthree
+  sn6 5 sixfourhhjhrfthree
+  sn65 6 fourhhjhrfthree
+  sn656 4 hhjhrfthree
+  sn6564hhjhrf 3 
+  rewrite: sn6564hhjhrf3
+  digits:  [6 5 6 4 3]
+  value:   [6 ... 3] --> 63
+  15223 + 63 = 15286
+
+
+LINE: xdfxgzccsvonefivenmqleightfivel9nine
+  xdfxgzccsv 1 fivenmqleightfivel9nine
+  xdfxgzccsv1 5 nmqleightfivel9nine
+  xdfxgzccsv15nmql 8 fivel9nine
+  xdfxgzccsv15nmql8 5 l9nine
+  xdfxgzccsv15nmql85l9 9 
+  rewrite: xdfxgzccsv15nmql85l99
+  digits:  [1 5 8 5 9 9]
+  value:   [1 ... 9] --> 19
+  15286 + 19 = 15305
+
+
+LINE: 78sevensix21
+  78 7 six21
+  787 6 21
+  rewrite: 787621
+  digits:  [7 8 7 6 2 1]
+  value:   [7 ... 1] --> 71
+  15305 + 71 = 15376
+
+
+LINE: rkmncslfr6hdhtlchnznineoneeight4
+  rkmncslfr6hdhtlchnz 9 oneeight4
+  rkmncslfr6hdhtlchnz9 1 eight4
+  rkmncslfr6hdhtlchnz91 8 4
+  rewrite: rkmncslfr6hdhtlchnz9184
+  digits:  [6 9 1 8 4]
+  value:   [6 ... 4] --> 64
+  15376 + 64 = 15440
+
+
+LINE: seven1496
+   7 1496
+  rewrite: 71496
+  digits:  [7 1 4 9 6]
+  value:   [7 ... 6] --> 76
+  15440 + 76 = 15516
+
+
+LINE: 8fivekhfrfjtwo3eight9six4
+  8 5 khfrfjtwo3eight9six4
+  85khfrfj 2 3eight9six4
+  85khfrfj23 8 9six4
+  85khfrfj2389 6 4
+  rewrite: 85khfrfj238964
+  digits:  [8 5 2 3 8 9 6 4]
+  value:   [8 ... 4] --> 84
+  15516 + 84 = 15600
+
+
+LINE: jnrtwoneslxrgkeight67fivetwolbhvfftqjhl
+  jnr 2 neslxrgkeight67fivetwolbhvfftqjhl
+  jnr2neslxrgk 8 67fivetwolbhvfftqjhl
+  jnr2neslxrgk867 5 twolbhvfftqjhl
+  jnr2neslxrgk8675 2 lbhvfftqjhl
+  rewrite: jnr2neslxrgk86752lbhvfftqjhl
+  digits:  [2 8 6 7 5 2]
+  value:   [2 ... 2] --> 22
+  15600 + 22 = 15622
+
+
+LINE: eight6eight4two
+   8 6eight4two
+  86 8 4two
+  8684 2 
+  rewrite: 86842
+  digits:  [8 6 8 4 2]
+  value:   [8 ... 2] --> 82
+  15622 + 82 = 15704
+
+
+LINE: dhcxc1
+  rewrite: dhcxc1
+  digits:  [1]
+  value:   [1 ... 1] --> 11
+  15704 + 11 = 15715
+
+
+LINE: fivenpblbgfive6moneighttzj
+   5 npblbgfive6moneighttzj
+  5npblbg 5 6moneighttzj
+  5npblbg56m 1 ighttzj
+  rewrite: 5npblbg56m1ighttzj
+  digits:  [5 5 6 1]
+  value:   [5 ... 1] --> 51
+  15715 + 51 = 15766
+
+
+LINE: onef5nppkqcl6mnzhvsixjvcqpbtb
+   1 f5nppkqcl6mnzhvsixjvcqpbtb
+  1f5nppkqcl6mnzhv 6 jvcqpbtb
+  rewrite: 1f5nppkqcl6mnzhv6jvcqpbtb
+  digits:  [1 5 6 6]
+  value:   [1 ... 6] --> 16
+  15766 + 16 = 15782
+
+
+LINE: 7tjggz68four4six28
+  7tjggz68 4 4six28
+  7tjggz6844 6 28
+  rewrite: 7tjggz6844628
+  digits:  [7 6 8 4 4 6 2 8]
+  value:   [7 ... 8] --> 78
+  15782 + 78 = 15860
+
+
+LINE: zfntm7
+  rewrite: zfntm7
+  digits:  [7]
+  value:   [7 ... 7] --> 77
+  15860 + 77 = 15937
+
+
+LINE: 3sgbsbn2fivefour3
+  3sgbsbn2 5 four3
+  3sgbsbn25 4 3
+  rewrite: 3sgbsbn2543
+  digits:  [3 2 5 4 3]
+  value:   [3 ... 3] --> 33
+  15937 + 33 = 15970
+
+
+LINE: 8bmtcgtqcsmdktzmj3
+  rewrite: 8bmtcgtqcsmdktzmj3
+  digits:  [8 3]
+  value:   [8 ... 3] --> 83
+  15970 + 83 = 16053
+
+
+LINE: 617
+  rewrite: 617
+  digits:  [6 1 7]
+  value:   [6 ... 7] --> 67
+  16053 + 67 = 16120
+
+
+LINE: 7sjsshfgnpnjskhccdclrxmnl
+  rewrite: 7sjsshfgnpnjskhccdclrxmnl
+  digits:  [7]
+  value:   [7 ... 7] --> 77
+  16120 + 77 = 16197
+
+
+LINE: trzeightwo1krbkxd9nslndznine
+  trz 8 wo1krbkxd9nslndznine
+  trz8wo1krbkxd9nslndz 9 
+  rewrite: trz8wo1krbkxd9nslndz9
+  digits:  [8 1 9 9]
+  value:   [8 ... 9] --> 89
+  16197 + 89 = 16286
+
+
+LINE: ninelmbxldnb1qfqkhqkp
+   9 lmbxldnb1qfqkhqkp
+  rewrite: 9lmbxldnb1qfqkhqkp
+  digits:  [9 1]
+  value:   [9 ... 1] --> 91
+  16286 + 91 = 16377
+
+
+LINE: 3pf8vlmgtfouronefx
+  3pf8vlmgt 4 onefx
+  3pf8vlmgt4 1 fx
+  rewrite: 3pf8vlmgt41fx
+  digits:  [3 8 4 1]
+  value:   [3 ... 1] --> 31
+  16377 + 31 = 16408
+
+
+LINE: five7seven6
+   5 7seven6
+  57 7 6
+  rewrite: 5776
+  digits:  [5 7 7 6]
+  value:   [5 ... 6] --> 56
+  16408 + 56 = 16464
+
+
+LINE: zckdhnzrppb3kqsix
+  zckdhnzrppb3kq 6 
+  rewrite: zckdhnzrppb3kq6
+  digits:  [3 6]
+  value:   [3 ... 6] --> 36
+  16464 + 36 = 16500
+
+
+LINE: 6fivebgf6fourktdsqdxfqd46
+  6 5 bgf6fourktdsqdxfqd46
+  65bgf6 4 ktdsqdxfqd46
+  rewrite: 65bgf64ktdsqdxfqd46
+  digits:  [6 5 6 4 4 6]
+  value:   [6 ... 6] --> 66
+  16500 + 66 = 16566
+
+
+LINE: four7nine5two4dkkdhvcfsf
+   4 7nine5two4dkkdhvcfsf
+  47 9 5two4dkkdhvcfsf
+  4795 2 4dkkdhvcfsf
+  rewrite: 479524dkkdhvcfsf
+  digits:  [4 7 9 5 2 4]
+  value:   [4 ... 4] --> 44
+  16566 + 44 = 16610
+
+
+LINE: 5vtqrhbn1lhxm7one
+  5vtqrhbn1lhxm7 1 
+  rewrite: 5vtqrhbn1lhxm71
+  digits:  [5 1 7 1]
+  value:   [5 ... 1] --> 51
+  16610 + 51 = 16661
+
+
+LINE: three13fbtqxvmninegp
+   3 13fbtqxvmninegp
+  313fbtqxvm 9 gp
+  rewrite: 313fbtqxvm9gp
+  digits:  [3 1 3 9]
+  value:   [3 ... 9] --> 39
+  16661 + 39 = 16700
+
+
+LINE: fiveseven1czvlmlncthreerstssbjdoneightpm
+   5 seven1czvlmlncthreerstssbjdoneightpm
+  5 7 1czvlmlncthreerstssbjdoneightpm
+  571czvlmlnc 3 rstssbjdoneightpm
+  571czvlmlnc3rstssbjd 1 ightpm
+  rewrite: 571czvlmlnc3rstssbjd1ightpm
+  digits:  [5 7 1 3 1]
+  value:   [5 ... 1] --> 51
+  16700 + 51 = 16751
+
+
+LINE: 2lpdnfz3vghpszmtxnineeighthkfour
+  2lpdnfz3vghpszmtx 9 eighthkfour
+  2lpdnfz3vghpszmtx9 8 hkfour
+  2lpdnfz3vghpszmtx98hk 4 
+  rewrite: 2lpdnfz3vghpszmtx98hk4
+  digits:  [2 3 9 8 4]
+  value:   [2 ... 4] --> 24
+  16751 + 24 = 16775
+
+
+LINE: 455hdvfivervnine
+  455hdv 5 rvnine
+  455hdv5rv 9 
+  rewrite: 455hdv5rv9
+  digits:  [4 5 5 5 9]
+  value:   [4 ... 9] --> 49
+  16775 + 49 = 16824
+
+
+LINE: three64
+   3 64
+  rewrite: 364
+  digits:  [3 6 4]
+  value:   [3 ... 4] --> 34
+  16824 + 34 = 16858
+
+
+LINE: six6threefivethreedbvvftm
+   6 6threefivethreedbvvftm
+  66 3 fivethreedbvvftm
+  663 5 threedbvvftm
+  6635 3 dbvvftm
+  rewrite: 66353dbvvftm
+  digits:  [6 6 3 5 3]
+  value:   [6 ... 3] --> 63
+  16858 + 63 = 16921
+
+
+LINE: 667sevenzjxmrmpxd8
+  667 7 zjxmrmpxd8
+  rewrite: 6677zjxmrmpxd8
+  digits:  [6 6 7 7 8]
+  value:   [6 ... 8] --> 68
+  16921 + 68 = 16989
+
+
+LINE: dsix62lrvqkfthree
+  d 6 62lrvqkfthree
+  d662lrvqkf 3 
+  rewrite: d662lrvqkf3
+  digits:  [6 6 2 3]
+  value:   [6 ... 3] --> 63
+  16989 + 63 = 17052
+
+
+LINE: sixthreefour5cpgsjznfdbtk
+   6 threefour5cpgsjznfdbtk
+  6 3 four5cpgsjznfdbtk
+  63 4 5cpgsjznfdbtk
+  rewrite: 6345cpgsjznfdbtk
+  digits:  [6 3 4 5]
+  value:   [6 ... 5] --> 65
+  17052 + 65 = 17117
+
+
+LINE: two4five4one
+   2 4five4one
+  24 5 4one
+  2454 1 
+  rewrite: 24541
+  digits:  [2 4 5 4 1]
+  value:   [2 ... 1] --> 21
+  17117 + 21 = 17138
+
+
+LINE: 1hxbnvq
+  rewrite: 1hxbnvq
+  digits:  [1]
+  value:   [1 ... 1] --> 11
+  17138 + 11 = 17149
+
+
+LINE: sevenkrzfvkkrprxzcfgchscbstwo73
+   7 krzfvkkrprxzcfgchscbstwo73
+  7krzfvkkrprxzcfgchscbs 2 73
+  rewrite: 7krzfvkkrprxzcfgchscbs273
+  digits:  [7 2 7 3]
+  value:   [7 ... 3] --> 73
+  17149 + 73 = 17222
+
+
+LINE: nzhtgzzq448pftthpsneight
+  nzhtgzzq448pftthpsn 8 
+  rewrite: nzhtgzzq448pftthpsn8
+  digits:  [4 4 8 8]
+  value:   [4 ... 8] --> 48
+  17222 + 48 = 17270
+
+
+LINE: 3197
+  rewrite: 3197
+  digits:  [3 1 9 7]
+  value:   [3 ... 7] --> 37
+  17270 + 37 = 17307
+
+
+LINE: one59fjdqjd9
+   1 59fjdqjd9
+  rewrite: 159fjdqjd9
+  digits:  [1 5 9 9]
+  value:   [1 ... 9] --> 19
+  17307 + 19 = 17326
+
+
+LINE: pvcphzxnvnhhngl5dsix6fourone
+  pvcphzxnvnhhngl5d 6 6fourone
+  pvcphzxnvnhhngl5d66 4 one
+  pvcphzxnvnhhngl5d664 1 
+  rewrite: pvcphzxnvnhhngl5d6641
+  digits:  [5 6 6 4 1]
+  value:   [5 ... 1] --> 51
+  17326 + 51 = 17377
+
+
+LINE: 5eightfourfivetbhh54eighthkbvcfrpc
+  5 8 fourfivetbhh54eighthkbvcfrpc
+  58 4 fivetbhh54eighthkbvcfrpc
+  584 5 tbhh54eighthkbvcfrpc
+  5845tbhh54 8 hkbvcfrpc
+  rewrite: 5845tbhh548hkbvcfrpc
+  digits:  [5 8 4 5 5 4 8]
+  value:   [5 ... 8] --> 58
+  17377 + 58 = 17435
+
+
+LINE: threehvdqjdl45fourrqhqxs
+   3 hvdqjdl45fourrqhqxs
+  3hvdqjdl45 4 rqhqxs
+  rewrite: 3hvdqjdl454rqhqxs
+  digits:  [3 4 5 4]
+  value:   [3 ... 4] --> 34
+  17435 + 34 = 17469
+
+
+LINE: 8twonine
+  8 2 nine
+  82 9 
+  rewrite: 829
+  digits:  [8 2 9]
+  value:   [8 ... 9] --> 89
+  17469 + 89 = 17558
+
+
+LINE: 8mmc6tmc99rkttglnnxk4
+  rewrite: 8mmc6tmc99rkttglnnxk4
+  digits:  [8 6 9 9 4]
+  value:   [8 ... 4] --> 84
+  17558 + 84 = 17642
+
+
+LINE: pxnxckqbdhhvhbheightfivefivesix6two
+  pxnxckqbdhhvhbh 8 fivefivesix6two
+  pxnxckqbdhhvhbh8 5 fivesix6two
+  pxnxckqbdhhvhbh85 5 six6two
+  pxnxckqbdhhvhbh855 6 6two
+  pxnxckqbdhhvhbh85566 2 
+  rewrite: pxnxckqbdhhvhbh855662
+  digits:  [8 5 5 6 6 2]
+  value:   [8 ... 2] --> 82
+  17642 + 82 = 17724
+
+
+LINE: 3four2pzx23vhmzhrfourthree
+  3 4 2pzx23vhmzhrfourthree
+  342pzx23vhmzhr 4 three
+  342pzx23vhmzhr4 3 
+  rewrite: 342pzx23vhmzhr43
+  digits:  [3 4 2 2 3 4 3]
+  value:   [3 ... 3] --> 33
+  17724 + 33 = 17757
+
+
+LINE: five1four97
+   5 1four97
+  51 4 97
+  rewrite: 51497
+  digits:  [5 1 4 9 7]
+  value:   [5 ... 7] --> 57
+  17757 + 57 = 17814
+
+
+LINE: 9eightpzznbpqgj
+  9 8 pzznbpqgj
+  rewrite: 98pzznbpqgj
+  digits:  [9 8]
+  value:   [9 ... 8] --> 98
+  17814 + 98 = 17912
+
+
+LINE: rrrgfxlb7vltwobjtdrghc
+  rrrgfxlb7vl 2 bjtdrghc
+  rewrite: rrrgfxlb7vl2bjtdrghc
+  digits:  [7 2]
+  value:   [7 ... 2] --> 72
+  17912 + 72 = 17984
+
+
+LINE: sgnd8ptgdfourbbcqsix
+  sgnd8ptgd 4 bbcqsix
+  sgnd8ptgd4bbcq 6 
+  rewrite: sgnd8ptgd4bbcq6
+  digits:  [8 4 6]
+  value:   [8 ... 6] --> 86
+  17984 + 86 = 18070
+
+
+LINE: 4chfmgsxnsd96
+  rewrite: 4chfmgsxnsd96
+  digits:  [4 9 6]
+  value:   [4 ... 6] --> 46
+  18070 + 46 = 18116
+
+
+LINE: zthree3
+  z 3 3
+  rewrite: z33
+  digits:  [3 3]
+  value:   [3 ... 3] --> 33
+  18116 + 33 = 18149
+
+
+LINE: zvvstf6twofivelftpmzkttwo3
+  zvvstf6 2 fivelftpmzkttwo3
+  zvvstf62 5 lftpmzkttwo3
+  zvvstf625lftpmzkt 2 3
+  rewrite: zvvstf625lftpmzkt23
+  digits:  [6 2 5 2 3]
+  value:   [6 ... 3] --> 63
+  18149 + 63 = 18212
+
+
+LINE: 1nineoneightxqt
+  1 9 oneightxqt
+  19 1 ightxqt
+  rewrite: 191ightxqt
+  digits:  [1 9 1]
+  value:   [1 ... 1] --> 11
+  18212 + 11 = 18223
+
+
+LINE: 2kzhkfoneeighteightqn
+  2kzhkf 1 eighteightqn
+  2kzhkf1 8 eightqn
+  2kzhkf18 8 qn
+  rewrite: 2kzhkf188qn
+  digits:  [2 1 8 8]
+  value:   [2 ... 8] --> 28
+  18223 + 28 = 18251
+
+
+LINE: 287cfour
+  287c 4 
+  rewrite: 287c4
+  digits:  [2 8 7 4]
+  value:   [2 ... 4] --> 24
+  18251 + 24 = 18275
+
+
+LINE: lhmgblplseventhreenine9vcpnpvzhjronenhczffqt
+  lhmgblpl 7 threenine9vcpnpvzhjronenhczffqt
+  lhmgblpl7 3 nine9vcpnpvzhjronenhczffqt
+  lhmgblpl73 9 9vcpnpvzhjronenhczffqt
+  lhmgblpl7399vcpnpvzhjr 1 nhczffqt
+  rewrite: lhmgblpl7399vcpnpvzhjr1nhczffqt
+  digits:  [7 3 9 9 1]
+  value:   [7 ... 1] --> 71
+  18275 + 71 = 18346
+
+
+LINE: 5xrjqdjtdqnvlnrkkr7
+  rewrite: 5xrjqdjtdqnvlnrkkr7
+  digits:  [5 7]
+  value:   [5 ... 7] --> 57
+  18346 + 57 = 18403
+
+
+LINE: 38dbdthfive
+  38dbdth 5 
+  rewrite: 38dbdth5
+  digits:  [3 8 5]
+  value:   [3 ... 5] --> 35
+  18403 + 35 = 18438
+
+
+LINE: onethktvdnfqgfourlxpksevenseven22nine
+   1 thktvdnfqgfourlxpksevenseven22nine
+  1thktvdnfqg 4 lxpksevenseven22nine
+  1thktvdnfqg4lxpk 7 seven22nine
+  1thktvdnfqg4lxpk7 7 22nine
+  1thktvdnfqg4lxpk7722 9 
+  rewrite: 1thktvdnfqg4lxpk77229
+  digits:  [1 4 7 7 2 2 9]
+  value:   [1 ... 9] --> 19
+  18438 + 19 = 18457
+
+
+LINE: mjmt18blbfiverjsxjsktkgz
+  mjmt18blb 5 rjsxjsktkgz
+  rewrite: mjmt18blb5rjsxjsktkgz
+  digits:  [1 8 5]
+  value:   [1 ... 5] --> 15
+  18457 + 15 = 18472
+
+
+LINE: 8hlrjjbvsix92grtmthree4
+  8hlrjjbv 6 92grtmthree4
+  8hlrjjbv692grtm 3 4
+  rewrite: 8hlrjjbv692grtm34
+  digits:  [8 6 9 2 3 4]
+  value:   [8 ... 4] --> 84
+  18472 + 84 = 18556
+
+
+LINE: 7threetxjztxseven
+  7 3 txjztxseven
+  73txjztx 7 
+  rewrite: 73txjztx7
+  digits:  [7 3 7]
+  value:   [7 ... 7] --> 77
+  18556 + 77 = 18633
+
+
+LINE: five5gfgfdjbkrpseven4
+   5 5gfgfdjbkrpseven4
+  55gfgfdjbkrp 7 4
+  rewrite: 55gfgfdjbkrp74
+  digits:  [5 5 7 4]
+  value:   [5 ... 4] --> 54
+  18633 + 54 = 18687
+
+
+LINE: 8jdzlvrgtcf8eightzpgstwo
+  8jdzlvrgtcf8 8 zpgstwo
+  8jdzlvrgtcf88zpgs 2 
+  rewrite: 8jdzlvrgtcf88zpgs2
+  digits:  [8 8 8 2]
+  value:   [8 ... 2] --> 82
+  18687 + 82 = 18769
+
+
+LINE: bfpqdpfoursevennvgqt8
+  bfpqdp 4 sevennvgqt8
+  bfpqdp4 7 nvgqt8
+  rewrite: bfpqdp47nvgqt8
+  digits:  [4 7 8]
+  value:   [4 ... 8] --> 48
+  18769 + 48 = 18817
+
+
+LINE: 8one99
+  8 1 99
+  rewrite: 8199
+  digits:  [8 1 9 9]
+  value:   [8 ... 9] --> 89
+  18817 + 89 = 18906
+
+
+LINE: kfvmblbtthjrrmktmjmeight4d3lnctfzsvgmjtmd
+  kfvmblbtthjrrmktmjm 8 4d3lnctfzsvgmjtmd
+  rewrite: kfvmblbtthjrrmktmjm84d3lnctfzsvgmjtmd
+  digits:  [8 4 3]
+  value:   [8 ... 3] --> 83
+  18906 + 83 = 18989
+
+
+LINE: 2eightgppxscjvdgrzjgc3
+  2 8 gppxscjvdgrzjgc3
+  rewrite: 28gppxscjvdgrzjgc3
+  digits:  [2 8 3]
+  value:   [2 ... 3] --> 23
+  18989 + 23 = 19012
+
+
+LINE: 5twonineknzone
+  5 2 nineknzone
+  52 9 knzone
+  529knz 1 
+  rewrite: 529knz1
+  digits:  [5 2 9 1]
+  value:   [5 ... 1] --> 51
+  19012 + 51 = 19063
+
+
+LINE: onefourhb4
+   1 fourhb4
+  1 4 hb4
+  rewrite: 14hb4
+  digits:  [1 4 4]
+  value:   [1 ... 4] --> 14
+  19063 + 14 = 19077
+
+
+LINE: eightrxchxccxb7qqqqxzt
+   8 rxchxccxb7qqqqxzt
+  rewrite: 8rxchxccxb7qqqqxzt
+  digits:  [8 7]
+  value:   [8 ... 7] --> 87
+  19077 + 87 = 19164
+
+
+LINE: threeone14pvfive
+   3 one14pvfive
+  3 1 14pvfive
+  3114pv 5 
+  rewrite: 3114pv5
+  digits:  [3 1 1 4 5]
+  value:   [3 ... 5] --> 35
+  19164 + 35 = 19199
+
+
+LINE: nineseven1sixknvkmfkk86
+   9 seven1sixknvkmfkk86
+  9 7 1sixknvkmfkk86
+  971 6 knvkmfkk86
+  rewrite: 9716knvkmfkk86
+  digits:  [9 7 1 6 8 6]
+  value:   [9 ... 6] --> 96
+  19199 + 96 = 19295
+
+
+LINE: onesmvscnf9ninezgfrps
+   1 smvscnf9ninezgfrps
+  1smvscnf9 9 zgfrps
+  rewrite: 1smvscnf99zgfrps
+  digits:  [1 9 9]
+  value:   [1 ... 9] --> 19
+  19295 + 19 = 19314
+
+
+LINE: ffhseven2
+  ffh 7 2
+  rewrite: ffh72
+  digits:  [7 2]
+  value:   [7 ... 2] --> 72
+  19314 + 72 = 19386
+
+
+LINE: 1sixrjseven8
+  1 6 rjseven8
+  16rj 7 8
+  rewrite: 16rj78
+  digits:  [1 6 7 8]
+  value:   [1 ... 8] --> 18
+  19386 + 18 = 19404
+
+
+LINE: rvzthzdtwosix6kzzqssrgc9tl
+  rvzthzd 2 six6kzzqssrgc9tl
+  rvzthzd2 6 6kzzqssrgc9tl
+  rewrite: rvzthzd266kzzqssrgc9tl
+  digits:  [2 6 6 9]
+  value:   [2 ... 9] --> 29
+  19404 + 29 = 19433
+
+
+LINE: threeeight5svcrlrqtkmfpgqzhhs6
+   3 eight5svcrlrqtkmfpgqzhhs6
+  3 8 5svcrlrqtkmfpgqzhhs6
+  rewrite: 385svcrlrqtkmfpgqzhhs6
+  digits:  [3 8 5 6]
+  value:   [3 ... 6] --> 36
+  19433 + 36 = 19469
+
+
+LINE: eight3bt7dp
+   8 3bt7dp
+  rewrite: 83bt7dp
+  digits:  [8 3 7]
+  value:   [8 ... 7] --> 87
+  19469 + 87 = 19556
+
+
+LINE: zqhncxh25eight1
+  zqhncxh25 8 1
+  rewrite: zqhncxh2581
+  digits:  [2 5 8 1]
+  value:   [2 ... 1] --> 21
+  19556 + 21 = 19577
+
+
+LINE: five3vmmmntnjtjrkbvpvphj6nine
+   5 3vmmmntnjtjrkbvpvphj6nine
+  53vmmmntnjtjrkbvpvphj6 9 
+  rewrite: 53vmmmntnjtjrkbvpvphj69
+  digits:  [5 3 6 9]
+  value:   [5 ... 9] --> 59
+  19577 + 59 = 19636
+
+
+LINE: eight6fsdqseventxgjkbvrleightfive2pqx
+   8 6fsdqseventxgjkbvrleightfive2pqx
+  86fsdq 7 txgjkbvrleightfive2pqx
+  86fsdq7txgjkbvrl 8 five2pqx
+  86fsdq7txgjkbvrl8 5 2pqx
+  rewrite: 86fsdq7txgjkbvrl852pqx
+  digits:  [8 6 7 8 5 2]
+  value:   [8 ... 2] --> 82
+  19636 + 82 = 19718
+
+
+LINE: nkfbsdgrrfvsmfxx78onetwo
+  nkfbsdgrrfvsmfxx78 1 two
+  nkfbsdgrrfvsmfxx781 2 
+  rewrite: nkfbsdgrrfvsmfxx7812
+  digits:  [7 8 1 2]
+  value:   [7 ... 2] --> 72
+  19718 + 72 = 19790
+
+
+LINE: bsix5eightwox
+  b 6 5eightwox
+  b65 8 wox
+  rewrite: b658wox
+  digits:  [6 5 8]
+  value:   [6 ... 8] --> 68
+  19790 + 68 = 19858
+
+
+LINE: fph3jzfmt9fiventnpvnxhjxplchjnvlxqkdbzv
+  fph3jzfmt9 5 ntnpvnxhjxplchjnvlxqkdbzv
+  rewrite: fph3jzfmt95ntnpvnxhjxplchjnvlxqkdbzv
+  digits:  [3 9 5]
+  value:   [3 ... 5] --> 35
+  19858 + 35 = 19893
+
+
+LINE: kfxbjzcfpfk8chkrtvlrnine6
+  kfxbjzcfpfk8chkrtvlr 9 6
+  rewrite: kfxbjzcfpfk8chkrtvlr96
+  digits:  [8 9 6]
+  value:   [8 ... 6] --> 86
+  19893 + 86 = 19979
+
+
+LINE: m7kfjz52eight4tworkpcqt
+  m7kfjz52 8 4tworkpcqt
+  m7kfjz5284 2 rkpcqt
+  rewrite: m7kfjz52842rkpcqt
+  digits:  [7 5 2 8 4 2]
+  value:   [7 ... 2] --> 72
+  19979 + 72 = 20051
+
+
+LINE: vmlhvdpxds8two
+  vmlhvdpxds8 2 
+  rewrite: vmlhvdpxds82
+  digits:  [8 2]
+  value:   [8 ... 2] --> 82
+  20051 + 82 = 20133
+
+
+LINE: fourfiveoneeight478
+   4 fiveoneeight478
+  4 5 oneeight478
+  45 1 eight478
+  451 8 478
+  rewrite: 4518478
+  digits:  [4 5 1 8 4 7 8]
+  value:   [4 ... 8] --> 48
+  20133 + 48 = 20181
+
+
+LINE: 3eightonefive
+  3 8 onefive
+  38 1 five
+  381 5 
+  rewrite: 3815
+  digits:  [3 8 1 5]
+  value:   [3 ... 5] --> 35
+  20181 + 35 = 20216
+
+
+LINE: ninel5
+   9 l5
+  rewrite: 9l5
+  digits:  [9 5]
+  value:   [9 ... 5] --> 95
+  20216 + 95 = 20311
+
+
+LINE: lfqllfjcqztwofjnfnfx5
+  lfqllfjcqz 2 fjnfnfx5
+  rewrite: lfqllfjcqz2fjnfnfx5
+  digits:  [2 5]
+  value:   [2 ... 5] --> 25
+  20311 + 25 = 20336
+
+
+LINE: 5tvqksfour
+  5tvqks 4 
+  rewrite: 5tvqks4
+  digits:  [5 4]
+  value:   [5 ... 4] --> 54
+  20336 + 54 = 20390
+
+
+LINE: twogdg5fourmhninecrdcrheight4
+   2 gdg5fourmhninecrdcrheight4
+  2gdg5 4 mhninecrdcrheight4
+  2gdg54mh 9 crdcrheight4
+  2gdg54mh9crdcrh 8 4
+  rewrite: 2gdg54mh9crdcrh84
+  digits:  [2 5 4 9 8 4]
+  value:   [2 ... 4] --> 24
+  20390 + 24 = 20414
+
+
+LINE: two5six2
+   2 5six2
+  25 6 2
+  rewrite: 2562
+  digits:  [2 5 6 2]
+  value:   [2 ... 2] --> 22
+  20414 + 22 = 20436
+
+
+LINE: 419vrvjln7
+  rewrite: 419vrvjln7
+  digits:  [4 1 9 7]
+  value:   [4 ... 7] --> 47
+  20436 + 47 = 20483
+
+
+LINE: pbpmljqjzxghp3tkdeight7
+  pbpmljqjzxghp3tkd 8 7
+  rewrite: pbpmljqjzxghp3tkd87
+  digits:  [3 8 7]
+  value:   [3 ... 7] --> 37
+  20483 + 37 = 20520
+
+
+LINE: sevensixfiveqmvtfggbqjone72fn
+   7 sixfiveqmvtfggbqjone72fn
+  7 6 fiveqmvtfggbqjone72fn
+  76 5 qmvtfggbqjone72fn
+  765qmvtfggbqj 1 72fn
+  rewrite: 765qmvtfggbqj172fn
+  digits:  [7 6 5 1 7 2]
+  value:   [7 ... 2] --> 72
+  20520 + 72 = 20592
+
+
+LINE: 7four93cdgcpxpl86
+  7 4 93cdgcpxpl86
+  rewrite: 7493cdgcpxpl86
+  digits:  [7 4 9 3 8 6]
+  value:   [7 ... 6] --> 76
+  20592 + 76 = 20668
+
+
+LINE: 9oneeight6three
+  9 1 eight6three
+  91 8 6three
+  9186 3 
+  rewrite: 91863
+  digits:  [9 1 8 6 3]
+  value:   [9 ... 3] --> 93
+  20668 + 93 = 20761
+
+
+LINE: threesixsixhzhpfive8ninetwothree
+   3 sixsixhzhpfive8ninetwothree
+  3 6 sixhzhpfive8ninetwothree
+  36 6 hzhpfive8ninetwothree
+  366hzhp 5 8ninetwothree
+  366hzhp58 9 twothree
+  366hzhp589 2 three
+  366hzhp5892 3 
+  rewrite: 366hzhp58923
+  digits:  [3 6 6 5 8 9 2 3]
+  value:   [3 ... 3] --> 33
+  20761 + 33 = 20794
+
+
+LINE: xlzddrthree2rmtwo6fivedhxsrrdcvpvgscnt
+  xlzddr 3 2rmtwo6fivedhxsrrdcvpvgscnt
+  xlzddr32rm 2 6fivedhxsrrdcvpvgscnt
+  xlzddr32rm26 5 dhxsrrdcvpvgscnt
+  rewrite: xlzddr32rm265dhxsrrdcvpvgscnt
+  digits:  [3 2 2 6 5]
+  value:   [3 ... 5] --> 35
+  20794 + 35 = 20829
+
+
+LINE: qfncszfsdgzqctdtbpkseven1fourpcmz5
+  qfncszfsdgzqctdtbpk 7 1fourpcmz5
+  qfncszfsdgzqctdtbpk71 4 pcmz5
+  rewrite: qfncszfsdgzqctdtbpk714pcmz5
+  digits:  [7 1 4 5]
+  value:   [7 ... 5] --> 75
+  20829 + 75 = 20904
+
+
+LINE: 7seven9fivefive
+  7 7 9fivefive
+  779 5 five
+  7795 5 
+  rewrite: 77955
+  digits:  [7 7 9 5 5]
+  value:   [7 ... 5] --> 75
+  20904 + 75 = 20979
+
+
+LINE: 82nine7ztqmftkssm34j
+  82 9 7ztqmftkssm34j
+  rewrite: 8297ztqmftkssm34j
+  digits:  [8 2 9 7 3 4]
+  value:   [8 ... 4] --> 84
+  20979 + 84 = 21063
+
+
+LINE: twofoursv6
+   2 foursv6
+  2 4 sv6
+  rewrite: 24sv6
+  digits:  [2 4 6]
+  value:   [2 ... 6] --> 26
+  21063 + 26 = 21089
+
+
+LINE: five2five51qrsrqrtmdk7
+   5 2five51qrsrqrtmdk7
+  52 5 51qrsrqrtmdk7
+  rewrite: 52551qrsrqrtmdk7
+  digits:  [5 2 5 5 1 7]
+  value:   [5 ... 7] --> 57
+  21089 + 57 = 21146
+
+
+LINE: four7fhhjxcjtbr
+   4 7fhhjxcjtbr
+  rewrite: 47fhhjxcjtbr
+  digits:  [4 7]
+  value:   [4 ... 7] --> 47
+  21146 + 47 = 21193
+
+
+LINE: hnbdbkmjc72
+  rewrite: hnbdbkmjc72
+  digits:  [7 2]
+  value:   [7 ... 2] --> 72
+  21193 + 72 = 21265
+
+
+LINE: sxclpbzmbd4fivezjjnncmqpv6ckxzb2
+  sxclpbzmbd4 5 zjjnncmqpv6ckxzb2
+  rewrite: sxclpbzmbd45zjjnncmqpv6ckxzb2
+  digits:  [4 5 6 2]
+  value:   [4 ... 2] --> 42
+  21265 + 42 = 21307
+
+
+LINE: 98six4pkhfzkzj7
+  98 6 4pkhfzkzj7
+  rewrite: 9864pkhfzkzj7
+  digits:  [9 8 6 4 7]
+  value:   [9 ... 7] --> 97
+  21307 + 97 = 21404
+
+
+LINE: 611thqkzttfffivenine7seven7
+  611thqkzttff 5 nine7seven7
+  611thqkzttff5 9 7seven7
+  611thqkzttff597 7 7
+  rewrite: 611thqkzttff59777
+  digits:  [6 1 1 5 9 7 7 7]
+  value:   [6 ... 7] --> 67
+  21404 + 67 = 21471
+
+
+LINE: 8sevensmqzxxlgpxpjqstsgkmxdgplrplsjxjgsmjdzzgf
+  8 7 smqzxxlgpxpjqstsgkmxdgplrplsjxjgsmjdzzgf
+  rewrite: 87smqzxxlgpxpjqstsgkmxdgplrplsjxjgsmjdzzgf
+  digits:  [8 7]
+  value:   [8 ... 7] --> 87
+  21471 + 87 = 21558
+
+
+LINE: rggphsjncpxkfzfplcgrnfgmnd9
+  rewrite: rggphsjncpxkfzfplcgrnfgmnd9
+  digits:  [9]
+  value:   [9 ... 9] --> 99
+  21558 + 99 = 21657
+
+
+LINE: three9sgfhdn3rbvqds3threeseven
+   3 9sgfhdn3rbvqds3threeseven
+  39sgfhdn3rbvqds3 3 seven
+  39sgfhdn3rbvqds33 7 
+  rewrite: 39sgfhdn3rbvqds337
+  digits:  [3 9 3 3 3 7]
+  value:   [3 ... 7] --> 37
+  21657 + 37 = 21694
+
+
+LINE: nine9sixtthree94rs
+   9 9sixtthree94rs
+  99 6 tthree94rs
+  996t 3 94rs
+  rewrite: 996t394rs
+  digits:  [9 9 6 3 9 4]
+  value:   [9 ... 4] --> 94
+  21694 + 94 = 21788
+
+
+LINE: sixthreebvmxtcqng67one
+   6 threebvmxtcqng67one
+  6 3 bvmxtcqng67one
+  63bvmxtcqng67 1 
+  rewrite: 63bvmxtcqng671
+  digits:  [6 3 6 7 1]
+  value:   [6 ... 1] --> 61
+  21788 + 61 = 21849
+
+
+LINE: 6ntrhzzkl8djptbnsixthreefourhnk
+  6ntrhzzkl8djptbn 6 threefourhnk
+  6ntrhzzkl8djptbn6 3 fourhnk
+  6ntrhzzkl8djptbn63 4 hnk
+  rewrite: 6ntrhzzkl8djptbn634hnk
+  digits:  [6 8 6 3 4]
+  value:   [6 ... 4] --> 64
+  21849 + 64 = 21913
+
+
+LINE: 3sixxsj5five
+  3 6 xsj5five
+  36xsj5 5 
+  rewrite: 36xsj55
+  digits:  [3 6 5 5]
+  value:   [3 ... 5] --> 35
+  21913 + 35 = 21948
+
+
+LINE: 1cghzppdcfnine
+  1cghzppdcf 9 
+  rewrite: 1cghzppdcf9
+  digits:  [1 9]
+  value:   [1 ... 9] --> 19
+  21948 + 19 = 21967
+
+
+LINE: jtmkrvlmhthree58eightqbhlgppghc1
+  jtmkrvlmh 3 58eightqbhlgppghc1
+  jtmkrvlmh358 8 qbhlgppghc1
+  rewrite: jtmkrvlmh3588qbhlgppghc1
+  digits:  [3 5 8 8 1]
+  value:   [3 ... 1] --> 31
+  21967 + 31 = 21998
+
+
+LINE: fivefourlpk5jtvrk9eight7gfzksqrv
+   5 fourlpk5jtvrk9eight7gfzksqrv
+  5 4 lpk5jtvrk9eight7gfzksqrv
+  54lpk5jtvrk9 8 7gfzksqrv
+  rewrite: 54lpk5jtvrk987gfzksqrv
+  digits:  [5 4 5 9 8 7]
+  value:   [5 ... 7] --> 57
+  21998 + 57 = 22055
+
+
+LINE: tjrphpkhfgsix7eightwocj
+  tjrphpkhfg 6 7eightwocj
+  tjrphpkhfg67 8 wocj
+  rewrite: tjrphpkhfg678wocj
+  digits:  [6 7 8]
+  value:   [6 ... 8] --> 68
+  22055 + 68 = 22123
+
+
+LINE: threethree85ghjsnhgrv2jv
+   3 three85ghjsnhgrv2jv
+  3 3 85ghjsnhgrv2jv
+  rewrite: 3385ghjsnhgrv2jv
+  digits:  [3 3 8 5 2]
+  value:   [3 ... 2] --> 32
+  22123 + 32 = 22155
+
+
+LINE: six64
+   6 64
+  rewrite: 664
+  digits:  [6 6 4]
+  value:   [6 ... 4] --> 64
+  22155 + 64 = 22219
+
+
+LINE: 3ptfzxjrtfsix
+  3ptfzxjrtf 6 
+  rewrite: 3ptfzxjrtf6
+  digits:  [3 6]
+  value:   [3 ... 6] --> 36
+  22219 + 36 = 22255
+
+
+LINE: 1583xpczlkvtwo
+  1583xpczlkv 2 
+  rewrite: 1583xpczlkv2
+  digits:  [1 5 8 3 2]
+  value:   [1 ... 2] --> 12
+  22255 + 12 = 22267
+
+
+LINE: twoglkpldjthree717
+   2 glkpldjthree717
+  2glkpldj 3 717
+  rewrite: 2glkpldj3717
+  digits:  [2 3 7 1 7]
+  value:   [2 ... 7] --> 27
+  22267 + 27 = 22294
+
+
+LINE: six26three
+   6 26three
+  626 3 
+  rewrite: 6263
+  digits:  [6 2 6 3]
+  value:   [6 ... 3] --> 63
+  22294 + 63 = 22357
+
+
+LINE: three5qc1gz
+   3 5qc1gz
+  rewrite: 35qc1gz
+  digits:  [3 5 1]
+  value:   [3 ... 1] --> 31
+  22357 + 31 = 22388
+
+
+LINE: 9tworgcbxfourrxgxzzbljcb5mxn
+  9 2 rgcbxfourrxgxzzbljcb5mxn
+  92rgcbx 4 rxgxzzbljcb5mxn
+  rewrite: 92rgcbx4rxgxzzbljcb5mxn
+  digits:  [9 2 4 5]
+  value:   [9 ... 5] --> 95
+  22388 + 95 = 22483
+
+
+LINE: 838
+  rewrite: 838
+  digits:  [8 3 8]
+  value:   [8 ... 8] --> 88
+  22483 + 88 = 22571
+
+
+LINE: four6zjdfd22kxpfhhgonefour7
+   4 6zjdfd22kxpfhhgonefour7
+  46zjdfd22kxpfhhg 1 four7
+  46zjdfd22kxpfhhg1 4 7
+  rewrite: 46zjdfd22kxpfhhg147
+  digits:  [4 6 2 2 1 4 7]
+  value:   [4 ... 7] --> 47
+  22571 + 47 = 22618
+
+
+LINE: seven132
+   7 132
+  rewrite: 7132
+  digits:  [7 1 3 2]
+  value:   [7 ... 2] --> 72
+  22618 + 72 = 22690
+
+
+LINE: zmml5
+  rewrite: zmml5
+  digits:  [5]
+  value:   [5 ... 5] --> 55
+  22690 + 55 = 22745
+
+
+LINE: twozzzgrhseven5
+   2 zzzgrhseven5
+  2zzzgrh 7 5
+  rewrite: 2zzzgrh75
+  digits:  [2 7 5]
+  value:   [2 ... 5] --> 25
+  22745 + 25 = 22770
+
+
+LINE: four8eight4fivefour
+   4 8eight4fivefour
+  48 8 4fivefour
+  4884 5 four
+  48845 4 
+  rewrite: 488454
+  digits:  [4 8 8 4 5 4]
+  value:   [4 ... 4] --> 44
+  22770 + 44 = 22814
+
+
+LINE: g76nine4oneseven6eightwol
+  g76 9 4oneseven6eightwol
+  g7694 1 seven6eightwol
+  g76941 7 6eightwol
+  g7694176 8 wol
+  rewrite: g76941768wol
+  digits:  [7 6 9 4 1 7 6 8]
+  value:   [7 ... 8] --> 78
+  22814 + 78 = 22892
+
+
+LINE: 9kzlggh1ninefoursevenninelb2
+  9kzlggh1 9 foursevenninelb2
+  9kzlggh19 4 sevenninelb2
+  9kzlggh194 7 ninelb2
+  9kzlggh1947 9 lb2
+  rewrite: 9kzlggh19479lb2
+  digits:  [9 1 9 4 7 9 2]
+  value:   [9 ... 2] --> 92
+  22892 + 92 = 22984
+
+
+LINE: three27kfmbdtpxncgpskvrq2
+   3 27kfmbdtpxncgpskvrq2
+  rewrite: 327kfmbdtpxncgpskvrq2
+  digits:  [3 2 7 2]
+  value:   [3 ... 2] --> 32
+  22984 + 32 = 23016
+
+
+LINE: onegsnxggjlvn1six
+   1 gsnxggjlvn1six
+  1gsnxggjlvn1 6 
+  rewrite: 1gsnxggjlvn16
+  digits:  [1 1 6]
+  value:   [1 ... 6] --> 16
+  23016 + 16 = 23032
+
+
+LINE: 8fivevgtszhfl2zqsqpnmgdbkfour
+  8 5 vgtszhfl2zqsqpnmgdbkfour
+  85vgtszhfl2zqsqpnmgdbk 4 
+  rewrite: 85vgtszhfl2zqsqpnmgdbk4
+  digits:  [8 5 2 4]
+  value:   [8 ... 4] --> 84
+  23032 + 84 = 23116
+
+
+LINE: 4fourtwo
+  4 4 two
+  44 2 
+  rewrite: 442
+  digits:  [4 4 2]
+  value:   [4 ... 2] --> 42
+  23116 + 42 = 23158
+
+
+LINE: mrllxmbfpqvpfzhghv8twotwo
+  mrllxmbfpqvpfzhghv8 2 two
+  mrllxmbfpqvpfzhghv82 2 
+  rewrite: mrllxmbfpqvpfzhghv822
+  digits:  [8 2 2]
+  value:   [8 ... 2] --> 82
+  23158 + 82 = 23240
+
+
+LINE: 3hjxpgkxpc91t3
+  rewrite: 3hjxpgkxpc91t3
+  digits:  [3 9 1 3]
+  value:   [3 ... 3] --> 33
+  23240 + 33 = 23273
+
+
+LINE: four24
+   4 24
+  rewrite: 424
+  digits:  [4 2 4]
+  value:   [4 ... 4] --> 44
+  23273 + 44 = 23317
+
+
+LINE: six385hsxtfone
+   6 385hsxtfone
+  6385hsxtf 1 
+  rewrite: 6385hsxtf1
+  digits:  [6 3 8 5 1]
+  value:   [6 ... 1] --> 61
+  23317 + 61 = 23378
+
+
+LINE: 8three9twotnpjkcdbrfive8
+  8 3 9twotnpjkcdbrfive8
+  839 2 tnpjkcdbrfive8
+  8392tnpjkcdbr 5 8
+  rewrite: 8392tnpjkcdbr58
+  digits:  [8 3 9 2 5 8]
+  value:   [8 ... 8] --> 88
+  23378 + 88 = 23466
+
+
+LINE: nine94tpfcmnzsjk
+   9 94tpfcmnzsjk
+  rewrite: 994tpfcmnzsjk
+  digits:  [9 9 4]
+  value:   [9 ... 4] --> 94
+  23466 + 94 = 23560
+
+
+LINE: sevensevennbch64six
+   7 sevennbch64six
+  7 7 nbch64six
+  77nbch64 6 
+  rewrite: 77nbch646
+  digits:  [7 7 6 4 6]
+  value:   [7 ... 6] --> 76
+  23560 + 76 = 23636
+
+
+LINE: onefour99gcgvcfvfnzjtjzngc
+   1 four99gcgvcfvfnzjtjzngc
+  1 4 99gcgvcfvfnzjtjzngc
+  rewrite: 1499gcgvcfvfnzjtjzngc
+  digits:  [1 4 9 9]
+  value:   [1 ... 9] --> 19
+  23636 + 19 = 23655
+
+
+LINE: fivefivedqdt4
+   5 fivedqdt4
+  5 5 dqdt4
+  rewrite: 55dqdt4
+  digits:  [5 5 4]
+  value:   [5 ... 4] --> 54
+  23655 + 54 = 23709
+
+
+LINE: onefrnpc4onejgvtwo7six
+   1 frnpc4onejgvtwo7six
+  1frnpc4 1 jgvtwo7six
+  1frnpc41jgv 2 7six
+  1frnpc41jgv27 6 
+  rewrite: 1frnpc41jgv276
+  digits:  [1 4 1 2 7 6]
+  value:   [1 ... 6] --> 16
+  23709 + 16 = 23725
+
+
+LINE: 4568
+  rewrite: 4568
+  digits:  [4 5 6 8]
+  value:   [4 ... 8] --> 48
+  23725 + 48 = 23773
+
+
+LINE: tfrmonerljgxsbghm87hmgzfvlcmgbsbqc43
+  tfrm 1 rljgxsbghm87hmgzfvlcmgbsbqc43
+  rewrite: tfrm1rljgxsbghm87hmgzfvlcmgbsbqc43
+  digits:  [1 8 7 4 3]
+  value:   [1 ... 3] --> 13
+  23773 + 13 = 23786
+
+
+LINE: 4kbxt9pqchtltg6sixjkzncffrpsixtzdtbdg
+  4kbxt9pqchtltg6 6 jkzncffrpsixtzdtbdg
+  4kbxt9pqchtltg66jkzncffrp 6 tzdtbdg
+  rewrite: 4kbxt9pqchtltg66jkzncffrp6tzdtbdg
+  digits:  [4 9 6 6 6]
+  value:   [4 ... 6] --> 46
+  23786 + 46 = 23832
+
+
+LINE: 29pbpph
+  rewrite: 29pbpph
+  digits:  [2 9]
+  value:   [2 ... 9] --> 29
+  23832 + 29 = 23861
+
+
+LINE: 2szjrkkqvsix
+  2szjrkkqv 6 
+  rewrite: 2szjrkkqv6
+  digits:  [2 6]
+  value:   [2 ... 6] --> 26
+  23861 + 26 = 23887
+
+
+LINE: six2twotwo1cfqzhjrlkbone4two
+   6 2twotwo1cfqzhjrlkbone4two
+  62 2 two1cfqzhjrlkbone4two
+  622 2 1cfqzhjrlkbone4two
+  62221cfqzhjrlkb 1 4two
+  62221cfqzhjrlkb14 2 
+  rewrite: 62221cfqzhjrlkb142
+  digits:  [6 2 2 2 1 1 4 2]
+  value:   [6 ... 2] --> 62
+  23887 + 62 = 23949
+
+
+LINE: mdxmcknnmmnfzsbvh4
+  rewrite: mdxmcknnmmnfzsbvh4
+  digits:  [4]
+  value:   [4 ... 4] --> 44
+  23949 + 44 = 23993
+
+
+LINE: rzjnjrqjkmzmr4seight1two6
+  rzjnjrqjkmzmr4s 8 1two6
+  rzjnjrqjkmzmr4s81 2 6
+  rewrite: rzjnjrqjkmzmr4s8126
+  digits:  [4 8 1 2 6]
+  value:   [4 ... 6] --> 46
+  23993 + 46 = 24039
+
+
+LINE: onehpqvvlsnkhcqhczbllbcfl3six
+   1 hpqvvlsnkhcqhczbllbcfl3six
+  1hpqvvlsnkhcqhczbllbcfl3 6 
+  rewrite: 1hpqvvlsnkhcqhczbllbcfl36
+  digits:  [1 3 6]
+  value:   [1 ... 6] --> 16
+  24039 + 16 = 24055
+
+
+LINE: nine655nine81
+   9 655nine81
+  9655 9 81
+  rewrite: 9655981
+  digits:  [9 6 5 5 9 8 1]
+  value:   [9 ... 1] --> 91
+  24055 + 91 = 24146
+
+
+LINE: two76threefourtwo54
+   2 76threefourtwo54
+  276 3 fourtwo54
+  2763 4 two54
+  27634 2 54
+  rewrite: 27634254
+  digits:  [2 7 6 3 4 2 5 4]
+  value:   [2 ... 4] --> 24
+  24146 + 24 = 24170
+
+
+LINE: 8nine91
+  8 9 91
+  rewrite: 8991
+  digits:  [8 9 9 1]
+  value:   [8 ... 1] --> 81
+  24170 + 81 = 24251
+
+
+LINE: 4threebspdskrp3
+  4 3 bspdskrp3
+  rewrite: 43bspdskrp3
+  digits:  [4 3 3]
+  value:   [4 ... 3] --> 43
+  24251 + 43 = 24294
+
+
+LINE: pktwonesx4sevensixfournine7
+  pk 2 nesx4sevensixfournine7
+  pk2nesx4 7 sixfournine7
+  pk2nesx47 6 fournine7
+  pk2nesx476 4 nine7
+  pk2nesx4764 9 7
+  rewrite: pk2nesx476497
+  digits:  [2 4 7 6 4 9 7]
+  value:   [2 ... 7] --> 27
+  24294 + 27 = 24321
+
+
+LINE: td2one4seven
+  td2 1 4seven
+  td214 7 
+  rewrite: td2147
+  digits:  [2 1 4 7]
+  value:   [2 ... 7] --> 27
+  24321 + 27 = 24348
+
+
+LINE: eightseveneightfivetwothmngvb9one
+   8 seveneightfivetwothmngvb9one
+  8 7 eightfivetwothmngvb9one
+  87 8 fivetwothmngvb9one
+  878 5 twothmngvb9one
+  8785 2 thmngvb9one
+  87852thmngvb9 1 
+  rewrite: 87852thmngvb91
+  digits:  [8 7 8 5 2 9 1]
+  value:   [8 ... 1] --> 81
+  24348 + 81 = 24429
+
+
+LINE: 9pkdcbgfhrf8mjtjksvjlf2
+  rewrite: 9pkdcbgfhrf8mjtjksvjlf2
+  digits:  [9 8 2]
+  value:   [9 ... 2] --> 92
+  24429 + 92 = 24521
+
+
+LINE: 374four9two2seven6
+  374 4 9two2seven6
+  37449 2 2seven6
+  3744922 7 6
+  rewrite: 374492276
+  digits:  [3 7 4 4 9 2 2 7 6]
+  value:   [3 ... 6] --> 36
+  24521 + 36 = 24557
+
+
+LINE: 98eight2
+  98 8 2
+  rewrite: 9882
+  digits:  [9 8 8 2]
+  value:   [9 ... 2] --> 92
+  24557 + 92 = 24649
+
+
+LINE: brmzpfgjone3
+  brmzpfgj 1 3
+  rewrite: brmzpfgj13
+  digits:  [1 3]
+  value:   [1 ... 3] --> 13
+  24649 + 13 = 24662
+
+
+LINE: six4mdbthreezdgrktcdc5
+   6 4mdbthreezdgrktcdc5
+  64mdb 3 zdgrktcdc5
+  rewrite: 64mdb3zdgrktcdc5
+  digits:  [6 4 3 5]
+  value:   [6 ... 5] --> 65
+  24662 + 65 = 24727
+
+
+LINE: mfmvcqdjlvzmeight8
+  mfmvcqdjlvzm 8 8
+  rewrite: mfmvcqdjlvzm88
+  digits:  [8 8]
+  value:   [8 ... 8] --> 88
+  24727 + 88 = 24815
+
+
+LINE: smklgfour2
+  smklg 4 2
+  rewrite: smklg42
+  digits:  [4 2]
+  value:   [4 ... 2] --> 42
+  24815 + 42 = 24857
+
+
+LINE: j3nineeight
+  j3 9 eight
+  j39 8 
+  rewrite: j398
+  digits:  [3 9 8]
+  value:   [3 ... 8] --> 38
+  24857 + 38 = 24895
+
+
+LINE: fh45peight9nine6
+  fh45p 8 9nine6
+  fh45p89 9 6
+  rewrite: fh45p8996
+  digits:  [4 5 8 9 9 6]
+  value:   [4 ... 6] --> 46
+  24895 + 46 = 24941
+
+
+LINE: two972fvkfzsfivefbgkktg
+   2 972fvkfzsfivefbgkktg
+  2972fvkfzs 5 fbgkktg
+  rewrite: 2972fvkfzs5fbgkktg
+  digits:  [2 9 7 2 5]
+  value:   [2 ... 5] --> 25
+  24941 + 25 = 24966
+
+
+LINE: three9kdzkeightqmxcslnvhthree
+   3 9kdzkeightqmxcslnvhthree
+  39kdzk 8 qmxcslnvhthree
+  39kdzk8qmxcslnvh 3 
+  rewrite: 39kdzk8qmxcslnvh3
+  digits:  [3 9 8 3]
+  value:   [3 ... 3] --> 33
+  24966 + 33 = 24999
+
+
+LINE: ninekgjkdtcsrqgrmdtshsevenseven3four
+   9 kgjkdtcsrqgrmdtshsevenseven3four
+  9kgjkdtcsrqgrmdtsh 7 seven3four
+  9kgjkdtcsrqgrmdtsh7 7 3four
+  9kgjkdtcsrqgrmdtsh773 4 
+  rewrite: 9kgjkdtcsrqgrmdtsh7734
+  digits:  [9 7 7 3 4]
+  value:   [9 ... 4] --> 94
+  24999 + 94 = 25093
+
+
+LINE: 2nineninetwomlt
+  2 9 ninetwomlt
+  29 9 twomlt
+  299 2 mlt
+  rewrite: 2992mlt
+  digits:  [2 9 9 2]
+  value:   [2 ... 2] --> 22
+  25093 + 22 = 25115
+
+
+LINE: jckvcvtwo7
+  jckvcv 2 7
+  rewrite: jckvcv27
+  digits:  [2 7]
+  value:   [2 ... 7] --> 27
+  25115 + 27 = 25142
+
+
+LINE: 348
+  rewrite: 348
+  digits:  [3 4 8]
+  value:   [3 ... 8] --> 38
+  25142 + 38 = 25180
+
+
+LINE: cjzzxsix1hfqxxgdvphppxzvmqsv1xxxsqckhpbsix
+  cjzzx 6 1hfqxxgdvphppxzvmqsv1xxxsqckhpbsix
+  cjzzx61hfqxxgdvphppxzvmqsv1xxxsqckhpb 6 
+  rewrite: cjzzx61hfqxxgdvphppxzvmqsv1xxxsqckhpb6
+  digits:  [6 1 1 6]
+  value:   [6 ... 6] --> 66
+  25180 + 66 = 25246
+
+
+LINE: jcnlxlccrtpmqqmfour8dzrn8lrzq
+  jcnlxlccrtpmqqm 4 8dzrn8lrzq
+  rewrite: jcnlxlccrtpmqqm48dzrn8lrzq
+  digits:  [4 8 8]
+  value:   [4 ... 8] --> 48
+  25246 + 48 = 25294
+
+
+LINE: 7sevenzrcgtldkjbhjt
+  7 7 zrcgtldkjbhjt
+  rewrite: 77zrcgtldkjbhjt
+  digits:  [7 7]
+  value:   [7 ... 7] --> 77
+  25294 + 77 = 25371
+
+
+LINE: three55gtrnineztxsdcdcdb2
+   3 55gtrnineztxsdcdcdb2
+  355gtr 9 ztxsdcdcdb2
+  rewrite: 355gtr9ztxsdcdcdb2
+  digits:  [3 5 5 9 2]
+  value:   [3 ... 2] --> 32
+  25371 + 32 = 25403
+
+
+LINE: sjnvr5
+  rewrite: sjnvr5
+  digits:  [5]
+  value:   [5 ... 5] --> 55
+  25403 + 55 = 25458
+
+
+LINE: gvpcd4one2four2foursix8
+  gvpcd4 1 2four2foursix8
+  gvpcd412 4 2foursix8
+  gvpcd41242 4 six8
+  gvpcd412424 6 8
+  rewrite: gvpcd41242468
+  digits:  [4 1 2 4 2 4 6 8]
+  value:   [4 ... 8] --> 48
+  25458 + 48 = 25506
+
+
+LINE: mxskkrvdjkvpnine6834hsxsn2
+  mxskkrvdjkvp 9 6834hsxsn2
+  rewrite: mxskkrvdjkvp96834hsxsn2
+  digits:  [9 6 8 3 4 2]
+  value:   [9 ... 2] --> 92
+  25506 + 92 = 25598
+
+
+LINE: one5fivesix
+   1 5fivesix
+  15 5 six
+  155 6 
+  rewrite: 1556
+  digits:  [1 5 5 6]
+  value:   [1 ... 6] --> 16
+  25598 + 16 = 25614
+
+
+LINE: bfhbgfdkdftjtnhvgbr2zvmcmrpjs
+  rewrite: bfhbgfdkdftjtnhvgbr2zvmcmrpjs
+  digits:  [2]
+  value:   [2 ... 2] --> 22
+  25614 + 22 = 25636
+
+
+LINE: threeeightmbjc5six
+   3 eightmbjc5six
+  3 8 mbjc5six
+  38mbjc5 6 
+  rewrite: 38mbjc56
+  digits:  [3 8 5 6]
+  value:   [3 ... 6] --> 36
+  25636 + 36 = 25672
+
+
+LINE: 8zcxflfkbtdtwotwo44six4cnrvvft
+  8zcxflfkbtd 2 two44six4cnrvvft
+  8zcxflfkbtd2 2 44six4cnrvvft
+  8zcxflfkbtd2244 6 4cnrvvft
+  rewrite: 8zcxflfkbtd224464cnrvvft
+  digits:  [8 2 2 4 4 6 4]
+  value:   [8 ... 4] --> 84
+  25672 + 84 = 25756
+
+
+LINE: sevenzggv2mkjsl
+   7 zggv2mkjsl
+  rewrite: 7zggv2mkjsl
+  digits:  [7 2]
+  value:   [7 ... 2] --> 72
+  25756 + 72 = 25828
+
+
+LINE: sevenvx8one55zhkjcxbpdz
+   7 vx8one55zhkjcxbpdz
+  7vx8 1 55zhkjcxbpdz
+  rewrite: 7vx8155zhkjcxbpdz
+  digits:  [7 8 1 5 5]
+  value:   [7 ... 5] --> 75
+  25828 + 75 = 25903
+
+
+LINE: zbxbftwo79leightsix2lgcmlpbpjz
+  zbxbf 2 79leightsix2lgcmlpbpjz
+  zbxbf279l 8 six2lgcmlpbpjz
+  zbxbf279l8 6 2lgcmlpbpjz
+  rewrite: zbxbf279l862lgcmlpbpjz
+  digits:  [2 7 9 8 6 2]
+  value:   [2 ... 2] --> 22
+  25903 + 22 = 25925
+
+
+LINE: one6twoqrfoursixtwofive
+   1 6twoqrfoursixtwofive
+  16 2 qrfoursixtwofive
+  162qr 4 sixtwofive
+  162qr4 6 twofive
+  162qr46 2 five
+  162qr462 5 
+  rewrite: 162qr4625
+  digits:  [1 6 2 4 6 2 5]
+  value:   [1 ... 5] --> 15
+  25925 + 15 = 25940
+
+
+LINE: 111threethreetwonehf
+  111 3 threetwonehf
+  1113 3 twonehf
+  11133 2 nehf
+  rewrite: 111332nehf
+  digits:  [1 1 1 3 3 2]
+  value:   [1 ... 2] --> 12
+  25940 + 12 = 25952
+
+
+LINE: 72fninesseven
+  72f 9 sseven
+  72f9s 7 
+  rewrite: 72f9s7
+  digits:  [7 2 9 7]
+  value:   [7 ... 7] --> 77
+  25952 + 77 = 26029
+
+
+LINE: gsrshxjfhr54jmsgnnninecvqdjtsevenfour
+  gsrshxjfhr54jmsgnn 9 cvqdjtsevenfour
+  gsrshxjfhr54jmsgnn9cvqdjt 7 four
+  gsrshxjfhr54jmsgnn9cvqdjt7 4 
+  rewrite: gsrshxjfhr54jmsgnn9cvqdjt74
+  digits:  [5 4 9 7 4]
+  value:   [5 ... 4] --> 54
+  26029 + 54 = 26083
+
+
+LINE: m49z51
+  rewrite: m49z51
+  digits:  [4 9 5 1]
+  value:   [4 ... 1] --> 41
+  26083 + 41 = 26124
+
+
+LINE: 2one27two
+  2 1 27two
+  2127 2 
+  rewrite: 21272
+  digits:  [2 1 2 7 2]
+  value:   [2 ... 2] --> 22
+  26124 + 22 = 26146
+
+
+LINE: four9rlhsbfour
+   4 9rlhsbfour
+  49rlhsb 4 
+  rewrite: 49rlhsb4
+  digits:  [4 9 4]
+  value:   [4 ... 4] --> 44
+  26146 + 44 = 26190
+
+
+LINE: eight8sevenoneightjtj
+   8 8sevenoneightjtj
+  88 7 oneightjtj
+  887 1 ightjtj
+  rewrite: 8871ightjtj
+  digits:  [8 8 7 1]
+  value:   [8 ... 1] --> 81
+  26190 + 81 = 26271
+
+
+LINE: pgv57nineeightxnblzsixxgjttbnzrqscb
+  pgv57 9 eightxnblzsixxgjttbnzrqscb
+  pgv579 8 xnblzsixxgjttbnzrqscb
+  pgv5798xnblz 6 xgjttbnzrqscb
+  rewrite: pgv5798xnblz6xgjttbnzrqscb
+  digits:  [5 7 9 8 6]
+  value:   [5 ... 6] --> 56
+  26271 + 56 = 26327
+
+
+LINE: 3sevennine35gfbqvq8seven
+  3 7 nine35gfbqvq8seven
+  37 9 35gfbqvq8seven
+  37935gfbqvq8 7 
+  rewrite: 37935gfbqvq87
+  digits:  [3 7 9 3 5 8 7]
+  value:   [3 ... 7] --> 37
+  26327 + 37 = 26364
+
+
+LINE: fivesix252one1nsix
+   5 six252one1nsix
+  5 6 252one1nsix
+  56252 1 1nsix
+  5625211n 6 
+  rewrite: 5625211n6
+  digits:  [5 6 2 5 2 1 1 6]
+  value:   [5 ... 6] --> 56
+  26364 + 56 = 26420
+
+
+LINE: 3qzvttqnmjb4pshrrdzpm
+  rewrite: 3qzvttqnmjb4pshrrdzpm
+  digits:  [3 4]
+  value:   [3 ... 4] --> 34
+  26420 + 34 = 26454
+
+
+LINE: nvmlzzxfksevenlvngntztwotwo9mhjrjrxnckchs
+  nvmlzzxfk 7 lvngntztwotwo9mhjrjrxnckchs
+  nvmlzzxfk7lvngntz 2 two9mhjrjrxnckchs
+  nvmlzzxfk7lvngntz2 2 9mhjrjrxnckchs
+  rewrite: nvmlzzxfk7lvngntz229mhjrjrxnckchs
+  digits:  [7 2 2 9]
+  value:   [7 ... 9] --> 79
+  26454 + 79 = 26533
+
+
+LINE: seventwomzk699
+   7 twomzk699
+  7 2 mzk699
+  rewrite: 72mzk699
+  digits:  [7 2 6 9 9]
+  value:   [7 ... 9] --> 79
+  26533 + 79 = 26612
+
+
+LINE: 33svrghbnine8seven
+  33svrghb 9 8seven
+  33svrghb98 7 
+  rewrite: 33svrghb987
+  digits:  [3 3 9 8 7]
+  value:   [3 ... 7] --> 37
+  26612 + 37 = 26649
+
+
+LINE: six48fourtwoeightphl
+   6 48fourtwoeightphl
+  648 4 twoeightphl
+  6484 2 eightphl
+  64842 8 phl
+  rewrite: 648428phl
+  digits:  [6 4 8 4 2 8]
+  value:   [6 ... 8] --> 68
+  26649 + 68 = 26717
+
+
+LINE: 7fivekcrsvzdvsix
+  7 5 kcrsvzdvsix
+  75kcrsvzdv 6 
+  rewrite: 75kcrsvzdv6
+  digits:  [7 5 6]
+  value:   [7 ... 6] --> 76
+  26717 + 76 = 26793
+
+
+LINE: 8sixjtdrl446btjlmfzqlg
+  8 6 jtdrl446btjlmfzqlg
+  rewrite: 86jtdrl446btjlmfzqlg
+  digits:  [8 6 4 4 6]
+  value:   [8 ... 6] --> 86
+  26793 + 86 = 26879
+
+
+LINE: g6sixjlsspqkthree
+  g6 6 jlsspqkthree
+  g66jlsspqk 3 
+  rewrite: g66jlsspqk3
+  digits:  [6 6 3]
+  value:   [6 ... 3] --> 63
+  26879 + 63 = 26942
+
+
+LINE: z2
+  rewrite: z2
+  digits:  [2]
+  value:   [2 ... 2] --> 22
+  26942 + 22 = 26964
+
+
+LINE: sevenonec6xhddnxjzrn
+   7 onec6xhddnxjzrn
+  7 1 c6xhddnxjzrn
+  rewrite: 71c6xhddnxjzrn
+  digits:  [7 1 6]
+  value:   [7 ... 6] --> 76
+  26964 + 76 = 27040
+
+
+LINE: one1bczmjxrnineonevjkbnine
+   1 1bczmjxrnineonevjkbnine
+  11bczmjxr 9 onevjkbnine
+  11bczmjxr9 1 vjkbnine
+  11bczmjxr91vjkb 9 
+  rewrite: 11bczmjxr91vjkb9
+  digits:  [1 1 9 1 9]
+  value:   [1 ... 9] --> 19
+  27040 + 19 = 27059
+
+
+LINE: eightttltnkcllm8snhbqptsztzkdffkcdbsixcncvr7
+   8 ttltnkcllm8snhbqptsztzkdffkcdbsixcncvr7
+  8ttltnkcllm8snhbqptsztzkdffkcdb 6 cncvr7
+  rewrite: 8ttltnkcllm8snhbqptsztzkdffkcdb6cncvr7
+  digits:  [8 8 6 7]
+  value:   [8 ... 7] --> 87
+  27059 + 87 = 27146
+
+
+LINE: mnprx46jdttjtxrkhrninefvvphzthreethree
+  mnprx46jdttjtxrkhr 9 fvvphzthreethree
+  mnprx46jdttjtxrkhr9fvvphz 3 three
+  mnprx46jdttjtxrkhr9fvvphz3 3 
+  rewrite: mnprx46jdttjtxrkhr9fvvphz33
+  digits:  [4 6 9 3 3]
+  value:   [4 ... 3] --> 43
+  27146 + 43 = 27189
+
+
+LINE: 3bjrvbmlpv6threefivehrkcv
+  3bjrvbmlpv6 3 fivehrkcv
+  3bjrvbmlpv63 5 hrkcv
+  rewrite: 3bjrvbmlpv635hrkcv
+  digits:  [3 6 3 5]
+  value:   [3 ... 5] --> 35
+  27189 + 35 = 27224
+
+
+LINE: 8hjkrlmg
+  rewrite: 8hjkrlmg
+  digits:  [8]
+  value:   [8 ... 8] --> 88
+  27224 + 88 = 27312
+
+
+LINE: lfrzztvtwomkgrtzvseven7
+  lfrzztv 2 mkgrtzvseven7
+  lfrzztv2mkgrtzv 7 7
+  rewrite: lfrzztv2mkgrtzv77
+  digits:  [2 7 7]
+  value:   [2 ... 7] --> 27
+  27312 + 27 = 27339
+
+
+LINE: fcx2two
+  fcx2 2 
+  rewrite: fcx22
+  digits:  [2 2]
+  value:   [2 ... 2] --> 22
+  27339 + 22 = 27361
+
+
+LINE: 27hhbgl3x
+  rewrite: 27hhbgl3x
+  digits:  [2 7 3]
+  value:   [2 ... 3] --> 23
+  27361 + 23 = 27384
+
+
+LINE: mtveightwo3tcseventwox
+  mtv 8 wo3tcseventwox
+  mtv8wo3tc 7 twox
+  mtv8wo3tc7 2 x
+  rewrite: mtv8wo3tc72x
+  digits:  [8 3 7 2]
+  value:   [8 ... 2] --> 82
+  27384 + 82 = 27466
+
+
+LINE: nine8four1five4
+   9 8four1five4
+  98 4 1five4
+  9841 5 4
+  rewrite: 984154
+  digits:  [9 8 4 1 5 4]
+  value:   [9 ... 4] --> 94
+  27466 + 94 = 27560
+
+
+LINE: six56qqvvtwo
+   6 56qqvvtwo
+  656qqvv 2 
+  rewrite: 656qqvv2
+  digits:  [6 5 6 2]
+  value:   [6 ... 2] --> 62
+  27560 + 62 = 27622
+
+
+LINE: fivelhhcjhpfnsvtzmnxdlp3fivefour
+   5 lhhcjhpfnsvtzmnxdlp3fivefour
+  5lhhcjhpfnsvtzmnxdlp3 5 four
+  5lhhcjhpfnsvtzmnxdlp35 4 
+  rewrite: 5lhhcjhpfnsvtzmnxdlp354
+  digits:  [5 3 5 4]
+  value:   [5 ... 4] --> 54
+  27622 + 54 = 27676
+
+
+LINE: fourtsbq3six2
+   4 tsbq3six2
+  4tsbq3 6 2
+  rewrite: 4tsbq362
+  digits:  [4 3 6 2]
+  value:   [4 ... 2] --> 42
+  27676 + 42 = 27718
+
+
+LINE: 71vcmtqgfpdkx2
+  rewrite: 71vcmtqgfpdkx2
+  digits:  [7 1 2]
+  value:   [7 ... 2] --> 72
+  27718 + 72 = 27790
+
+
+LINE: fourfiveninetwo5
+   4 fiveninetwo5
+  4 5 ninetwo5
+  45 9 two5
+  459 2 5
+  rewrite: 45925
+  digits:  [4 5 9 2 5]
+  value:   [4 ... 5] --> 45
+  27790 + 45 = 27835
+
+
+LINE: qsfhrhkm4nvxdxzcnkcknvxjg2two
+  qsfhrhkm4nvxdxzcnkcknvxjg2 2 
+  rewrite: qsfhrhkm4nvxdxzcnkcknvxjg22
+  digits:  [4 2 2]
+  value:   [4 ... 2] --> 42
+  27835 + 42 = 27877
+
+
+LINE: 915dftd69foureight
+  915dftd69 4 eight
+  915dftd694 8 
+  rewrite: 915dftd6948
+  digits:  [9 1 5 6 9 4 8]
+  value:   [9 ... 8] --> 98
+  27877 + 98 = 27975
+
+
+LINE: qrhjdprpcbq3eight552kb5
+  qrhjdprpcbq3 8 552kb5
+  rewrite: qrhjdprpcbq38552kb5
+  digits:  [3 8 5 5 2 5]
+  value:   [3 ... 5] --> 35
+  27975 + 35 = 28010
+
+
+LINE: rsone7nckeight
+  rs 1 7nckeight
+  rs17nck 8 
+  rewrite: rs17nck8
+  digits:  [1 7 8]
+  value:   [1 ... 8] --> 18
+  28010 + 18 = 28028
+
+
+LINE: 3ninecmsvkmlk8b
+  3 9 cmsvkmlk8b
+  rewrite: 39cmsvkmlk8b
+  digits:  [3 9 8]
+  value:   [3 ... 8] --> 38
+  28028 + 38 = 28066
+
+
+LINE: fourfrdgbrdzsfvjg2fthpptfjgzjsnvsxcxgxgcgdcl
+   4 frdgbrdzsfvjg2fthpptfjgzjsnvsxcxgxgcgdcl
+  rewrite: 4frdgbrdzsfvjg2fthpptfjgzjsnvsxcxgxgcgdcl
+  digits:  [4 2]
+  value:   [4 ... 2] --> 42
+  28066 + 42 = 28108
+
+
+LINE: sevenkpshht4threemthmfbdp7
+   7 kpshht4threemthmfbdp7
+  7kpshht4 3 mthmfbdp7
+  rewrite: 7kpshht43mthmfbdp7
+  digits:  [7 4 3 7]
+  value:   [7 ... 7] --> 77
+  28108 + 77 = 28185
+
+
+LINE: sltzgqcqlvdbccvcbkzmmpsl957
+  rewrite: sltzgqcqlvdbccvcbkzmmpsl957
+  digits:  [9 5 7]
+  value:   [9 ... 7] --> 97
+  28185 + 97 = 28282
+
+
+LINE: 75t3
+  rewrite: 75t3
+  digits:  [7 5 3]
+  value:   [7 ... 3] --> 73
+  28282 + 73 = 28355
+
+
+LINE: 4sevenkfourpxfkgkdpjccxpxrgsbmsrnxngd
+  4 7 kfourpxfkgkdpjccxpxrgsbmsrnxngd
+  47k 4 pxfkgkdpjccxpxrgsbmsrnxngd
+  rewrite: 47k4pxfkgkdpjccxpxrgsbmsrnxngd
+  digits:  [4 7 4]
+  value:   [4 ... 4] --> 44
+  28355 + 44 = 28399
+
+
+LINE: 2oneeight4mpndtnnone4onesix
+  2 1 eight4mpndtnnone4onesix
+  21 8 4mpndtnnone4onesix
+  2184mpndtnn 1 4onesix
+  2184mpndtnn14 1 six
+  2184mpndtnn141 6 
+  rewrite: 2184mpndtnn1416
+  digits:  [2 1 8 4 1 4 1 6]
+  value:   [2 ... 6] --> 26
+  28399 + 26 = 28425
+
+
+LINE: six35sixfourfive2
+   6 35sixfourfive2
+  635 6 fourfive2
+  6356 4 five2
+  63564 5 2
+  rewrite: 6356452
+  digits:  [6 3 5 6 4 5 2]
+  value:   [6 ... 2] --> 62
+  28425 + 62 = 28487
+
+
+LINE: 81twokrqg
+  81 2 krqg
+  rewrite: 812krqg
+  digits:  [8 1 2]
+  value:   [8 ... 2] --> 82
+  28487 + 82 = 28569
+
+
+LINE: 3dqcrlnzsnmhmzzxnsjsskchxqzvtfrdnkqg
+  rewrite: 3dqcrlnzsnmhmzzxnsjsskchxqzvtfrdnkqg
+  digits:  [3]
+  value:   [3 ... 3] --> 33
+  28569 + 33 = 28602
+
+
+LINE: 17zzrcpnmshreight
+  17zzrcpnmshr 8 
+  rewrite: 17zzrcpnmshr8
+  digits:  [1 7 8]
+  value:   [1 ... 8] --> 18
+  28602 + 18 = 28620
+
+
+LINE: gcvvczmldgh8mnsnpmjvdrpznine
+  gcvvczmldgh8mnsnpmjvdrpz 9 
+  rewrite: gcvvczmldgh8mnsnpmjvdrpz9
+  digits:  [8 9]
+  value:   [8 ... 9] --> 89
+  28620 + 89 = 28709
+
+
+LINE: oneeightjhmf9
+   1 eightjhmf9
+  1 8 jhmf9
+  rewrite: 18jhmf9
+  digits:  [1 8 9]
+  value:   [1 ... 9] --> 19
+  28709 + 19 = 28728
+
+
+LINE: 1hlfour3three9
+  1hl 4 3three9
+  1hl43 3 9
+  rewrite: 1hl4339
+  digits:  [1 4 3 3 9]
+  value:   [1 ... 9] --> 19
+  28728 + 19 = 28747
+
+
+LINE: skjc82gthree6
+  skjc82g 3 6
+  rewrite: skjc82g36
+  digits:  [8 2 3 6]
+  value:   [8 ... 6] --> 86
+  28747 + 86 = 28833
+
+
+LINE: eight9bszxphftdsixsixonesix
+   8 9bszxphftdsixsixonesix
+  89bszxphftd 6 sixonesix
+  89bszxphftd6 6 onesix
+  89bszxphftd66 1 six
+  89bszxphftd661 6 
+  rewrite: 89bszxphftd6616
+  digits:  [8 9 6 6 1 6]
+  value:   [8 ... 6] --> 86
+  28833 + 86 = 28919
+
+
+LINE: five9xbfgzfh
+   5 9xbfgzfh
+  rewrite: 59xbfgzfh
+  digits:  [5 9]
+  value:   [5 ... 9] --> 59
+  28919 + 59 = 28978
+
+
+LINE: 6nineone
+  6 9 one
+  69 1 
+  rewrite: 691
+  digits:  [6 9 1]
+  value:   [6 ... 1] --> 61
+  28978 + 61 = 29039
+
+
+LINE: tgnqfiveeight8qnlj
+  tgnq 5 eight8qnlj
+  tgnq5 8 8qnlj
+  rewrite: tgnq588qnlj
+  digits:  [5 8 8]
+  value:   [5 ... 8] --> 58
+  29039 + 58 = 29097
+
+
+LINE: 28fxrpdmdjgdnine6rpjdxgd58
+  28fxrpdmdjgd 9 6rpjdxgd58
+  rewrite: 28fxrpdmdjgd96rpjdxgd58
+  digits:  [2 8 9 6 5 8]
+  value:   [2 ... 8] --> 28
+  29097 + 28 = 29125
+
+
+LINE: gsxfivefourhgznkdhrtkn7nkt59
+  gsx 5 fourhgznkdhrtkn7nkt59
+  gsx5 4 hgznkdhrtkn7nkt59
+  rewrite: gsx54hgznkdhrtkn7nkt59
+  digits:  [5 4 7 5 9]
+  value:   [5 ... 9] --> 59
+  29125 + 59 = 29184
+
+
+LINE: 6m2eightbzndjnfthree2fjkpsm
+  6m2 8 bzndjnfthree2fjkpsm
+  6m28bzndjnf 3 2fjkpsm
+  rewrite: 6m28bzndjnf32fjkpsm
+  digits:  [6 2 8 3 2]
+  value:   [6 ... 2] --> 62
+  29184 + 62 = 29246
+
+
+LINE: 9nine7one7rgsh
+  9 9 7one7rgsh
+  997 1 7rgsh
+  rewrite: 99717rgsh
+  digits:  [9 9 7 1 7]
+  value:   [9 ... 7] --> 97
+  29246 + 97 = 29343
+
+
+LINE: xnrqcllskcrlxglbshvrseven3nvjlcngxnine
+  xnrqcllskcrlxglbshvr 7 3nvjlcngxnine
+  xnrqcllskcrlxglbshvr73nvjlcngx 9 
+  rewrite: xnrqcllskcrlxglbshvr73nvjlcngx9
+  digits:  [7 3 9]
+  value:   [7 ... 9] --> 79
+  29343 + 79 = 29422
+
+
+LINE: sevenpltgmq9csxz1four
+   7 pltgmq9csxz1four
+  7pltgmq9csxz1 4 
+  rewrite: 7pltgmq9csxz14
+  digits:  [7 9 1 4]
+  value:   [7 ... 4] --> 74
+  29422 + 74 = 29496
+
+
+LINE: 7threevbhfgnshtn5nine
+  7 3 vbhfgnshtn5nine
+  73vbhfgnshtn5 9 
+  rewrite: 73vbhfgnshtn59
+  digits:  [7 3 5 9]
+  value:   [7 ... 9] --> 79
+  29496 + 79 = 29575
+
+
+LINE: gdj9
+  rewrite: gdj9
+  digits:  [9]
+  value:   [9 ... 9] --> 99
+  29575 + 99 = 29674
+
+
+LINE: five6two931txb8
+   5 6two931txb8
+  56 2 931txb8
+  rewrite: 562931txb8
+  digits:  [5 6 2 9 3 1 8]
+  value:   [5 ... 8] --> 58
+  29674 + 58 = 29732
+
+
+LINE: fourtwoone2hcbzlggvfive
+   4 twoone2hcbzlggvfive
+  4 2 one2hcbzlggvfive
+  42 1 2hcbzlggvfive
+  4212hcbzlggv 5 
+  rewrite: 4212hcbzlggv5
+  digits:  [4 2 1 2 5]
+  value:   [4 ... 5] --> 45
+  29732 + 45 = 29777
+
+
+LINE: 7xlpjkrvbtq8qlgrqonetwo4bpxtcgjxv
+  7xlpjkrvbtq8qlgrq 1 two4bpxtcgjxv
+  7xlpjkrvbtq8qlgrq1 2 4bpxtcgjxv
+  rewrite: 7xlpjkrvbtq8qlgrq124bpxtcgjxv
+  digits:  [7 8 1 2 4]
+  value:   [7 ... 4] --> 74
+  29777 + 74 = 29851
+
+
+LINE: nnxhcrgplrtrskbjzdd8lfive2six12
+  nnxhcrgplrtrskbjzdd8l 5 2six12
+  nnxhcrgplrtrskbjzdd8l52 6 12
+  rewrite: nnxhcrgplrtrskbjzdd8l52612
+  digits:  [8 5 2 6 1 2]
+  value:   [8 ... 2] --> 82
+  29851 + 82 = 29933
+
+
+LINE: bqjdtwo98z
+  bqjd 2 98z
+  rewrite: bqjd298z
+  digits:  [2 9 8]
+  value:   [2 ... 8] --> 28
+  29933 + 28 = 29961
+
+
+LINE: 6ninerfqlbxpx
+  6 9 rfqlbxpx
+  rewrite: 69rfqlbxpx
+  digits:  [6 9]
+  value:   [6 ... 9] --> 69
+  29961 + 69 = 30030
+
+
+LINE: 8seven642six
+  8 7 642six
+  87642 6 
+  rewrite: 876426
+  digits:  [8 7 6 4 2 6]
+  value:   [8 ... 6] --> 86
+  30030 + 86 = 30116
+
+
+LINE: eight54
+   8 54
+  rewrite: 854
+  digits:  [8 5 4]
+  value:   [8 ... 4] --> 84
+  30116 + 84 = 30200
+
+
+LINE: 5two9eighteight7hzkfdzg
+  5 2 9eighteight7hzkfdzg
+  529 8 eight7hzkfdzg
+  5298 8 7hzkfdzg
+  rewrite: 529887hzkfdzg
+  digits:  [5 2 9 8 8 7]
+  value:   [5 ... 7] --> 57
+  30200 + 57 = 30257
+
+
+LINE: twofourninekhcztkhfour23xllcdb
+   2 fourninekhcztkhfour23xllcdb
+  2 4 ninekhcztkhfour23xllcdb
+  24 9 khcztkhfour23xllcdb
+  249khcztkh 4 23xllcdb
+  rewrite: 249khcztkh423xllcdb
+  digits:  [2 4 9 4 2 3]
+  value:   [2 ... 3] --> 23
+  30257 + 23 = 30280
+
+
+LINE: zmpdb7jffqt7nhnmdrqqvtwo2krltbfjjdd
+  zmpdb7jffqt7nhnmdrqqv 2 2krltbfjjdd
+  rewrite: zmpdb7jffqt7nhnmdrqqv22krltbfjjdd
+  digits:  [7 7 2 2]
+  value:   [7 ... 2] --> 72
+  30280 + 72 = 30352
+
+
+LINE: sixfourlxxshzfccgtzkdhjeightfourninehmrhqzfqld7
+   6 fourlxxshzfccgtzkdhjeightfourninehmrhqzfqld7
+  6 4 lxxshzfccgtzkdhjeightfourninehmrhqzfqld7
+  64lxxshzfccgtzkdhj 8 fourninehmrhqzfqld7
+  64lxxshzfccgtzkdhj8 4 ninehmrhqzfqld7
+  64lxxshzfccgtzkdhj84 9 hmrhqzfqld7
+  rewrite: 64lxxshzfccgtzkdhj849hmrhqzfqld7
+  digits:  [6 4 8 4 9 7]
+  value:   [6 ... 7] --> 67
+  30352 + 67 = 30419
+
+
+LINE: mblx1ninekfjhfnjtt4nine
+  mblx1 9 kfjhfnjtt4nine
+  mblx19kfjhfnjtt4 9 
+  rewrite: mblx19kfjhfnjtt49
+  digits:  [1 9 4 9]
+  value:   [1 ... 9] --> 19
+  30419 + 19 = 30438
+
+
+LINE: seven7mhmkpqk
+   7 7mhmkpqk
+  rewrite: 77mhmkpqk
+  digits:  [7 7]
+  value:   [7 ... 7] --> 77
+  30438 + 77 = 30515
+
+
+LINE: 4rvzsftqscltzzj551
+  rewrite: 4rvzsftqscltzzj551
+  digits:  [4 5 5 1]
+  value:   [4 ... 1] --> 41
+  30515 + 41 = 30556
+
+
+LINE: 8gkvgs5oneninethree3three
+  8gkvgs5 1 ninethree3three
+  8gkvgs51 9 three3three
+  8gkvgs519 3 3three
+  8gkvgs51933 3 
+  rewrite: 8gkvgs519333
+  digits:  [8 5 1 9 3 3 3]
+  value:   [8 ... 3] --> 83
+  30556 + 83 = 30639
+
+
+LINE: 5ldfllvzkhkfive8
+  5ldfllvzkhk 5 8
+  rewrite: 5ldfllvzkhk58
+  digits:  [5 5 8]
+  value:   [5 ... 8] --> 58
+  30639 + 58 = 30697
+
+
+LINE: jjblh64five1gzvvgcbrhbvrqfhjqvkrqvff
+  jjblh64 5 1gzvvgcbrhbvrqfhjqvkrqvff
+  rewrite: jjblh6451gzvvgcbrhbvrqfhjqvkrqvff
+  digits:  [6 4 5 1]
+  value:   [6 ... 1] --> 61
+  30697 + 61 = 30758
+
+
+LINE: fourpqnpgjnclq7nine
+   4 pqnpgjnclq7nine
+  4pqnpgjnclq7 9 
+  rewrite: 4pqnpgjnclq79
+  digits:  [4 7 9]
+  value:   [4 ... 9] --> 49
+  30758 + 49 = 30807
+
+
+LINE: eight4761
+   8 4761
+  rewrite: 84761
+  digits:  [8 4 7 6 1]
+  value:   [8 ... 1] --> 81
+  30807 + 81 = 30888
+
+
+LINE: nddmqzx2four
+  nddmqzx2 4 
+  rewrite: nddmqzx24
+  digits:  [2 4]
+  value:   [2 ... 4] --> 24
+  30888 + 24 = 30912
+
+
+LINE: 8nkgjkkhqztwoeight
+  8nkgjkkhqz 2 eight
+  8nkgjkkhqz2 8 
+  rewrite: 8nkgjkkhqz28
+  digits:  [8 2 8]
+  value:   [8 ... 8] --> 88
+  30912 + 88 = 31000
+
+
+LINE: hlqtbfrgsfbgnine5qdfzrsnmb77
+  hlqtbfrgsfbg 9 5qdfzrsnmb77
+  rewrite: hlqtbfrgsfbg95qdfzrsnmb77
+  digits:  [9 5 7 7]
+  value:   [9 ... 7] --> 97
+  31000 + 97 = 31097
+
+
+LINE: nineggdbpmhbmdnrfvpv5threefour3
+   9 ggdbpmhbmdnrfvpv5threefour3
+  9ggdbpmhbmdnrfvpv5 3 four3
+  9ggdbpmhbmdnrfvpv53 4 3
+  rewrite: 9ggdbpmhbmdnrfvpv5343
+  digits:  [9 5 3 4 3]
+  value:   [9 ... 3] --> 93
+  31097 + 93 = 31190
+
+
+LINE: jm4
+  rewrite: jm4
+  digits:  [4]
+  value:   [4 ... 4] --> 44
+  31190 + 44 = 31234
+
+
+LINE: sixfkxfzvrkxv9seventwo8one
+   6 fkxfzvrkxv9seventwo8one
+  6fkxfzvrkxv9 7 two8one
+  6fkxfzvrkxv97 2 8one
+  6fkxfzvrkxv9728 1 
+  rewrite: 6fkxfzvrkxv97281
+  digits:  [6 9 7 2 8 1]
+  value:   [6 ... 1] --> 61
+  31234 + 61 = 31295
+
+
+LINE: threesix2oneoneightc
+   3 six2oneoneightc
+  3 6 2oneoneightc
+  362 1 oneightc
+  3621 1 ightc
+  rewrite: 36211ightc
+  digits:  [3 6 2 1 1]
+  value:   [3 ... 1] --> 31
+  31295 + 31 = 31326
+
+
+LINE: 7three3615qqdbzsxrdv2
+  7 3 3615qqdbzsxrdv2
+  rewrite: 733615qqdbzsxrdv2
+  digits:  [7 3 3 6 1 5 2]
+  value:   [7 ... 2] --> 72
+  31326 + 72 = 31398
+
+
+LINE: 74fourdvgcgdgvxqgm4eightqqtmvone
+  74 4 dvgcgdgvxqgm4eightqqtmvone
+  744dvgcgdgvxqgm4 8 qqtmvone
+  744dvgcgdgvxqgm48qqtmv 1 
+  rewrite: 744dvgcgdgvxqgm48qqtmv1
+  digits:  [7 4 4 4 8 1]
+  value:   [7 ... 1] --> 71
+  31398 + 71 = 31469
+
+
+LINE: 5h58dmvkxbhtninefoureight
+  5h58dmvkxbht 9 foureight
+  5h58dmvkxbht9 4 eight
+  5h58dmvkxbht94 8 
+  rewrite: 5h58dmvkxbht948
+  digits:  [5 5 8 9 4 8]
+  value:   [5 ... 8] --> 58
+  31469 + 58 = 31527
+
+
+LINE: 8fiveoneseven7
+  8 5 oneseven7
+  85 1 seven7
+  851 7 7
+  rewrite: 85177
+  digits:  [8 5 1 7 7]
+  value:   [8 ... 7] --> 87
+  31527 + 87 = 31614
+
+
+LINE: eight145zxgnzczcdkzrffnbfmsztwo
+   8 145zxgnzczcdkzrffnbfmsztwo
+  8145zxgnzczcdkzrffnbfmsz 2 
+  rewrite: 8145zxgnzczcdkzrffnbfmsz2
+  digits:  [8 1 4 5 2]
+  value:   [8 ... 2] --> 82
+  31614 + 82 = 31696
+
+
+LINE: 268nine3
+  268 9 3
+  rewrite: 26893
+  digits:  [2 6 8 9 3]
+  value:   [2 ... 3] --> 23
+  31696 + 23 = 31719
+
+
+LINE: 6eight3nine86six
+  6 8 3nine86six
+  683 9 86six
+  683986 6 
+  rewrite: 6839866
+  digits:  [6 8 3 9 8 6 6]
+  value:   [6 ... 6] --> 66
+  31719 + 66 = 31785
+
+
+LINE: 4qhtjbcd9
+  rewrite: 4qhtjbcd9
+  digits:  [4 9]
+  value:   [4 ... 9] --> 49
+  31785 + 49 = 31834
+
+
+LINE: mblblmkhseven3tgdxslcnine
+  mblblmkh 7 3tgdxslcnine
+  mblblmkh73tgdxslc 9 
+  rewrite: mblblmkh73tgdxslc9
+  digits:  [7 3 9]
+  value:   [7 ... 9] --> 79
+  31834 + 79 = 31913
+
+
+LINE: fivefivelgghthree5vkkfhjkc
+   5 fivelgghthree5vkkfhjkc
+  5 5 lgghthree5vkkfhjkc
+  55lggh 3 5vkkfhjkc
+  rewrite: 55lggh35vkkfhjkc
+  digits:  [5 5 3 5]
+  value:   [5 ... 5] --> 55
+  31913 + 55 = 31968
+
+
+LINE: 4four5oneseventwosixfivetwo
+  4 4 5oneseventwosixfivetwo
+  445 1 seventwosixfivetwo
+  4451 7 twosixfivetwo
+  44517 2 sixfivetwo
+  445172 6 fivetwo
+  4451726 5 two
+  44517265 2 
+  rewrite: 445172652
+  digits:  [4 4 5 1 7 2 6 5 2]
+  value:   [4 ... 2] --> 42
+  31968 + 42 = 32010
+
+
+LINE: 6ninenine8
+  6 9 nine8
+  69 9 8
+  rewrite: 6998
+  digits:  [6 9 9 8]
+  value:   [6 ... 8] --> 68
+  32010 + 68 = 32078
+
+
+LINE: 7ldg64five9twoninenine
+  7ldg64 5 9twoninenine
+  7ldg6459 2 ninenine
+  7ldg64592 9 nine
+  7ldg645929 9 
+  rewrite: 7ldg6459299
+  digits:  [7 6 4 5 9 2 9 9]
+  value:   [7 ... 9] --> 79
+  32078 + 79 = 32157
+
+
+LINE: 3zmzlnninesrfourfivetzxlkcsr8
+  3zmzln 9 srfourfivetzxlkcsr8
+  3zmzln9sr 4 fivetzxlkcsr8
+  3zmzln9sr4 5 tzxlkcsr8
+  rewrite: 3zmzln9sr45tzxlkcsr8
+  digits:  [3 9 4 5 8]
+  value:   [3 ... 8] --> 38
+  32157 + 38 = 32195
+
+
+LINE: sgdzmk3lgxjrktsmzkczft
+  rewrite: sgdzmk3lgxjrktsmzkczft
+  digits:  [3]
+  value:   [3 ... 3] --> 33
+  32195 + 33 = 32228
+
+
+LINE: 64nqhjdjs
+  rewrite: 64nqhjdjs
+  digits:  [6 4]
+  value:   [6 ... 4] --> 64
+  32228 + 64 = 32292
+
+
+LINE: 9sznchv2nineclrfdpxnf378xhkjbbplqdeightwos
+  9sznchv2 9 clrfdpxnf378xhkjbbplqdeightwos
+  9sznchv29clrfdpxnf378xhkjbbplqd 8 wos
+  rewrite: 9sznchv29clrfdpxnf378xhkjbbplqd8wos
+  digits:  [9 2 9 3 7 8 8]
+  value:   [9 ... 8] --> 98
+  32292 + 98 = 32390
+
+
+LINE: 3sskrbzrpfqbbqtjzgcqjhnine3six5
+  3sskrbzrpfqbbqtjzgcqjh 9 3six5
+  3sskrbzrpfqbbqtjzgcqjh93 6 5
+  rewrite: 3sskrbzrpfqbbqtjzgcqjh9365
+  digits:  [3 9 3 6 5]
+  value:   [3 ... 5] --> 35
+  32390 + 35 = 32425
+
+
+LINE: vq95nine7lfiveonethree
+  vq95 9 7lfiveonethree
+  vq9597l 5 onethree
+  vq9597l5 1 three
+  vq9597l51 3 
+  rewrite: vq9597l513
+  digits:  [9 5 9 7 5 1 3]
+  value:   [9 ... 3] --> 93
+  32425 + 93 = 32518
+
+
+LINE: 3eight3eightfive4
+  3 8 3eightfive4
+  383 8 five4
+  3838 5 4
+  rewrite: 383854
+  digits:  [3 8 3 8 5 4]
+  value:   [3 ... 4] --> 34
+  32518 + 34 = 32552
+
+
+LINE: twoninethreel7sixfour9
+   2 ninethreel7sixfour9
+  2 9 threel7sixfour9
+  29 3 l7sixfour9
+  293l7 6 four9
+  293l76 4 9
+  rewrite: 293l7649
+  digits:  [2 9 3 7 6 4 9]
+  value:   [2 ... 9] --> 29
+  32552 + 29 = 32581
+
+
+LINE: bszxlfz2mtmv
+  rewrite: bszxlfz2mtmv
+  digits:  [2]
+  value:   [2 ... 2] --> 22
+  32581 + 22 = 32603
+
+
+LINE: 1cvhpxjlgjd
+  rewrite: 1cvhpxjlgjd
+  digits:  [1]
+  value:   [1 ... 1] --> 11
+  32603 + 11 = 32614
+
+
+LINE: sixsevenksj77one
+   6 sevenksj77one
+  6 7 ksj77one
+  67ksj77 1 
+  rewrite: 67ksj771
+  digits:  [6 7 7 7 1]
+  value:   [6 ... 1] --> 61
+  32614 + 61 = 32675
+
+
+LINE: qglgjsh3zrsqqh9onehrkjxfsxt3nine
+  qglgjsh3zrsqqh9 1 hrkjxfsxt3nine
+  qglgjsh3zrsqqh91hrkjxfsxt3 9 
+  rewrite: qglgjsh3zrsqqh91hrkjxfsxt39
+  digits:  [3 9 1 3 9]
+  value:   [3 ... 9] --> 39
+  32675 + 39 = 32714
+
+
+LINE: sevenlllqqkk4bxcgjqqllmcml4b3
+   7 lllqqkk4bxcgjqqllmcml4b3
+  rewrite: 7lllqqkk4bxcgjqqllmcml4b3
+  digits:  [7 4 4 3]
+  value:   [7 ... 3] --> 73
+  32714 + 73 = 32787
+
+
+LINE: bppqgfdfpm7753
+  rewrite: bppqgfdfpm7753
+  digits:  [7 7 5 3]
+  value:   [7 ... 3] --> 73
+  32787 + 73 = 32860
+
+
+LINE: 68frjqbqmmq2fourncksn9
+  68frjqbqmmq2 4 ncksn9
+  rewrite: 68frjqbqmmq24ncksn9
+  digits:  [6 8 2 4 9]
+  value:   [6 ... 9] --> 69
+  32860 + 69 = 32929
+
+
+LINE: bdz42pjmmnmhkvd
+  rewrite: bdz42pjmmnmhkvd
+  digits:  [4 2]
+  value:   [4 ... 2] --> 42
+  32929 + 42 = 32971
+
+
+LINE: 6threetone2
+  6 3 tone2
+  63t 1 2
+  rewrite: 63t12
+  digits:  [6 3 1 2]
+  value:   [6 ... 2] --> 62
+  32971 + 62 = 33033
+
+
+LINE: 8bmmdxf1dbnggxgpvhninezxmlzhvzb
+  8bmmdxf1dbnggxgpvh 9 zxmlzhvzb
+  rewrite: 8bmmdxf1dbnggxgpvh9zxmlzhvzb
+  digits:  [8 1 9]
+  value:   [8 ... 9] --> 89
+  33033 + 89 = 33122
+
+
+LINE: 48168
+  rewrite: 48168
+  digits:  [4 8 1 6 8]
+  value:   [4 ... 8] --> 48
+  33122 + 48 = 33170
+
+
+LINE: gvgkcsvmoneqvlxgzjsixfourshxzls9three
+  gvgkcsvm 1 qvlxgzjsixfourshxzls9three
+  gvgkcsvm1qvlxgzj 6 fourshxzls9three
+  gvgkcsvm1qvlxgzj6 4 shxzls9three
+  gvgkcsvm1qvlxgzj64shxzls9 3 
+  rewrite: gvgkcsvm1qvlxgzj64shxzls93
+  digits:  [1 6 4 9 3]
+  value:   [1 ... 3] --> 13
+  33170 + 13 = 33183
+
+
+LINE: 1zrgnghhm
+  rewrite: 1zrgnghhm
+  digits:  [1]
+  value:   [1 ... 1] --> 11
+  33183 + 11 = 33194
+
+
+LINE: klkrldxbjone6eight6sbglhrhlbnbq9dbkl
+  klkrldxbj 1 6eight6sbglhrhlbnbq9dbkl
+  klkrldxbj16 8 6sbglhrhlbnbq9dbkl
+  rewrite: klkrldxbj1686sbglhrhlbnbq9dbkl
+  digits:  [1 6 8 6 9]
+  value:   [1 ... 9] --> 19
+  33194 + 19 = 33213
+
+
+LINE: 9threefivetplxdklc2zrnptzrzp2
+  9 3 fivetplxdklc2zrnptzrzp2
+  93 5 tplxdklc2zrnptzrzp2
+  rewrite: 935tplxdklc2zrnptzrzp2
+  digits:  [9 3 5 2 2]
+  value:   [9 ... 2] --> 92
+  33213 + 92 = 33305
+
+
+LINE: sndxcznj9ninexttpfzbjcmbslghm83rp
+  sndxcznj9 9 xttpfzbjcmbslghm83rp
+  rewrite: sndxcznj99xttpfzbjcmbslghm83rp
+  digits:  [9 9 8 3]
+  value:   [9 ... 3] --> 93
+  33305 + 93 = 33398
+
+
+LINE: 73one8one
+  73 1 8one
+  7318 1 
+  rewrite: 73181
+  digits:  [7 3 1 8 1]
+  value:   [7 ... 1] --> 71
+  33398 + 71 = 33469
+
+
+LINE: 3eight8eighttlmpmh9five7
+  3 8 8eighttlmpmh9five7
+  388 8 tlmpmh9five7
+  3888tlmpmh9 5 7
+  rewrite: 3888tlmpmh957
+  digits:  [3 8 8 8 9 5 7]
+  value:   [3 ... 7] --> 37
+  33469 + 37 = 33506
+
+
+LINE: 7vqcddvrgbm5foursix
+  7vqcddvrgbm5 4 six
+  7vqcddvrgbm54 6 
+  rewrite: 7vqcddvrgbm546
+  digits:  [7 5 4 6]
+  value:   [7 ... 6] --> 76
+  33506 + 76 = 33582
+
+
+LINE: fivedhzbdsnzd1sv
+   5 dhzbdsnzd1sv
+  rewrite: 5dhzbdsnzd1sv
+  digits:  [5 1]
+  value:   [5 ... 1] --> 51
+  33582 + 51 = 33633
+
+
+LINE: 82fgntsxnsix3xdzk
+  82fgntsxn 6 3xdzk
+  rewrite: 82fgntsxn63xdzk
+  digits:  [8 2 6 3]
+  value:   [8 ... 3] --> 83
+  33633 + 83 = 33716
+
+
+LINE: threesix3qblcvkp
+   3 six3qblcvkp
+  3 6 3qblcvkp
+  rewrite: 363qblcvkp
+  digits:  [3 6 3]
+  value:   [3 ... 3] --> 33
+  33716 + 33 = 33749
+
+
+LINE: lfptgxqs2six35
+  lfptgxqs2 6 35
+  rewrite: lfptgxqs2635
+  digits:  [2 6 3 5]
+  value:   [2 ... 5] --> 25
+  33749 + 25 = 33774
+
+
+LINE: eight33jtzdbstcmstjxtbseven8
+   8 33jtzdbstcmstjxtbseven8
+  833jtzdbstcmstjxtb 7 8
+  rewrite: 833jtzdbstcmstjxtb78
+  digits:  [8 3 3 7 8]
+  value:   [8 ... 8] --> 88
+  33774 + 88 = 33862
+
+
+LINE: seven4five958three9
+   7 4five958three9
+  74 5 958three9
+  745958 3 9
+  rewrite: 74595839
+  digits:  [7 4 5 9 5 8 3 9]
+  value:   [7 ... 9] --> 79
+  33862 + 79 = 33941
+
+
+LINE: 3sevenhpvklhxxvx
+  3 7 hpvklhxxvx
+  rewrite: 37hpvklhxxvx
+  digits:  [3 7]
+  value:   [3 ... 7] --> 37
+  33941 + 37 = 33978
+
+
+LINE: rzsb5eighttwoglqtmf4
+  rzsb5 8 twoglqtmf4
+  rzsb58 2 glqtmf4
+  rewrite: rzsb582glqtmf4
+  digits:  [5 8 2 4]
+  value:   [5 ... 4] --> 54
+  33978 + 54 = 34032
+
+
+LINE: seven8fgkp
+   7 8fgkp
+  rewrite: 78fgkp
+  digits:  [7 8]
+  value:   [7 ... 8] --> 78
+  34032 + 78 = 34110
+
+
+LINE: 3rjfvpfiveonesfgdbb5
+  3rjfvp 5 onesfgdbb5
+  3rjfvp5 1 sfgdbb5
+  rewrite: 3rjfvp51sfgdbb5
+  digits:  [3 5 1 5]
+  value:   [3 ... 5] --> 35
+  34110 + 35 = 34145
+
+
+LINE: vpkkcrpdthree9threeninesix
+  vpkkcrpd 3 9threeninesix
+  vpkkcrpd39 3 ninesix
+  vpkkcrpd393 9 six
+  vpkkcrpd3939 6 
+  rewrite: vpkkcrpd39396
+  digits:  [3 9 3 9 6]
+  value:   [3 ... 6] --> 36
+  34145 + 36 = 34181
+
+
+LINE: 3onethreenine7
+  3 1 threenine7
+  31 3 nine7
+  313 9 7
+  rewrite: 31397
+  digits:  [3 1 3 9 7]
+  value:   [3 ... 7] --> 37
+  34181 + 37 = 34218
+
+
+LINE: 9sixtwoninetqllkjtmjnine4
+  9 6 twoninetqllkjtmjnine4
+  96 2 ninetqllkjtmjnine4
+  962 9 tqllkjtmjnine4
+  9629tqllkjtmj 9 4
+  rewrite: 9629tqllkjtmj94
+  digits:  [9 6 2 9 9 4]
+  value:   [9 ... 4] --> 94
+  34218 + 94 = 34312
+
+
+LINE: 2lqsevenx1vsgbmgone
+  2lq 7 x1vsgbmgone
+  2lq7x1vsgbmg 1 
+  rewrite: 2lq7x1vsgbmg1
+  digits:  [2 7 1 1]
+  value:   [2 ... 1] --> 21
+  34312 + 21 = 34333
+
+
+LINE: eight2kqsixfzcxvxfourp
+   8 2kqsixfzcxvxfourp
+  82kq 6 fzcxvxfourp
+  82kq6fzcxvx 4 p
+  rewrite: 82kq6fzcxvx4p
+  digits:  [8 2 6 4]
+  value:   [8 ... 4] --> 84
+  34333 + 84 = 34417
+
+
+LINE: gchhhrbxqlfphdjjdfsix4rcpmj
+  gchhhrbxqlfphdjjdf 6 4rcpmj
+  rewrite: gchhhrbxqlfphdjjdf64rcpmj
+  digits:  [6 4]
+  value:   [6 ... 4] --> 64
+  34417 + 64 = 34481
+
+
+LINE: 4pfrxtgr21
+  rewrite: 4pfrxtgr21
+  digits:  [4 2 1]
+  value:   [4 ... 1] --> 41
+  34481 + 41 = 34522
+
+
+LINE: 7fvndztkj
+  rewrite: 7fvndztkj
+  digits:  [7]
+  value:   [7 ... 7] --> 77
+  34522 + 77 = 34599
+
+
+LINE: rtwonenine77lsglrqcxhgxrllftvqfvfive44one
+  r 2 nenine77lsglrqcxhgxrllftvqfvfive44one
+  r2ne 9 77lsglrqcxhgxrllftvqfvfive44one
+  r2ne977lsglrqcxhgxrllftvqfv 5 44one
+  r2ne977lsglrqcxhgxrllftvqfv544 1 
+  rewrite: r2ne977lsglrqcxhgxrllftvqfv5441
+  digits:  [2 9 7 7 5 4 4 1]
+  value:   [2 ... 1] --> 21
+  34599 + 21 = 34620
+
+
+LINE: two374343nine
+   2 374343nine
+  2374343 9 
+  rewrite: 23743439
+  digits:  [2 3 7 4 3 4 3 9]
+  value:   [2 ... 9] --> 29
+  34620 + 29 = 34649
+
+
+LINE: eightseven7fthree
+   8 seven7fthree
+  8 7 7fthree
+  877f 3 
+  rewrite: 877f3
+  digits:  [8 7 7 3]
+  value:   [8 ... 3] --> 83
+  34649 + 83 = 34732
+
+
+LINE: 6lrrphgpnrlvgfqqzxfdxttdbfdfgjpmtztc9
+  rewrite: 6lrrphgpnrlvgfqqzxfdxttdbfdfgjpmtztc9
+  digits:  [6 9]
+  value:   [6 ... 9] --> 69
+  34732 + 69 = 34801
+
+
+LINE: 61threegscxrcstkclln9
+  61 3 gscxrcstkclln9
+  rewrite: 613gscxrcstkclln9
+  digits:  [6 1 3 9]
+  value:   [6 ... 9] --> 69
+  34801 + 69 = 34870
+
+
+LINE: xk2dhkgbtggeightthree
+  xk2dhkgbtgg 8 three
+  xk2dhkgbtgg8 3 
+  rewrite: xk2dhkgbtgg83
+  digits:  [2 8 3]
+  value:   [2 ... 3] --> 23
+  34870 + 23 = 34893
+
+
+LINE: 5vbbrqfnfp49eightqvn71qpskg
+  5vbbrqfnfp49 8 qvn71qpskg
+  rewrite: 5vbbrqfnfp498qvn71qpskg
+  digits:  [5 4 9 8 7 1]
+  value:   [5 ... 1] --> 51
+  34893 + 51 = 34944
+
+
+LINE: sevenhgd9qxfn8twoeightsevengcqtt
+   7 hgd9qxfn8twoeightsevengcqtt
+  7hgd9qxfn8 2 eightsevengcqtt
+  7hgd9qxfn82 8 sevengcqtt
+  7hgd9qxfn828 7 gcqtt
+  rewrite: 7hgd9qxfn8287gcqtt
+  digits:  [7 9 8 2 8 7]
+  value:   [7 ... 7] --> 77
+  34944 + 77 = 35021
+
+
+LINE: 1four17five
+  1 4 17five
+  1417 5 
+  rewrite: 14175
+  digits:  [1 4 1 7 5]
+  value:   [1 ... 5] --> 15
+  35021 + 15 = 35036
+
+
+LINE: 5seven5vnsbqpkjzeight7five
+  5 7 5vnsbqpkjzeight7five
+  575vnsbqpkjz 8 7five
+  575vnsbqpkjz87 5 
+  rewrite: 575vnsbqpkjz875
+  digits:  [5 7 5 8 7 5]
+  value:   [5 ... 5] --> 55
+  35036 + 55 = 35091
+
+
+LINE: 62qgxndqlninetmftkhp9
+  62qgxndql 9 tmftkhp9
+  rewrite: 62qgxndql9tmftkhp9
+  digits:  [6 2 9 9]
+  value:   [6 ... 9] --> 69
+  35091 + 69 = 35160
+
+
+LINE: two8threeeightdpzzhhvmr8
+   2 8threeeightdpzzhhvmr8
+  28 3 eightdpzzhhvmr8
+  283 8 dpzzhhvmr8
+  rewrite: 2838dpzzhhvmr8
+  digits:  [2 8 3 8 8]
+  value:   [2 ... 8] --> 28
+  35160 + 28 = 35188
+
+
+LINE: kxgmtlzb7gcltm9cxp
+  rewrite: kxgmtlzb7gcltm9cxp
+  digits:  [7 9]
+  value:   [7 ... 9] --> 79
+  35188 + 79 = 35267
+
+
+LINE: 8454nine
+  8454 9 
+  rewrite: 84549
+  digits:  [8 4 5 4 9]
+  value:   [8 ... 9] --> 89
+  35267 + 89 = 35356
+
+
+LINE: mtqqxgkvfdthree9rpbvl5sfourthreesix
+  mtqqxgkvfd 3 9rpbvl5sfourthreesix
+  mtqqxgkvfd39rpbvl5s 4 threesix
+  mtqqxgkvfd39rpbvl5s4 3 six
+  mtqqxgkvfd39rpbvl5s43 6 
+  rewrite: mtqqxgkvfd39rpbvl5s436
+  digits:  [3 9 5 4 3 6]
+  value:   [3 ... 6] --> 36
+  35356 + 36 = 35392
+
+
+LINE: 7onenine
+  7 1 nine
+  71 9 
+  rewrite: 719
+  digits:  [7 1 9]
+  value:   [7 ... 9] --> 79
+  35392 + 79 = 35471
+
+
+LINE: 4fourthree
+  4 4 three
+  44 3 
+  rewrite: 443
+  digits:  [4 4 3]
+  value:   [4 ... 3] --> 43
+  35471 + 43 = 35514
+
+
+LINE: 8fvr
+  rewrite: 8fvr
+  digits:  [8]
+  value:   [8 ... 8] --> 88
+  35514 + 88 = 35602
+
+
+LINE: 1fourfhljbffive
+  1 4 fhljbffive
+  14fhljbf 5 
+  rewrite: 14fhljbf5
+  digits:  [1 4 5]
+  value:   [1 ... 5] --> 15
+  35602 + 15 = 35617
+
+
+LINE: lqltrsvkjsthjkxph3vrfive3vxvlf
+  lqltrsvkjsthjkxph3vr 5 3vxvlf
+  rewrite: lqltrsvkjsthjkxph3vr53vxvlf
+  digits:  [3 5 3]
+  value:   [3 ... 3] --> 33
+  35617 + 33 = 35650
+
+
+LINE: xxfoursevenzbthcsdnrvjlnqqhlpbbpj8
+  xx 4 sevenzbthcsdnrvjlnqqhlpbbpj8
+  xx4 7 zbthcsdnrvjlnqqhlpbbpj8
+  rewrite: xx47zbthcsdnrvjlnqqhlpbbpj8
+  digits:  [4 7 8]
+  value:   [4 ... 8] --> 48
+  35650 + 48 = 35698
+
+
+LINE: 6gvch2fiveeightsixmtfps
+  6gvch2 5 eightsixmtfps
+  6gvch25 8 sixmtfps
+  6gvch258 6 mtfps
+  rewrite: 6gvch2586mtfps
+  digits:  [6 2 5 8 6]
+  value:   [6 ... 6] --> 66
+  35698 + 66 = 35764
+
+
+LINE: two7rljfhhdlcseventhree9four84
+   2 7rljfhhdlcseventhree9four84
+  27rljfhhdlc 7 three9four84
+  27rljfhhdlc7 3 9four84
+  27rljfhhdlc739 4 84
+  rewrite: 27rljfhhdlc739484
+  digits:  [2 7 7 3 9 4 8 4]
+  value:   [2 ... 4] --> 24
+  35764 + 24 = 35788
+
+
+LINE: 5lpseven
+  5lp 7 
+  rewrite: 5lp7
+  digits:  [5 7]
+  value:   [5 ... 7] --> 57
+  35788 + 57 = 35845
+
+
+LINE: cdmnine1
+  cdm 9 1
+  rewrite: cdm91
+  digits:  [9 1]
+  value:   [9 ... 1] --> 91
+  35845 + 91 = 35936
+
+
+LINE: oneeight97mxnine79
+   1 eight97mxnine79
+  1 8 97mxnine79
+  1897mx 9 79
+  rewrite: 1897mx979
+  digits:  [1 8 9 7 9 7 9]
+  value:   [1 ... 9] --> 19
+  35936 + 19 = 35955
+
+
+LINE: 3thzbhxbcbf
+  rewrite: 3thzbhxbcbf
+  digits:  [3]
+  value:   [3 ... 3] --> 33
+  35955 + 33 = 35988
+
+
+LINE: two41fivefiveseventwo4r
+   2 41fivefiveseventwo4r
+  241 5 fiveseventwo4r
+  2415 5 seventwo4r
+  24155 7 two4r
+  241557 2 4r
+  rewrite: 24155724r
+  digits:  [2 4 1 5 5 7 2 4]
+  value:   [2 ... 4] --> 24
+  35988 + 24 = 36012
+
+
+LINE: shlz9
+  rewrite: shlz9
+  digits:  [9]
+  value:   [9 ... 9] --> 99
+  36012 + 99 = 36111
+
+
+LINE: xxpgkqf9joneoneseven6
+  xxpgkqf9j 1 oneseven6
+  xxpgkqf9j1 1 seven6
+  xxpgkqf9j11 7 6
+  rewrite: xxpgkqf9j1176
+  digits:  [9 1 1 7 6]
+  value:   [9 ... 6] --> 96
+  36111 + 96 = 36207
+
+
+LINE: lpqvvzdbx27
+  rewrite: lpqvvzdbx27
+  digits:  [2 7]
+  value:   [2 ... 7] --> 27
+  36207 + 27 = 36234
+
+
+LINE: gh1five
+  gh1 5 
+  rewrite: gh15
+  digits:  [1 5]
+  value:   [1 ... 5] --> 15
+  36234 + 15 = 36249
+
+
+LINE: thzrmh2lpncngjrqrkmthlndl2six3
+  thzrmh2lpncngjrqrkmthlndl2 6 3
+  rewrite: thzrmh2lpncngjrqrkmthlndl263
+  digits:  [2 2 6 3]
+  value:   [2 ... 3] --> 23
+  36249 + 23 = 36272
+
+
+LINE: vrrhfour55
+  vrrh 4 55
+  rewrite: vrrh455
+  digits:  [4 5 5]
+  value:   [4 ... 5] --> 45
+  36272 + 45 = 36317
+
+
+LINE: 665qzpzlhfvrbsgblcvgzbqqkxbdtzctwonerx
+  665qzpzlhfvrbsgblcvgzbqqkxbdtzc 2 nerx
+  rewrite: 665qzpzlhfvrbsgblcvgzbqqkxbdtzc2nerx
+  digits:  [6 6 5 2]
+  value:   [6 ... 2] --> 62
+  36317 + 62 = 36379
+
+
+LINE: five44
+   5 44
+  rewrite: 544
+  digits:  [5 4 4]
+  value:   [5 ... 4] --> 54
+  36379 + 54 = 36433
+
+
+LINE: kpvqnxnlfouronerp5417j
+  kpvqnxnl 4 onerp5417j
+  kpvqnxnl4 1 rp5417j
+  rewrite: kpvqnxnl41rp5417j
+  digits:  [4 1 5 4 1 7]
+  value:   [4 ... 7] --> 47
+  36433 + 47 = 36480
+
+
+LINE: 4vxppbsfive235gqchjfhjsdgq
+  4vxppbs 5 235gqchjfhjsdgq
+  rewrite: 4vxppbs5235gqchjfhjsdgq
+  digits:  [4 5 2 3 5]
+  value:   [4 ... 5] --> 45
+  36480 + 45 = 36525
+
+
+LINE: sixnine2lk8npzdbgcxvrd
+   6 nine2lk8npzdbgcxvrd
+  6 9 2lk8npzdbgcxvrd
+  rewrite: 692lk8npzdbgcxvrd
+  digits:  [6 9 2 8]
+  value:   [6 ... 8] --> 68
+  36525 + 68 = 36593
+
+
+LINE: 3six6eightseventwo71pff
+  3 6 6eightseventwo71pff
+  366 8 seventwo71pff
+  3668 7 two71pff
+  36687 2 71pff
+  rewrite: 36687271pff
+  digits:  [3 6 6 8 7 2 7 1]
+  value:   [3 ... 1] --> 31
+  36593 + 31 = 36624
+
+
+LINE: zbr1srxljjseven5ckjfour
+  zbr1srxljj 7 5ckjfour
+  zbr1srxljj75ckj 4 
+  rewrite: zbr1srxljj75ckj4
+  digits:  [1 7 5 4]
+  value:   [1 ... 4] --> 14
+  36624 + 14 = 36638
+
+
+LINE: one71z3threenvmtcd
+   1 71z3threenvmtcd
+  171z3 3 nvmtcd
+  rewrite: 171z33nvmtcd
+  digits:  [1 7 1 3 3]
+  value:   [1 ... 3] --> 13
+  36638 + 13 = 36651
+
+
+LINE: six9zdchbfsdtbs
+   6 9zdchbfsdtbs
+  rewrite: 69zdchbfsdtbs
+  digits:  [6 9]
+  value:   [6 ... 9] --> 69
+  36651 + 69 = 36720
+
+
+LINE: 2qhqnrcmrninedqfivejseven8
+  2qhqnrcmr 9 dqfivejseven8
+  2qhqnrcmr9dq 5 jseven8
+  2qhqnrcmr9dq5j 7 8
+  rewrite: 2qhqnrcmr9dq5j78
+  digits:  [2 9 5 7 8]
+  value:   [2 ... 8] --> 28
+  36720 + 28 = 36748
+
+
+LINE: zrhctxclslhlj24jhhseveneight1
+  zrhctxclslhlj24jhh 7 eight1
+  zrhctxclslhlj24jhh7 8 1
+  rewrite: zrhctxclslhlj24jhh781
+  digits:  [2 4 7 8 1]
+  value:   [2 ... 1] --> 21
+  36748 + 21 = 36769
+
+
+LINE: knkvthzrbtxbbnnpsfbq1ninefivesix
+  knkvthzrbtxbbnnpsfbq1 9 fivesix
+  knkvthzrbtxbbnnpsfbq19 5 six
+  knkvthzrbtxbbnnpsfbq195 6 
+  rewrite: knkvthzrbtxbbnnpsfbq1956
+  digits:  [1 9 5 6]
+  value:   [1 ... 6] --> 16
+  36769 + 16 = 36785
+
+
+LINE: vhr28rlrtpjbnn7
+  rewrite: vhr28rlrtpjbnn7
+  digits:  [2 8 7]
+  value:   [2 ... 7] --> 27
+  36785 + 27 = 36812
+
+
+LINE: xcsjqrptg7one
+  xcsjqrptg7 1 
+  rewrite: xcsjqrptg71
+  digits:  [7 1]
+  value:   [7 ... 1] --> 71
+  36812 + 71 = 36883
+
+
+LINE: gzdjq2fourpqmzjs5sixtc
+  gzdjq2 4 pqmzjs5sixtc
+  gzdjq24pqmzjs5 6 tc
+  rewrite: gzdjq24pqmzjs56tc
+  digits:  [2 4 5 6]
+  value:   [2 ... 6] --> 26
+  36883 + 26 = 36909
+
+
+LINE: threedzbjqd3568
+   3 dzbjqd3568
+  rewrite: 3dzbjqd3568
+  digits:  [3 3 5 6 8]
+  value:   [3 ... 8] --> 38
+  36909 + 38 = 36947
+
+
+LINE: threesixgcjx3onefourdskrfhldjhm
+   3 sixgcjx3onefourdskrfhldjhm
+  3 6 gcjx3onefourdskrfhldjhm
+  36gcjx3 1 fourdskrfhldjhm
+  36gcjx31 4 dskrfhldjhm
+  rewrite: 36gcjx314dskrfhldjhm
+  digits:  [3 6 3 1 4]
+  value:   [3 ... 4] --> 34
+  36947 + 34 = 36981
+
+
+LINE: sixphnfkdtfxnvphxh3
+   6 phnfkdtfxnvphxh3
+  rewrite: 6phnfkdtfxnvphxh3
+  digits:  [6 3]
+  value:   [6 ... 3] --> 63
+  36981 + 63 = 37044
+
+
+LINE: rxldfbssevenfivemxtdbnvgpq6xxmbkdkxkjmth
+  rxldfbs 7 fivemxtdbnvgpq6xxmbkdkxkjmth
+  rxldfbs7 5 mxtdbnvgpq6xxmbkdkxkjmth
+  rewrite: rxldfbs75mxtdbnvgpq6xxmbkdkxkjmth
+  digits:  [7 5 6]
+  value:   [7 ... 6] --> 76
+  37044 + 76 = 37120
+
+
+LINE: five7five3four2qkrfmt
+   5 7five3four2qkrfmt
+  57 5 3four2qkrfmt
+  5753 4 2qkrfmt
+  rewrite: 575342qkrfmt
+  digits:  [5 7 5 3 4 2]
+  value:   [5 ... 2] --> 52
+  37120 + 52 = 37172
+
+
+LINE: 4fivefour
+  4 5 four
+  45 4 
+  rewrite: 454
+  digits:  [4 5 4]
+  value:   [4 ... 4] --> 44
+  37172 + 44 = 37216
+
+
+LINE: fivenine35tzhpqfkq31
+   5 nine35tzhpqfkq31
+  5 9 35tzhpqfkq31
+  rewrite: 5935tzhpqfkq31
+  digits:  [5 9 3 5 3 1]
+  value:   [5 ... 1] --> 51
+  37216 + 51 = 37267
+
+
+LINE: 9two2fourtwo8nlgzgbbp8
+  9 2 2fourtwo8nlgzgbbp8
+  922 4 two8nlgzgbbp8
+  9224 2 8nlgzgbbp8
+  rewrite: 922428nlgzgbbp8
+  digits:  [9 2 2 4 2 8 8]
+  value:   [9 ... 8] --> 98
+  37267 + 98 = 37365
+
+
+LINE: 1threeoneqglrlnmcblpfhgcfhggm
+  1 3 oneqglrlnmcblpfhgcfhggm
+  13 1 qglrlnmcblpfhgcfhggm
+  rewrite: 131qglrlnmcblpfhgcfhggm
+  digits:  [1 3 1]
+  value:   [1 ... 1] --> 11
+  37365 + 11 = 37376
+
+
+LINE: 7onerknmhpmonejzfqjng
+  7 1 rknmhpmonejzfqjng
+  71rknmhpm 1 jzfqjng
+  rewrite: 71rknmhpm1jzfqjng
+  digits:  [7 1 1]
+  value:   [7 ... 1] --> 71
+  37376 + 71 = 37447
+
+
+LINE: nine81twoshgxqt
+   9 81twoshgxqt
+  981 2 shgxqt
+  rewrite: 9812shgxqt
+  digits:  [9 8 1 2]
+  value:   [9 ... 2] --> 92
+  37447 + 92 = 37539
+
+
+LINE: 28dqfptxseven37jtqrklrqc
+  28dqfptx 7 37jtqrklrqc
+  rewrite: 28dqfptx737jtqrklrqc
+  digits:  [2 8 7 3 7]
+  value:   [2 ... 7] --> 27
+  37539 + 27 = 37566
+
+
+LINE: 41two3
+  41 2 3
+  rewrite: 4123
+  digits:  [4 1 2 3]
+  value:   [4 ... 3] --> 43
+  37566 + 43 = 37609
+
+
+LINE: 7gp
+  rewrite: 7gp
+  digits:  [7]
+  value:   [7 ... 7] --> 77
+  37609 + 77 = 37686
+
+
+LINE: sixdzjfsv2sixeighteight
+   6 dzjfsv2sixeighteight
+  6dzjfsv2 6 eighteight
+  6dzjfsv26 8 eight
+  6dzjfsv268 8 
+  rewrite: 6dzjfsv2688
+  digits:  [6 2 6 8 8]
+  value:   [6 ... 8] --> 68
+  37686 + 68 = 37754
+
+
+LINE: 9three6
+  9 3 6
+  rewrite: 936
+  digits:  [9 3 6]
+  value:   [9 ... 6] --> 96
+  37754 + 96 = 37850
+
+
+LINE: 3fiveseven83tvtxf
+  3 5 seven83tvtxf
+  35 7 83tvtxf
+  rewrite: 35783tvtxf
+  digits:  [3 5 7 8 3]
+  value:   [3 ... 3] --> 33
+  37850 + 33 = 37883
+
+
+LINE: ndtwone562kzfhdrhgcjv4two
+  nd 2 ne562kzfhdrhgcjv4two
+  nd2ne562kzfhdrhgcjv4 2 
+  rewrite: nd2ne562kzfhdrhgcjv42
+  digits:  [2 5 6 2 4 2]
+  value:   [2 ... 2] --> 22
+  37883 + 22 = 37905
+
+
+LINE: jzvtjvnineeight42keightclbtddmdffsdttc
+  jzvtjv 9 eight42keightclbtddmdffsdttc
+  jzvtjv9 8 42keightclbtddmdffsdttc
+  jzvtjv9842k 8 clbtddmdffsdttc
+  rewrite: jzvtjv9842k8clbtddmdffsdttc
+  digits:  [9 8 4 2 8]
+  value:   [9 ... 8] --> 98
+  37905 + 98 = 38003
+
+
+LINE: eight41mggmrzlkhsevenfoursix4two
+   8 41mggmrzlkhsevenfoursix4two
+  841mggmrzlkh 7 foursix4two
+  841mggmrzlkh7 4 six4two
+  841mggmrzlkh74 6 4two
+  841mggmrzlkh7464 2 
+  rewrite: 841mggmrzlkh74642
+  digits:  [8 4 1 7 4 6 4 2]
+  value:   [8 ... 2] --> 82
+  38003 + 82 = 38085
+
+
+LINE: rkllqvfjz13sixthreetdztlhlcldoneightj
+  rkllqvfjz13 6 threetdztlhlcldoneightj
+  rkllqvfjz136 3 tdztlhlcldoneightj
+  rkllqvfjz1363tdztlhlcld 1 ightj
+  rewrite: rkllqvfjz1363tdztlhlcld1ightj
+  digits:  [1 3 6 3 1]
+  value:   [1 ... 1] --> 11
+  38085 + 11 = 38096
+
+
+LINE: 7three4fbccblfvninelhvlthgh
+  7 3 4fbccblfvninelhvlthgh
+  734fbccblfv 9 lhvlthgh
+  rewrite: 734fbccblfv9lhvlthgh
+  digits:  [7 3 4 9]
+  value:   [7 ... 9] --> 79
+  38096 + 79 = 38175
+
+
+LINE: btwone96two1onexconeonefour
+  b 2 ne96two1onexconeonefour
+  b2ne96 2 1onexconeonefour
+  b2ne9621 1 xconeonefour
+  b2ne96211xc 1 onefour
+  b2ne96211xc1 1 four
+  b2ne96211xc11 4 
+  rewrite: b2ne96211xc114
+  digits:  [2 9 6 2 1 1 1 1 4]
+  value:   [2 ... 4] --> 24
+  38175 + 24 = 38199
+
+
+LINE: jcvxrvkdsb6five
+  jcvxrvkdsb6 5 
+  rewrite: jcvxrvkdsb65
+  digits:  [6 5]
+  value:   [6 ... 5] --> 65
+  38199 + 65 = 38264
+
+
+LINE: 578947five
+  578947 5 
+  rewrite: 5789475
+  digits:  [5 7 8 9 4 7 5]
+  value:   [5 ... 5] --> 55
+  38264 + 55 = 38319
+
+
+LINE: 1819p
+  rewrite: 1819p
+  digits:  [1 8 1 9]
+  value:   [1 ... 9] --> 19
+  38319 + 19 = 38338
+
+
+LINE: lgvxmnjkgmlkhkzrone6gnbgkxrlpspj2six
+  lgvxmnjkgmlkhkzr 1 6gnbgkxrlpspj2six
+  lgvxmnjkgmlkhkzr16gnbgkxrlpspj2 6 
+  rewrite: lgvxmnjkgmlkhkzr16gnbgkxrlpspj26
+  digits:  [1 6 2 6]
+  value:   [1 ... 6] --> 16
+  38338 + 16 = 38354
+
+
+LINE: ntzsdxn8
+  rewrite: ntzsdxn8
+  digits:  [8]
+  value:   [8 ... 8] --> 88
+  38354 + 88 = 38442
+
+
+LINE: mplcrhcz8
+  rewrite: mplcrhcz8
+  digits:  [8]
+  value:   [8 ... 8] --> 88
+  38442 + 88 = 38530
+
+
+LINE: czggpkxcfthreefourjpcxnine4pvfqxcvh38
+  czggpkxcf 3 fourjpcxnine4pvfqxcvh38
+  czggpkxcf3 4 jpcxnine4pvfqxcvh38
+  czggpkxcf34jpcx 9 4pvfqxcvh38
+  rewrite: czggpkxcf34jpcx94pvfqxcvh38
+  digits:  [3 4 9 4 3 8]
+  value:   [3 ... 8] --> 38
+  38530 + 38 = 38568
+
+
+LINE: 9dsfhtnrjv16
+  rewrite: 9dsfhtnrjv16
+  digits:  [9 1 6]
+  value:   [9 ... 6] --> 96
+  38568 + 96 = 38664
+
+
+LINE: 2ceighteight4ptzneight
+  2c 8 eight4ptzneight
+  2c8 8 4ptzneight
+  2c884ptzn 8 
+  rewrite: 2c884ptzn8
+  digits:  [2 8 8 4 8]
+  value:   [2 ... 8] --> 28
+  38664 + 28 = 38692
+
+
+LINE: 2two8jvsgrtrht7lhxkdztqdhvcsdm
+  2 2 8jvsgrtrht7lhxkdztqdhvcsdm
+  rewrite: 228jvsgrtrht7lhxkdztqdhvcsdm
+  digits:  [2 2 8 7]
+  value:   [2 ... 7] --> 27
+  38692 + 27 = 38719
+
+
+LINE: 619six
+  619 6 
+  rewrite: 6196
+  digits:  [6 1 9 6]
+  value:   [6 ... 6] --> 66
+  38719 + 66 = 38785
+
+
+LINE: cqmqkhpxjtwofm9one1one48
+  cqmqkhpxj 2 fm9one1one48
+  cqmqkhpxj2fm9 1 1one48
+  cqmqkhpxj2fm911 1 48
+  rewrite: cqmqkhpxj2fm911148
+  digits:  [2 9 1 1 1 4 8]
+  value:   [2 ... 8] --> 28
+  38785 + 28 = 38813
+
+
+LINE: 2nqbksgxxfoureightfiveeightbbvg
+  2nqbksgxx 4 eightfiveeightbbvg
+  2nqbksgxx4 8 fiveeightbbvg
+  2nqbksgxx48 5 eightbbvg
+  2nqbksgxx485 8 bbvg
+  rewrite: 2nqbksgxx4858bbvg
+  digits:  [2 4 8 5 8]
+  value:   [2 ... 8] --> 28
+  38813 + 28 = 38841
+
+
+LINE: five5nineskphfdgxbp67
+   5 5nineskphfdgxbp67
+  55 9 skphfdgxbp67
+  rewrite: 559skphfdgxbp67
+  digits:  [5 5 9 6 7]
+  value:   [5 ... 7] --> 57
+  38841 + 57 = 38898
+
+
+LINE: gsevenqgcsk9ninehlccsxn
+  g 7 qgcsk9ninehlccsxn
+  g7qgcsk9 9 hlccsxn
+  rewrite: g7qgcsk99hlccsxn
+  digits:  [7 9 9]
+  value:   [7 ... 9] --> 79
+  38898 + 79 = 38977
+
+
+LINE: pnqcdjknth94three4sevenninefivegl
+  pnqcdjknth94 3 4sevenninefivegl
+  pnqcdjknth9434 7 ninefivegl
+  pnqcdjknth94347 9 fivegl
+  pnqcdjknth943479 5 gl
+  rewrite: pnqcdjknth9434795gl
+  digits:  [9 4 3 4 7 9 5]
+  value:   [9 ... 5] --> 95
+  38977 + 95 = 39072
+
+
+LINE: eight9mnsb6
+   8 9mnsb6
+  rewrite: 89mnsb6
+  digits:  [8 9 6]
+  value:   [8 ... 6] --> 86
+  39072 + 86 = 39158
+
+
+LINE: fzsfcbbvvqnksj85fbfour2cn
+  fzsfcbbvvqnksj85fb 4 2cn
+  rewrite: fzsfcbbvvqnksj85fb42cn
+  digits:  [8 5 4 2]
+  value:   [8 ... 2] --> 82
+  39158 + 82 = 39240
+
+
+LINE: 1kjzphbpp3spnbzhzeighthdnrdq
+  1kjzphbpp3spnbzhz 8 hdnrdq
+  rewrite: 1kjzphbpp3spnbzhz8hdnrdq
+  digits:  [1 3 8]
+  value:   [1 ... 8] --> 18
+  39240 + 18 = 39258
+
+
+LINE: 4nsglzjbk1
+  rewrite: 4nsglzjbk1
+  digits:  [4 1]
+  value:   [4 ... 1] --> 41
+  39258 + 41 = 39299
+
+
+LINE: threetwoninethree2ninehm
+   3 twoninethree2ninehm
+  3 2 ninethree2ninehm
+  32 9 three2ninehm
+  329 3 2ninehm
+  32932 9 hm
+  rewrite: 329329hm
+  digits:  [3 2 9 3 2 9]
+  value:   [3 ... 9] --> 39
+  39299 + 39 = 39338
+
+
+LINE: 35oneljcsixlmdxpxk1
+  35 1 ljcsixlmdxpxk1
+  351ljc 6 lmdxpxk1
+  rewrite: 351ljc6lmdxpxk1
+  digits:  [3 5 1 6 1]
+  value:   [3 ... 1] --> 31
+  39338 + 31 = 39369
+
+
+LINE: jsix2
+  j 6 2
+  rewrite: j62
+  digits:  [6 2]
+  value:   [6 ... 2] --> 62
+  39369 + 62 = 39431
+
+
+LINE: tgkfk8ninestnk2eightoneeightwotcs
+  tgkfk8 9 stnk2eightoneeightwotcs
+  tgkfk89stnk2 8 oneeightwotcs
+  tgkfk89stnk28 1 eightwotcs
+  tgkfk89stnk281 8 wotcs
+  rewrite: tgkfk89stnk2818wotcs
+  digits:  [8 9 2 8 1 8]
+  value:   [8 ... 8] --> 88
+  39431 + 88 = 39519
+
+
+LINE: chhflbq1xznbmj4oneightkc
+  chhflbq1xznbmj4 1 ightkc
+  rewrite: chhflbq1xznbmj41ightkc
+  digits:  [1 4 1]
+  value:   [1 ... 1] --> 11
+  39519 + 11 = 39530
+
+
+LINE: 3eighteightfivenine
+  3 8 eightfivenine
+  38 8 fivenine
+  388 5 nine
+  3885 9 
+  rewrite: 38859
+  digits:  [3 8 8 5 9]
+  value:   [3 ... 9] --> 39
+  39530 + 39 = 39569
+
+
+LINE: six592bzj
+   6 592bzj
+  rewrite: 6592bzj
+  digits:  [6 5 9 2]
+  value:   [6 ... 2] --> 62
+  39569 + 62 = 39631
+
+
+LINE: xnqnxkpseventhreettv8jkds
+  xnqnxkp 7 threettv8jkds
+  xnqnxkp7 3 ttv8jkds
+  rewrite: xnqnxkp73ttv8jkds
+  digits:  [7 3 8]
+  value:   [7 ... 8] --> 78
+  39631 + 78 = 39709
+
+
+LINE: honeighttpqxdbhsevengvzfourd4s5
+  h 1 ighttpqxdbhsevengvzfourd4s5
+  h1ighttpqxdbh 7 gvzfourd4s5
+  h1ighttpqxdbh7gvz 4 d4s5
+  rewrite: h1ighttpqxdbh7gvz4d4s5
+  digits:  [1 7 4 4 5]
+  value:   [1 ... 5] --> 15
+  39709 + 15 = 39724
+
+
+LINE: sixeight8
+   6 eight8
+  6 8 8
+  rewrite: 688
+  digits:  [6 8 8]
+  value:   [6 ... 8] --> 68
+  39724 + 68 = 39792
+
+
+LINE: pcflsgrvslxgmtqm6oneeight69zhlpddq
+  pcflsgrvslxgmtqm6 1 eight69zhlpddq
+  pcflsgrvslxgmtqm61 8 69zhlpddq
+  rewrite: pcflsgrvslxgmtqm61869zhlpddq
+  digits:  [6 1 8 6 9]
+  value:   [6 ... 9] --> 69
+  39792 + 69 = 39861
+
+
+LINE: nqgeightthreelzcppk2vzdjrjqqx41
+  nqg 8 threelzcppk2vzdjrjqqx41
+  nqg8 3 lzcppk2vzdjrjqqx41
+  rewrite: nqg83lzcppk2vzdjrjqqx41
+  digits:  [8 3 2 4 1]
+  value:   [8 ... 1] --> 81
+  39861 + 81 = 39942
+
+
+LINE: dqdcmtzbqeightfoureightthree7four3
+  dqdcmtzbq 8 foureightthree7four3
+  dqdcmtzbq8 4 eightthree7four3
+  dqdcmtzbq84 8 three7four3
+  dqdcmtzbq848 3 7four3
+  dqdcmtzbq84837 4 3
+  rewrite: dqdcmtzbq8483743
+  digits:  [8 4 8 3 7 4 3]
+  value:   [8 ... 3] --> 83
+  39942 + 83 = 40025
+
+
+LINE: ninesixhxrncgtwofivetwo5eightrvq
+   9 sixhxrncgtwofivetwo5eightrvq
+  9 6 hxrncgtwofivetwo5eightrvq
+  96hxrncg 2 fivetwo5eightrvq
+  96hxrncg2 5 two5eightrvq
+  96hxrncg25 2 5eightrvq
+  96hxrncg2525 8 rvq
+  rewrite: 96hxrncg25258rvq
+  digits:  [9 6 2 5 2 5 8]
+  value:   [9 ... 8] --> 98
+  40025 + 98 = 40123
+
+
+LINE: kzxgsfive644lthreefive
+  kzxgs 5 644lthreefive
+  kzxgs5644l 3 five
+  kzxgs5644l3 5 
+  rewrite: kzxgs5644l35
+  digits:  [5 6 4 4 3 5]
+  value:   [5 ... 5] --> 55
+  40123 + 55 = 40178
+
+
+LINE: nine2one14four7
+   9 2one14four7
+  92 1 14four7
+  92114 4 7
+  rewrite: 9211447
+  digits:  [9 2 1 1 4 4 7]
+  value:   [9 ... 7] --> 97
+  40178 + 97 = 40275
+
+
+LINE: 59gjc8fivetvjcjcq
+  59gjc8 5 tvjcjcq
+  rewrite: 59gjc85tvjcjcq
+  digits:  [5 9 8 5]
+  value:   [5 ... 5] --> 55
+  40275 + 55 = 40330
+
+
+LINE: lczn92c
+  rewrite: lczn92c
+  digits:  [9 2]
+  value:   [9 ... 2] --> 92
+  40330 + 92 = 40422
+
+
+LINE: 3seven9tprznnsmznineqbpchxlnbqkssgqx1
+  3 7 9tprznnsmznineqbpchxlnbqkssgqx1
+  379tprznnsmz 9 qbpchxlnbqkssgqx1
+  rewrite: 379tprznnsmz9qbpchxlnbqkssgqx1
+  digits:  [3 7 9 9 1]
+  value:   [3 ... 1] --> 31
+  40422 + 31 = 40453
+
+
+LINE: 3m22nine7
+  3m22 9 7
+  rewrite: 3m2297
+  digits:  [3 2 2 9 7]
+  value:   [3 ... 7] --> 37
+  40453 + 37 = 40490
+
+
+LINE: 3mhzbqtscqrkjzjqtklxdn1
+  rewrite: 3mhzbqtscqrkjzjqtklxdn1
+  digits:  [3 1]
+  value:   [3 ... 1] --> 31
+  40490 + 31 = 40521
+
+
+LINE: 61pnjkfournine5
+  61pnjk 4 nine5
+  61pnjk4 9 5
+  rewrite: 61pnjk495
+  digits:  [6 1 4 9 5]
+  value:   [6 ... 5] --> 65
+  40521 + 65 = 40586
+
+
+LINE: 41one
+  41 1 
+  rewrite: 411
+  digits:  [4 1 1]
+  value:   [4 ... 1] --> 41
+  40586 + 41 = 40627
+
+
+LINE: 99twonzsjsqk7fivedjlcgzjrfive
+  99 2 nzsjsqk7fivedjlcgzjrfive
+  992nzsjsqk7 5 djlcgzjrfive
+  992nzsjsqk75djlcgzjr 5 
+  rewrite: 992nzsjsqk75djlcgzjr5
+  digits:  [9 9 2 7 5 5]
+  value:   [9 ... 5] --> 95
+  40627 + 95 = 40722
+
+
+LINE: twoninexngksevenfive7xxrxpvq
+   2 ninexngksevenfive7xxrxpvq
+  2 9 xngksevenfive7xxrxpvq
+  29xngk 7 five7xxrxpvq
+  29xngk7 5 7xxrxpvq
+  rewrite: 29xngk757xxrxpvq
+  digits:  [2 9 7 5 7]
+  value:   [2 ... 7] --> 27
+  40722 + 27 = 40749
+
+
+LINE: 1mfnggsgvqmplg5mrqmzsclpmeight
+  1mfnggsgvqmplg5mrqmzsclpm 8 
+  rewrite: 1mfnggsgvqmplg5mrqmzsclpm8
+  digits:  [1 5 8]
+  value:   [1 ... 8] --> 18
+  40749 + 18 = 40767
+
+
+LINE: 2ddgfivehxddfxbdfsseveneight
+  2ddg 5 hxddfxbdfsseveneight
+  2ddg5hxddfxbdfs 7 eight
+  2ddg5hxddfxbdfs7 8 
+  rewrite: 2ddg5hxddfxbdfs78
+  digits:  [2 5 7 8]
+  value:   [2 ... 8] --> 28
+  40767 + 28 = 40795
+
+
+LINE: 4nine579three13
+  4 9 579three13
+  49579 3 13
+  rewrite: 49579313
+  digits:  [4 9 5 7 9 3 1 3]
+  value:   [4 ... 3] --> 43
+  40795 + 43 = 40838
+
+
+LINE: fiveonethree44one
+   5 onethree44one
+  5 1 three44one
+  51 3 44one
+  51344 1 
+  rewrite: 513441
+  digits:  [5 1 3 4 4 1]
+  value:   [5 ... 1] --> 51
+  40838 + 51 = 40889
+
+
+LINE: 11four
+  11 4 
+  rewrite: 114
+  digits:  [1 1 4]
+  value:   [1 ... 4] --> 14
+  40889 + 14 = 40903
+
+
+LINE: cgqrbzdl6mnmvh6
+  rewrite: cgqrbzdl6mnmvh6
+  digits:  [6 6]
+  value:   [6 ... 6] --> 66
+  40903 + 66 = 40969
+
+
+LINE: qmzeightwosevenflbh72nine2
+  qmz 8 wosevenflbh72nine2
+  qmz8wo 7 flbh72nine2
+  qmz8wo7flbh72 9 2
+  rewrite: qmz8wo7flbh7292
+  digits:  [8 7 7 2 9 2]
+  value:   [8 ... 2] --> 82
+  40969 + 82 = 41051
+
+
+LINE: six59one9two1cvzslmdch4
+   6 59one9two1cvzslmdch4
+  659 1 9two1cvzslmdch4
+  65919 2 1cvzslmdch4
+  rewrite: 6591921cvzslmdch4
+  digits:  [6 5 9 1 9 2 1 4]
+  value:   [6 ... 4] --> 64
+  41051 + 64 = 41115
+
+
+LINE: fivesixtwo8
+   5 sixtwo8
+  5 6 two8
+  56 2 8
+  rewrite: 5628
+  digits:  [5 6 2 8]
+  value:   [5 ... 8] --> 58
+  41115 + 58 = 41173
+
+
+LINE: sixxvczqbbvctgmsjnffmfourfbr56
+   6 xvczqbbvctgmsjnffmfourfbr56
+  6xvczqbbvctgmsjnffm 4 fbr56
+  rewrite: 6xvczqbbvctgmsjnffm4fbr56
+  digits:  [6 4 5 6]
+  value:   [6 ... 6] --> 66
+  41173 + 66 = 41239
+
+
+LINE: 6seven5hndfourfcnone5
+  6 7 5hndfourfcnone5
+  675hnd 4 fcnone5
+  675hnd4fcn 1 5
+  rewrite: 675hnd4fcn15
+  digits:  [6 7 5 4 1 5]
+  value:   [6 ... 5] --> 65
+  41239 + 65 = 41304
+
+
+LINE: qdnjmcxtfgpk6eight
+  qdnjmcxtfgpk6 8 
+  rewrite: qdnjmcxtfgpk68
+  digits:  [6 8]
+  value:   [6 ... 8] --> 68
+  41304 + 68 = 41372
+
+
+LINE: three24two7threetwoprztmh
+   3 24two7threetwoprztmh
+  324 2 7threetwoprztmh
+  32427 3 twoprztmh
+  324273 2 prztmh
+  rewrite: 3242732prztmh
+  digits:  [3 2 4 2 7 3 2]
+  value:   [3 ... 2] --> 32
+  41372 + 32 = 41404
+
+
+LINE: foursevencfzcdzksevengh6nsnine3
+   4 sevencfzcdzksevengh6nsnine3
+  4 7 cfzcdzksevengh6nsnine3
+  47cfzcdzk 7 gh6nsnine3
+  47cfzcdzk7gh6ns 9 3
+  rewrite: 47cfzcdzk7gh6ns93
+  digits:  [4 7 7 6 9 3]
+  value:   [4 ... 3] --> 43
+  41404 + 43 = 41447
+
+
+LINE: sixseven4lmqshqzmk
+   6 seven4lmqshqzmk
+  6 7 4lmqshqzmk
+  rewrite: 674lmqshqzmk
+  digits:  [6 7 4]
+  value:   [6 ... 4] --> 64
+  41447 + 64 = 41511
+
+
+LINE: xhrjx9eight
+  xhrjx9 8 
+  rewrite: xhrjx98
+  digits:  [9 8]
+  value:   [9 ... 8] --> 98
+  41511 + 98 = 41609
+
+
+LINE: twodmcxbsn924
+   2 dmcxbsn924
+  rewrite: 2dmcxbsn924
+  digits:  [2 9 2 4]
+  value:   [2 ... 4] --> 24
+  41609 + 24 = 41633
+
+
+LINE: 2zmcjlhqj4sevensjlnjjx4
+  2zmcjlhqj4 7 sjlnjjx4
+  rewrite: 2zmcjlhqj47sjlnjjx4
+  digits:  [2 4 7 4]
+  value:   [2 ... 4] --> 24
+  41633 + 24 = 41657
+
+
+LINE: pctwolxqvjsjdlfx8eighteightsevenhq
+  pc 2 lxqvjsjdlfx8eighteightsevenhq
+  pc2lxqvjsjdlfx8 8 eightsevenhq
+  pc2lxqvjsjdlfx88 8 sevenhq
+  pc2lxqvjsjdlfx888 7 hq
+  rewrite: pc2lxqvjsjdlfx8887hq
+  digits:  [2 8 8 8 7]
+  value:   [2 ... 7] --> 27
+  41657 + 27 = 41684
+
+
+LINE: sgzzd5five87threershbhmqlbm9eightwoq
+  sgzzd5 5 87threershbhmqlbm9eightwoq
+  sgzzd5587 3 rshbhmqlbm9eightwoq
+  sgzzd55873rshbhmqlbm9 8 woq
+  rewrite: sgzzd55873rshbhmqlbm98woq
+  digits:  [5 5 8 7 3 9 8]
+  value:   [5 ... 8] --> 58
+  41684 + 58 = 41742
+
+
+LINE: tlzmzt6jg7fiveeightgc
+  tlzmzt6jg7 5 eightgc
+  tlzmzt6jg75 8 gc
+  rewrite: tlzmzt6jg758gc
+  digits:  [6 7 5 8]
+  value:   [6 ... 8] --> 68
+  41742 + 68 = 41810
+
+
+LINE: svlthlbrfive2fourdbfp9trvbjthvvthreetwo
+  svlthlbr 5 2fourdbfp9trvbjthvvthreetwo
+  svlthlbr52 4 dbfp9trvbjthvvthreetwo
+  svlthlbr524dbfp9trvbjthvv 3 two
+  svlthlbr524dbfp9trvbjthvv3 2 
+  rewrite: svlthlbr524dbfp9trvbjthvv32
+  digits:  [5 2 4 9 3 2]
+  value:   [5 ... 2] --> 52
+  41810 + 52 = 41862
+
+
+LINE: nlqnmffxlsblnncqgcgsnkt7fjhfksvfxeight
+  nlqnmffxlsblnncqgcgsnkt7fjhfksvfx 8 
+  rewrite: nlqnmffxlsblnncqgcgsnkt7fjhfksvfx8
+  digits:  [7 8]
+  value:   [7 ... 8] --> 78
+  41862 + 78 = 41940
+
+
+LINE: hljgks3hfour5lzzpzpjpgdhzflrnqpfzjsfc
+  hljgks3h 4 5lzzpzpjpgdhzflrnqpfzjsfc
+  rewrite: hljgks3h45lzzpzpjpgdhzflrnqpfzjsfc
+  digits:  [3 4 5]
+  value:   [3 ... 5] --> 35
+  41940 + 35 = 41975
+
+
+LINE: 9eightfive
+  9 8 five
+  98 5 
+  rewrite: 985
+  digits:  [9 8 5]
+  value:   [9 ... 5] --> 95
+  41975 + 95 = 42070
+
+
+LINE: eightsb215qkphjjdrlg3
+   8 sb215qkphjjdrlg3
+  rewrite: 8sb215qkphjjdrlg3
+  digits:  [8 2 1 5 3]
+  value:   [8 ... 3] --> 83
+  42070 + 83 = 42153
+
+
+LINE: four7three
+   4 7three
+  47 3 
+  rewrite: 473
+  digits:  [4 7 3]
+  value:   [4 ... 3] --> 43
+  42153 + 43 = 42196
+
+
+LINE: nine2eightrqh21
+   9 2eightrqh21
+  92 8 rqh21
+  rewrite: 928rqh21
+  digits:  [9 2 8 2 1]
+  value:   [9 ... 1] --> 91
+  42196 + 91 = 42287
+
+
+LINE: tnine8txbm121three
+  t 9 8txbm121three
+  t98txbm121 3 
+  rewrite: t98txbm1213
+  digits:  [9 8 1 2 1 3]
+  value:   [9 ... 3] --> 93
+  42287 + 93 = 42380
+
+
+LINE: two1h495skpvbzsixnine
+   2 1h495skpvbzsixnine
+  21h495skpvbz 6 nine
+  21h495skpvbz6 9 
+  rewrite: 21h495skpvbz69
+  digits:  [2 1 4 9 5 6 9]
+  value:   [2 ... 9] --> 29
+  42380 + 29 = 42409
+
+
+LINE: 73five61pzlscqn2nine
+  73 5 61pzlscqn2nine
+  73561pzlscqn2 9 
+  rewrite: 73561pzlscqn29
+  digits:  [7 3 5 6 1 2 9]
+  value:   [7 ... 9] --> 79
+  42409 + 79 = 42488
+
+
+LINE: threeeight3ffnjgk2mprkn9ninebqlvkl
+   3 eight3ffnjgk2mprkn9ninebqlvkl
+  3 8 3ffnjgk2mprkn9ninebqlvkl
+  383ffnjgk2mprkn9 9 bqlvkl
+  rewrite: 383ffnjgk2mprkn99bqlvkl
+  digits:  [3 8 3 2 9 9]
+  value:   [3 ... 9] --> 39
+  42488 + 39 = 42527
+
+
+LINE: 58four
+  58 4 
+  rewrite: 584
+  digits:  [5 8 4]
+  value:   [5 ... 4] --> 54
+  42527 + 54 = 42581
+
+
+LINE: 4pzb35twotldtcq363
+  4pzb35 2 tldtcq363
+  rewrite: 4pzb352tldtcq363
+  digits:  [4 3 5 2 3 6 3]
+  value:   [4 ... 3] --> 43
+  42581 + 43 = 42624
+
+
+LINE: jnzdhlzx4fvsjsffsxn45seventhree2
+  jnzdhlzx4fvsjsffsxn45 7 three2
+  jnzdhlzx4fvsjsffsxn457 3 2
+  rewrite: jnzdhlzx4fvsjsffsxn45732
+  digits:  [4 4 5 7 3 2]
+  value:   [4 ... 2] --> 42
+  42624 + 42 = 42666
+
+
+LINE: nsfrqntjhpq4qstwotwoonehs
+  nsfrqntjhpq4qs 2 twoonehs
+  nsfrqntjhpq4qs2 2 onehs
+  nsfrqntjhpq4qs22 1 hs
+  rewrite: nsfrqntjhpq4qs221hs
+  digits:  [4 2 2 1]
+  value:   [4 ... 1] --> 41
+  42666 + 41 = 42707
+
+
+LINE: fiveonethree5rnmlz
+   5 onethree5rnmlz
+  5 1 three5rnmlz
+  51 3 5rnmlz
+  rewrite: 5135rnmlz
+  digits:  [5 1 3 5]
+  value:   [5 ... 5] --> 55
+  42707 + 55 = 42762
+
+
+LINE: seven18jjcdcg
+   7 18jjcdcg
+  rewrite: 718jjcdcg
+  digits:  [7 1 8]
+  value:   [7 ... 8] --> 78
+  42762 + 78 = 42840
+
+
+LINE: threesevenqqbrkbpzeightninethreefive1three
+   3 sevenqqbrkbpzeightninethreefive1three
+  3 7 qqbrkbpzeightninethreefive1three
+  37qqbrkbpz 8 ninethreefive1three
+  37qqbrkbpz8 9 threefive1three
+  37qqbrkbpz89 3 five1three
+  37qqbrkbpz893 5 1three
+  37qqbrkbpz89351 3 
+  rewrite: 37qqbrkbpz893513
+  digits:  [3 7 8 9 3 5 1 3]
+  value:   [3 ... 3] --> 33
+  42840 + 33 = 42873
+
+
+LINE: eight98
+   8 98
+  rewrite: 898
+  digits:  [8 9 8]
+  value:   [8 ... 8] --> 88
+  42873 + 88 = 42961
+
+
+LINE: eightonetzggcjvpml2twoxlznrn
+   8 onetzggcjvpml2twoxlznrn
+  8 1 tzggcjvpml2twoxlznrn
+  81tzggcjvpml2 2 xlznrn
+  rewrite: 81tzggcjvpml22xlznrn
+  digits:  [8 1 2 2]
+  value:   [8 ... 2] --> 82
+  42961 + 82 = 43043
+
+
+LINE: 4dmndcrsc
+  rewrite: 4dmndcrsc
+  digits:  [4]
+  value:   [4 ... 4] --> 44
+  43043 + 44 = 43087
+
+
+LINE: 9oneseventb
+  9 1 seventb
+  91 7 tb
+  rewrite: 917tb
+  digits:  [9 1 7]
+  value:   [9 ... 7] --> 97
+  43087 + 97 = 43184
+
+
+LINE: 5pkf8zzmvfive6
+  5pkf8zzmv 5 6
+  rewrite: 5pkf8zzmv56
+  digits:  [5 8 5 6]
+  value:   [5 ... 6] --> 56
+  43184 + 56 = 43240
+
+
+LINE: rdlnxcx3nineqjpldqtwodkctfnn
+  rdlnxcx3 9 qjpldqtwodkctfnn
+  rdlnxcx39qjpldq 2 dkctfnn
+  rewrite: rdlnxcx39qjpldq2dkctfnn
+  digits:  [3 9 2]
+  value:   [3 ... 2] --> 32
+  43240 + 32 = 43272
+
+
+LINE: 8mpmgzgshszbcnrpzcszltd
+  rewrite: 8mpmgzgshszbcnrpzcszltd
+  digits:  [8]
+  value:   [8 ... 8] --> 88
+  43272 + 88 = 43360
+
+
+LINE: 2jvkc3
+  rewrite: 2jvkc3
+  digits:  [2 3]
+  value:   [2 ... 3] --> 23
+  43360 + 23 = 43383
+
+
+LINE: rc6clvgbz6bbtlzeight5
+  rc6clvgbz6bbtlz 8 5
+  rewrite: rc6clvgbz6bbtlz85
+  digits:  [6 6 8 5]
+  value:   [6 ... 5] --> 65
+  43383 + 65 = 43448
+
+
+LINE: frnhbsgzpfeightqkt2ninethreetcnklsctc
+  frnhbsgzpf 8 qkt2ninethreetcnklsctc
+  frnhbsgzpf8qkt2 9 threetcnklsctc
+  frnhbsgzpf8qkt29 3 tcnklsctc
+  rewrite: frnhbsgzpf8qkt293tcnklsctc
+  digits:  [8 2 9 3]
+  value:   [8 ... 3] --> 83
+  43448 + 83 = 43531
+
+
+LINE: threefivevgzhh2
+   3 fivevgzhh2
+  3 5 vgzhh2
+  rewrite: 35vgzhh2
+  digits:  [3 5 2]
+  value:   [3 ... 2] --> 32
+  43531 + 32 = 43563
+
+
+LINE: tjoneightone9three9dkbnh
+  tj 1 ightone9three9dkbnh
+  tj1ight 1 9three9dkbnh
+  tj1ight19 3 9dkbnh
+  rewrite: tj1ight1939dkbnh
+  digits:  [1 1 9 3 9]
+  value:   [1 ... 9] --> 19
+  43563 + 19 = 43582
+
+
+LINE: hv7hpx
+  rewrite: hv7hpx
+  digits:  [7]
+  value:   [7 ... 7] --> 77
+  43582 + 77 = 43659
+
+
+LINE: 7onetwozrl7fbxhqgrbtoneightpzv
+  7 1 twozrl7fbxhqgrbtoneightpzv
+  71 2 zrl7fbxhqgrbtoneightpzv
+  712zrl7fbxhqgrbt 1 ightpzv
+  rewrite: 712zrl7fbxhqgrbt1ightpzv
+  digits:  [7 1 2 7 1]
+  value:   [7 ... 1] --> 71
+  43659 + 71 = 43730
+
+
+LINE: 3mtdnphsvtrrfeight9sevenfivethreedjcdxg
+  3mtdnphsvtrrf 8 9sevenfivethreedjcdxg
+  3mtdnphsvtrrf89 7 fivethreedjcdxg
+  3mtdnphsvtrrf897 5 threedjcdxg
+  3mtdnphsvtrrf8975 3 djcdxg
+  rewrite: 3mtdnphsvtrrf89753djcdxg
+  digits:  [3 8 9 7 5 3]
+  value:   [3 ... 3] --> 33
+  43730 + 33 = 43763
+
+
+LINE: pqjcfjsix4tsxcthzbqzhklqncvb
+  pqjcfj 6 4tsxcthzbqzhklqncvb
+  rewrite: pqjcfj64tsxcthzbqzhklqncvb
+  digits:  [6 4]
+  value:   [6 ... 4] --> 64
+  43763 + 64 = 43827
+
+
+LINE: fgrzvnnk3cfrxp6tsb1
+  rewrite: fgrzvnnk3cfrxp6tsb1
+  digits:  [3 6 1]
+  value:   [3 ... 1] --> 31
+  43827 + 31 = 43858
+
+
+LINE: czfdsjffqqrcgffx7seven
+  czfdsjffqqrcgffx7 7 
+  rewrite: czfdsjffqqrcgffx77
+  digits:  [7 7]
+  value:   [7 ... 7] --> 77
+  43858 + 77 = 43935
+
+
+LINE: 56jdtwo
+  56jd 2 
+  rewrite: 56jd2
+  digits:  [5 6 2]
+  value:   [5 ... 2] --> 52
+  43935 + 52 = 43987
+
+
+LINE: sixxvjjmpcttwo7ninechbzv
+   6 xvjjmpcttwo7ninechbzv
+  6xvjjmpct 2 7ninechbzv
+  6xvjjmpct27 9 chbzv
+  rewrite: 6xvjjmpct279chbzv
+  digits:  [6 2 7 9]
+  value:   [6 ... 9] --> 69
+  43987 + 69 = 44056
+
+
+LINE: 8qckktnslsvrmpctknine91
+  8qckktnslsvrmpctk 9 91
+  rewrite: 8qckktnslsvrmpctk991
+  digits:  [8 9 9 1]
+  value:   [8 ... 1] --> 81
+  44056 + 81 = 44137
+
+
+LINE: 4two9fivefshxvdfbdr
+  4 2 9fivefshxvdfbdr
+  429 5 fshxvdfbdr
+  rewrite: 4295fshxvdfbdr
+  digits:  [4 2 9 5]
+  value:   [4 ... 5] --> 45
+  44137 + 45 = 44182
+
+
+LINE: 7sixtwo4rjspztpx
+  7 6 two4rjspztpx
+  76 2 4rjspztpx
+  rewrite: 7624rjspztpx
+  digits:  [7 6 2 4]
+  value:   [7 ... 4] --> 74
+  44182 + 74 = 44256
+
+
+LINE: 8onethreestjxv
+  8 1 threestjxv
+  81 3 stjxv
+  rewrite: 813stjxv
+  digits:  [8 1 3]
+  value:   [8 ... 3] --> 83
+  44256 + 83 = 44339
+
+
+LINE: 3lvhvlnthreeonetwo323
+  3lvhvln 3 onetwo323
+  3lvhvln3 1 two323
+  3lvhvln31 2 323
+  rewrite: 3lvhvln312323
+  digits:  [3 3 1 2 3 2 3]
+  value:   [3 ... 3] --> 33
+  44339 + 33 = 44372
+
+
+LINE: hxjcbtrtcdgvg22ztn6xxnsdbffour
+  hxjcbtrtcdgvg22ztn6xxnsdbf 4 
+  rewrite: hxjcbtrtcdgvg22ztn6xxnsdbf4
+  digits:  [2 2 6 4]
+  value:   [2 ... 4] --> 24
+  44372 + 24 = 44396
+
+
+LINE: twolzone34crrcpcdb4
+   2 lzone34crrcpcdb4
+  2lz 1 34crrcpcdb4
+  rewrite: 2lz134crrcpcdb4
+  digits:  [2 1 3 4 4]
+  value:   [2 ... 4] --> 24
+  44396 + 24 = 44420
+
+
+LINE: fourjhghcseven9gtmxrpbpxthreehkpfour5
+   4 jhghcseven9gtmxrpbpxthreehkpfour5
+  4jhghc 7 9gtmxrpbpxthreehkpfour5
+  4jhghc79gtmxrpbpx 3 hkpfour5
+  4jhghc79gtmxrpbpx3hkp 4 5
+  rewrite: 4jhghc79gtmxrpbpx3hkp45
+  digits:  [4 7 9 3 4 5]
+  value:   [4 ... 5] --> 45
+  44420 + 45 = 44465
+
+
+LINE: qdrxfdlqtf4342threemlpb4d
+  qdrxfdlqtf4342 3 mlpb4d
+  rewrite: qdrxfdlqtf43423mlpb4d
+  digits:  [4 3 4 2 3 4]
+  value:   [4 ... 4] --> 44
+  44465 + 44 = 44509
+
+
+LINE: nine6nfnrgd52jnqfourbzkgbxlvlmr
+   9 6nfnrgd52jnqfourbzkgbxlvlmr
+  96nfnrgd52jnq 4 bzkgbxlvlmr
+  rewrite: 96nfnrgd52jnq4bzkgbxlvlmr
+  digits:  [9 6 5 2 4]
+  value:   [9 ... 4] --> 94
+  44509 + 94 = 44603
+
+
+LINE: sevensixonem5two4
+   7 sixonem5two4
+  7 6 onem5two4
+  76 1 m5two4
+  761m5 2 4
+  rewrite: 761m524
+  digits:  [7 6 1 5 2 4]
+  value:   [7 ... 4] --> 74
+  44603 + 74 = 44677
+
+
+LINE: 64one1nmxbmsq
+  64 1 1nmxbmsq
+  rewrite: 6411nmxbmsq
+  digits:  [6 4 1 1]
+  value:   [6 ... 1] --> 61
+  44677 + 61 = 44738
+
+
+LINE: fiveftmrkpmjthreekvsfqjchvf9two
+   5 ftmrkpmjthreekvsfqjchvf9two
+  5ftmrkpmj 3 kvsfqjchvf9two
+  5ftmrkpmj3kvsfqjchvf9 2 
+  rewrite: 5ftmrkpmj3kvsfqjchvf92
+  digits:  [5 3 9 2]
+  value:   [5 ... 2] --> 52
+  44738 + 52 = 44790
+
+
+LINE: ninepffbfjhjtg4grnzztqnfiveseven
+   9 pffbfjhjtg4grnzztqnfiveseven
+  9pffbfjhjtg4grnzztqn 5 seven
+  9pffbfjhjtg4grnzztqn5 7 
+  rewrite: 9pffbfjhjtg4grnzztqn57
+  digits:  [9 4 5 7]
+  value:   [9 ... 7] --> 97
+  44790 + 97 = 44887
+
+
+LINE: 1gkvsgsrrxvdfdtsrlgfthreedsrprjft3
+  1gkvsgsrrxvdfdtsrlgf 3 dsrprjft3
+  rewrite: 1gkvsgsrrxvdfdtsrlgf3dsrprjft3
+  digits:  [1 3 3]
+  value:   [1 ... 3] --> 13
+  44887 + 13 = 44900
+
+
+LINE: foursixsevenninepxllctr4khsfxfvnine
+   4 sixsevenninepxllctr4khsfxfvnine
+  4 6 sevenninepxllctr4khsfxfvnine
+  46 7 ninepxllctr4khsfxfvnine
+  467 9 pxllctr4khsfxfvnine
+  4679pxllctr4khsfxfv 9 
+  rewrite: 4679pxllctr4khsfxfv9
+  digits:  [4 6 7 9 4 9]
+  value:   [4 ... 9] --> 49
+  44900 + 49 = 44949
+
+
+LINE: onebfpbqmpmm6
+   1 bfpbqmpmm6
+  rewrite: 1bfpbqmpmm6
+  digits:  [1 6]
+  value:   [1 ... 6] --> 16
+  44949 + 16 = 44965
+
+
+LINE: cgkblkxtr2thqsixsixthree
+  cgkblkxtr2thq 6 sixthree
+  cgkblkxtr2thq6 6 three
+  cgkblkxtr2thq66 3 
+  rewrite: cgkblkxtr2thq663
+  digits:  [2 6 6 3]
+  value:   [2 ... 3] --> 23
+  44965 + 23 = 44988
+
+
+LINE: qqfkvsntgf687
+  rewrite: qqfkvsntgf687
+  digits:  [6 8 7]
+  value:   [6 ... 7] --> 67
+  44988 + 67 = 45055
+
+
+LINE: fournine2twotlvqhlrtbmckqlljhssevenghhttkvf2
+   4 nine2twotlvqhlrtbmckqlljhssevenghhttkvf2
+  4 9 2twotlvqhlrtbmckqlljhssevenghhttkvf2
+  492 2 tlvqhlrtbmckqlljhssevenghhttkvf2
+  4922tlvqhlrtbmckqlljhs 7 ghhttkvf2
+  rewrite: 4922tlvqhlrtbmckqlljhs7ghhttkvf2
+  digits:  [4 9 2 2 7 2]
+  value:   [4 ... 2] --> 42
+  45055 + 42 = 45097
+
+
+LINE: ninenrvhhleightkxbzcmx2sevenvzsncp
+   9 nrvhhleightkxbzcmx2sevenvzsncp
+  9nrvhhl 8 kxbzcmx2sevenvzsncp
+  9nrvhhl8kxbzcmx2 7 vzsncp
+  rewrite: 9nrvhhl8kxbzcmx27vzsncp
+  digits:  [9 8 2 7]
+  value:   [9 ... 7] --> 97
+  45097 + 97 = 45194
+
+
+LINE: eight766sixoneseven
+   8 766sixoneseven
+  8766 6 oneseven
+  87666 1 seven
+  876661 7 
+  rewrite: 8766617
+  digits:  [8 7 6 6 6 1 7]
+  value:   [8 ... 7] --> 87
+  45194 + 87 = 45281
+
+
+LINE: 8eight61gsxklbp
+  8 8 61gsxklbp
+  rewrite: 8861gsxklbp
+  digits:  [8 8 6 1]
+  value:   [8 ... 1] --> 81
+  45281 + 81 = 45362
+
+
+LINE: 2ptzkzxsnsix9one
+  2ptzkzxsn 6 9one
+  2ptzkzxsn69 1 
+  rewrite: 2ptzkzxsn691
+  digits:  [2 6 9 1]
+  value:   [2 ... 1] --> 21
+  45362 + 21 = 45383
+
+
+LINE: six9vfourseven5brmclpeight
+   6 9vfourseven5brmclpeight
+  69v 4 seven5brmclpeight
+  69v4 7 5brmclpeight
+  69v475brmclp 8 
+  rewrite: 69v475brmclp8
+  digits:  [6 9 4 7 5 8]
+  value:   [6 ... 8] --> 68
+  45383 + 68 = 45451
+
+
+LINE: 821
+  rewrite: 821
+  digits:  [8 2 1]
+  value:   [8 ... 1] --> 81
+  45451 + 81 = 45532
+
+
+LINE: one6hcsxp5njsthreesevenfive
+   1 6hcsxp5njsthreesevenfive
+  16hcsxp5njs 3 sevenfive
+  16hcsxp5njs3 7 five
+  16hcsxp5njs37 5 
+  rewrite: 16hcsxp5njs375
+  digits:  [1 6 5 3 7 5]
+  value:   [1 ... 5] --> 15
+  45532 + 15 = 45547
+
+
+LINE: pcf2
+  rewrite: pcf2
+  digits:  [2]
+  value:   [2 ... 2] --> 22
+  45547 + 22 = 45569
+
+
+LINE: eightgxsjc456
+   8 gxsjc456
+  rewrite: 8gxsjc456
+  digits:  [8 4 5 6]
+  value:   [8 ... 6] --> 86
+  45569 + 86 = 45655
+
+
+LINE: threeseven57htjtqxbbdh
+   3 seven57htjtqxbbdh
+  3 7 57htjtqxbbdh
+  rewrite: 3757htjtqxbbdh
+  digits:  [3 7 5 7]
+  value:   [3 ... 7] --> 37
+  45655 + 37 = 45692
+
+
+LINE: 6twomsbq
+  6 2 msbq
+  rewrite: 62msbq
+  digits:  [6 2]
+  value:   [6 ... 2] --> 62
+  45692 + 62 = 45754
+
+
+LINE: gzknkt1twopccfh
+  gzknkt1 2 pccfh
+  rewrite: gzknkt12pccfh
+  digits:  [1 2]
+  value:   [1 ... 2] --> 12
+  45754 + 12 = 45766
+
+
+LINE: 7vpzmnt
+  rewrite: 7vpzmnt
+  digits:  [7]
+  value:   [7 ... 7] --> 77
+  45766 + 77 = 45843
+
+
+LINE: 8fiveqfzgbnxgnh
+  8 5 qfzgbnxgnh
+  rewrite: 85qfzgbnxgnh
+  digits:  [8 5]
+  value:   [8 ... 5] --> 85
+  45843 + 85 = 45928
+
+
+LINE: onepvtddfzn2three
+   1 pvtddfzn2three
+  1pvtddfzn2 3 
+  rewrite: 1pvtddfzn23
+  digits:  [1 2 3]
+  value:   [1 ... 3] --> 13
+  45928 + 13 = 45941
+
+
+LINE: 5ninesix85
+  5 9 six85
+  59 6 85
+  rewrite: 59685
+  digits:  [5 9 6 8 5]
+  value:   [5 ... 5] --> 55
+  45941 + 55 = 45996
+
+
+LINE: onejkgppztbmrbfqqrjzp24one
+   1 jkgppztbmrbfqqrjzp24one
+  1jkgppztbmrbfqqrjzp24 1 
+  rewrite: 1jkgppztbmrbfqqrjzp241
+  digits:  [1 2 4 1]
+  value:   [1 ... 1] --> 11
+  45996 + 11 = 46007
+
+
+LINE: k3six817dvvjgqlnkd
+  k3 6 817dvvjgqlnkd
+  rewrite: k36817dvvjgqlnkd
+  digits:  [3 6 8 1 7]
+  value:   [3 ... 7] --> 37
+  46007 + 37 = 46044
+
+
+LINE: zzvkseven9sixqxr4
+  zzvk 7 9sixqxr4
+  zzvk79 6 qxr4
+  rewrite: zzvk796qxr4
+  digits:  [7 9 6 4]
+  value:   [7 ... 4] --> 74
+  46044 + 74 = 46118
+
+
+LINE: lpgdnglg3threemtltwo
+  lpgdnglg3 3 mtltwo
+  lpgdnglg33mtl 2 
+  rewrite: lpgdnglg33mtl2
+  digits:  [3 3 2]
+  value:   [3 ... 2] --> 32
+  46118 + 32 = 46150
+
+
+LINE: three9qfour8rxlzjllnskeight2t
+   3 9qfour8rxlzjllnskeight2t
+  39q 4 8rxlzjllnskeight2t
+  39q48rxlzjllnsk 8 2t
+  rewrite: 39q48rxlzjllnsk82t
+  digits:  [3 9 4 8 8 2]
+  value:   [3 ... 2] --> 32
+  46150 + 32 = 46182
+
+
+LINE: sfxgmjzqs2cbqtwo5
+  sfxgmjzqs2cbq 2 5
+  rewrite: sfxgmjzqs2cbq25
+  digits:  [2 2 5]
+  value:   [2 ... 5] --> 25
+  46182 + 25 = 46207
+
+
+LINE: one36
+   1 36
+  rewrite: 136
+  digits:  [1 3 6]
+  value:   [1 ... 6] --> 16
+  46207 + 16 = 46223
+
+
+LINE: 2tdknkgfhpj1nine9rtsjrjdlsix
+  2tdknkgfhpj1 9 9rtsjrjdlsix
+  2tdknkgfhpj199rtsjrjdl 6 
+  rewrite: 2tdknkgfhpj199rtsjrjdl6
+  digits:  [2 1 9 9 6]
+  value:   [2 ... 6] --> 26
+  46223 + 26 = 46249
+
+
+LINE: 59jvsoneninethree
+  59jvs 1 ninethree
+  59jvs1 9 three
+  59jvs19 3 
+  rewrite: 59jvs193
+  digits:  [5 9 1 9 3]
+  value:   [5 ... 3] --> 53
+  46249 + 53 = 46302
+
+
+LINE: fzjvgpsqrsninenlpxzbone6
+  fzjvgpsqrs 9 nlpxzbone6
+  fzjvgpsqrs9nlpxzb 1 6
+  rewrite: fzjvgpsqrs9nlpxzb16
+  digits:  [9 1 6]
+  value:   [9 ... 6] --> 96
+  46302 + 96 = 46398
+
+
+LINE: fourkllsixbfive6fourone4
+   4 kllsixbfive6fourone4
+  4kll 6 bfive6fourone4
+  4kll6b 5 6fourone4
+  4kll6b56 4 one4
+  4kll6b564 1 4
+  rewrite: 4kll6b56414
+  digits:  [4 6 5 6 4 1 4]
+  value:   [4 ... 4] --> 44
+  46398 + 44 = 46442
+
+
+LINE: seven52zchsttccn3three7
+   7 52zchsttccn3three7
+  752zchsttccn3 3 7
+  rewrite: 752zchsttccn337
+  digits:  [7 5 2 3 3 7]
+  value:   [7 ... 7] --> 77
+  46442 + 77 = 46519
+
+
+LINE: 6ncvnflrdqbfourx64nine
+  6ncvnflrdqb 4 x64nine
+  6ncvnflrdqb4x64 9 
+  rewrite: 6ncvnflrdqb4x649
+  digits:  [6 4 6 4 9]
+  value:   [6 ... 9] --> 69
+  46519 + 69 = 46588
+
+
+LINE: 2vrhdchccppdseven4qkdghrjrxbdlfplc6
+  2vrhdchccppd 7 4qkdghrjrxbdlfplc6
+  rewrite: 2vrhdchccppd74qkdghrjrxbdlfplc6
+  digits:  [2 7 4 6]
+  value:   [2 ... 6] --> 26
+  46588 + 26 = 46614
+
+
+LINE: 5cbdfvxxtwoone38dmjngzqlf
+  5cbdfvxx 2 one38dmjngzqlf
+  5cbdfvxx2 1 38dmjngzqlf
+  rewrite: 5cbdfvxx2138dmjngzqlf
+  digits:  [5 2 1 3 8]
+  value:   [5 ... 8] --> 58
+  46614 + 58 = 46672
+
+
+LINE: fsqgt6jqdqdj7cfdzrfd
+  rewrite: fsqgt6jqdqdj7cfdzrfd
+  digits:  [6 7]
+  value:   [6 ... 7] --> 67
+  46672 + 67 = 46739
+
+
+LINE: 9zqfiveznnmghtrtwozqbeight
+  9zq 5 znnmghtrtwozqbeight
+  9zq5znnmghtr 2 zqbeight
+  9zq5znnmghtr2zqb 8 
+  rewrite: 9zq5znnmghtr2zqb8
+  digits:  [9 5 2 8]
+  value:   [9 ... 8] --> 98
+  46739 + 98 = 46837
+
+
+LINE: twoninexmxnpbvtkn1tjzdsxjvbd
+   2 ninexmxnpbvtkn1tjzdsxjvbd
+  2 9 xmxnpbvtkn1tjzdsxjvbd
+  rewrite: 29xmxnpbvtkn1tjzdsxjvbd
+  digits:  [2 9 1]
+  value:   [2 ... 1] --> 21
+  46837 + 21 = 46858
+
+
+LINE: 6fournine
+  6 4 nine
+  64 9 
+  rewrite: 649
+  digits:  [6 4 9]
+  value:   [6 ... 9] --> 69
+  46858 + 69 = 46927
+
+
+LINE: 15twotwo35kbbpcxbsmb9five
+  15 2 two35kbbpcxbsmb9five
+  152 2 35kbbpcxbsmb9five
+  152235kbbpcxbsmb9 5 
+  rewrite: 152235kbbpcxbsmb95
+  digits:  [1 5 2 2 3 5 9 5]
+  value:   [1 ... 5] --> 15
+  46927 + 15 = 46942
+
+
+LINE: 1two29dppbcqkxgq
+  1 2 29dppbcqkxgq
+  rewrite: 1229dppbcqkxgq
+  digits:  [1 2 2 9]
+  value:   [1 ... 9] --> 19
+  46942 + 19 = 46961
+
+
+LINE: six7sixpqqmdjlcgzrrnvkqfqmllqlbmfnvlnzjcs8
+   6 7sixpqqmdjlcgzrrnvkqfqmllqlbmfnvlnzjcs8
+  67 6 pqqmdjlcgzrrnvkqfqmllqlbmfnvlnzjcs8
+  rewrite: 676pqqmdjlcgzrrnvkqfqmllqlbmfnvlnzjcs8
+  digits:  [6 7 6 8]
+  value:   [6 ... 8] --> 68
+  46961 + 68 = 47029
+
+
+LINE: jhtgltv2qzhnkm2three8nine
+  jhtgltv2qzhnkm2 3 8nine
+  jhtgltv2qzhnkm238 9 
+  rewrite: jhtgltv2qzhnkm2389
+  digits:  [2 2 3 8 9]
+  value:   [2 ... 9] --> 29
+  47029 + 29 = 47058
+
+
+LINE: mrttwonetjrt2eightoneqqgvllgpqqbpd
+  mrt 2 netjrt2eightoneqqgvllgpqqbpd
+  mrt2netjrt2 8 oneqqgvllgpqqbpd
+  mrt2netjrt28 1 qqgvllgpqqbpd
+  rewrite: mrt2netjrt281qqgvllgpqqbpd
+  digits:  [2 2 8 1]
+  value:   [2 ... 1] --> 21
+  47058 + 21 = 47079
+
+
+LINE: hhtnb72
+  rewrite: hhtnb72
+  digits:  [7 2]
+  value:   [7 ... 2] --> 72
+  47079 + 72 = 47151
+
+
+LINE: sdzhtjmnkdtpfsfnsnk7rtwo
+  sdzhtjmnkdtpfsfnsnk7r 2 
+  rewrite: sdzhtjmnkdtpfsfnsnk7r2
+  digits:  [7 2]
+  value:   [7 ... 2] --> 72
+  47151 + 72 = 47223
+
+
+LINE: 3sixsrqsjsts643five
+  3 6 srqsjsts643five
+  36srqsjsts643 5 
+  rewrite: 36srqsjsts6435
+  digits:  [3 6 6 4 3 5]
+  value:   [3 ... 5] --> 35
+  47223 + 35 = 47258
+
+
+LINE: 338twomnqtwo4cl2
+  338 2 mnqtwo4cl2
+  3382mnq 2 4cl2
+  rewrite: 3382mnq24cl2
+  digits:  [3 3 8 2 2 4 2]
+  value:   [3 ... 2] --> 32
+  47258 + 32 = 47290
+
+
+LINE: hgggrn2kvgkvrhngxx2xzmqsdpzbsxfqhg
+  rewrite: hgggrn2kvgkvrhngxx2xzmqsdpzbsxfqhg
+  digits:  [2 2]
+  value:   [2 ... 2] --> 22
+  47290 + 22 = 47312
+
+
+LINE: hctwonefivenine4tnsixsfxlvppm17fvq
+  hc 2 nefivenine4tnsixsfxlvppm17fvq
+  hc2ne 5 nine4tnsixsfxlvppm17fvq
+  hc2ne5 9 4tnsixsfxlvppm17fvq
+  hc2ne594tn 6 sfxlvppm17fvq
+  rewrite: hc2ne594tn6sfxlvppm17fvq
+  digits:  [2 5 9 4 6 1 7]
+  value:   [2 ... 7] --> 27
+  47312 + 27 = 47339
+
+
+LINE: six3blppkhpjtr
+   6 3blppkhpjtr
+  rewrite: 63blppkhpjtr
+  digits:  [6 3]
+  value:   [6 ... 3] --> 63
+  47339 + 63 = 47402
+
+
+LINE: trrxmdnhzsix47
+  trrxmdnhz 6 47
+  rewrite: trrxmdnhz647
+  digits:  [6 4 7]
+  value:   [6 ... 7] --> 67
+  47402 + 67 = 47469
+
+
+LINE: 5vsrhlvqpttwojczmeight
+  5vsrhlvqpt 2 jczmeight
+  5vsrhlvqpt2jczm 8 
+  rewrite: 5vsrhlvqpt2jczm8
+  digits:  [5 2 8]
+  value:   [5 ... 8] --> 58
+  47469 + 58 = 47527
+
+
+LINE: rzgrzbkk87nine
+  rzgrzbkk87 9 
+  rewrite: rzgrzbkk879
+  digits:  [8 7 9]
+  value:   [8 ... 9] --> 89
+  47527 + 89 = 47616
+
+
+LINE: trgfsq1ninefour
+  trgfsq1 9 four
+  trgfsq19 4 
+  rewrite: trgfsq194
+  digits:  [1 9 4]
+  value:   [1 ... 4] --> 14
+  47616 + 14 = 47630
+
+
+LINE: lxbvlbpjz4eightsix
+  lxbvlbpjz4 8 six
+  lxbvlbpjz48 6 
+  rewrite: lxbvlbpjz486
+  digits:  [4 8 6]
+  value:   [4 ... 6] --> 46
+  47630 + 46 = 47676
+
+
+LINE: 6zmmvchcgjqsrthkgc92
+  rewrite: 6zmmvchcgjqsrthkgc92
+  digits:  [6 9 2]
+  value:   [6 ... 2] --> 62
+  47676 + 62 = 47738
+
+
+LINE: 9thfthreemxlbt
+  9thf 3 mxlbt
+  rewrite: 9thf3mxlbt
+  digits:  [9 3]
+  value:   [9 ... 3] --> 93
+  47738 + 93 = 47831
+
+
+LINE: eightpkhgpcnc8eightfive1hdtcjjdcsevennpz
+   8 pkhgpcnc8eightfive1hdtcjjdcsevennpz
+  8pkhgpcnc8 8 five1hdtcjjdcsevennpz
+  8pkhgpcnc88 5 1hdtcjjdcsevennpz
+  8pkhgpcnc8851hdtcjjdc 7 npz
+  rewrite: 8pkhgpcnc8851hdtcjjdc7npz
+  digits:  [8 8 8 5 1 7]
+  value:   [8 ... 7] --> 87
+  47831 + 87 = 47918
+
+
+LINE: fivepprkhhtg9cdfqhsqfivejsrxzvknndnvq
+   5 pprkhhtg9cdfqhsqfivejsrxzvknndnvq
+  5pprkhhtg9cdfqhsq 5 jsrxzvknndnvq
+  rewrite: 5pprkhhtg9cdfqhsq5jsrxzvknndnvq
+  digits:  [5 9 5]
+  value:   [5 ... 5] --> 55
+  47918 + 55 = 47973
+
+
+LINE: qfvjvgeight2vbpjnftcttwonegn
+  qfvjvg 8 2vbpjnftcttwonegn
+  qfvjvg82vbpjnftct 2 negn
+  rewrite: qfvjvg82vbpjnftct2negn
+  digits:  [8 2 2]
+  value:   [8 ... 2] --> 82
+  47973 + 82 = 48055
+
+
+LINE: twolnln7pnlsxthfjpfivenine
+   2 lnln7pnlsxthfjpfivenine
+  2lnln7pnlsxthfjp 5 nine
+  2lnln7pnlsxthfjp5 9 
+  rewrite: 2lnln7pnlsxthfjp59
+  digits:  [2 7 5 9]
+  value:   [2 ... 9] --> 29
+  48055 + 29 = 48084
+
+
+LINE: hlseightwoone6qvcrsrttg1three7six
+  hls 8 woone6qvcrsrttg1three7six
+  hls8wo 1 6qvcrsrttg1three7six
+  hls8wo16qvcrsrttg1 3 7six
+  hls8wo16qvcrsrttg137 6 
+  rewrite: hls8wo16qvcrsrttg1376
+  digits:  [8 1 6 1 3 7 6]
+  value:   [8 ... 6] --> 86
+  48084 + 86 = 48170
+
+
+LINE: 8xcsllfrlx6one7eight
+  8xcsllfrlx6 1 7eight
+  8xcsllfrlx617 8 
+  rewrite: 8xcsllfrlx6178
+  digits:  [8 6 1 7 8]
+  value:   [8 ... 8] --> 88
+  48170 + 88 = 48258
+
+
+LINE: fiveshnmbngmrnineqjjlvdrfnsmpdnine4c
+   5 shnmbngmrnineqjjlvdrfnsmpdnine4c
+  5shnmbngmr 9 qjjlvdrfnsmpdnine4c
+  5shnmbngmr9qjjlvdrfnsmpd 9 4c
+  rewrite: 5shnmbngmr9qjjlvdrfnsmpd94c
+  digits:  [5 9 9 4]
+  value:   [5 ... 4] --> 54
+  48258 + 54 = 48312
+
+
+LINE: three2rcfcrgmrvsjzcflqkb6487four
+   3 2rcfcrgmrvsjzcflqkb6487four
+  32rcfcrgmrvsjzcflqkb6487 4 
+  rewrite: 32rcfcrgmrvsjzcflqkb64874
+  digits:  [3 2 6 4 8 7 4]
+  value:   [3 ... 4] --> 34
+  48312 + 34 = 48346
+
+
+LINE: threelnbxcrhglnine534
+   3 lnbxcrhglnine534
+  3lnbxcrhgl 9 534
+  rewrite: 3lnbxcrhgl9534
+  digits:  [3 9 5 3 4]
+  value:   [3 ... 4] --> 34
+  48346 + 34 = 48380
+
+
+LINE: 5flztcjjeight7sevenfb
+  5flztcjj 8 7sevenfb
+  5flztcjj87 7 fb
+  rewrite: 5flztcjj877fb
+  digits:  [5 8 7 7]
+  value:   [5 ... 7] --> 57
+  48380 + 57 = 48437
+
+
+LINE: qgbplxgtdkrqqsvjntwothreens48eight
+  qgbplxgtdkrqqsvjn 2 threens48eight
+  qgbplxgtdkrqqsvjn2 3 ns48eight
+  qgbplxgtdkrqqsvjn23ns48 8 
+  rewrite: qgbplxgtdkrqqsvjn23ns488
+  digits:  [2 3 4 8 8]
+  value:   [2 ... 8] --> 28
+  48437 + 28 = 48465
+
+
+LINE: five34rbbxpnkftntrt
+   5 34rbbxpnkftntrt
+  rewrite: 534rbbxpnkftntrt
+  digits:  [5 3 4]
+  value:   [5 ... 4] --> 54
+  48465 + 54 = 48519
+
+
+LINE: nmjtwonek4
+  nmj 2 nek4
+  rewrite: nmj2nek4
+  digits:  [2 4]
+  value:   [2 ... 4] --> 24
+  48519 + 24 = 48543
+
+
+LINE: cdnxnppnvthreexcsmbmcslh8ninefive1
+  cdnxnppnv 3 xcsmbmcslh8ninefive1
+  cdnxnppnv3xcsmbmcslh8 9 five1
+  cdnxnppnv3xcsmbmcslh89 5 1
+  rewrite: cdnxnppnv3xcsmbmcslh8951
+  digits:  [3 8 9 5 1]
+  value:   [3 ... 1] --> 31
+  48543 + 31 = 48574
+
+
+LINE: 6lttndjpcchdpgkfmmf
+  rewrite: 6lttndjpcchdpgkfmmf
+  digits:  [6]
+  value:   [6 ... 6] --> 66
+  48574 + 66 = 48640
+
+
+LINE: oneeight88
+   1 eight88
+  1 8 88
+  rewrite: 1888
+  digits:  [1 8 8 8]
+  value:   [1 ... 8] --> 18
+  48640 + 18 = 48658
+
+
+LINE: three4xctmtvvcp3sstxzfmgnine
+   3 4xctmtvvcp3sstxzfmgnine
+  34xctmtvvcp3sstxzfmg 9 
+  rewrite: 34xctmtvvcp3sstxzfmg9
+  digits:  [3 4 3 9]
+  value:   [3 ... 9] --> 39
+  48658 + 39 = 48697
+
+
+LINE: 6fivefivevnpnpknljlfp6lone3
+  6 5 fivevnpnpknljlfp6lone3
+  65 5 vnpnpknljlfp6lone3
+  655vnpnpknljlfp6l 1 3
+  rewrite: 655vnpnpknljlfp6l13
+  digits:  [6 5 5 6 1 3]
+  value:   [6 ... 3] --> 63
+  48697 + 63 = 48760
+
+
+LINE: one486twojknbmsqthree8
+   1 486twojknbmsqthree8
+  1486 2 jknbmsqthree8
+  14862jknbmsq 3 8
+  rewrite: 14862jknbmsq38
+  digits:  [1 4 8 6 2 3 8]
+  value:   [1 ... 8] --> 18
+  48760 + 18 = 48778
+
+
+LINE: fkxfourfourlpslcbbtk29
+  fkx 4 fourlpslcbbtk29
+  fkx4 4 lpslcbbtk29
+  rewrite: fkx44lpslcbbtk29
+  digits:  [4 4 2 9]
+  value:   [4 ... 9] --> 49
+  48778 + 49 = 48827
+
+
+LINE: 6seveneight19four
+  6 7 eight19four
+  67 8 19four
+  67819 4 
+  rewrite: 678194
+  digits:  [6 7 8 1 9 4]
+  value:   [6 ... 4] --> 64
+  48827 + 64 = 48891
+
+
+LINE: fvcseven8hzlrgpmgfj136
+  fvc 7 8hzlrgpmgfj136
+  rewrite: fvc78hzlrgpmgfj136
+  digits:  [7 8 1 3 6]
+  value:   [7 ... 6] --> 76
+  48891 + 76 = 48967
+
+
+LINE: sixfour9tn1tfmzkdjxxj
+   6 four9tn1tfmzkdjxxj
+  6 4 9tn1tfmzkdjxxj
+  rewrite: 649tn1tfmzkdjxxj
+  digits:  [6 4 9 1]
+  value:   [6 ... 1] --> 61
+  48967 + 61 = 49028
+
+
+LINE: ffvmfqmsnineeight5
+  ffvmfqms 9 eight5
+  ffvmfqms9 8 5
+  rewrite: ffvmfqms985
+  digits:  [9 8 5]
+  value:   [9 ... 5] --> 95
+  49028 + 95 = 49123
+
+
+LINE: ninestmzctrthreesixqdbbvtkjfxpjpgzvpthree7zsfmsvsgxn
+   9 stmzctrthreesixqdbbvtkjfxpjpgzvpthree7zsfmsvsgxn
+  9stmzctr 3 sixqdbbvtkjfxpjpgzvpthree7zsfmsvsgxn
+  9stmzctr3 6 qdbbvtkjfxpjpgzvpthree7zsfmsvsgxn
+  9stmzctr36qdbbvtkjfxpjpgzvp 3 7zsfmsvsgxn
+  rewrite: 9stmzctr36qdbbvtkjfxpjpgzvp37zsfmsvsgxn
+  digits:  [9 3 6 3 7]
+  value:   [9 ... 7] --> 97
+  49123 + 97 = 49220
+
+
+LINE: rz2eight6655
+  rz2 8 6655
+  rewrite: rz286655
+  digits:  [2 8 6 6 5 5]
+  value:   [2 ... 5] --> 25
+  49220 + 25 = 49245
+
+
+LINE: vhzqvbxr6eightninetwoeight66
+  vhzqvbxr6 8 ninetwoeight66
+  vhzqvbxr68 9 twoeight66
+  vhzqvbxr689 2 eight66
+  vhzqvbxr6892 8 66
+  rewrite: vhzqvbxr6892866
+  digits:  [6 8 9 2 8 6 6]
+  value:   [6 ... 6] --> 66
+  49245 + 66 = 49311
+
+
+LINE: 2fiveeight7seven2
+  2 5 eight7seven2
+  25 8 7seven2
+  2587 7 2
+  rewrite: 258772
+  digits:  [2 5 8 7 7 2]
+  value:   [2 ... 2] --> 22
+  49311 + 22 = 49333
+
+
+LINE: 5six6vkvdbjnhbdht5rqhkfour
+  5 6 6vkvdbjnhbdht5rqhkfour
+  566vkvdbjnhbdht5rqhk 4 
+  rewrite: 566vkvdbjnhbdht5rqhk4
+  digits:  [5 6 6 5 4]
+  value:   [5 ... 4] --> 54
+  49333 + 54 = 49387
+
+
+LINE: eightrntwocdchshssevenone2dxhmccpn
+   8 rntwocdchshssevenone2dxhmccpn
+  8rn 2 cdchshssevenone2dxhmccpn
+  8rn2cdchshs 7 one2dxhmccpn
+  8rn2cdchshs7 1 2dxhmccpn
+  rewrite: 8rn2cdchshs712dxhmccpn
+  digits:  [8 2 7 1 2]
+  value:   [8 ... 2] --> 82
+  49387 + 82 = 49469
+
+
+LINE: three4gsgleightxvgjpvqshlfzntwo43
+   3 4gsgleightxvgjpvqshlfzntwo43
+  34gsgl 8 xvgjpvqshlfzntwo43
+  34gsgl8xvgjpvqshlfzn 2 43
+  rewrite: 34gsgl8xvgjpvqshlfzn243
+  digits:  [3 4 8 2 4 3]
+  value:   [3 ... 3] --> 33
+  49469 + 33 = 49502
+
+
+LINE: 9four5onebqlcmrrkvnine45
+  9 4 5onebqlcmrrkvnine45
+  945 1 bqlcmrrkvnine45
+  9451bqlcmrrkv 9 45
+  rewrite: 9451bqlcmrrkv945
+  digits:  [9 4 5 1 9 4 5]
+  value:   [9 ... 5] --> 95
+  49502 + 95 = 49597
+
+
+LINE: mtkkbxbfour5onemnxcglq
+  mtkkbxb 4 5onemnxcglq
+  mtkkbxb45 1 mnxcglq
+  rewrite: mtkkbxb451mnxcglq
+  digits:  [4 5 1]
+  value:   [4 ... 1] --> 41
+  49597 + 41 = 49638
+
+
+LINE: one18482sevenpkgxmfour
+   1 18482sevenpkgxmfour
+  118482 7 pkgxmfour
+  1184827pkgxm 4 
+  rewrite: 1184827pkgxm4
+  digits:  [1 1 8 4 8 2 7 4]
+  value:   [1 ... 4] --> 14
+  49638 + 14 = 49652
+
+
+LINE: two3threexggpjbncmkvmd1
+   2 3threexggpjbncmkvmd1
+  23 3 xggpjbncmkvmd1
+  rewrite: 233xggpjbncmkvmd1
+  digits:  [2 3 3 1]
+  value:   [2 ... 1] --> 21
+  49652 + 21 = 49673
+
+
+LINE: oneseven9
+   1 seven9
+  1 7 9
+  rewrite: 179
+  digits:  [1 7 9]
+  value:   [1 ... 9] --> 19
+  49673 + 19 = 49692
+
+
+LINE: 679b
+  rewrite: 679b
+  digits:  [6 7 9]
+  value:   [6 ... 9] --> 69
+  49692 + 69 = 49761
+
+
+LINE: 7vc9threenine3
+  7vc9 3 nine3
+  7vc93 9 3
+  rewrite: 7vc9393
+  digits:  [7 9 3 9 3]
+  value:   [7 ... 3] --> 73
+  49761 + 73 = 49834
+
+
+LINE: one35x
+   1 35x
+  rewrite: 135x
+  digits:  [1 3 5]
+  value:   [1 ... 5] --> 15
+  49834 + 15 = 49849
+
+
+LINE: 4eightthree9
+  4 8 three9
+  48 3 9
+  rewrite: 4839
+  digits:  [4 8 3 9]
+  value:   [4 ... 9] --> 49
+  49849 + 49 = 49898
+
+
+LINE: 1hclxskfgjfhvjtgqsztp
+  rewrite: 1hclxskfgjfhvjtgqsztp
+  digits:  [1]
+  value:   [1 ... 1] --> 11
+  49898 + 11 = 49909
+
+
+LINE: eight38d84fm
+   8 38d84fm
+  rewrite: 838d84fm
+  digits:  [8 3 8 8 4]
+  value:   [8 ... 4] --> 84
+  49909 + 84 = 49993
+
+
+LINE: fiveone6five1five
+   5 one6five1five
+  5 1 6five1five
+  516 5 1five
+  51651 5 
+  rewrite: 516515
+  digits:  [5 1 6 5 1 5]
+  value:   [5 ... 5] --> 55
+  49993 + 55 = 50048
+
+
+LINE: qjpptvfsrs614fourssdrxtpqfz7
+  qjpptvfsrs614 4 ssdrxtpqfz7
+  rewrite: qjpptvfsrs6144ssdrxtpqfz7
+  digits:  [6 1 4 4 7]
+  value:   [6 ... 7] --> 67
+  50048 + 67 = 50115
+
+
+LINE: 9qnrkp
+  rewrite: 9qnrkp
+  digits:  [9]
+  value:   [9 ... 9] --> 99
+  50115 + 99 = 50214
+
+
+LINE: six4one1zxhllkcd
+   6 4one1zxhllkcd
+  64 1 1zxhllkcd
+  rewrite: 6411zxhllkcd
+  digits:  [6 4 1 1]
+  value:   [6 ... 1] --> 61
+  50214 + 61 = 50275
+
+
+LINE: six1fourtwormz7vxfbhmg
+   6 1fourtwormz7vxfbhmg
+  61 4 twormz7vxfbhmg
+  614 2 rmz7vxfbhmg
+  rewrite: 6142rmz7vxfbhmg
+  digits:  [6 1 4 2 7]
+  value:   [6 ... 7] --> 67
+  50275 + 67 = 50342
+
+
+LINE: one3jxcjzz9
+   1 3jxcjzz9
+  rewrite: 13jxcjzz9
+  digits:  [1 3 9]
+  value:   [1 ... 9] --> 19
+  50342 + 19 = 50361
+
+
+LINE: vzmtgdhpjneight83fivepcd
+  vzmtgdhpjn 8 83fivepcd
+  vzmtgdhpjn883 5 pcd
+  rewrite: vzmtgdhpjn8835pcd
+  digits:  [8 8 3 5]
+  value:   [8 ... 5] --> 85
+  50361 + 85 = 50446
+
+
+LINE: onexqhvqpvmncljmssix4twoseven
+   1 xqhvqpvmncljmssix4twoseven
+  1xqhvqpvmncljms 6 4twoseven
+  1xqhvqpvmncljms64 2 seven
+  1xqhvqpvmncljms642 7 
+  rewrite: 1xqhvqpvmncljms6427
+  digits:  [1 6 4 2 7]
+  value:   [1 ... 7] --> 17
+  50446 + 17 = 50463
+
+
+LINE: threeninenine2hg
+   3 ninenine2hg
+  3 9 nine2hg
+  39 9 2hg
+  rewrite: 3992hg
+  digits:  [3 9 9 2]
+  value:   [3 ... 2] --> 32
+  50463 + 32 = 50495
+
+
+LINE: bvjvgtdhjstsevengtbnqf4seven8two
+  bvjvgtdhjst 7 gtbnqf4seven8two
+  bvjvgtdhjst7gtbnqf4 7 8two
+  bvjvgtdhjst7gtbnqf478 2 
+  rewrite: bvjvgtdhjst7gtbnqf4782
+  digits:  [7 4 7 8 2]
+  value:   [7 ... 2] --> 72
+  50495 + 72 = 50567
+
+
+LINE: twooneone5lrjpptxzd
+   2 oneone5lrjpptxzd
+  2 1 one5lrjpptxzd
+  21 1 5lrjpptxzd
+  rewrite: 2115lrjpptxzd
+  digits:  [2 1 1 5]
+  value:   [2 ... 5] --> 25
+  50567 + 25 = 50592
+
+
+LINE: hzlb1
+  rewrite: hzlb1
+  digits:  [1]
+  value:   [1 ... 1] --> 11
+  50592 + 11 = 50603
+
+
+LINE: nhrbfltwosix22rdjthctone
+  nhrbfl 2 six22rdjthctone
+  nhrbfl2 6 22rdjthctone
+  nhrbfl2622rdjthct 1 
+  rewrite: nhrbfl2622rdjthct1
+  digits:  [2 6 2 2 1]
+  value:   [2 ... 1] --> 21
+  50603 + 21 = 50624
+
+
+LINE: seven7eightthreepgj
+   7 7eightthreepgj
+  77 8 threepgj
+  778 3 pgj
+  rewrite: 7783pgj
+  digits:  [7 7 8 3]
+  value:   [7 ... 3] --> 73
+  50624 + 73 = 50697
+
+
+LINE: fourfive45
+   4 five45
+  4 5 45
+  rewrite: 4545
+  digits:  [4 5 4 5]
+  value:   [4 ... 5] --> 45
+  50697 + 45 = 50742
+
+
+LINE: nztwohnx3nine
+  nz 2 hnx3nine
+  nz2hnx3 9 
+  rewrite: nz2hnx39
+  digits:  [2 3 9]
+  value:   [2 ... 9] --> 29
+  50742 + 29 = 50771
+
+
+LINE: fourhfxgmkcgbppdjkqpx2ninezdkbncsevengbdxb
+   4 hfxgmkcgbppdjkqpx2ninezdkbncsevengbdxb
+  4hfxgmkcgbppdjkqpx2 9 zdkbncsevengbdxb
+  4hfxgmkcgbppdjkqpx29zdkbnc 7 gbdxb
+  rewrite: 4hfxgmkcgbppdjkqpx29zdkbnc7gbdxb
+  digits:  [4 2 9 7]
+  value:   [4 ... 7] --> 47
+  50771 + 47 = 50818
+
+
+LINE: sbzdcpxnine3nine
+  sbzdcpx 9 3nine
+  sbzdcpx93 9 
+  rewrite: sbzdcpx939
+  digits:  [9 3 9]
+  value:   [9 ... 9] --> 99
+  50818 + 99 = 50917
+
+
+LINE: 8grdrone78
+  8grdr 1 78
+  rewrite: 8grdr178
+  digits:  [8 1 7 8]
+  value:   [8 ... 8] --> 88
+  50917 + 88 = 51005
+
+
+LINE: 1eightjldlllrxl2
+  1 8 jldlllrxl2
+  rewrite: 18jldlllrxl2
+  digits:  [1 8 2]
+  value:   [1 ... 2] --> 12
+  51005 + 12 = 51017
+
+
+LINE: 588onethreesixlpdkxfc
+  588 1 threesixlpdkxfc
+  5881 3 sixlpdkxfc
+  58813 6 lpdkxfc
+  rewrite: 588136lpdkxfc
+  digits:  [5 8 8 1 3 6]
+  value:   [5 ... 6] --> 56
+  51017 + 56 = 51073
+
+
+LINE: vvvjrnzbfxgzxqlxx6vcqkkftxkdttnhpzrvtwo
+  vvvjrnzbfxgzxqlxx6vcqkkftxkdttnhpzrv 2 
+  rewrite: vvvjrnzbfxgzxqlxx6vcqkkftxkdttnhpzrv2
+  digits:  [6 2]
+  value:   [6 ... 2] --> 62
+  51073 + 62 = 51135
+
+
+LINE: 3llpjrhrone5ninemdqjnpllprkphk
+  3llpjrhr 1 5ninemdqjnpllprkphk
+  3llpjrhr15 9 mdqjnpllprkphk
+  rewrite: 3llpjrhr159mdqjnpllprkphk
+  digits:  [3 1 5 9]
+  value:   [3 ... 9] --> 39
+  51135 + 39 = 51174
+
+
+LINE: 44pmxlrhsdsvsfxtg6
+  rewrite: 44pmxlrhsdsvsfxtg6
+  digits:  [4 4 6]
+  value:   [4 ... 6] --> 46
+  51174 + 46 = 51220
+
+
+LINE: nine841jvpl
+   9 841jvpl
+  rewrite: 9841jvpl
+  digits:  [9 8 4 1]
+  value:   [9 ... 1] --> 91
+  51220 + 91 = 51311
+
+
+LINE: eightbpsqrkzhqbhjlrxmzsixvvmgtrseventwo7oneightjbx
+   8 bpsqrkzhqbhjlrxmzsixvvmgtrseventwo7oneightjbx
+  8bpsqrkzhqbhjlrxmz 6 vvmgtrseventwo7oneightjbx
+  8bpsqrkzhqbhjlrxmz6vvmgtr 7 two7oneightjbx
+  8bpsqrkzhqbhjlrxmz6vvmgtr7 2 7oneightjbx
+  8bpsqrkzhqbhjlrxmz6vvmgtr727 1 ightjbx
+  rewrite: 8bpsqrkzhqbhjlrxmz6vvmgtr7271ightjbx
+  digits:  [8 6 7 2 7 1]
+  value:   [8 ... 1] --> 81
+  51311 + 81 = 51392
+
+
+LINE: znhjtgjk1three8
+  znhjtgjk1 3 8
+  rewrite: znhjtgjk138
+  digits:  [1 3 8]
+  value:   [1 ... 8] --> 18
+  51392 + 18 = 51410
+
+
+LINE: 5xcsvvvzrqcxkqj346oneprztsfpdld6
+  5xcsvvvzrqcxkqj346 1 prztsfpdld6
+  rewrite: 5xcsvvvzrqcxkqj3461prztsfpdld6
+  digits:  [5 3 4 6 1 6]
+  value:   [5 ... 6] --> 56
+  51410 + 56 = 51466
+
+
+LINE: 67six1four1kqj
+  67 6 1four1kqj
+  6761 4 1kqj
+  rewrite: 676141kqj
+  digits:  [6 7 6 1 4 1]
+  value:   [6 ... 1] --> 61
+  51466 + 61 = 51527
+
+
+LINE: qvqlmqtzcj5
+  rewrite: qvqlmqtzcj5
+  digits:  [5]
+  value:   [5 ... 5] --> 55
+  51527 + 55 = 51582
+
+
+LINE: ninejrrhddqfivenine7psghccdhvfive
+   9 jrrhddqfivenine7psghccdhvfive
+  9jrrhddq 5 nine7psghccdhvfive
+  9jrrhddq5 9 7psghccdhvfive
+  9jrrhddq597psghccdhv 5 
+  rewrite: 9jrrhddq597psghccdhv5
+  digits:  [9 5 9 7 5]
+  value:   [9 ... 5] --> 95
+  51582 + 95 = 51677
+
+
+LINE: pznvtxdklpvqbsevenfiveninehzjfvrdxz8
+  pznvtxdklpvqb 7 fiveninehzjfvrdxz8
+  pznvtxdklpvqb7 5 ninehzjfvrdxz8
+  pznvtxdklpvqb75 9 hzjfvrdxz8
+  rewrite: pznvtxdklpvqb759hzjfvrdxz8
+  digits:  [7 5 9 8]
+  value:   [7 ... 8] --> 78
+  51677 + 78 = 51755
+
+
+LINE: eight46xpfdcqbmprchftkpfive
+   8 46xpfdcqbmprchftkpfive
+  846xpfdcqbmprchftkp 5 
+  rewrite: 846xpfdcqbmprchftkp5
+  digits:  [8 4 6 5]
+  value:   [8 ... 5] --> 85
+  51755 + 85 = 51840
+
+
+LINE: bkdvhbhlmn1
+  rewrite: bkdvhbhlmn1
+  digits:  [1]
+  value:   [1 ... 1] --> 11
+  51840 + 11 = 51851
+
+
+LINE: 99sixv
+  99 6 v
+  rewrite: 996v
+  digits:  [9 9 6]
+  value:   [9 ... 6] --> 96
+  51851 + 96 = 51947
+
+
+LINE: gdoneight26pzghbjfeightttfbvhltwo8
+  gd 1 ight26pzghbjfeightttfbvhltwo8
+  gd1ight26pzghbjf 8 ttfbvhltwo8
+  gd1ight26pzghbjf8ttfbvhl 2 8
+  rewrite: gd1ight26pzghbjf8ttfbvhl28
+  digits:  [1 2 6 8 2 8]
+  value:   [1 ... 8] --> 18
+  51947 + 18 = 51965
+
+
+LINE: three5nhd
+   3 5nhd
+  rewrite: 35nhd
+  digits:  [3 5]
+  value:   [3 ... 5] --> 35
+  51965 + 35 = 52000
+
+
+LINE: three5nine
+   3 5nine
+  35 9 
+  rewrite: 359
+  digits:  [3 5 9]
+  value:   [3 ... 9] --> 39
+  52000 + 39 = 52039
+
+
+LINE: four9csdvvfdbkseven26peight
+   4 9csdvvfdbkseven26peight
+  49csdvvfdbk 7 26peight
+  49csdvvfdbk726p 8 
+  rewrite: 49csdvvfdbk726p8
+  digits:  [4 9 7 2 6 8]
+  value:   [4 ... 8] --> 48
+  52039 + 48 = 52087
+
+
+LINE: sevennszdbkkfdndjtzzpjmtqbxlkv43vxlnnrn
+   7 nszdbkkfdndjtzzpjmtqbxlkv43vxlnnrn
+  rewrite: 7nszdbkkfdndjtzzpjmtqbxlkv43vxlnnrn
+  digits:  [7 4 3]
+  value:   [7 ... 3] --> 73
+  52087 + 73 = 52160
+
+
+LINE: 4fourpxzkmfksix39
+  4 4 pxzkmfksix39
+  44pxzkmfk 6 39
+  rewrite: 44pxzkmfk639
+  digits:  [4 4 6 3 9]
+  value:   [4 ... 9] --> 49
+  52160 + 49 = 52209
+
+
+LINE: 9hz8crczlbbhkrsjblzd1q9jsbf
+  rewrite: 9hz8crczlbbhkrsjblzd1q9jsbf
+  digits:  [9 8 1 9]
+  value:   [9 ... 9] --> 99
+  52209 + 99 = 52308
+
+
+LINE: 443twofour88one
+  443 2 four88one
+  4432 4 88one
+  4432488 1 
+  rewrite: 44324881
+  digits:  [4 4 3 2 4 8 8 1]
+  value:   [4 ... 1] --> 41
+  52308 + 41 = 52349
+
+
+LINE: 2tpmlxltgsix
+  2tpmlxltg 6 
+  rewrite: 2tpmlxltg6
+  digits:  [2 6]
+  value:   [2 ... 6] --> 26
+  52349 + 26 = 52375
+
+
+LINE: 83835six
+  83835 6 
+  rewrite: 838356
+  digits:  [8 3 8 3 5 6]
+  value:   [8 ... 6] --> 86
+  52375 + 86 = 52461
+
+
+LINE: 8twojvsgjtqvxgsevennjdvdbqccmgcldp
+  8 2 jvsgjtqvxgsevennjdvdbqccmgcldp
+  82jvsgjtqvxg 7 njdvdbqccmgcldp
+  rewrite: 82jvsgjtqvxg7njdvdbqccmgcldp
+  digits:  [8 2 7]
+  value:   [8 ... 7] --> 87
+  52461 + 87 = 52548
+
+
+LINE: fivebpknnpxnjmpxntbhkjsp4fivefour
+   5 bpknnpxnjmpxntbhkjsp4fivefour
+  5bpknnpxnjmpxntbhkjsp4 5 four
+  5bpknnpxnjmpxntbhkjsp45 4 
+  rewrite: 5bpknnpxnjmpxntbhkjsp454
+  digits:  [5 4 5 4]
+  value:   [5 ... 4] --> 54
+  52548 + 54 = 52602
+
+
+LINE: hvxnseven6two64five2six
+  hvxn 7 6two64five2six
+  hvxn76 2 64five2six
+  hvxn76264 5 2six
+  hvxn7626452 6 
+  rewrite: hvxn76264526
+  digits:  [7 6 2 6 4 5 2 6]
+  value:   [7 ... 6] --> 76
+  52602 + 76 = 52678
+
+
+LINE: 5twoonefive
+  5 2 onefive
+  52 1 five
+  521 5 
+  rewrite: 5215
+  digits:  [5 2 1 5]
+  value:   [5 ... 5] --> 55
+  52678 + 55 = 52733
+
+
+LINE: jzkd6hvcmfqsjztsixfivexlfrvn
+  jzkd6hvcmfqsjzt 6 fivexlfrvn
+  jzkd6hvcmfqsjzt6 5 xlfrvn
+  rewrite: jzkd6hvcmfqsjzt65xlfrvn
+  digits:  [6 6 5]
+  value:   [6 ... 5] --> 65
+  52733 + 65 = 52798
+
+
+LINE: xfbcskone12jvvbflfn
+  xfbcsk 1 12jvvbflfn
+  rewrite: xfbcsk112jvvbflfn
+  digits:  [1 1 2]
+  value:   [1 ... 2] --> 12
+  52798 + 12 = 52810
+
+
+LINE: ninellrbqhshsxeight7two
+   9 llrbqhshsxeight7two
+  9llrbqhshsx 8 7two
+  9llrbqhshsx87 2 
+  rewrite: 9llrbqhshsx872
+  digits:  [9 8 7 2]
+  value:   [9 ... 2] --> 92
+  52810 + 92 = 52902
+
+
+LINE: 4nine79jdkfkgvcr1
+  4 9 79jdkfkgvcr1
+  rewrite: 4979jdkfkgvcr1
+  digits:  [4 9 7 9 1]
+  value:   [4 ... 1] --> 41
+  52902 + 41 = 52943
+
+
+LINE: eight8twoltnpxckbqxnfbxtthree49
+   8 8twoltnpxckbqxnfbxtthree49
+  88 2 ltnpxckbqxnfbxtthree49
+  882ltnpxckbqxnfbxt 3 49
+  rewrite: 882ltnpxckbqxnfbxt349
+  digits:  [8 8 2 3 4 9]
+  value:   [8 ... 9] --> 89
+  52943 + 89 = 53032
+
+
+LINE: ctkfveight8
+  ctkfv 8 8
+  rewrite: ctkfv88
+  digits:  [8 8]
+  value:   [8 ... 8] --> 88
+  53032 + 88 = 53120
+
+
+LINE: nine671seventwotwonejkf
+   9 671seventwotwonejkf
+  9671 7 twotwonejkf
+  96717 2 twonejkf
+  967172 2 nejkf
+  rewrite: 9671722nejkf
+  digits:  [9 6 7 1 7 2 2]
+  value:   [9 ... 2] --> 92
+  53120 + 92 = 53212
+
+
+LINE: 5threesix
+  5 3 six
+  53 6 
+  rewrite: 536
+  digits:  [5 3 6]
+  value:   [5 ... 6] --> 56
+  53212 + 56 = 53268
+
+
+LINE: 4sixsixzfmtzlspfcseven
+  4 6 sixzfmtzlspfcseven
+  46 6 zfmtzlspfcseven
+  466zfmtzlspfc 7 
+  rewrite: 466zfmtzlspfc7
+  digits:  [4 6 6 7]
+  value:   [4 ... 7] --> 47
+  53268 + 47 = 53315
+
+
+LINE: 4pqnrmqlscq1fkzxngndmgseven2
+  4pqnrmqlscq1fkzxngndmg 7 2
+  rewrite: 4pqnrmqlscq1fkzxngndmg72
+  digits:  [4 1 7 2]
+  value:   [4 ... 2] --> 42
+  53315 + 42 = 53357
+
+
+LINE: 27four7znrkvxhvt6
+  27 4 7znrkvxhvt6
+  rewrite: 2747znrkvxhvt6
+  digits:  [2 7 4 7 6]
+  value:   [2 ... 6] --> 26
+  53357 + 26 = 53383
+
+
+LINE: lqkljjh79six7seven
+  lqkljjh79 6 7seven
+  lqkljjh7967 7 
+  rewrite: lqkljjh79677
+  digits:  [7 9 6 7 7]
+  value:   [7 ... 7] --> 77
+  53383 + 77 = 53460
+
+
+LINE: 2tlb84sixfour
+  2tlb84 6 four
+  2tlb846 4 
+  rewrite: 2tlb8464
+  digits:  [2 8 4 6 4]
+  value:   [2 ... 4] --> 24
+  53460 + 24 = 53484
+
+
+LINE: onesevenseven5htsdxvfctkdgvqtwoeight3
+   1 sevenseven5htsdxvfctkdgvqtwoeight3
+  1 7 seven5htsdxvfctkdgvqtwoeight3
+  17 7 5htsdxvfctkdgvqtwoeight3
+  1775htsdxvfctkdgvq 2 eight3
+  1775htsdxvfctkdgvq2 8 3
+  rewrite: 1775htsdxvfctkdgvq283
+  digits:  [1 7 7 5 2 8 3]
+  value:   [1 ... 3] --> 13
+  53484 + 13 = 53497
+
+
+LINE: 66836qblqgdhnine
+  66836qblqgdh 9 
+  rewrite: 66836qblqgdh9
+  digits:  [6 6 8 3 6 9]
+  value:   [6 ... 9] --> 69
+  53497 + 69 = 53566
+
+
+LINE: 75ntphbdbpgktwo
+  75ntphbdbpgk 2 
+  rewrite: 75ntphbdbpgk2
+  digits:  [7 5 2]
+  value:   [7 ... 2] --> 72
+  53566 + 72 = 53638
+
+
+LINE: jheightwovtone8fourtcsbhhntkq3nine1nine
+  jh 8 wovtone8fourtcsbhhntkq3nine1nine
+  jh8wovt 1 8fourtcsbhhntkq3nine1nine
+  jh8wovt18 4 tcsbhhntkq3nine1nine
+  jh8wovt184tcsbhhntkq3 9 1nine
+  jh8wovt184tcsbhhntkq391 9 
+  rewrite: jh8wovt184tcsbhhntkq3919
+  digits:  [8 1 8 4 3 9 1 9]
+  value:   [8 ... 9] --> 89
+  53638 + 89 = 53727
+
+
+LINE: 5gcnnbjcgqn7
+  rewrite: 5gcnnbjcgqn7
+  digits:  [5 7]
+  value:   [5 ... 7] --> 57
+  53727 + 57 = 53784
+
+
+LINE: 1nnxkfdmxhsqqttsfsgtwo5three
+  1nnxkfdmxhsqqttsfsg 2 5three
+  1nnxkfdmxhsqqttsfsg25 3 
+  rewrite: 1nnxkfdmxhsqqttsfsg253
+  digits:  [1 2 5 3]
+  value:   [1 ... 3] --> 13
+  53784 + 13 = 53797
+
+
+LINE: 7sixtwoeight
+  7 6 twoeight
+  76 2 eight
+  762 8 
+  rewrite: 7628
+  digits:  [7 6 2 8]
+  value:   [7 ... 8] --> 78
+  53797 + 78 = 53875
+
+
+LINE: 9lsjcmcvqlconezxvrrptxlxleightlvghvxjgfive
+  9lsjcmcvqlc 1 zxvrrptxlxleightlvghvxjgfive
+  9lsjcmcvqlc1zxvrrptxlxl 8 lvghvxjgfive
+  9lsjcmcvqlc1zxvrrptxlxl8lvghvxjg 5 
+  rewrite: 9lsjcmcvqlc1zxvrrptxlxl8lvghvxjg5
+  digits:  [9 1 8 5]
+  value:   [9 ... 5] --> 95
+  53875 + 95 = 53970
+
+
+LINE: one6xxf1bjjnkfeightwozv
+   1 6xxf1bjjnkfeightwozv
+  16xxf1bjjnkf 8 wozv
+  rewrite: 16xxf1bjjnkf8wozv
+  digits:  [1 6 1 8]
+  value:   [1 ... 8] --> 18
+  53970 + 18 = 53988
+
+
+LINE: 4rqxnflktwo
+  4rqxnflk 2 
+  rewrite: 4rqxnflk2
+  digits:  [4 2]
+  value:   [4 ... 2] --> 42
+  53988 + 42 = 54030
+
+
+LINE: 5three1
+  5 3 1
+  rewrite: 531
+  digits:  [5 3 1]
+  value:   [5 ... 1] --> 51
+  54030 + 51 = 54081
+
+
+LINE: vxqmbgjnr6one
+  vxqmbgjnr6 1 
+  rewrite: vxqmbgjnr61
+  digits:  [6 1]
+  value:   [6 ... 1] --> 61
+  54081 + 61 = 54142
+
+
+LINE: eightfour538
+   8 four538
+  8 4 538
+  rewrite: 84538
+  digits:  [8 4 5 3 8]
+  value:   [8 ... 8] --> 88
+  54142 + 88 = 54230
+
+
+LINE: gvjt1onetsevenonesixfive8
+  gvjt1 1 tsevenonesixfive8
+  gvjt11t 7 onesixfive8
+  gvjt11t7 1 sixfive8
+  gvjt11t71 6 five8
+  gvjt11t716 5 8
+  rewrite: gvjt11t71658
+  digits:  [1 1 7 1 6 5 8]
+  value:   [1 ... 8] --> 18
+  54230 + 18 = 54248
+
+
+LINE: fourgtwopbjbcvgtwo3one
+   4 gtwopbjbcvgtwo3one
+  4g 2 pbjbcvgtwo3one
+  4g2pbjbcvg 2 3one
+  4g2pbjbcvg23 1 
+  rewrite: 4g2pbjbcvg231
+  digits:  [4 2 2 3 1]
+  value:   [4 ... 1] --> 41
+  54248 + 41 = 54289
+
+
+LINE: 68four4htvj8bk
+  68 4 4htvj8bk
+  rewrite: 6844htvj8bk
+  digits:  [6 8 4 4 8]
+  value:   [6 ... 8] --> 68
+  54289 + 68 = 54357
+
+
+LINE: nmftgklbpj9onevbzzeightncszqgpl
+  nmftgklbpj9 1 vbzzeightncszqgpl
+  nmftgklbpj91vbzz 8 ncszqgpl
+  rewrite: nmftgklbpj91vbzz8ncszqgpl
+  digits:  [9 1 8]
+  value:   [9 ... 8] --> 98
+  54357 + 98 = 54455
+
+
+LINE: 154fnthzxccjxsztjzpvzcn4
+  rewrite: 154fnthzxccjxsztjzpvzcn4
+  digits:  [1 5 4 4]
+  value:   [1 ... 4] --> 14
+  54455 + 14 = 54469
+
+
+LINE: three6fivefoursixgtzfzbkhmnplfm
+   3 6fivefoursixgtzfzbkhmnplfm
+  36 5 foursixgtzfzbkhmnplfm
+  365 4 sixgtzfzbkhmnplfm
+  3654 6 gtzfzbkhmnplfm
+  rewrite: 36546gtzfzbkhmnplfm
+  digits:  [3 6 5 4 6]
+  value:   [3 ... 6] --> 36
+  54469 + 36 = 54505
+
+
+LINE: 63eightsixgdsdqqxzzsbnkt782
+  63 8 sixgdsdqqxzzsbnkt782
+  638 6 gdsdqqxzzsbnkt782
+  rewrite: 6386gdsdqqxzzsbnkt782
+  digits:  [6 3 8 6 7 8 2]
+  value:   [6 ... 2] --> 62
+  54505 + 62 = 54567
+
+
+LINE: twovbntmfffivengfbkhzgm4
+   2 vbntmfffivengfbkhzgm4
+  2vbntmff 5 ngfbkhzgm4
+  rewrite: 2vbntmff5ngfbkhzgm4
+  digits:  [2 5 4]
+  value:   [2 ... 4] --> 24
+  54567 + 24 = 54591
+
+
+LINE: 23sd6nnspq
+  rewrite: 23sd6nnspq
+  digits:  [2 3 6]
+  value:   [2 ... 6] --> 26
+  54591 + 26 = 54617
+
+
+LINE: nineeighttworhtvxdtxp8twoneh
+   9 eighttworhtvxdtxp8twoneh
+  9 8 tworhtvxdtxp8twoneh
+  98 2 rhtvxdtxp8twoneh
+  982rhtvxdtxp8 2 neh
+  rewrite: 982rhtvxdtxp82neh
+  digits:  [9 8 2 8 2]
+  value:   [9 ... 2] --> 92
+  54617 + 92 = 54709
+
+
+LINE: four3threeonehbfhttgn39sqpctngqmzkhttn
+   4 3threeonehbfhttgn39sqpctngqmzkhttn
+  43 3 onehbfhttgn39sqpctngqmzkhttn
+  433 1 hbfhttgn39sqpctngqmzkhttn
+  rewrite: 4331hbfhttgn39sqpctngqmzkhttn
+  digits:  [4 3 3 1 3 9]
+  value:   [4 ... 9] --> 49
+  54709 + 49 = 54758
+
+
+LINE: rphtbkncs4nznsix
+  rphtbkncs4nzn 6 
+  rewrite: rphtbkncs4nzn6
+  digits:  [4 6]
+  value:   [4 ... 6] --> 46
+  54758 + 46 = 54804
+
+
+LINE: 6three2sixsix9eightfour
+  6 3 2sixsix9eightfour
+  632 6 six9eightfour
+  6326 6 9eightfour
+  632669 8 four
+  6326698 4 
+  rewrite: 63266984
+  digits:  [6 3 2 6 6 9 8 4]
+  value:   [6 ... 4] --> 64
+  54804 + 64 = 54868
+
+Sum of calibration values: 54868

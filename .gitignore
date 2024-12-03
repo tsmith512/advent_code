@@ -3,3 +3,6 @@
 *.class
 *.jar
 node_modules
+
+# AOC maintainer has asked that people not post their puzzle inputs.
+input.txt
