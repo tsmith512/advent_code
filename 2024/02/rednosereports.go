@@ -22,7 +22,7 @@ import (
 	"strings"
 )
 
-const FILENAME = "sample.txt"
+const FILENAME = "input.txt"
 const DEBUG = true
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 		line := scanner.Text()
 		digits := strings.Split(line, " ")
 
-		report := make([]int, 5)
+		report := make([]int, len(digits))
 
 		for i, v := range digits {
 			n, err := strconv.Atoi(v)
@@ -102,6 +102,8 @@ REPORTS:
 		}
 	}
 
+	// Part One:
+	// Total safe reports: 479
 	fmt.Printf("Total safe reports: %d\n", safeReports)
 }
 
