@@ -19,7 +19,7 @@ import (
 	"strconv"
 )
 
-const FILENAME = "input.txt"
+const FILENAME = "sample.txt"
 const DEBUG = true
 const START = 50
 
@@ -31,7 +31,8 @@ func main() {
 	defer file.Close()
 
 	dial := START
-	zeroes := 0
+	zeroes := 0 // Part One: anytime we _land_ on a zero
+	passingZeroes := 0 // Part Two: anytime we _pass_ a zero
 
 	fmt.Printf("Dial starts at %d.\n", dial)
 
@@ -46,6 +47,14 @@ func main() {
 			panic(err)
 		}
 
+		// Count how many times we pass zero this loop
+		iPassingZeroes := 0
+
+		// If we ended up zero last loop, don't double-count passing zero this loop
+		if dial == 0 {
+			iPassingZeroes--
+		}
+
 		DebugPrint("Turn %c %d.", dir, num)
 
 		switch dir {
@@ -58,9 +67,13 @@ func main() {
 		}
 
 		// But make it a circle
-		// Ah, in production input, some of the rotations are big; might loop =
+		// Ah, in production input, some of the rotations are big; might loop
 		// multiple times.
 		for (dial < 0 || dial > 99) {
+			DebugPrint("dial at %d need to wrap", dial)
+			if dial != 100 {
+				iPassingZeroes++ // We looped to get here
+			}
 			if dial < 0 {
 				dial += 100
 			} else if dial > 99 {
@@ -74,19 +87,25 @@ func main() {
 
 		DebugPrint(" Now at %d.", dial)
 
-		// Keep count of the zeroes
+		// Report on ZeroMania
 		if dial == 0 {
-			DebugPrint(" (Zeroes: %d)\n", zeroes)
-		} else {
-			DebugPrint("\n")
+			// Landed on zero this loop
+			DebugPrint(" (Zeroes: %d)", zeroes)
 		}
+		if iPassingZeroes > 0 {
+			// Passed over zero this loop
+			DebugPrint(" (Passed zero %d times this rotation)", iPassingZeroes)
+			passingZeroes += iPassingZeroes
+		}
+		DebugPrint("\n")
 	}
-
 
 	// Part One:
 	// Dial at: 25.
 	// Stopped at zero 1145 times.
 	fmt.Printf("Dial at: %d.\nStopped at zero %d times.\n", dial, zeroes)
+
+	fmt.Printf("Dial passed zero %d times (passthru %d, stopped %d).\n", passingZeroes + zeroes, passingZeroes, zeroes)
 }
 
 // Simple wrapper for debug printing
