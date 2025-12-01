@@ -19,8 +19,8 @@ import (
 	"strconv"
 )
 
-const FILENAME = "sample.txt"
-const DEBUG = false
+const FILENAME = "input.txt"
+const DEBUG = true
 const START = 50
 
 func main() {
@@ -58,21 +58,34 @@ func main() {
 		}
 
 		// But make it a circle
-		if dial < 0 {
-			dial += 100
-		} else if dial > 99 {
-			dial -= 100
+		// Ah, in production input, some of the rotations are big; might loop =
+		// multiple times.
+		for (dial < 0 || dial > 99) {
+			if dial < 0 {
+				dial += 100
+			} else if dial > 99 {
+				dial -= 100
+			}
 		}
 
-		// NB: Separate this from the if/elif above because the wrap can make dial
-		// land on zero.
 		if dial == 0 {
 			zeroes++ // Part One answer
 		}
 
-		DebugPrint(" Now at %d\n", dial)
+		DebugPrint(" Now at %d.", dial)
+
+		// Keep count of the zeroes
+		if dial == 0 {
+			DebugPrint(" (Zeroes: %d)\n", zeroes)
+		} else {
+			DebugPrint("\n")
+		}
 	}
 
+
+	// Part One:
+	// Dial at: 25.
+	// Stopped at zero 1145 times.
 	fmt.Printf("Dial at: %d.\nStopped at zero %d times.\n", dial, zeroes)
 }
 
