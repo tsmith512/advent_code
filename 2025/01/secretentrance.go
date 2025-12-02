@@ -31,7 +31,7 @@ func main() {
 	defer file.Close()
 
 	dial := START
-	zeroes := 0 // Part One: anytime we _land_ on a zero
+	zeroes := 0        // Part One: anytime we _land_ on a zero
 	passingZeroes := 0 // Part Two: anytime we _pass_ a zero
 
 	fmt.Printf("Dial starts at %d.\n", dial)
@@ -50,51 +50,54 @@ func main() {
 		// Count how many times we pass zero this loop
 		iPassingZeroes := 0
 
-		// If we ended up zero last loop, don't double-count passing zero this loop
+		// If we start this loop at zero, don't double-count
 		if dial == 0 {
 			iPassingZeroes--
 		}
 
-		DebugPrint("Turn %c %d.", dir, num)
+		DebugPrint("At %2d: Turn %c %3d.", dial, dir, num)
 
+		// Spin the wheel...
 		switch dir {
 		case 'L':
 			dial -= num
-			break;
 		case 'R':
 			dial += num
-			break;
 		}
+
+		DebugPrint(" Now at %3d", dial)
 
 		// But make it a circle
-		// Ah, in production input, some of the rotations are big; might loop
-		// multiple times.
-		for (dial < 0 || dial > 99) {
-			DebugPrint("dial at %d need to wrap", dial)
-			if dial != 100 {
-				iPassingZeroes++ // We looped to get here
-			}
-			if dial < 0 {
-				dial += 100
-			} else if dial > 99 {
-				dial -= 100
-			}
+
+		// How many times did we pass zero?
+		iPassingZeroes += abs(dial / 100)
+
+		// Where is the dial now?
+		dial = dial % 100
+
+		// If the dial is less than 100, we passed 0 going left, wrap it.
+		if dial < 0 {
+			iPassingZeroes++
+			dial = 100 + dial
 		}
 
+		// If we end on zero this loop, count it (Part 1) and drop it from the
+		// counter (Part 2) so it isn't double counted at the end.
 		if dial == 0 {
 			zeroes++ // Part One answer
+			iPassingZeroes--
 		}
 
-		DebugPrint(" Now at %d.", dial)
+		DebugPrint(" -> %2d.", dial)
 
 		// Report on ZeroMania
 		if dial == 0 {
 			// Landed on zero this loop
-			DebugPrint(" (Zeroes: %d)", zeroes)
+			DebugPrint(" (Zeroes: %2d)", zeroes)
 		}
 		if iPassingZeroes > 0 {
 			// Passed over zero this loop
-			DebugPrint(" (Passed zero %d times this rotation)", iPassingZeroes)
+			DebugPrint(" (Passed zero %2d times this rotation)", iPassingZeroes)
 			passingZeroes += iPassingZeroes
 		}
 		DebugPrint("\n")
@@ -105,7 +108,15 @@ func main() {
 	// Stopped at zero 1145 times.
 	fmt.Printf("Dial at: %d.\nStopped at zero %d times.\n", dial, zeroes)
 
-	fmt.Printf("Dial passed zero %d times (passthru %d, stopped %d).\n", passingZeroes + zeroes, passingZeroes, zeroes)
+	fmt.Printf("Dial passed zero %d times (passthru %d, stopped %d).\n", passingZeroes+zeroes, passingZeroes, zeroes)
+}
+
+// Handle absolute value of an int
+func abs(input int) int {
+	if input < 0 {
+		return -input
+	}
+	return input
 }
 
 // Simple wrapper for debug printing
