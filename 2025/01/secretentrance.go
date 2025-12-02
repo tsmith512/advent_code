@@ -19,7 +19,7 @@ import (
 	"strconv"
 )
 
-const FILENAME = "sample.txt"
+const FILENAME = "input.txt"
 const DEBUG = true
 const START = 50
 
@@ -49,9 +49,8 @@ func main() {
 
 		// Count how many times we pass zero this loop
 		iPassingZeroes := 0
-
-		// If we start this loop at zero, don't double-count
 		if dial == 0 {
+			// If we started at zero, deduct one so it isn't double counted.
 			iPassingZeroes--
 		}
 
@@ -70,7 +69,12 @@ func main() {
 		// But make it a circle
 
 		// How many times did we pass zero?
+		// NB: This will INCLUDE if the new value is a multiple of 100 (meaning that
+		// we finished on 0) but _NOT_ if dial === 0, so we need to count that too.
 		iPassingZeroes += abs(dial / 100)
+		if dial == 0 {
+			iPassingZeroes++
+		}
 
 		// Where is the dial now?
 		dial = dial % 100
