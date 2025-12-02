@@ -19,7 +19,7 @@ import (
 	"strconv"
 )
 
-const FILENAME = "sample.txt"
+const FILENAME = "input.txt"
 const DEBUG = true
 const START = 50
 
@@ -47,14 +47,15 @@ func main() {
 			panic(err)
 		}
 
-		// Count how many times we pass zero this loop
+		// Count how many times we pass on OR STOP ON zero this loop (Part 2)
 		iPassingZeroes := 0
 
-		// If we start this loop at zero, don't double-count
+		// If we ended last loop at 0, don't double-count that.
 		if dial == 0 {
 			iPassingZeroes--
 		}
 
+		// What are we doing this loop?
 		DebugPrint("At %2d: Turn %c %3d.", dial, dir, num)
 
 		// Spin the wheel...
@@ -69,23 +70,27 @@ func main() {
 
 		// But make it a circle
 
-		// How many times did we pass zero?
+		// How many times will we pass zero?
+		// This will include stopping on a multiple of 100 (dial would be 0) but it
+		// won't include if dial === 0, so count that too.
 		iPassingZeroes += abs(dial / 100)
+		if dial == 0 {
+			iPassingZeroes++
+		}
 
 		// Where is the dial now?
 		dial = dial % 100
 
-		// If the dial is less than 100, we passed 0 going left, wrap it.
+		// If new value is less than 100, we passed 0 once more going left, wrap it
+		// and count it.
 		if dial < 0 {
 			iPassingZeroes++
 			dial = 100 + dial
 		}
 
-		// If we end on zero this loop, count it (Part 1) and drop it from the
-		// counter (Part 2) so it isn't double counted at the end.
+		// If we end on zero this loop, count it (Part 1).
 		if dial == 0 {
 			zeroes++ // Part One answer
-			iPassingZeroes--
 		}
 
 		DebugPrint(" -> %2d.", dial)
@@ -93,7 +98,7 @@ func main() {
 		// Report on ZeroMania
 		if dial == 0 {
 			// Landed on zero this loop
-			DebugPrint(" (Zeroes: %2d)", zeroes)
+			DebugPrint(" (Stopped zeroes: %2d)", zeroes)
 		}
 		if iPassingZeroes > 0 {
 			// Passed over zero this loop
@@ -108,7 +113,7 @@ func main() {
 	// Stopped at zero 1145 times.
 	fmt.Printf("Dial at: %d.\nStopped at zero %d times.\n", dial, zeroes)
 
-	fmt.Printf("Dial passed zero %d times (passthru %d, stopped %d).\n", passingZeroes+zeroes, passingZeroes, zeroes)
+	fmt.Printf("Dial passed or stopped at zero %d times.\n", passingZeroes)
 }
 
 // Handle absolute value of an int
