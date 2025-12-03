@@ -19,7 +19,7 @@
 import fs from 'fs';
 
 const DEBUG = true;
-const INPUT = 'sample.txt';
+const INPUT = 'input.txt';
 
 const debugPrint = (input: any) => {
   if (DEBUG) {
@@ -29,7 +29,7 @@ const debugPrint = (input: any) => {
 
 // An invalid ID is a repeated sequence of digits, so split the string in half
 // and compare. This also filters out (as valid) odd-length strings silently.
-const isInvalid = (i: string) => i.slice(0, i.length / 2) === i.slice(i.length / 2)
+const isInvalid = (i: string) => i.slice(0, i.length / 2) === i.slice(i.length / 2);
 
 // Read the ranges into an array (str[])
 const ranges = fs.readFileSync(INPUT)
@@ -54,8 +54,10 @@ const invalid = ranges
   .filter(i => isInvalid(i));
 
 debugPrint(invalid);
-console.log(`In provided ranges, there are ${invalid.length} invalid IDs.`);
-
 const sum = invalid.reduce((total: number, current: string) => total + parseInt(current), 0);
 
+// Part One:
+// In provided ranges, there are 757 invalid IDs.
+// The sum of invalid IDs is: 64215794229
+console.log(`In provided ranges, there are ${invalid.length} invalid IDs.`);
 console.log(`The sum of invalid IDs is: ${sum}`);
