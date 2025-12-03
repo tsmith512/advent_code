@@ -19,7 +19,7 @@
 import fs from 'fs';
 
 const DEBUG = true;
-const INPUT = 'sample.txt';
+const INPUT = 'input.txt';
 
 const debugPrint = (input: any) => {
   if (DEBUG) {
@@ -118,5 +118,9 @@ const sum = invalid.reduce((total: number, current: string) => total + parseInt(
 // Part One:
 // In provided ranges, there are 757 invalid IDs.
 // The sum of invalid IDs is: 64215794229
+
+// Part Two:
+// In provided ranges, there are 830 invalid IDs.
+// The sum of invalid IDs is: 85513235135
 console.log(`In provided ranges, there are ${invalid.length} invalid IDs.`);
 console.log(`The sum of invalid IDs is: ${sum}`);
