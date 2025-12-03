@@ -19,7 +19,7 @@
 import fs from 'fs';
 
 const DEBUG = true;
-const INPUT = 'input.txt';
+const INPUT = 'sample.txt';
 
 const debugPrint = (input: any) => {
   if (DEBUG) {
@@ -30,6 +30,35 @@ const debugPrint = (input: any) => {
 // An invalid ID is a repeated sequence of digits, so split the string in half
 // and compare. This also filters out (as valid) odd-length strings silently.
 const isInvalid = (i: string) => i.slice(0, i.length / 2) === i.slice(i.length / 2);
+
+/**
+ * Split a string into X even-length pieces
+ * @param input (string) Input string to split
+ * @param n (number) How many pieces to split it into
+ * @returns (string[] | false) Array of string pieces, or false if input length not divisble by n
+ */
+const stringSplit = (input: string, n: number): false | string[] => {
+  if (input.length % n) {
+    return false;
+  }
+
+  return Array.from({ length: n }, (_, i) => input.slice(
+    // Where to start
+    (input.length / n) * i,
+    // Where to stop
+    (input.length / n) * (i + 1)
+  ));
+};
+
+const isSuperInvalid = (input: string) => {
+  // Split the input string into
+  // Split the string into pieces of i length, up to half the length of the string
+  for (let i = 1; i < input.length / 2; i++) {
+    const pieces = stringSplit(input, i);
+    console.log(pieces);
+  }
+
+}
 
 // Read the ranges into an array (str[])
 const ranges = fs.readFileSync(INPUT)
@@ -51,7 +80,7 @@ const invalid = ranges
   // Convert them back to strings, which also would remove leading zeroes
   .map(x => x.toString())
   // Filter to keep only invalid strings.
-  .filter(i => isInvalid(i));
+  .filter(i => isSuperInvalid(i));
 
 debugPrint(invalid);
 const sum = invalid.reduce((total: number, current: string) => total + parseInt(current), 0);
