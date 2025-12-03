@@ -61,9 +61,13 @@ func main() {
 				dial--
 				num--
 
-				if dial == -1 {
-					dial = 99
+				// OKAY HERE'S WHAT DID IT:
+				// 0 & 100 are the same (see case 'R' below), but 0 and 99 are NOT. Need
+				// to count the 0 when we hit it, but handle the wrap on -1.
+				if dial == 0 {
 					iPassingZeroes++
+				} else if dial == -1 {
+					dial = 99
 				}
 			}
 		case 'R':
@@ -105,6 +109,7 @@ func main() {
 	// Stopped at zero 1145 times.
 	fmt.Printf("Dial at: %d.\nStopped at zero %d times.\n", dial, zeroes)
 
+	// Dial pointed at zero 6561 times.
 	fmt.Printf("Dial pointed at zero %d times.\n", passingZeroes)
 }
 
