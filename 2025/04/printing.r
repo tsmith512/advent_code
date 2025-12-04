@@ -13,7 +13,7 @@
 # > rolls of paper in the eight adjacent positions.
 
 # Read input to a nested vector of characters
-lines <- scan("sample.txt", what = "character")
+lines <- scan("input.txt", what = "character")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 
@@ -50,12 +50,18 @@ r <- 0
 # Track how many we can get at in the next loop:
 available <- FALSE
 
+# In Part Two, we loop the original sequence, removing rolls until everything
+# that remains is blocked:
 while (i == 1 || sum(available) > 0) {
   # Now, where there are rolls on the shelf AND that cell has < 4 adjacent ones:
   map <- heatmap(shelf)
   available <- shelf & (map < 4)
 
-  # Part One: "Available rolls:  1457"
+  # Part One:
+  #   "Available rolls:  1457"
+  # Part Two:
+  #   "On loop  72 : Available rolls:  0"
+  #   "Running total removed:  8310"
   print(paste("On loop ", i, ": Available rolls: ", sum(available)))
 
   r <- r + sum(available)
