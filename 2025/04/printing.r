@@ -13,7 +13,7 @@
 # > rolls of paper in the eight adjacent positions.
 
 # Read input to a nested vector of characters
-lines <- scan("input.txt", what = "character")
+lines <- scan("sample.txt", what = "character")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 
@@ -25,30 +25,44 @@ shelf <- matrix(
   byrow = TRUE
 )
 
-print(shelf)
-
-
 # Find "count of 1's adjacent to each cell" by shifting the matrix in a circle
-# and adding it all together. TODO: Can this be more elegant?
-n  <- rbind(              shelf[-1,], rep(0, cols))
-s  <- rbind(rep(0, cols), shelf[-rows,])
-e  <- cbind(              shelf[,-1], rep(0, rows))
-w  <- cbind(rep(0, rows), shelf[,-cols])
+# and adding it all together.
+heatmap <- function(matrix) {
+  # TODO: Can this be more elegant?
+  n  <- rbind(              matrix[-1,], rep(0, cols))
+  s  <- rbind(rep(0, cols), matrix[-rows,])
+  e  <- cbind(              matrix[,-1], rep(0, rows))
+  w  <- cbind(rep(0, rows), matrix[,-cols])
 
-ne <- cbind(              rbind(shelf[-1,],    rep(0, cols))[,-1], rep(0, rows))
-se <- cbind(              rbind(rep(0, cols), shelf[-rows,])[,-1], rep(0, rows))
-nw <- cbind(rep(0, rows), rbind(shelf[-1,],    rep(0, cols))[,-cols])
-sw <- cbind(rep(0, rows), rbind(rep(0, cols), shelf[-rows,])[,-cols])
+  ne <- cbind(              rbind(matrix[-1,],    rep(0, cols))[,-1], rep(0, rows))
+  se <- cbind(              rbind(rep(0, cols), matrix[-rows,])[,-1], rep(0, rows))
+  nw <- cbind(rep(0, rows), rbind(matrix[-1,],    rep(0, cols))[,-cols])
+  sw <- cbind(rep(0, rows), rbind(rep(0, cols), matrix[-rows,])[,-cols])
 
-# Make me a "heatmap" so-to-speak
-field <- n + s + e + w + ne + se + nw + sw
+  # Return a "heatmap" so-to-speak
+  n + s + e + w + ne + se + nw + sw
+}
 
-# Now, where there are rolls on the shelf AND that cell has < 4 adjacent ones:
-available <- shelf & (field < 4)
+# How many loops?
+i <- 1
+# How many have we removed?
+r <- 0
+# Track how many we can get at in the next loop:
+available <- FALSE
 
-print(available)
-# Part One: "Available rolls:  1457"
-print(paste("Available rolls: ", sum(available)))
+while (i == 1 || sum(available) > 0) {
+  # Now, where there are rolls on the shelf AND that cell has < 4 adjacent ones:
+  map <- heatmap(shelf)
+  available <- shelf & (map < 4)
+
+  # Part One: "Available rolls:  1457"
+  print(paste("On loop ", i, ": Available rolls: ", sum(available)))
+
+  r <- r + sum(available)
+  print(paste("Running total removed: ", r))
+  shelf <- shelf - available
+  i <- i + 1
+}
 
 #################
 ## SCRATCHWORK ##
