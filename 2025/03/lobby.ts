@@ -17,7 +17,7 @@
 import fs from 'fs';
 
 const DEBUG = true;
-const INPUT = 'sample.txt';
+const INPUT = 'input.txt';
 
 const debugPrint = (input: any) => {
   if (DEBUG) {
@@ -62,7 +62,8 @@ const highPair = (input: string): number[] => input.split('').reduce(
  * This is part two.
  *
  * @param input (string) The battery bank, a string of numbers. Ex: 818181911112111
- * @returns (number[]) The two highest ordered digits. Ex: 89
+ * @param length (number) How many digits to collect (Ex: 3)
+ * @returns (number[]) The two highest ordered digits. Ex: 892
  */
 const highSet = (input: string, length: number): number[] => input.split('').reduce(
   (
@@ -82,11 +83,12 @@ const highSet = (input: string, length: number): number[] => input.split('').red
       if (set[i - 1] < set[i]) {
         // ... and remove A.
         set.splice(i - 1, 1);
+        // If we do this multiple times, we'll come up short, so stop here.
         break;
       }
     }
 
-    // Return the first LEN items (if they're in descending order, we'll have one too many)
+    // Return the first LEN items (if they're all in descending order, we'll have one too many)
     return set.slice(0, length);
   }, []);
 
@@ -124,4 +126,6 @@ const batterySets = banks
 
 debugPrint(`Sets: \n  ${batterySets.join('\n  ')}`);
 
+// Part Two:
+// Sum of battery sets: 170371185255900
 console.log(`Sum of battery sets: ${sum(batterySets)}`);
