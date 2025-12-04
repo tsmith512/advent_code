@@ -15,7 +15,7 @@
 import fs from 'fs';
 
 const DEBUG = true;
-const INPUT = 'sample.txt';
+const INPUT = 'input.txt';
 
 const debugPrint = (input: any) => {
   if (DEBUG) {
@@ -70,4 +70,6 @@ const batteryPairs = banks
 
 debugPrint(`Pairs: ${batteryPairs.join(', ')}`);
 
+// Part One:
+// Sum of battery pairs: 17144
 console.log(`Sum of battery pairs: ${sum(batteryPairs)}`);
