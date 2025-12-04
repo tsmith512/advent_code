@@ -13,7 +13,7 @@
 # > rolls of paper in the eight adjacent positions.
 
 # Read input to a nested vector of characters
-lines <- scan("sample.txt", what = "character")
+lines <- scan("input.txt", what = "character")
 rows <- length(lines)
 cols <- length(unlist(strsplit(lines[1], "")))
 
@@ -47,7 +47,8 @@ field <- n + s + e + w + ne + se + nw + sw
 available <- shelf & (field < 4)
 
 print(available)
-print(sum(available))
+# Part One: "Available rolls:  1457"
+print(paste("Available rolls: ", sum(available)))
 
 #################
 ## SCRATCHWORK ##
