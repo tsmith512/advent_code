@@ -43,6 +43,26 @@ heatmap <- function(matrix) {
   n + s + e + w + ne + se + nw + sw
 }
 
+visualize <- function(matrix, i, title="", subtitle = "") {
+  png(
+    filename = paste("step", sprintf("%04d", i), "shelf.png", sep = "-"),
+    width = 800,
+    height = 800,
+    bg = "white",
+  )
+  # par(mar=c(5,2,4,2))
+  image(
+    matrix,
+    useRaster = TRUE,
+    axes = FALSE,
+    col = c("white", "red")
+  )
+  box(col = "gray")
+  mtext(text = title, side = 3)
+  mtext(text = subtitle, side = 1)
+  dev.off()
+}
+
 # How many loops?
 i <- 1
 # How many have we removed?
@@ -50,6 +70,7 @@ r <- 0
 # Track how many we can get at in the next loop:
 available <- FALSE
 
+visualize(shelf, 0, paste("Loop:", 0, "Total rolls:", sum(shelf)), paste("Available:", sum(available), "Removed:", r))
 # In Part Two, we loop the original sequence, removing rolls until everything
 # that remains is blocked:
 while (i == 1 || sum(available) > 0) {
@@ -63,11 +84,13 @@ while (i == 1 || sum(available) > 0) {
   #   "On loop  72 : Available rolls:  0"
   #   "Running total removed:  8310"
   print(paste("On loop ", i, ": Available rolls: ", sum(available)))
+  visualize(shelf, i, paste("Loop:", i, "Total rolls:", sum(shelf)), paste("Available:", sum(available), "Removed:", r))
 
   r <- r + sum(available)
   print(paste("Running total removed: ", r))
   shelf <- shelf - available
   i <- i + 1
+
 }
 
 #################
