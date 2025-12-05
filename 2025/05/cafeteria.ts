@@ -18,7 +18,7 @@
 import fs from 'fs';
 
 const DEBUG = true;
-const INPUT = 'sample.txt';
+const INPUT = 'input.txt';
 
 const debugPrint = (input: any) => {
   if (DEBUG) {
@@ -48,14 +48,6 @@ console.log(`There are ${fresh.length} fresh ingredients in the fridge.`);
 // Sort the ranges
 ranges.sort((a, b) => a[0] - b[0]);
 
-// Just for kicks... how many total would we be talking about?
-debugPrint(`Without accounting for overlaps, there are ${ranges
-  .map(r => r[1] - r[0])
-  .reduce((total, current) => total += current)} IDs here...`);
-// oh. it's trillions.
-
-
-
 /**
  * Combine two given ranges (number[min,max]) if they overlap, or return false
  * if they do not.
@@ -79,9 +71,6 @@ const overlap = (a: number[], b: number[]): number[] | false => {
   return false;
 };
 
-// Show input ranges:
-debugPrint(ranges);
-
 console.log(`Initially, there were ${ranges.length} ranges of fresh IDs.`);
 let replacement: number[] | false;
 
@@ -97,13 +86,16 @@ for (let i = 0; i < ranges.length - 2; i++) {
     // end up pulling undefined values. That's when we know we can stop.
     break;
   }
-  debugPrint(`Ranges: ${ranges.length}`);
 }
 console.log(`After consolidation, there are ${ranges.length} ranges of fresh IDs.`);
 
-debugPrint(ranges);
-
 // Now that we've consolidated ranges so they don't overlap:
-debugPrint(`Reducing overlaps, there are ${ranges
+debugPrint(`Within these, there are ${ranges
   .map(r => (r[1] - r[0]) + 1)
-  .reduce((total, current) => total += current)} IDs here.`);
+  .reduce((total, current) => total += current)} IDs.`);
+
+// Part Two:
+// Without accounting for overlaps, there are 437387656434679 IDs here...
+// Initially, there were 177 ranges of fresh IDs.
+// After consolidation, there are 92 ranges of fresh IDs.
+// Within these, there are 347468726696961 IDs.
