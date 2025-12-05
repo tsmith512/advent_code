@@ -15,7 +15,7 @@
 import fs from 'fs';
 
 const DEBUG = true;
-const INPUT = 'sample.txt';
+const INPUT = 'input.txt';
 
 const debugPrint = (input: any) => {
   if (DEBUG) {
@@ -41,4 +41,6 @@ debugPrint(items);
 const fresh = items.filter(i => ranges.some((r) => r[0] <= i && i <= r[1]));
 debugPrint(fresh);
 
+// Part One:
+// There are 744 fresh ingredients in the fridge.
 console.log(`There are ${fresh.length} fresh ingredients in the fridge.`);
