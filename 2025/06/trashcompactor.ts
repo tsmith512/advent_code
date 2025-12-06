@@ -15,7 +15,7 @@
 import fs from 'fs';
 
 const DEBUG = true;
-const INPUT = 'sample.txt';
+const INPUT = 'input.txt';
 
 const debugPrint = (input: any) => {
   if (DEBUG) {
@@ -64,4 +64,6 @@ const answers = problems.map((n, i) => (op[operators[i]])(n));
 
 debugPrint(answers);
 
+// Part One:
+// The sum of all homework answers is 4076006202939.
 console.log(`The sum of all homework answers is ${op["+"](answers)}.`);
