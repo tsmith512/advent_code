@@ -15,7 +15,7 @@
 import fs from 'fs';
 
 const DEBUG = true;
-const INPUT = 'sample.txt';
+const INPUT = 'input.txt';
 
 const debugPrint = (input: any) => {
   if (DEBUG) {
@@ -62,8 +62,6 @@ const op = {
 
 const answers = problems.map((n, i) => (op[operators[i]])(n));
 
-debugPrint(answers);
-
 // Part One:
 // The sum of all homework answers is 4076006202939.
 console.log(`The sum of all homework answers is ${op["+"](answers)}.`);
@@ -81,7 +79,6 @@ problems.length = 0;
 // Read and clean up the input. but different.
 const lines = fs.readFileSync(INPUT)
   .toString()
-  .trim()
   .split('\n');
 
 // We already know the operators.
@@ -104,16 +101,22 @@ for (let i = lines[0].length; i >= 0; i--) {
     continue;
   }
 
-  const number: number = digits
-    // Cast to int, empty spaces will be NaN
-    .map(n => parseInt(n))
-    // Remove NaN's: both [NaN, NaN, 1] and [1, NaN, NaN] are 1, not 1 and 100.
-    .filter(n => !Number.isNaN(n))
-    // Put the full numbers together (re-using this reducer from Day 3 "Lobby"!)
-    // NB: 'n' is the result of the filter, 'number''s length may have changed:
-    .reduce((total, current, index, n) => total + (current * 10 ** (n.length - index - 1)), 0)
+  // Join the characters together
+  const str: string = digits.join('');
 
-  problems[currentProblem].push(number);
+  if (str.match(/\d\s+\d/)) {
+    // parseInt() can deal with leading and trailing space, but...
+    console.log(`Warning: number "${str}" has a space between digits.`);
+  }
+
+  const num: number = parseInt(str);
+
+  // I do not know why yet, but the first number in problem 0 (so, far end of
+  // the file), kept being 0 in the old approach or NaN in the new one...
+  // This check fixed part two.
+  if (!Number.isNaN(num)) {
+    problems[currentProblem].push(num);
+  }
 }
 
 // These were read left-to-right, so reverse them.
@@ -122,4 +125,6 @@ operators.reverse();
 // This part works the same way.
 const newAnswers = problems.map((n, i) => (op[operators[i]])(n));
 
+// Part Two:
+// Having learned to read octopus math, new sum is 7903168391557.
 console.log(`Having learned to read octopus math, new sum is ${op["+"](newAnswers)}.`);
