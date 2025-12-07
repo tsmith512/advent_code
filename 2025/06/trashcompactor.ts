@@ -89,7 +89,7 @@ let currentProblem = 0;
 problems.push([]);
 
 // From right to left...
-for (let i = lines[0].length; i >= 0; i--) {
+for (let i = lines[0].length - 1; i >= 0; i--) {
   // From top to bottom...
   const digits: string[] = lines.map(l => l[i]);
 
@@ -110,13 +110,7 @@ for (let i = lines[0].length; i >= 0; i--) {
   }
 
   const num: number = parseInt(str);
-
-  // I do not know why yet, but the first number in problem 0 (so, far end of
-  // the file), kept being 0 in the old approach or NaN in the new one...
-  // This check fixed part two.
-  if (!Number.isNaN(num)) {
-    problems[currentProblem].push(num);
-  }
+  problems[currentProblem].push(num);
 }
 
 // These were read left-to-right, so reverse them.
