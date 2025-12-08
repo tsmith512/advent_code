@@ -25,7 +25,7 @@
 import fs from 'fs';
 
 const DEBUG = true;
-const INPUT = 'input.txt';
+const INPUT = 'sample.txt';
 
 const debugPrint = (input: any) => {
   if (DEBUG) {
@@ -90,4 +90,7 @@ for (let i = 1; i < field.length; i++) {
 }
 
 debugField(field);
+
+// Part One:
+// Beam was split 1678 times.
 console.log(`Beam was split ${splits} times.`);
