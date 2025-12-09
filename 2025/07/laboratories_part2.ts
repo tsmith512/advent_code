@@ -57,7 +57,11 @@ const traverse = (area: string[][], i: number) => {
             // No new timeline.
             area[i][j] = '|';
           } else if (area[i][j] === '^') {
-            // Copy the field here --> new "timeline"
+            // This cell is a splitter and it got hit by a beam from above.
+            // Do the thing.
+
+            // Part one, we wrote last-cell and next-cell as beams. Part two, we:
+            // Copy the field here --> this is a new "timeline"
             const newArea = structuredClone(area);
             timelines++
 
